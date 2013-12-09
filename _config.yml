@@ -37,3 +37,7 @@ channels:
   token: hardware
   url: /hardware/
   icon: /img/icons/hardware100.jpg
+- text: Miscellaneous
+  token: misc
+  url: /misc/
+  icon: /img/icons/misc100.jpg
