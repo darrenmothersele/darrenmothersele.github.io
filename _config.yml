@@ -1,3 +1,39 @@
-name: Your New Jekyll Site
+name: Darren Mothersele
+description: "Web development, DevOps, creative coding, live coding, etc..."
+url: http://www.darrenmothersele.com
+rss_url: rss.xml
+
 markdown: redcarpet
 pygments: true
+excerpt_separator: <!--break-->
+
+paginate: 10
+paginate_path: "blog/page:num"
+
+permalink: /blog/:year/:month/:day/:title
+
+channels:
+- text: Web Development
+  token: web-dev
+  url: /web-dev/
+  icon: /img/icons/web100.png
+- text: DevOps
+  token: devops
+  url: /devops/
+  icon: /img/icons/apiary100.png
+- text: Creative Coding
+  token: creative-coding
+  url: /creative-coding/
+  icon: /img/icons/creative100.png
+- text: Cyril
+  token: cyril
+  url: /cyril/
+  icon: /img/icons/cyril100.png
+- text: Music
+  token: music
+  url: /music/
+  icon: /img/icons/music100.png
+- text: Hardware Hacking
+  token: hardware
+  url: /hardware/
+  icon: /img/icons/hardware100.jpg

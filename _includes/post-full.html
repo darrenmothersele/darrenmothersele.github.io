@@ -1,0 +1,21 @@
+
+<section class="post">
+<header class="post-header">
+  {% if include.category %}
+    {% include category-icon.html name=include.category %}
+  {% endif %}
+  <h1 class="post-title">{{ include.title }}</h1>
+  <p class="post-meta">
+    {% if include.category %}
+    Posted in {% include category-name.html name=include.category %} on
+    {% endif %}
+    {% if include.date %}
+      {{ include.date | date_to_string }}
+    {% endif %}
+    {% include tag-list.html tags=include.tags %}
+  </p>
+</header>
+<div class="post-description">
+  {{ include.content | markdownify }}
+</div>
+</section>

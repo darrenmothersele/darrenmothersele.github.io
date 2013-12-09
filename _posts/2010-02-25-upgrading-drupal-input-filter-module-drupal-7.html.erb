@@ -1,0 +1,25 @@
+---
+layout: post
+title: Upgrading a Drupal input filter module to Drupal 7
+category: web-dev
+tags: drupal
+---
+<p>There was no version of the markdown filter available for Drupal 7, and no existing issue on this in the issue queue at Drupal.org. I wasn't in an urgent need for this module, but I will need it on a project that is hoping to go D7 as soon as it is released, so I thought I'd use it as an excuse look further into the API changes in Drupal 7. </p>
+<p>I'm working on the alpha2 release of Drupal7 and the D6 version of markdown checked out from CVS. I've posted the code up on <a href="http://drupal.org/node/725512">drupal.org</a>. Here's what needed to be done:</p>
+
+<!--break-->
+<p><strong>Update:</strong> It's now been accepted and <a href="http://drupal.org/cvs?commit=380692">commited to Drupal CVS!</a></p>
+<p>Markdown is a simple module, with just a couple of files that needed editing. First up is the module info file. This needs updating to core 7.x and the new files[] option must be set, because Drupal 7 doesn't include any module files by default in attempts to cut down on request overhead. Here's exactly what needs adding to the markdown.info file:</p>
+<p></p><div class="codeblock"><code>core = 7.x<br />files[] = markdown.module</code></div>
+<p>Now to look at the main module file. This file needs a complete overhaul to work with Drupal 7 because hook_filter() and hook_filter_tips() has been replaced by hook_filter_info(). The markdown module also provides a block with extra help information, and this code needs changing to work with D7 because hook_block() has been replaced by a family of functions: hook_block_info(), hook_block_configure(), hook_block_save(), and hook_block_view().</p>
+<h3>Design pattern changes between Drupal 6 and Drupal 7 APIs</h3>
+<p>Comparing the changes in hook_filter() and hook_block() with their new D7 counterparts reveals interesting changes in the Drupal API patterns. A common pattern in the Drupal 6 APIs is the use of an $op parameter when calling a hook. In the implementation of the hook this would usually be utilised in a switch statement from which your code would know what it was expected to do or what it was return. </p>
+<p>In the new hook_filter_info() the pattern used is to return the names of a series of callback functions that will be used to perform various actions required of filters.</p>
+<p>An alternative pattern can be seen in the way that hook_block() has been replaced. In this case the branches of the original hook have been replaced by a family of hooks.</p>
+<h3>What does this mean for Markdown?</h3>
+<p>The code from the functions that were called from the original hook_filter() can be reused as callbacks as specified in the array returned from hook_filter_info(). That pretty much completes the migration of the filter bit of this module.</p>
+<p>The code from hook_block() is split out into separate functions for markdown_block_info() where the block is defined, and markdown_block_view() where the block is rendered.</p>
+<h3>Another gottcha:</h3>
+<p>There's one other small tweak that was needed, in our beloved FAPI (Forms API) there has been a small change in how the array keys for 'item' and 'markup' items are defined. In this case the markdown module uses an 'item' form-item, so we have to change the '#value' array key to '#markup'.</p>
+<h3>Download</h3>
+<p>I've submitted this for review over in the <a href="http://drupal.org/node/725512">Markdown filter issue queue</a> on Drupal.org and hopefully it will eventually surface as a Drupal 7 module.</p>

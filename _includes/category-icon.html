@@ -1,0 +1,5 @@
+{% for channel in site.channels %}
+  {% if include.name == channel.token %}
+    <a href="{{ channel.url }}"><img class="post-category-icon" alt="{{ channel.text }}" height="48" width="48" src="{{ channel.icon }}"></a>
+  {% endif %}
+{% endfor %}

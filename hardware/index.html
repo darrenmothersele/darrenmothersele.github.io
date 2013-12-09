@@ -1,0 +1,52 @@
+---
+title: Hardware Hacking
+category: hardware
+layout: category
+splash: making the internet of things with open source hardware and software
+rss_url: hardware/rss.xml
+---
+
+I love making things with lots of RGB LEDs, such as the Pixel Coat.
+
+I've been playing around with various microcontroller setups and have breakout
+modules that allow quick and easy prototyping of various sensor and output devices.
+
+### Arduino
+
+A popular microcontroller platform that is easy to understand and use. It has a
+large community of users and many great resources and libraries for lots of
+common tasks.
+
+### Raspberry Pi
+
+A full ARM system-on-a-chip that runs the Linux operating system. There are
+lots of I/O ports and this is a good choice when you need more processing power
+than a simple microcontroller like the Arduino gives you. The Raspberry Pi is a
+great low-cost platform but it does have some drawbacks. For example, I've
+struggled to drive the WS2812 LED pixel systems directly from Raspi because
+the multi-tasking nature of the OS means it can't guarantee the 800khz strict
+timing for the data line.
+
+### Beagle Bone Black
+
+A competitor to the Raspi that offers a newer ARM version and includes 2 RPUs
+(real-time processing units). The Beagle Bone Black is slightly more expensive
+than the Raspi and doesn't have the huge community of users and following that
+the Raspi benefits from.
+
+### Add-on modules and breakout boards
+
+Some breakout boards and modules that I've been playing with that simplify
+prototyping by providing useful functionality in an easy to use modular format:
+
+* ENC28J60 Ethernet Module
+* nRF24L01+ 2.4GHz RF Transceiver
+* JY-MCU Bluetooth
+* WS2812 LED Pixel
+* MPU6050 3-axis Accelerometer and Gyrometer
+* HMC5883L Triple Axis Magnetometer
+* Ultrasonic Module HC-SR04 Distance Measuring
+* DS1307 Real Time Clock I2C module
+* DS1307 Real Time Clock I2C module
+* Colour Recognition Sensor Detector Module TCS230 MCU Arduino
+

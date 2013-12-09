@@ -1,13 +1,19 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Darren Mothersele - London Based Developer
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+
+<div class="posts">
+<h1 class="content-subhead">About Me</h1>
+
+{% include post-feature.html url="/about/" excerpt="<p>Hi, I'm Darren Mothersele, I've been doing Drupal full time for over 6 years now. I architect complete Drupal-based solutions, troubleshoot Drupal sites, optimise Drupal setups, and develop Drupal modules. I also created the Cyril programming language for live coding.</p>" %}
+
+</div>
+
+<div class="posts">
+<h1 class="content-subhead">Featured Posts</h1>
+{% for post in site.tags.featured limit: 6 %}
+  {% include featured.html post=post %}
+{% endfor %}
 </div>

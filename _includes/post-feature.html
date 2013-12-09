@@ -1,0 +1,22 @@
+
+<section class="post">
+<header class="post-header">
+  {% if post.category %}
+    {% include category-icon.html name=post.category %}
+  {% endif %}
+  <h2 class="post-title"><a href="{{ include.url }}">{{ include.title }}</a></h2>
+  <p class="post-meta">
+    {% if post.category %}
+    Posted in {% include category-name.html name=post.category %} on
+    {% endif %}
+    {% if include.date %}
+      {{ include.date | date_to_string }}
+    {% endif %}
+    {% include tag-list.html tags=include.tags %}
+  </p>
+</header>
+<div class="post-description">
+  {{ include.excerpt }}
+  <p><a href="{{ include.url }}">Read more &raquo;</a></p>
+</div>
+</section>

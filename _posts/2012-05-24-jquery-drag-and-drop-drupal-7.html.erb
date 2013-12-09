@@ -1,0 +1,14 @@
+---
+layout: post
+title: jQuery Drag and Drop in Drupal 7
+category: web-dev
+tags: drupal
+---
+<p>So, since recording that screencast that I never posted I have revised the example a little bit. Rather than re-record the screencast, as I don't have much time. I've posted the code to GitHub - as requested in the comments on the original post. To get up and running checkout the <a href="https://github.com/darrenmothersele/dragndrop">GitHub project</a> for the example, or read on for more details...</p>
+<!--break-->
+<p>The example is in the form of an install profile for Drupal 7. You could just download Drupal core, install this profile with it's dependencies into the profile folder and run through the Drupal installed, but the preferred mechanism is using Drush Make. Assuming you've installed <a href="http://drupal.org/project/drush_make">Drush Make</a>, use this command:</p>
+<p></p><div class="codeblock"><code>drush make http://tinyurl.com/c7cqzpz dragndrop</code></div>
+<p>That uses Drush Make to download Drupal code, all the required dependencies, and the example module. The example module was packaged using Features. Look in Features to see what configuration is part of that. You'll find a couple of content types, some views, rules, etc. </p>
+<p>Install using the dragndrop profile, then create some test content. </p>
+<p>Have a look at dragndrop-example.js in the dragndrop_example folder in the install profile for details of what the jQuery is doing. Look in dragndrop_example.module and you can see the jQuery UI libraries included from core. </p>
+<p>That's all for now. Check the original post to get an idea of what it's doing. I'm happy to answer any questions in the comments.</p>

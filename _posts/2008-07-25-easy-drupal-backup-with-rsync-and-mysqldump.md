@@ -1,0 +1,24 @@
+---
+layout: post
+title: Easy Drupal Backup with Rsync and MySQLDump
+category: web-dev
+tags: drupal
+---
+<p>Here's a nice easy way of running backups for your Drupal sites. To successfully backup a Drupal website you need to:</p>
+<ol><li>backup all the files, themes, modules, etc, and,</li>
+<li>backup the database content</li>
+</ol><p>I'll not go into the reasons why backups are essential part of support for Drupal, or any websites, because if you've ever had a server crash and die on you then you will understand. If you haven't then I suggest it's only a matter of time, and you start a rigorous backup routine now.</p>
+<p>Read on for one backup method that produces nice incremental backups of your Drupal site without taking up too much diskspace, and dumps SQL content of your Drupal database at the same time.</p>
+
+<!--break-->
+<h4>Backing up the Drupal files on your web-server</h4>
+<p>You could just backup your site/ folder, which if Drupal is configured correctly should contain all your customisations for your site. Or, an easy alternative is to just backup the whole of your htdocs directory. </p>
+<p>Making a full backup is a length process, and takes up more space than it needs to. That's why I suggest using an 'incremental' backup process, such as the one recommended by <a href="http://www.mikerubel.org/computers/rsync_snapshots/">Mike Rubel</a>. This involves just saving the changes since the last backup. Rsync is a perfect tool for achieving this, it is included in most Linux distributions (or easy to find at least), and works very efficiently over networks (which is good for FTP backups if you want to go down that route).</p>
+<p>The process is as follows:<br /></p><div class="codeblock"><code>rm -rf backup.3<br />mv backup.2 backup.3<br />mv backup.1 backup.2<br />cp -al backup.0 backup.1<br />rsync -a --delete source_directory/  backup.0/</code></div>
+<p>If you run this every day, the result will be folders called backup.0, backup.1, backup.2, and backup.3 - which look like full backups for today, yesterday, and the two days before that. What is actually stored on disc is one folder with the full latest backup, and then folders containing just the files that changed on the previous days.</p>
+<p>This backup script should be created in a .sh file, set to executable and then included in your daily <b>crontab</b>.</p>
+<h4>Backing up the database</h4>
+<p>Now you have the backups of your files, all that's left to do is backup your database. Here's the command line you need to create a backup:<br /></p><div class="codeblock"><code>mysqldump -u username -p password database &gt; filename.sql</code></div>
+<p>You should then compress this file by using the following command:<br /></p><div class="codeblock"><code>gzip filename.sql</code></div>
+<p>You can pipe the two commands together and add them to your crontab to execute daily.</p>
+<p>The database backup could also be extended to keep snapshots from the previous days by adding a file rotation to the script as with the rsync backup, for example:<br /></p><div class="codeblock"><code>rm -rf databasebackup.3.sql<br />mv databasebackup.2.sql databasebackup.3.sql<br />mv databasebackup.1.sql databasebackup.2.sql<br />mv databasebackup.0.sql databasebackup.1.sql<br />mysqldump -u username -p password database &gt; databasebackup.0.sql</code></div>

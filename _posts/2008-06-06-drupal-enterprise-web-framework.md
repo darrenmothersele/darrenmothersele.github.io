@@ -1,0 +1,36 @@
+---
+layout: post
+title: Drupal as an Enterprise Web Framework
+category: web-dev
+tags: drupal
+---
+<p>I was recently asked to take a look at the Google AppEngine, as a possible host for a web app. One major drawback for me is that it's currently limited to only running Python code, and the framework I'm using (Drupal) is PHP. That rulled it out as an option, but in this process I had a quick look at Python frameworks, in particular a really interesting one called <a href="http://mdp.cti.depaul.edu/">web2py</a>. They have a downloadable PDF comparison of various frameworks, and I was disappointed not to see Drupal listed.</p><!--break-->
+<p>Here's the areas of comparison, seemingly chosen to highlight web2py's strengths - but Drupal does just as well...</p>
+<!--break-->
+<p><b>Model View Controller?</b> Web2py = yes. Drupal = yes*.<br />
+*Drupal actually kind of uses PAC (Presentation-Abstraction-Control) a further development of the Model-View-Controller architecture.</p>
+<p><b>Web Based Interface?</b> Web2py = yes. Drupal = yes. CCK and views modules in Drupal allow you to quickly build your model, and supporting site architecture.</p>
+<p><b>Web Based Database Admin Interface?</b> Web2py = yes. Drupal = yes*.<br />
+*The content management tools give you all the access that site admins should need. OK, so there's some stuff you can't access - but you can use PHPMyAdmin if you really need access to the whole database.</p>
+<p><b>CRUD</b> Web2py = yes. Drupal = yes.</p>
+<p><b>Upload Forms</b> Web2py = yes. Drupal = Yes. Only Web2py and Django has a standard mechanism to handle file upload and secure storage? No - Drupal has this too. With optional public, or private file downloads.</p>
+<p><b>Byte Code Compilation</b> Web2py = yes. Drupal = None native. Limitations of PHP as the base language here. There are options for optimizing PHP code.</p>
+<p><b>Ticketing System</b> Web2py = yes. Drupal = Yes. Messages are optionally sent to log only, or display on screen and in log. In Drupal API it's called Watchdog. </p>
+<p><b>Zero Installation</b> Web2py = yes. Drupal = No. But you only have to install once if you use a "multi-site installation" - and run all your Drupal sites from one code base.</p>
+<p><b>Zero Configuration</b> Web2py = yes. Drupal = No. Alright, so you have to enter your database connection settings.</p>
+<p><b>Web Based Model Designer</b> Web2py = yes. Drupal = Yes*.<br />
+*CCK provides Drupal with online tools for creating the content types - it's not a graphical SQL designer - but still intuitive and easy for non-programmers to use.</p>
+<p><b>Web Based Testing</b> Web2py = Yes. Drupal = No. Also unit testing is being added to Drupal.</p>
+<p><b>Runs on Google App Engine</b> Web2py = Yes with some limitations. Drupal = No, GAE doesn't support PHP yet.</p>
+<p><b>Caching</b> Web2py = yes. Drupal = Yes. Drupal can use any PHP based caching system, and has it's own very powerful cache system. Plus a throttle system for reducing load during periods of high traffic.</p>
+<p><b>Native Templating Language</b> Web2py = yes. Drupal = Yes. </p>
+<p><b>Template Extension</b> Web2py = yes. Drupal = yes.</p>
+<p><b>Internationalization</b> Web2py = yes. Drupal = yes. Drupal interfaces are easily translated into multiple languages. Custom translations are easy to create, are part of the core system, and allow variables in translations.</p>
+<p><b>Database Abstraction</b> Web2py = yes. Drupal = yes.</p>
+<p><b>Automatic Migrations</b> Web2py = yes. Drupal = yes. Changes to Drupal content types in CCK automatically perform the required SQL Alter statements.</p>
+<p><b>Multiple Databases</b> Web2py = yes. Drupal = yes.</p>
+<p><b>Blocks SQL Injections</b> Web2py = yes. Drupal = yes.</p>
+<p><b>Blocks Double Submit</b> Web2py = yes. Drupal = yes.</p>
+<p><b>Included AJAX Library</b> Web2py = jQuery. Drupal = jQuery.</p>
+<p><b>JSON Support</b> Web2py = yes. Drupal = yes.</p>
+<p>I think you can see Drupal compares very well as an Enterprise Web Framework, and this goes to show it really is more than just a CMS.</p>

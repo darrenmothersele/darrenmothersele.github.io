@@ -1,0 +1,14 @@
+---
+layout: post
+title: Restoring a single database from a complete MySQL database dump
+category: web-dev
+tags: drupal
+---
+<p>I had a collection of database dumps from a server that had been created using MySQL's <code>--all-databases</code> option. This contained the databases for several Drupal websites, but I wanted to restore the Drupal database for just one of the sites. After a bit of Googling I came across two simple solutions:</p>
+<!--break-->
+<p>The first option is to pass the whole SQL dump to MySQL command line, but restrict it's operation using the <code>--one-database</code> option. </p>
+<p></p><div class="codeblock"><code>mysql -u root -p --one-database destdbname &lt; alldatabases.sql</code></div>
+<p>In the above code substitute destdbname with the database name you want to restore, and alldatabases.sql with the name of your full DB backup.</p>
+<p>If you would rather just extract the database dump of the single database from the --all-databases dump file, you can do this with sed using this command:</p>
+<p></p><div class="codeblock"><code>sed -n '/^-- Current Database: `dbname`/,/^-- Current Database: `/p' alldatabases.sql &gt; output.sql</code></div>
+<p>Where <code>dbname</code> is replaced with the database name of the database to extract, and alldatabases.sql is the name of your dump file. The result will be saved into the file output.sql.</p>
