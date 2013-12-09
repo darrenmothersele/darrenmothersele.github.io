@@ -40,7 +40,7 @@ don't have is control over that 'digital life'.
 
 I don't own a TV, but I do know people who spend all their free time glued to
 the TV watching crap. Likewise, I know people who's instinctive action
-whenver they have a spare minute is to reach for their phone and check
+whenever they have a spare minute is to reach for their phone and check
 Facebook. I want to help people address the balance between creating and consuming.
 I want a better web, and I want to live in a world where more people are
 creators than consumers. I think projects like
