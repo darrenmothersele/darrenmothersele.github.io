@@ -218,3 +218,8 @@ h2 a:hover {
     line-height: 1.4em;
 }
 
+.gplus {
+    direction: ltr;
+    text-indent: -9999px;
+    display: block;
+}
