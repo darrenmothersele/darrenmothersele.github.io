@@ -39,7 +39,7 @@ life'... create posts, upload photos and share them with friends. But, what they
 don't have is control over that 'digital life'.
 
 I don't own a TV, but I do know people who spend all their free time glued to
-the TV watching crap. Likewise, I know people who's instinctive action
+the TV watching mind-numbing rubbish. Likewise, I know people who's instinctive action
 whenever they have a spare minute is to reach for their phone and check
 Facebook. I want to help people address the balance between creating and consuming.
 I want a better web, and I want to live in a world where more people are
