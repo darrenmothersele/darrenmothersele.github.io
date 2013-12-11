@@ -11,7 +11,7 @@ understanding the mathematical principles behind our physical world. There
 are loads of great examples that show programming techniques for simulating
 the natural world in code.
 
-<!-- break -->
+<!--break-->
 The book is written to target Processing, a popular Java based creative
 coding framework. Because I prefer C++, and in order to familarise myself
 more with openFrameworks, I've been converting some of the examples to work
