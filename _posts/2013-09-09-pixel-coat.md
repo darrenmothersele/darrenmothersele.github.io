@@ -12,7 +12,7 @@ movements.
 
 <!--break-->
 
-The coat made it's first appearence at Laser Cave in Oct 2013, and has since
+The coat made it's first appearance at Laser Cave in Oct 2013, and has since
 been revised and appeared at London Decompression 2013.
 
 <img src="/img/project/pixelcoat-lg.jpg" alt="RGB LED Pixel Coat">

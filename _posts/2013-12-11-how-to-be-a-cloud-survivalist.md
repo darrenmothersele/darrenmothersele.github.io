@@ -9,7 +9,7 @@ tags: misc featured
 This is the first in a series of posts where I document the process of
 implementing your own suite of cloud services.
 
-With a little bit of effort you can quite easily setup your own suite of
+With a little bit of effort you can quite easily set-up your own suite of
 cloud services to rival the likes of Google. If you're concerned about
 communication surveillance programs, selling of your personal data to
 advertisers, security breaches, or maybe you just want to own and control your own data, there are some great options out there.
@@ -24,7 +24,7 @@ open source mail server projects, in favour of recommending some weird proprieta
 email server, as she makes a few interesting observations:
 
 <blockquote>
-In the early 2000s it was the height of geek fashion to run your own e-mail server—then along came Gmail with two gigabytes of free storage and excellent spam filtering. Now even most people with their own domain names use e-mail provided by Google, Microsoft or their Internet Service Provider (ISP).
+In the early 2000s it was the height of geek fashion to run your own e-mail server - then along came Gmail with two gigabytes of free storage and excellent spam filtering. Now even most people with their own domain names use e-mail provided by Google, Microsoft or their Internet Service Provider (ISP).
 <br>&mdash;<cite> Wendy Grossman</cite>
 </blockquote>
 
@@ -33,7 +33,7 @@ the headaches, the &quot;occasional day of pain&quot; as Wendy calls it,
 when things stopped working for seemingly no reason. Back then I was stupidly
 trying to run everything on one server. Not a good idea!
 
-But, then Google came along and oftered their slick gmail interface and their
+But, then Google came along and offered their slick Gmail interface and their
 reliable email servers for use with your own domain. And, they gave it away
 for free. All you had to do was give away ownership of your entire digital life
 to them. A small price to pay for reliable email service?
@@ -64,12 +64,12 @@ can be as militant or relaxed about security as you wish.
 I've recently been rethinking that decision to move everything to Google,
 and I've decided it's probably about
 time it was fashionable to run your own email server again and take back
-control. But, now I'm expecting a lot more from my own setup. It's not just a
+control. But, now I'm expecting a lot more from my own set-up. It's not just a
 reliable email service. I'm now looking for options to sync data (contacts,
 calendars, files) across all my devices, access them from anywhere, and share them with friends.  Luckily in the self-hosted options have come along leaps and bounds in recent years so you can literally run the suite of entire cloud services that we've come to expect.
 
 This will require some digging about in the technical details of how
-all this stuff works. I've explained here the tech I'm using and how I've
+all this stuff works. I've explained here the technology I'm using and how I've
 glued it all together, but this is far from a complete solution. On the plus
 side you don't have to compromise at all on functionality:
 
@@ -86,13 +86,11 @@ side you don't have to compromise at all on functionality:
 There are a few downsides, which we'll have to try and work around. One issue
 is that because your email is not coming from one of the big mail companies, there's a higher chance that receiving servers will flag your email as spam. You also risk the chance of losing mails because of power outages or technical issues.
 There's a few options to try and mitigate this which will be discussed in a
-future installment when I look at backup and failure planning.
+future instalment when I look at backup and failure planning.
 
 Tomorrow, in part 2, I'll be building up a list of requirements and looking at the various options that are available.
 
-
-
-
+Continue to [How to Be a Cloud Survivalist (part 2)](/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/)
 
 
 

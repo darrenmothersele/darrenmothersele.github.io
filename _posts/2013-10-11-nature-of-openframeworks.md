@@ -13,7 +13,7 @@ the natural world in code.
 
 <!--break-->
 The book is written to target Processing, a popular Java based creative
-coding framework. Because I prefer C++, and in order to familarise myself
+coding framework. Because I prefer C++, and in order to familiarise myself
 more with openFrameworks, I've been converting some of the examples to work
 in openFrameworks. Here are some of the early examples, I may post more,
 but I've started looking at Cinder too, so in future I may convert some examples to
@@ -67,7 +67,7 @@ Here's an example that demonstrates a custom distribution.
 
 ### <a href="https://gist.github.com/darrenmothersele/7875942">Perlin Noise</a>
 
-`ofNoise` is the openFrameworks equivalent of processing's `noise()` function.
+`ofNoise` is the openFrameworks equivalent of Processing's `noise()` function.
 It returns a float between 0 and 1. openFrameworks also has an equivalent of
 map function (`ofMap`) that maps the noise value (which is 0 - 1) to the
 range 0 - height.

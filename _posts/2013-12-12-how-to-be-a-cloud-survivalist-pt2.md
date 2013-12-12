@@ -78,12 +78,16 @@ the same level of vetting as the more professional ones, but are enough to get r
 ### Server
 
 If you want to be a true cloud survivalist then you will want to host your
-own server at home. You'll need a good, reliable internet connection for this,
-with decent upstream bandwidth.
-At this stage, you're more likely to want to use a hosting company for this.
+own server at home. You'll need a good, reliable internet connection,
+with decent upstream bandwidth and a UPS or backup power supply.
+I'm not sure I can meet these requirements, and I don't really want a
+server in my house, so I'm using a hosting company for this.
+I'm not too concerned at this stage as long as I have my own server
+that is under my control.
+
 You need to find a hosting company that you like and trust. This depends on
 what your priorities are, personally I look for price, speed, reputation,
-amount of effort put into providing developer documentation, API, privacy,
+amount of effort they put into providing developer documentation, API, privacy,
 and use of renewable energy sources.
 
 In the example configurations to follow in later parts of the series I'm using
@@ -145,9 +149,9 @@ We'll look at how to reliably send email that doesn't get caught in spam filters
 and look at simple way to set-up the full stack of email server software using
 [iRedMail](http://www.iredmail.org/).
 
-After that, we'll take a look at integrating [Drupal](http://drupal.org) and
+After that, I'll take a look at integrating [Drupal](http://drupal.org) and
 [ownCloud](http://owncloud.org/) to provide some of the other cloud services
-we're looking for.
+I'm looking for.
 
 
 

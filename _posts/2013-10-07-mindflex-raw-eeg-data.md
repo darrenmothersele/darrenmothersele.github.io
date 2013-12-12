@@ -13,8 +13,9 @@ It's simple to interface this with the Arduino to read the
 basic single signal EEG data the toy produces. The toy actually
 only uses one of the measures (attention) but it outputs
 various useful bits of information.
+
 <!--break-->
-All of this is detailed in the original <a href="http://frontiernerds.com/brain-hack">Frontier Nerds</a> blog post and on our [Brain Wave Visualisation](/projects/brain-wave.html) project page.
+All of this is detailed in the original <a href="http://frontiernerds.com/brain-hack">Frontier Nerds</a> blog post and on our [Brain Wave Visualisation](/blog/2013/09/21/brain-wave-visualisation/) project page.
 
 The original hacks are all based around the preprocessed data that the TGAM1
 board in the MindFlex toy produces. I have successfully modified one of these headsets to get full raw EEG data from it. I'm in the process of writing a

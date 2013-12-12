@@ -24,7 +24,7 @@ and interesting an worthwhile application of "the internet of things".
 The environmental control system is to be controlled via live feeds from
 Fiji.
 
-During the day I helped with implementation of a framwork in PHP that could
+During the day I helped with implementation of a framework in PHP that could
 help generate the various pages of reports and control that the system required.
 Of course, it was all running on a rasbpi, so the code had to be minimal, and
 other developers had pushed for simple PHP code.
