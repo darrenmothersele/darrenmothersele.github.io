@@ -8,7 +8,7 @@ tags: misc featured
 
 This is the third post in a series where I document the process of
 implementing your own suite of cloud services. I covered the requirements
-in the last post, [How to Be a Cloud Survivalist (part 2)](/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/)
+in the [previous post](/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/),
 and in this instalment I take a deeper look at what it takes to run your own email service.
 
 <!--break-->
