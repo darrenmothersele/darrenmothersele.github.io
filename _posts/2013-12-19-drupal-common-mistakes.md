@@ -3,7 +3,7 @@ layout: post
 title: Some Common Drupal Mistakes
 feed: true
 category: web-dev
-tags: drupal drupal-planet featured
+tags: drupal drupal-planet
 ---
 
 Over the past few months I've had the privilege of being asked to audit
