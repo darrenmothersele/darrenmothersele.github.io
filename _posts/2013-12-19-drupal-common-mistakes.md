@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Drupal Site Audit (Common Mistakes)
+title: Some Common Drupal Mistakes
 feed: true
 category: web-dev
 tags: drupal drupal-planet featured
