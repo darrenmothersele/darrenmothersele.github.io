@@ -115,7 +115,8 @@ so that I can make use of Zurb Foundation mixins.
 
 ##Next time...
 
-In the next post of this series I'm going to show you how to create an all-in-one
+In the [next post of this series](/blog/2014/02/07/from-prototype-to-drupal-theme-2/)
+I'm going to show you how to create an all-in-one
 prototyping tool that will work for all stages of prototyping, from
 the throwaway early drafts, through later refinement stages, up to the
 final stages of prototype conversion to Drupal.
