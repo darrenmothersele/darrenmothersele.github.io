@@ -10,7 +10,7 @@ In this series of posts I'm talking about my website prototyping processes.
 Starting from early throwaway draft prototypes, through to clean, efficiently
 coded, designs that can be easily translated into Drupal websites.
 
-The [first post in this series](/blog/2014/02/06/from-prototype-to-drupal-theme/)
+The [first post in this series](http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/)
 explained why I prototype, and introduced some useful tools for website prototyping.
 In this post I combine all the tools previously mentioned into one simple
 prototype tool.

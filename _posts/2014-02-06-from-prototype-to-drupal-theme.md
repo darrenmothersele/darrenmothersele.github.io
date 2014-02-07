@@ -89,7 +89,7 @@ quicker to iterate.
 
 I've talked about a HTML preprocessor
 [Middleman](http://middlemanapp.com/) in a previous
-[blog post](/blog/2013/08/02/cms-is-dead-long-live-cms/)
+[blog post](http://www.darrenmothersele.com/blog/2013/08/02/cms-is-dead-long-live-cms/)
 where I discussed using one as a static site builder. Back then I came out in
 favour of Middleman, but since then I got turned on to [Jekyll](http://jekyllrb.com/)
 when I migrated my site to GitHub pages,
@@ -115,7 +115,7 @@ so that I can make use of Zurb Foundation mixins.
 
 ##Next time...
 
-In the [next post of this series](/blog/2014/02/07/from-prototype-to-drupal-theme-2/)
+In the [next post of this series](http://www.darrenmothersele.com/blog/2014/02/07/from-prototype-to-drupal-theme-2/)
 I'm going to show you how to create an all-in-one
 prototyping tool that will work for all stages of prototyping, from
 the throwaway early drafts, through later refinement stages, up to the
