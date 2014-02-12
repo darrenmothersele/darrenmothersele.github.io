@@ -49,6 +49,7 @@ a:focus {
     font-size: 1em;
     line-height: 1.25em;
     color: #ffffff;
+    margin-bottom: 0.5em;
 }
 .brand-tagline a {
     color: #FFE919;
