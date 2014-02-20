@@ -24,7 +24,7 @@ garden of the billion dollar social networks.
 When I started using the internet in the mid 90s it was a wide open space of
 free information, and anyone could join, create, and post. Yeah, this may still
 be the case... but importantly the <em>default option</em> was that you owned and
-controled everything you posted online. When I got my first
+controlled everything you posted online. When I got my first
 computer as a kid (Commodore 16 for anyone who's interested), it booted
 straight to a BASIC interpreter when you turned it on. The <em>default
 option</em> was to start creating things.
