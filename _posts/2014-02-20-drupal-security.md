@@ -8,15 +8,16 @@ tags: drupal featured drupal-planet
 
 Did you know I provide various infosec services, including security audits
 of code and infrastructure, penetration testing, etc, for Drupal websites?
-It's not something I've really blogged about before, but recently I
-have done many site audits, including reviewing sites for security issues.
+It's not a subject that has featured in my blogs before, but having recently
+done many site audits, including reviewing sites for security issues,
+it's becoming a hot topic.
 
 Security consultant Egor Homakov recently posted up details of
 [how he hacked GitHub](http://homakov.blogspot.co.uk/2014/02/how-i-hacked-github-again.html)
 and this got me thinking. Although I've touched on security issues in previous
 posts (for example,
 [common Drupal mistakes](http://darrenmothersele.com/blog/2013/12/19/drupal-common-mistakes/)),
-I thought it was about time I posted something more comprehensive on the issue.
+It's about time I posted something more comprehensive on the issue.
 
 <!--break-->
 
@@ -28,8 +29,7 @@ clever combination of the 5 minor issues he crafted a high-severity
 exploit that could theoretically grant him access to all private repositories
 on GitHub.
 
-Egor reported the vulnerabilities under [GitHub's bounty programme](https://bounty.github.com/),
-and they were fixed before details were released. He was awarded a bounty of $4000 USD for his
+Egor reported the vulnerabilities under [GitHub's bounty programme](https://bounty.github.com/), so they could be fixed before details were released. He was awarded a bounty of $4000 USD for his
 work.
 
 ###The cost of (in)security
@@ -59,9 +59,9 @@ with "independent security researchers" (also known as "white hats") to offer
 rewards for finding and reporting bugs.
 
 This reminds me of back in Oct 2008. I was using a service called "blip.fm"
-that aimed to be a "Twitter for DJs" but I was having issues with the player
-in my browser. I fired up some debugging tools and, with no effort,
-uncovered a security issue that revealed private user data about any user.
+that aimed to be a "Twitter for DJs" but found performance issues with the player
+in my browser. Using some simple debugging tools and, with no effort, I
+uncovered a security issue that revealed all their private user data.
 I never actually managed to solve the player bug, but I did report the
 information disclosure issue to the site, to which they responded:
 
@@ -87,7 +87,7 @@ security is hard.
 <blockquote>Infosec is hard, but it is just one example of a bigger truth:
 Defense is hard.
 This comes up time and time again in any defensive discipline.
- The one pecularity of InfoSec; you do not have any offensive capabilities. -
+ The one peculiarity of InfoSec; you do not have any offensive capabilities. -
 <cite>dfc (Hacker News)</cite></blockquote>
 
 
@@ -104,8 +104,8 @@ It's a complex protocol and services often make mistakes in their implementation
 of the standard.
 
 What Egor's work shows is that even small, simple
-mistakes can be disastrous for security as when they
-combine they can lead to much bigger issues.
+mistakes can be disastrous for security as when
+combined they can lead to much bigger issues.
 
 ###No one gets it right every time
 
@@ -126,10 +126,10 @@ The Drupal product itself has a good track record for security.
 But this only really covers the core of Drupal, and contrib modules.
 Almost all security issues I have
 found on Drupal sites arise from miss-configuration, custom themes, and custom modules.
-Which makes sense, if you think about it, because that code does not get the
+This makes sense, if you think about it, because that code does not get the
 same level of public scrutiny as the open-source code released on Drupal.org.
 
-Here are some pointers, to help with Drupal security. But, I do recommend getting
+Here are some pointers, to help with Drupal security. But, I highly recommend getting
 someone else to look over your code before pushing it into production.
 
 
@@ -219,8 +219,7 @@ resources. The Drupal API provides various mechanisms to do this, including:
  be done in custom database queries by using `$query->addtag('node_access')`
  * Code that works defines custom entity types should also define their own access callbacks.
 
-A common "bug" that I have seen in custom code is to accidentally assign to the
-global user object. In one particular case a faulty `if` statement in a template
+A big mistake I have seen a couple of times in custom code is to accidentally assign to the global user object. In one particular case a faulty `if` statement in a template
 file was giving every user who accessed a specific node admin access. This is
 possible the most dangerous typo I have ever seen in over 20 years of programming!
 
@@ -274,7 +273,7 @@ There are a few Drupal modules to help with this:
 
 <strong>If you are not logging in to your site via HTTPS they you are handing out your
 password to anyone on the same network as you.</strong> If any of your users access
-via a public wifi this should be a concern. It's easy to pick up unencrypted network
+the site via a public wifi this should be a concern. It's easy to pick up unencrypted network
 traffic with applications like Wireshark or a WiFi Pineapple.
 
 <strong>Probably the biggest issue I am seeing today is the lack of SSL in the Drupal
@@ -318,7 +317,7 @@ leave the `CHANGELOG.txt` file visible to the public. This file reveals the
 exact version of Drupal that you are using, and from there it's easy to work out
 what vulnerabilities your site could be open to.
 
-I always recommend rewriting the location of `CHANGELOG.txt` and other
+My recommendation is to rewrite the location of `CHANGELOG.txt` and other
 unnecessary files to a 404 error in the server config. This is better than
 removing the files, as they could be accidentally restored during future
 upgrades. The Apache config rules to do this are quoted in
