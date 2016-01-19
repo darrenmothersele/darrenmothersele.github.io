@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Using an external data source for Drupal user authentication and login |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Using an external data source for Drupal user authentication and login</h1>
+
+  <span class="">15 May 2008</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead"><strong>Update:</strong> This information is not applicable to Drupal 6. To use an external data source for authentication in Drupal 6 you need to use hook_form_alter to add your own validation function to the login form. The two functions below are intended as an outline of how it was done in Drupal 5. You only need these two hooks to extend the authentication - anything further than this will be specific to your requirements.</p>
+
+<p class="lead">You can use any database table to validate users for your Drupal site. In this case I'm validating users against a database of clients. This client database is maintained outside of Drupal. It's a simple two step process, and just needs a couple of PHP functions in a custom module: </p>
+
+              
+
+<p><b>Step One:</b> hook_auth() puts our own authentication code into the Drupal authentication process, we return true to validate a user, or false if the credentials don't match. If we have successfully authenticated someone then we also set a global variable that we can check in the next step.</p>
+
+<p><b>Step Two:</b> hook_user() allows us to put our own code into the user creation process. When a new user is authenticated Drupal will create a local user object for them. We hook into this process to fill in their details.</p>
+
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/**<br /> * Implementation of hook_auth()<br /> */<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">modulename_auth</span><span style="color: #007700">(</span><span style="color: #0000BB">$username</span><span style="color: #007700">, </span><span style="color: #0000BB">$pass</span><span style="color: #007700">, </span><span style="color: #0000BB">$server</span><span style="color: #007700">) {<br />  </span><span style="color: #FF8000">// Does username exist in our clients database?<br />  </span><span style="color: #0000BB">$results </span><span style="color: #007700">= </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT login, password FROM clients WHERE login = '%s' AND password = '%s'"</span><span style="color: #007700">,</span><span style="color: #0000BB">$username</span><span style="color: #007700">,</span><span style="color: #0000BB">$pass</span><span style="color: #007700">);<br />  </span><span style="color: #0000BB">$row1 </span><span style="color: #007700">= </span><span style="color: #0000BB">db_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$results</span><span style="color: #007700">);<br />  if (</span><span style="color: #0000BB">$row1</span><span style="color: #007700">) {<br />     global </span><span style="color: #0000BB">$modulename_authenticated</span><span style="color: #007700">;<br />     </span><span style="color: #0000BB">$modulename_authenticated </span><span style="color: #007700">= </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;<br />     return </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;<br />  }<br />  else {<br />     return </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">;<br />  }<br />}<br /><br /></span><span style="color: #FF8000">/**<br /> * Implementation of hook_user()<br /> */<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">modulename_user</span><span style="color: #007700">(</span><span style="color: #0000BB">$op</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">$edit</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">$account</span><span style="color: #007700">, </span><span style="color: #0000BB">$category </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">) {<br />  switch(</span><span style="color: #0000BB">$op</span><span style="color: #007700">) {<br />     case </span><span style="color: #DD0000">'insert'</span><span style="color: #007700">:<br />        </span><span style="color: #FF8000">// a new user is being added; check if we did authentication,<br />        </span><span style="color: #007700">global </span><span style="color: #0000BB">$modulename_authenticated</span><span style="color: #007700">;<br />        if (</span><span style="color: #0000BB">$modulename_authenticated</span><span style="color: #007700">) {<br />          </span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">db_result</span><span style="color: #007700">(</span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT email FROM clients WHERE login = '%s'"</span><span style="color: #007700">,</span><span style="color: #0000BB">$account</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">));<br />          </span><span style="color: #FF8000">// Set email address in the user table for this user<br />          // You might want to set up some other parts of the user record here too<br />          </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"UPDATE {users} SET mail = '%s', name = '%s' WHERE uid = %d"</span><span style="color: #007700">, </span><span style="color: #0000BB">$result</span><span style="color: #007700">, </span><span style="color: #0000BB">$account</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">, </span><span style="color: #0000BB">$account</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">uid</span><span style="color: #007700">);<br />        }<br />  }<br />}<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><strong>Update:</strong></p>
+
+<p>To create this as a module, you need two files:</p>
+
+<p>modulename.info<br />
+modulename.module</p>
+
+<p>You save these files in a folder called modulename somewhere within the Drupal module include path. For example in /sites/all/modules/modulename</p>
+
+<p>The first of these files contains the basic module information. This can be as basic as this...</p>
+
+<p>name = modulename<br />
+description = what your module does<br />
+package = Other</p>
+
+<p>You then put the PHP code for the hooks you wish to implement into the *.module file. Hooks are documented on api.drupal.org. All your hooks start with the module name, as per the config file, and your filenames. For this example the content of the modulename.module file would be as follows:</p>
+
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/**<br />* Implementation of hook_auth()<br />*/<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">modulename_auth</span><span style="color: #007700">(</span><span style="color: #0000BB">$username</span><span style="color: #007700">, </span><span style="color: #0000BB">$pass</span><span style="color: #007700">, </span><span style="color: #0000BB">$server</span><span style="color: #007700">) {<br /></span><span style="color: #FF8000">// Does username exist in our clients database?<br /></span><span style="color: #0000BB">$results </span><span style="color: #007700">= </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT login, password FROM clients WHERE login = '%s' AND password = '%s'"</span><span style="color: #007700">,</span><span style="color: #0000BB">$username</span><span style="color: #007700">,</span><span style="color: #0000BB">$pass</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$row1 </span><span style="color: #007700">= </span><span style="color: #0000BB">db_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$results</span><span style="color: #007700">);<br />if (</span><span style="color: #0000BB">$row1</span><span style="color: #007700">) {<br />global </span><span style="color: #0000BB">$modulename_authenticated</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$modulename_authenticated </span><span style="color: #007700">= </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;<br />return </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;<br />}<br />else {<br />return </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">;<br />}<br />}<br /><br /></span><span style="color: #FF8000">/**<br />* Implementation of hook_user()<br />*/<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">modulename_user</span><span style="color: #007700">(</span><span style="color: #0000BB">$op</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">$edit</span><span style="color: #007700">, &amp;</span><span style="color: #0000BB">$account</span><span style="color: #007700">, </span><span style="color: #0000BB">$category </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">) {<br />switch(</span><span style="color: #0000BB">$op</span><span style="color: #007700">) {<br />case </span><span style="color: #DD0000">'insert'</span><span style="color: #007700">:<br /></span><span style="color: #FF8000">// a new user is being added; check if we did authentication,<br /></span><span style="color: #007700">global </span><span style="color: #0000BB">$modulename_authenticated</span><span style="color: #007700">;<br />if (</span><span style="color: #0000BB">$modulename_authenticated</span><span style="color: #007700">) {<br /></span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">db_result</span><span style="color: #007700">(</span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT email FROM clients WHERE login = '%s'"</span><span style="color: #007700">,</span><span style="color: #0000BB">$account</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">// Set email address in the user table for this user<br />// You might want to set up some other parts of the user record here too<br /></span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"UPDATE {users} SET mail = '%s', name = '%s' WHERE uid = %d"</span><span style="color: #007700">, </span><span style="color: #0000BB">$result</span><span style="color: #007700">, </span><span style="color: #0000BB">$account</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">, </span><span style="color: #0000BB">$account</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">uid</span><span style="color: #007700">);<br />}<br />}<br />}<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>You will need to adapt the actual authentication code to match your requirements.</p>
+
+<p><strong>Update 2:</strong></p>
+
+<p>The normal login process will call your custom authentication when the built in login process fails.</p>
+
+<p>The process is as follows:</p>
+
+<p><ul><li>user submits login information</li>
+<li>drupal checks if user is blocked, if so message is displayed and login fails</li>
+<li>drupal then attempts to load the user locally
+<ul><li> if this is successful then the user object is loaded and drupal fires the load and login hooks. the user is then directed towards the &#39;user&#39; page.</li>
+<li>    if user is not found locally then drupal will call external authentication</li>
+</ul></li>
+</ul><p>External authentication involves firing the auth hook, and on success either validating an existing user or creating a new user object. When a user is created this way a record is stored in the authmap table that confirms which module validates this user login.</p></p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

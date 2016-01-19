@@ -1,21 +1,832 @@
----
-layout: none
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
-                <title>{{ site.name | xml_escape }} - Miscellaneous</title>
+                <title>Darren Mothersele - Miscellaneous</title>
                 <description>Posts categorized as 'misc'</description>
-                <link>{{ site.url }}</link>
-                <atom:link href="{{ site.url }}/misc/rss.xml" rel="self" type="application/rss+xml" />
-                {% for post in site.categories.misc limit:10 %}
+                <link>http://www.darrenmothersele.com</link>
+                <atom:link href="http://www.darrenmothersele.com/misc/rss.xml" rel="self" type="application/rss+xml" />
+                
                         <item>
-                                <title>{{ post.title | xml_escape }}</title>
-                                <description>{{ post.content | xml_escape }}</description>
-                                <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-                                <link>{{ site.url }}/{{ post.url }}</link>
-                                <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+                                <title>Happy Birthday Bucky! How do we celebrate Buckminster Fuller?</title>
+                                <description>&lt;p&gt;Buckminster Fuller (aka Bucky) was born on this day (12th July) in 1895. He was one of the most significant thinkers of the 20th century, the developer of the geodesic dome, and the first person to live consciously as a global citizen.&lt;/p&gt;
+
+&lt;p&gt;But, despite the importance of his ideas, he&amp;#39;s relatively obscure and largely unknown by the majority of the population.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Guinea Pig B&lt;/h2&gt;
+
+&lt;p&gt;Bucky lived his life as &amp;quot;an experiment, to find what a single individual can contribute to changing the world and benefiting all humanity.&amp;quot; His 56 year experiment started in 1927 when contemplating suicide during a bout of severe depression. It was after the death of his first daughter, and the failure of the company he started, he was an unemployed and became an alcoholic. On the brink of suicide he had an epiphany.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“I could commit an exclusively ego-suicide – a personal ego ‘throwaway’.”
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From this point onwards he lived his life as an experiment, and a demonstration of what an individual can do to help change the world.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;I vowed to keep myself alive, but only if I would never use me again for just me. I vowed to do my own thinking, instead of trying to accommodate everyone else&amp;#39;s opinion, credos and theories. I vowed to apply my own inventory of experiences to the solving of problems that affect everyone aboard planet Earth.&amp;quot;
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bucky&amp;#39;s life (experiment) provides a framework for each and every one of us to overcome ego. Instead of feeling like a failure, we learn to understand negative events and use them to grow.&lt;/p&gt;
+
+&lt;h2&gt;Cooperation&lt;/h2&gt;
+
+&lt;p&gt;His work really resonates with me because he believed in the power of
+cooperation. He sums up this goal in the introduction to &amp;quot;Operating Manual for Spaceship Earth&amp;quot;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;To make the world work for 100 percent of humanity in the shortest possible time through spontaneous cooperation without ecological damage or disadvantage to anyone.&amp;quot;
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;He didn&amp;#39;t believe in the idea of scare resources. He was convinced there was enough to go around for all, and that there was no energy crisis, food crisis or environmental crisis, only a &amp;quot;crisis of ignorance.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;So strong was his conviction that he lived his life on the brink of bankruptcy. He never did anything just for the money, but went ahead with complete faith that the universe would provide for him and his family. He found that when he was on the right track, this would always be the case.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;It is now highly feasible to take care of everybody on Earth at a higher standard of living than any have ever known. It no longer has to be you or me. Selfishness is unnecessary. War is obsolete. It is a mater of converting the high technology from weaponry to livingry.&amp;quot;
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And one final, powerful quote from Bucky...&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“Never forget that you are one of a kind. Never forget that if there weren&amp;#39;t any need for you in all your uniqueness to be on this earth, you wouldn&amp;#39;t be here in the first place. And never forget, no matter how overwhelming life&amp;#39;s challenges and problems seem to be, that one person can make a difference in the world. In fact, it is always because of one person that all the changes that matter in the world come about. So be that one person. ”
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/be-the-change2.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;Be the change&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Thanks Bucky!&lt;/h2&gt;
+
+&lt;p&gt;I commemorate Bucky&amp;#39;s birthday today by starting work on my own &amp;quot;Chronofile&amp;quot;.
+Bucky&amp;#39;s &lt;a href=&quot;https://en.wikipedia.org/wiki/Dymaxion_Chronofile&quot;&gt;Dymaxion Chronofile&lt;/a&gt; was the way in which
+he documented his life.
+This follows on very nicely from the discussions I was having yesterday at the &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;Indie Web Camp&lt;/a&gt;
+but that&amp;#39;s a story for another day...&lt;/p&gt;
+</description>
+                                <pubDate>Sun, 12 Jul 2015 00:00:00 +0100</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</guid>
                         </item>
-                {% endfor %}
+                
+                        <item>
+                                <title>How to Be a Cloud Survivalist (part 3)</title>
+                                <description>&lt;p&gt;This is the third post in a series where I document the process of
+implementing your own suite of cloud services. I covered the requirements
+in the &lt;a href=&quot;/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/&quot;&gt;previous post&lt;/a&gt;,
+and in this instalment I take a deeper look at what it takes to run your own email service.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h3&gt;Email server overview&lt;/h3&gt;
+
+&lt;p&gt;Setting up an email server has a reputation for being
+incredibly complicated, and needing a lot of work to keep safe and secure.
+The reasons for this are two fold: There are a lot of bits of
+technology involved in sending and delivering email, and secondly,
+there are a lot of criminals out there looking for vulnerable servers to
+exploit in order to send spam.&lt;/p&gt;
+
+&lt;p&gt;The main components of a mail system are&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mail User Agent (MUA) is the application you use to create, view, send and receive mail.&lt;/li&gt;
+&lt;li&gt;Mail Transfer Agent (MTA) is the SMTP bit of email. Simple Mail Transfer
+Protocol (SMTP) is the protocol for passing messages between servers. Common
+Linux MTAs are Postfix, Exim or Sendmail.&lt;/li&gt;
+&lt;li&gt;A Mail Delivery Agent (MDA) deal with getting the messages to the local mail
+storage (mailboxes). On Linux MDA this could be procmail, maildrop, or part of what Dovecot does.&lt;/li&gt;
+&lt;li&gt;Mail Storage Server (MSS) deals with delivering mail to the MUA. This is the bit
+that implements the other mail protocols you&amp;#39;re familiar with such as IMAP and POP.
+On Linux this could be Dovecot or Courier.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You will also need:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Some way to manage users, domains and mailboxes. You can use OS user accounts
+but more commonly you would use a more scalable option such as LDAP.&lt;/li&gt;
+&lt;li&gt;Virus and malware scanning.&lt;/li&gt;
+&lt;li&gt;A database for storing settings and other info, SQLite, MariaDB or MySQL.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While researching the various options, and looking at how to configure them
+to work together I came across &lt;a href=&quot;http://www.iredmail.org/&quot;&gt;iRedMail&lt;/a&gt;,
+a fully-fledged email solution. It doesn&amp;#39;t re-implement any existing technology
+and instead builds on top of popular and robust open-source projects, it uses
+your OS package manager to install the requirements, and then configures
+each bit to work together. It can be configured to use LDAP or MySQL as a
+back-end for storing user accounts.&lt;/p&gt;
+
+&lt;h3&gt;Getting started&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m going to demonstrate the process of setting up an email server using a
+VPS server at Digital Ocean, and I&amp;#39;m going to use Ubuntu 12.04 because that
+is the OS I&amp;#39;m most familiar with. The process should be pretty similar for your
+own choice of host and OS.&lt;/p&gt;
+
+&lt;h3&gt;Deliverability&lt;/h3&gt;
+
+&lt;p&gt;In &lt;a href=&quot;/blog/2013/12/11/how-to-be-a-cloud-survivalist/&quot;&gt;How to Be a Cloud Survivalist (part 1)&lt;/a&gt;,
+I mentioned that when you run your own mail server there is a higher chance that
+receiving servers will flag your email as spam. There are various mechanisms
+that have been developed for identifying bogus email, and we have to configure
+various things to get around this and prevent our email being flagged as spam.&lt;/p&gt;
+
+&lt;p&gt;The first of these measures is to ensure you have a valid PTR record setup
+for your server in the DNS. A PTR record does the opposite of what an A record
+does. With a A record you are telling the DNS system what IP address to go to
+for a given domain name. A PTR record registers a domain name for a given IP
+address so it is also called a reverse DNS record.&lt;/p&gt;
+
+&lt;p&gt;A PTR record is used to check that the sending server name is actually
+associated with the IP address from which the connection was initiated. So,
+in email sending, the receiving server can find the server name using a
+reverse DNS lookup, then check this matches against the mail server settings
+for the email domain of the sender.&lt;/p&gt;
+
+&lt;p&gt;If you control the authoritative DNS for the IP address of the server you
+are using then you will need to &lt;a href=&quot;http://www.itworld.com/networking/362601/how-setup-reverse-dns-and-ptr-records&quot;&gt;configure the reverse DNS records yourself&lt;/a&gt;, otherwise you&amp;#39;ll have
+to contact your ISP or hosting company. I&amp;#39;m using Digital Ocean, and they
+automatically configure the PTR record to match the hostname you use when
+you provision your server.&lt;/p&gt;
+
+&lt;h3&gt;STEP 1: Provision server&lt;/h3&gt;
+
+&lt;p&gt;As discussed above, in order to get the correct PTR record for the server,
+enter a name for the server that matches the name you will be using when you
+assign the server as a mail server in your email domain&amp;#39;s DNS records.&lt;/p&gt;
+
+&lt;p&gt;You can&amp;#39;t actually create the DNS settings for the domain until you&amp;#39;ve
+provisioned the server and know it&amp;#39;s IP address. I&amp;#39;ll assume you&amp;#39;re going to
+be using &lt;em&gt;example.com&lt;/em&gt; as your main domain, and so we&amp;#39;ll use
+&lt;em&gt;mx.example.com&lt;/em&gt; for the server name.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/01-create.png&quot; alt=&quot;Screenshot of provisioning server&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve selected a 1GB instance as the iRedMail requirements suggest this much
+memory if you are going to enable spam filtering of incoming email.&lt;/p&gt;
+
+&lt;h3&gt;STEP 2: Register domain, DNS settings&lt;/h3&gt;
+
+&lt;p&gt;After you have registered your name (I&amp;#39;ll stick to convention and use
+&lt;em&gt;example.com&lt;/em&gt; in the examples), you should set up some DNS settings.
+The process for doing this will depend on where where you registered your domain.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#39;t have any recommendations
+for domain registrars. This time I used 123-reg, but I&amp;#39;m not going to recommend
+them because they have told me they are NOT implementing
+2-factor authentication and they have no plans to do so.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m using a separate domain
+for setting up email services, so I&amp;#39;ve registered a cheap £9 SSL cert for that
+domain just to get rid of browser security warnings. This only certifies one domain
+so be sure to use the domain name you want to be using for your mail server
+settings, and not the same as your website (if you have one) as you don&amp;#39;t want
+to tie your website to the same domain as your email as you probably want to
+run them on separate servers.&lt;/p&gt;
+
+&lt;p&gt;So, if you&amp;#39;re using &lt;em&gt;mail.example.com&lt;/em&gt; or &lt;em&gt;example.com&lt;/em&gt; (depending on your SSL cert)
+create A records that point at the IP address of the server you configured in the
+last step.&lt;/p&gt;
+
+&lt;p&gt;Also, create an A record for &lt;em&gt;mx.example.com&lt;/em&gt; and point this at the IP
+address of the server. Then create an MX record for your domain and point it at
+&lt;em&gt;mx.example.com&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should check the certification process for registering your SSL certificate,
+as the site I used required sending an email to the domain as part of the ownership
+verification process. Obviously, you will need to have email setup in order to do this
+so you may have to come back to SSL setup once you have email up and running
+with a self-signed certificate.&lt;/p&gt;
+
+&lt;p&gt;An SPF record is another measure in the battle against spam. This is a record in
+the DNS for a domain that specifies which hosts are allowed to send email on
+behalf of this domain. You will need to create this (as a TXT record) in the
+DNS for every domain name you will be hosting email for.
+The SPF record should look like this, but with x.x.x.x replaced with your
+server IP address:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;v=spf1 ip4:x.x.x.x -all&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are also DNS records that need to be created for DKIM but I&amp;#39;ll explain what
+this is all about in a bit, as you need to configure the mail server first.&lt;/p&gt;
+
+&lt;h3&gt;STEP 3: Install iRedMail&lt;/h3&gt;
+
+&lt;p&gt;I selected to add my SSH key to the server when I provisioned it, so
+login is straightforward, and doesn&amp;#39;t need a password. First thing I do
+is add a Linux account for myself, so I don&amp;#39;t have to login as the root
+user, give myself sudo privileges, disable root and password logins via SSH,
+and update all packages with &lt;em&gt;ap-get update ; apt-get upgrade&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now on to configure iRedMail. You&amp;#39;ll need sudo access for this. So, as the root
+user, download and extract the iRedMail package:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /root
+wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
+tar xjf iRedMail-0.8.6.tar.bz2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then change into the iRedMail directory and execute the installer:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd iRedMail-0.8.6/
+bash iRedMail.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You should then be presented with this welcome screen. Please note that I
+took these screenshots last week and so they are of v0.8.5.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/03-welcome.png&quot; alt=&quot;iRedMail welcome screen&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you go past the welcome screen you will see a series of screens that
+prompt you for various bits of information. First select the
+location on the file system to store the mail boxes. I see no reason not
+to go with the default:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/04-storage.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Select a back-end to use for storage of user accounts. I prefer LDAP for this
+as I&amp;#39;ll be using it to integrate with some of the other components of my cloud
+services in addition to email.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/05-db.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;When you create your LDAP suffix, work from just the domain name. So, even though
+the server name is &lt;em&gt;mx.example.com&lt;/em&gt;, you should just use &lt;em&gt;example.com&lt;/em&gt;
+to calculate your LDAP suffix. In fact, I&amp;#39;m going to add extra domains later
+and I&amp;#39;m not really going to use this domain name for user accounts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/06-ldap.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure you generate a secure (truly random) password for the LDAP root:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/07-ldap-pass.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Enter the domain name for this server. This is going to be the domain name you use
+in email settings later. It should match the domain name that you have (or will)
+generate the SSL certificate for:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/08-domain.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;There are some optional extras you can install. I&amp;#39;m going to install all of them
+except the phpMyAdmin and phpLDAPadmin as I don&amp;#39;t want to maintain these two
+bits of software. phpMyAdmin in the past has been a source of security vulnerabilities
+and I&amp;#39;m not going to use it anyway, so no point having it installed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/09-options.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;#39;ve provided values for all the options the configuration will continue
+automatically and you will see progress reported. You will see a couple of questions
+along the way that you can answer y/n to.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/10-progress.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;iRedMail has now finished installing and configuring the packages, during this process
+it created some firewall rules. I&amp;#39;m just going check what they
+are using &lt;code&gt;sudo iptables -L&lt;/code&gt;, once I&amp;#39;ve confirmed I&amp;#39;m happy with them
+I reboot the server.&lt;/p&gt;
+
+&lt;p&gt;Once the server has finished rebooting and it back online, I browse to my domain in a web browser and I
+see this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/11-ssl-error.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Configure iRedMail to use custom SSL certificate&lt;/h3&gt;
+
+&lt;p&gt;When you install iRedMail it creates it&amp;#39;s own self-signed certificate
+for SSL communication. In order to get rid of browser warnings I&amp;#39;m going to
+install my own certificate.&lt;/p&gt;
+
+&lt;p&gt;After verifying ownership of the domain name I was given two files. The first
+is my actual certificate, the second is the chain of certificates that verify
+my certificate. I also have the private key I used when creating the
+certificate signing request. I need all three of these files, so I upload them
+to the server and move them to the appropriate places. Put the private key in
+&lt;code&gt;/etc/ssl/private&lt;/code&gt;, and the other two files in &lt;code&gt;/etc/ssl/certs&lt;/code&gt;
+so you have something that looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/ssl/private/example.com.key
+/etc/ssl/certs/example.com.crt
+/etc/ssl/certs/example.com.ca.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now in your Apache configuration (&lt;code&gt;/etc/apache2/sites-enabled/default-ssl&lt;/code&gt;)
+find the appropriate place for SSL keys, remove the references to self-signed
+certificates, and enter location of your SSL certs and keys:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;SSLCertificateFile /etc/ssl/certs/example.com.crt
+SSLCertificateKeyFile /etc/ssl/private/example.com.key
+SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once you restart Apache that should remove the browser warnings. We also need to
+update the certificates in use by dovecot and postfix to prevent SSL error
+messages when sending and receiving email via other apps.&lt;/p&gt;
+
+&lt;p&gt;For dovecot and postfix we don&amp;#39;t use separate chain and cert files, so we need
+to concatenate them into a single file (eg &lt;code&gt;/etc/ssl/certs/example.chain.cert&lt;/code&gt;),
+in this order:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Your public SSL certificate&lt;/li&gt;
+&lt;li&gt;The provided CA certificate&lt;/li&gt;
+&lt;li&gt;Any other root CA certificate for signer of your SSL&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For incoming email
+(IMAP/POP) update the dovecot configuration in &lt;code&gt;/etc/dovecot/dovecot.conf&lt;/code&gt;
+and update the following to point at your cert and key files:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ssl_key_file = /etc/ssl/private/example.com.key
+ssl_cert_file = /etc/ssl/certs/example.chain.key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;smtpd_tls_key_file = /etc/ssl/private/example.com.key
+ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now restart the services so the changes take effect.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service apache2 restart
+sudo service postfix restart
+sudo service dovecot restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You should now be able to connect to iRedAdmin and Roundcube via the web
+interface without getting SSL error messages.&lt;/p&gt;
+
+&lt;h3&gt;DomainKeys Identified Mail&lt;/h3&gt;
+
+&lt;p&gt;One more bit of configuration that needs setting up is DKIM. This is another
+change to make to the DNS records that helps ensure deliverability of emails
+and that you wont get flagged as a spammer or unknown mail server.&lt;/p&gt;
+
+&lt;p&gt;DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
+a list of the keys.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;amavisd-new showkeys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You will see something like the following output:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;; key#1, domain example.com, /var/lib/dkim/example.com.pem
+dkim._domainkey.example.com. 3600 TXT (
+  &amp;quot;v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
+  ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the DNS settings for your domain, create a new TXT record for dkim._domainkey
+and enter the whole string that is shown between () in the output of the showkeys
+command.  Once you have created the DNS record, you will need to wait a while for
+the change to propagate, then you can test your keys are working correctly with
+the testkeys command:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# amavisd-new testkeys
+TESTING#1: dkim._domainkey.example.com    =&amp;gt; pass
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once you have verified that the key is working here, you can use a verification
+service to test deliverability of your email. I found the port25 service useful,
+all you have to do is send an email to check-auth@verifier.port25.com and you will
+get a response with lots of useful information, summarised like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cloud-pt3/12-verify.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Configure mail client&lt;/h3&gt;
+
+&lt;p&gt;You should now be ready to start using your email server. When you setup your
+account you will probably have to select &amp;quot;Manual configuration&amp;quot;, or if a list
+of standard email providers is listed then select &amp;quot;Other&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;The server address is
+your domain (example.com), you should select IMAP for incoming mail. Note
+that the mail server is example.com and not imap.example.com which some
+software defaults to. Make sure you use the full email address as the account
+name, else you may be prompted for a &amp;quot;prefix&amp;quot;. The outgoing email server is SMTP
+and again is on example.com and not smtp.example.com as some apps will default to.&lt;/p&gt;
+
+&lt;h3&gt;Adding an extra domain to iRedMail&lt;/h3&gt;
+
+&lt;p&gt;I wanted to add accounts for friends and have email hosted for some other domain
+names. Here&amp;#39;s how to add an extra domain name to iRedMail.&lt;/p&gt;
+
+&lt;p&gt;The first, simple, step is to add the domain to iRedAdmin. I wont explain this
+as it&amp;#39;s very straightforward. Once you&amp;#39;ve done that you need to add the domain
+to the DKIM configuration.&lt;/p&gt;
+
+&lt;p&gt;Login as root to the server, change into the folder where DKIM keys are stored
+and generate a new key for the domain:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /var/lib/dkim
+amavisd-new genrsa test.com.pem
+chmod 0644 test.com.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now edit the confuration file at &lt;code&gt;/etc/amavis/conf.d/50-user&lt;/code&gt;
+to include the new key. Find the section in the configuration file where
+keys are declared and add:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;dkim_key(&amp;quot;test.com&amp;quot;, &amp;quot;dkim&amp;quot;, &amp;quot;/var/lib/dkim/test.com.pem&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then find where the local domains are defined (in the same config file) and add your new domain:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@local_domains_maps = [&amp;#39;mx.example.com&amp;#39;, &amp;#39;example.com&amp;#39;, &amp;#39;test.com&amp;#39;];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Restart &lt;code&gt;amavis&lt;/code&gt; and show the new list of keys. You should see your
+new key listed. Copy the TXT record and add it to the DNS for the new domain:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/init.d/amavis restart
+amavisd-new showkeys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Also remember to add the SPF record to the new domain, and set the MX records
+so they point at mx.example.com.&lt;/p&gt;
+
+&lt;p&gt;You may want to send an email to check-auth@verifier.port25.com from the new
+domain just to check everything is working correctly.&lt;/p&gt;
+
+&lt;h3&gt;Check logs&lt;/h3&gt;
+
+&lt;p&gt;Once you start using your new email server you will want to check the logs now
+and again to check everything is running OK. I looked in &lt;code&gt;/var/log/mail.log&lt;/code&gt;
+and noticed a couple of real emails being rejected. To be fair it was actually
+due to misconfiguration of the sending mail server, but I still wanted these emails
+to get through.&lt;/p&gt;
+
+&lt;p&gt;I had comment out the following line from &lt;code&gt;/etc/postfix/helo_access.pcre&lt;/code&gt;
+to allow these messages through:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/\.local$/                  REJECT Go away, bad guy (.local).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Syncing&lt;/h3&gt;
+
+&lt;p&gt;Now I&amp;#39;ve got email working, and thanks to IMAP, I have my email accessible
+across all my devices.
+In the next post in this series I&amp;#39;m going to take a slight detour while I look
+more at what is possible now I have a working LDAP server for my domain.
+Then I&amp;#39;m going to quickly move on to implementing other cloud services, in particular
+the synchronisation of other data across my devices, like calendars and contacts.&lt;/p&gt;
+</description>
+                                <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/</guid>
+                        </item>
+                
+                        <item>
+                                <title>How to Be a Cloud Survivalist (part 2)</title>
+                                <description>&lt;p&gt;This is the second in a series of posts where I document the process of
+implementing your own suite of cloud services.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Yesterday, in &lt;a href=&quot;/blog/2013/12/11/how-to-be-a-cloud-survivalist/&quot;&gt;How to Be a Cloud Survivalist (part 1)&lt;/a&gt;, I discussed why you might want to do this. Just in case I didn&amp;#39;t provide enough motivation in yesterday&amp;#39;s article
+here&amp;#39;s a quote from Richard Stallman&amp;#39;s &lt;a href=&quot;http://stallman.org/stallman-computing.html&quot;&gt;How I do my Computing&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+People sometimes ask me to recommend an email service. The two ethical issues for an email service are (1) whether you can use it without running any non-free software,
+and (2) whether it respects your privacy... I have no way to verify that any email service is satisfactory. Therefore, I have no recommendation to offer.
+However, I can suggest that it may be wise to use an email service that is not connected with your search engine. That way you can be almost sure that your email contents don&#39;t influence your search results. You shouldn&#39;t identify yourself to your search engine in any case.
+&lt;br&gt;&amp;mdash; Richard Stallman
+&lt;/blockquote&gt;
+
+&lt;p&gt;As Stallman points out, there&amp;#39;s no way to verify that any email service
+truly respects your privacy, so let&amp;#39;s build our own! We are dealing with more
+than just email here, so today I put together a requirements list, and look at
+some of the options.&lt;/p&gt;
+
+&lt;h3&gt;Get your own domain name&lt;/h3&gt;
+
+&lt;p&gt;Like most people of my age, my first email address was linked with my
+ISP. Perhaps it made sense at the time that the place I dialled into for an
+internet connection was the place that collected my emails, but of course, it wasn&amp;#39;t
+long before I changed ISP and my email address changed. Then I went off to
+university and was given a brand new academic email address.&lt;/p&gt;
+
+&lt;p&gt;While at university I realised that I could have my own online identity, so I
+registered my own surname as a domain. I naively registered the domain for free with a company that offered a free domain registration in exchange for using their email and
+ISP services. Maybe this should have taught me the real cost of free, because
+of course, this company eventually went bankrupt, taking my lovely personalised
+domain name with it. I wasn&amp;#39;t lucky enough to grab the domain when it eventually
+was released back into the registration pool, so I lost it forever.&lt;/p&gt;
+
+&lt;p&gt;I started my first company in 2005, and started using that as my main email address,
+but then after the company was acquired I needed to change email address again.
+At this point I&amp;#39;d learnt my lesson, I purchased darrenmothersele.com and I&amp;#39;ve been
+here ever since, and I don&amp;#39;t plan on leaving.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re reading this then I&amp;#39;d take a guess that email is a predominant
+form of communication for you. I&amp;#39;d be interested to know what percentage of you
+are using your own domain name as your email address. Are you? Or, are you using Gmail, Hotmail, your ISP, your work? When you can register a &lt;em&gt;.co.uk&lt;/em&gt; for 3 years for about &amp;pound;10, there&amp;#39;s really no excuse.&lt;/p&gt;
+
+&lt;p&gt;The only thing more upsetting than seeing my friends and colleagues using a third
+party email address is seeing Joe the Plumber with his BT Internet email address
+printed on the side of his van.&lt;/p&gt;
+
+&lt;p&gt;Hopefully I&amp;#39;ve persuaded you to get your own domain name, but you&amp;#39;re
+going to need one anyway to run your own cloud services from, so how do you
+pick a good one? On &lt;a href=&quot;http://thenextweb.com/lifehacks/2013/07/03/why-you-should-own-a-truly-personal-domain-name-and-how-to-make-the-most-of-it/&quot;&gt;The Next Web&lt;/a&gt;, Boris suggests:&lt;/p&gt;
+
+&lt;blockquote&gt;
+Try to avoid using something funny. Look at it like this: you want this name to last you 50 years. Use your last name, or a combination of your last name and first name, and keep it simple.
+&lt;/blockquote&gt;
+
+&lt;h3&gt;SSL Certificate&lt;/h3&gt;
+
+&lt;p&gt;You will need an SSL Certificate to go along with your domain. These typically
+cost upwards of &amp;pound;50 per year, with the price varying depending on much
+verification they provide (how well they guarantee you are who you say you
+are), how many (sub)domains they certify, and how much warranty they provide.&lt;/p&gt;
+
+&lt;p&gt;SSL gives you an encrypted tunnel from your computer to the server, and we&amp;#39;ll
+be using that for all communication, sending emails, syncing files, etc.
+You can use a self-signed certificate if you don&amp;#39;t mind the browser warnings,
+or go for one of the cheaper &amp;pound;9 per year SSL certificates that don&amp;#39;t have
+the same level of vetting as the more professional ones, but are enough to get rid of the browser warnings if you are planning on opening up your services to other users.&lt;/p&gt;
+
+&lt;h3&gt;Server&lt;/h3&gt;
+
+&lt;p&gt;If you want to be a true cloud survivalist then you will want to host your
+own server at home. You&amp;#39;ll need a good, reliable internet connection,
+with decent upstream bandwidth and a UPS or backup power supply.
+I&amp;#39;m not sure I can meet these requirements, and I don&amp;#39;t really want a
+server in my house, so I&amp;#39;m using a hosting company for this.
+I&amp;#39;m not too concerned at this stage as long as I have my own server
+that is under my control.&lt;/p&gt;
+
+&lt;p&gt;You need to find a hosting company that you like and trust. This depends on
+what your priorities are, personally I look for price, speed, reputation,
+amount of effort they put into providing developer documentation, API, privacy,
+and use of renewable energy sources.&lt;/p&gt;
+
+&lt;p&gt;In the example configurations to follow in later parts of the series I&amp;#39;m using
+a cloud server from &lt;a href=&quot;https://www.digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt; that
+has 1GB of memory. This will cost you &amp;#36;10 per month. We&amp;#39;re starting with
+just the one server, but in a future instalment I&amp;#39;ll talk about the possibility
+of adding a second backup server, and other alternative strategies for
+dealing with failure and backup.&lt;/p&gt;
+
+&lt;p&gt;Digital Ocean have a data-centre in Amsterdam, which may be good news for those
+of you with surveillance concerns as the Netherlands has strict privacy laws.
+I couldn&amp;#39;t find any mention renewable energy sources in their feature lists, but
+they do have all SSD drives, which are faster, more efficient, and lower power
+than regular hard-drives.&lt;/p&gt;
+
+&lt;h3&gt;Software&lt;/h3&gt;
+
+&lt;p&gt;Before deciding exactly what software I need, or looking at the options, I&amp;#39;m
+going to summarise my requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Multi-user, and multi-domain: If I&amp;#39;m going to all this effort I should at
+least make it available to other friends and family if they want it. So I will
+need some way to manage users and add new domains. I&amp;#39;m using a Linux server so
+I could just use server accounts, but I&amp;#39;m probably going to want something more
+scalable than this, like LDAP.&lt;/li&gt;
+&lt;li&gt;Email: I need the ability to receive, store, and send email. I&amp;#39;ve mainly used
+Gmail&amp;#39;s IMAP to access mail on my devices, but I do occasionally need to login
+via the web, so webmail access will be needed too.&lt;/li&gt;
+&lt;li&gt;Calendar and contacts: I like to synchronise my calendars and contacts across
+all my devices, so some implementation of Carddav, caldav or similar will be required.
+I also have calendars I share with other people, so some way to manage that would
+be good.&lt;/li&gt;
+&lt;li&gt;File storage: I need somewhere to store my files, and preferably have them
+synchronised across my devices. I&amp;#39;ve been using Dropbox for this, but would like
+to see this form part of my own cloud services.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to those initial requirements, there&amp;#39;s some other nice to have features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Collaborative document editing: I do sometimes use Google Docs to work on
+documents with other people. I&amp;#39;ll probably have to keep my Google account for
+this purpose, unless I can find a good alternative.&lt;/li&gt;
+&lt;li&gt;Notes: I&amp;#39;ve been using Evernote for jotting down ideas, documenting and writing while on the move so that it automatically syncs to my main computer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And finally, for future consideration:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Social: The one thing I do miss from Facebook is the ability to easily create
+a group to communicate with friends. I&amp;#39;ll look at some options for this including
+setting up private email discussions groups.&lt;/li&gt;
+&lt;li&gt;Analytics: I&amp;#39;ve been using Google Analytics on various sites I&amp;#39;ve worked on, but I&amp;#39;ve been meaning to try out some of the open-source alternatives.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are some other cloud services that I may look at moving to my own cloud,
+but for now these are the core bits of technology I need to replace.&lt;/p&gt;
+
+&lt;h3&gt;Coming up...&lt;/h3&gt;
+
+&lt;p&gt;In the next post I&amp;#39;ll take a more detailed look at Email, and actually start setting up the server.
+We&amp;#39;ll look at how to reliably send email that doesn&amp;#39;t get caught in spam filters,
+and look at simple way to set-up the full stack of email server software using
+&lt;a href=&quot;http://www.iredmail.org/&quot;&gt;iRedMail&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After that, I&amp;#39;ll take a look at integrating &lt;a href=&quot;http://drupal.org&quot;&gt;Drupal&lt;/a&gt; and
+&lt;a href=&quot;http://owncloud.org/&quot;&gt;ownCloud&lt;/a&gt; to provide some of the other cloud services
+I&amp;#39;m looking for.&lt;/p&gt;
+</description>
+                                <pubDate>Thu, 12 Dec 2013 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/</guid>
+                        </item>
+                
+                        <item>
+                                <title>How to Be a Cloud Survivalist (part 1)</title>
+                                <description>&lt;p&gt;This is the first in a series of posts where I document the process of
+implementing your own suite of cloud services.&lt;/p&gt;
+
+&lt;p&gt;With a little bit of effort you can quite easily set-up your own suite of
+cloud services to rival the likes of Google. If you&amp;#39;re concerned about
+communication surveillance programs, selling of your personal data to
+advertisers, security breaches, or maybe you just want to own and control your own data, there are some great options out there.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;A few months ago there was an article in Scientific American by Wendy Grossman
+called &lt;a href=&quot;http://www.scientificamerican.com/article.cfm?id=how-to-be-an-e-mail-survivalist&quot;&gt;How to Be an E-Mail Survivalist&lt;/a&gt;. In this article Wendy
+discusses the pros and cons of running your own email service. I&amp;#39;m going to
+ignore the fact that the article fails to mention any of the solid, robust,
+open source mail server projects, in favour of recommending some weird proprietary
+email server, as she makes a few interesting observations:&lt;/p&gt;
+
+&lt;blockquote&gt;
+In the early 2000s it was the height of geek fashion to run your own e-mail server - then along came Gmail with two gigabytes of free storage and excellent spam filtering. Now even most people with their own domain names use e-mail provided by Google, Microsoft or their Internet Service Provider (ISP).
+&lt;br&gt;&amp;mdash;&lt;cite&gt; Wendy Grossman&lt;/cite&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I used to run my own mail server until Gmail came along. Prior to that I had
+the headaches, the &amp;quot;occasional day of pain&amp;quot; as Wendy calls it,
+when things stopped working for seemingly no reason. Back then I was stupidly
+trying to run everything on one server. Not a good idea!&lt;/p&gt;
+
+&lt;p&gt;But, then Google came along and offered their slick Gmail interface and their
+reliable email servers for use with your own domain. And, they gave it away
+for free. All you had to do was give away ownership of your entire digital life
+to them. A small price to pay for reliable email service?&lt;/p&gt;
+
+&lt;h3&gt; A small price to pay?&lt;/h3&gt;
+
+&lt;p&gt;Maybe that seemed like a small price to pay at the time, but now I think
+we&amp;#39;re starting to realise the true costs. First up there&amp;#39;s the issue
+of government mass surveillance programmes. If you&amp;#39;re wondering what all the fuss is about, then you need to read this excellent article from the EFF, &lt;a href=&quot;https://www.eff.org/deeplinks/2013/11/busting-eight-common-excuses-nsa-surveillance&quot;&gt;Busting Eight Common Excuses for NSA Mass Surveillance&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next there&amp;#39;s the issue of T&amp;amp;Cs. Have you ever read one of these documents?
+What are you actually giving away when you
+tick that box and agree to the terms and conditions? Giving away ownership of
+data and the content you create? Agreeing that they&amp;#39;re not responsible if
+anything should happen to your data? Agreeing to sharing of your data with
+third parties? Remember that even
+&lt;a href=&quot;http://news.cnet.com/8301-13739_3-9826608-46.html&quot;&gt;anonymised data
+can be de-anonymised&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then, there&amp;#39;s the security issue. The news is full of high-profile security breaches, like customer data being stolen from Adobe, DropBox, Evernote and
+posted publicly on the internet. I know there&amp;#39;s nothing to say you will be
+able to implement any better security than these guys, but at least you&amp;#39;ll be
+less of a target. More importantly though, it&amp;#39;s under your control, so you
+can be as militant or relaxed about security as you wish.&lt;/p&gt;
+
+&lt;h3&gt;Fashionable again&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;ve recently been rethinking that decision to move everything to Google,
+and I&amp;#39;ve decided it&amp;#39;s probably about
+time it was fashionable to run your own email server again and take back
+control. But, now I&amp;#39;m expecting a lot more from my own set-up. It&amp;#39;s not just a
+reliable email service. I&amp;#39;m now looking for options to sync data (contacts,
+calendars, files) across all my devices, access them from anywhere, and share them with friends.  Luckily in the self-hosted options have come along leaps and bounds in recent years so you can literally run the suite of entire cloud services that we&amp;#39;ve come to expect.&lt;/p&gt;
+
+&lt;p&gt;This will require some digging about in the technical details of how
+all this stuff works. I&amp;#39;ve explained here the technology I&amp;#39;m using and how I&amp;#39;ve
+glued it all together, but this is far from a complete solution. On the plus
+side you don&amp;#39;t have to compromise at all on functionality:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;#39;ll be able to access your email, files, documents, music and photos from anywhere in the word, and have state of the art malware and spam protection.&lt;/li&gt;
+&lt;li&gt;You will own and control all your own data. It doesn&amp;#39;t completely protect you
+from surveillance, as you could always have your internet connection tapped, but
+that wasn&amp;#39;t a major concern for me. It certainly does make it harder though as your archive is under your control.&lt;/li&gt;
+&lt;li&gt;You&amp;#39;ll not be subject to automated analysis of your data (unless for some
+crazy reason you want to, but that&amp;#39;s the subject for future blog post!),
+no ad targeting, or selling on of your personal data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;There is something extraordinarily empowering about firing up e-mail software, connecting to your own server and retrieving your messages. Being in charge of a fundamental part of your communications life can restore your view of the Internet as a modern marvel. &lt;br&gt;&amp;mdash;&lt;cite&gt; Wendy Grossman&lt;/cite&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;There are a few downsides, which we&amp;#39;ll have to try and work around. One issue
+is that because your email is not coming from one of the big mail companies, there&amp;#39;s a higher chance that receiving servers will flag your email as spam. You also risk the chance of losing mails because of power outages or technical issues.
+There&amp;#39;s a few options to try and mitigate this which will be discussed in a
+future instalment when I look at backup and failure planning.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow, in part 2, I&amp;#39;ll be building up a list of requirements and looking at the various options that are available.&lt;/p&gt;
+
+&lt;p&gt;Continue to &lt;a href=&quot;/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/&quot;&gt;How to Be a Cloud Survivalist (part 2)&lt;/a&gt;&lt;/p&gt;
+</description>
+                                <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/12/11/how-to-be-a-cloud-survivalist/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/11/how-to-be-a-cloud-survivalist/</guid>
+                        </item>
+                
+                        <item>
+                                <title>Create, not consume. Leaving the walled-garden...</title>
+                                <description>&lt;p&gt;I&amp;#39;ve toyed with deleting my Facebook account before, and today I finally did
+it. I want the web to be a better place, and this is my contribution towards
+that.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Facebook has a well documented history of unethical behaviour, privacy
+concerns and bullying, but that&amp;#39;s not really my main concern and there&amp;#39;s
+plenty of documentation about that so I don&amp;#39;t need repeat it all here.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s been a year since Anil Dash published
+&lt;a href=&quot;http://dashes.com/anil/2012/12/the-web-we-lost.html&quot;&gt;The Web we Lost&lt;/a&gt;,
+and the situation hasn&amp;#39;t really improved. In that article Anil laments the loss
+of the free open web we used to know, as we move towards the monolithic walled
+garden of the billion dollar social networks.&lt;/p&gt;
+
+&lt;p&gt;When I started using the internet in the mid 90s it was a wide open space of
+free information, and anyone could join, create, and post. Yeah, this may still
+be the case... but importantly the &lt;em&gt;default option&lt;/em&gt; was that you owned and
+controlled everything you posted online. When I got my first
+computer as a kid (Commodore 16 for anyone who&amp;#39;s interested), it booted
+straight to a BASIC interpreter when you turned it on. The &lt;em&gt;default
+option&lt;/em&gt; was to start creating things.&lt;/p&gt;
+
+&lt;p&gt;This is not the case today. We&amp;#39;ve traded control for simplicity, and the balance
+has shifted in favour of consuming, rather than creating.&lt;/p&gt;
+
+&lt;p&gt;The often touted &amp;#39;big-win&amp;#39; is that the usability, the mobile apps, and the
+simplicity of these networks like Facebook have widened the net and bought
+social web technology into the lives of everyone. Everyone can have a &amp;#39;digital
+life&amp;#39;... create posts, upload photos and share them with friends. But, what they
+don&amp;#39;t have is control over that &amp;#39;digital life&amp;#39;.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#39;t own a TV, but I do know people who spend all their free time glued to
+the TV watching mind-numbing rubbish. Likewise, I know people who&amp;#39;s instinctive action
+whenever they have a spare minute is to reach for their phone and check
+Facebook. I want to help people address the balance between creating and consuming.
+I want a better web, and I want to live in a world where more people are
+creators than consumers. I think projects like
+&lt;a href=&quot;https://webmaker.org/en-GB/&quot;&gt;Mozilla&amp;#39;s webmaker&lt;/a&gt; can help
+with this. But, the first step is to regain control...&lt;/p&gt;
+</description>
+                                <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/12/09/create-not-consume/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/09/create-not-consume/</guid>
+                        </item>
+                
+                        <item>
+                                <title>Hacker&#39;s Diet</title>
+                                <description>&lt;p&gt;The ketogenic diet. If you look around you&amp;#39;ll find loads of info about it used
+to treat epilepsy in children. That was until they discovered the drugs. Drugs
+are easier to administer than a diet so they switched to using them, despite the
+fact that the diet is probably more effective and safer!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://som.unm.edu/coc/docs/Ketodiet_eng_10Dec09.pdf&quot;&gt;Ketogenic diet&lt;/a&gt;
+involves putting your body into ketosis. You get energy from ketones instead of
+glucose. If you&amp;#39;re producing ketones then your body is using fat for energy,
+instead of using sugar (glucose) and storing the fat instead.&lt;/p&gt;
+
+&lt;p&gt;In the book &lt;a href=&quot;http://www.amazon.co.uk/Fat-Chance-bitter-truth-about/dp/0007514123
+&quot;&gt;Fat Chance&lt;/a&gt;, by a leading endocrinologist, it is argued that hormones play a
+vital role in all this. It covers the effects of insulin, leptin, and to some extent cortisol.
+You could say Fat Chance is an update of
+&lt;a href=&quot;http://www.amazon.co.uk/Pure-White-And-Deadly-killing/dp/0241965284&quot;&gt;Pure White and Deadly&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Fat Chance was
+&lt;a href=&quot;http://www.thelancet.com/journals/landia/article/PIIS2213-8587%2813%2970024-X/fulltext&quot;&gt;
+reviewed by The Lancet medical journal&lt;/a&gt;, who said:&lt;/p&gt;
+
+&lt;blockquote&gt;&quot;I fear that the serious messages and issues raised by this book are
+in danger of being dismissed by the way the message is delivered.&quot;&lt;/blockquote&gt;
+
+&lt;p&gt;So ignoring the americanised, self-helpy, writing style, that book basically
+explains the whole process of how insulin/leptin works in the body and how
+sugar fucks everything up.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.co.uk/Why-We-Get-Fat-about/dp/0307949435&quot;&gt;
+Why We Get Fat: And What to Do about It&lt;/a&gt; by Gary Taubes is another good
+book on the subject.&lt;/p&gt;
+
+&lt;p&gt;I started putting MCT (medium chain triacylglycerols) oil in my coffee. There&amp;#39;s
+quite a bit of &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed/11694608&quot;&gt;research&lt;/a&gt;
+(and &lt;a href=&quot;http://jn.nutrition.org/content/132/3/329.full&quot;&gt;here&lt;/a&gt;) about them,
+but basically I think replacing some of your fat intake with MCT oil shifts the balance
+of fat in your diet away from LCT to MCT which helps break down fat in your body.
+I&amp;#39;m not sure exactly how MCT oil works, but I did find that it makes you feel
+fuller for longer so you actually don&amp;#39;t want to eat as much.&lt;/p&gt;
+
+&lt;p&gt;Giving up carbs is hard, and I got headaches for a couple of weeks, but I felt much
+better and less lethargic while I was doing it. Just thinking about this again is making
+me want to get back into it... the only downside is it&amp;#39;s hard.&lt;/p&gt;
+
+&lt;p&gt;Who would have thought eating pork scratchings could ever get boring?!?&lt;/p&gt;
+
+&lt;p&gt;But it did work. I lost 2 stone in under 2 months, and I kept the weight off
+after I started re-introducing carbs back into my diet.&lt;/p&gt;
+
+&lt;p&gt;So, in terms of macro-nutrients, I switched towards Protein and Fat, reducing
+carbohydrate intake. I used the values in &lt;a href=&quot;http://aaron.emascc.com/diet/ebooks/Lyle_McDonald_-_The_Ketogenic_Diet.pdf&quot;&gt;this guide&lt;/a&gt; to try and work out how much I should be getting. But, in real life I just tried to eat less than 20g of carb per day. I found
+the balance between protein and fat by experimenting. I started eating too much
+protein and not enough fat. That gave me headaches so I had to increate the amount
+of fat in my diet. Once I got the balance between fat and protein right the headaches went away.&lt;/p&gt;
+
+&lt;p&gt;With your macro-nutrient intake sorted then theoretically you should get the
+micro-nutrients you need too. But, because of modern farming methods,
+transportation, and loads of other factors, we don&amp;#39;t get all the micro-nutrients
+we need from our food. So, you need to supplement. For example, almost everyone
+in the western world has a vitamin D deficiency.
+I took quite a high dosage of extra vitamin D, about 5000 IU/day.&lt;/p&gt;
+
+&lt;p&gt;Final tip, do anything you can to increase your levels of glutathione. This one
+is hard because your digestive system destroys it so it&amp;#39;s hard to just take it as a supplement.
+&lt;a href=&quot;http://www.abundanceandhealth.co.uk/products/101-altrient-lypo-spheric-gsh-glutathione-livon-labs.aspx&quot;&gt;This lypo-spheric&lt;/a&gt; suppliment was the only version I found that worked for me but I had to stop taking it because it&amp;#39;s so expensive. I now take &lt;a href=&quot;http://www.webmd.com/vitamins-supplements/ingredientmono-1018-N-ACETYL%20CYSTEINE.aspx?activeIngredientId=1018&amp;activeIngredientName=N-ACETYL%20CYSTEINE&quot;&gt;NAC (N-acetyl cysteine)&lt;/a&gt;, which is a precursor to glutathione. I.e. your body uses NAC in the synthesis of glutathione, so if there&amp;#39;s more of that in your body, it&amp;#39;s easier to make more glutathione.&lt;/p&gt;
+
+&lt;p&gt;P.s. Drink loads of water.&lt;/p&gt;
+</description>
+                                <pubDate>Wed, 08 May 2013 00:00:00 +0100</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/05/08/hackers-diet/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/05/08/hackers-diet/</guid>
+                        </item>
+                
         </channel>
 </rss>

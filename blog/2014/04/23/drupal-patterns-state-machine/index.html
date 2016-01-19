@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupal Site Builder Patterns - The State Machine |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupal Site Builder Patterns - The State Machine</h1>
+
+  <span class="">23 Apr 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">In this new series for my blog, I&#39;ll be documenting some common design patterns for
+Drupal site builds. This first post is about the State Machine pattern, which is
+something I&#39;ve used on several sites recently.</p>
+
+<p class="lead">First, let me explain what I mean by &quot;pattern&quot;. If you are already familiar with
+design patterns in Object-oriented software then you can probably skip this
+bit, but I think it&#39;s useful for context.</p>
+
+              
+
+<h3>Design patterns?</h3>
+
+<p>Here&#39;s a quote from the original <a href="http://en.wikipedia.org/wiki/Design_Patterns">Gang of Four book</a> on
+design patterns. That book is about design of object-oriented software, but I think it
+applies to Drupal development too.
+The quote is from p.1 of the book, apologies if I offend anyone by bastardising it.
+I&#39;ve taken the liberty of substituting
+the words &quot;Designing object-oriented software&quot; with &quot;building Drupal sites&quot;,
+and a few other substitutions to make my point...</p>
+
+<blockquote>
+<p>[Building large maintainable Drupal sites] is hard... Your design should be
+specific to the problem at hand but also general enough to address future
+problems and requirements [and be maintainable]... Experienced
+[Drupal site builders] will tell you that a reusable and flexible design
+is difficult if not impossible to get &quot;right&quot; the first time.</p>
+
+<p>Yet experienced [Drupal site builders] do make good designs. Meanwhile
+new [site builders] are overwhelmed by the options available and tend to fall
+back on non-[Drupal] techniques they&#39;ve used before. It takes a long time for
+novices to learn what good [Drupal site building] is all about.
+Experienced [site builders] evidently know something inexperienced ones don&#39;t.
+What is it?</p>
+
+<p>One thing expert [site builders] know NOT to do is solve every problem from
+first principles. Rather, they <strong>reuse solutions that have worked for them in
+the past</strong>. When they find a good solution, they use it again and again.
+Such experience is part of what makes them experts.</p>
+</blockquote>
+
+<p>So I&#39;ve been looking at what these &quot;good solutions&quot; are that I might have been
+using, and as I identify them I&#39;ve been documenting them along the same lines
+of the original design patterns from the Gang of Four book:</p>
+
+<ul>
+<li>Pattern name - the handle we use to describe the problem</li>
+<li>Problem - explain the problem and its context, and when you might want to
+use this pattern</li>
+<li>Solution - describe the elements that make up the solution, in my case how the
+pattern can be best implemented in Drupal</li>
+<li>Consequences - results and trade-offs of using the pattern, in this case I
+also consider further issues that many need to be considered as a result of
+using the pattern.</li>
+</ul>
+
+<p>So, first let&#39;s look at what a state machine is, and what problems it solves,
+before going on to look at how to configure it in Drupal.</p>
+
+<h3>State Machine</h3>
+
+<p>A state machine is a theoretical computer science concept that provides a
+<a href="http://blog.markshead.com/869/state-machines-computer-science/">mathematical basis for modelling computation</a>. But don&#39;t worry, the kind of state machines we&#39;ll be
+using don&#39;t require a degree in computer science to understand.</p>
+
+<p>All you really need to know is that the state machine (or more correctly a
+<a href="http://en.wikipedia.org/wiki/Finite-state_machine">Finite State Machine</a>) has
+a finite number of &quot;states&quot; it can be in and the machine is only ever in one
+of these states at a time, it&#39;s <em>current state</em>. The state machine can
+change from one state to another triggered by an event or condition. This change
+of state is called a <em>transition</em>. A state machine is typically visualised
+using a <em>state machine diagram</em>, for example:</p>
+
+<p><img src="http://darrenmothersele.com/img/state-machine/diagram1.png" alt="Simple state machine"></p>
+
+<p>As you can see the states are represented by an ellipse with the name of the
+state inside, the arrows denote the possible transitions. You can also see
+how the entry point and exit point would be notated.</p>
+
+<p>Here&#39;s a (very simplified) example of a ticket in an agile issue queue. In
+reality this would probably have several other states but for the sake of this
+example, here&#39;s a simple state machine for the ticket:</p>
+
+<p><img src="http://darrenmothersele.com/img/state-machine/diagram2.png" alt="Example state machine"></p>
+
+<p>A state machine is defined by the list of possible states and the event/condition
+that triggers each transition.</p>
+
+<p>If you&#39;re reading this and thinking &quot;Events&quot;, &quot;Conditions&quot;, sounds a bit like
+Drupal Rules, then you&#39;ve already worked out how we&#39;re going to
+implement this in Drupal!</p>
+
+<p>In this simple ticket example the states are &quot;In progress&quot;, &quot;Approval&quot;, and
+&quot;Finished&quot;. The transitions are &quot;Completed&quot;, &quot;Rejected&quot;, &quot;Accepted&quot;.</p>
+
+<h3>When to use it?</h3>
+
+<p>It might be useful to think that in business speak, when they say &quot;business
+processes&quot; they are actually talking about state machines. Here are some
+cases when you might want to think about state machines:</p>
+
+<ul>
+<li>If you&#39;ve ever had to model a &quot;state&quot; or &quot;status&quot; field, then you&#39;ve got a good
+candidate for a state machine.</li>
+<li>If you&#39;ve ever wanted to anything
+more complex than just published and unpublished nodes then you have a good
+candidate for using a state machine.</li>
+<li>If you have boolean fields in your content model called things like &quot;paid/unpaid&quot;.</li>
+<li>If you have records that need to expire after a specific period of time</li>
+</ul>
+
+<p>Drawing out a state machine diagram to model this kinds of problems can be
+really useful to help identify any &quot;edge-case&quot; scenarios you may not have
+thought of, and capture them early in the design process. It also shows you
+exactly what you need to test further along in the site build.</p>
+
+<h3>Let&#39;s build it</h3>
+
+<p>As with anything in Drupal there are several ways to achieve this functionality,
+in fact there&#39;s even a <a href="https://drupal.org/project/state_machine">State Machine</a>
+module, but that relies on creating custom plugins.
+If you&#39;re a developer you might want to take a look at this module.</p>
+
+<p><a href="https://drupal.org/project/workbench_moderation">Workbench Moderation</a> and
+various other workflow modules include a state machine implementation for a
+specific purpose.</p>
+
+<p>The approach documented here is suitable for site builders, is flexible,
+and provides a neat solution that can be configured using the following
+contributed modules:</p>
+
+<ul>
+<li><a href="https://drupal.org/project/rules_link">Rules Link</a></li>
+<li><a href="https://drupal.org/project/field_permissions">Field Permissions</a></li>
+</ul>
+
+<p>I said before that the state machine is defined by it&#39;s set of possible states
+and set of transitions. In Drupal we&#39;ll be using a simple list field to store
+the list of possible states for the node.</p>
+
+<p>In a <a href="http://drupalize.me/blog/201404/hiding-form-fields-drupal-8">recent post</a>
+on Drupalize.me they mention the addition of the ability to hide form fields
+in Drupal 8 core. In Drupal 7 we need a module to help us do this. In this case we are adding
+a field that will never be directly edited by the user so we just deny access
+to edit that field using the <a href="https://drupal.org/project/field_permissions">Field Permissions</a>
+module.</p>
+
+<p>For the simple ticket example, we have 3 states. So use an integer list field with
+the following allowed values:</p>
+
+<ul>
+<li>0|In progress</li>
+<li>1|Awaiting approval</li>
+<li>2|Finished</li>
+</ul>
+
+<p>I said that the state machine was defined by the set of possible states
+(implemented by our list field), and a set of transitions. These transitions
+can be implemented using the <a href="https://drupal.org/project/rules_link">Rules Link</a>
+module.</p>
+
+<p>Using the Rules Link module you can add a button to the ticket node which
+manipulates the &quot;state&quot; value preventing the user from actually editing the
+value in the state field directly, and thus enforcing the workflow defined
+in our state machine.</p>
+
+<p>Each &quot;Rules link&quot; is configured in two parts. First you define the conditions
+for when the link should be visible using standard Rules conditions. Secondly,
+you use the rules reaction to set the value of the state field to the new
+value (and perform any other actions that you want as a side effect of the
+transition).</p>
+
+<h3>Considerations</h3>
+
+<p>It&#39;s good to follow a principle of audit-ability, so you probably need to keep
+the transition history. A simple solution might be to
+add a timestamp field such as &quot;confirmed at&quot; to mark when it went to confirmed state.
+If using node, you could log revisions to track state changes in the revision
+log for the node. Or you could look at Messages module to log messages when state
+changes happen.</p>
+
+<h3>More patterns</h3>
+
+<p>If you&#39;re interested in learning more from my 7 years of Drupal experience
+(and if you&#39;re based in London) why not
+join me for <a href="http://www.eventbrite.com/e/everything-i-know-about-drupal-2-day-intensive-drupal-training-course-tickets-11153411153?aff=state">Everything I Know About Drupal</a> an
+intensive 2-day Drupal training I&#39;ve been working on. It&#39;s taken a lot of
+preparation, and there&#39;s still a small number of tickets available.
+You can
+find more information on my <a href="http://darrenmothersele.com/blog/2014/04/15/drupal-training-london/">blog post</a>
+about it
+or grab a ticket on <a href="http://www.eventbrite.com/e/everything-i-know-about-drupal-2-day-intensive-drupal-training-course-tickets-11153411153?aff=state">the Eventbrite page</a>.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

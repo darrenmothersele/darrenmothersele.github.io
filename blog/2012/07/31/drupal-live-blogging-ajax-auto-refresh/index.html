@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupal live blogging with AJAX auto-refreshing view |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupal live blogging with AJAX auto-refreshing view</h1>
+
+  <span class="">31 Jul 2012</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Live blogging, like you see on the Guardian or other news sites during important events is easily achieved on your Drupal sites, with a bit of jQuery AJAX and some EntityFieldQuery magic. Here's the code, with comments: </p>
+
+
+
+              
+<h3>Create a module</h3>
+<p>Create your module folder. This module is going to be called Live Refresh, so create a folder called <code>live_refresh</code> in your site's module folder. Then create a file called <code>live_refresh.info</code> in this new folder with the following content:</p>
+<p></p><div class="codeblock"><code>name = Live Refresh<br>core = 7.x</code></div>
+<p>That's the minimum you need in an info file to get Drupal to see your module.</p>
+<h3>Create your menu items</h3>
+<p>I need one menu item that visitors will see (accessed via the path /live), that can be placed in a menu, and a second menu item (accessed via the path /live-refresh-ajax) that is accessed via AJAX only. Visitors don't directly see this second menu item, so it's defined as type <code>MENU_CALLBACK</code>. </p>
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">function </span><span style="color: #0000BB">live_refresh_menu</span><span style="color: #007700">() {<br>&nbsp;&nbsp;&nbsp; return array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'live' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Live blog'</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'page callback' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'_live_refresh_page'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'access arguments' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'access content'</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'live-refresh-ajax/%' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Live refresh'</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'page callback' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'_live_refresh_ajax'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'page arguments' </span><span style="color: #007700">=&gt; array(</span><span style="color: #0000BB">1</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'access arguments' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'access content'</span><span style="color: #007700">),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'type' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">MENU_CALLBACK</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ),<br>&nbsp;&nbsp;&nbsp; );<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>Each menu item has a page callback function. These will both be loading nodes from the database using EntityFieldQuery, so let's write a utility function to do this...</p>
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">function </span><span style="color: #0000BB">_live_refresh_get_nids</span><span style="color: #007700">(</span><span style="color: #0000BB">$since </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$query </span><span style="color: #007700">= new </span><span style="color: #0000BB">EntityFieldQuery</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">entityCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'entity_type'</span><span style="color: #007700">, </span><span style="color: #DD0000">'node'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt;</span><span style="color: #0000BB">entityCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'bundle'</span><span style="color: #007700">, </span><span style="color: #DD0000">'article'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt;</span><span style="color: #0000BB">propertyCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'status'</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt;</span><span style="color: #0000BB">propertyOrderBy</span><span style="color: #007700">(</span><span style="color: #DD0000">'created'</span><span style="color: #007700">, </span><span style="color: #DD0000">'DESC'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">$since</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">propertyCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'created'</span><span style="color: #007700">, </span><span style="color: #0000BB">$since</span><span style="color: #007700">, </span><span style="color: #DD0000">'&gt;'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; } else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">10</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$entities </span><span style="color: #007700">= </span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(); <br>&nbsp;&nbsp;&nbsp; return empty(</span><span style="color: #0000BB">$entities</span><span style="color: #007700">[</span><span style="color: #DD0000">'node'</span><span style="color: #007700">]) ? array() : </span><span style="color: #0000BB">array_keys</span><span style="color: #007700">(</span><span style="color: #0000BB">$entities</span><span style="color: #007700">[</span><span style="color: #DD0000">'node'</span><span style="color: #007700">]);<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>The code above loads nodes of type <code>article</code>. If you provide the function with a <code>$since</code> parameter then it loads all nodes posted since this time. Otherwise it loads the most recent 10 nodes.</p>
+<p>Now define the page callback that generates the page at /live that lists the last 10 article nodes. It calls our utility function to load the list of node IDs returned from the EntityFieldQuery. It adds some Javascript to the page using <code>drupal_add_js()</code>, one of these is our Javascript file (defined below), and the other is a javascript setting that states what the last found created date is. This is used by the ajax callback to only load new content. The javascript setting also has a refresh rate in ms (set here to 9000, or 9 seconds). The final stage is generate the node views (using build mode 'teaser') and wrap them in a div.</p>
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">function </span><span style="color: #0000BB">_live_refresh_page</span><span style="color: #007700">() {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">drupal_add_js</span><span style="color: #007700">(</span><span style="color: #0000BB">drupal_get_path</span><span style="color: #007700">(</span><span style="color: #DD0000">'module'</span><span style="color: #007700">, </span><span style="color: #DD0000">'live_refresh'</span><span style="color: #007700">) . </span><span style="color: #DD0000">'/js/live-refresh.js'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$nids </span><span style="color: #007700">= </span><span style="color: #0000BB">_live_refresh_get_nids</span><span style="color: #007700">(); <br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$nodes </span><span style="color: #007700">= </span><span style="color: #0000BB">node_load_multiple</span><span style="color: #007700">(</span><span style="color: #0000BB">$nids</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$last_created </span><span style="color: #007700">= </span><span style="color: #0000BB">$nodes</span><span style="color: #007700">[</span><span style="color: #0000BB">$nids</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]]-&gt;</span><span style="color: #0000BB">created</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">drupal_add_js</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'liveRefresh' </span><span style="color: #007700">=&gt; array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'lastCreated' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$last_created</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'refreshRate' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">9000</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp; )), </span><span style="color: #DD0000">'setting'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$build </span><span style="color: #007700">= </span><span style="color: #0000BB">node_view_multiple</span><span style="color: #007700">(</span><span style="color: #0000BB">$nodes</span><span style="color: #007700">, </span><span style="color: #DD0000">'teaser'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$build</span><span style="color: #007700">[</span><span style="color: #DD0000">'#prefix'</span><span style="color: #007700">] = </span><span style="color: #DD0000">'&lt;div id="live-refresh-wrapper"&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$build</span><span style="color: #007700">[</span><span style="color: #DD0000">'#suffix'</span><span style="color: #007700">] = </span><span style="color: #DD0000">'&lt;/div&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp; return </span><span style="color: #0000BB">$build</span><span style="color: #007700">;<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>This second page callback is a bit simpler. It is only accessed via AJAX. It loads up the nodes since the provided time, renders them using view mode 'teaser' then encodes the information as JSON and prints it. By printing from the menu callback instead of returning the value Drupal doesn't render the content in a page template and just sends it as is.</p>
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">function </span><span style="color: #0000BB">_live_refresh_ajax</span><span style="color: #007700">(</span><span style="color: #0000BB">$since</span><span style="color: #007700">) { <br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$nids </span><span style="color: #007700">= </span><span style="color: #0000BB">_live_refresh_get_nids</span><span style="color: #007700">(</span><span style="color: #0000BB">$since</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$nodes </span><span style="color: #007700">= </span><span style="color: #0000BB">node_load_multiple</span><span style="color: #007700">(</span><span style="color: #0000BB">$nids</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$last_created </span><span style="color: #007700">= empty(</span><span style="color: #0000BB">$nids</span><span style="color: #007700">) ? </span><span style="color: #0000BB">FALSE </span><span style="color: #007700">: </span><span style="color: #0000BB">$nodes</span><span style="color: #007700">[</span><span style="color: #0000BB">$nids</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]]-&gt;</span><span style="color: #0000BB">created</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$build </span><span style="color: #007700">= </span><span style="color: #0000BB">node_view_multiple</span><span style="color: #007700">(</span><span style="color: #0000BB">$nodes</span><span style="color: #007700">, </span><span style="color: #DD0000">'teaser'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; print </span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'lastCreated' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$last_created</span><span style="color: #007700">, </span><span style="color: #DD0000">'build' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">render</span><span style="color: #007700">(</span><span style="color: #0000BB">$build</span><span style="color: #007700">)));<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>The only thing left to do is write the Javascript code to actually do the AJAX refresh. This file is included above in the main page callback. The content of the file is a simple Drupal behaviour like this...</p>
+<p></p><div class="codeblock"><code>(function ($) {<br><br>&nbsp; Drupal.behaviors.liveRefresh = {<br>&nbsp;&nbsp;&nbsp; attach: function (context, settings) { <br>      var refreshId = setInterval(function() {<br>        $.ajax({<br>          url: settings.basePath + 'live-refresh-ajax/' + Drupal.settings.liveRefresh.lastCreated,<br>          dataType: 'json',<br>         success: function(data) {<br>           if (data.lastCreated) {<br>&nbsp;               Drupal.settings.liveRefresh.lastCreated = data.lastCreated;<br> &nbsp;            $('#live-refresh-wrapper', context).prepend(data.build);<br>            }<br>         },<br>        });<br>     }, settings.liveRefresh.refreshRate);<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp; };<br><br>})(jQuery);</code></div>
+<p>This code uses <code>setInterval</code> to create a function that calls repeatedly after a specified amount of time. In this case the refreshRate that was set in the page callback code. It makes a callback to the server, using <code>$.ajax()</code>, then inserts the returned content into the page and updates the lastCreated variable that is used in the next ajax callback. </p>
+<p>As you can see, this is quite a simple bit of code, but quite powerful, and shows of the cool EntityFieldQuery functionality from Drupal 7. It's also really easily themable by swapping out the view mode from 'teaser' to your own view mode, or display settings created using Display Suite. </p>
+<h3>Grab the code</h3>
+<p>I've posted the barebones code on my <a href="https://github.com/darrenmothersele/live_refresh">GitHub</a>. You will need to edit the code to make sure the query matches the content type for your site. </p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

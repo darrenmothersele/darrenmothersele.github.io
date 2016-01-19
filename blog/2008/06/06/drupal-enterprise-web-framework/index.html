@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupal as an Enterprise Web Framework |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupal as an Enterprise Web Framework</h1>
+
+  <span class="">06 Jun 2008</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">I was recently asked to take a look at the Google AppEngine, as a possible host for a web app. One major drawback for me is that it's currently limited to only running Python code, and the framework I'm using (Drupal) is PHP. That rulled it out as an option, but in this process I had a quick look at Python frameworks, in particular a really interesting one called <a href="http://mdp.cti.depaul.edu/">web2py</a>. They have a downloadable PDF comparison of various frameworks, and I was disappointed not to see Drupal listed.</p>
+
+              
+
+<p><b>Model View Controller?</b> Web2py = yes. Drupal = yes*.<br />
+*Drupal actually kind of uses PAC (Presentation-Abstraction-Control) a further development of the Model-View-Controller architecture.</p>
+
+<p><b>Web Based Interface?</b> Web2py = yes. Drupal = yes. CCK and views modules in Drupal allow you to quickly build your model, and supporting site architecture.</p>
+
+<p><b>Web Based Database Admin Interface?</b> Web2py = yes. Drupal = yes*.<br />
+*The content management tools give you all the access that site admins should need. OK, so there's some stuff you can't access - but you can use PHPMyAdmin if you really need access to the whole database.</p>
+
+<p><b>CRUD</b> Web2py = yes. Drupal = yes.</p>
+
+<p><b>Upload Forms</b> Web2py = yes. Drupal = Yes. Only Web2py and Django has a standard mechanism to handle file upload and secure storage? No - Drupal has this too. With optional public, or private file downloads.</p>
+
+<p><b>Byte Code Compilation</b> Web2py = yes. Drupal = None native. Limitations of PHP as the base language here. There are options for optimizing PHP code.</p>
+
+<p><b>Ticketing System</b> Web2py = yes. Drupal = Yes. Messages are optionally sent to log only, or display on screen and in log. In Drupal API it's called Watchdog. </p>
+
+<p><b>Zero Installation</b> Web2py = yes. Drupal = No. But you only have to install once if you use a "multi-site installation" - and run all your Drupal sites from one code base.</p>
+
+<p><b>Zero Configuration</b> Web2py = yes. Drupal = No. Alright, so you have to enter your database connection settings.</p>
+
+<p><b>Web Based Model Designer</b> Web2py = yes. Drupal = Yes*.<br />
+*CCK provides Drupal with online tools for creating the content types - it's not a graphical SQL designer - but still intuitive and easy for non-programmers to use.</p>
+
+<p><b>Web Based Testing</b> Web2py = Yes. Drupal = No. Also unit testing is being added to Drupal.</p>
+
+<p><b>Runs on Google App Engine</b> Web2py = Yes with some limitations. Drupal = No, GAE doesn't support PHP yet.</p>
+
+<p><b>Caching</b> Web2py = yes. Drupal = Yes. Drupal can use any PHP based caching system, and has it's own very powerful cache system. Plus a throttle system for reducing load during periods of high traffic.</p>
+
+<p><b>Native Templating Language</b> Web2py = yes. Drupal = Yes. </p>
+
+<p><b>Template Extension</b> Web2py = yes. Drupal = yes.</p>
+
+<p><b>Internationalization</b> Web2py = yes. Drupal = yes. Drupal interfaces are easily translated into multiple languages. Custom translations are easy to create, are part of the core system, and allow variables in translations.</p>
+
+<p><b>Database Abstraction</b> Web2py = yes. Drupal = yes.</p>
+
+<p><b>Automatic Migrations</b> Web2py = yes. Drupal = yes. Changes to Drupal content types in CCK automatically perform the required SQL Alter statements.</p>
+
+<p><b>Multiple Databases</b> Web2py = yes. Drupal = yes.</p>
+
+<p><b>Blocks SQL Injections</b> Web2py = yes. Drupal = yes.</p>
+
+<p><b>Blocks Double Submit</b> Web2py = yes. Drupal = yes.</p>
+
+<p><b>Included AJAX Library</b> Web2py = jQuery. Drupal = jQuery.</p>
+
+<p><b>JSON Support</b> Web2py = yes. Drupal = yes.</p>
+
+<p>I think you can see Drupal compares very well as an Enterprise Web Framework, and this goes to show it really is more than just a CMS.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

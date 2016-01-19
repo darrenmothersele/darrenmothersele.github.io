@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> SimpleHTMLDOM Parser for Drupal |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">SimpleHTMLDOM Parser for Drupal</h1>
+
+  <span class="">17 Aug 2011</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Import content from other webpages using <a href="http://drupal.org/project/feeds">Feeds</a> and some HTML DOM magic. I've created this module, as importing HTML content is a task that comes up now and again, and I wanted a more generic way of doing it. This is useful for many things, including monitoring sites that don't support RSS, importing legacy content to a Drupal site, screen scraping, etc. To do this I've created a module called <a href="http://drupal.org/project/simplehtmldom_parser">SimpleHTMLDOM Parser</a> and published it on Drupal.org. Read on for documentation...</p>
+
+
+
+
+              
+<h3>Installation</h3>
+<ul><li>Download the module and extract into your sites module folder. You will also need the Feeds module, and it's dependencies.</li>
+<li>Enable the module.</li>
+</ul><h3>Example Configuration</h3>
+<ul><li>Navigate to admin/structure/feeds and add a new importer. </li>
+<li>Click "Change" next to Parser to select the SimpleHTMLDOM parser.</li>
+</ul><p><img src="/img/2011-08-17-simplehtmldom-parser-drupal/1_select_parser.png" width="450px" /></p><ul><li>Edit the settings for the parser and enter the root node to extract. In this case we are importing a recipe list from a food website. On the page these items are HTML list items within a list with class "recipeList". We therefore use the selector pattern ".recipeList li" to select each of our root nodes.</li>
+</ul><p><img src="/img/2011-08-17-simplehtmldom-parser-drupal/2_edit_settings.png" width="450px" /></p><ul><li>We add an extracter for every item we wish to extract from each root node that is found. To do this expand the "Add new extractor" section of the form.</li>
+</ul><p><img src="/img/2011-08-17-simplehtmldom-parser-drupal/3_add_extractor.png" width="450px" /></p><ul><li>Each extraction requires a name which is used to refer to this item within  the mapping interface. The following options are available for each extracted item:
+<ul><li>Name: Used in the mapping interface of the processor</li>
+<li>Pattern: The SimpleHTMLDOM pattern to match for this item. The syntax of these expressions is similar to jQuery selectors.</li>
+<li>Attribute: The actual content to return from this item. You can use  "innertext" to return the HTML within the item. "plaintext" returns just the text without any tags. Other html attriutes can be returned such as "src" for images, or "href" for links.</li>
+<li>Multiple values: If multiple items are matched by the pattern you can return an array of values, rather than a single item. This can be mapped to a multivalue field, for example.</li>
+<li>Offset: If not returning multiple values the first matched item is returned unless you specify an offset. For example, if you use a pattern of "p" and it matches three paragraphs, an offset of 0 (the default) returns the first item. An offset of "1" returns the second item, etc.</li>
+<li>Strip whitespace: Some HTML documents contain excess whitespace within and around elements. Select this option to strip this extra space.</li>
+<li>Rewrite result: If you wish to add a prefix, suffix or rewrite the value completely enter a string here. Any occurance of the token string [value] will be replaced with the extracted value.</li>
+</ul></li></ul><p>Example extracting a title from each matched list item:<br /><img src="/img/2011-08-17-simplehtmldom-parser-drupal/4_title_example.png" width="450px" /></p>
+<p>Example extracting an image from each matched item. Notice that in this case a prefix is added to make a full URL out of the returned value:<br /><img src="/img/2011-08-17-simplehtmldom-parser-drupal/5_example_image.png" width="450px" /></p>
+<p>Only basic documentation now, but let me know if you have any questions or interesting usage ideas for this module. If you have any problems please raise them on the issue queue via the project page on drupal.org.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

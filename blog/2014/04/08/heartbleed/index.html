@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Heartbleed |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Heartbleed</h1>
+
+  <span class="">08 Apr 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">A <a href="http://heartbleed.com/">serious bug in OpenSSL</a> was disclosed last night.
+I just happened to check
+<a href="https://news.ycombinator.com/item?id=7548991">Hacker News</a> late last night,
+about 2 hours after it had been posted.</p>
+
+<p class="lead">Luckily, by this time Ubuntu had released updated packages for OpenSSL, and
+as most of the servers under my control are running Ubuntu Server, I could
+easily patch them to remove the vulnerability. The fix for RedHad seemed to
+take a little bit longer to arrive, but it&#39;s
+<a href="https://access.redhat.com/site/solutions/781793">here now</a>.</p>
+
+<p class="lead">Patching the vulnerability is just the first step, there&#39;s a lot more work to
+do to recover from this bug...</p>
+
+              
+
+<h3>Check OpenSSL version</h3>
+
+<p>You need to be running <strong>OpenSSL 1.0.1g</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">openssl version
+</code></pre></div>
+<p>Just running this command doesn&#39;t report back full version information.
+If you check <a href="http://serverfault.com/questions/587324/heartbleed-how-to-reliably-and-portably-check-the-openssl-version">this post</a> you will find further information on what to look for.</p>
+
+<p>If you are on Ubuntu 12.04 the package you are looking for is this one:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">openssl 1.0.1-4ubuntu5.12
+</code></pre></div>
+<h3>Further recovery...</h3>
+
+<p>But, patching OpenSSL is only a small part of the fix for this bug.
+The consequences of this are much deeper.</p>
+
+<blockquote>
+<p>The Heartbleed bug allows anyone on the Internet to read the memory of
+the systems protected by the vulnerable versions of the OpenSSL software.
+- <a href="http://heartbleed.com/">Heartbleed</a></p>
+</blockquote>
+
+<p>This essentially means that encryption keys, user credentials, and any
+content handled by the servers could have been exposed. So the following
+steps are required (see <a href="http://security.stackexchange.com/questions/55075/does-heartbleed-mean-new-certificates-for-every-ssl-server">this post</a>):</p>
+
+<ul>
+<li>Revocation of the old keypairs that were just superseded</li>
+<li>Changing all passwords</li>
+<li>Invalidating all session keys and cookies</li>
+<li>Evaluating the actual content handled by the vulnerable servers that could have been leaked, and reacting accordingly.</li>
+<li>Evaluating any other information that could have been revealed, like memory addresses and security measures</li>
+</ul>
+
+<h3>Leaves no trace...</h3>
+
+<p>It&#39;s also worth noting that exploiting the vulnerability leaves no trace, so
+there is no way to know if your system, encryption keys, passwords or content
+has been compromised.</p>
+
+<p>It&#39;s worth doing a general password reset anyway.</p>
+
+<p>Final note, it&#39;s worth pointing out that this doesn&#39;t affect OpenSSH, just OpenSSL,
+as OpenSSH doesn&#39;t include the broken TLS implementation.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

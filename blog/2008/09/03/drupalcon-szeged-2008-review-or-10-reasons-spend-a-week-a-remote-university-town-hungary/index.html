@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupalcon Szeged 2008 review - or, 10 reasons to spend a week in a remote university town in Hungary... |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupalcon Szeged 2008 review - or, 10 reasons to spend a week in a remote university town in Hungary...</h1>
+
+  <span class="">03 Sep 2008</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Here's my Drupalcon Szeged review. Not a full account of what I got up to during the week but some of the highlights of the conference. The Szeged2008 website now has slides and videos, with more being uploaded as they are transcoded by archive.com so go checkout what you missed or revisit the sessions if you need a reminder. Here's my highlights from the event, in no particular order...</p>
+
+              
+
+<h3>1. Dries State of Drupal address</h3>
+
+<p>Really good to see some statistics on Drupal's growth over the past year. Strong growth in number of downloads and sites being deployed using Drupal. Slower growth than expected in usage of Drupal.org - raising questions such as where are end-users hanging out? where do users go for Drupal related info and help? Hopefully the redesign of Drupal.org will highlight and address the issues.</p>
+
+<p>Other stats of interest:</p>
+
+<p><ul><li>stats on versions of Drupal in use highlighted the problem of people not upgrading to the latest versions. what can Drupal do to make the upgrade process easier?</li>
+<li>Shortage of Drupal talent highlighted, but at the same time only 28% of Drupal developers making a living from Drupal full time - another 43% do Drupal part time and 29% again do it as a hobby.</li>
+<li>slow speed of porting essential modules to new version of Drupal highlighted as a problem. further version release of Drupal 7 to be frozen when it&#39;s ready to be frozen. webchick announced as co-maintainer of Drupal 7</li>
+</ul><h3>2. GIS in Drupal doesn&#39;t work</h3>
+<p>Went along to the session on GIS with big hopes to get a better understanding of the current state of GIS in Drupal and how to implement. I was disappointed to learn that basically it&#39;s broken - and doesn&#39;t work. It sounds like things are moving along but the general confusion of this presentation didn&#39;t install much confidence on the current state of GIS - Location, GEO and GMap modules, in Drupal.</p>
+<p>The modules presented were Location - for location input for nodes. GEO for<br />
+storage of location information. This uses mysql spacial so could be extended to store various types of geo information - but currently location just stores points. The other module in the suite is gmap that uses data from location module to display gmaps. </p>
+<p>These are not the only way to do GIS in Drupal at the moment... A conversation with Mori over lunch that day made much more sense, in which he demonstrated the setup of GeoNames CCK and Geomap modules to do pretty much the basics of what I need to do in terms of GIS... I still need a good way to do proximity search.</p>
+<h3>3. Amazing insights from Rasmus Lerdorf&#39;s keynote</h3>
+<p>Adding abstraction layers is OK, as long as you know the costs.</p>
+<p>Rasmus talked about benefits of keeping it simple. He highlighted complexity victims as scalability, performance and security, and made some comparisons of various frameworks in terms of complexity and performance.</p>
+<p>Rasmus covered some basic ways to optimize for performance... including opcode cache, coding styles such as removing require<em>once dependencies and simple things like the effect reordering php include paths can have on performance. The examples showed some impressive performance improvements.</p>
+<p>Some of the framework results gave surprisingly large performance overheads, and luckily Drupal fared very well against even some more lightweight frameworks... plus it was noted by a comment from the audience that changes in Drupal 7 will help even further reduce the overhead. This is because of the further splitting of code into include files and only including the code necessary to serve the current request.</p>
+<p>Rasmus made a really simple performance improvement recommendation to avoid calling the time() function. There&#39;s no need to do this as most of the time you can use the request time value from the $</em>SESSION variable that is available from the php environment. </p>
+<h3>4. Dries and Rasmus both talked about RDF and Semantic Web.</h3>
+<p>Dries showed a couple of examples of how well RDF integrates with Drupal.</p>
+<p>Rasmus did a good job of motivating the use of RDF, and advertised the yahoo initiative called searchmonkey. Yahoo is picking up RDF data in it&#39;s search index, and using searchmonkey you can tell yahoo what to do with it. Essentially you can define a plugin that works inside the yahoo search engine to display more useful results from your pages.</p>
+<h3>5. There may be easier ways to manage Drupal production workflow.</h3>
+<p>A basic development setup will use SVN, and have some concept of<br />
+development, staging and production servers. It&#39;s not obvious how these<br />
+concepts translate to Drupal development, particularly in handling<br />
+migrations from staging to production environments.</p>
+<p>This BoF session aimed to bring out these issues and start some discussion on the subject. </p>
+<p>A neat little trick was presented using SVN externals. This declaration essentially gives you a way to make one version controlled project reference the code in another versioned system. I think of it like a symbolic link from one repo to another.</p>
+<p>Some hacks were discussed to get around problems encounted when migrating content between staging and production Drupal environments. These included a method hacking core to make the production server only assign odd node ids, and the staging server only assign even ids thus avoiding any conflicts. Another proposal was to hack core so there is<br />
+only a single source for ids, or creating migration scripts that rewrite sql dumps while moving from one system to another.</p>
+<p>Drupal user alex<em>b said they had some code in their sandbox on Drupal cvs for a port module. It was also suggested that a group be set up on groups.drupal.org for further discussion, and that current known methods get documented as handbook pages.</p>
+<h3>6. Testing is fun...</h3>
+<p>...or so you would believe when you hear how many people turned up for the &quot;testing party&quot; at 9am in the morning! OK, so i have to admit i was hungover and didn&#39;t make the &quot;party&quot; but I made sure i didn&#39;t miss part 1 the day before - an introduction to testing in Drupal.</p>
+<p>As of Drupal 7 testing is going to be in core. It&#39;s going to be a standard and required practice of all Drupal developers, and best of all Drupal makes it easy for us.</p>
+<p>The simpletest module was presented, usage of the online web based testing gui, and they went through the preparation of a few test cases.</p>
+<p>It was good to get a quick recap of the basics of unit testing - but even more interesting to see how it can be easily built using the testing api now available in Drupal. </p>
+<p>Tests extend the basic class, and use the setup function to prepare the environment for the execution of the test. Then various test functions are defined  which perform certain actions (either unit tests or screen emulation tests where clicks are emulated on a page), and then assertions are made - which are reported back as passed or failed.</p>
+<p>Another complimentary module called code coverage was discussed. This is an awesome module as it checks the tests run against the source code and will tell you how much of your code is being covered by your tests. This then lets you identify either more tests which are needed to ensure full coverage of the code, or bits of code that are not required as they never get executed and should therefore be removed.</p>
+<p>The main call to action from this session was to attach .test files to bug reports so that the errors can be reproduced easily, and included into future4 module testing so that further module updates don&#39;t re-introduce the bugs.</p>
+<h3>7. Have you ever seen a dentist clean two peoples teeth at the same time?</h3>
+<p>Some wise remarks were made during the session on attracting Drupal talent. This statement (the dentist quote) in particular was relating to remarks about knowing how many billable hours you have. It&#39;s not possible to do more than one thing at a time, you can&#39;t make more time.</p>
+<p>This session covered some of the basics of managing projects and clients in the context of running a Drupal shop. I found it interesting hearing about how other people approach the process, from the initial client meetings, through to the relationship during development, and delivery of the final product. </p>
+<p>One of the key takeaways from this session was about getting a knowledge management solution in place. Email is not efficient, and client hate basecamp, so some better system is required.</p>
+<h3>8. The &quot;missing link&quot; in usability for contributed modules</h3>
+<p>There was a lot of talk about usability at this Drupalcon, and this main session came in two halves. In the first half the two presenters talked about some basic usability theory, and made a call to action for creating a way for usability experts to feed back in the same way we have the issue queue for programmers - only that usability experts don&#39;t feel comfortable making usability requests in the issue queue which tends to deal with technical and programming requests. There was also talk of creating a widget framework that would make it easier for site builders to swap out ui elements for their own and provide a central place for ui builders to contribute and share their own ui improvements. all good ideas but no clear path forward was defined apart from continuing the discussions at groups.drupal.org. </p>
+<p>The second part of this session was presented by Erik Stielstra and provided some solid recommendations for UI improvements for contributed modules. The presentation had two sections, the first was about documentation and highlighted the problems with finding documentation on modules. presented four places documentation is usually found:<br />
+README file, project page, handbook, and module help. The presenter gave good recommendations that in fact all four places should be documented, but that the documentation in each should have a specific purpose... let me see if I got the recommendations down correctly:</p>
+<ul><li>README file is for post installation information</li>
+<li>The project page sells the module and explains all the features and why you would want to use it.</li>
+<li>The module help should be emergency info, and be used to refer to when installing and configuring the module.</li>
+<li>The handbook pages are for any extensive information, information<br />
+for developers documenting apis and other advanced uses.</li>
+</ul><p>The presented then went on to talk about &quot;the missing link&quot; - at the point when you install the module - then what happens?</p>
+<p>The recommendations for module developers were to set a drupal message in the install hook so that when you install the module some information is displayed to confirm that the module has been installed, and this message could contain a link to any extra configuration that is required.</p>
+<p>The presenter then went on to talk about forms, and in particular module configuration pages. This included many good recommendations and any developer producing modules should watch this section of the presentation carefully.</p>
+<p>My favourite recommendations were about not repeating yourself in form field titles and descriptions - but making sure they are used correctly. Titles should be short and scannable (i.e. contain keywords) and descriptions should only be used when they actually add information that will be useful.</p>
+<p>The presenter also made some good comments about the mis-use of collapsible fieldsets, for example the correct use can be seen on search page where the advanced search is hidden by collapsed field because it&#39;s something that&#39;s not used very often. Incorrect use of collapsible fieldsets are when they are used to give an overview of the module setup. A preferred approach is to put the different sections of module configuration into tabs rather than hiding possibly essential bits of config in collapsed fields.</p>
+<p>Other good comments that came out of this session were to minimise complexity wherever possible. This is key i think to improving usability in Drupal. Lots of modules include options that are not needed and should be removed. If it&#39;s an option not used by most people who use the module then it should be pushed out to a separate module.</p>
+<h3>9. not making mistakes when using hook</em>menu</h3>
+<p>Big changes from drupal 5 to drupal 6 include the improved menu system. Key reasons for the changes include scalability issues.  Module developers need to understand the differences, and not use the hook<em>menu in the same way they did for previous versions of drupal. </p>
+<p>One simple difference between hook</em>menu for drupal 5 and drupal 6 is the fact that the path is now the array key for the menu array. </p>
+<p>Secondly the menu should not be used for storing links - this is now in a separate table and their are hooks for adding these links. Check out the full presentation for all the gory details.</p>
+<p>It was also noted in this session that menu<em>link</em>save - the new way to add links - should be done in hook<em>enable - when the module is turned on - and not hook</em>install (when the module is installed).</p>
+<h3>10. Aquia launched the partner programme</h3>
+<p>Aquia presented the business module for commercial Drupal at this Drupalcon. They started the presentation by talking about some other successful commercial open source ventures, and then went  on to present how the commercial Drupal service would be structured.</p>
+<p>We saw the organizational chart for the new Aquia company, and they then broke down exactly what Aquia is offering...</p>
+<ul><li>commercial supported drupal install with 20-30 supported contrib modules.</li>
+<li>network services - including server monitoring and support<br />
+and forums, cloud services, aggregate site data, docs, route and manage site admin tasks etc</li>
+<li>certification and training (although this third part is a long way off)</li>
+</ul><p>Dries and Jay presented the proposed different levels of commercial support but it was disappointing for us UK based developers to learn that the basic support packages include support that is only available using east coast US office hours, and really showed a lack of concern about the global Drupal user base, and a clear indication that they are very US biased.</p>
+<p>They went on to talk about the structure of the partner program. they made it clear that as a commercial entity they are not interested in getting into the business of building sites. They will be passing this on to their community of &quot;Aquia partners&quot;. The partners get a small kick back from the subscription revenues for support services they sell and in return Aquia provides some basic support for the core and supported modules, and escalate any other support requests back to the partner who built the site.</p>
+<h3>Looking forward to the next one...</h3>
+<p>In the summary remarks it was noted that there&#39;s a Drupal related event listed on groups.drupal.org for every day in September. This is certainly an exciting time to be involved in Drupal, and I&#39;m looking forward to the next community event. </p>
+<p>The next Drupalcon is going to be in US, probably east coast - yes we all know where but we can&#39;t say until the contracts are finalised. What about the next European Drupalcon? Well, it will be a while until this will be announced but I&#39;m behind a Drupalcon in Berlin! That would be cool!</p></p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

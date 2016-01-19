@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Upgrading a Drupal input filter module to Drupal 7 |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Upgrading a Drupal input filter module to Drupal 7</h1>
+
+  <span class="">25 Feb 2010</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">There was no version of the markdown filter available for Drupal 7, and no existing issue on this in the issue queue at Drupal.org. I wasn't in an urgent need for this module, but I will need it on a project that is hoping to go D7 as soon as it is released, so I thought I'd use it as an excuse look further into the API changes in Drupal 7. </p>
+<p class="lead">I'm working on the alpha2 release of Drupal7 and the D6 version of markdown checked out from CVS. I've posted the code up on <a href="http://drupal.org/node/725512">drupal.org</a>. Here's what needed to be done:</p>
+
+
+
+
+              
+<p><strong>Update:</strong> It's now been accepted and <a href="http://drupal.org/cvs?commit=380692">commited to Drupal CVS!</a></p>
+<p>Markdown is a simple module, with just a couple of files that needed editing. First up is the module info file. This needs updating to core 7.x and the new files[] option must be set, because Drupal 7 doesn't include any module files by default in attempts to cut down on request overhead. Here's exactly what needs adding to the markdown.info file:</p>
+<p></p><div class="codeblock"><code>core = 7.x<br />files[] = markdown.module</code></div>
+<p>Now to look at the main module file. This file needs a complete overhaul to work with Drupal 7 because hook_filter() and hook_filter_tips() has been replaced by hook_filter_info(). The markdown module also provides a block with extra help information, and this code needs changing to work with D7 because hook_block() has been replaced by a family of functions: hook_block_info(), hook_block_configure(), hook_block_save(), and hook_block_view().</p>
+<h3>Design pattern changes between Drupal 6 and Drupal 7 APIs</h3>
+<p>Comparing the changes in hook_filter() and hook_block() with their new D7 counterparts reveals interesting changes in the Drupal API patterns. A common pattern in the Drupal 6 APIs is the use of an $op parameter when calling a hook. In the implementation of the hook this would usually be utilised in a switch statement from which your code would know what it was expected to do or what it was return. </p>
+<p>In the new hook_filter_info() the pattern used is to return the names of a series of callback functions that will be used to perform various actions required of filters.</p>
+<p>An alternative pattern can be seen in the way that hook_block() has been replaced. In this case the branches of the original hook have been replaced by a family of hooks.</p>
+<h3>What does this mean for Markdown?</h3>
+<p>The code from the functions that were called from the original hook_filter() can be reused as callbacks as specified in the array returned from hook_filter_info(). That pretty much completes the migration of the filter bit of this module.</p>
+<p>The code from hook_block() is split out into separate functions for markdown_block_info() where the block is defined, and markdown_block_view() where the block is rendered.</p>
+<h3>Another gottcha:</h3>
+<p>There's one other small tweak that was needed, in our beloved FAPI (Forms API) there has been a small change in how the array keys for 'item' and 'markup' items are defined. In this case the markdown module uses an 'item' form-item, so we have to change the '#value' array key to '#markup'.</p>
+<h3>Download</h3>
+<p>I've submitted this for review over in the <a href="http://drupal.org/node/725512">Markdown filter issue queue</a> on Drupal.org and hopefully it will eventually surface as a Drupal 7 module.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

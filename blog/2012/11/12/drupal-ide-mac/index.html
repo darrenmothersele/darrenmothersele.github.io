@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupal IDE for Mac |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupal IDE for Mac</h1>
+
+  <span class="">12 Nov 2012</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">I recently got asked by a fellow Mac user if I could recommend an IDE setup for Drupal development. I'm not really a fan of IDEs, but I have a setup that works really well for me. It might not be "integrated", but it certainly is a "development environment".</p>
+
+
+
+              
+<p>Sublime Text 2<br>
+Until recently I was a big fan of TextMate, but then I made the switch to <a href="http://www.sublimetext.com/" rel="nofollow">Sublime Text</a> and I've not looked back. First thing you need to do after installing it is get <a href="http://wbond.net/sublime_packages/package_control" rel="nofollow">package control</a>. This allows you to easily install and manage "packages". I tried a few packages. I sometimes need to edit remote files, so I tried the SFTP package from the same developer as the package control, but I didn't really get along with it - and I found a better solution for this anyway. I did however find a really useful Drupal snippets package that allows you to easily drop in code templates from the Drupal API documentation.</p>
+<p>ExpanDrive<br>
+Although my preferred development workflow involves working on my local dev, then committing back to Git and building remote staging sites, I do regularly have the need to edit remote files. Some clients insist I work on the developer sandbox they provide, or just to go in an do quick hotfixes on live sites (eek!). I've tried several apps, and Cyberduck is a great option, but I really like the fact that this app transparently makes working with remote files appear just the same as working on local files. MacFUSE used to be an option, but that doesn't work anymore, and this is the most performant out of all the options I tried. </p>
+<p>VirtualBox<br>
+As I said before, my preferred workflow is to have a local dev environment. I have a few Virtual Machines configured. I usually only run one at a time, but performance isn't an issue since I upgraded my Mac Book to SSD and added 16GB RAM! I have Ubuntu Server and CentOS guests, plus a Windows VM I setup using <a href="http://osxdaily.com/2011/09/04/internet-explorer-for-mac-ie7-ie8-ie-9-free/" rel="nofollow">this guide</a> for testing websites in IE. I configure my virtual machines to have two network adapters. One of them is used as a NAT device to give the VM external internet access, the other is an internal network accessible only from my machine that I use to run services like Apache, MySQL, and Samba. </p>
+<p>TotalTerminal<br>
+I spend a large percentage of my time when doing Drupal development at the command line. Either using Drush or Git. <a href="http://totalterminal.binaryage.com/" rel="nofollow">TotalTerminal</a> is great as it means the terminal is never more than a keypress away!</p>
+<p>SmartGit 3<br>
+There are a few occasions when the Git command line client isn't quite enough. Maybe you've had to do a tricky merge? Or just want to view the commit graph? I found SmartGit to be the best of the Git GUI clients I have tried.</p>
+<p>Sequel Pro<br>
+This is a nice MySQL administration tool. It has the added advantage that it can access MySQL servers over SSH so you don't have to open up extra ports in your firewall. Also, as a Drupal developer you've probably got used to reading serialised PHP arrays in the DB, but with Sequel Pro you can view them easily using Krumo thanks to a contributed extension available <a href="https://github.com/mattlangtree/Bundles" rel="nofollow">here</a>.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

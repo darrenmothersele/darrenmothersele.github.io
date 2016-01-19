@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Identity Proxy |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<div class="dm-page">
+<div class="post dm-post">
+
+  <header class="post-header">
+    <h1 class="post-title">Identity Proxy</h1>
+    <span class="post-meta">Nov 24, 2015
+    </span>
+  </header>
+
+  <article class="post-content">
+    
+      <p class="lead">If you&#39;ve got 5 mins, I would really appreciate it if
+you could read this. Then, tell me what you think 
+of the idea.  </p>
+
+      
+
+<p>We&#39;re calling this <a href="http://idproxy.co">Identity Proxy</a>. A bit like an 
+escrow service for your contact details. 
+First let me explain some of the problems we think
+this solves:</p>
+
+<h2>Scenario 1</h2>
+
+<p>You&#39;re looking for an apartment. You do some online research.
+You signup to several websites, services, and 
+email various estate agents. You&#39;ve given away your contact details
+to 20 different companies. </p>
+
+<p>You then have 20 different companies contacting you via
+email, phone, SMS notifications, etc. That&#39;s a lot of 
+communication coming in through different channels and at
+different times.</p>
+
+<p>You make a decision and rent a flat with one of the companies,
+but 19 others have your details. What are they going to 
+do with them? Sell them? Market to you later? Call you back
+every few months asking if you&#39;re still looking for an apartment?</p>
+
+<p>What if you could manage all this communication in once place?
+Decide how and when you get contacted? And, only give your details
+to the 1 company you decide to rent with.</p>
+
+<h2>Scenario 2</h2>
+
+<p>You&#39;re looking for a new job. You sign up to 10 different
+recruitment websites, and job portals. 
+You get a regular stream of newsletters, several per
+day from different sources. </p>
+
+<p>Once you&#39;ve found a job you have to remember everywhere you
+signed up and go around unsubscribing from each of the 
+emails. Or you don&#39;t and they keep filling your inbox.</p>
+
+<p>What if you could unsubscribe from all of them at the same time, 
+in one simple operation?</p>
+
+<h2>Scenario 3</h2>
+
+<p>You&#39;re planning a holiday or a trip somewhere. You use the 
+web to do research. This involves filling in lots of 
+contact forms around the web while you make enquiries about
+places to visit, things to do, and places to stay. </p>
+
+<p>You&#39;re never sure who you&#39;re giving your personal details
+to. Are companies going to keep marketing to you? 
+Will they sell your details on as a qualified &quot;lead&quot; to other 
+companies?</p>
+
+<p>What if you could make an enquiry online and only share 
+your personal details once you&#39;re more comfortable with who
+you&#39;re doing business with?</p>
+
+<h2>Current solutions</h2>
+
+<p>How many sites have you signed up to in the past?
+If you use a login manager or password manager, then at least you 
+might have some idea of where you&#39;ve given away your details, and 
+what websites you&#39;re registered with. </p>
+
+<p>Maybe you&#39;ve resorted to using a fake email address, or
+a temporary email account? This only solves part of the 
+problem, because if you&#39;re expecting a reply you have to check
+a separate email account. Also, many contact forms and email
+services try to reject temporary email accounts because
+they are often a source of spam or abuse. </p>
+
+<h2>Identity Proxy</h2>
+
+<p>What if we take a different approach, and instead of a &quot;fake&quot;
+temporary identity, we use a &quot;verified&quot; temporary identity?
+The company can see you&#39;re a real verified person, but 
+you stay in control of what information you want to give 
+away. </p>
+
+<p>We also group enquiries and registrations into projects. 
+This means that once you&#39;ve found your apartment, finished
+your job hunt, or returned from holiday, you can 
+close your temporary identity, and shut off contact from
+all the companies you sent enquiries to, or registered with.
+Apart from the companies you want to continue to do business
+with, who have been given your real contact details. </p>
+
+<p>This is why we think of it as escrow for your contact details.</p>
+
+<p>Also, by grouping enquiries into projects and sending them
+via the proxy, you can also decide how, and when, you want
+to receive replies. This makes the communication easier to
+manage, plus they can be combined into a standard
+format to make it easy to compare. </p>
+
+<h2>What about the companies?</h2>
+
+<p>Companies that are good internet citizens, and don&#39;t hassle
+customers, and abide by best practises should welcome this idea.
+It&#39;s better than receiving a fake temporary email address, because they
+are assured by the verification that it is a real enquiry.</p>
+
+<p>We plan to support the <a href="http://www.list-unsubscribe.com/">list unsubscribe header</a>.
+If you&#39;re running a mailing list or registration system, 
+you should already be implementing this on every message you send.
+We are building support for this standard into our system to help companies 
+keep their lists clean.</p>
+
+<h2> That all sounds very complicated</h2>
+
+<p>Well, behind the scenes there&#39;s a lot we&#39;re doing to make it 
+work seamlessly. But, it should be no more difficult than
+sending an email, or filling in a contact form on a website.</p>
+
+<p>There&#39;s no extra work involved for the person making the 
+enquiries, and it will save them lots of time being able
+to &quot;unsubscribe&quot; to a whole project group in one go.</p>
+
+<h2>What&#39;s next?</h2>
+
+<p>We&#39;re going to continue development. We&#39;ve started a 
+website at <a href="http://idproxy.co">idproxy.co</a> where you can 
+register to be notified when we launch the service. </p>
+
+<p>Any questions, feedback, thoughts, please get in touch.</p>
+
+<p>Is this a service you would use? </p>
+
+<p>Thanks!</p>
+
+    
+  </article>
+</div>
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script>
+      var disqus_config = function () {
+          this.page.url = 'http://www.darrenmothersele.com/blog/2015/11/24/identity-proxy-and-the-startup-battle/';
+      };
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//darrenmothersele.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments (powered by Disqus).</noscript>
+</div>
+</div>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

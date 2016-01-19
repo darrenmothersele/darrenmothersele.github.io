@@ -1,21 +1,90 @@
----
-layout: none
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
-                <title>{{ site.name | xml_escape }} - Music</title>
+                <title>Darren Mothersele - Music</title>
                 <description>Posts categorized as 'music'</description>
-                <link>{{ site.url }}</link>
-                <atom:link href="{{ site.url }}/music/rss.xml" rel="self" type="application/rss+xml" />
-                {% for post in site.categories.music limit:10 %}
+                <link>http://www.darrenmothersele.com</link>
+                <atom:link href="http://www.darrenmothersele.com/music/rss.xml" rel="self" type="application/rss+xml" />
+                
                         <item>
-                                <title>{{ post.title | xml_escape }}</title>
-                                <description>{{ post.content | xml_escape }}</description>
-                                <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-                                <link>{{ site.url }}/{{ post.url }}</link>
-                                <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+                                <title>MusicInstinct Mix &amp;#35;002</title>
+                                <description>&lt;!--break--&gt;
+
+&lt;p&gt;&lt;iframe width=&quot;400&quot; height=&quot;200&quot; src=&quot;//www.mixcloud.com/widget/iframe/?feed=http%3A%2F%2Fwww.mixcloud.com%2Fmusicinstinct%2F002%2F&amp;embed_uuid=c9e9bf29-1a59-4864-9652-76ad5f6afb38&amp;stylecolor=&amp;embed_type=widget_standard&amp;hide_cover=&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;div style=&quot;clear:both; height:3px; width:392px;&quot;&gt;&lt;/div&gt;&lt;p style=&quot;display:block; font-size:12px; font-family:Helvetica, Arial, sans-serif; margin:0; padding: 3px 4px; color:#02a0c7; width:392px;&quot;&gt;&lt;a href=&quot;http://www.mixcloud.com/musicinstinct/002/?utm_source=widget&amp;amp;utm_medium=web&amp;amp;utm_campaign=base_links&amp;amp;utm_term=resource_link&quot; target=&quot;_blank&quot; style=&quot;color:#02a0c7; font-weight:bold;&quot;&gt;2&lt;/a&gt;&lt;span&gt; by &lt;/span&gt;&lt;a href=&quot;http://www.mixcloud.com/musicinstinct/?utm_source=widget&amp;amp;utm_medium=web&amp;amp;utm_campaign=base_links&amp;amp;utm_term=profile_link&quot; target=&quot;_blank&quot; style=&quot;color:#02a0c7; font-weight:bold;&quot;&gt;Musicinstinct&lt;/a&gt;&lt;span&gt; on &lt;/span&gt;&lt;a href=&quot;http://www.mixcloud.com/?utm_source=widget&amp;utm_medium=web&amp;utm_campaign=base_links&amp;utm_term=homepage_link&quot; target=&quot;_blank&quot; style=&quot;color:#02a0c7; font-weight:bold;&quot;&gt; Mixcloud&lt;/a&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The Source Of Light (Max Cooper Remix) - D/R/U/G/S&lt;/li&gt;
+&lt;li&gt;Yellow Sunset (Robags Stoylago Edit) - Audision&lt;/li&gt;
+&lt;li&gt;Sloth (Markus Homm Remix) - Affkt&lt;/li&gt;
+&lt;li&gt;1492 (Gabriel Ananda Remix) - Perthil &amp;amp; Aerts&lt;/li&gt;
+&lt;li&gt;La Mezcla (Paul Kalkbrenner remix) - Michel Cleis&lt;/li&gt;
+&lt;li&gt;Acid Disco Drop - Louie Cut&lt;/li&gt;
+&lt;li&gt;Acperience 1 - Hardfloor&lt;/li&gt;
+&lt;li&gt;Nottebrava (Worakls Remix) - AnGy KoRg&lt;/li&gt;
+&lt;li&gt;Bleu - Worakls&lt;/li&gt;
+&lt;li&gt;Korona - Luc Angenehm&lt;/li&gt;
+&lt;li&gt;Planet Zoo - Rone&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                                <pubDate>Tue, 20 Aug 2013 00:00:00 +0100</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/08/20/musicinstinct-002/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/08/20/musicinstinct-002/</guid>
                         </item>
-                {% endfor %}
+                
+                        <item>
+                                <title>Laid Back - White Horse (Daz Automatic Mashup)</title>
+                                <description>&lt;!--break--&gt;
+
+&lt;p&gt;A highlight of the Boomtown festival the other weekend was Slipmatt&amp;#39;s afternoon &amp;#39;history
+of dance music&amp;#39; set where he played acid house and dance classics. I hadn&amp;#39;t heard this song
+(White Horse) for years but it sounded so good in the afternoon festival sunshine. That gave
+me the idea to mash it up with Gabriel Ananda, the songs go so well together and it gives it
+a more modern sound:&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F106226892&quot;&gt;&lt;/iframe&gt;
+</description>
+                                <pubDate>Mon, 19 Aug 2013 00:00:00 +0100</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/08/19/white-horse-mashup-remix/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/08/19/white-horse-mashup-remix/</guid>
+                        </item>
+                
+                        <item>
+                                <title>MusicInstinct YouTube Playlist</title>
+                                <description>&lt;!--break--&gt;
+
+&lt;p&gt;Just a collection of songs I like...&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/videoseries?list=PL4nI7nIdso2lHqYCUgdRMjpa3W439ch6E&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+                                <pubDate>Sat, 01 Jun 2013 00:00:00 +0100</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/06/01/musicinstinct-playlist/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/06/01/musicinstinct-playlist/</guid>
+                        </item>
+                
+                        <item>
+                                <title>MusicInstinct Mix &amp;#35;001</title>
+                                <description>&lt;!--break--&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F91168305&amp;amp;color=ffb100&amp;amp;auto_play=false&amp;amp;show_artwork=true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;p&gt;
+&lt;ol class=&quot;&quot;&gt;
+&lt;li&gt;Devil&amp;#39;s Elbow (Max Cooper Remix) - Nick Warren&lt;/li&gt;
+&lt;li&gt;Bubbles - Pig&amp;amp;Dan &amp;amp; Mark Reeve&lt;/li&gt;
+&lt;li&gt;Die 3 Millionen Musketiere (Extrawelt Remix) - Dominik Eulberg&lt;/li&gt;
+&lt;li&gt;Panta Rei (Max Cooper Remix) - Agoria&lt;/li&gt;
+&lt;li&gt;All That Matters (Original Mix) - Kolsh feat Troels Abranhamsen&lt;/li&gt;
+&lt;li&gt;Das Gezabel - Paul Kalkbrenner&lt;/li&gt;
+&lt;li&gt;You And Me (Max Cooper Remix) - Mauro Norti&lt;/li&gt;
+&lt;li&gt;1000 Bugz feat Blimp - Jichael Mackson&lt;/li&gt;
+&lt;li&gt;Subzero (Original Mix) - Ben Klock&lt;/li&gt;
+&lt;li&gt;FuzeBox - Mononoid&lt;/li&gt;
+&lt;/ol&gt;&lt;/p&gt;
+</description>
+                                <pubDate>Tue, 07 May 2013 00:00:00 +0100</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2013/05/07/musicinstinct-001/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/05/07/musicinstinct-001/</guid>
+                        </item>
+                
         </channel>
 </rss>

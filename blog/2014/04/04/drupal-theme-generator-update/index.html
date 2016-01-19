@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupal Theme Generator Update |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupal Theme Generator Update</h1>
+
+  <span class="">04 Apr 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">It&#39;s been a week now since I demoed my proof-of-concept for an automated
+theme generator at the Drupal show and tell event so I thought I&#39;d collect together
+the feedback I&#39;ve received so far and post an update.</p>
+
+              
+
+<h3>Wrong Approach?</h3>
+
+<p>Almost unanimously positive feedback. In fact, it seems other people have been
+thinking along similar lines:</p>
+
+<blockquote class="twitter-tweet" lang="en-gb"><p><a href="https://twitter.com/mothersele">@mothersele</a> dude! just saw <a href="http://t.co/GyV2m41eUe">http://t.co/GyV2m41eUe</a> This is something that <a href="https://twitter.com/jenlampton">@jenlampton</a>, <a href="https://twitter.com/mortendk">@mortendk</a>, <a href="https://twitter.com/Cottser">@Cottser</a> and I have discussed for 8.x twig!</p>&mdash; Mark Carver (@mark_carver) <a href="https://twitter.com/mark_carver/statuses/450016685752201216">March 29, 2014</a></blockquote>
+
+<p>The one opposing view I have encountered wasn&#39;t actually against any of the ideas
+in the theme generator, but suggested that taking over Drupal markup was wrong
+and that we should be working with what Drupal provides. I know there are
+arguments for this, and if you want to go this route then you will need some
+other mechanism for documenting the conversion of your design to Drupal theme.
+If you want to argue this case, I&#39;d suggest first try having that discussion with
+<a href="https://twitter.com/mortendk">Morten</a>, as I&#39;m going to assume that
+we&#39;re all OK with the concept of taking complete control of (completely rewriting)
+Drupal&#39;s markup output.</p>
+
+<h3>Annotation</h3>
+
+<p>In an earlier prototype I had started working with annotations inside HTML comments
+but I found these increasing harder to parse as the extractions became more
+sophisticated.  Someone in conversation brought up ideas from KSS and suggested
+looking at CSS comments as an alternative.</p>
+
+<p>I&#39;m still proposing this as a possible approach (see
+<a href="https://en.wikipedia.org/wiki/Docblock">Docblock</a>), but for now I&#39;m going to
+continue to annotate the markup (not the CSS) with x- attributes, as no
+one has had an issue with this, and at this stage it&#39;s easier to work with
+QueryPath to create the extractions based on these attributes.
+It seems that annotating the markup with x- attributes will be acceptable
+as long as they are stripped from the markup during the build process.</p>
+
+<blockquote class="twitter-tweet" lang="en-gb"><p><a href="https://twitter.com/rootwork">@rootwork</a> <a href="https://twitter.com/illepic">@illepic</a> <a href="https://twitter.com/micahgodbolt">@micahgodbolt</a> <a href="https://twitter.com/EvanLovely">@EvanLovely</a> <a href="https://twitter.com/mothersele">@mothersele</a> Interesting! Do the data attributes get stripped out during the build step?</p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/statuses/449662512624328704">March 28, 2014</a></blockquote>
+
+<p>It was great to get feedback from <a href="http://bradfrostweb.com/">Brad Frost</a>
+as his work on Atomic Design has been influential in the development of
+this process.</p>
+
+<h3>In code, or config</h3>
+
+<p>In this first proof-of-concept, the generated theme is held in memory, well
+actually it is persisted as a Drupal variable containing a single object that
+holds the result of all the &#39;extractions&#39; from the source. The original intention
+was that this would actually be a ctools exportable, so that it could be exported
+and managed as part of the configuration management process for the site.</p>
+
+<p>This is how the Panels flexible layout builder works. It has one parent layout
+plugin that programmatically declares child layout plugins based on the layouts
+you define using the layout builder tool. These child layouts are stored as
+exportable objects, so they can be exported using
+<a href="https://drupal.org/project/features">Features</a>. The current Hyde theme generator
+approach is similar, except that the parent plugins (for layout or styles)
+programmatically declare child layout and style plugins based on the result
+of each extraction from the HTML source design.</p>
+
+<p>Storing the result of the build in configuration or database raised some concerns,
+mainly over capturing the results in version control. These tweets summarise the
+issue:</p>
+
+<blockquote class="twitter-tweet" lang="en-gb"><p><a href="https://twitter.com/mothersele">@mothersele</a> interesting implementation. But I believe that should definitely generate theme in code, not just DB&#10;<a href="https://twitter.com/mcjim">@mcjim</a> <a href="https://twitter.com/MattFielding">@MattFielding</a></p>&mdash; Tom Bamford (@waako) <a href="https://twitter.com/waako/statuses/449539868411322368">March 28, 2014</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="en-gb"><p><a href="https://twitter.com/waako">@waako</a> If a prototype is always in sync with a Drupal theme, the markup *is* all in code right? // <a href="https://twitter.com/mothersele">@mothersele</a> <a href="https://twitter.com/mcjim">@mcjim</a></p>&mdash; Matt Fielding (@MattFielding) <a href="https://twitter.com/MattFielding/statuses/449551562344386560">March 28, 2014</a></blockquote>
+
+<p>Matt picks up on my original intention, in that the design/theme would be
+captured in code and be version-able because the translation is automatic from the
+design&#39;s HTML/CSS/JS.</p>
+
+<p>The difficulty is in managing any changes that happen to the generated code
+once it becomes a Drupal theme. This is exactly the problem that using the
+theme generator is trying to solve. That it provides a documented, repeatable
+conversion process, so that design can become part of the (agile) development workflow.</p>
+
+<p>However, it is going to be unavoidable that some tweaking will be needed.
+This covers a couple more issues that were raised at the Drupal show-and-tell
+event:</p>
+
+<ul>
+<li>How to manage logic in template files?</li>
+<li>How to capture Drupal&#39;s pre-process functions?</li>
+</ul>
+
+<p>The approach I am looking at to solve this, is one I&#39;ve seen practised by other
+tools that involve code generation. For example, have you seen BDD using
+<a href="http://behat.org/">Behat</a>? When define a test scenario in Behat it generates
+stub code for any unrecognised steps in your tests. For example, if you say
+&quot;Given I am in a directory&quot;, you would get the generated stub code:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/**
+ * @Given /^I am in a directory &quot;([^&quot;]*)&quot;$/
+ */
+public function iAmInADirectory($argument1)
+{
+  throw new PendingException();
+}
+</code></pre></div>
+<p>I think the theme generator could do something similar for elements marked as
+requiring pre-processing in the template file. This needs some further
+thought and perhaps a couple of experiements.</p>
+
+<h3>Terminology</h3>
+
+<p>Still struggling with naming conventions. If this is going to be a more general
+tool then need generally understandable terms (like &#39;component&#39;). But, need
+to avoid overloading terms even more, as it&#39;s already quite confusing having
+SMACSS modules, Drupal modules, panels, blocks, boxes, styles, layouts. urgh!</p>
+
+<h3>Next steps...</h3>
+
+<blockquote class="twitter-tweet" lang="en-gb"><p><a href="https://twitter.com/mothersele">@mothersele</a> <a href="https://twitter.com/mark_carver">@mark_carver</a> I love it. Also love that it works w/ panels! Q: Are the layout plugins placed in the theme? <a href="https://twitter.com/mortendk">@mortendk</a> <a href="https://twitter.com/Cottser">@Cottser</a></p>&mdash; Jen Lampton (@jenlampton) <a href="https://twitter.com/jenlampton/statuses/450703701263388672">March 31, 2014</a></blockquote>
+
+<p>So, I&#39;m going to revise the current proof-of-concept and produce a second
+prototype. This time as a Drush command that generates an actual Drupal theme.
+Rather than holding the extracted theme in configuration it will generate
+a theme folder, that will include all the usual Drupal theme files, plus any plugins for
+Panels layouts, styles, display suite etc, and the CSS/JS copied across
+from the source design.</p>
+
+<p>This will allow Hyde to generate stub code for pre-processing or
+other programmatic tweaks that are needed to get Drupal&#39;s output to match the
+design markup. I also think people
+will be more accepting of this approach as it&#39;s probably more like how it is
+expected to work.</p>
+
+<p>My worry is that people will then hack the generated theme, it will go
+out of sync with the source design markup, and that will break the whole process.</p>
+
+<p>If you want to get involved, please drop me a line. I need input from designers,
+themers, and developers. In particular, I&#39;d be interested to speak to anyone else
+already using Atomic Design and/or SMACSS on Drupal projects.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

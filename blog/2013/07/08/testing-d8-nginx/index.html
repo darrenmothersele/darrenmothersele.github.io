@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Testing Drupal 8 dev with Nginx, PHP-FPM and MariaDB using Vagrant |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Testing Drupal 8 dev with Nginx, PHP-FPM and MariaDB using Vagrant</h1>
+
+  <span class="">08 Jul 2013</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">My preferred setup for running Drupal sites uses Nginx, PHP-FPM and MariaDB. After reading a few posts about issues with Drupal 8 in this setup, I decided to quickly test it using Vagrant. I managed to get a development version of Drupal 8 up and running in approximately 30 mins in which I tried various things to get it working. Here are the steps that worked.
+</p>
+
+
+              <p> This is not a complete guide to hosting Drupal 8 on Nginx using PHP-FPM and there's a lot of tweaking needed, so here I just use default configurations wherever possible for simplicity. I plan to share more advanced configurations in a future post, like the configurations I'm using with <a href="http://www.apiarycloud.com">Apiary</a>. </p>
+<p>First make sure you've got <a href="http://docs.vagrantup.com/v2/installation/index.html">Vagrant installed</a>, create a new folder, and initialize a new Vagrant box:</p>
+<p></p><div class="codeblock"><code>vagrant init precise32</code></div>
+<p>Edit the Vagrantfile to add a port map for port 80, so your Vagrantfile looks like this:</p>
+<p></p><div class="codeblock"><code>Vagrant.configure("2") do |config|<br>&nbsp; config.vm.box = "precise32"<br>&nbsp; config.vm.network :forwarded_port, guest: 80, host: 4567<br>end</code></div>
+<p>I then <code>vagrant ssh</code> into the box and do an <code>apt-get update</code> and <code>apt-get upgrade</code>. I then setup Aptitude sources to enable installation of MariaDB. </p>
+<p></p><div class="codeblock"><code>sudo apt-get install python-software-properties<br>sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db<br>sudo add-apt-repository 'deb http://mirror.stshosting.co.uk/mariadb/repo/5.5/ubuntu precise main'<br>sudo apt-get update</code></div>
+<p>And then install all the required packages:</p>
+<p></p><div class="codeblock"><code>sudo apt-get install mariadb-server nginx-extras php5-fpm php-pear php5-cli php5-gd php5-curl php5-common php5-mysql php-apc php-console-table </code></div>
+<p>This installs MariaDB, Nginx, PHP-FPM and some required PHP packages, and PHP console table that's required by Drush.</p>
+<p>You could start the nginx service now with
+<code>sudo service nginx start</code> and you would see the "Welcome to nginx!" page if you go to http://localhost:4567/ in your browser.</p>
+<p>In order to use Drush with Drupal 8 you need to install Drush version 6. This can be done by specifying the version explicitly when installing with pear:</p>
+<p></p><div class="codeblock"><code>sudo pear channel-discover pear.drush.org<br>sudo pear install drush/drush-6.0.0</code></div>
+<p>I downloaded Drupal to the /vagrant folder using Drush. I then later found issues with file permissions over the folder shared with the host machine from within Vagrant so I symlinked the sites folder to /home/vagrant and changed the owner to www-data. I also found issues running Drush as the vagrant user, so I use sudo to run it as if it was www-data. </p>
+<p></p><div class="codeblock"><code>drush dl --select --all drupal-8</code></div>
+<p>With that command you can then select to download either the Drupal 8 dev version, or the latest alpha (at time of writing alpha2). </p>
+<p>I then create a database for Drupal to use by using the Mysql client</p>
+<p></p><div class="codeblock"><code>mysql -uroot -p</code></div>
+<p>And entering these SQL commands:</p>
+<p></p><div class="codeblock"><code>CREATE DATABASE drupal8;<br>GRANT ALL PRIVILEGES ON drupal8.* TO drupal@localhost IDENTIFIED BY 'password';</code></div>
+<p>Then change directory into the Drupal folder and run the Drush site installer as www-data user:</p>
+<p></p><div class="codeblock"><code>sudo -u www-data drush si --db-url=mysql://drupal:password@localhost/drupal8 </code></div>
+<p>In this test I'm just using the default configurations. So start PHP-FPM and it will be available on 127.0.0.1:9000 </p>
+<p></p><div class="codeblock"><code>sudo service php5-fpm start</code></div>
+<p>I remove the default nginx site:</p>
+<p></p><div class="codeblock"><code>sudo unlink /etc/nginx/sites-enabled/default</code></div>
+<p>And then create a new configuration using the values from the <a href="http://wiki.nginx.org/Drupal">Nginx wiki</a>. This is not the production nginx configuration I am using, as I use Puppet modules that I created based on <a href="https://github.com/perusio/drupal-with-nginx">Perusio's nginx configuration</a>, but for this test I just wanted the basics. Copy this code into  <code>/etc/nginx/sites-available/drupal8</code> and then create a symlink to enable the site:</p>
+<div class="codeblock"><code>sudo ln -s /etc/nginx/sites-available/drupal8 /etc/nginx/sites-enabled/drupal8 </code></div>
+<p><strong>NB:</strong> You need to update the PHP socket information based on the default configuration provided by PHP-FPM otherwise you will get Gateway errors when you try to access the site. By default the nginx configuration above is using a unix socket, so change this to 127.0.0.1:9000 as specified in the default pool configuration for PHP-FPM.</p>
+<p>Now start (or restart) nginx to see the site working in the browser:</p>
+<p></p><div class="codeblock"><code>sudo service nginx restart</code></div>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

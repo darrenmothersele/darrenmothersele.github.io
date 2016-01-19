@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Easy Drupal Backup with Rsync and MySQLDump |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Easy Drupal Backup with Rsync and MySQLDump</h1>
+
+  <span class="">25 Jul 2008</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Here's a nice easy way of running backups for your Drupal sites. To successfully backup a Drupal website you need to:</p>
+
+<p class="lead"><ol><li>backup all the files, themes, modules, etc, and,</li>
+<li>backup the database content</li>
+</ol><p class="lead">I&#39;ll not go into the reasons why backups are essential part of support for Drupal, or any websites, because if you&#39;ve ever had a server crash and die on you then you will understand. If you haven&#39;t then I suggest it&#39;s only a matter of time, and you start a rigorous backup routine now.</p>
+<p class="lead">Read on for one backup method that produces nice incremental backups of your Drupal site without taking up too much diskspace, and dumps SQL content of your Drupal database at the same time.</p></p>
+
+              
+
+<h4>Backing up the Drupal files on your web-server</h4>
+
+<p>You could just backup your site/ folder, which if Drupal is configured correctly should contain all your customisations for your site. Or, an easy alternative is to just backup the whole of your htdocs directory. </p>
+
+<p>Making a full backup is a length process, and takes up more space than it needs to. That's why I suggest using an 'incremental' backup process, such as the one recommended by <a href="http://www.mikerubel.org/computers/rsync_snapshots/">Mike Rubel</a>. This involves just saving the changes since the last backup. Rsync is a perfect tool for achieving this, it is included in most Linux distributions (or easy to find at least), and works very efficiently over networks (which is good for FTP backups if you want to go down that route).</p>
+
+<p>The process is as follows:<br /></p><div class="codeblock"><code>rm -rf backup.3<br />mv backup.2 backup.3<br />mv backup.1 backup.2<br />cp -al backup.0 backup.1<br />rsync -a --delete source_directory/  backup.0/</code></div>
+<p>If you run this every day, the result will be folders called backup.0, backup.1, backup.2, and backup.3 - which look like full backups for today, yesterday, and the two days before that. What is actually stored on disc is one folder with the full latest backup, and then folders containing just the files that changed on the previous days.</p>
+
+<p>This backup script should be created in a .sh file, set to executable and then included in your daily <b>crontab</b>.</p>
+
+<h4>Backing up the database</h4>
+
+<p>Now you have the backups of your files, all that's left to do is backup your database. Here's the command line you need to create a backup:<br /></p><div class="codeblock"><code>mysqldump -u username -p password database &gt; filename.sql</code></div>
+<p>You should then compress this file by using the following command:<br /></p><div class="codeblock"><code>gzip filename.sql</code></div>
+<p>You can pipe the two commands together and add them to your crontab to execute daily.</p>
+
+<p><p>The database backup could also be extended to keep snapshots from the previous days by adding a file rotation to the script as with the rsync backup, for example:<br /></p><div class="codeblock"><code>rm -rf databasebackup.3.sql<br />mv databasebackup.2.sql databasebackup.3.sql<br />mv databasebackup.1.sql databasebackup.2.sql<br />mv databasebackup.0.sql databasebackup.1.sql<br />mysqldump -u username -p password database &gt; databasebackup.0.sql</code></div></p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

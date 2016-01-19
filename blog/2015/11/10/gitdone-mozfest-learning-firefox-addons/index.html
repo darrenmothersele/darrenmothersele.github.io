@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> GitDone, MozFest 2015, and Learning Firefox WebExtensions |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<div class="dm-page">
+<div class="post dm-post">
+
+  <header class="post-header">
+    <h1 class="post-title">GitDone, MozFest 2015, and Learning Firefox WebExtensions</h1>
+    <span class="post-meta">Nov 10, 2015
+    </span>
+  </header>
+
+  <article class="post-content">
+    
+      <p class="lead">At Mozfest this last weekend I joined Matt Thompson
+<a href="https://twitter.com/openmatt">@OpenMatt</a> and
+Phillip Smith <a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> hacking on
+an idea make GitHub more accessible for non-technical users.</p>
+
+<p class="lead">This was my first time playing around with WebExtensions in FireFox.
+It&#39;s still all quite new, and there&#39;s <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">minimal documentation</a>, but during the
+weekend at <a href="https://2015.mozillafestival.org/">MozFest</a>, we pieced together a working Firefox
+extension <a href="https://github.com/OpenMatt/GitDone">GitDone</a>.</p>
+
+      
+
+<p>The approach we took was to rewrite bits of the GitHub interface
+using a Firefox Addon. Hiding bits, moving bits from one page to another, or rewriting
+bits of the interface. To do this we used an extension to inject CSS and JS
+into the page. This is not usually a good idea, it&#39;s very fragile. By doing
+this we are coding against private details internal to GitHub&#39;s implementation
+and not a public published API. Building against APIs is good, because it&#39;s like
+a contract, and changes are managable, but with this approach GitHub could
+change things at any point and break our code. A better approach would be to
+build a new UI and then integrate with GitHub via their API.</p>
+
+<p>But, fragility doesn&#39;t matter here, as the priority is getting something working
+so we can test out ideas. I don&#39;t see the technology as an issue in this case,
+it&#39;s more about understanding what would make GitHub issues easier and more
+efficient for project managers.</p>
+
+<p>We got a first very basic prototype hacked together during Mozfest, and I
+hope we&#39;ll continue to develop it as we get feedback from users, but the most
+interesting thing for me was that it introduced me to the new Firefox addon
+mechanism, based on WebExtensions (so similar to Chrome and Opera).</p>
+
+<h2>Limitation and learning</h2>
+
+<p>At first it seemed so easy. I imagined a very trivial, almost vacuous, addon.
+<a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">WebExtensions</a> has support for
+<a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Content_scripts">Content Scripts</a>
+that &quot;runs in the context of a particular web page&quot;. We can define a CSS file
+and a URL pattern, such that the CSS file will be injected into pages that
+match the URL pattern. You can see this in action in our
+first experiment <a href="https://github.com/OpenMatt/GitDone/commit/bf18807d23e8efa7628558672b3c4202e394ecb5">(commit #bf18807)</a>.
+Great! We can simplify the interface by hiding something things. So, now we
+move on to moving things and rewriting things? Well, unfortunately not.
+It turns out it&#39;s not this easy.</p>
+
+<p>GitHub uses <a href="https://github.com/defunkt/jquery-pjax">pjax</a> to deliver a faster browsing experience. It combines
+ajax loading and <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">pushState</a>
+to respond to clicks and load in new content while still maintaining permalinks,
+page titles, and browser back button functionality.</p>
+
+<p>This breaks our simple content script based CSS injection, because it only
+gets loaded in on the first GitHub page we access. This causes issues when we
+want to do different rewritings of the UI on different pages. We need to react
+to the pjax events that pull in new content.</p>
+
+<h2>Isolated worlds</h2>
+
+<p>It took a bit of randomly experimenting and randomly searching documentation to
+work out why this wasn&#39;t working. Being new to Firefox addons, I was quickly
+having to learn where to find information, how to debug, etc. The frustration
+was that I could inject code via the console, react to pjax events and see it
+all working, but I couldn&#39;t do the same from a Content Script loaded via the
+WebExtension.</p>
+
+<p>The answer came when I realised that the Content Script and the web page run
+in &quot;isolated worlds&quot;. They have the same copy of the DOM, but outside of this
+the Javascript environments don&#39;t overlap. The pjax events were happening in
+the page context, and not visible to the Content Script.</p>
+
+<h2>Get out of jail card</h2>
+
+<p>I would later find
+out that regular DOM Events (non-jQuery) bubble up fine and can trigger event
+handlers in either of the &quot;worlds&quot;. But, for the first working version, it
+was enough to use the DOM to &quot;inject&quot; our Javascript into the DOM so it could
+run in the same &quot;world&quot; as the GitHub page Javascript, and thus do our
+rewritings of the UI based off the pjax events fired there.
+To do this, we use a Content Script, <code>injector.js</code> that just injects our
+script into page, via the DOM:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">var s = document.createElement(&#39;script&#39;);
+s.src = chrome.extension.getURL(&#39;scripts/bootstrap.js&#39;);
+s.onload = function() {
+    this.parentNode.removeChild(this);
+};
+(document.head || document.documentElement).appendChild(s);
+</code></pre></div>
+<p>For <a href="https://github.com/OpenMatt/GitDone/tree/v0.1">v 0.1</a> it was enough to
+inject the main JS, and do the rewriting in the &quot;world&quot; of the GitHub page.
+This is isolated from the Content Script that injects it. Unfortunately,
+in the GitHub world, the JS is not an extension (addon) anymore, so it doesn&#39;t
+have access to the WebExtension APIs of Firefox. The Content Script does, and
+can communicate with a &quot;background script&quot; to persist data in local storage,
+create notifications, etc.</p>
+
+<h2>Isolated worlds</h2>
+
+<p>In a WebExtension the background script has full access to the APIs for local
+storage, generating notifications, etc. The Content Script has limited access
+but can use the features by communicating with the background script. This is
+done by <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Content_scripts#Communicating_with_background_scripts">sending messages</a> and
+listening for message events.</p>
+
+<p>If our injected JS running in the GitHub page needs to access these features, it
+first needs a way to communicate back to the Content Script that injected it.
+The two scripts are in separate &quot;isolated worlds&quot; but they share the DOM of the
+page, so we can do this using regular DOM events (jQuery events didn&#39;t seem to
+work in my tests).</p>
+
+<p>For example, in the injected JS we can react to a jQuery event, and turn it
+into a DOM event:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in injected JS
+// Add out listener to pjax events
+$(document).ready(function () {
+  $(document).on(&quot;pjax:end&quot;, function (e) {
+    var applyModsEvent = document.createEvent(&#39;CustomEvent&#39;);
+    applyModsEvent.initCustomEvent(&#39;gitdone:apply&#39;, true, true, {
+      activeRoute: document.URL
+    });
+    document.dispatchEvent(applyModsEvent);
+  });
+});
+</code></pre></div>
+<p>And, in the injector Content Script listen for the event:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+window.addEventListener(&quot;gitdone:apply&quot;, applyModsEventHandler);
+function applyModsEventHandler(e) {
+  console.log(&#39;Apply modifications for &#39; + e.detail.activeRoute);
+}
+</code></pre></div>
+<p>The injected JS can&#39;t communicate with the background script, but the content
+script can. In the content script you send a message event:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+chrome.runtime.sendMessage({msg: &quot;init&quot;});
+</code></pre></div>
+<p>Which you can react to in the background script:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
+chrome.runtime.onMessage.addListener(function (message, sender) {
+
+});
+</code></pre></div>
+<p>And, in the background script, send messages back to the Content Script:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
+chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
+</code></pre></div>
+<p>Which the content script can receive:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+chrome.runtime.onMessage.addListener(function (message, sender) {
+}
+</code></pre></div>
+<h2>Conclusion</h2>
+
+<p>So that solves the issue of communicating across the three scripts. We have the
+injected script, running in the Github page catching pjax events. The content script,
+sharing the DOM with the Github page but separate JS world. The content script
+injects the separate js script into the page via a script tag on the DOM. Communication
+across this barrier is via DOM events.</p>
+
+<p>We also have the background script, having access to all the WebExtension APIs
+like local storage, notifications, etc. The content script and background
+script communicate via message events on <code>chrome.runtime</code>.</p>
+
+<p>Useful learnings, and hopefully <a href="https://github.com/OpenMatt/GitDone">GitDone</a>
+will develop into something useful too.</p>
+
+    
+  </article>
+</div>
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script>
+      var disqus_config = function () {
+          this.page.url = 'http://www.darrenmothersele.com/blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/';
+      };
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//darrenmothersele.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments (powered by Disqus).</noscript>
+</div>
+</div>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

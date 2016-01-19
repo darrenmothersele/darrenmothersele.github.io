@@ -1,37 +1,398 @@
----
-layout: default
-title: All blog posts - Darren Mothersele - London Based Developer
----
-<div class="posts">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> All blog posts |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
 
-<h1 class="content-subhead">
-  All blog posts (page {{ paginator.page }} of {{ paginator.total_pages }})
-</h1>
+<header>
 
-{% for post in paginator.posts %}
-  {% include featured.html post=post %}
-{% endfor %}
-</div>
+<div class="top-nav">
 
-<div class="post-pager">
-<ul class="pure-paginator">
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
 
-{% if paginator.previous_page %}
-<li><a class="pure-button prev" href="{{ paginator.previous_page_path }}" title="Previous Page">&laquo;</a></li>
-{% endif %}
-
-{% for i in (1..paginator.total_pages) %}
-{% if i == 1 %}
- <li><a class="pure-button{% if i == paginator.page %} pure-button-active{% endif %}" href="/blog/">{{ i }}</a></li>
-{% else %}
- <li><a class="pure-button{% if i == paginator.page %} pure-button-active{% endif %}" href="/blog/page{{ i }}/">{{ i }}</a></li>
-{% endif %}
-{% endfor %}
-
-{% if paginator.next_page %}
-<li><a class="pure-button next" href="{{ paginator.next_page_path }}" title="Next Page">&raquo;</a></li>
-{% endif %}
-
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
 </ul>
 </div>
+<br clear="both">
 
+</header>
+
+<div class="page">
+<div>
+    <!-- <span class="text-white alt-font"></span> -->
+    <h1 class="text-white">All blog posts</h1>
+    <h3 class="text-white"></h3>
+</div>
+
+
+  <div class="posts">
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/12/12/in-summary/">In Summary...</a></h1>
+        <p class="lead">
+          <p>Things are becoming clearer.
+I wrote a bit <a href="http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/">last week</a>
+about my decision to leave Facebook.
+I&#39;m still exploring what this means, and here&#39;s where I&#39;m at now.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 12 Dec 2015</span><br>
+        <a href="/blog/2015/12/12/in-summary/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/12/03/work-in-progress/">Work in Progress: The Future of (My) Web (Part 1, Leaving Facebook)</a></h1>
+        <p class="lead">
+          <p>I wanted to write a post about my decision to leave Facebook (again).
+It was in danger of turning into a treatise on how I see the future of the
+web. So, instead, I&#39;ve decided to summarise my thoughts, and post this up as a &quot;Work-in-progress&quot;.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 03 Dec 2015</span><br>
+        <a href="/blog/2015/12/03/work-in-progress/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/11/24/identity-proxy-and-the-startup-battle/">Identity Proxy</a></h1>
+        <p class="lead">
+          <p>If you&#39;ve got 5 mins, I would really appreciate it if
+you could read this. Then, tell me what you think 
+of the idea.  </p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 24 Nov 2015</span><br>
+        <a href="/blog/2015/11/24/identity-proxy-and-the-startup-battle/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/11/20/global-startup-battle-2015-kickoff/">Global Startup Battle 2015 Kickoff</a></h1>
+        <p class="lead">
+          <p>I&#39;m at a hackathon this weekend. The Global Startup
+battle to be precise.</p>
+
+<p>I came along as a developer, excited to see what kind of
+projects would be proposed, unsure what I would be
+getting involved in. I didn&#39;t expect to be
+getting up and pitching an idea of my own...</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 20 Nov 2015</span><br>
+        <a href="/blog/2015/11/20/global-startup-battle-2015-kickoff/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/11/16/surviving-open-source-gentrification/">How to Survive Gentrification of the Drupal Community</a></h1>
+        <p class="lead">
+          <p>We&#39;re finally approaching the release of
+<a href="https://www.drupal.org/node/2605142">Drupal 8.0.0 on 19th Nov</a>. The
+biggest achievement of the Drupal community to date. A complete rewrite of the core
+system to use modern object-oriented PHP. An effort that is often referred to as
+&quot;getting off the island&quot;.</p>
+
+<p>While the switch from Drupal 7 to Drupal 8 is a big change for developers, it is
+the result of a slow process of maturation of the Drupal community. Drupal 8
+brings changes that will be welcomed by many, will bring in many new users, and of
+course, will push a few people out. How can we survive this &quot;gentrification&quot;
+of the Drupal community and prosper without losing touch with why we loved
+Drupal in the first place.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 16 Nov 2015</span><br>
+        <a href="/blog/2015/11/16/surviving-open-source-gentrification/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/">GitDone, MozFest 2015, and Learning Firefox WebExtensions</a></h1>
+        <p class="lead">
+          <p>At Mozfest this last weekend I joined Matt Thompson
+<a href="https://twitter.com/openmatt">@OpenMatt</a> and
+Phillip Smith <a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> hacking on
+an idea make GitHub more accessible for non-technical users.</p>
+
+<p>This was my first time playing around with WebExtensions in FireFox.
+It&#39;s still all quite new, and there&#39;s <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">minimal documentation</a>, but during the
+weekend at <a href="https://2015.mozillafestival.org/">MozFest</a>, we pieced together a working Firefox
+extension <a href="https://github.com/OpenMatt/GitDone">GitDone</a>.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 10 Nov 2015</span><br>
+        <a href="/blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/07/12/happy-birthday-bucky/">Happy Birthday Bucky! How do we celebrate Buckminster Fuller?</a></h1>
+        <p class="lead">
+          <p>Buckminster Fuller (aka Bucky) was born on this day (12th July) in 1895. He was one of the most significant thinkers of the 20th century, the developer of the geodesic dome, and the first person to live consciously as a global citizen.</p>
+
+<p>But, despite the importance of his ideas, he&#39;s relatively obscure and largely unknown by the majority of the population.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 12 Jul 2015</span><br>
+        <a href="/blog/2015/07/12/happy-birthday-bucky/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/03/20/stylex-prototype-style-guide-tool/">Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</a></h1>
+        <p class="lead">
+          <p>I&#39;ve been working a lot with Atomic design (component-based design)
+with Drupal recently, and I&#39;ve witnessed huge improvements on projects
+where it has been introduced. The main advantage being the decoupling of
+the development of the back-end from the development of the front-end
+code. </p>
+
+<p>I&#39;ve covered this in more detail <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">previously</a>, I&#39;m running some workshops on <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a>,
+and I have more to say on this in the future. Today I want to tell you about a simple
+tool I&#39;m using to speed up the process. <a href="https://github.com/darrenmothersele/stylex">Stylex</a>.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 20 Mar 2015</span><br>
+        <a href="/blog/2015/03/20/stylex-prototype-style-guide-tool/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/03/06/atomic-drupal-workshops/">Atomic Drupal Workshop</a></h1>
+        <p class="lead">
+          <p>If you&#39;re a frustrated web developer spending more time battling with Drupal than enjoying its benefits then read on, as I&#39;m going to explain how I&#39;ve hacked the Drupal site building process to make it easier and more fun.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 06 Mar 2015</span><br>
+        <a href="/blog/2015/03/06/atomic-drupal-workshops/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+  <div class="blog-snippet-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1 class="post-title-sm"><a href="/blog/2015/02/26/drupal-site-builder-manifesto/">The Drupal Site Builder Manifesto</a></h1>
+        <p class="lead">
+          <p>I wanted to get some clarity on what I mean
+by the term &quot;site builder&quot;. In a general sense, it refers to the
+actual process of building a website, but in Drupal the term
+Site Builder tends to have a specific meaning.
+I realised that my definition may vary from others so
+I wanted to be precise about what I think it means, and what
+I think it means to be a Drupal Site Builder.</p>
+
+        </p>
+        <i class="icon-calendar"></i><span class="alt-font">Published 26 Feb 2015</span><br>
+        <a href="/blog/2015/02/26/drupal-site-builder-manifesto/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</div><!--end of blog-snippet-3-->
+
+
+</div>
+
+
+<div class="text-center">
+<nav>
+  <ul class="pagination">
+
+  
+
+  
+  
+   <li class="active"><a href="/blog/">1</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page2/">2</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page3/">3</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page4/">4</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page5/">5</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page6/">6</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page7/">7</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page8/">8</a></li>
+  
+  
+  
+   <li class=""><a href="/blog/page9/">9</a></li>
+  
+  
+
+  
+  <li><a class="" aria-label="Next" href="/blog/page2" title="Next Page"><span aria-hidden="true">&raquo;</span></a></li>
+  
+
+  </ul>
+</nav>
+</div>
+
+
+
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

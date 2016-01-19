@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> How to Be a Cloud Survivalist (part 1) |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">How to Be a Cloud Survivalist (part 1)</h1>
+
+  <span class="">11 Dec 2013</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">This is the first in a series of posts where I document the process of
+implementing your own suite of cloud services.</p>
+
+<p class="lead">With a little bit of effort you can quite easily set-up your own suite of
+cloud services to rival the likes of Google. If you&#39;re concerned about
+communication surveillance programs, selling of your personal data to
+advertisers, security breaches, or maybe you just want to own and control your own data, there are some great options out there.</p>
+
+              
+
+<p>A few months ago there was an article in Scientific American by Wendy Grossman
+called <a href="http://www.scientificamerican.com/article.cfm?id=how-to-be-an-e-mail-survivalist">How to Be an E-Mail Survivalist</a>. In this article Wendy
+discusses the pros and cons of running your own email service. I&#39;m going to
+ignore the fact that the article fails to mention any of the solid, robust,
+open source mail server projects, in favour of recommending some weird proprietary
+email server, as she makes a few interesting observations:</p>
+
+<blockquote>
+In the early 2000s it was the height of geek fashion to run your own e-mail server - then along came Gmail with two gigabytes of free storage and excellent spam filtering. Now even most people with their own domain names use e-mail provided by Google, Microsoft or their Internet Service Provider (ISP).
+<br>&mdash;<cite> Wendy Grossman</cite>
+</blockquote>
+
+<p>I used to run my own mail server until Gmail came along. Prior to that I had
+the headaches, the &quot;occasional day of pain&quot; as Wendy calls it,
+when things stopped working for seemingly no reason. Back then I was stupidly
+trying to run everything on one server. Not a good idea!</p>
+
+<p>But, then Google came along and offered their slick Gmail interface and their
+reliable email servers for use with your own domain. And, they gave it away
+for free. All you had to do was give away ownership of your entire digital life
+to them. A small price to pay for reliable email service?</p>
+
+<h3> A small price to pay?</h3>
+
+<p>Maybe that seemed like a small price to pay at the time, but now I think
+we&#39;re starting to realise the true costs. First up there&#39;s the issue
+of government mass surveillance programmes. If you&#39;re wondering what all the fuss is about, then you need to read this excellent article from the EFF, <a href="https://www.eff.org/deeplinks/2013/11/busting-eight-common-excuses-nsa-surveillance">Busting Eight Common Excuses for NSA Mass Surveillance</a>.</p>
+
+<p>Next there&#39;s the issue of T&amp;Cs. Have you ever read one of these documents?
+What are you actually giving away when you
+tick that box and agree to the terms and conditions? Giving away ownership of
+data and the content you create? Agreeing that they&#39;re not responsible if
+anything should happen to your data? Agreeing to sharing of your data with
+third parties? Remember that even
+<a href="http://news.cnet.com/8301-13739_3-9826608-46.html">anonymised data
+can be de-anonymised</a>.</p>
+
+<p>Then, there&#39;s the security issue. The news is full of high-profile security breaches, like customer data being stolen from Adobe, DropBox, Evernote and
+posted publicly on the internet. I know there&#39;s nothing to say you will be
+able to implement any better security than these guys, but at least you&#39;ll be
+less of a target. More importantly though, it&#39;s under your control, so you
+can be as militant or relaxed about security as you wish.</p>
+
+<h3>Fashionable again</h3>
+
+<p>I&#39;ve recently been rethinking that decision to move everything to Google,
+and I&#39;ve decided it&#39;s probably about
+time it was fashionable to run your own email server again and take back
+control. But, now I&#39;m expecting a lot more from my own set-up. It&#39;s not just a
+reliable email service. I&#39;m now looking for options to sync data (contacts,
+calendars, files) across all my devices, access them from anywhere, and share them with friends.  Luckily in the self-hosted options have come along leaps and bounds in recent years so you can literally run the suite of entire cloud services that we&#39;ve come to expect.</p>
+
+<p>This will require some digging about in the technical details of how
+all this stuff works. I&#39;ve explained here the technology I&#39;m using and how I&#39;ve
+glued it all together, but this is far from a complete solution. On the plus
+side you don&#39;t have to compromise at all on functionality:</p>
+
+<ul>
+<li>You&#39;ll be able to access your email, files, documents, music and photos from anywhere in the word, and have state of the art malware and spam protection.</li>
+<li>You will own and control all your own data. It doesn&#39;t completely protect you
+from surveillance, as you could always have your internet connection tapped, but
+that wasn&#39;t a major concern for me. It certainly does make it harder though as your archive is under your control.</li>
+<li>You&#39;ll not be subject to automated analysis of your data (unless for some
+crazy reason you want to, but that&#39;s the subject for future blog post!),
+no ad targeting, or selling on of your personal data.</li>
+</ul>
+
+<blockquote>There is something extraordinarily empowering about firing up e-mail software, connecting to your own server and retrieving your messages. Being in charge of a fundamental part of your communications life can restore your view of the Internet as a modern marvel. <br>&mdash;<cite> Wendy Grossman</cite></blockquote>
+
+<p>There are a few downsides, which we&#39;ll have to try and work around. One issue
+is that because your email is not coming from one of the big mail companies, there&#39;s a higher chance that receiving servers will flag your email as spam. You also risk the chance of losing mails because of power outages or technical issues.
+There&#39;s a few options to try and mitigate this which will be discussed in a
+future instalment when I look at backup and failure planning.</p>
+
+<p>Tomorrow, in part 2, I&#39;ll be building up a list of requirements and looking at the various options that are available.</p>
+
+<p>Continue to <a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">How to Be a Cloud Survivalist (part 2)</a></p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Webbots - Saving Time, and more |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Webbots - Saving Time, and more</h1>
+
+  <span class="">11 Apr 2008</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">cURL is amazing. If you're not familiar with this particular technology then let me introduce it now: <a href="http://curl.haxx.se/" rel="nofollow">cURL</a> (and more specifically the PHP interface for cURL) allows the programmer to communicate with various servers using various different protocols. I've been using it recently to build webbots to automate some tedious tasks, and do things that no normal human user of the internet would ever want to do. Here's an example use of this technology, and how I went about building it...</p>
+
+              
+<p>I've been working on an accounting interface for a client. I've built a front end that allows my client's clients to login and view their recent sales activity. They can view summaries of best selling lines broken down by artist, and geographic region. They can also plot sales for any specified time period onto a Google map. It's pretty cool, and got some great feedback from users.  Behind the scenes there's a few tables to store the sales information, and manage access control to the data. The tricky bit was getting the sales information into the database. Here's where the webbots come in useful!</p>
+
+<p>The sales information is downloaded from third party sites where the actual sales take place. This can be done regularly, but requires a human to actually log into a secure site, select which reports to download, unpack them from their archive, and then convert and upload them to the sales database.</p>
+
+<p>I programmed a webbot to automate this process, but it took a bit of trial and error, as the remote site extremely well secured! If you've tried to automate download from secure sites (over https with HTML form login) then this might help:</p>
+
+<p><ol><li>First step was to make the initial cURL connection and download the login page. I then pass this through a regex parser to extract the all important form ID.</li>
+<li>Then create your next cURL request to the server using the correct form variables, filling in your username and password as applicable. Pausing for a few seconds, and setting the correct referrer is good practice - you want your webbot to act as much like a real user of the site as possible. In building a webbot, you&#39;re just trying to make your life easier - you&#39;re not stress testing the remote server - so take it easy on the requests and make sure they all look like natural requests that the server would expect.</li>
+<li>The server I was connecting too required that I save cookie variables, so that it knew I was the same login as before. This is made easy using the built in cookie functionality of cURL.</li>
+<li>Now I get a series of forms returned from the server that I have to parse through regex to find the available reports. I&#39;ve kept a record of previously downloaded reports, so I know which ones I&#39;m after.</li>
+<li>Create cURL requests for each file to download. Extract the files out of the responses and remember to wait a reasonable amount of time between each request.</li>
+<li>When you&#39;re done do all the necessary tidy up. You should send a logout request, and delete any stored cookies. You may have temporary files to remove.</li>
+</ol><p>Now I&#39;ve got a PHP program that uses cURL to login to the remote sites, and download any new sales reports. There&#39;s another program to unpack them and import the records to the database. I call both of these from the crontab and schedule downloads every night.</p>
+<p>I&#39;m now looking for more uses of webbots, as I&#39;m sure they can automate lots more of the routine things that need doing. </p>
+<p>If you&#39;re a PHP programmer start with the PHP documentation for cURL that I linked to above. <a href="http://www.schrenk.com/nostarch/webbots/DSP_download.php" rel="nofollow">Michael Schrenk&#39;s website</a> has some useful wrapper functions that make cURL even easier to use.</p></p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> How to Be a Cloud Survivalist (part 2) |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">How to Be a Cloud Survivalist (part 2)</h1>
+
+  <span class="">12 Dec 2013</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">This is the second in a series of posts where I document the process of
+implementing your own suite of cloud services.</p>
+
+              
+
+<p>Yesterday, in <a href="/blog/2013/12/11/how-to-be-a-cloud-survivalist/">How to Be a Cloud Survivalist (part 1)</a>, I discussed why you might want to do this. Just in case I didn&#39;t provide enough motivation in yesterday&#39;s article
+here&#39;s a quote from Richard Stallman&#39;s <a href="http://stallman.org/stallman-computing.html">How I do my Computing</a>:</p>
+
+<blockquote>
+People sometimes ask me to recommend an email service. The two ethical issues for an email service are (1) whether you can use it without running any non-free software,
+and (2) whether it respects your privacy... I have no way to verify that any email service is satisfactory. Therefore, I have no recommendation to offer.
+However, I can suggest that it may be wise to use an email service that is not connected with your search engine. That way you can be almost sure that your email contents don't influence your search results. You shouldn't identify yourself to your search engine in any case.
+<br>&mdash; Richard Stallman
+</blockquote>
+
+<p>As Stallman points out, there&#39;s no way to verify that any email service
+truly respects your privacy, so let&#39;s build our own! We are dealing with more
+than just email here, so today I put together a requirements list, and look at
+some of the options.</p>
+
+<h3>Get your own domain name</h3>
+
+<p>Like most people of my age, my first email address was linked with my
+ISP. Perhaps it made sense at the time that the place I dialled into for an
+internet connection was the place that collected my emails, but of course, it wasn&#39;t
+long before I changed ISP and my email address changed. Then I went off to
+university and was given a brand new academic email address.</p>
+
+<p>While at university I realised that I could have my own online identity, so I
+registered my own surname as a domain. I naively registered the domain for free with a company that offered a free domain registration in exchange for using their email and
+ISP services. Maybe this should have taught me the real cost of free, because
+of course, this company eventually went bankrupt, taking my lovely personalised
+domain name with it. I wasn&#39;t lucky enough to grab the domain when it eventually
+was released back into the registration pool, so I lost it forever.</p>
+
+<p>I started my first company in 2005, and started using that as my main email address,
+but then after the company was acquired I needed to change email address again.
+At this point I&#39;d learnt my lesson, I purchased darrenmothersele.com and I&#39;ve been
+here ever since, and I don&#39;t plan on leaving.</p>
+
+<p>If you&#39;re reading this then I&#39;d take a guess that email is a predominant
+form of communication for you. I&#39;d be interested to know what percentage of you
+are using your own domain name as your email address. Are you? Or, are you using Gmail, Hotmail, your ISP, your work? When you can register a <em>.co.uk</em> for 3 years for about &pound;10, there&#39;s really no excuse.</p>
+
+<p>The only thing more upsetting than seeing my friends and colleagues using a third
+party email address is seeing Joe the Plumber with his BT Internet email address
+printed on the side of his van.</p>
+
+<p>Hopefully I&#39;ve persuaded you to get your own domain name, but you&#39;re
+going to need one anyway to run your own cloud services from, so how do you
+pick a good one? On <a href="http://thenextweb.com/lifehacks/2013/07/03/why-you-should-own-a-truly-personal-domain-name-and-how-to-make-the-most-of-it/">The Next Web</a>, Boris suggests:</p>
+
+<blockquote>
+Try to avoid using something funny. Look at it like this: you want this name to last you 50 years. Use your last name, or a combination of your last name and first name, and keep it simple.
+</blockquote>
+
+<h3>SSL Certificate</h3>
+
+<p>You will need an SSL Certificate to go along with your domain. These typically
+cost upwards of &pound;50 per year, with the price varying depending on much
+verification they provide (how well they guarantee you are who you say you
+are), how many (sub)domains they certify, and how much warranty they provide.</p>
+
+<p>SSL gives you an encrypted tunnel from your computer to the server, and we&#39;ll
+be using that for all communication, sending emails, syncing files, etc.
+You can use a self-signed certificate if you don&#39;t mind the browser warnings,
+or go for one of the cheaper &pound;9 per year SSL certificates that don&#39;t have
+the same level of vetting as the more professional ones, but are enough to get rid of the browser warnings if you are planning on opening up your services to other users.</p>
+
+<h3>Server</h3>
+
+<p>If you want to be a true cloud survivalist then you will want to host your
+own server at home. You&#39;ll need a good, reliable internet connection,
+with decent upstream bandwidth and a UPS or backup power supply.
+I&#39;m not sure I can meet these requirements, and I don&#39;t really want a
+server in my house, so I&#39;m using a hosting company for this.
+I&#39;m not too concerned at this stage as long as I have my own server
+that is under my control.</p>
+
+<p>You need to find a hosting company that you like and trust. This depends on
+what your priorities are, personally I look for price, speed, reputation,
+amount of effort they put into providing developer documentation, API, privacy,
+and use of renewable energy sources.</p>
+
+<p>In the example configurations to follow in later parts of the series I&#39;m using
+a cloud server from <a href="https://www.digitalocean.com/">Digital Ocean</a> that
+has 1GB of memory. This will cost you &#36;10 per month. We&#39;re starting with
+just the one server, but in a future instalment I&#39;ll talk about the possibility
+of adding a second backup server, and other alternative strategies for
+dealing with failure and backup.</p>
+
+<p>Digital Ocean have a data-centre in Amsterdam, which may be good news for those
+of you with surveillance concerns as the Netherlands has strict privacy laws.
+I couldn&#39;t find any mention renewable energy sources in their feature lists, but
+they do have all SSD drives, which are faster, more efficient, and lower power
+than regular hard-drives.</p>
+
+<h3>Software</h3>
+
+<p>Before deciding exactly what software I need, or looking at the options, I&#39;m
+going to summarise my requirements:</p>
+
+<ul>
+<li>Multi-user, and multi-domain: If I&#39;m going to all this effort I should at
+least make it available to other friends and family if they want it. So I will
+need some way to manage users and add new domains. I&#39;m using a Linux server so
+I could just use server accounts, but I&#39;m probably going to want something more
+scalable than this, like LDAP.</li>
+<li>Email: I need the ability to receive, store, and send email. I&#39;ve mainly used
+Gmail&#39;s IMAP to access mail on my devices, but I do occasionally need to login
+via the web, so webmail access will be needed too.</li>
+<li>Calendar and contacts: I like to synchronise my calendars and contacts across
+all my devices, so some implementation of Carddav, caldav or similar will be required.
+I also have calendars I share with other people, so some way to manage that would
+be good.</li>
+<li>File storage: I need somewhere to store my files, and preferably have them
+synchronised across my devices. I&#39;ve been using Dropbox for this, but would like
+to see this form part of my own cloud services.</li>
+</ul>
+
+<p>In addition to those initial requirements, there&#39;s some other nice to have features:</p>
+
+<ul>
+<li>Collaborative document editing: I do sometimes use Google Docs to work on
+documents with other people. I&#39;ll probably have to keep my Google account for
+this purpose, unless I can find a good alternative.</li>
+<li>Notes: I&#39;ve been using Evernote for jotting down ideas, documenting and writing while on the move so that it automatically syncs to my main computer.</li>
+</ul>
+
+<p>And finally, for future consideration:</p>
+
+<ul>
+<li>Social: The one thing I do miss from Facebook is the ability to easily create
+a group to communicate with friends. I&#39;ll look at some options for this including
+setting up private email discussions groups.</li>
+<li>Analytics: I&#39;ve been using Google Analytics on various sites I&#39;ve worked on, but I&#39;ve been meaning to try out some of the open-source alternatives.</li>
+</ul>
+
+<p>There are some other cloud services that I may look at moving to my own cloud,
+but for now these are the core bits of technology I need to replace.</p>
+
+<h3>Coming up...</h3>
+
+<p>In the next post I&#39;ll take a more detailed look at Email, and actually start setting up the server.
+We&#39;ll look at how to reliably send email that doesn&#39;t get caught in spam filters,
+and look at simple way to set-up the full stack of email server software using
+<a href="http://www.iredmail.org/">iRedMail</a>.</p>
+
+<p>After that, I&#39;ll take a look at integrating <a href="http://drupal.org">Drupal</a> and
+<a href="http://owncloud.org/">ownCloud</a> to provide some of the other cloud services
+I&#39;m looking for.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

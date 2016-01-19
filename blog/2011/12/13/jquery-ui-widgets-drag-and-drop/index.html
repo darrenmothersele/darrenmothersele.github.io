@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> jQuery UI Widgets, Drag and Drop (London Drupal Drop In Dec 2011) |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">jQuery UI Widgets, Drag and Drop (London Drupal Drop In Dec 2011)</h1>
+
+  <span class="">13 Dec 2011</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead"><strong>UPDATE (Feb, 2014):</strong>This post offers a simple way to
+update entities using a module from the Rules Bonus Pack that allows you
+to trigger a Rule from a Panels page variant. This is not a good idea.
+The HTTP protocol states that you should not implement any state change via HTTP GET.
+If you do this, you open yourself up to CSRF vulnerabilities.
+A better approach would be to use the <a href="https://drupal.org/project/rules_link">Rules Link</a> module that allows you to use tokenized links, or confirmation pages.</p>
+<p class="lead">Another great Drupal London event last night!</p>
+<p class="lead">Chris (matason on Drupal.org) gave a great presentation of the new Drupal 7 Workbench module. It was great to see it in action and one I can see using myself a lot in the future. John and Rob demonstrated their Survey Builder module, a new backend for the excellent Form Builder tool. This looks like it has a lot of potential, so one to keep an eye on for the future I think. Vamory gave a really useful guide to making multi-step forms in FAPI, and then I got to talk about one of my pet favourite subjects, jQuery!</p>
+
+
+
+              
+<iframe src="http://www.youtube.com/embed/7NnO90cyP0c" allowfullscreen="" frameborder="0" height="315" width="420"></iframe><p>
+I showed the Active Tags module, and demonstrated adding some of the jQuery UI widgets to a Drupal 7 site, then showed how to build up a more complex interaction by adding Drag and Drop functionality to a couple of Drupal Views, then hooking up a Rules backend linked together by Page Manager. In case you missed it, or wanted more details, read on...</p>
+<p><a href="http://www.slideshare.net/darrenmothersele/jquery-ui-widgets-drag-and-drop-drupal-7-javascript" title="jQuery UI Widgets, Drag and Drop, Drupal 7 Javascript" target="_blank"><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.001-001.jpg" width="450px"></a></p>
+<p>You can get the full set of slides (minus the screen cast video demos) from my slideshare account by clicking the above title image. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.006-006.jpg" width="450px"></p>
+<p>Progressive enhancement is a method for adding nice interaction and widgets to your Drupal site while maintaining compatibility for non-javascript browsers, and accessibility. It basically means you generate the HTML for your widget then insert it into the HTML DOM object using Javascript. Then you hide the old widget. When a user interacts with your widget you have to complete the value in the old widget, so for example, if the old widget was a text box and you have replaced it with a slider, when the users moves the slider you have a Javascript function attached to the change event that takes the new position of the slider and puts it into the text box. This means that users without javascript just see the old widget, but most users get the better experience of using the jQuery widgets.</p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.008-002.jpg" width="450px"></p>
+<p><a href="http://drupal.org/project/active_tags">Active tags</a> is a Drupal module that offers a replacement widget for the Drupal core tagging field. Instead of textbox requiring a comma separated list of tags, you insert the tags one at a time and press enter or click the add button. Behind the scenes this builds up the comma separated list in Drupal's own textfield, so it doesn't affect how Drupal sees the tags. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.009-001.jpg" width="450px"></p>
+<p>I talked for a bit about various ways of including Javascript code in your Drupal site, ways for themers to include it in Drupal Themes, and lots of ways for module developers to use drupal_add_js(). I pointed out that most widget and interface stuff might be better put in a module so it can persist if you change themes on the site. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.011-001.jpg" width="450px"><br><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.013-001.jpg" width="450px"></p>
+<p>I mentioned drupal_add_js(), hook_library() and drupal_add_library() as ways to include Javascript code, and gave some simple examples of attaching jQuery UI Widgets to Drupal Forms. I wont go through the examples here, if you want to you can get the slides and look. It was just some simple code examples:</p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/Screen%20Shot%202011-12-13%20at%2009.13.31.png" width="450px"><br>
+Turn the login block into a dialog box</p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/Screen Shot 2011-12-13 at 09.14.18.png" width="450px"><br>
+Change a set of radio buttons into jQuery UI buttons</p>
+<p>There was also an example to make a textarea automatically resize to fit the content as you type, using the jQuery autoResize plugin. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.027-001.jpg" width="450px"></p>
+<p>I explained how Drupal Behaviors are used as a replacement for the $(document).ready() function in Drupal. There's more information about this in the Drupal documentation page <a href="http://drupal.org/node/756722">Managing Javascript in Drupal 7</a>. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.028-001.jpg" width="450px"></p>
+<p>Now we get to building a more complex user interaction using jQuery UI and Drupal. In this example I create two views. One where the items become Draggable, and another view that becomes the Droppable target. This fires off a drop event, which triggers an AJAX call back to Drupal. Page manager picks up this request and passes it on to Rules where it is processed. I posted a brief video demo of it in action at the top of this post.</p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.029-002.jpg" width="450px"></p>
+<p>This site has a content type called Meeting, and a Relation (called attendee) that links users to meetings. The interaction we are building creates a relation item when a user is dropped on the meeting. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.030-001.jpg" width="450px"></p>
+<p>The two views are created using Views in the usual way. I've chosen to make one a simple unformatted list, and one as a grid view, but the drag and drop interactions can be attached to any DOM element. In the first view (Staff members) I have overridden the output to put the .dproj-draggable class on each item. This is<br>
+what will be used to attach the draggable interaction. In the second view I have added the .dproj-droppable at the View level ('CSS classes' in advanced options in View) so the whole view can be given the jQuery UI droppable interaction.</p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.031-001.jpg" width="450px"></p>
+<p>When the draggable is dropped on the droppable an event is fired. This event is assigned a callback function that sends a request back to Drupal via AJAX. In order to do this is must have a callback path that includes arguments to indicate what was dropped where. This is why we build a callback from two parts, one from the  dragged item and one from the dropped item. These two arguments are generated as part of the views, as a span wrapped in a callback class. This allows us to hide them from the user using CSS and extract their values in the jQuery drop event. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.035-001.jpg" width="450px"></p>
+<p>Here is the code that powers this:</p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.036-019.jpg" width="450px"></p>
+<p>The draggable is just given one option. The revert option is set to 'invalid' which means that if a draggable is dropped anywhere other than a valid droppable area it reverts back to it's original position. </p>
+<p>The droppable takes a few more options. The most important being the 'drop' function that is called when a draggable is dropped on the droppable. You can access the droppable element using 'ui.droppable' as passed in to the drop function. In this function I am doing a few things:</p>
+<p>I hide the original droppable (you might want to revert it if you want to allow it to be dropped again elsewhere), then fade out the droppable slightly to give some visual feedback that something is happening. </p>
+<p>Then I work out the ID of the view that has been dropped on, this is because I will later need to extract this view from the response and replace the current version with the new version of the view from the AJAX response. </p>
+<p>I then calculate the callback path using the hidden callback element from the dragged item and the droppable. Then make an AJAX call using $.ajax to this callback path. The ajax takes a success function that it calls when the ajax response comes back. This function parses the new version of the view from the data that is returned, replaces the version in the page with this new version, then fades the view back to full. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.038-001.jpg" width="450px"></p>
+<p>Page manager (part of <a href="http://drupal.org/project/ctools">ctools</a>) is used to register the callback function with Drupal. This allows you to specify a path with arguments. As you can see above I have specified two arguments, the user and the node, i.e. the dragged item and the item it was dropped on. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.039-001.jpg" width="450px"></p>
+<p>Here the arguments are converted into a context, you can load up the related entities, making them available for Rules. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.040-001.jpg" width="450px"></p>
+<p>You need the <a href="http://drupal.org/project/rb">Rules Bonus Pack</a> for this. It provides a module called 'Miscellaneous' which includes a really cool bit of functionality for linking Page Manager to Rules. You can see this in the above image. It creates a reaction that triggers an event in Rules. </p>
+<p><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.042-001.jpg" width="450px"></p>
+<p>You can then use Rules to process the request. Set up a rule to trigger on the event you created in Page manager. Then add the following actions:</p>
+<ul><li>Create a new variable of type 'list of entities'</li>
+<li>Add the user entity to the list</li>
+<li>Add the meeting node entity to the list</li>
+<li>Create a new Relation entity, using the list as it's value</li>
+<li>Force a redirect to a page that just includes the updated view matching the droppable.</li>
+</ul><p>I hope that explains everything. If you have any questions, drop me a line or leave a comment and I'd be happy to try an explain further.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

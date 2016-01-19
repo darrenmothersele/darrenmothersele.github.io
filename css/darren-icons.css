@@ -1,0 +1,149 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?it95ql');
+	src:url('../fonts/icomoon.eot?#iefixit95ql') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?it95ql') format('woff'),
+		url('../fonts/icomoon.ttf?it95ql') format('truetype'),
+		url('../fonts/icomoon.svg?it95ql#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-led2:before {
+	content: "\e600";
+}
+
+.icon-led:before {
+	content: "\e601";
+}
+
+.icon-drop-single:before {
+	content: "\e602";
+}
+
+.icon-calendar:before {
+	content: "\e00d";
+}
+
+.icon-presentation:before {
+	content: "\e00e";
+}
+
+.icon-adjustments:before {
+	content: "\e01d";
+}
+
+.icon-trophy:before {
+	content: "\e023";
+}
+
+.icon-lightbulb:before {
+	content: "\e030";
+}
+
+.icon-map-pin:before {
+	content: "\e047";
+}
+
+.icon-compass:before {
+	content: "\e053";
+}
+
+.icon-alarmclock:before {
+	content: "\e059";
+}
+
+.icon-params:before {
+	content: "\e603";
+}
+
+.icon-music:before {
+	content: "\e911";
+}
+
+.icon-phone:before {
+	content: "\e942";
+}
+
+.icon-envelop:before {
+	content: "\e945";
+}
+
+.icon-location:before {
+	content: "\e947";
+}
+
+.icon-forward:before {
+	content: "\e969";
+}
+
+.icon-cog:before {
+	content: "\e994";
+}
+
+.icon-lab:before {
+	content: "\e9aa";
+}
+
+.icon-menu:before {
+	content: "\e9bd";
+}
+
+.icon-link:before {
+	content: "\e9cb";
+}
+
+.icon-heart:before {
+	content: "\e9da";
+}
+
+.icon-mail4:before {
+	content: "\ea86";
+}
+
+.icon-facebook3:before {
+	content: "\ea8e";
+}
+
+.icon-twitter3:before {
+	content: "\ea93";
+}
+
+.icon-feed4:before {
+	content: "\ea96";
+}
+
+.icon-vimeo3:before {
+	content: "\ea9e";
+}
+
+.icon-github:before {
+	content: "\eab1";
+}
+
+.icon-soundcloud:before {
+	content: "\eac4";
+}
+
+.icon-skype:before {
+	content: "\eac6";
+}
+
+.icon-linkedin2:before {
+	content: "\eac9";
+}
+

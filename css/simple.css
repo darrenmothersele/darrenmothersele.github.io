@@ -1,0 +1,194 @@
+html {
+  font-size: 100%;
+}
+.dm-page-header {
+  width: 280px;
+  margin: 0 auto;
+}
+.dm-text-light {
+  font-weight: normal;
+  color: #555;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+p a {
+  color: #428BCA;
+}
+
+blockquote {
+  border-left: 5px solid #eee;
+  padding: 0 1.5em;
+  margin: 0;
+}
+
+pre {
+  padding: 1em;
+  font-size: 0.813em;
+  line-height: 1.5em;
+  color: #fff;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0px;
+  background: #333;
+}
+
+pre code {
+  color: #33FF33;
+}
+
+.dm-page p {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.dm-page p.lead {
+  font-size: 1.6em;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 1.5em;
+  font-family: Georgia,Times,Times New Roman,serif;
+  color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Futura, 'Century Gothic', AppleGothic, sans-serif;
+  color: #333;
+}
+h1 {
+  font-size: 2.625em;
+  line-height: 1.142857142em;
+  margin-top: 1.14285714em;
+  margin-bottom: 0.57142857em;
+}
+h2 {
+  font-size: 1.625em;
+  line-height: 1.846153846em;
+  margin-top: 0.92307692em;
+  margin-bottom: 0.92307692em;
+}
+h3, h4, h5, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+b, strong, em, small, code {
+  line-height: 1;
+}
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
+.dm-footer-text {
+  font-size: 80%;
+}
+
+.dm-page {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+  .highlight {
+    font-size: 80%;
+  }
+
+@media only screen and (min-width: 720px) {
+
+.dm-event {
+  position: relative;
+}
+.dm-event-year {
+  position: absolute;
+  left: -50px;
+  font-size: 80%;
+}
+
+  body {
+    padding: 0;
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+  h1 {
+    font-size: 2.6em;
+    line-height: 1.153846154em;
+    margin-top: 1.15384615em;
+    margin-bottom: 0.57692308em;
+  }
+  h2 {
+    font-size: 1.6em;
+    line-height: 1.875em;
+    margin-top: 0.9375em;
+    margin-bottom: 0.9375em;
+  }
+  h3, h4, h5, h6 {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  hr {
+    border: 1px solid;
+    margin: -1px 0;
+  }
+  ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  b, strong, em, small, code {
+    line-height: 1;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+  sub {
+    top: 0.4em;
+  }
+
+  .dm-page {
+    max-width: 570px;
+    margin: 0 auto;
+  }
+
+  .highlight {
+    font-size: 80%;
+    width: 124%;
+    margin-left: -12%;
+  }
+
+}
+
+.dm-post {
+  margin-bottom: 2em;
+}
+
+

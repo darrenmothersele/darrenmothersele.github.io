@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Dennis Dropin - BDD and Drupal |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Dennis Dropin - BDD and Drupal</h1>
+
+  <span class="">13 Mar 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Last night I attended the
+<a href="http://www.meetup.com/DennisDropIn-Drupal-OpenSource/events/169988982/">Dennis Dropin</a>
+event on Behavior-Driven Development (BDD) and Drupal. This is a new event on the
+Drupal London scene hosted by Dennis Publishing.</p>
+
+              
+
+<p>I&#39;ve been attending Drupal events in London since 2007, and there have been
+a wide variety of different types of events. There have been high points, such as
+<a href="http://darrenmothersele.com/blog/2013/03/05/drupal-camp-london-review.html">Drupal Camp London 2013</a>,
+and low points (we had quite a lot of Microsoft sponsored events, but one in particular
+springs to mind where every presentation was also either paid for by Microsoft or
+about Microsoft technology - I&#39;m not complaining - I have no right to complain
+as I&#39;ve eaten enough of their free pizza over the years!). From
+Drupal Camps, Drupalcon, code sprints, workshops, trainings, and just regular pub meetups,
+London has a really exciting and active Drupal-scene.</p>
+
+<p>Do we need another event?</p>
+
+<p>Well, if this first event in the series is anything to go by I&#39;d say
+definitely, yes please!
+The event took place in the boardroom at Dennis Publishing, so it was limited
+in capacity, about 25 people in attendance and the room was nicely packed.
+<a href="https://twitter.com/PaulLomax">Paul Lomax</a>, the CTO, did say that they had plans
+for a bigger space so by July we could see this expand into a
+bigger event.</p>
+
+<p>I can think of at least three reasons why this event was a success:</p>
+
+<ul>
+<li>It really felt like this was Dennis Publishing wanting to give something back
+to the Drupal community. The two presentations were perfectly matched.
+The first to motivate reasons for adopting BDD, and the second to give practical examples.
+There was enough technical detail to be useful, without being overwhelming.</li>
+<li>Dennis&#39; approach to digital is exemplary, probably due to Paul&#39;s leadership.
+It comes across that the whole team have the right balance of
+formal process and pragmatism.</li>
+<li>It seemed like a lot of the Dennis team were in attendance and the experience
+level of attendees was high. This meant there were some interesting discussions
+around the presentations too.</li>
+</ul>
+
+<p>The event had a natural split in two parts, which I&#39;d never really considered
+before, but perhaps others planning events could take into account. Pairing a
+presentation of motivating business cases with a more technical presentation of
+practical examples and inner workings.</p>
+
+<p>It was interesting to hear in the discussion alongside the presentations
+real world cases of how BDD had caught bugs that would have cost them
+ad revenue or resulted in financial losses if they had made it into production.</p>
+
+<p>I asked about Continuous Deployment and if introducing testing and increased the frequency of deployment.
+Paul confirmed they had been able to do more regular deployments, but gave
+a good reason (one I hadn&#39;t thought of) for why Continuous Deployment is not
+viable in a Drupal environment. His argument was that when you do a deployment
+you have to do a cache clear, and when you do a cache clear you clear the form
+cache. This kicks out any content editors that might be working on the site
+so deployments have to be limited and controlled. This lead to some discussion
+of a growl-like notification system with Node.js to push notifications to
+content editors logged in to the site.</p>
+
+<p>Another really interesting idea was the integration of visual diff into
+the Behat tests. This allows them to do a pixel-by-pixel comparison between
+the staging environment and production to flag up any major changes. A great
+extra precaution to pick up any bugs that may cause blocks to disappear or
+display incorrectly.</p>
+
+<p>The next event in the series,
+<a href="http://www.meetup.com/DennisDropIn-Drupal-OpenSource/events/169953872/">Responsive Web design: How Dennis are skinning this cat</a> is scheduled for April 16th. Already 17 people
+signed up to the Meetup group so I hope I get in!</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

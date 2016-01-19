@@ -1,21 +1,1478 @@
----
-layout: none
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name | xml_escape }} - Drupal Planet Feed</title>
+    <title>Darren Mothersele - Drupal Planet Feed</title>
     <description>Darren Mothersele's Drupal Planet Feed</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/taxonomy/term/99/feed/" rel="self" type="application/rss+xml" />
-    {% for post in site.tags.drupal-planet limit:10 %}
+    <link>http://www.darrenmothersele.com</link>
+    <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}/{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+        <title>How to Survive Gentrification of the Drupal Community</title>
+        <description>&lt;p&gt;We&amp;#39;re finally approaching the release of
+&lt;a href=&quot;https://www.drupal.org/node/2605142&quot;&gt;Drupal 8.0.0 on 19th Nov&lt;/a&gt;. The
+biggest achievement of the Drupal community to date. A complete rewrite of the core
+system to use modern object-oriented PHP. An effort that is often referred to as
+&amp;quot;getting off the island&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;While the switch from Drupal 7 to Drupal 8 is a big change for developers, it is
+the result of a slow process of maturation of the Drupal community. Drupal 8
+brings changes that will be welcomed by many, will bring in many new users, and of
+course, will push a few people out. How can we survive this &amp;quot;gentrification&amp;quot;
+of the Drupal community and prosper without losing touch with why we loved
+Drupal in the first place.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Gentrification&lt;/h2&gt;
+
+&lt;p&gt;Cities all over the world are becoming more exclusive, more expensive, and a
+natural result of this is gentrification. It&amp;#39;s contentious. Some see this as
+urban improvement, some as social cleansing.&lt;/p&gt;
+
+&lt;p&gt;I moved to London nearly 12 years ago. Dalston, to be precise. I was back in
+Dalston this weekend for a party, and it&amp;#39;s very different to how I remember it
+from 2004. I compared the nice clean overground train to the unreliable
+and dirty Silverlink trains that used to run to Dalston. Then, walking down Kingsland
+road without being on guard. When I lived there in 2004 it was often cordoned off by police.
+The hipsters, the trendy coffee shops, and other obvious signs of gentrification
+proliferate.&lt;/p&gt;
+
+&lt;p&gt;Brixton was my home for many years, and I witnessed first hand the results of gentrification.
+I had an office space in Brixton, and decided to
+leave it when the landlord announced he was increasing the rent by 25%.
+I lived in several flats around Brixton over the years, and eventually moved
+(a bit) further south as rental prices in Brixton soared.
+I say this with tongue in cheek, well aware that to many I&amp;#39;d be seen as one of
+the gentrifiers!
+It&amp;#39;s the communities that settled here during the
+&lt;a href=&quot;http://www.urban75.org/brixton/history/history.html&quot;&gt;1940s and 1950s&lt;/a&gt;
+that gave the area it&amp;#39;s eclectic multi-cultural feel. They&amp;#39;re the ones who
+have been displaced, losing their homes and community as developers and &amp;quot;yuppies&amp;quot;
+take over.&lt;/p&gt;
+
+&lt;h2&gt;Gentrification of the Drupal Community&lt;/h2&gt;
+
+&lt;p&gt;I first used Drupal back in 2003, version 4 point something. It was fun.
+Hacky, but fun. I had to quickly get a site up for an event we were organising
+and Drupal offered a collaborative content model that set it apart from the
+other products we evaluated.&lt;/p&gt;
+
+&lt;p&gt;I came back to Drupal in 2007 for another community site build, and Drupal 5
+had been released. It was really fun. Yes, still very hacky, but it came with
+the power to build a CMS exactly the way I wanted it to work, and it came with
+an awesome community of other hackers. A community of dedicated open-source
+types, who valued openness, and working on projects for good. I was hooked and
+made the leap to full time Drupal development. Through Drupal
+I got involved in the first social innovation camp, and other tech-for-good
+type things.&lt;/p&gt;
+
+&lt;p&gt;Szeged 2008 was my first Drupalcon. 500 Drupal contributors and users in a small
+university town in Hungary. Everyone I met truly cared about
+making Drupal an awesome project and was contributing time and effort in any
+way they could. Several years later and Drupalcon have grown. 2000+ attendees in
+Barcelona this year, 2300+ in Amsterdam last year. But, as the community has
+grown, so has the commercial influence. With sales pitches as prevalent as
+learning sessions on the schedule.&lt;/p&gt;
+
+&lt;p&gt;One thing I noticed this year was that several sessions concluded, or included,
+a call for donations or funding to accelerate a particular module or project&amp;#39;s
+development. The precedent was set in the starting session of the conference when
+the Drupal Association made an announcement about the Drupal 8 accelerate
+funding programme. I&amp;#39;m not saying this is a bad thing. If this is what it
+takes to get Drupal 8 finished in today&amp;#39;s conditions, then that&amp;#39;s great. But,
+look at it as an indicator of how the community has changed, when compared to
+the sessions at Szeged seven years earlier. You would not have seen a call for
+quarter of a million dollar funding back then. Everyone was there because they
+loved it, not because they were being paid.&lt;/p&gt;
+
+&lt;h2&gt;Hacking the hackers&lt;/h2&gt;
+
+&lt;p&gt;While doing research for this post, I came across this brilliant essay,
+&lt;a href=&quot;https://aeon.co/essays/how-yuppies-hacked-the-original-hacker-ethos&quot;&gt;The hacker hacked&lt;/a&gt;,
+by Brett Scott about the gentrification of hacker culture. I quote his summary
+of the gentrification process:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Key to any gentrification process are successive waves of pioneers who gradually reduce the perceived risk of the form in question. In property gentrification, this starts with the artists and disenchanted dropouts from mainstream society who are drawn to marginalised areas. This, in turn, creates the seeds for certain markets to take root. A WiFi coffeeshop appears next to the Somalian community centre. And that, in turn, sends signals back into the mainstream that the area is slightly less alien than it used to be.
+&lt;/p&gt;&lt;p&gt;
+If you repeat this cycle enough times, the perceived dangers that keep the property developers and yuppies away gradually erode. Suddenly, the tipping point arrives. Through a myriad of individual actions under no one person’s control, the exotic other suddenly appears within a safe frame: interesting, exciting and cool, but not threatening. It becomes open to a carefree voyeurism, like a tiger being transformed into a zoo animal, and then a picture, and then a tiger-print dress to wear at cocktail parties. Something feels ‘gentrified’ when this shallow aesthetic of tiger takes over from the authentic lived experience of tiger.&lt;br /&gt;
+-- Brett Scott&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;How does this relate to the Drupal community? Perhaps it starts with the
+NGOs and charities, our original flagship Drupal sites, that became our
+&amp;quot;artists and disenchanted dropouts from mainstream society&amp;quot;. Then the
+big media companies move in as the &amp;quot;perceived dangers gradually erode&amp;quot;.
+Eventually, The White House start using Drupal, and we&amp;#39;re at home with the large
+enterprise clients and big corporate contracts.&lt;/p&gt;
+
+&lt;p&gt;As the Drupal project developed the requirements changed. Drupal&amp;#39;s capabilities
+improve, and the Drupal user base and community advanced too.&lt;/p&gt;
+
+&lt;p&gt;This is evident in the development, and
+standardisation of things like configuration management. Something that was
+never an issue in the early days, as the community became more professional,
+solutions for configuration management were hacked together, and then
+became standardised.&lt;/p&gt;
+
+&lt;p&gt;Configuration management is just one example of the many benefits the Drupal
+community has experienced through the process of gentrification. There&amp;#39;s also
+great test coverage, performance improvements, greater tooling, and many other
+advancements that came to Drupal as the community matured. Drupal became less
+about hacking and more about software engineering.&lt;/p&gt;
+
+&lt;h2&gt;Drupal 8&lt;/h2&gt;
+
+&lt;p&gt;Development on Drupal 8 started in March 2011 and four years later, is to set to
+be released on November 19, 2015. Over these years, Drupal has been rewritten,
+removing most of the pre-OO era PHP legacy.&lt;/p&gt;
+
+&lt;p&gt;Drupal&amp;#39;s legacy was the &amp;quot;not invented here&amp;quot; mindset that became entrenched in
+the community through hacking solutions to extensibility into a language that
+was not designed to support it. And, a culture of not depending on third-party
+code due to early well publicised security issues with PHP extensions.&lt;/p&gt;
+
+&lt;p&gt;The move away from this legacy, the move to &amp;quot;get off the island&amp;quot;, is a move
+towards more standardised, modern, development practises, and a move to
+embrace the wider PHP community.&lt;/p&gt;
+
+&lt;h2&gt;Social cleansing&lt;/h2&gt;
+
+&lt;p&gt;I mentioned before that gentrification is contentious. For some see it as
+urban improvement, some as social cleansing. Drupal and the Drupal community
+have clearly benefitted already, and it looks like prosperous times ahead for
+those who come along for the ride, and the newcomers who join and adopt Drupal.&lt;/p&gt;
+
+&lt;p&gt;But, what about the social cleansing. Will parts of the community be pushed out?
+Who gets left behind?&lt;/p&gt;
+
+&lt;p&gt;Drupal has suffered from an identity crisis. Because of it&amp;#39;s flexibility, it&amp;#39;s
+been used for many things. Drupal&amp;#39;s openness to hacking, extending and ability to
+do just about anything, meant it was more than just a CMS. Over the years many
+talked about &amp;quot;small core&amp;quot;, many used Drupal&amp;#39;s core tools as a Framework, building
+apps and tools well beyond what a typical CMS would be used for.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 is a content management system.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 focuses on content management, on providing tools for non-technical
+users to build and manage sites. &lt;b&gt;That&amp;#39;s what it always wanted to be anyway&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 leverages the wider PHP community, in particular the Symfony
+components, as it&amp;#39;s core.  It no longer makes sense to see Drupal as a
+framework.&lt;/p&gt;
+
+&lt;p&gt;One of the parts of the community being displaced, are those using
+Drupal as a framework. If this is you then you may already be looking at a fork,
+like &lt;a href=&quot;https://backdropcms.org/&quot;&gt;Backdrop&lt;/a&gt;, or playing with other frameworks,
+like the beautiful &lt;a href=&quot;http://laravel.com/&quot;&gt;Laravel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another section of the community that may be displaced are those running Drupal
+on low end and shared hosting. Through the
+gentrification process, Drupal&amp;#39;s requirements have increased.
+The increased hosting requirements have meant that dedicated Drupal platform
+hosting providers have emerged. More options for scalability and custom
+software stacks have taken precedent over solutions for smaller websites.&lt;/p&gt;
+
+&lt;p&gt;Drupal also potentially loses the innovators.
+Drupal always had a reputation for being cutting edge and innovative.
+As it moves to become the enterprise choice of open-source CMS, innovation
+becomes less important, and stability, security, and backwards compatibility
+become more important. The biggest innovations in Drupal (flexible content
+types and Views) date back to the 4.7 era. Views is now in core in Drupal 8.
+As Drupal matures further from this point, we&amp;#39;ll probably see Drupal adopting
+innovations from other systems and ecosystems, rather than innovating on it&amp;#39;s own.
+It&amp;#39;s well placed to do this now, built on Symfony components, innovations
+from the wider community will be easier to integrate.&lt;/p&gt;
+
+&lt;h2&gt;Surviving Gentrification&lt;/h2&gt;
+
+&lt;blockquote&gt;
+Do you abandon the form, leave it to the yuppies and head to the next wild frontier?
+Or do you attempt to break the cycle, deface the estate-agent signs,
+and picket outside the wine bar with placards reading &quot;Yuppies Go Home&quot;?&lt;br /&gt;
+-- Brett Scott
+&lt;/blockquote&gt;
+
+&lt;p&gt;Or, do come along for the ride? Enjoy the benefits of gentrification, without
+losing the reason why you got involved in the first place?&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re going to stick around then you&amp;#39;re going to need change a few things.
+Here&amp;#39;s 5 steps that will get you started:&lt;/p&gt;
+
+&lt;h3&gt;1. Learn the foundations that Drupal is now built on.&lt;/h3&gt;
+
+&lt;p&gt;If (like me) you&amp;#39;ve got a background in OO then this shouldn&amp;#39;t be too hard.
+I did several years of post-graduate research into semantics and verification
+of object-oriented software. You definitely don&amp;#39;t need to go that deep, but I would
+highly recommend getting to grips with classic works on
+design patterns such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Design_Patterns&quot;&gt;Gang of Four&lt;/a&gt;
+and &lt;a href=&quot;http://martinfowler.com/books/eaa.html&quot;&gt;Martin Fowler&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With a basic understanding of the core &amp;quot;patterns&amp;quot; of object-oriented software,
+you start to appreciate how Symfony works.&lt;/p&gt;
+
+&lt;p&gt;Drupal, Silex, Laravel, Symfony Full Stack, Symfony CMF, phpBB, Joomla,
+Magento, Piwik, PHPUnit, Sonata, and many more projects are built on this same
+foundation. So, it&amp;#39;s definitely worth learning, and Drupal can be a good way
+to learn it, while still working with a system you know well.&lt;/p&gt;
+
+&lt;p&gt;Try building a simple app with &lt;a href=&quot;http://silex.sensiolabs.org/&quot;&gt;Silex&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Check out &lt;a href=&quot;https://www.youtube.com/playlist?list=PLpeDXSh4nHjR26Dheb6U1NUSp0aACYGvE&quot;&gt;Drupalcon&lt;/a&gt;
+(and &lt;a href=&quot;https://www.youtube.com/channel/UCb9XEo_1SDNR8Ucpbktrg5A&quot;&gt;Laracon&lt;/a&gt;) on
+YouTube. There&amp;#39;s some great stuff. Like this talk from Ryan Weaver about
+&lt;a href=&quot;https://www.youtube.com/watch?v=iQL1joxljho&quot;&gt;Symfony&lt;/a&gt; and
+this talk by Ross Tuck about &lt;a href=&quot;https://www.youtube.com/watch?v=ajhqScWECMo&quot;&gt;Models and Service Layers&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;2. Do PHP the right way.&lt;/h3&gt;
+
+&lt;p&gt;PHP has changed. There&amp;#39;s a lot of outdated information and a lot of legacy code.
+Drupal 8 has been rewritten to remove this legacy code, but there&amp;#39;s still a
+lot of bad advice on how to write PHP out there.
+Read &lt;a href=&quot;http://www.phptherightway.com/&quot;&gt;PHP The Right Way&lt;/a&gt; for a full guide on
+how modern PHP should be crafted.&lt;/p&gt;
+
+&lt;h3&gt;3. Use Composer, use and create PHP packages.&lt;/h3&gt;
+
+&lt;p&gt;Getting off the island, and embracing the wider PHP ecosystem means using
+Composer, and it&amp;#39;s ecosystem of PHP packages. There are many more packages that
+are potentially compatible with Drupal, and by architecting your Drupal
+extensions as more general PHP packages you have access to a much wider
+pool of potential collaborators.&lt;/p&gt;
+
+&lt;p&gt;Creating PHP packages also forces you to write clean code, think like a
+software engineer, and write more maintainable, extensible, and reusable code.
+Check out &lt;a href=&quot;http://thephpleague.com/&quot;&gt;The PHP League&lt;/a&gt; as examples of solid
+PHP packages. They have a good &lt;a href=&quot;https://github.com/thephpleague/skeleton&quot;&gt;Skeleton&lt;/a&gt;
+starting package.&lt;/p&gt;
+
+&lt;p&gt;You may have made custom Drupal modules before. Try thinking about how you
+can refactor these into separate packages, and using the Drupal &amp;quot;module&amp;quot;
+as a small layer that integrates your logic with Drupal.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29&quot;&gt;SOLID&lt;/a&gt;
+principles will guide you towards creating good packages.&lt;/p&gt;
+
+&lt;h3&gt;4. Use an IDE&lt;/h3&gt;
+
+&lt;p&gt;This was a big one for me. I was always against using an IDE, burnt by early
+experiences with open-source IDEs. I settled on a customised Sublime Text
+setup, and various other apps. I didn&amp;#39;t see much benefit over using one app
+for everything when I could combine a selection of my favorite apps to do
+the same thing.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not sure why I stuck to this. I also do a lot of C++ programming. I have
+my own programming language (&lt;a href=&quot;http://cyrilcode.com&quot;&gt;Cyril&lt;/a&gt;) for creating
+audio-reactive visuals. I use XCode for C++ as the debugging tools are
+essential when you&amp;#39;re dealing with object graphs, memory management, and
+debugging pointer issues. So, why not use an IDE for my web development?&lt;/p&gt;
+
+&lt;p&gt;I tried &lt;a href=&quot;https://www.jetbrains.com/phpstorm/&quot;&gt;PHPStorm&lt;/a&gt; and it&amp;#39;s great.
+Far from the cumbersome experience I had in the early days with open-source
+IDEs, it offers a smooth, fast, integrated experience.&lt;/p&gt;
+
+&lt;p&gt;I think you can get away without an IDE when you&amp;#39;re hacking on Drupal 7, but
+on an OO system like Drupal 8 you will need an IDE.
+You will need the integrated tooling, testing, and you&amp;#39;ll be much more efficient
+with intelligent autocompletion, hinting, quick access to docs, and fast
+navigation of the huge codebase.&lt;/p&gt;
+
+&lt;h3&gt;5. Identify your values and serve your purpose.&lt;/h3&gt;
+
+&lt;p&gt;As the corporates, enterprises, and big businesses take over, it&amp;#39;s important to
+remain true to your yourself.
+By &lt;a href=&quot;https://www.mindtools.com/pages/article/newTED_85.htm&quot;&gt;identifying your values&lt;/a&gt;
+you will be well placed to notice when they are being compromised.&lt;/p&gt;
+
+&lt;p&gt;You probably got into open-source because you believe in
+the power of collaboration. But, this value of collaboration can often be at odds
+with the cut-throat corporate culture of competition.&lt;/p&gt;
+
+&lt;p&gt;To be aware of this is to be aware of the opportunity to spread openness and
+collaboration with our work.&lt;/p&gt;
+
+&lt;p&gt;As the proceeds of Drupal&amp;#39;s success flow into the community, it&amp;#39;s important to
+use this to do good. To continue to serve our communities and society as a whole.
+To enable collaboration, share our work, and use openness to build the world we want.&lt;/p&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;The real opportunity, is to spread Drupal&amp;#39;s values of cooperation to the wider
+population.&lt;/p&gt;
+
+&lt;p&gt;This is part of a bigger shift in society to adopt open-source values, principles,
+and methodologies. Chris Anderson says it best:&lt;/p&gt;
+
+&lt;blockquote&gt;
+If the past ten years have been about discovering new social and innovation models
+on the Web, then the next ten years will be about applying them to the real world.&lt;br /&gt;
+-- Chris Anderson
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://blog.workopen.org/manifesto/&quot;&gt;Work Open Manifesto&lt;/a&gt; offers a useful
+formulation of what it means to be open that can apply beyond open source
+software: &lt;b&gt;&amp;quot;Think Big, Start Small, Work Open&amp;quot;&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Drupal is great case study for starting small, thinking big, and working openly.&lt;/p&gt;
+
+&lt;p&gt;The Drupal community has always has been
+transforming, improving ourselves, improving the product, improving our practises,
+and improving our tools.&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;#39;s time to think beyond Drupal, beyond the Drupal community, and to see
+Drupal&amp;#39;s values of collaboration, teamwork, and openness spread through the wider
+community, society, and the world.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</title>
+        <description>&lt;p&gt;I&amp;#39;ve been working a lot with Atomic design (component-based design)
+with Drupal recently, and I&amp;#39;ve witnessed huge improvements on projects
+where it has been introduced. The main advantage being the decoupling of
+the development of the back-end from the development of the front-end
+code. &lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I&amp;#39;m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
+and I have more to say on this in the future. Today I want to tell you about a simple
+tool I&amp;#39;m using to speed up the process. &lt;a href=&quot;https://github.com/darrenmothersele/stylex&quot;&gt;Stylex&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
+sites or style guides for front-end code. There are several tools already available,
+including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
+incredibly simple. &lt;/p&gt;
+
+&lt;p&gt;I basically just wanted to make use of the power of Twig templates 
+for mocking up front-end code, with an easy way to load in demo content (from
+yml files). &lt;/p&gt;
+
+&lt;h2&gt; Barebones project&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve created a &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;barebones Stylex project&lt;/a&gt; on GitHub that demonstrates this, but you probably 
+want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&gt;
+
+&lt;h2&gt;Basic setup&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve packaged this for Composer so getting started is easy. Assuming you already
+have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
+all you need to do is create a folder for your
+project and run the following command:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
+&lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
+a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
+
+&lt;p&gt;As a bare minimum you will need to create a &lt;code&gt;index.php&lt;/code&gt; to run the application, and 
+a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
+called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
+require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
+
+$app = new Stylex\Application();
+$app-&amp;gt;run();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    {% block content %}
+      &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+    {% endblock %}
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
+
+&lt;h2&gt;Adding pages&lt;/h2&gt;
+
+&lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
+
+{% block content %}
+  &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
+a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
+the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
+
+&lt;h2&gt;Using data&lt;/h2&gt;
+
+&lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
+  path: /
+- title: About Us
+  path: /about
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
+Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
+  {% for item in main_menu %}
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  {% endfor %}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Using sample content&lt;/h2&gt;
+
+&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
+
+&lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
+title: My First Post
+excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+image: http://placebee.co.uk/640x480/1
+---
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
+
+&lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+  &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+  {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
+  &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
+    {{ title }}
+  &amp;lt;/h2&amp;gt;
+  &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
+  {{ content|raw }}
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt; Debugging&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
+
+&lt;p&gt;The next step is to reset Drupal&amp;#39;s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
+
+&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+
+&lt;p&gt;Darren&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
+      </item>
+    
+      <item>
+        <title>Atomic Drupal Workshop</title>
+        <description>&lt;p&gt;If you&amp;#39;re a frustrated web developer spending more time battling with Drupal than enjoying its benefits then read on, as I&amp;#39;m going to explain how I&amp;#39;ve hacked the Drupal site building process to make it easier and more fun.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I started exploring this process a couple of years ago. After years of Drupal experience, with it&amp;#39;s ups and downs, something clicked. I thought I was in control before, but there would always be some part of a project where I felt like I was fighting with Drupal. I tried many different approaches, but once I found this methodology there was no looking back.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve been developing this system for a couple of years, and in recent months I&amp;#39;ve started to see more people talking about it, conference sessions, and blog posts that talk about some of these ideas. None of this is unique, but I have pulled together various elements into a process, or system that anyone can use to simplify their Drupal site building.&lt;/p&gt;
+
+&lt;p&gt;In this article I hope to bring together a few key points that I think make the most difference to the success of a project.&lt;/p&gt;
+
+&lt;p&gt;My work in the past year has taken me into many agencies and I&amp;#39;ve worked with experienced Drupal developers, and with excellent developers but who were new to Drupal. On the one hand I&amp;#39;ve seen Drupal developers artificially constrained to produce &amp;quot;Drupaly&amp;quot; solutions because of perceived limitations of what&amp;#39;s possible with Drupal, and on the other hand I&amp;#39;ve seen developers struggle to get Drupal to do what they want to do.&lt;/p&gt;
+
+&lt;h2&gt;Perhaps you can relate to this story...&lt;/h2&gt;
+
+&lt;p&gt;I went into an agency early last year to help with a late running project. There was nothing particularly unique about this website, other than it had some really nice design elements and was a stunning example of responsive design. But, hiding below the surface was a confusing Drupal implementation and a mess of spaghetti code.&lt;/p&gt;
+
+&lt;p&gt;Several developers had worked on the project, and it showed. Competing Drupal modules were being used to achieve the same thing in different parts of the site, the CSS used multiple grid systems, and the general lack of consistency meant the final stages of the project, bug fixing and cross device testing were proving difficult.&lt;/p&gt;
+
+&lt;p&gt;Requirements and designs had changed during the project, and so had the developers, which meant that rather than understand what had been done before, the developers hacked on extra bits of code, put in more and more CSS overrides to target specific elements to tweak the styles.&lt;/p&gt;
+
+&lt;p&gt;The result was a site that was proving impossible to get working across all devices, and as bugs were fixed, more were being introduced and discovered. Slight changes were having unexpected knock on effects across the whole site.&lt;/p&gt;
+
+&lt;p&gt;When I looked at the site, I congratulated them. They had produced a great prototype. They had gone a long way around to get there, but what they had done was understand the problem, and discover exactly what was required in a solution. This resulted in something that worked really well as a prototype. What they hadn&amp;#39;t done was produce a production-ready site.&lt;/p&gt;
+
+&lt;p&gt;I helped them take a few steps back, which at the same time was a huge leap forward. With the knowledge they had gained we could work with Drupal to get the project completed, rather than battling against it.&lt;/p&gt;
+
+&lt;h2&gt;What to learn from this?&lt;/h2&gt;
+
+&lt;p&gt;Consistency is important, and prototyping helps to clarify what is required in a solution. Doing all the testing and bug fixing at the end of a project is hard, gets out of control, and causes missed deadlines.&lt;/p&gt;
+
+&lt;h2&gt;Introducing Atomic Drupal&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve been looking at the emerging atomic design movement, component-based design, or style-guide driven development, and I&amp;#39;ve taken best practise from the cutting edge of web design and combined it with over 7 years experience of pushing Drupal to it&amp;#39;s limits and past them.&lt;/p&gt;
+
+&lt;p&gt;Where I&amp;#39;ve ended up is a system for converting ideas into effective websites. A way of working with Drupal rather than against it, with the aim of shifting the focus of a project from development and bug fixing to solving new and interesting problems. Making the basics of site building easy and fun.&lt;/p&gt;
+
+&lt;p&gt;People I&amp;#39;ve introduced to this already have found they can now do more with Drupal and say yes to more of clients requirements, and work on more interesting projects.&lt;/p&gt;
+
+&lt;h2&gt;Atomic Design&lt;/h2&gt;
+
+&lt;p&gt;A component-based approach to the front end means creating more maintainable and flexible designs. There are a few tricks to getting this to work in Drupal, but the most important are: taking full control over Drupal&amp;#39;s markup, and planning out a consistent approach to building the site.&lt;/p&gt;
+
+&lt;h2&gt;Prototyping&lt;/h2&gt;
+
+&lt;p&gt;An added benefit of taking a component-based approach is the decoupling of front-end design and development from the back-end CMS implementation. The biggest win is that you can build and test all your front-end code separately to the CMS build (you&amp;#39;re not constrained to using Drupal&amp;#39;s markup). This means you can test and validate your front-end code early on in the project, you can test across devices and browsers earlier in the process, and therefore not leave all your big fixing until the end of the project.&lt;/p&gt;
+
+&lt;h2&gt;Workshop&lt;/h2&gt;
+
+&lt;p&gt;Get in touch if you&amp;#39;re interested in learning more as I am running workshops on Atomic design with Drupal for agencies and individual developers. Check my training page to see upcoming dates for public courses (at the time of writing the next scheduled public workshop is 24th April).&lt;/p&gt;
+
+&lt;p&gt;This workshop will cover how to take full control over Drupal&amp;#39;s markup, resetting and removing Drupal&amp;#39;s own markup and replacing it with your own. How to work with Atomic design and component based design principles in Drupal. Debunking the most common myths around Drupal front end code, and fixing the single biggest cause for late running projects and missed deadlines.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/atomic-drupal-workshop-tickets-16052157435&quot;&gt;Book Ticket&lt;/a&gt; &lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/atomic-drupal-workshop-tickets-16052157435&quot;&gt;More info&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</guid>
+      </item>
+    
+      <item>
+        <title>The Drupal Site Builder Manifesto</title>
+        <description>&lt;p&gt;I wanted to get some clarity on what I mean
+by the term &amp;quot;site builder&amp;quot;. In a general sense, it refers to the
+actual process of building a website, but in Drupal the term
+Site Builder tends to have a specific meaning.
+I realised that my definition may vary from others so
+I wanted to be precise about what I think it means, and what
+I think it means to be a Drupal Site Builder.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I am a developer. I studied programming languages in depth. I did research into the semantic analysis of object oriented languages. But, when it comes to Drupal, I love to be a Site Builder.&lt;/p&gt;
+
+&lt;p&gt;I run a &lt;a href=&quot;http://www.meetup.com/london-creative-coding/&quot;&gt;Creative Coding Meetup&lt;/a&gt; in London. At last night&amp;#39;s meeting I
+was explaining Friday&amp;#39;s &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/02/05/drupal-training-drupalcamp-london/&quot;&gt;Drupal Camp training&lt;/a&gt; to someone.
+I am clear about the aims
+and objectives of the training, I know my material, and I&amp;#39;ve
+given similar trainings many times before, but,
+the fact I labelled it an &amp;quot;intermediate&amp;quot; and &amp;quot;site builder&amp;quot;
+training causes some confusion.&lt;/p&gt;
+
+&lt;p&gt;First of all, I realised that using the word &amp;quot;intermediate&amp;quot;
+doesn&amp;#39;t really mean anything. Drupal developers (or anyone
+building Drupal sites) of all skill levels have benefited from this training. So, perhaps what I mean by &amp;quot;intermediate&amp;quot; is
+actually &amp;quot;not beginner&amp;quot;. As all I am really saying is that I&amp;#39;m
+not covering the very basics of getting Drupal up and running.&lt;/p&gt;
+
+&lt;p&gt;The term &amp;quot;site builder&amp;quot; is more problematic, possibly because
+my definition of a Drupal Site Builder may be wider than
+what most people expect. I thought about this a lot, and what I came up with was a clear set of statements of what I think it means to be a Drupal Site Builder...&lt;/p&gt;
+
+&lt;h2&gt;The Drupal Site Builder Manifesto&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/site-builder-sm.png&quot; alt=&quot;Drupal Site Builder&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;As Drupal Site Builders...&lt;/p&gt;
+
+&lt;p&gt;We work in a multi-disciplinary role.&lt;/p&gt;
+
+&lt;p&gt;We take initiative, and play a central role in the web development process.&lt;/p&gt;
+
+&lt;p&gt;We are usually the ones to take ownership of the final product.&lt;/p&gt;
+
+&lt;p&gt;We don&amp;#39;t just “click and configure” websites. We have knowledge of all the areas involved in building a Drupal website.&lt;/p&gt;
+
+&lt;p&gt;We work with the rest of the team to ensure everyone is doing what they do best and contributing to the project in a meaningful way.&lt;/p&gt;
+
+&lt;p&gt;We may not all be trained developers, but we do appreciate how to think like a developer. We apply software development principles and Drupal best practises when creating Drupal configuation.&lt;/p&gt;
+
+&lt;p&gt;We may not all know how to write optimal PHP code, but we know when to build something using Drupal core or contributed modules, and when we need a custom plugin or custom module creating.&lt;/p&gt;
+
+&lt;p&gt;We may not all be able to produce the most stunning web designs, but because we understand how Drupal works we will work with designers to ensure their designs are consistent and well structured.&lt;/p&gt;
+
+&lt;p&gt;We may not all know all the latest front-end tricks, but when given well build front-end code we know how to get Drupal to generate the appropriate markup.&lt;/p&gt;
+
+&lt;p class=&quot;lead&quot;&gt;Most importantly, we know how to get the best results out of Drupal&#39;s building blocks, we know how to turn good designs and ideas into great websites, and we know how to build websites in a methodical, flexible, and maintainable way.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
+      </item>
+    
+      <item>
+        <title>Drupal Site Builder Patterns - The State Machine</title>
+        <description>&lt;p&gt;In this new series for my blog, I&amp;#39;ll be documenting some common design patterns for
+Drupal site builds. This first post is about the State Machine pattern, which is
+something I&amp;#39;ve used on several sites recently.&lt;/p&gt;
+
+&lt;p&gt;First, let me explain what I mean by &amp;quot;pattern&amp;quot;. If you are already familiar with
+design patterns in Object-oriented software then you can probably skip this
+bit, but I think it&amp;#39;s useful for context.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h3&gt;Design patterns?&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;#39;s a quote from the original &lt;a href=&quot;http://en.wikipedia.org/wiki/Design_Patterns&quot;&gt;Gang of Four book&lt;/a&gt; on
+design patterns. That book is about design of object-oriented software, but I think it
+applies to Drupal development too.
+The quote is from p.1 of the book, apologies if I offend anyone by bastardising it.
+I&amp;#39;ve taken the liberty of substituting
+the words &amp;quot;Designing object-oriented software&amp;quot; with &amp;quot;building Drupal sites&amp;quot;,
+and a few other substitutions to make my point...&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[Building large maintainable Drupal sites] is hard... Your design should be
+specific to the problem at hand but also general enough to address future
+problems and requirements [and be maintainable]... Experienced
+[Drupal site builders] will tell you that a reusable and flexible design
+is difficult if not impossible to get &amp;quot;right&amp;quot; the first time.&lt;/p&gt;
+
+&lt;p&gt;Yet experienced [Drupal site builders] do make good designs. Meanwhile
+new [site builders] are overwhelmed by the options available and tend to fall
+back on non-[Drupal] techniques they&amp;#39;ve used before. It takes a long time for
+novices to learn what good [Drupal site building] is all about.
+Experienced [site builders] evidently know something inexperienced ones don&amp;#39;t.
+What is it?&lt;/p&gt;
+
+&lt;p&gt;One thing expert [site builders] know NOT to do is solve every problem from
+first principles. Rather, they &lt;strong&gt;reuse solutions that have worked for them in
+the past&lt;/strong&gt;. When they find a good solution, they use it again and again.
+Such experience is part of what makes them experts.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So I&amp;#39;ve been looking at what these &amp;quot;good solutions&amp;quot; are that I might have been
+using, and as I identify them I&amp;#39;ve been documenting them along the same lines
+of the original design patterns from the Gang of Four book:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pattern name - the handle we use to describe the problem&lt;/li&gt;
+&lt;li&gt;Problem - explain the problem and its context, and when you might want to
+use this pattern&lt;/li&gt;
+&lt;li&gt;Solution - describe the elements that make up the solution, in my case how the
+pattern can be best implemented in Drupal&lt;/li&gt;
+&lt;li&gt;Consequences - results and trade-offs of using the pattern, in this case I
+also consider further issues that many need to be considered as a result of
+using the pattern.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, first let&amp;#39;s look at what a state machine is, and what problems it solves,
+before going on to look at how to configure it in Drupal.&lt;/p&gt;
+
+&lt;h3&gt;State Machine&lt;/h3&gt;
+
+&lt;p&gt;A state machine is a theoretical computer science concept that provides a
+&lt;a href=&quot;http://blog.markshead.com/869/state-machines-computer-science/&quot;&gt;mathematical basis for modelling computation&lt;/a&gt;. But don&amp;#39;t worry, the kind of state machines we&amp;#39;ll be
+using don&amp;#39;t require a degree in computer science to understand.&lt;/p&gt;
+
+&lt;p&gt;All you really need to know is that the state machine (or more correctly a
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Finite-state_machine&quot;&gt;Finite State Machine&lt;/a&gt;) has
+a finite number of &amp;quot;states&amp;quot; it can be in and the machine is only ever in one
+of these states at a time, it&amp;#39;s &lt;em&gt;current state&lt;/em&gt;. The state machine can
+change from one state to another triggered by an event or condition. This change
+of state is called a &lt;em&gt;transition&lt;/em&gt;. A state machine is typically visualised
+using a &lt;em&gt;state machine diagram&lt;/em&gt;, for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://darrenmothersele.com/img/state-machine/diagram1.png&quot; alt=&quot;Simple state machine&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see the states are represented by an ellipse with the name of the
+state inside, the arrows denote the possible transitions. You can also see
+how the entry point and exit point would be notated.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a (very simplified) example of a ticket in an agile issue queue. In
+reality this would probably have several other states but for the sake of this
+example, here&amp;#39;s a simple state machine for the ticket:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://darrenmothersele.com/img/state-machine/diagram2.png&quot; alt=&quot;Example state machine&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;A state machine is defined by the list of possible states and the event/condition
+that triggers each transition.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re reading this and thinking &amp;quot;Events&amp;quot;, &amp;quot;Conditions&amp;quot;, sounds a bit like
+Drupal Rules, then you&amp;#39;ve already worked out how we&amp;#39;re going to
+implement this in Drupal!&lt;/p&gt;
+
+&lt;p&gt;In this simple ticket example the states are &amp;quot;In progress&amp;quot;, &amp;quot;Approval&amp;quot;, and
+&amp;quot;Finished&amp;quot;. The transitions are &amp;quot;Completed&amp;quot;, &amp;quot;Rejected&amp;quot;, &amp;quot;Accepted&amp;quot;.&lt;/p&gt;
+
+&lt;h3&gt;When to use it?&lt;/h3&gt;
+
+&lt;p&gt;It might be useful to think that in business speak, when they say &amp;quot;business
+processes&amp;quot; they are actually talking about state machines. Here are some
+cases when you might want to think about state machines:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you&amp;#39;ve ever had to model a &amp;quot;state&amp;quot; or &amp;quot;status&amp;quot; field, then you&amp;#39;ve got a good
+candidate for a state machine.&lt;/li&gt;
+&lt;li&gt;If you&amp;#39;ve ever wanted to anything
+more complex than just published and unpublished nodes then you have a good
+candidate for using a state machine.&lt;/li&gt;
+&lt;li&gt;If you have boolean fields in your content model called things like &amp;quot;paid/unpaid&amp;quot;.&lt;/li&gt;
+&lt;li&gt;If you have records that need to expire after a specific period of time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Drawing out a state machine diagram to model this kinds of problems can be
+really useful to help identify any &amp;quot;edge-case&amp;quot; scenarios you may not have
+thought of, and capture them early in the design process. It also shows you
+exactly what you need to test further along in the site build.&lt;/p&gt;
+
+&lt;h3&gt;Let&amp;#39;s build it&lt;/h3&gt;
+
+&lt;p&gt;As with anything in Drupal there are several ways to achieve this functionality,
+in fact there&amp;#39;s even a &lt;a href=&quot;https://drupal.org/project/state_machine&quot;&gt;State Machine&lt;/a&gt;
+module, but that relies on creating custom plugins.
+If you&amp;#39;re a developer you might want to take a look at this module.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://drupal.org/project/workbench_moderation&quot;&gt;Workbench Moderation&lt;/a&gt; and
+various other workflow modules include a state machine implementation for a
+specific purpose.&lt;/p&gt;
+
+&lt;p&gt;The approach documented here is suitable for site builders, is flexible,
+and provides a neat solution that can be configured using the following
+contributed modules:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://drupal.org/project/rules_link&quot;&gt;Rules Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://drupal.org/project/field_permissions&quot;&gt;Field Permissions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I said before that the state machine is defined by it&amp;#39;s set of possible states
+and set of transitions. In Drupal we&amp;#39;ll be using a simple list field to store
+the list of possible states for the node.&lt;/p&gt;
+
+&lt;p&gt;In a &lt;a href=&quot;http://drupalize.me/blog/201404/hiding-form-fields-drupal-8&quot;&gt;recent post&lt;/a&gt;
+on Drupalize.me they mention the addition of the ability to hide form fields
+in Drupal 8 core. In Drupal 7 we need a module to help us do this. In this case we are adding
+a field that will never be directly edited by the user so we just deny access
+to edit that field using the &lt;a href=&quot;https://drupal.org/project/field_permissions&quot;&gt;Field Permissions&lt;/a&gt;
+module.&lt;/p&gt;
+
+&lt;p&gt;For the simple ticket example, we have 3 states. So use an integer list field with
+the following allowed values:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;0|In progress&lt;/li&gt;
+&lt;li&gt;1|Awaiting approval&lt;/li&gt;
+&lt;li&gt;2|Finished&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I said that the state machine was defined by the set of possible states
+(implemented by our list field), and a set of transitions. These transitions
+can be implemented using the &lt;a href=&quot;https://drupal.org/project/rules_link&quot;&gt;Rules Link&lt;/a&gt;
+module.&lt;/p&gt;
+
+&lt;p&gt;Using the Rules Link module you can add a button to the ticket node which
+manipulates the &amp;quot;state&amp;quot; value preventing the user from actually editing the
+value in the state field directly, and thus enforcing the workflow defined
+in our state machine.&lt;/p&gt;
+
+&lt;p&gt;Each &amp;quot;Rules link&amp;quot; is configured in two parts. First you define the conditions
+for when the link should be visible using standard Rules conditions. Secondly,
+you use the rules reaction to set the value of the state field to the new
+value (and perform any other actions that you want as a side effect of the
+transition).&lt;/p&gt;
+
+&lt;h3&gt;Considerations&lt;/h3&gt;
+
+&lt;p&gt;It&amp;#39;s good to follow a principle of audit-ability, so you probably need to keep
+the transition history. A simple solution might be to
+add a timestamp field such as &amp;quot;confirmed at&amp;quot; to mark when it went to confirmed state.
+If using node, you could log revisions to track state changes in the revision
+log for the node. Or you could look at Messages module to log messages when state
+changes happen.&lt;/p&gt;
+
+&lt;h3&gt;More patterns&lt;/h3&gt;
+
+&lt;p&gt;If you&amp;#39;re interested in learning more from my 7 years of Drupal experience
+(and if you&amp;#39;re based in London) why not
+join me for &lt;a href=&quot;http://www.eventbrite.com/e/everything-i-know-about-drupal-2-day-intensive-drupal-training-course-tickets-11153411153?aff=state&quot;&gt;Everything I Know About Drupal&lt;/a&gt; an
+intensive 2-day Drupal training I&amp;#39;ve been working on. It&amp;#39;s taken a lot of
+preparation, and there&amp;#39;s still a small number of tickets available.
+You can
+find more information on my &lt;a href=&quot;http://darrenmothersele.com/blog/2014/04/15/drupal-training-london/&quot;&gt;blog post&lt;/a&gt;
+about it
+or grab a ticket on &lt;a href=&quot;http://www.eventbrite.com/e/everything-i-know-about-drupal-2-day-intensive-drupal-training-course-tickets-11153411153?aff=state&quot;&gt;the Eventbrite page&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Apr 2014 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2014/04/23/drupal-patterns-state-machine/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/23/drupal-patterns-state-machine/</guid>
+      </item>
+    
+      <item>
+        <title>I Don&#39;t Use Recruitment Agents</title>
+        <description>&lt;p&gt;I started working with Drupal full time in 2007. I knew back then I was on to
+a winner, as none of the other open-source systems I evaluated at the time
+offered the same power and flexibility. It took a while for mainstream
+web development community to catch on, but over the years the Drupal
+community has seen massive growth, and now Drupal powers some of the biggest
+sites on the internet, well over 1 million websites.&lt;/p&gt;
+
+&lt;p&gt;But, this success brings problems, and one recurring complaint I&amp;#39;ve heard over
+the years has been about the difficulty in finding top Drupal talent.
+This has made Drupal a prime target for recruitment agencies deception and dirty
+tricks.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Wunderroot are a well known company in the Drupal world, and are known to be
+a good employer. As UK MD, Steve Parks, says in his blog
+&lt;a href=&quot;http://wunderroot.co.uk/blog/we-dont-use-recruitment-agents&quot;&gt;We Don&amp;#39;t Use Recruitment Agents&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+We would really love to be able to use recruitment agencies — imagine: a team of people with genuine experience in hiring great staff, with fantastic contacts books, and taking the role of a trusted friend to guide us through advertising, filtering, selecting and engaging the right people. It&#39;d be fantastic. We&#39;d pay good money for that.
+&lt;strong&gt;Unfortunately, that&#39;s not how most recruitment agencies work in reality.&lt;/strong&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I have experience with working with recruitment consultants from both sides.
+Before I started freelancing in Drupal full time I was running a
+digital music startup. As a successful startup we experienced fast growth, and
+didn&amp;#39;t have the resources in-house to do thorough candidate searches.
+We used a couple of recruitment consultants and were consistently disappointed.
+Candidates were misrepresented, to the point where one didn&amp;#39;t recognise his own CV
+in an interview.&lt;/p&gt;
+
+&lt;p&gt;On the other side, as a candidate, I do not use agencies for work.
+One experience in particular put me off for many years.&lt;/p&gt;
+
+&lt;p&gt;I interviewed for a position, but decided after the first interview that,
+although the opportunity was interesting, I knew I was not the right candidate.
+The company wanted to invite me back for a second interview, but I told the
+consultant that I was not interested, and explained my reasons. Unfortunately,
+the consultant would not take no for an answer, and I was subjected to a
+week of harassment (to the point of bullying) over my decision.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;http://wunderroot.co.uk/blog/we-dont-use-recruitment-agents&quot;&gt;We Don&amp;#39;t Use Recruitment Agents&lt;/a&gt;,
+Steve Parks tells of a &amp;quot;bait and switch&amp;quot; operation where developers had been
+approached by recruitment agencies saying that they had been engaged by
+Wunderroot to headhunt (the bait) in order to get someone interested, but then
+saying the position was filled and proposing other positions (the switch).&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not sure if it&amp;#39;s the same dirty tactic in operation, but I have heard in the
+past of an employer receiving my CV from an agency claiming to represent me.
+The employer knew me directly, so checked, and they had an out-of-date CV that
+I had given to the agency for a different opportunity previously.
+This came up in conversation at a Drupal meetup and it was suggested that this
+is probably not a mistake as other developers had heard of it happening too.&lt;/p&gt;
+
+&lt;p&gt;The extreme of recruiters&amp;#39; tricks are documented in &lt;a href=&quot;http://web.archive.org/web/20120601080215/http://www.kernelmag.com/scene/2133/consol-yourself-with-this-one/&quot;&gt;this old post&lt;/a&gt;
+from Kernel Mag in which Consol Partners are accused of
+&amp;quot;telling outrageous lies to candidates and start-ups&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;In a post on &lt;a href=&quot;http://www.ere.net/2013/12/16/the-top-25-recruiting-trends-problems-and-opportunities-for-2014-part-2-of-2/&quot;&gt;recruiting trends&lt;/a&gt; ERE suggest that, in an era when candidate sourcing is
+becoming easier as everyone is &amp;quot;findable&amp;quot; on the internet, recruiters
+should &amp;quot;shift toward improving the various selling components of recruiting&amp;quot;.
+I&amp;#39;m not sure exactly what they mean by &amp;#39;&lt;em&gt;selling components&lt;/em&gt;&amp;#39; but I would beg recruitment agencies
+not to do this, and instead focus on providing &lt;em&gt;value&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Recruiters - Do This:&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;#39;s a short TODO list for recruiters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Clean up your industry: Get rid of the deception and bullying.&lt;/li&gt;
+&lt;li&gt;Provide genuine value (c.f. Steve Parks quote above).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Until then...&lt;/h3&gt;
+
+&lt;p&gt;If you&amp;#39;re a reputable company looking to source Drupal developers, or you are
+a Drupal developer working in London or the UK, get in touch. I&amp;#39;m starting
+a free job board on &lt;a href=&quot;http://www.drupaldeveloper.co.uk/jobs&quot;&gt;DrupalDeveloper.co.uk&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 14 Apr 2014 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2014/04/14/no-recruiters/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/14/no-recruiters/</guid>
+      </item>
+    
+      <item>
+        <title>Drupal Theme Generator Update</title>
+        <description>&lt;p&gt;It&amp;#39;s been a week now since I demoed my proof-of-concept for an automated
+theme generator at the Drupal show and tell event so I thought I&amp;#39;d collect together
+the feedback I&amp;#39;ve received so far and post an update.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h3&gt;Wrong Approach?&lt;/h3&gt;
+
+&lt;p&gt;Almost unanimously positive feedback. In fact, it seems other people have been
+thinking along similar lines:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; dude! just saw &lt;a href=&quot;http://t.co/GyV2m41eUe&quot;&gt;http://t.co/GyV2m41eUe&lt;/a&gt; This is something that &lt;a href=&quot;https://twitter.com/jenlampton&quot;&gt;@jenlampton&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/mortendk&quot;&gt;@mortendk&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Cottser&quot;&gt;@Cottser&lt;/a&gt; and I have discussed for 8.x twig!&lt;/p&gt;&amp;mdash; Mark Carver (@mark_carver) &lt;a href=&quot;https://twitter.com/mark_carver/statuses/450016685752201216&quot;&gt;March 29, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The one opposing view I have encountered wasn&amp;#39;t actually against any of the ideas
+in the theme generator, but suggested that taking over Drupal markup was wrong
+and that we should be working with what Drupal provides. I know there are
+arguments for this, and if you want to go this route then you will need some
+other mechanism for documenting the conversion of your design to Drupal theme.
+If you want to argue this case, I&amp;#39;d suggest first try having that discussion with
+&lt;a href=&quot;https://twitter.com/mortendk&quot;&gt;Morten&lt;/a&gt;, as I&amp;#39;m going to assume that
+we&amp;#39;re all OK with the concept of taking complete control of (completely rewriting)
+Drupal&amp;#39;s markup output.&lt;/p&gt;
+
+&lt;h3&gt;Annotation&lt;/h3&gt;
+
+&lt;p&gt;In an earlier prototype I had started working with annotations inside HTML comments
+but I found these increasing harder to parse as the extractions became more
+sophisticated.  Someone in conversation brought up ideas from KSS and suggested
+looking at CSS comments as an alternative.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m still proposing this as a possible approach (see
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Docblock&quot;&gt;Docblock&lt;/a&gt;), but for now I&amp;#39;m going to
+continue to annotate the markup (not the CSS) with x- attributes, as no
+one has had an issue with this, and at this stage it&amp;#39;s easier to work with
+QueryPath to create the extractions based on these attributes.
+It seems that annotating the markup with x- attributes will be acceptable
+as long as they are stripped from the markup during the build process.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/rootwork&quot;&gt;@rootwork&lt;/a&gt; &lt;a href=&quot;https://twitter.com/illepic&quot;&gt;@illepic&lt;/a&gt; &lt;a href=&quot;https://twitter.com/micahgodbolt&quot;&gt;@micahgodbolt&lt;/a&gt; &lt;a href=&quot;https://twitter.com/EvanLovely&quot;&gt;@EvanLovely&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; Interesting! Do the data attributes get stripped out during the build step?&lt;/p&gt;&amp;mdash; Brad Frost (@brad_frost) &lt;a href=&quot;https://twitter.com/brad_frost/statuses/449662512624328704&quot;&gt;March 28, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;It was great to get feedback from &lt;a href=&quot;http://bradfrostweb.com/&quot;&gt;Brad Frost&lt;/a&gt;
+as his work on Atomic Design has been influential in the development of
+this process.&lt;/p&gt;
+
+&lt;h3&gt;In code, or config&lt;/h3&gt;
+
+&lt;p&gt;In this first proof-of-concept, the generated theme is held in memory, well
+actually it is persisted as a Drupal variable containing a single object that
+holds the result of all the &amp;#39;extractions&amp;#39; from the source. The original intention
+was that this would actually be a ctools exportable, so that it could be exported
+and managed as part of the configuration management process for the site.&lt;/p&gt;
+
+&lt;p&gt;This is how the Panels flexible layout builder works. It has one parent layout
+plugin that programmatically declares child layout plugins based on the layouts
+you define using the layout builder tool. These child layouts are stored as
+exportable objects, so they can be exported using
+&lt;a href=&quot;https://drupal.org/project/features&quot;&gt;Features&lt;/a&gt;. The current Hyde theme generator
+approach is similar, except that the parent plugins (for layout or styles)
+programmatically declare child layout and style plugins based on the result
+of each extraction from the HTML source design.&lt;/p&gt;
+
+&lt;p&gt;Storing the result of the build in configuration or database raised some concerns,
+mainly over capturing the results in version control. These tweets summarise the
+issue:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; interesting implementation. But I believe that should definitely generate theme in code, not just DB&amp;#10;&lt;a href=&quot;https://twitter.com/mcjim&quot;&gt;@mcjim&lt;/a&gt; &lt;a href=&quot;https://twitter.com/MattFielding&quot;&gt;@MattFielding&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tom Bamford (@waako) &lt;a href=&quot;https://twitter.com/waako/statuses/449539868411322368&quot;&gt;March 28, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/waako&quot;&gt;@waako&lt;/a&gt; If a prototype is always in sync with a Drupal theme, the markup *is* all in code right? // &lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mcjim&quot;&gt;@mcjim&lt;/a&gt;&lt;/p&gt;&amp;mdash; Matt Fielding (@MattFielding) &lt;a href=&quot;https://twitter.com/MattFielding/statuses/449551562344386560&quot;&gt;March 28, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Matt picks up on my original intention, in that the design/theme would be
+captured in code and be version-able because the translation is automatic from the
+design&amp;#39;s HTML/CSS/JS.&lt;/p&gt;
+
+&lt;p&gt;The difficulty is in managing any changes that happen to the generated code
+once it becomes a Drupal theme. This is exactly the problem that using the
+theme generator is trying to solve. That it provides a documented, repeatable
+conversion process, so that design can become part of the (agile) development workflow.&lt;/p&gt;
+
+&lt;p&gt;However, it is going to be unavoidable that some tweaking will be needed.
+This covers a couple more issues that were raised at the Drupal show-and-tell
+event:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to manage logic in template files?&lt;/li&gt;
+&lt;li&gt;How to capture Drupal&amp;#39;s pre-process functions?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The approach I am looking at to solve this, is one I&amp;#39;ve seen practised by other
+tools that involve code generation. For example, have you seen BDD using
+&lt;a href=&quot;http://behat.org/&quot;&gt;Behat&lt;/a&gt;? When define a test scenario in Behat it generates
+stub code for any unrecognised steps in your tests. For example, if you say
+&amp;quot;Given I am in a directory&amp;quot;, you would get the generated stub code:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/**
+ * @Given /^I am in a directory &amp;quot;([^&amp;quot;]*)&amp;quot;$/
+ */
+public function iAmInADirectory($argument1)
+{
+  throw new PendingException();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I think the theme generator could do something similar for elements marked as
+requiring pre-processing in the template file. This needs some further
+thought and perhaps a couple of experiements.&lt;/p&gt;
+
+&lt;h3&gt;Terminology&lt;/h3&gt;
+
+&lt;p&gt;Still struggling with naming conventions. If this is going to be a more general
+tool then need generally understandable terms (like &amp;#39;component&amp;#39;). But, need
+to avoid overloading terms even more, as it&amp;#39;s already quite confusing having
+SMACSS modules, Drupal modules, panels, blocks, boxes, styles, layouts. urgh!&lt;/p&gt;
+
+&lt;h3&gt;Next steps...&lt;/h3&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mark_carver&quot;&gt;@mark_carver&lt;/a&gt; I love it. Also love that it works w/ panels! Q: Are the layout plugins placed in the theme? &lt;a href=&quot;https://twitter.com/mortendk&quot;&gt;@mortendk&lt;/a&gt; &lt;a href=&quot;https://twitter.com/Cottser&quot;&gt;@Cottser&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jen Lampton (@jenlampton) &lt;a href=&quot;https://twitter.com/jenlampton/statuses/450703701263388672&quot;&gt;March 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;So, I&amp;#39;m going to revise the current proof-of-concept and produce a second
+prototype. This time as a Drush command that generates an actual Drupal theme.
+Rather than holding the extracted theme in configuration it will generate
+a theme folder, that will include all the usual Drupal theme files, plus any plugins for
+Panels layouts, styles, display suite etc, and the CSS/JS copied across
+from the source design.&lt;/p&gt;
+
+&lt;p&gt;This will allow Hyde to generate stub code for pre-processing or
+other programmatic tweaks that are needed to get Drupal&amp;#39;s output to match the
+design markup. I also think people
+will be more accepting of this approach as it&amp;#39;s probably more like how it is
+expected to work.&lt;/p&gt;
+
+&lt;p&gt;My worry is that people will then hack the generated theme, it will go
+out of sync with the source design markup, and that will break the whole process.&lt;/p&gt;
+
+&lt;p&gt;If you want to get involved, please drop me a line. I need input from designers,
+themers, and developers. In particular, I&amp;#39;d be interested to speak to anyone else
+already using Atomic Design and/or SMACSS on Drupal projects.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 04 Apr 2014 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2014/04/04/drupal-theme-generator-update/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/04/drupal-theme-generator-update/</guid>
+      </item>
+    
+      <item>
+        <title>Drupal Theme Generator Demo</title>
+        <description>&lt;p&gt;I&amp;#39;ve been playing with the idea of automatically generating Drupal themes
+from static HTML/CSS/JS using annotations in the HTML markup.  I put together
+a basic proof-of-concept of a tool to generate a Drupal theme, ctools
+layout and style plugins, and view modes and templates.&lt;/p&gt;
+
+&lt;p&gt;Last night at the &lt;a href=&quot;http://www.drupalshowandtell.com/&quot;&gt;Drupal Show and Tell&lt;/a&gt;
+event in London I gave a live demo
+of the theme generator in action. The event was recorded, so will be online
+eventually, but for now I&amp;#39;ve recorded this demo as a couple of attendees
+suggested this would give a better idea of the detail that couldn&amp;#39;t be
+seen on the screen during the live demo.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;My interest in this area came about through wanting to bring design into the
+development workflow of an agile project, and move away from the
+&amp;#39;throw it over the fence&amp;#39; mentality in design deliverables.
+You can read more about how this came about in my previous blog post
+&lt;a href=&quot;http://darrenmothersele.com/blog/2014/03/12/automatic-drupal-theme-generation/&quot;&gt;Death of the Themer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Assembly, not Deconstruction&lt;/h3&gt;
+
+&lt;p&gt;Traditionally implementation of a design was done via a process of deconstruction
+from a PSD into flat HTML and CSS, and then another process of deconstruction
+in CMS implementation of the design. You can&amp;#39;t design a responsive site in Photoshop
+so luckily this is changing. PSDs were horrible to work with as amends take far too
+long, and while Photoshop may be good to quickly mock up style ideas, pages
+designed in Photoshop tend rely too much on intuition, implications about how things
+would work, and tend to come with an implied &amp;quot;you get the idea&amp;quot;.&lt;/p&gt;
+
+&lt;h3&gt;Atomic Design&lt;/h3&gt;
+
+&lt;p&gt;As I&amp;#39;ve mentioned in earlier posts, I&amp;#39;m excited about the emerging trend towards
+atomic design (see &lt;a href=&quot;http://bradfrostweb.com/blog/post/atomic-web-design/&quot;&gt;Brad Frost&lt;/a&gt;)
+as it brings a more &amp;#39;development&amp;#39; style process into design. Treating the process
+as that of designing a system of re-usable components, rather than just designing
+pages.&lt;/p&gt;
+
+&lt;p&gt;This moves implementation of a design from a process of deconstruction, to a process
+of assembly, so brings the world of dev and design closer together. Either bringing
+design into the development workflow, or bringing development processes into
+design (depending on which way around you look at it).&lt;/p&gt;
+
+&lt;p&gt;With an atomic approach to design, and with something like SMACSS for
+modular CSS, the process of converting to a Drupal theme can be automated.
+Because the markup/styles are &amp;#39;componentised&amp;#39; we can annotate the source code to
+document the conversion process and then use automated tools to manage the process.&lt;/p&gt;
+
+&lt;h3&gt;Demo&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;#39;s a demo of the proof-of-concept:&lt;/p&gt;
+
+&lt;div class=&#39;embed-container&#39;&gt;&lt;iframe src=&#39;https://player.vimeo.com/video/90315757&#39; frameborder=&#39;0&#39; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;https://player.vimeo.com/video/90315757&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3&gt;Next...&lt;/h3&gt;
+
+&lt;p&gt;You can download/fork the code from the
+&lt;a href=&quot;https://github.com/darrenmothersele/hyde&quot;&gt;GitHub Hyde repo&lt;/a&gt;. You&amp;#39;ll need to patch the
+QueryPath module as it needs the latest version of the QueryPath library and the QP
+module doesn&amp;#39;t include the right files to make this work by default.&lt;/p&gt;
+
+&lt;p&gt;A lot of work needs to be done. This is very rough proof-of-concept code, but I
+think this shows the concept can work, and worthy of further development.&lt;/p&gt;
+
+&lt;p&gt;Some feedback from last night included:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate an actual theme. At the moment the theme is just an object stored in the DB/cache, but
+I had planned for this to be a ctools exportable. An earlier version I started working on generated actual
+theme files, perhaps it would be better to switch back to this approach?&lt;/li&gt;
+&lt;li&gt;How to handle logic in template files? Shouldn&amp;#39;t this be handled in pre-process?&lt;/li&gt;
+&lt;li&gt;Stub code generation for pre-process functions&lt;/li&gt;
+&lt;li&gt;Adding extra custom fields for display only? The example given was a date field that was displayed twice on page, once for date stored in field and once for time stored in same field.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Drop me a line if you&amp;#39;ve got any other ideas, or want to get involved, or
+want to help fund building this properly! :)&lt;/p&gt;
+
+&lt;h3&gt;Update:&lt;/h3&gt;
+
+&lt;p&gt;As requested, here&amp;#39;s links to some of the other resources I mentioned during the
+Show and Tell...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://webdesign.tutsplus.com/articles/the-sparkbox-responsive-design-process--webdesign-9651&quot;&gt;Sparkbox Responsive Design Process&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Stephen Hay, quote: &lt;a href=&quot;https://vimeo.com/47171001&quot;&gt;We&amp;#39;re not designing pages, we&amp;#39;re designing systems of components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://daverupert.com/2013/04/responsive-deliverables/&quot;&gt;Tiny Bootstraps for Every Client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://smacss.com/&quot;&gt;Scalable and Modular Architecture for CSS (SMACSS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt; and &lt;a href=&quot;http://bradfrostweb.com/blog/post/atomic-web-design/&quot;&gt;Brad Frost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://warpspire.com/kss/&quot;&gt;Knyle Style Sheets (KSS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bem.info/method/&quot;&gt;Block, Element, Modifier (BEM)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 28 Mar 2014 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2014/03/28/drupal-theme-generator-demo/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/28/drupal-theme-generator-demo/</guid>
+      </item>
+    
+      <item>
+        <title>Dennis Dropin - BDD and Drupal</title>
+        <description>&lt;p&gt;Last night I attended the
+&lt;a href=&quot;http://www.meetup.com/DennisDropIn-Drupal-OpenSource/events/169988982/&quot;&gt;Dennis Dropin&lt;/a&gt;
+event on Behavior-Driven Development (BDD) and Drupal. This is a new event on the
+Drupal London scene hosted by Dennis Publishing.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I&amp;#39;ve been attending Drupal events in London since 2007, and there have been
+a wide variety of different types of events. There have been high points, such as
+&lt;a href=&quot;http://darrenmothersele.com/blog/2013/03/05/drupal-camp-london-review.html&quot;&gt;Drupal Camp London 2013&lt;/a&gt;,
+and low points (we had quite a lot of Microsoft sponsored events, but one in particular
+springs to mind where every presentation was also either paid for by Microsoft or
+about Microsoft technology - I&amp;#39;m not complaining - I have no right to complain
+as I&amp;#39;ve eaten enough of their free pizza over the years!). From
+Drupal Camps, Drupalcon, code sprints, workshops, trainings, and just regular pub meetups,
+London has a really exciting and active Drupal-scene.&lt;/p&gt;
+
+&lt;p&gt;Do we need another event?&lt;/p&gt;
+
+&lt;p&gt;Well, if this first event in the series is anything to go by I&amp;#39;d say
+definitely, yes please!
+The event took place in the boardroom at Dennis Publishing, so it was limited
+in capacity, about 25 people in attendance and the room was nicely packed.
+&lt;a href=&quot;https://twitter.com/PaulLomax&quot;&gt;Paul Lomax&lt;/a&gt;, the CTO, did say that they had plans
+for a bigger space so by July we could see this expand into a
+bigger event.&lt;/p&gt;
+
+&lt;p&gt;I can think of at least three reasons why this event was a success:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It really felt like this was Dennis Publishing wanting to give something back
+to the Drupal community. The two presentations were perfectly matched.
+The first to motivate reasons for adopting BDD, and the second to give practical examples.
+There was enough technical detail to be useful, without being overwhelming.&lt;/li&gt;
+&lt;li&gt;Dennis&amp;#39; approach to digital is exemplary, probably due to Paul&amp;#39;s leadership.
+It comes across that the whole team have the right balance of
+formal process and pragmatism.&lt;/li&gt;
+&lt;li&gt;It seemed like a lot of the Dennis team were in attendance and the experience
+level of attendees was high. This meant there were some interesting discussions
+around the presentations too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The event had a natural split in two parts, which I&amp;#39;d never really considered
+before, but perhaps others planning events could take into account. Pairing a
+presentation of motivating business cases with a more technical presentation of
+practical examples and inner workings.&lt;/p&gt;
+
+&lt;p&gt;It was interesting to hear in the discussion alongside the presentations
+real world cases of how BDD had caught bugs that would have cost them
+ad revenue or resulted in financial losses if they had made it into production.&lt;/p&gt;
+
+&lt;p&gt;I asked about Continuous Deployment and if introducing testing and increased the frequency of deployment.
+Paul confirmed they had been able to do more regular deployments, but gave
+a good reason (one I hadn&amp;#39;t thought of) for why Continuous Deployment is not
+viable in a Drupal environment. His argument was that when you do a deployment
+you have to do a cache clear, and when you do a cache clear you clear the form
+cache. This kicks out any content editors that might be working on the site
+so deployments have to be limited and controlled. This lead to some discussion
+of a growl-like notification system with Node.js to push notifications to
+content editors logged in to the site.&lt;/p&gt;
+
+&lt;p&gt;Another really interesting idea was the integration of visual diff into
+the Behat tests. This allows them to do a pixel-by-pixel comparison between
+the staging environment and production to flag up any major changes. A great
+extra precaution to pick up any bugs that may cause blocks to disappear or
+display incorrectly.&lt;/p&gt;
+
+&lt;p&gt;The next event in the series,
+&lt;a href=&quot;http://www.meetup.com/DennisDropIn-Drupal-OpenSource/events/169953872/&quot;&gt;Responsive Web design: How Dennis are skinning this cat&lt;/a&gt; is scheduled for April 16th. Already 17 people
+signed up to the Meetup group so I hope I get in!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2014/03/13/dennis-dropin-drupal-bdd/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/13/dennis-dropin-drupal-bdd/</guid>
+      </item>
+    
+      <item>
+        <title>Death of the Drupal Themer</title>
+        <description>&lt;p&gt;At Drupal Camp London 2013 &lt;a href=&quot;https://twitter.com/mcjim&quot;&gt;James Panton&lt;/a&gt; presented
+a methodology for implementing designs in Drupal without resorting to custom
+theme development. At this years Drupal Camp I pulled together two BoF
+(Birds of a Feather) sessions to continue the conversation and discuss
+prototyping designs, atomic design, and
+challenges of incorporating design activities into development workflow.&lt;/p&gt;
+
+&lt;p&gt;In recent posts I&amp;#39;ve talked about
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/&quot;&gt;prototyping&lt;/a&gt;
+and a bit about
+&lt;a href=&quot;http://darrenmothersele.com/blog/2014/02/07/from-prototype-to-drupal-theme-2/&quot;&gt;using Jekyll for prototyping&lt;/a&gt;.
+In many ways this discussion is a continuation of those ideas, but also
+much more general in it&amp;#39;s scope, and more wide-reaching in it&amp;#39;s potential.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Death of the Themer?&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve become interested in this area after recently facing challenges bringing
+design activities into the development workflow of an agile project. But first, for
+some context, let me explain where this all began...&lt;/p&gt;
+
+&lt;p&gt;Last year, Jim presented a methodology for implementing designs in Drupal
+without having to do any custom theme development.&lt;/p&gt;
+
+&lt;p&gt;First, Drupal is stripped of all it&amp;#39;s markup. Jim presented to a packed
+room at Drupal Camp London, and received a big whooping
+round of applause when he showed naked Drupal markup. Perhaps indicating the
+general level of frustration the developers/themers have from battling with
+Drupal markup. Also, there&amp;#39;s a general preconception that Drupal suffers very badly
+from &amp;quot;Divitis&amp;quot;, &amp;quot;Classitis&amp;quot; and &amp;quot;Span-mania&amp;quot;. This demo showed that this need
+not be the case.&lt;/p&gt;
+
+&lt;p&gt;Next, markup is added back in bit by bit to match the markup in the flat
+HTML/CSS design. This means that the eventual markup produced by Drupal should
+exactly (or almost!) match what the designer originally intended. The rendered
+HTML is therefore cured of it&amp;#39;s divitis (contains much less bloat),
+works with the CSS styles from the design with little or no tweaking, and
+can make use semantic HTML5 tags.&lt;/p&gt;
+
+&lt;p&gt;The tools used to reset Drupal default markup include:
+&lt;a href=&quot;https://drupal.org/project/semanticviews&quot;&gt;Semanic Views&lt;/a&gt;,
+&lt;a href=&quot;https://drupal.org/project/ds&quot;&gt;Display Suite&lt;/a&gt;,
+&lt;a href=&quot;https://drupal.org/project/panels&quot;&gt;Panels&lt;/a&gt;,
+and a fork of &lt;a href=&quot;https://drupal.org/project/semantic_panels&quot;&gt;Semantic Panels&lt;/a&gt;
+that I can&amp;#39;t seem to find a reference for.
+&lt;a href=&quot;https://drupal.org/project/fences&quot;&gt;Fences&lt;/a&gt; can also be useful, although
+functionality to override field wrappers is also part of Display Suite.&lt;/p&gt;
+
+&lt;p&gt;One of the main benefits of this approach is that it allows designers and
+Front-end developers to work freely, using whatever tools they want, and
+without consideration for any of Drupal&amp;#39;s (perceived) limitations. There have
+been lots of really cool developments in front-end, including CSS and HTML
+preprocessors, and the multitude of CSS and JS frameworks. This approach allows
+designers, front end developers, UXs, and IAs to take advantage of all of these tools
+when prototyping sites.&lt;/p&gt;
+
+&lt;p&gt;During the BoF sessions at this year&amp;#39;s Drupal Camp London a few limitations and
+disadvantages were discussed. This methodology moves the implementation of
+design from development (writing code) to configuration. This can become quite
+repetitive as each individual bit of output has to be configured with appropriate
+resets and the correct wrappers to build up the markup.&lt;/p&gt;
+
+&lt;h2&gt;Custom Plugins?&lt;/h2&gt;
+
+&lt;p&gt;In the BoF sessions I presented a methodology that I had been playing with,
+inspired by Death of a Themer, whereby designs are implemented
+in a similar way, without the need for a custom theme. Drupal markup is taken
+to a &amp;quot;full reset&amp;quot; state, and then just the required markup is introduced
+through various plugins.&lt;/p&gt;
+
+&lt;p&gt;This differs from the original methodology as it does not use configuration
+to add wrappers back in to fields, view modes, views, panels, etc. Instead,
+the markup is taken from the prototype (flat HTML and CSS) and copied into
+&amp;quot;plugins&amp;quot;. Various plugins are used:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Display Suite plugins to add markup to content/entities in various view modes.&lt;/li&gt;
+&lt;li&gt;Views styles to output list markup&lt;/li&gt;
+&lt;li&gt;Panel&amp;#39;s style plugins to add &amp;quot;box&amp;quot; markup, and,&lt;/li&gt;
+&lt;li&gt;Panel&amp;#39;s layout plugins to add layout markup.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The result is the same markup as the flat prototype, and the same result
+as with the original Death of a Themer approach, but with much less configuration
+required.&lt;/p&gt;
+
+&lt;p&gt;The real big win for this approach, is that the components of the design are
+reusable across various content types and sections of the site without
+having to repeatedly configure each occurrence.&lt;/p&gt;
+
+&lt;p&gt;Building out these plugins for every bit of a design might seem like over-kill
+and more work than is really necessary, but it is a much more scalable way of theming
+as you end up with design components that can be reused across the site.&lt;/p&gt;
+
+&lt;p&gt;This version of &amp;quot;Death of a Themer&amp;quot; means the Themer is replaced with a developer,
+rather than a site-builder, as the emphasis moves away from configuration towards
+writing custom plugins in code.  However, I think a lot of the grunt work can
+be automated, as I&amp;#39;ll explain in a bit.&lt;/p&gt;
+
+&lt;h2&gt;Atomic Design&lt;/h2&gt;
+
+&lt;p&gt;I saw parallels between this approach (of reusable theme components) and the
+emerging trend of &lt;a href=&quot;http://bradfrostweb.com/blog/post/atomic-web-design/&quot;&gt;atomic design&lt;/a&gt;.
+In fact, I think atomic design is more than
+just a current trend but a real leap forward in design methodology.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We&amp;#39;re not designing pages, we&amp;#39;re designing systems of components. &lt;br&gt;
+ -- &lt;a href=&quot;http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/&quot;&gt;Stephen Hay&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While producing an atomic design the designer is effectively breaking down the
+design into components. This is exactly what a good themer does when they take a design
+and decide how to implement it as a Drupal theme.&lt;/p&gt;
+
+&lt;h2&gt;From Design to Theme&lt;/h2&gt;
+
+&lt;p&gt;When a designer hands over a design (let&amp;#39;s assume static HTML and CSS) the
+developer (or themer, or site-builder) has to make several decisions about
+how this will be implemented.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Assumptions are made and things get &amp;quot;lost in translation&amp;quot;&lt;/li&gt;
+&lt;li&gt;Compromises are made due to limitations in implementation (i.e. limitations of the CMS, content model, etc)&lt;/li&gt;
+&lt;li&gt;Markup is augmented to add in extra properties like RDFa, etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Agile&lt;/h2&gt;
+
+&lt;p&gt;There shouldn&amp;#39;t really be a &amp;quot;handover&amp;quot; of design. The style guide / atomic design
+or static mockup that is the result of prototyping should evolve as the product
+evolves.&lt;/p&gt;
+
+&lt;p&gt;If something comes up that needs design we go back to the static HTML/CSS to
+implement it. If using atomic design, this means adding any required &amp;quot;atoms&amp;quot;,
+&amp;quot;molecules&amp;quot;, etc.&lt;/p&gt;
+
+&lt;p&gt;If changes have been made as a design is implemented these need to be flowed
+back upstream to the style guide so that further development of the design can
+happen, and then (some of) the conversion process is repeated to bring across
+new design elements into the theme/templates.&lt;/p&gt;
+
+&lt;p&gt;This process can be hard to manage and bring duplication of effort into
+the process.&lt;/p&gt;
+
+&lt;p&gt;If we can automate some of the steps involved in going from static HTML and CSS
+to Drupal theme then we can move towards a more agile, and robust design-dev
+workflow.&lt;/p&gt;
+
+&lt;h2&gt;Proof of concept&lt;/h2&gt;
+
+&lt;p&gt;Automatically generating a Drupal theme from either a style guide, atomic design,
+pattern library, static mockup, prototype (or whatever you want to call it!)
+might sound like a crazy idea, but I&amp;#39;ve got a working proof of concept.&lt;/p&gt;
+
+&lt;p&gt;I decided to start from just pure HTML/CSS. After experimenting with static
+site generators (HTML preprocessors), and CSS preprocessors like
+SASS, I decided that it was best to take pure HTML/CSS as the starting point.
+This works because every design eventually ends up as HTML/CSS. It&amp;#39;s the
+language of the web, so it&amp;#39;s unavoidable. It means designers can use
+any combination of tools they like, as long as they produce HTML/CSS as the
+end result.&lt;/p&gt;
+
+&lt;p&gt;As an example, I&amp;#39;m using Jekyll to compile the static mockup, and Compass
+to compile the CSS, but this could be any combination of tools, or just
+hand-crafted HTML and CSS.&lt;/p&gt;
+
+&lt;p&gt;The next stage is to add annotations into the source of the HTML to
+identify and describe each of the design &amp;quot;components&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#39;t have any terminology yet. Drupal has it&amp;#39;s own jargon, as does
+SMACSS, Atomic Design, OOCSS, KSS, etc.  I&amp;#39;m not sure what to call
+things. I&amp;#39;m tending towards a combination of Atomic Design and Drupal
+terminology, but this will change.&lt;/p&gt;
+
+&lt;h2&gt;Annotations&lt;/h2&gt;
+
+&lt;p&gt;There has been some discussion in the design community about
+&lt;a href=&quot;https://www.youtube.com/watch?v=ROaXVB-bbek&quot;&gt;Pattern Library Annotations&lt;/a&gt;
+documentation, etc.&lt;/p&gt;
+
+&lt;p&gt;I want to use annotations in designs so that they can be automatically
+parsed and converted.&lt;/p&gt;
+
+&lt;p&gt;In this proof of concept, annotations in the HTML source code map directly to
+the appropriate Drupal templates and plugins.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m using the &lt;code&gt;x-&lt;/code&gt; prefix for my custom attributes. This mechanism is intended for use
+in vendor prefixing for vendor specific attributes. It distinguishes them nicely from
+&lt;code&gt;data-&lt;/code&gt; custom attributes, results in valid HTML5, and therefore I think it&amp;#39;s an
+acceptable abuse of the feature.&lt;/p&gt;
+
+&lt;p&gt;For example, annotate a certain part of the source code as being responsible
+for layout and it will be automatically compiled into a Panels Layout Plugin:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; &amp;lt;div x-drupal-type=&amp;quot;layout&amp;quot; x-drupal-name=&amp;quot;front_page&amp;quot; x-drupal-label=&amp;quot;Front page&amp;quot; x-drupal-no-wrap&amp;gt;
+   &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+     &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+     &amp;lt;div class=&amp;quot;span8&amp;quot; x-drupal-region x-drupal-name=&amp;quot;content&amp;quot;&amp;gt;
+     ...
+     &amp;lt;/div&amp;gt;
+     &amp;lt;div class=&amp;quot;span4&amp;quot; x-drupal-region x-drupal-name=&amp;quot;sidebar&amp;quot;&amp;gt;
+     ...
+     &amp;lt;/div&amp;gt;
+   &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Another example, this is content shown in a particular preview style called &amp;quot;Box&amp;quot;.
+It maps to a Drupal view mode:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; &amp;lt;div class=&amp;quot;box&amp;quot; x-drupal-type=&amp;quot;display&amp;quot; x-drupal-name=&amp;quot;box_teaser&amp;quot; x-drupal-label=&amp;quot;Box teaser&amp;quot;&amp;gt;
+  &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;100&amp;quot; height=&amp;quot;100&amp;quot; alt=&amp;quot;&amp;quot; x-drupal-region x-drupal-name=&amp;quot;image&amp;quot; x-drupal-no-wrap&amp;gt;
+  &amp;lt;h6 x-drupal-region x-drupal-name=&amp;quot;title&amp;quot;&amp;gt;Easy to use&amp;lt;/h6&amp;gt;
+  &amp;lt;p x-drupal-region x-drupal-name=&amp;quot;summary&amp;quot; x-drupal-no-wrap&amp;gt;
+    To get started, you select the desired sample and base the entire website on it. It’s that simple!
+  &amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Many other attributes are identified and the system currently supports
+panels layouts, panels styles, views styles, display suite (view mode templates),
+menus (kinda), and image styles.&lt;/p&gt;
+
+&lt;p&gt;During the compilation process the various components are identified and
+the appropriate plugins are created. Any required static files, such as
+CSS and JS are copied across. Any content in the various regions is removed
+from the markup, and the generated plugins therefore only contain the markup
+to wrap the various parts of Drupal output.&lt;/p&gt;
+
+&lt;p&gt;You can see the (very!) rough proof-of-concept here:
+&lt;a href=&quot;https://github.com/darrenmothersele/hyde&quot;&gt;https://github.com/darrenmothersele/hyde&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You really shouldn&amp;#39;t try using this yet, but if you insist, install the
+modules on a Drupal site with Display Suite, Panels, etc,
+then enable both modules, and configure to point at the folder with your
+HTML/CSS design. Then click the &amp;quot;Sync&amp;quot; button to parse your design files and create
+and register the appropriate plugins based on the design.&lt;/p&gt;
+
+&lt;p&gt;Warning: You are probably better off waiting for the next version or some
+actual documentation!&lt;/p&gt;
+
+&lt;h2&gt;Rather see it in action?&lt;/h2&gt;
+
+&lt;p&gt;If you would rather see it in action, then come along to the next
+&lt;a href=&quot;http://www.meetup.com/drupal-show-and-tell/events/168733432/&quot;&gt;Drupal Show and Tell&lt;/a&gt;
+where I&amp;#39;ll be demonstrating the early version of the theme generator and asking for feedback!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Mar 2014 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2014/03/12/automatic-drupal-theme-generation/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/12/automatic-drupal-theme-generation/</guid>
+      </item>
+    
   </channel>
 </rss>

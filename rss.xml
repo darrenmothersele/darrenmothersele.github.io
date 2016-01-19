@@ -1,21 +1,1284 @@
----
-layout: none
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Darren Mothersele</title>
+    <description>Creative Technologist, Drupal Training, Drupal Development, Drupal Consulting</description>
+    <link>http://www.darrenmothersele.com</link>
+    <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}/{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+        <title>In Summary...</title>
+        <description>&lt;p&gt;Things are becoming clearer.
+I wrote a bit &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;last week&lt;/a&gt;
+about my decision to leave Facebook.
+I&amp;#39;m still exploring what this means, and here&amp;#39;s where I&amp;#39;m at now.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;&amp;quot;The most important thing about technology is how it changes people.&amp;quot;
+-- Jaron Lanier&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve been thinking a lot about tech in terms of it&amp;#39;s effect on people.
+Jaron Lanier, in his book
+&lt;a href=&quot;http://www.jaronlanier.com/gadgetwebresources.html&quot;&gt;You are not a Gadget&lt;/a&gt;,
+talks about the idea of &amp;quot;Lock in&amp;quot; as when a technology
+becomes so established (ingrained?) that it is impossible to change.&lt;/p&gt;
+
+&lt;p&gt;I see we&amp;#39;re in danger of becoming &amp;quot;locked in&amp;quot; to certain ways of thinking
+about how we operate online, and by leaving Facebook I&amp;#39;m forcing myself to
+think about alternatives, by necessity. By &amp;quot;opting out&amp;quot; of Facebook&amp;#39;s idea
+of what it means to be connected online, I&amp;#39;m motivated to think about what
+I really want and build tools for myself. Hopefully what I build will
+eventually be useful for others too.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt; is a growing movement to build a people-focused alternative to the corporate web.&lt;/p&gt;
+
+&lt;p&gt;The predominant business model online now is providing &amp;quot;free&amp;quot; services, locking people in, stealing their data, and selling it to advertisers.&lt;/p&gt;
+
+&lt;p&gt;I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and cocreation, and use it to inform, to connect, and to empower.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Work in Progress: The Future of (My) Web (Part 1, Leaving Facebook)</title>
+        <description>&lt;p&gt;I wanted to write a post about my decision to leave Facebook (again).
+It was in danger of turning into a treatise on how I see the future of the
+web. So, instead, I&amp;#39;ve decided to summarise my thoughts, and post this up as a &amp;quot;Work-in-progress&amp;quot;.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;If this feels a bit like déjà vu, you&amp;#39;re right. I have 
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2013/12/09/create-not-consume/&quot;&gt;posted before&lt;/a&gt; about my decision to leave Facebook. 
+In fact, that was almost exactly 2 years ago.&lt;/p&gt;
+
+&lt;p&gt;I tried to leave. It didn&amp;#39;t work. Six months later I returned.&lt;/p&gt;
+
+&lt;p&gt;The main reason for my return was that Facebook had become
+the single place where my friends organised social events.
+I was locked in. &lt;/p&gt;
+
+&lt;p&gt;NB: I use the phrase &amp;quot;locked-in&amp;quot; here as a hat tip to 
+&lt;a href=&quot;http://www.jaronlanier.com/gadgetwebresources.html&quot;&gt;Jaron Lanier&lt;/a&gt;
+and as a reminder to my future self to fully explain the
+influence his book, You are not a Gadget, has had on my
+&amp;quot;digital awakening&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;I deleted my Facebook account on 10th November 2015.
+This time there&amp;#39;s no going back.&lt;/p&gt;
+
+&lt;h3&gt;Why will it be different this time?&lt;/h3&gt;
+
+&lt;p&gt;First, the community (friendship group) that prompted my 
+return to Facebook last year has since gone way past 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Dunbar&amp;#x27;s_number&quot;&gt;Dunbar&amp;#39;s number&lt;/a&gt; 
+and people around me are also starting to change the way they 
+use Facebook. So hopefully I wont be alone in this. 
+But, I will have to make a real concerted effort to keep up with friends, 
+which I hope will lead to more meaningful relationships. &lt;/p&gt;
+
+&lt;p&gt;Secondly, I&amp;#39;m building a replacement. 
+No, I&amp;#39;m not building a new Facebook. 
+Let me explain...&lt;/p&gt;
+
+&lt;p&gt;One response I&amp;#39;ve had from people who disagree with my decision is that they could never live without Facebook. In 
+particular, this tends to come from people who have family and friends scattered around the world. &lt;/p&gt;
+
+&lt;p&gt;But, the truth is, Facebook doesn&amp;#39;t allow you
+to do anything you couldn&amp;#39;t do before you got &amp;quot;locked in&amp;quot; to 
+Facebook.&lt;/p&gt;
+
+&lt;p&gt;Facebook is not innovative. At least not for users. All Facebook did 
+was popularise one single methodology for using the web. It created
+a template into which you put yourself. &lt;/p&gt;
+
+&lt;p&gt;You might have 1000 friends on Facebook. But, only if you 
+reduce your definition of what a friend is.&lt;/p&gt;
+
+&lt;p&gt;You define yourself using a discrete set of options, you conform to
+Facebook&amp;#39;s &amp;quot;schema&amp;quot;, so you can be more easily packaged and 
+sold to advertisers. I noticed Firefox put out a 
+&lt;a href=&quot;https://www.youtube.com/watch?v=HALw5kXPeKE&quot;&gt;video on the hidden business of data&lt;/a&gt; yesterday. Kind of relevant.&lt;/p&gt;
+
+&lt;p&gt;Facebook is a &lt;a href=&quot;https://indiewebcamp.com/monoculture&quot;&gt;monoculture&lt;/a&gt;
+and that is damaging the web. 
+It&amp;#39;s built by middle class white males in their 20s and 30s. 
+This leads to things like 
+&lt;a href=&quot;http://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/&quot;&gt;Inadvertent Algorithmic Cruelty&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The world is diverse, and the web should reflect that.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m getting distracted.&lt;/p&gt;
+
+&lt;p&gt;I was talking about building a replacement...&lt;/p&gt;
+
+&lt;h3&gt;IndieWeb&lt;/h3&gt;
+
+&lt;p&gt;Earlier this year I attended the Indie Web Camp in Brighton.&lt;/p&gt;
+
+&lt;blockquote&gt;
+The IndieWeb is a people-focused alternative to the &#39;corporate web&#39;. 
+&lt;br&gt;-- &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here, I found a community of people building the web that
+they want, &lt;a href=&quot;http://indiewebcamp.com/Selfdogfood&quot;&gt;Selfdogfood&lt;/a&gt; 
+style.&lt;/p&gt;
+
+&lt;p&gt;The IndieWeb is about having your own website. I&amp;#39;ve pretty
+much always had my own website, since I started using the 
+web in the 90s. &lt;/p&gt;
+
+&lt;p&gt;I wrote &lt;a href=&quot;http://www.darrenmothersele.com/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/&quot;&gt;a post&lt;/a&gt; in 2013 about the importance of owning your own personal domain name.&lt;/p&gt;
+
+&lt;h3&gt;Web 1.0&lt;/h3&gt;
+
+&lt;p&gt;Back in the early days of the web everyone created their own little 
+space on the web.  &lt;/p&gt;
+
+&lt;p&gt;You &amp;quot;surfed&amp;quot; the web. Browsed from one site to another. 
+Each site different, each site an individual expression
+of creativity, each site opinionated and varied.
+But now we don&amp;#39;t have variety. 
+(and we&amp;#39;re in danger of not having opinion either - 
+if we take all our info from Wikipedia).&lt;/p&gt;
+
+&lt;p&gt;And, as the internet opens up to more of the world, 
+we should be getting more diversity, not less. 
+It should be getting more interesting, more opinionated,
+more personal. &lt;/p&gt;
+
+&lt;h3&gt;Web 2.0&lt;/h3&gt;
+
+&lt;p&gt;After the original dot-com bubble and collapse, 
+into 2000, things look different on the web.
+The &amp;quot;hype&amp;quot; of the web was over. &lt;/p&gt;
+
+&lt;p&gt;But, Web 2.0 rose from the ashes, and offered new
+opportunities, slick new designs and new business
+models. &lt;/p&gt;
+
+&lt;p&gt;The legacy of Web 2.0 is that we&amp;#39;re left with 
+corporate silos and monoculture. &lt;/p&gt;
+
+&lt;h3&gt;Future web&lt;/h3&gt;
+
+&lt;p&gt;The current accepted definition of Web 3.0 is
+related to the &amp;quot;Semantic Web&amp;quot;. It brings together
+ubiquitous computing, open data, and machine learning
+to a point where the network becomes &amp;quot;intelligent&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;But, any &amp;quot;intelligent&amp;quot; behaviour by the network requires 
+us as humans to reduce what we think intelligence is.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;d rather take an optimistic view
+about human potential, and then think about how the web can be used
+to benefit humanity. &lt;/p&gt;
+
+&lt;blockquote&gt;
+I&#39;ve always felt that the human-centered approach to computer science leads to more interesting, more exotic, 
+more wild, and more heroic adventures than the machine-supremacy approach, where information is the highest goal.
+&lt;br&gt;-- &lt;a href=&quot;http://www.jaronlanier.com/&quot;&gt;Jaron Lanier&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+
+&lt;p&gt;So, my next steps, are to continue to eat my own dog food.
+That is, to keep building my own tools, that will hopefully
+eventually be useful to others.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s move away from the &amp;quot;&lt;b&gt;lock in&lt;/b&gt;&amp;quot; of the current dominant
+corporate silos, and work to offer new ways to 
+&amp;quot;&lt;b&gt;unlock&lt;/b&gt;&amp;quot; the benefits technology 
+can offer society.&lt;/p&gt;
+
+&lt;p&gt;That means tools for communities to cocreate. 
+Tools for collaboration. And tools where individual creativity
+is the default option, not conforming to a standardised 
+template.&lt;/p&gt;
+
+&lt;p&gt;You can no longer follow me on Facebook, but, if you&amp;#39;re still
+interested in hearing about what I&amp;#39;m up to, join 
+my &amp;quot;tinyletter&amp;quot; personal newsletter.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</guid>
+      </item>
+    
+      <item>
+        <title>Identity Proxy</title>
+        <description>&lt;p&gt;If you&amp;#39;ve got 5 mins, I would really appreciate it if
+you could read this. Then, tell me what you think 
+of the idea.  &lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;We&amp;#39;re calling this &lt;a href=&quot;http://idproxy.co&quot;&gt;Identity Proxy&lt;/a&gt;. A bit like an 
+escrow service for your contact details. 
+First let me explain some of the problems we think
+this solves:&lt;/p&gt;
+
+&lt;h2&gt;Scenario 1&lt;/h2&gt;
+
+&lt;p&gt;You&amp;#39;re looking for an apartment. You do some online research.
+You signup to several websites, services, and 
+email various estate agents. You&amp;#39;ve given away your contact details
+to 20 different companies. &lt;/p&gt;
+
+&lt;p&gt;You then have 20 different companies contacting you via
+email, phone, SMS notifications, etc. That&amp;#39;s a lot of 
+communication coming in through different channels and at
+different times.&lt;/p&gt;
+
+&lt;p&gt;You make a decision and rent a flat with one of the companies,
+but 19 others have your details. What are they going to 
+do with them? Sell them? Market to you later? Call you back
+every few months asking if you&amp;#39;re still looking for an apartment?&lt;/p&gt;
+
+&lt;p&gt;What if you could manage all this communication in once place?
+Decide how and when you get contacted? And, only give your details
+to the 1 company you decide to rent with.&lt;/p&gt;
+
+&lt;h2&gt;Scenario 2&lt;/h2&gt;
+
+&lt;p&gt;You&amp;#39;re looking for a new job. You sign up to 10 different
+recruitment websites, and job portals. 
+You get a regular stream of newsletters, several per
+day from different sources. &lt;/p&gt;
+
+&lt;p&gt;Once you&amp;#39;ve found a job you have to remember everywhere you
+signed up and go around unsubscribing from each of the 
+emails. Or you don&amp;#39;t and they keep filling your inbox.&lt;/p&gt;
+
+&lt;p&gt;What if you could unsubscribe from all of them at the same time, 
+in one simple operation?&lt;/p&gt;
+
+&lt;h2&gt;Scenario 3&lt;/h2&gt;
+
+&lt;p&gt;You&amp;#39;re planning a holiday or a trip somewhere. You use the 
+web to do research. This involves filling in lots of 
+contact forms around the web while you make enquiries about
+places to visit, things to do, and places to stay. &lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;re never sure who you&amp;#39;re giving your personal details
+to. Are companies going to keep marketing to you? 
+Will they sell your details on as a qualified &amp;quot;lead&amp;quot; to other 
+companies?&lt;/p&gt;
+
+&lt;p&gt;What if you could make an enquiry online and only share 
+your personal details once you&amp;#39;re more comfortable with who
+you&amp;#39;re doing business with?&lt;/p&gt;
+
+&lt;h2&gt;Current solutions&lt;/h2&gt;
+
+&lt;p&gt;How many sites have you signed up to in the past?
+If you use a login manager or password manager, then at least you 
+might have some idea of where you&amp;#39;ve given away your details, and 
+what websites you&amp;#39;re registered with. &lt;/p&gt;
+
+&lt;p&gt;Maybe you&amp;#39;ve resorted to using a fake email address, or
+a temporary email account? This only solves part of the 
+problem, because if you&amp;#39;re expecting a reply you have to check
+a separate email account. Also, many contact forms and email
+services try to reject temporary email accounts because
+they are often a source of spam or abuse. &lt;/p&gt;
+
+&lt;h2&gt;Identity Proxy&lt;/h2&gt;
+
+&lt;p&gt;What if we take a different approach, and instead of a &amp;quot;fake&amp;quot;
+temporary identity, we use a &amp;quot;verified&amp;quot; temporary identity?
+The company can see you&amp;#39;re a real verified person, but 
+you stay in control of what information you want to give 
+away. &lt;/p&gt;
+
+&lt;p&gt;We also group enquiries and registrations into projects. 
+This means that once you&amp;#39;ve found your apartment, finished
+your job hunt, or returned from holiday, you can 
+close your temporary identity, and shut off contact from
+all the companies you sent enquiries to, or registered with.
+Apart from the companies you want to continue to do business
+with, who have been given your real contact details. &lt;/p&gt;
+
+&lt;p&gt;This is why we think of it as escrow for your contact details.&lt;/p&gt;
+
+&lt;p&gt;Also, by grouping enquiries into projects and sending them
+via the proxy, you can also decide how, and when, you want
+to receive replies. This makes the communication easier to
+manage, plus they can be combined into a standard
+format to make it easy to compare. &lt;/p&gt;
+
+&lt;h2&gt;What about the companies?&lt;/h2&gt;
+
+&lt;p&gt;Companies that are good internet citizens, and don&amp;#39;t hassle
+customers, and abide by best practises should welcome this idea.
+It&amp;#39;s better than receiving a fake temporary email address, because they
+are assured by the verification that it is a real enquiry.&lt;/p&gt;
+
+&lt;p&gt;We plan to support the &lt;a href=&quot;http://www.list-unsubscribe.com/&quot;&gt;list unsubscribe header&lt;/a&gt;.
+If you&amp;#39;re running a mailing list or registration system, 
+you should already be implementing this on every message you send.
+We are building support for this standard into our system to help companies 
+keep their lists clean.&lt;/p&gt;
+
+&lt;h2&gt; That all sounds very complicated&lt;/h2&gt;
+
+&lt;p&gt;Well, behind the scenes there&amp;#39;s a lot we&amp;#39;re doing to make it 
+work seamlessly. But, it should be no more difficult than
+sending an email, or filling in a contact form on a website.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s no extra work involved for the person making the 
+enquiries, and it will save them lots of time being able
+to &amp;quot;unsubscribe&amp;quot; to a whole project group in one go.&lt;/p&gt;
+
+&lt;h2&gt;What&amp;#39;s next?&lt;/h2&gt;
+
+&lt;p&gt;We&amp;#39;re going to continue development. We&amp;#39;ve started a 
+website at &lt;a href=&quot;http://idproxy.co&quot;&gt;idproxy.co&lt;/a&gt; where you can 
+register to be notified when we launch the service. &lt;/p&gt;
+
+&lt;p&gt;Any questions, feedback, thoughts, please get in touch.&lt;/p&gt;
+
+&lt;p&gt;Is this a service you would use? &lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</guid>
+      </item>
+    
+      <item>
+        <title>Global Startup Battle 2015 Kickoff</title>
+        <description>&lt;p&gt;I&amp;#39;m at a hackathon this weekend. The Global Startup
+battle to be precise.&lt;/p&gt;
+
+&lt;p&gt;I came along as a developer, excited to see what kind of
+projects would be proposed, unsure what I would be
+getting involved in. I didn&amp;#39;t expect to be
+getting up and pitching an idea of my own...&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I didn&amp;#39;t come expecting to pitch. In fact I was a bit
+terrified of doing so. I hadn&amp;#39;t prepared, but I got up
+and did it anyway.&lt;/p&gt;
+
+&lt;p&gt;I had one minute to pitch an idea. The recommended format was:
+Name, problem, solution, and who you needed for the team.&lt;/p&gt;
+
+&lt;p&gt;The problem I see is that advertising is breaking the internet.
+The current solutions of &lt;a href=&quot;http://lifehacker.com/turn-on-tracking-protection-in-firefox-to-make-pages-lo-1706946166&quot;&gt;tracker blocking&lt;/a&gt; in browsers, addons that
+block adverts, and &lt;a href=&quot;http://lifehacker.com/the-best-ad-blockers-for-ios-9-1731433501&quot;&gt;iOS ad blockers&lt;/a&gt;
+are inadequate.&lt;/p&gt;
+
+&lt;p&gt;I can configure my browser so I never
+see adverts, and I can make it harder for companies to track me,
+but sometimes I like to buy stuff, and I like to know what the options
+are. Sometimes I like to read content or use services, where publishers
+fund themselves via advertising.&lt;/p&gt;
+
+&lt;p&gt;Tonight I used the example
+of a company looking to get a website built. They send out an
+RFP to agencies. The more information they give about what they
+are looking for, what their situation is, and what their budget is,
+the better the proposals they get, and the more informed decision
+they can make. Why can&amp;#39;t we do this with all our purchasing decisions?
+Rather than companies tracking us and building secret profiles,
+how about we decide what data we want to share, and what our
+intensions are?&lt;/p&gt;
+
+&lt;p&gt;The other issue with blocking adverts across the board is
+that publishers who rely on advertising income need an alternative
+way of generating revenue. I don&amp;#39;t want to see them disappear if everyone
+starts using adblockers. I think we can offer an alternative.&lt;/p&gt;
+
+&lt;p&gt;The pitches were followed by time to
+circulate the room and try to round up votes.
+I thought it might be a process like
+&lt;a href=&quot;http://www.idearatingsheets.org/&quot;&gt;idea rating sheets&lt;/a&gt;,
+but some of the other contenders quickly set about sweeping
+the room rounding up votes, while I was still trying to work
+out what the protocol was.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not naturally inclined to promote myself in situations like this.
+So, I quietly mingled, hoping to pick up a few votes.&lt;/p&gt;
+
+&lt;p&gt;I had a moment where I thought perhaps I&amp;#39;d pitched the wrong crowd.
+What was I thinking?
+A lot of startups build their business models based off of advertising,
+and I&amp;#39;m talking about blocking ads and services that track you.&lt;/p&gt;
+
+&lt;p&gt;Some people didn&amp;#39;t get it. I don&amp;#39;t blame them. I think I was a bit
+confusing as I was still working out how to present my ideas.
+Some people got it, but thought the
+solutions were too complex to comprehend.&lt;/p&gt;
+
+&lt;p&gt;But, amazingly, my idea got selected!&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s happening!&lt;/p&gt;
+
+&lt;p&gt;Over the rest of the evening, the team formed, and we had a short
+amount of time to start planning.&lt;/p&gt;
+
+&lt;p&gt;In this short time, the idea has transformed.
+And, I&amp;#39;m excited to work on this all weekend, with this
+amazing team, and see where we get to.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/11/20/global-startup-battle-2015-kickoff/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/20/global-startup-battle-2015-kickoff/</guid>
+      </item>
+    
+      <item>
+        <title>How to Survive Gentrification of the Drupal Community</title>
+        <description>&lt;p&gt;We&amp;#39;re finally approaching the release of
+&lt;a href=&quot;https://www.drupal.org/node/2605142&quot;&gt;Drupal 8.0.0 on 19th Nov&lt;/a&gt;. The
+biggest achievement of the Drupal community to date. A complete rewrite of the core
+system to use modern object-oriented PHP. An effort that is often referred to as
+&amp;quot;getting off the island&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;While the switch from Drupal 7 to Drupal 8 is a big change for developers, it is
+the result of a slow process of maturation of the Drupal community. Drupal 8
+brings changes that will be welcomed by many, will bring in many new users, and of
+course, will push a few people out. How can we survive this &amp;quot;gentrification&amp;quot;
+of the Drupal community and prosper without losing touch with why we loved
+Drupal in the first place.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Gentrification&lt;/h2&gt;
+
+&lt;p&gt;Cities all over the world are becoming more exclusive, more expensive, and a
+natural result of this is gentrification. It&amp;#39;s contentious. Some see this as
+urban improvement, some as social cleansing.&lt;/p&gt;
+
+&lt;p&gt;I moved to London nearly 12 years ago. Dalston, to be precise. I was back in
+Dalston this weekend for a party, and it&amp;#39;s very different to how I remember it
+from 2004. I compared the nice clean overground train to the unreliable
+and dirty Silverlink trains that used to run to Dalston. Then, walking down Kingsland
+road without being on guard. When I lived there in 2004 it was often cordoned off by police.
+The hipsters, the trendy coffee shops, and other obvious signs of gentrification
+proliferate.&lt;/p&gt;
+
+&lt;p&gt;Brixton was my home for many years, and I witnessed first hand the results of gentrification.
+I had an office space in Brixton, and decided to
+leave it when the landlord announced he was increasing the rent by 25%.
+I lived in several flats around Brixton over the years, and eventually moved
+(a bit) further south as rental prices in Brixton soared.
+I say this with tongue in cheek, well aware that to many I&amp;#39;d be seen as one of
+the gentrifiers!
+It&amp;#39;s the communities that settled here during the
+&lt;a href=&quot;http://www.urban75.org/brixton/history/history.html&quot;&gt;1940s and 1950s&lt;/a&gt;
+that gave the area it&amp;#39;s eclectic multi-cultural feel. They&amp;#39;re the ones who
+have been displaced, losing their homes and community as developers and &amp;quot;yuppies&amp;quot;
+take over.&lt;/p&gt;
+
+&lt;h2&gt;Gentrification of the Drupal Community&lt;/h2&gt;
+
+&lt;p&gt;I first used Drupal back in 2003, version 4 point something. It was fun.
+Hacky, but fun. I had to quickly get a site up for an event we were organising
+and Drupal offered a collaborative content model that set it apart from the
+other products we evaluated.&lt;/p&gt;
+
+&lt;p&gt;I came back to Drupal in 2007 for another community site build, and Drupal 5
+had been released. It was really fun. Yes, still very hacky, but it came with
+the power to build a CMS exactly the way I wanted it to work, and it came with
+an awesome community of other hackers. A community of dedicated open-source
+types, who valued openness, and working on projects for good. I was hooked and
+made the leap to full time Drupal development. Through Drupal
+I got involved in the first social innovation camp, and other tech-for-good
+type things.&lt;/p&gt;
+
+&lt;p&gt;Szeged 2008 was my first Drupalcon. 500 Drupal contributors and users in a small
+university town in Hungary. Everyone I met truly cared about
+making Drupal an awesome project and was contributing time and effort in any
+way they could. Several years later and Drupalcon have grown. 2000+ attendees in
+Barcelona this year, 2300+ in Amsterdam last year. But, as the community has
+grown, so has the commercial influence. With sales pitches as prevalent as
+learning sessions on the schedule.&lt;/p&gt;
+
+&lt;p&gt;One thing I noticed this year was that several sessions concluded, or included,
+a call for donations or funding to accelerate a particular module or project&amp;#39;s
+development. The precedent was set in the starting session of the conference when
+the Drupal Association made an announcement about the Drupal 8 accelerate
+funding programme. I&amp;#39;m not saying this is a bad thing. If this is what it
+takes to get Drupal 8 finished in today&amp;#39;s conditions, then that&amp;#39;s great. But,
+look at it as an indicator of how the community has changed, when compared to
+the sessions at Szeged seven years earlier. You would not have seen a call for
+quarter of a million dollar funding back then. Everyone was there because they
+loved it, not because they were being paid.&lt;/p&gt;
+
+&lt;h2&gt;Hacking the hackers&lt;/h2&gt;
+
+&lt;p&gt;While doing research for this post, I came across this brilliant essay,
+&lt;a href=&quot;https://aeon.co/essays/how-yuppies-hacked-the-original-hacker-ethos&quot;&gt;The hacker hacked&lt;/a&gt;,
+by Brett Scott about the gentrification of hacker culture. I quote his summary
+of the gentrification process:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Key to any gentrification process are successive waves of pioneers who gradually reduce the perceived risk of the form in question. In property gentrification, this starts with the artists and disenchanted dropouts from mainstream society who are drawn to marginalised areas. This, in turn, creates the seeds for certain markets to take root. A WiFi coffeeshop appears next to the Somalian community centre. And that, in turn, sends signals back into the mainstream that the area is slightly less alien than it used to be.
+&lt;/p&gt;&lt;p&gt;
+If you repeat this cycle enough times, the perceived dangers that keep the property developers and yuppies away gradually erode. Suddenly, the tipping point arrives. Through a myriad of individual actions under no one person’s control, the exotic other suddenly appears within a safe frame: interesting, exciting and cool, but not threatening. It becomes open to a carefree voyeurism, like a tiger being transformed into a zoo animal, and then a picture, and then a tiger-print dress to wear at cocktail parties. Something feels ‘gentrified’ when this shallow aesthetic of tiger takes over from the authentic lived experience of tiger.&lt;br /&gt;
+-- Brett Scott&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;How does this relate to the Drupal community? Perhaps it starts with the
+NGOs and charities, our original flagship Drupal sites, that became our
+&amp;quot;artists and disenchanted dropouts from mainstream society&amp;quot;. Then the
+big media companies move in as the &amp;quot;perceived dangers gradually erode&amp;quot;.
+Eventually, The White House start using Drupal, and we&amp;#39;re at home with the large
+enterprise clients and big corporate contracts.&lt;/p&gt;
+
+&lt;p&gt;As the Drupal project developed the requirements changed. Drupal&amp;#39;s capabilities
+improve, and the Drupal user base and community advanced too.&lt;/p&gt;
+
+&lt;p&gt;This is evident in the development, and
+standardisation of things like configuration management. Something that was
+never an issue in the early days, as the community became more professional,
+solutions for configuration management were hacked together, and then
+became standardised.&lt;/p&gt;
+
+&lt;p&gt;Configuration management is just one example of the many benefits the Drupal
+community has experienced through the process of gentrification. There&amp;#39;s also
+great test coverage, performance improvements, greater tooling, and many other
+advancements that came to Drupal as the community matured. Drupal became less
+about hacking and more about software engineering.&lt;/p&gt;
+
+&lt;h2&gt;Drupal 8&lt;/h2&gt;
+
+&lt;p&gt;Development on Drupal 8 started in March 2011 and four years later, is to set to
+be released on November 19, 2015. Over these years, Drupal has been rewritten,
+removing most of the pre-OO era PHP legacy.&lt;/p&gt;
+
+&lt;p&gt;Drupal&amp;#39;s legacy was the &amp;quot;not invented here&amp;quot; mindset that became entrenched in
+the community through hacking solutions to extensibility into a language that
+was not designed to support it. And, a culture of not depending on third-party
+code due to early well publicised security issues with PHP extensions.&lt;/p&gt;
+
+&lt;p&gt;The move away from this legacy, the move to &amp;quot;get off the island&amp;quot;, is a move
+towards more standardised, modern, development practises, and a move to
+embrace the wider PHP community.&lt;/p&gt;
+
+&lt;h2&gt;Social cleansing&lt;/h2&gt;
+
+&lt;p&gt;I mentioned before that gentrification is contentious. For some see it as
+urban improvement, some as social cleansing. Drupal and the Drupal community
+have clearly benefitted already, and it looks like prosperous times ahead for
+those who come along for the ride, and the newcomers who join and adopt Drupal.&lt;/p&gt;
+
+&lt;p&gt;But, what about the social cleansing. Will parts of the community be pushed out?
+Who gets left behind?&lt;/p&gt;
+
+&lt;p&gt;Drupal has suffered from an identity crisis. Because of it&amp;#39;s flexibility, it&amp;#39;s
+been used for many things. Drupal&amp;#39;s openness to hacking, extending and ability to
+do just about anything, meant it was more than just a CMS. Over the years many
+talked about &amp;quot;small core&amp;quot;, many used Drupal&amp;#39;s core tools as a Framework, building
+apps and tools well beyond what a typical CMS would be used for.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 is a content management system.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 focuses on content management, on providing tools for non-technical
+users to build and manage sites. &lt;b&gt;That&amp;#39;s what it always wanted to be anyway&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 leverages the wider PHP community, in particular the Symfony
+components, as it&amp;#39;s core.  It no longer makes sense to see Drupal as a
+framework.&lt;/p&gt;
+
+&lt;p&gt;One of the parts of the community being displaced, are those using
+Drupal as a framework. If this is you then you may already be looking at a fork,
+like &lt;a href=&quot;https://backdropcms.org/&quot;&gt;Backdrop&lt;/a&gt;, or playing with other frameworks,
+like the beautiful &lt;a href=&quot;http://laravel.com/&quot;&gt;Laravel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another section of the community that may be displaced are those running Drupal
+on low end and shared hosting. Through the
+gentrification process, Drupal&amp;#39;s requirements have increased.
+The increased hosting requirements have meant that dedicated Drupal platform
+hosting providers have emerged. More options for scalability and custom
+software stacks have taken precedent over solutions for smaller websites.&lt;/p&gt;
+
+&lt;p&gt;Drupal also potentially loses the innovators.
+Drupal always had a reputation for being cutting edge and innovative.
+As it moves to become the enterprise choice of open-source CMS, innovation
+becomes less important, and stability, security, and backwards compatibility
+become more important. The biggest innovations in Drupal (flexible content
+types and Views) date back to the 4.7 era. Views is now in core in Drupal 8.
+As Drupal matures further from this point, we&amp;#39;ll probably see Drupal adopting
+innovations from other systems and ecosystems, rather than innovating on it&amp;#39;s own.
+It&amp;#39;s well placed to do this now, built on Symfony components, innovations
+from the wider community will be easier to integrate.&lt;/p&gt;
+
+&lt;h2&gt;Surviving Gentrification&lt;/h2&gt;
+
+&lt;blockquote&gt;
+Do you abandon the form, leave it to the yuppies and head to the next wild frontier?
+Or do you attempt to break the cycle, deface the estate-agent signs,
+and picket outside the wine bar with placards reading &quot;Yuppies Go Home&quot;?&lt;br /&gt;
+-- Brett Scott
+&lt;/blockquote&gt;
+
+&lt;p&gt;Or, do come along for the ride? Enjoy the benefits of gentrification, without
+losing the reason why you got involved in the first place?&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re going to stick around then you&amp;#39;re going to need change a few things.
+Here&amp;#39;s 5 steps that will get you started:&lt;/p&gt;
+
+&lt;h3&gt;1. Learn the foundations that Drupal is now built on.&lt;/h3&gt;
+
+&lt;p&gt;If (like me) you&amp;#39;ve got a background in OO then this shouldn&amp;#39;t be too hard.
+I did several years of post-graduate research into semantics and verification
+of object-oriented software. You definitely don&amp;#39;t need to go that deep, but I would
+highly recommend getting to grips with classic works on
+design patterns such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Design_Patterns&quot;&gt;Gang of Four&lt;/a&gt;
+and &lt;a href=&quot;http://martinfowler.com/books/eaa.html&quot;&gt;Martin Fowler&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With a basic understanding of the core &amp;quot;patterns&amp;quot; of object-oriented software,
+you start to appreciate how Symfony works.&lt;/p&gt;
+
+&lt;p&gt;Drupal, Silex, Laravel, Symfony Full Stack, Symfony CMF, phpBB, Joomla,
+Magento, Piwik, PHPUnit, Sonata, and many more projects are built on this same
+foundation. So, it&amp;#39;s definitely worth learning, and Drupal can be a good way
+to learn it, while still working with a system you know well.&lt;/p&gt;
+
+&lt;p&gt;Try building a simple app with &lt;a href=&quot;http://silex.sensiolabs.org/&quot;&gt;Silex&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Check out &lt;a href=&quot;https://www.youtube.com/playlist?list=PLpeDXSh4nHjR26Dheb6U1NUSp0aACYGvE&quot;&gt;Drupalcon&lt;/a&gt;
+(and &lt;a href=&quot;https://www.youtube.com/channel/UCb9XEo_1SDNR8Ucpbktrg5A&quot;&gt;Laracon&lt;/a&gt;) on
+YouTube. There&amp;#39;s some great stuff. Like this talk from Ryan Weaver about
+&lt;a href=&quot;https://www.youtube.com/watch?v=iQL1joxljho&quot;&gt;Symfony&lt;/a&gt; and
+this talk by Ross Tuck about &lt;a href=&quot;https://www.youtube.com/watch?v=ajhqScWECMo&quot;&gt;Models and Service Layers&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;2. Do PHP the right way.&lt;/h3&gt;
+
+&lt;p&gt;PHP has changed. There&amp;#39;s a lot of outdated information and a lot of legacy code.
+Drupal 8 has been rewritten to remove this legacy code, but there&amp;#39;s still a
+lot of bad advice on how to write PHP out there.
+Read &lt;a href=&quot;http://www.phptherightway.com/&quot;&gt;PHP The Right Way&lt;/a&gt; for a full guide on
+how modern PHP should be crafted.&lt;/p&gt;
+
+&lt;h3&gt;3. Use Composer, use and create PHP packages.&lt;/h3&gt;
+
+&lt;p&gt;Getting off the island, and embracing the wider PHP ecosystem means using
+Composer, and it&amp;#39;s ecosystem of PHP packages. There are many more packages that
+are potentially compatible with Drupal, and by architecting your Drupal
+extensions as more general PHP packages you have access to a much wider
+pool of potential collaborators.&lt;/p&gt;
+
+&lt;p&gt;Creating PHP packages also forces you to write clean code, think like a
+software engineer, and write more maintainable, extensible, and reusable code.
+Check out &lt;a href=&quot;http://thephpleague.com/&quot;&gt;The PHP League&lt;/a&gt; as examples of solid
+PHP packages. They have a good &lt;a href=&quot;https://github.com/thephpleague/skeleton&quot;&gt;Skeleton&lt;/a&gt;
+starting package.&lt;/p&gt;
+
+&lt;p&gt;You may have made custom Drupal modules before. Try thinking about how you
+can refactor these into separate packages, and using the Drupal &amp;quot;module&amp;quot;
+as a small layer that integrates your logic with Drupal.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29&quot;&gt;SOLID&lt;/a&gt;
+principles will guide you towards creating good packages.&lt;/p&gt;
+
+&lt;h3&gt;4. Use an IDE&lt;/h3&gt;
+
+&lt;p&gt;This was a big one for me. I was always against using an IDE, burnt by early
+experiences with open-source IDEs. I settled on a customised Sublime Text
+setup, and various other apps. I didn&amp;#39;t see much benefit over using one app
+for everything when I could combine a selection of my favorite apps to do
+the same thing.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not sure why I stuck to this. I also do a lot of C++ programming. I have
+my own programming language (&lt;a href=&quot;http://cyrilcode.com&quot;&gt;Cyril&lt;/a&gt;) for creating
+audio-reactive visuals. I use XCode for C++ as the debugging tools are
+essential when you&amp;#39;re dealing with object graphs, memory management, and
+debugging pointer issues. So, why not use an IDE for my web development?&lt;/p&gt;
+
+&lt;p&gt;I tried &lt;a href=&quot;https://www.jetbrains.com/phpstorm/&quot;&gt;PHPStorm&lt;/a&gt; and it&amp;#39;s great.
+Far from the cumbersome experience I had in the early days with open-source
+IDEs, it offers a smooth, fast, integrated experience.&lt;/p&gt;
+
+&lt;p&gt;I think you can get away without an IDE when you&amp;#39;re hacking on Drupal 7, but
+on an OO system like Drupal 8 you will need an IDE.
+You will need the integrated tooling, testing, and you&amp;#39;ll be much more efficient
+with intelligent autocompletion, hinting, quick access to docs, and fast
+navigation of the huge codebase.&lt;/p&gt;
+
+&lt;h3&gt;5. Identify your values and serve your purpose.&lt;/h3&gt;
+
+&lt;p&gt;As the corporates, enterprises, and big businesses take over, it&amp;#39;s important to
+remain true to your yourself.
+By &lt;a href=&quot;https://www.mindtools.com/pages/article/newTED_85.htm&quot;&gt;identifying your values&lt;/a&gt;
+you will be well placed to notice when they are being compromised.&lt;/p&gt;
+
+&lt;p&gt;You probably got into open-source because you believe in
+the power of collaboration. But, this value of collaboration can often be at odds
+with the cut-throat corporate culture of competition.&lt;/p&gt;
+
+&lt;p&gt;To be aware of this is to be aware of the opportunity to spread openness and
+collaboration with our work.&lt;/p&gt;
+
+&lt;p&gt;As the proceeds of Drupal&amp;#39;s success flow into the community, it&amp;#39;s important to
+use this to do good. To continue to serve our communities and society as a whole.
+To enable collaboration, share our work, and use openness to build the world we want.&lt;/p&gt;
+
+&lt;h2&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;The real opportunity, is to spread Drupal&amp;#39;s values of cooperation to the wider
+population.&lt;/p&gt;
+
+&lt;p&gt;This is part of a bigger shift in society to adopt open-source values, principles,
+and methodologies. Chris Anderson says it best:&lt;/p&gt;
+
+&lt;blockquote&gt;
+If the past ten years have been about discovering new social and innovation models
+on the Web, then the next ten years will be about applying them to the real world.&lt;br /&gt;
+-- Chris Anderson
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://blog.workopen.org/manifesto/&quot;&gt;Work Open Manifesto&lt;/a&gt; offers a useful
+formulation of what it means to be open that can apply beyond open source
+software: &lt;b&gt;&amp;quot;Think Big, Start Small, Work Open&amp;quot;&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Drupal is great case study for starting small, thinking big, and working openly.&lt;/p&gt;
+
+&lt;p&gt;The Drupal community has always has been
+transforming, improving ourselves, improving the product, improving our practises,
+and improving our tools.&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;#39;s time to think beyond Drupal, beyond the Drupal community, and to see
+Drupal&amp;#39;s values of collaboration, teamwork, and openness spread through the wider
+community, society, and the world.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</guid>
+      </item>
+    
+      <item>
+        <title>GitDone, MozFest 2015, and Learning Firefox WebExtensions</title>
+        <description>&lt;p&gt;At Mozfest this last weekend I joined Matt Thompson
+&lt;a href=&quot;https://twitter.com/openmatt&quot;&gt;@OpenMatt&lt;/a&gt; and
+Phillip Smith &lt;a href=&quot;https://twitter.com/phillipadsmith&quot;&gt;@phillipadsmith&lt;/a&gt; hacking on
+an idea make GitHub more accessible for non-technical users.&lt;/p&gt;
+
+&lt;p&gt;This was my first time playing around with WebExtensions in FireFox.
+It&amp;#39;s still all quite new, and there&amp;#39;s &lt;a href=&quot;https://developer.mozilla.org/en-US/Add-ons/WebExtensions&quot;&gt;minimal documentation&lt;/a&gt;, but during the
+weekend at &lt;a href=&quot;https://2015.mozillafestival.org/&quot;&gt;MozFest&lt;/a&gt;, we pieced together a working Firefox
+extension &lt;a href=&quot;https://github.com/OpenMatt/GitDone&quot;&gt;GitDone&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;The approach we took was to rewrite bits of the GitHub interface
+using a Firefox Addon. Hiding bits, moving bits from one page to another, or rewriting
+bits of the interface. To do this we used an extension to inject CSS and JS
+into the page. This is not usually a good idea, it&amp;#39;s very fragile. By doing
+this we are coding against private details internal to GitHub&amp;#39;s implementation
+and not a public published API. Building against APIs is good, because it&amp;#39;s like
+a contract, and changes are managable, but with this approach GitHub could
+change things at any point and break our code. A better approach would be to
+build a new UI and then integrate with GitHub via their API.&lt;/p&gt;
+
+&lt;p&gt;But, fragility doesn&amp;#39;t matter here, as the priority is getting something working
+so we can test out ideas. I don&amp;#39;t see the technology as an issue in this case,
+it&amp;#39;s more about understanding what would make GitHub issues easier and more
+efficient for project managers.&lt;/p&gt;
+
+&lt;p&gt;We got a first very basic prototype hacked together during Mozfest, and I
+hope we&amp;#39;ll continue to develop it as we get feedback from users, but the most
+interesting thing for me was that it introduced me to the new Firefox addon
+mechanism, based on WebExtensions (so similar to Chrome and Opera).&lt;/p&gt;
+
+&lt;h2&gt;Limitation and learning&lt;/h2&gt;
+
+&lt;p&gt;At first it seemed so easy. I imagined a very trivial, almost vacuous, addon.
+&lt;a href=&quot;https://developer.mozilla.org/en-US/Add-ons/WebExtensions&quot;&gt;WebExtensions&lt;/a&gt; has support for
+&lt;a href=&quot;https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Content_scripts&quot;&gt;Content Scripts&lt;/a&gt;
+that &amp;quot;runs in the context of a particular web page&amp;quot;. We can define a CSS file
+and a URL pattern, such that the CSS file will be injected into pages that
+match the URL pattern. You can see this in action in our
+first experiment &lt;a href=&quot;https://github.com/OpenMatt/GitDone/commit/bf18807d23e8efa7628558672b3c4202e394ecb5&quot;&gt;(commit #bf18807)&lt;/a&gt;.
+Great! We can simplify the interface by hiding something things. So, now we
+move on to moving things and rewriting things? Well, unfortunately not.
+It turns out it&amp;#39;s not this easy.&lt;/p&gt;
+
+&lt;p&gt;GitHub uses &lt;a href=&quot;https://github.com/defunkt/jquery-pjax&quot;&gt;pjax&lt;/a&gt; to deliver a faster browsing experience. It combines
+ajax loading and &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/History_API&quot;&gt;pushState&lt;/a&gt;
+to respond to clicks and load in new content while still maintaining permalinks,
+page titles, and browser back button functionality.&lt;/p&gt;
+
+&lt;p&gt;This breaks our simple content script based CSS injection, because it only
+gets loaded in on the first GitHub page we access. This causes issues when we
+want to do different rewritings of the UI on different pages. We need to react
+to the pjax events that pull in new content.&lt;/p&gt;
+
+&lt;h2&gt;Isolated worlds&lt;/h2&gt;
+
+&lt;p&gt;It took a bit of randomly experimenting and randomly searching documentation to
+work out why this wasn&amp;#39;t working. Being new to Firefox addons, I was quickly
+having to learn where to find information, how to debug, etc. The frustration
+was that I could inject code via the console, react to pjax events and see it
+all working, but I couldn&amp;#39;t do the same from a Content Script loaded via the
+WebExtension.&lt;/p&gt;
+
+&lt;p&gt;The answer came when I realised that the Content Script and the web page run
+in &amp;quot;isolated worlds&amp;quot;. They have the same copy of the DOM, but outside of this
+the Javascript environments don&amp;#39;t overlap. The pjax events were happening in
+the page context, and not visible to the Content Script.&lt;/p&gt;
+
+&lt;h2&gt;Get out of jail card&lt;/h2&gt;
+
+&lt;p&gt;I would later find
+out that regular DOM Events (non-jQuery) bubble up fine and can trigger event
+handlers in either of the &amp;quot;worlds&amp;quot;. But, for the first working version, it
+was enough to use the DOM to &amp;quot;inject&amp;quot; our Javascript into the DOM so it could
+run in the same &amp;quot;world&amp;quot; as the GitHub page Javascript, and thus do our
+rewritings of the UI based off the pjax events fired there.
+To do this, we use a Content Script, &lt;code&gt;injector.js&lt;/code&gt; that just injects our
+script into page, via the DOM:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
+s.src = chrome.extension.getURL(&amp;#39;scripts/bootstrap.js&amp;#39;);
+s.onload = function() {
+    this.parentNode.removeChild(this);
+};
+(document.head || document.documentElement).appendChild(s);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For &lt;a href=&quot;https://github.com/OpenMatt/GitDone/tree/v0.1&quot;&gt;v 0.1&lt;/a&gt; it was enough to
+inject the main JS, and do the rewriting in the &amp;quot;world&amp;quot; of the GitHub page.
+This is isolated from the Content Script that injects it. Unfortunately,
+in the GitHub world, the JS is not an extension (addon) anymore, so it doesn&amp;#39;t
+have access to the WebExtension APIs of Firefox. The Content Script does, and
+can communicate with a &amp;quot;background script&amp;quot; to persist data in local storage,
+create notifications, etc.&lt;/p&gt;
+
+&lt;h2&gt;Isolated worlds&lt;/h2&gt;
+
+&lt;p&gt;In a WebExtension the background script has full access to the APIs for local
+storage, generating notifications, etc. The Content Script has limited access
+but can use the features by communicating with the background script. This is
+done by &lt;a href=&quot;https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Content_scripts#Communicating_with_background_scripts&quot;&gt;sending messages&lt;/a&gt; and
+listening for message events.&lt;/p&gt;
+
+&lt;p&gt;If our injected JS running in the GitHub page needs to access these features, it
+first needs a way to communicate back to the Content Script that injected it.
+The two scripts are in separate &amp;quot;isolated worlds&amp;quot; but they share the DOM of the
+page, so we can do this using regular DOM events (jQuery events didn&amp;#39;t seem to
+work in my tests).&lt;/p&gt;
+
+&lt;p&gt;For example, in the injected JS we can react to a jQuery event, and turn it
+into a DOM event:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
+// Add out listener to pjax events
+$(document).ready(function () {
+  $(document).on(&amp;quot;pjax:end&amp;quot;, function (e) {
+    var applyModsEvent = document.createEvent(&amp;#39;CustomEvent&amp;#39;);
+    applyModsEvent.initCustomEvent(&amp;#39;gitdone:apply&amp;#39;, true, true, {
+      activeRoute: document.URL
+    });
+    document.dispatchEvent(applyModsEvent);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And, in the injector Content Script listen for the event:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+window.addEventListener(&amp;quot;gitdone:apply&amp;quot;, applyModsEventHandler);
+function applyModsEventHandler(e) {
+  console.log(&amp;#39;Apply modifications for &amp;#39; + e.detail.activeRoute);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The injected JS can&amp;#39;t communicate with the background script, but the content
+script can. In the content script you send a message event:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+chrome.runtime.sendMessage({msg: &amp;quot;init&amp;quot;});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which you can react to in the background script:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+chrome.runtime.onMessage.addListener(function (message, sender) {
+
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And, in the background script, send messages back to the Content Script:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which the content script can receive:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+chrome.runtime.onMessage.addListener(function (message, sender) {
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;So that solves the issue of communicating across the three scripts. We have the
+injected script, running in the Github page catching pjax events. The content script,
+sharing the DOM with the Github page but separate JS world. The content script
+injects the separate js script into the page via a script tag on the DOM. Communication
+across this barrier is via DOM events.&lt;/p&gt;
+
+&lt;p&gt;We also have the background script, having access to all the WebExtension APIs
+like local storage, notifications, etc. The content script and background
+script communicate via message events on &lt;code&gt;chrome.runtime&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Useful learnings, and hopefully &lt;a href=&quot;https://github.com/OpenMatt/GitDone&quot;&gt;GitDone&lt;/a&gt;
+will develop into something useful too.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/</guid>
+      </item>
+    
+      <item>
+        <title>Happy Birthday Bucky! How do we celebrate Buckminster Fuller?</title>
+        <description>&lt;p&gt;Buckminster Fuller (aka Bucky) was born on this day (12th July) in 1895. He was one of the most significant thinkers of the 20th century, the developer of the geodesic dome, and the first person to live consciously as a global citizen.&lt;/p&gt;
+
+&lt;p&gt;But, despite the importance of his ideas, he&amp;#39;s relatively obscure and largely unknown by the majority of the population.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Guinea Pig B&lt;/h2&gt;
+
+&lt;p&gt;Bucky lived his life as &amp;quot;an experiment, to find what a single individual can contribute to changing the world and benefiting all humanity.&amp;quot; His 56 year experiment started in 1927 when contemplating suicide during a bout of severe depression. It was after the death of his first daughter, and the failure of the company he started, he was an unemployed and became an alcoholic. On the brink of suicide he had an epiphany.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“I could commit an exclusively ego-suicide – a personal ego ‘throwaway’.”
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From this point onwards he lived his life as an experiment, and a demonstration of what an individual can do to help change the world.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;I vowed to keep myself alive, but only if I would never use me again for just me. I vowed to do my own thinking, instead of trying to accommodate everyone else&amp;#39;s opinion, credos and theories. I vowed to apply my own inventory of experiences to the solving of problems that affect everyone aboard planet Earth.&amp;quot;
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bucky&amp;#39;s life (experiment) provides a framework for each and every one of us to overcome ego. Instead of feeling like a failure, we learn to understand negative events and use them to grow.&lt;/p&gt;
+
+&lt;h2&gt;Cooperation&lt;/h2&gt;
+
+&lt;p&gt;His work really resonates with me because he believed in the power of
+cooperation. He sums up this goal in the introduction to &amp;quot;Operating Manual for Spaceship Earth&amp;quot;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;To make the world work for 100 percent of humanity in the shortest possible time through spontaneous cooperation without ecological damage or disadvantage to anyone.&amp;quot;
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;He didn&amp;#39;t believe in the idea of scare resources. He was convinced there was enough to go around for all, and that there was no energy crisis, food crisis or environmental crisis, only a &amp;quot;crisis of ignorance.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;So strong was his conviction that he lived his life on the brink of bankruptcy. He never did anything just for the money, but went ahead with complete faith that the universe would provide for him and his family. He found that when he was on the right track, this would always be the case.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;It is now highly feasible to take care of everybody on Earth at a higher standard of living than any have ever known. It no longer has to be you or me. Selfishness is unnecessary. War is obsolete. It is a mater of converting the high technology from weaponry to livingry.&amp;quot;
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And one final, powerful quote from Bucky...&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“Never forget that you are one of a kind. Never forget that if there weren&amp;#39;t any need for you in all your uniqueness to be on this earth, you wouldn&amp;#39;t be here in the first place. And never forget, no matter how overwhelming life&amp;#39;s challenges and problems seem to be, that one person can make a difference in the world. In fact, it is always because of one person that all the changes that matter in the world come about. So be that one person. ”
+- Buckminster Fuller&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/be-the-change2.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;Be the change&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Thanks Bucky!&lt;/h2&gt;
+
+&lt;p&gt;I commemorate Bucky&amp;#39;s birthday today by starting work on my own &amp;quot;Chronofile&amp;quot;.
+Bucky&amp;#39;s &lt;a href=&quot;https://en.wikipedia.org/wiki/Dymaxion_Chronofile&quot;&gt;Dymaxion Chronofile&lt;/a&gt; was the way in which
+he documented his life.
+This follows on very nicely from the discussions I was having yesterday at the &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;Indie Web Camp&lt;/a&gt;
+but that&amp;#39;s a story for another day...&lt;/p&gt;
+</description>
+        <pubDate>Sun, 12 Jul 2015 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</guid>
+      </item>
+    
+      <item>
+        <title>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</title>
+        <description>&lt;p&gt;I&amp;#39;ve been working a lot with Atomic design (component-based design)
+with Drupal recently, and I&amp;#39;ve witnessed huge improvements on projects
+where it has been introduced. The main advantage being the decoupling of
+the development of the back-end from the development of the front-end
+code. &lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I&amp;#39;m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
+and I have more to say on this in the future. Today I want to tell you about a simple
+tool I&amp;#39;m using to speed up the process. &lt;a href=&quot;https://github.com/darrenmothersele/stylex&quot;&gt;Stylex&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
+sites or style guides for front-end code. There are several tools already available,
+including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
+incredibly simple. &lt;/p&gt;
+
+&lt;p&gt;I basically just wanted to make use of the power of Twig templates 
+for mocking up front-end code, with an easy way to load in demo content (from
+yml files). &lt;/p&gt;
+
+&lt;h2&gt; Barebones project&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve created a &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;barebones Stylex project&lt;/a&gt; on GitHub that demonstrates this, but you probably 
+want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&gt;
+
+&lt;h2&gt;Basic setup&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve packaged this for Composer so getting started is easy. Assuming you already
+have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
+all you need to do is create a folder for your
+project and run the following command:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
+&lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
+a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
+
+&lt;p&gt;As a bare minimum you will need to create a &lt;code&gt;index.php&lt;/code&gt; to run the application, and 
+a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
+called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
+require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
+
+$app = new Stylex\Application();
+$app-&amp;gt;run();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    {% block content %}
+      &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+    {% endblock %}
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
+
+&lt;h2&gt;Adding pages&lt;/h2&gt;
+
+&lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
+
+{% block content %}
+  &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
+a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
+the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
+
+&lt;h2&gt;Using data&lt;/h2&gt;
+
+&lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
+  path: /
+- title: About Us
+  path: /about
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
+Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
+  {% for item in main_menu %}
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  {% endfor %}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Using sample content&lt;/h2&gt;
+
+&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
+
+&lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
+title: My First Post
+excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+image: http://placebee.co.uk/640x480/1
+---
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
+
+&lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+  &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+  {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
+  &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
+    {{ title }}
+  &amp;lt;/h2&amp;gt;
+  &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
+  {{ content|raw }}
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt; Debugging&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
+
+&lt;p&gt;The next step is to reset Drupal&amp;#39;s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
+
+&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+
+&lt;p&gt;Darren&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
+      </item>
+    
+      <item>
+        <title>Atomic Drupal Workshop</title>
+        <description>&lt;p&gt;If you&amp;#39;re a frustrated web developer spending more time battling with Drupal than enjoying its benefits then read on, as I&amp;#39;m going to explain how I&amp;#39;ve hacked the Drupal site building process to make it easier and more fun.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I started exploring this process a couple of years ago. After years of Drupal experience, with it&amp;#39;s ups and downs, something clicked. I thought I was in control before, but there would always be some part of a project where I felt like I was fighting with Drupal. I tried many different approaches, but once I found this methodology there was no looking back.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve been developing this system for a couple of years, and in recent months I&amp;#39;ve started to see more people talking about it, conference sessions, and blog posts that talk about some of these ideas. None of this is unique, but I have pulled together various elements into a process, or system that anyone can use to simplify their Drupal site building.&lt;/p&gt;
+
+&lt;p&gt;In this article I hope to bring together a few key points that I think make the most difference to the success of a project.&lt;/p&gt;
+
+&lt;p&gt;My work in the past year has taken me into many agencies and I&amp;#39;ve worked with experienced Drupal developers, and with excellent developers but who were new to Drupal. On the one hand I&amp;#39;ve seen Drupal developers artificially constrained to produce &amp;quot;Drupaly&amp;quot; solutions because of perceived limitations of what&amp;#39;s possible with Drupal, and on the other hand I&amp;#39;ve seen developers struggle to get Drupal to do what they want to do.&lt;/p&gt;
+
+&lt;h2&gt;Perhaps you can relate to this story...&lt;/h2&gt;
+
+&lt;p&gt;I went into an agency early last year to help with a late running project. There was nothing particularly unique about this website, other than it had some really nice design elements and was a stunning example of responsive design. But, hiding below the surface was a confusing Drupal implementation and a mess of spaghetti code.&lt;/p&gt;
+
+&lt;p&gt;Several developers had worked on the project, and it showed. Competing Drupal modules were being used to achieve the same thing in different parts of the site, the CSS used multiple grid systems, and the general lack of consistency meant the final stages of the project, bug fixing and cross device testing were proving difficult.&lt;/p&gt;
+
+&lt;p&gt;Requirements and designs had changed during the project, and so had the developers, which meant that rather than understand what had been done before, the developers hacked on extra bits of code, put in more and more CSS overrides to target specific elements to tweak the styles.&lt;/p&gt;
+
+&lt;p&gt;The result was a site that was proving impossible to get working across all devices, and as bugs were fixed, more were being introduced and discovered. Slight changes were having unexpected knock on effects across the whole site.&lt;/p&gt;
+
+&lt;p&gt;When I looked at the site, I congratulated them. They had produced a great prototype. They had gone a long way around to get there, but what they had done was understand the problem, and discover exactly what was required in a solution. This resulted in something that worked really well as a prototype. What they hadn&amp;#39;t done was produce a production-ready site.&lt;/p&gt;
+
+&lt;p&gt;I helped them take a few steps back, which at the same time was a huge leap forward. With the knowledge they had gained we could work with Drupal to get the project completed, rather than battling against it.&lt;/p&gt;
+
+&lt;h2&gt;What to learn from this?&lt;/h2&gt;
+
+&lt;p&gt;Consistency is important, and prototyping helps to clarify what is required in a solution. Doing all the testing and bug fixing at the end of a project is hard, gets out of control, and causes missed deadlines.&lt;/p&gt;
+
+&lt;h2&gt;Introducing Atomic Drupal&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve been looking at the emerging atomic design movement, component-based design, or style-guide driven development, and I&amp;#39;ve taken best practise from the cutting edge of web design and combined it with over 7 years experience of pushing Drupal to it&amp;#39;s limits and past them.&lt;/p&gt;
+
+&lt;p&gt;Where I&amp;#39;ve ended up is a system for converting ideas into effective websites. A way of working with Drupal rather than against it, with the aim of shifting the focus of a project from development and bug fixing to solving new and interesting problems. Making the basics of site building easy and fun.&lt;/p&gt;
+
+&lt;p&gt;People I&amp;#39;ve introduced to this already have found they can now do more with Drupal and say yes to more of clients requirements, and work on more interesting projects.&lt;/p&gt;
+
+&lt;h2&gt;Atomic Design&lt;/h2&gt;
+
+&lt;p&gt;A component-based approach to the front end means creating more maintainable and flexible designs. There are a few tricks to getting this to work in Drupal, but the most important are: taking full control over Drupal&amp;#39;s markup, and planning out a consistent approach to building the site.&lt;/p&gt;
+
+&lt;h2&gt;Prototyping&lt;/h2&gt;
+
+&lt;p&gt;An added benefit of taking a component-based approach is the decoupling of front-end design and development from the back-end CMS implementation. The biggest win is that you can build and test all your front-end code separately to the CMS build (you&amp;#39;re not constrained to using Drupal&amp;#39;s markup). This means you can test and validate your front-end code early on in the project, you can test across devices and browsers earlier in the process, and therefore not leave all your big fixing until the end of the project.&lt;/p&gt;
+
+&lt;h2&gt;Workshop&lt;/h2&gt;
+
+&lt;p&gt;Get in touch if you&amp;#39;re interested in learning more as I am running workshops on Atomic design with Drupal for agencies and individual developers. Check my training page to see upcoming dates for public courses (at the time of writing the next scheduled public workshop is 24th April).&lt;/p&gt;
+
+&lt;p&gt;This workshop will cover how to take full control over Drupal&amp;#39;s markup, resetting and removing Drupal&amp;#39;s own markup and replacing it with your own. How to work with Atomic design and component based design principles in Drupal. Debunking the most common myths around Drupal front end code, and fixing the single biggest cause for late running projects and missed deadlines.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/atomic-drupal-workshop-tickets-16052157435&quot;&gt;Book Ticket&lt;/a&gt; &lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/atomic-drupal-workshop-tickets-16052157435&quot;&gt;More info&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</guid>
+      </item>
+    
+      <item>
+        <title>The Drupal Site Builder Manifesto</title>
+        <description>&lt;p&gt;I wanted to get some clarity on what I mean
+by the term &amp;quot;site builder&amp;quot;. In a general sense, it refers to the
+actual process of building a website, but in Drupal the term
+Site Builder tends to have a specific meaning.
+I realised that my definition may vary from others so
+I wanted to be precise about what I think it means, and what
+I think it means to be a Drupal Site Builder.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I am a developer. I studied programming languages in depth. I did research into the semantic analysis of object oriented languages. But, when it comes to Drupal, I love to be a Site Builder.&lt;/p&gt;
+
+&lt;p&gt;I run a &lt;a href=&quot;http://www.meetup.com/london-creative-coding/&quot;&gt;Creative Coding Meetup&lt;/a&gt; in London. At last night&amp;#39;s meeting I
+was explaining Friday&amp;#39;s &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/02/05/drupal-training-drupalcamp-london/&quot;&gt;Drupal Camp training&lt;/a&gt; to someone.
+I am clear about the aims
+and objectives of the training, I know my material, and I&amp;#39;ve
+given similar trainings many times before, but,
+the fact I labelled it an &amp;quot;intermediate&amp;quot; and &amp;quot;site builder&amp;quot;
+training causes some confusion.&lt;/p&gt;
+
+&lt;p&gt;First of all, I realised that using the word &amp;quot;intermediate&amp;quot;
+doesn&amp;#39;t really mean anything. Drupal developers (or anyone
+building Drupal sites) of all skill levels have benefited from this training. So, perhaps what I mean by &amp;quot;intermediate&amp;quot; is
+actually &amp;quot;not beginner&amp;quot;. As all I am really saying is that I&amp;#39;m
+not covering the very basics of getting Drupal up and running.&lt;/p&gt;
+
+&lt;p&gt;The term &amp;quot;site builder&amp;quot; is more problematic, possibly because
+my definition of a Drupal Site Builder may be wider than
+what most people expect. I thought about this a lot, and what I came up with was a clear set of statements of what I think it means to be a Drupal Site Builder...&lt;/p&gt;
+
+&lt;h2&gt;The Drupal Site Builder Manifesto&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/site-builder-sm.png&quot; alt=&quot;Drupal Site Builder&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;As Drupal Site Builders...&lt;/p&gt;
+
+&lt;p&gt;We work in a multi-disciplinary role.&lt;/p&gt;
+
+&lt;p&gt;We take initiative, and play a central role in the web development process.&lt;/p&gt;
+
+&lt;p&gt;We are usually the ones to take ownership of the final product.&lt;/p&gt;
+
+&lt;p&gt;We don&amp;#39;t just “click and configure” websites. We have knowledge of all the areas involved in building a Drupal website.&lt;/p&gt;
+
+&lt;p&gt;We work with the rest of the team to ensure everyone is doing what they do best and contributing to the project in a meaningful way.&lt;/p&gt;
+
+&lt;p&gt;We may not all be trained developers, but we do appreciate how to think like a developer. We apply software development principles and Drupal best practises when creating Drupal configuation.&lt;/p&gt;
+
+&lt;p&gt;We may not all know how to write optimal PHP code, but we know when to build something using Drupal core or contributed modules, and when we need a custom plugin or custom module creating.&lt;/p&gt;
+
+&lt;p&gt;We may not all be able to produce the most stunning web designs, but because we understand how Drupal works we will work with designers to ensure their designs are consistent and well structured.&lt;/p&gt;
+
+&lt;p&gt;We may not all know all the latest front-end tricks, but when given well build front-end code we know how to get Drupal to generate the appropriate markup.&lt;/p&gt;
+
+&lt;p class=&quot;lead&quot;&gt;Most importantly, we know how to get the best results out of Drupal&#39;s building blocks, we know how to turn good designs and ideas into great websites, and we know how to build websites in a methodical, flexible, and maintainable way.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
+      </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> From Prototype to Drupal (part 1) |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">From Prototype to Drupal (part 1)</h1>
+
+  <span class="">06 Feb 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">The wrong way to build a Drupal site is to jump straight into Drupal and
+start building out content types. I&#39;ve heard a lot of people praise Drupal
+for it&#39;s usefulness in prototyping, and I&#39;ve been guilty of doing this myself in
+the past, but this is not a good idea for many reasons.</p>
+
+<p class="lead">In this first post of the series I explain why I prototype and then introduce some
+tools to help with prototyping.
+In future parts will look at the process of building a prototype in a way
+that supports effortless translation into a Drupal website.</p>
+
+              
+
+<h2>Why prototype?</h2>
+
+<p>I think the biggest danger of jumping straight into Drupal without a prototype
+is that you get locked into Drupal ways of doing
+things too early in the process and you&#39;ll be naturally thinking in Drupal terms, and end up
+with a &#39;drupaly&#39; solution. You miss out on other cool ideas or possible solutions
+that might be a bit harder to implement, but result in a much better product.</p>
+
+<p>Also, if you start prototyping in Drupal, or building in Drupal straight away,
+then you end up bringing across elements from prototypes into your final site build.
+This big ball of mud grows and can become a maintenance nightmare. What you
+really want at the prototype stage is the freedom to throw things away.
+You shouldn&#39;t feel tied to any idea, design, or solution, which will happen if
+you&#39;ve invested time and effort in building it. Prototypes should be good to throw
+away at any point and start again.</p>
+
+<p>The best way to prototype web sites is to simply build out
+some HTML and CSS. You can quickly mock up ideas, test it out on users,
+and iterate towards a final design. Lots of other
+<a href="http://deeson-online.co.uk/blog/capturing-feedback-prototypes-drupal">developers</a> and
+<a href="http://frontendunited.org/session-info/prototyping-your-way-ux-success">UX experts</a>
+agree with me on this one.</p>
+
+<h2>Prototyping tools</h2>
+
+<p>There are short-cuts to building out flat HTML and CSS that, while
+not necessarily intended for prototyping, certainly speed up the process.</p>
+
+<h3>Front-end frameworks</h3>
+
+<p>The benefits of using a framework like <a href="http://getbootstrap.com/">Twitter Bootstrap</a>,
+<a href="http://foundation.zurb.com/">Zurb Foundation</a>, or Yahoo&#39;s
+<a href="http://purecss.io/">Pure CSS</a> is that they give you building blocks you can use
+to quickly piece together a responsive website. Each of them have their own
+way of doing things, so you must be careful not to limit your thinking so you
+don&#39;t end up implementing things a certain way just because that&#39;s how the
+front-end framework does things.</p>
+
+<p>Pure CSS offers a very minimal starting point so you have to do more of the work,
+but this will lead to more varied solutions. Twitter Bootstap is much more
+comprehensive, but without a lot of customisation you&#39;re likely to end up with
+something that looks like it was built using Twitter Bootstrap.</p>
+
+<p>I find that Zurb Foundation offers a good compromise, being a fully-featured
+front-end framework, but having lots of scope for customisation using SASS.
+There are settings variables to control lots of the default behaviour, and
+by using the SASS mixins you can easily use the features of Foundation with
+your own markup.</p>
+
+<p>In the early prototype stages I tend to make more use of the pre-defined classes
+and styles from Zurb, replacing them with custom classes using the mixins as the
+prototype evolves.</p>
+
+<h3>HTML Preprocessor</h3>
+
+<p>When creating a prototype site in HTML you will end up repeating yourself and
+writing the same HTML code multiple times. Using a HTML preprocessor helps with
+this as you can include special tags in your HTML code which the preprocessor
+replaces with other HTML. This cuts down on the time taken to write the HTML in
+the first place, and speeds up the process of making changes to your prototype.
+For example, if you have a navigation bar that is common to all pages of your prototype
+you define it once and then just include it in every page. Your prototype is
+then built out of various components, which makes it easier to manage and
+quicker to iterate.</p>
+
+<p>I&#39;ve talked about a HTML preprocessor
+<a href="http://middlemanapp.com/">Middleman</a> in a previous
+<a href="http://www.darrenmothersele.com/blog/2013/08/02/cms-is-dead-long-live-cms/">blog post</a>
+where I discussed using one as a static site builder. Back then I came out in
+favour of Middleman, but since then I got turned on to <a href="http://jekyllrb.com/">Jekyll</a>
+when I migrated my site to GitHub pages,
+and I&#39;ve been in love ever since.</p>
+
+<h3>CSS Preprocessor</h3>
+
+<p>Just like a HTML preprocessor speeds up the creation of HTML for your prototype, a
+CSS preprocessor speeds up the creation of CSS.</p>
+
+<p>I&#39;ve been using <a href="http://sass-lang.com/">SASS</a> and <a href="http://compass-style.org/">Compass</a>
+for a while, as it fits well with my workflow but there
+are other options, such as <a href="http://lesscss.org/">LESS</a>.</p>
+
+<p>There&#39;s an excellent starting theme for Drupal called
+<a href="https://drupal.org/project/aurora">Aurora</a> that provides a
+mechanism for incorporating SASS and Compass into a Drupal development workflow.
+But, we avoiding jumping straight into Drupal site building. From a prototyping point
+of view, the main reason I&#39;m using SASS/Compass is
+so that I can make use of Zurb Foundation mixins.</p>
+
+<h2>Next time...</h2>
+
+<p>In the <a href="http://www.darrenmothersele.com/blog/2014/02/07/from-prototype-to-drupal-theme-2/">next post of this series</a>
+I&#39;m going to show you how to create an all-in-one
+prototyping tool that will work for all stages of prototyping, from
+the throwaway early drafts, through later refinement stages, up to the
+final stages of prototype conversion to Drupal.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

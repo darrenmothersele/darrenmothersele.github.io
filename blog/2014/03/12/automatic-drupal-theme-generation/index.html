@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Death of the Drupal Themer |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Death of the Drupal Themer</h1>
+
+  <span class="">12 Mar 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">At Drupal Camp London 2013 <a href="https://twitter.com/mcjim">James Panton</a> presented
+a methodology for implementing designs in Drupal without resorting to custom
+theme development. At this years Drupal Camp I pulled together two BoF
+(Birds of a Feather) sessions to continue the conversation and discuss
+prototyping designs, atomic design, and
+challenges of incorporating design activities into development workflow.</p>
+
+<p class="lead">In recent posts I&#39;ve talked about
+<a href="http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/">prototyping</a>
+and a bit about
+<a href="http://darrenmothersele.com/blog/2014/02/07/from-prototype-to-drupal-theme-2/">using Jekyll for prototyping</a>.
+In many ways this discussion is a continuation of those ideas, but also
+much more general in it&#39;s scope, and more wide-reaching in it&#39;s potential.</p>
+
+              
+
+<h2>Death of the Themer?</h2>
+
+<p>I&#39;ve become interested in this area after recently facing challenges bringing
+design activities into the development workflow of an agile project. But first, for
+some context, let me explain where this all began...</p>
+
+<p>Last year, Jim presented a methodology for implementing designs in Drupal
+without having to do any custom theme development.</p>
+
+<p>First, Drupal is stripped of all it&#39;s markup. Jim presented to a packed
+room at Drupal Camp London, and received a big whooping
+round of applause when he showed naked Drupal markup. Perhaps indicating the
+general level of frustration the developers/themers have from battling with
+Drupal markup. Also, there&#39;s a general preconception that Drupal suffers very badly
+from &quot;Divitis&quot;, &quot;Classitis&quot; and &quot;Span-mania&quot;. This demo showed that this need
+not be the case.</p>
+
+<p>Next, markup is added back in bit by bit to match the markup in the flat
+HTML/CSS design. This means that the eventual markup produced by Drupal should
+exactly (or almost!) match what the designer originally intended. The rendered
+HTML is therefore cured of it&#39;s divitis (contains much less bloat),
+works with the CSS styles from the design with little or no tweaking, and
+can make use semantic HTML5 tags.</p>
+
+<p>The tools used to reset Drupal default markup include:
+<a href="https://drupal.org/project/semanticviews">Semanic Views</a>,
+<a href="https://drupal.org/project/ds">Display Suite</a>,
+<a href="https://drupal.org/project/panels">Panels</a>,
+and a fork of <a href="https://drupal.org/project/semantic_panels">Semantic Panels</a>
+that I can&#39;t seem to find a reference for.
+<a href="https://drupal.org/project/fences">Fences</a> can also be useful, although
+functionality to override field wrappers is also part of Display Suite.</p>
+
+<p>One of the main benefits of this approach is that it allows designers and
+Front-end developers to work freely, using whatever tools they want, and
+without consideration for any of Drupal&#39;s (perceived) limitations. There have
+been lots of really cool developments in front-end, including CSS and HTML
+preprocessors, and the multitude of CSS and JS frameworks. This approach allows
+designers, front end developers, UXs, and IAs to take advantage of all of these tools
+when prototyping sites.</p>
+
+<p>During the BoF sessions at this year&#39;s Drupal Camp London a few limitations and
+disadvantages were discussed. This methodology moves the implementation of
+design from development (writing code) to configuration. This can become quite
+repetitive as each individual bit of output has to be configured with appropriate
+resets and the correct wrappers to build up the markup.</p>
+
+<h2>Custom Plugins?</h2>
+
+<p>In the BoF sessions I presented a methodology that I had been playing with,
+inspired by Death of a Themer, whereby designs are implemented
+in a similar way, without the need for a custom theme. Drupal markup is taken
+to a &quot;full reset&quot; state, and then just the required markup is introduced
+through various plugins.</p>
+
+<p>This differs from the original methodology as it does not use configuration
+to add wrappers back in to fields, view modes, views, panels, etc. Instead,
+the markup is taken from the prototype (flat HTML and CSS) and copied into
+&quot;plugins&quot;. Various plugins are used:</p>
+
+<ul>
+<li>Display Suite plugins to add markup to content/entities in various view modes.</li>
+<li>Views styles to output list markup</li>
+<li>Panel&#39;s style plugins to add &quot;box&quot; markup, and,</li>
+<li>Panel&#39;s layout plugins to add layout markup.</li>
+</ul>
+
+<p>The result is the same markup as the flat prototype, and the same result
+as with the original Death of a Themer approach, but with much less configuration
+required.</p>
+
+<p>The real big win for this approach, is that the components of the design are
+reusable across various content types and sections of the site without
+having to repeatedly configure each occurrence.</p>
+
+<p>Building out these plugins for every bit of a design might seem like over-kill
+and more work than is really necessary, but it is a much more scalable way of theming
+as you end up with design components that can be reused across the site.</p>
+
+<p>This version of &quot;Death of a Themer&quot; means the Themer is replaced with a developer,
+rather than a site-builder, as the emphasis moves away from configuration towards
+writing custom plugins in code.  However, I think a lot of the grunt work can
+be automated, as I&#39;ll explain in a bit.</p>
+
+<h2>Atomic Design</h2>
+
+<p>I saw parallels between this approach (of reusable theme components) and the
+emerging trend of <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">atomic design</a>.
+In fact, I think atomic design is more than
+just a current trend but a real leap forward in design methodology.</p>
+
+<blockquote>
+<p>We&#39;re not designing pages, we&#39;re designing systems of components. <br>
+ -- <a href="http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/">Stephen Hay</a></p>
+</blockquote>
+
+<p>While producing an atomic design the designer is effectively breaking down the
+design into components. This is exactly what a good themer does when they take a design
+and decide how to implement it as a Drupal theme.</p>
+
+<h2>From Design to Theme</h2>
+
+<p>When a designer hands over a design (let&#39;s assume static HTML and CSS) the
+developer (or themer, or site-builder) has to make several decisions about
+how this will be implemented.</p>
+
+<ul>
+<li>Assumptions are made and things get &quot;lost in translation&quot;</li>
+<li>Compromises are made due to limitations in implementation (i.e. limitations of the CMS, content model, etc)</li>
+<li>Markup is augmented to add in extra properties like RDFa, etc</li>
+</ul>
+
+<h2>Agile</h2>
+
+<p>There shouldn&#39;t really be a &quot;handover&quot; of design. The style guide / atomic design
+or static mockup that is the result of prototyping should evolve as the product
+evolves.</p>
+
+<p>If something comes up that needs design we go back to the static HTML/CSS to
+implement it. If using atomic design, this means adding any required &quot;atoms&quot;,
+&quot;molecules&quot;, etc.</p>
+
+<p>If changes have been made as a design is implemented these need to be flowed
+back upstream to the style guide so that further development of the design can
+happen, and then (some of) the conversion process is repeated to bring across
+new design elements into the theme/templates.</p>
+
+<p>This process can be hard to manage and bring duplication of effort into
+the process.</p>
+
+<p>If we can automate some of the steps involved in going from static HTML and CSS
+to Drupal theme then we can move towards a more agile, and robust design-dev
+workflow.</p>
+
+<h2>Proof of concept</h2>
+
+<p>Automatically generating a Drupal theme from either a style guide, atomic design,
+pattern library, static mockup, prototype (or whatever you want to call it!)
+might sound like a crazy idea, but I&#39;ve got a working proof of concept.</p>
+
+<p>I decided to start from just pure HTML/CSS. After experimenting with static
+site generators (HTML preprocessors), and CSS preprocessors like
+SASS, I decided that it was best to take pure HTML/CSS as the starting point.
+This works because every design eventually ends up as HTML/CSS. It&#39;s the
+language of the web, so it&#39;s unavoidable. It means designers can use
+any combination of tools they like, as long as they produce HTML/CSS as the
+end result.</p>
+
+<p>As an example, I&#39;m using Jekyll to compile the static mockup, and Compass
+to compile the CSS, but this could be any combination of tools, or just
+hand-crafted HTML and CSS.</p>
+
+<p>The next stage is to add annotations into the source of the HTML to
+identify and describe each of the design &quot;components&quot;.</p>
+
+<p>I don&#39;t have any terminology yet. Drupal has it&#39;s own jargon, as does
+SMACSS, Atomic Design, OOCSS, KSS, etc.  I&#39;m not sure what to call
+things. I&#39;m tending towards a combination of Atomic Design and Drupal
+terminology, but this will change.</p>
+
+<h2>Annotations</h2>
+
+<p>There has been some discussion in the design community about
+<a href="https://www.youtube.com/watch?v=ROaXVB-bbek">Pattern Library Annotations</a>
+documentation, etc.</p>
+
+<p>I want to use annotations in designs so that they can be automatically
+parsed and converted.</p>
+
+<p>In this proof of concept, annotations in the HTML source code map directly to
+the appropriate Drupal templates and plugins.</p>
+
+<p>I&#39;m using the <code>x-</code> prefix for my custom attributes. This mechanism is intended for use
+in vendor prefixing for vendor specific attributes. It distinguishes them nicely from
+<code>data-</code> custom attributes, results in valid HTML5, and therefore I think it&#39;s an
+acceptable abuse of the feature.</p>
+
+<p>For example, annotate a certain part of the source code as being responsible
+for layout and it will be automatically compiled into a Panels Layout Plugin:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div x-drupal-type=&quot;layout&quot; x-drupal-name=&quot;front_page&quot; x-drupal-label=&quot;Front page&quot; x-drupal-no-wrap&gt;
+   &lt;div class=&quot;container&quot;&gt;
+     &lt;div class=&quot;row&quot;&gt;
+     &lt;div class=&quot;span8&quot; x-drupal-region x-drupal-name=&quot;content&quot;&gt;
+     ...
+     &lt;/div&gt;
+     &lt;div class=&quot;span4&quot; x-drupal-region x-drupal-name=&quot;sidebar&quot;&gt;
+     ...
+     &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></div>
+<p>Another example, this is content shown in a particular preview style called &quot;Box&quot;.
+It maps to a Drupal view mode:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div class=&quot;box&quot; x-drupal-type=&quot;display&quot; x-drupal-name=&quot;box_teaser&quot; x-drupal-label=&quot;Box teaser&quot;&gt;
+  &lt;img src=&quot;&quot; width=&quot;100&quot; height=&quot;100&quot; alt=&quot;&quot; x-drupal-region x-drupal-name=&quot;image&quot; x-drupal-no-wrap&gt;
+  &lt;h6 x-drupal-region x-drupal-name=&quot;title&quot;&gt;Easy to use&lt;/h6&gt;
+  &lt;p x-drupal-region x-drupal-name=&quot;summary&quot; x-drupal-no-wrap&gt;
+    To get started, you select the desired sample and base the entire website on it. It’s that simple!
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>Many other attributes are identified and the system currently supports
+panels layouts, panels styles, views styles, display suite (view mode templates),
+menus (kinda), and image styles.</p>
+
+<p>During the compilation process the various components are identified and
+the appropriate plugins are created. Any required static files, such as
+CSS and JS are copied across. Any content in the various regions is removed
+from the markup, and the generated plugins therefore only contain the markup
+to wrap the various parts of Drupal output.</p>
+
+<p>You can see the (very!) rough proof-of-concept here:
+<a href="https://github.com/darrenmothersele/hyde">https://github.com/darrenmothersele/hyde</a></p>
+
+<p>You really shouldn&#39;t try using this yet, but if you insist, install the
+modules on a Drupal site with Display Suite, Panels, etc,
+then enable both modules, and configure to point at the folder with your
+HTML/CSS design. Then click the &quot;Sync&quot; button to parse your design files and create
+and register the appropriate plugins based on the design.</p>
+
+<p>Warning: You are probably better off waiting for the next version or some
+actual documentation!</p>
+
+<h2>Rather see it in action?</h2>
+
+<p>If you would rather see it in action, then come along to the next
+<a href="http://www.meetup.com/drupal-show-and-tell/events/168733432/">Drupal Show and Tell</a>
+where I&#39;ll be demonstrating the early version of the theme generator and asking for feedback!</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

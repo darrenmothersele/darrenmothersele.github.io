@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Drupal Theme Generator Demo |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Drupal Theme Generator Demo</h1>
+
+  <span class="">28 Mar 2014</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">I&#39;ve been playing with the idea of automatically generating Drupal themes
+from static HTML/CSS/JS using annotations in the HTML markup.  I put together
+a basic proof-of-concept of a tool to generate a Drupal theme, ctools
+layout and style plugins, and view modes and templates.</p>
+
+<p class="lead">Last night at the <a href="http://www.drupalshowandtell.com/">Drupal Show and Tell</a>
+event in London I gave a live demo
+of the theme generator in action. The event was recorded, so will be online
+eventually, but for now I&#39;ve recorded this demo as a couple of attendees
+suggested this would give a better idea of the detail that couldn&#39;t be
+seen on the screen during the live demo.</p>
+
+              
+
+<p>My interest in this area came about through wanting to bring design into the
+development workflow of an agile project, and move away from the
+&#39;throw it over the fence&#39; mentality in design deliverables.
+You can read more about how this came about in my previous blog post
+<a href="http://darrenmothersele.com/blog/2014/03/12/automatic-drupal-theme-generation/">Death of the Themer</a>.</p>
+
+<h3>Assembly, not Deconstruction</h3>
+
+<p>Traditionally implementation of a design was done via a process of deconstruction
+from a PSD into flat HTML and CSS, and then another process of deconstruction
+in CMS implementation of the design. You can&#39;t design a responsive site in Photoshop
+so luckily this is changing. PSDs were horrible to work with as amends take far too
+long, and while Photoshop may be good to quickly mock up style ideas, pages
+designed in Photoshop tend rely too much on intuition, implications about how things
+would work, and tend to come with an implied &quot;you get the idea&quot;.</p>
+
+<h3>Atomic Design</h3>
+
+<p>As I&#39;ve mentioned in earlier posts, I&#39;m excited about the emerging trend towards
+atomic design (see <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">Brad Frost</a>)
+as it brings a more &#39;development&#39; style process into design. Treating the process
+as that of designing a system of re-usable components, rather than just designing
+pages.</p>
+
+<p>This moves implementation of a design from a process of deconstruction, to a process
+of assembly, so brings the world of dev and design closer together. Either bringing
+design into the development workflow, or bringing development processes into
+design (depending on which way around you look at it).</p>
+
+<p>With an atomic approach to design, and with something like SMACSS for
+modular CSS, the process of converting to a Drupal theme can be automated.
+Because the markup/styles are &#39;componentised&#39; we can annotate the source code to
+document the conversion process and then use automated tools to manage the process.</p>
+
+<h3>Demo</h3>
+
+<p>Here&#39;s a demo of the proof-of-concept:</p>
+
+<div class='embed-container'><iframe src='https://player.vimeo.com/video/90315757' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen>https://player.vimeo.com/video/90315757</iframe></div>
+
+<h3>Next...</h3>
+
+<p>You can download/fork the code from the
+<a href="https://github.com/darrenmothersele/hyde">GitHub Hyde repo</a>. You&#39;ll need to patch the
+QueryPath module as it needs the latest version of the QueryPath library and the QP
+module doesn&#39;t include the right files to make this work by default.</p>
+
+<p>A lot of work needs to be done. This is very rough proof-of-concept code, but I
+think this shows the concept can work, and worthy of further development.</p>
+
+<p>Some feedback from last night included:</p>
+
+<ul>
+<li>Generate an actual theme. At the moment the theme is just an object stored in the DB/cache, but
+I had planned for this to be a ctools exportable. An earlier version I started working on generated actual
+theme files, perhaps it would be better to switch back to this approach?</li>
+<li>How to handle logic in template files? Shouldn&#39;t this be handled in pre-process?</li>
+<li>Stub code generation for pre-process functions</li>
+<li>Adding extra custom fields for display only? The example given was a date field that was displayed twice on page, once for date stored in field and once for time stored in same field.</li>
+</ul>
+
+<p>Drop me a line if you&#39;ve got any other ideas, or want to get involved, or
+want to help fund building this properly! :)</p>
+
+<h3>Update:</h3>
+
+<p>As requested, here&#39;s links to some of the other resources I mentioned during the
+Show and Tell...</p>
+
+<ul>
+<li><a href="http://webdesign.tutsplus.com/articles/the-sparkbox-responsive-design-process--webdesign-9651">Sparkbox Responsive Design Process</a></li>
+<li>Stephen Hay, quote: <a href="https://vimeo.com/47171001">We&#39;re not designing pages, we&#39;re designing systems of components</a></li>
+<li><a href="http://daverupert.com/2013/04/responsive-deliverables/">Tiny Bootstraps for Every Client</a></li>
+<li><a href="http://smacss.com/">Scalable and Modular Architecture for CSS (SMACSS)</a></li>
+<li><a href="http://patternlab.io/">Pattern Lab</a> and <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">Brad Frost</a></li>
+<li><a href="http://warpspire.com/kss/">Knyle Style Sheets (KSS)</a></li>
+<li><a href="http://bem.info/method/">Block, Element, Modifier (BEM)</a></li>
+</ul>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

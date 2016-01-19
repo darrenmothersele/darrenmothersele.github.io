@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Simple Twitter Block for Drupal |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Simple Twitter Block for Drupal</h1>
+
+  <span class="">15 Jan 2009</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Here's a quick way to add recent tweets to your Drupal powered websites. The following code is as simple as possible. Add it to your site's module folder and enable the module. You they get a block to position on your site. The block is populated with your most recent tweets via a Javascript call to the Twitter website.</p>
+
+
+
+
+              
+<p>First thing to do is create the module info file so Drupal can find your module. I'm going to call the module tweetblock - but you can change this if you like. I put the following code in a file called "tweetblock.info"</p>
+<p></p><div class="codeblock"><code>name = Twitter Block<br />core = 6.x<br />package = Other</code></div>
+<p>Then I create the main module in a file called "tweetblock.module" with the following code:</p>
+<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">tweetblock_block</span><span style="color: #007700">(</span><span style="color: #0000BB">$op </span><span style="color: #007700">= </span><span style="color: #DD0000">'list'</span><span style="color: #007700">, </span><span style="color: #0000BB">$delta </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">$edit </span><span style="color: #007700">= array()) { <br />  if (</span><span style="color: #0000BB">$op </span><span style="color: #007700">== </span><span style="color: #DD0000">'list'</span><span style="color: #007700">) {<br />    </span><span style="color: #0000BB">$blocks</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">] = array(<br />      </span><span style="color: #DD0000">'info' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Twitter'</span><span style="color: #007700">),<br />    );<br />    return </span><span style="color: #0000BB">$blocks</span><span style="color: #007700">;<br />  }<br />  if (</span><span style="color: #0000BB">$op </span><span style="color: #007700">== </span><span style="color: #DD0000">'configure' </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$delta </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">) {<br />    </span><span style="color: #0000BB">$form</span><span style="color: #007700">[</span><span style="color: #DD0000">'tweetblock_username'</span><span style="color: #007700">] = array(<br />      </span><span style="color: #DD0000">'#type' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'textfield'</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'#title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Twitter Username'</span><span style="color: #007700">),<br />      </span><span style="color: #DD0000">'#default_value' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">variable_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'tweetblock_username'</span><span style="color: #007700">, </span><span style="color: #DD0000">'mothersele'</span><span style="color: #007700">),<br />    );<br />    </span><span style="color: #0000BB">$form</span><span style="color: #007700">[</span><span style="color: #DD0000">'tweetblock_count'</span><span style="color: #007700">] = array(<br />      </span><span style="color: #DD0000">'#type' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'textfield'</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'#title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Number of items'</span><span style="color: #007700">),<br />      </span><span style="color: #DD0000">'#default_value' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">variable_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'tweetblock_count'</span><span style="color: #007700">, </span><span style="color: #0000BB">6</span><span style="color: #007700">),<br />    );<br />    return </span><span style="color: #0000BB">$form</span><span style="color: #007700">; <br />  } <br />  if (</span><span style="color: #0000BB">$op </span><span style="color: #007700">== </span><span style="color: #DD0000">'save' </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$delta </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">) {<br />    </span><span style="color: #0000BB">variable_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'tweetblock_username'</span><span style="color: #007700">, </span><span style="color: #0000BB">$edit</span><span style="color: #007700">[</span><span style="color: #DD0000">'tweetblock_username'</span><span style="color: #007700">]);<br />    </span><span style="color: #0000BB">variable_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'tweetblock_count'</span><span style="color: #007700">, </span><span style="color: #0000BB">$edit</span><span style="color: #007700">[</span><span style="color: #DD0000">'tweetblock_count'</span><span style="color: #007700">]);<br />  }<br />  if (</span><span style="color: #0000BB">$op </span><span style="color: #007700">== </span><span style="color: #DD0000">'view' </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$delta </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">) {<br />    </span><span style="color: #0000BB">$tweetcode </span><span style="color: #007700">= </span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />    </span><span style="color: #0000BB">drupal_add_js</span><span style="color: #007700">(</span><span style="color: #0000BB">$tweetcode</span><span style="color: #007700">,</span><span style="color: #DD0000">'inline'</span><span style="color: #007700">,</span><span style="color: #DD0000">'footer'</span><span style="color: #007700">);<br />    </span><span style="color: #0000BB">$block </span><span style="color: #007700">= array(<br />      </span><span style="color: #DD0000">'subject' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Twitter'</span><span style="color: #007700">),<br />      </span><span style="color: #DD0000">'content' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">"&lt;div id="</span><span style="color: #0000BB">twitter_div</span><span style="color: #DD0000">"&gt;&lt;ul id="</span><span style="color: #0000BB">twitter_update_list</span><span style="color: #DD0000">"&gt;&lt;li&gt;...loading...&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"</span><span style="color: #007700">,<br />    );<br />    return </span><span style="color: #0000BB">$block</span><span style="color: #007700">; <br />  }<br />}<br /><br /><br />function </span><span style="color: #0000BB">tweetblock_footer</span><span style="color: #007700">(</span><span style="color: #0000BB">$main </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">) {<br />  </span><span style="color: #0000BB">$username </span><span style="color: #007700">= </span><span style="color: #0000BB">variable_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'tweetblock_username'</span><span style="color: #007700">, </span><span style="color: #DD0000">'mothersele'</span><span style="color: #007700">);<br />  </span><span style="color: #0000BB">$count </span><span style="color: #007700">= </span><span style="color: #0000BB">variable_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'tweetblock_count'</span><span style="color: #007700">, </span><span style="color: #0000BB">6</span><span style="color: #007700">);<br />  return </span><span style="color: #DD0000">"&lt;script type="</span><span style="color: #0000BB">text</span><span style="color: #007700">/</span><span style="color: #0000BB">javascript</span><span style="color: #DD0000">" src="</span><span style="color: #0000BB">http</span><span style="color: #007700">:</span><span style="color: #FF8000">//twitter.com/javascripts/blogger.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="http://twitter.com/statuses/user_timeline/{$username}.json?callback=twitterCallback2&amp;amp;count={$count}"&gt;&lt;/script&gt;";<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>That's just two functions. The first defines a Drupal block called "Twitter" which will contain your recent twitter updates. It defines two new block settings, one for your twitter username, the other for the number of tweets to show.</p>
+<p>The second function adds the Javascript call to the footer of your page. This means your page loads completely before the tweets are fetched. The javascript call requests your recent tweets from the twitter server and adds them to the block created by the first function.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Some Common Drupal Mistakes |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Some Common Drupal Mistakes</h1>
+
+  <span class="">19 Dec 2013</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Over the past few months I&#39;ve had the privilege of being asked to audit
+several Drupal websites, both large, small, and very large. This is a
+collection of common mistakes I&#39;ve spotted. This is by no means an
+extensive check list, and you may disagree with some of my conclusions,
+but I&#39;m posting this here in the hope that it is of help to the community.</p>
+
+              
+
+<p>Every developer loves code review right? I know I do, as it&#39;s always
+interesting to get someone else&#39;s point of view, and always leads to better
+code. It&#39;s impossible for a single developer to produce quality code.
+That&#39;s an immutable law of software engineering. In an ideal world
+we&#39;d all have an infinite supply of inspiration, attention span, time,
+and client patience. But, in the real world we make compromises, because
+either budgets are tight, time is short, or scope is just too wide ranging.</p>
+
+<p>These are some observations I&#39;ve made over the past few months while performing
+code review, site audits, or security checks.</p>
+
+<h3>Configuration Management</h3>
+
+<p>One of the main issues with Drupal (which is being addressed in Drupal 8) is the lack of separation between content and configuration. It is important to distinguish between the two in order to manage configuration separately to content.
+Ideally it should be possible to construct a bare version of the site without content using just the codebase as all configuration should be captured in code.
+There are several approaches to this in Drupal including
+the popular <a href="http://drupal.org/project/features">Features</a> module.</p>
+
+<h3> Unnecessary module use</h3>
+
+<p>Adding extra modules to a Drupal site adds overhead. The extra source code has to be parsed by PHP and modules add hooks which can expand the call graph for every page request.
+With each extra module you&#39;re adding another dependency to keep updated and maintained.
+Some modules add 100s of kilobytes of source code for a bit of functionality that
+could have been added with a few lines of code.</p>
+
+<p>Sometimes modules are left hanging around from earlier in development. You may
+have installed a module to evaluate it but decided not to use it. Make sure it&#39;s
+uninstalled (remove database tables) and deleted from the codebase.</p>
+
+<p>Also, remember to disable any developer modules on the production site. You don&#39;t
+often need the Views UI, devel and many other administration modules on a production
+site.</p>
+
+<h3> Views issues</h3>
+
+<p>Views causes loads of issues. Out of all the sites I&#39;ve looked at recently, none
+of them had adequate configuration of the Views module. It&#39;s all to easy for
+site builders to create lots of extra Views, but many neglect to enable caching.
+You should at least enable a short query cache time. You can set a long rendered
+output cache, because it gets invalidated every time the query reruns anyway.</p>
+
+<p>More often than not, anything but the most basic View does not have adequate
+indexing defined in the database. I think you&#39;d be surprised when you look into
+the MySQL slow query log and see how many times the database has been forced
+to filesort. This is a performance killer and it means that MySQL didn&#39;t have
+appropriate indexes for the query, and had to result to writing out to disk to
+sort the results.</p>
+
+<p>Consider replacing some views with blocks and a direct database query. This has
+it&#39;s advantages at times.</p>
+
+<h3>Diff analysis</h3>
+
+<p>If you&#39;ve got access to Drush you can generate a make file from a working Drupal
+site, then run Drush Make to recreate a clean copy of the codebase.</p>
+
+<p>Then use the diff tool to see differences between the two code bases. This will
+highlight if any of the Drupal core or contrib module files have been hacked.</p>
+
+<h3>Full HTML input filter</h3>
+
+<p>A very popular mistake is giving away permission to post HTML code to your site.
+This is really dangerous. Only the most trusted users should be given permission to
+post HTML, and even then it should be filtered to just the set of tags they
+actually need. Even an image (img) tag in the wrong hands is a security
+nightmare and will lead to XSS and other issues.</p>
+
+<h3>Output of unsanitised user input</h3>
+
+<p>Remember that Drupal&#39;s approach is to store raw user input and sanitise it on
+display. Never output any user generated text without first running it through
+one of Drupal&#39;s sanitisation functions.
+Double check any custom code and template files for <code>echo</code> or <code>print</code>ing of
+fields without sanitisation.</p>
+
+<h3>PHP Errors</h3>
+
+<p>I often see lots of PHP errors building up in the watchdog table. This is bad, not
+only because it indicates there is some coding error on the site, but it&#39;s bad
+even if the error isn&#39;t manifesting itself in any visible effect on the site,
+because it locks the watchdog table every time it logs an error. This is a
+performance killer, so clear up those PHP errors!</p>
+
+<p>You probably don&#39;t want to use database logging on a production site anyway.
+I&#39;d recommend logging to syslog and then moving logs out to an central place,
+like elasticsearch or similar.</p>
+
+<h3>Conclusion</h3>
+
+<p>These are just a few of the issues that I commonly see on sites, and specifically
+related to Drupal issues. I&#39;m sure there&#39;s more that&#39;s all that came to mind right
+now.</p>
+
+<p>You can always tweet at me if you disagree or have anything to add. Thanks.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

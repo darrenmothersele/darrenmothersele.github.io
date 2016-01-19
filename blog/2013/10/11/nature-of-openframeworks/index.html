@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Nature of openFrameworks (part 1) |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">Nature of openFrameworks (part 1)</h1>
+
+  <span class="">11 Oct 2013</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">The excellent, self-published, book <a href="http://natureofcode.com/">
+The Nature of Code</a> by Daniel Shiffman gives a solid foundation for
+understanding the mathematical principles behind our physical world. There
+are loads of great examples that show programming techniques for simulating
+the natural world in code.</p>
+
+              
+
+<p>The book is written to target Processing, a popular Java based creative
+coding framework. Because I prefer C++, and in order to familiarise myself
+more with openFrameworks, I&#39;ve been converting some of the examples to work
+in openFrameworks. Here are some of the early examples, I may post more,
+but I&#39;ve started looking at Cinder too, so in future I may convert some examples to
+Cinder instead.</p>
+
+<p>Click each title to access the code on Gist:</p>
+
+<h3><a href="https://gist.github.com/darrenmothersele/6934845">Random Walker</a></h3>
+
+<p>This is the first example from the introduction. It just moves a point around
+the screen randomly. There is no <code>point()</code> method in openFrameworks so to draw
+a single pixel we just draw a 1x1 rectangle.</p>
+
+<p>The App class just needs a variable to store an instance of the Walker:</p>
+
+<p>The <code>step()</code> and <code>display()</code> methods are both called from within Processing&#39;s
+draw loop, but in openFrameworks we use the <code>update()</code> method to update state
+separately from the draw loop.</p>
+
+<p>Finally, the main file to launch the openFrameworks app.</p>
+
+<h3><a href="https://gist.github.com/darrenmothersele/7875888">Random number distribution</a></h3>
+
+<p>This example shows how random numbers are evenly distributed.</p>
+
+<p>There&#39;s no method for finding the array length in C++ so we hard code the
+length of the array used to store the count of the generated random numbers.
+You can find the length of a simple array (not an array of pointers) using
+the <code>sizeof()</code> function, by dividing the size of the array by the size of
+each element, like this: <code>(sizeof(a)/sizeof(*a))</code> or preferably use a container
+class like std::vector which will be covered later.</p>
+
+<h3><a href="https://gist.github.com/darrenmothersele/7875908">Gaussian distribution</a></h3>
+
+<p>In Processing you have to clear the screen each time in the draw loop, but
+openFrameworks does this for you by default. To disable this you add a call
+to <code>ofSetBackgroundAuto(false)</code> in setup. To create the alpha background
+effect I draw a rectangle over the whole screen area. Here&#39;s a version that
+uses a complete random distribution:</p>
+
+<p>And here is a version using a Gaussian distribution. openFrameworks doesn&#39;t have
+the Gaussian function is in the Random utility class in Processing, so we have
+to specify a function to calculate the next Gaussian number:</p>
+
+<h3><a href="https://gist.github.com/darrenmothersele/7875928">Custom distribution (Monte Carlo)</a></h3>
+
+<p>Here&#39;s an example that demonstrates a custom distribution.</p>
+
+<h3><a href="https://gist.github.com/darrenmothersele/7875942">Perlin Noise</a></h3>
+
+<p><code>ofNoise</code> is the openFrameworks equivalent of Processing&#39;s <code>noise()</code> function.
+It returns a float between 0 and 1. openFrameworks also has an equivalent of
+map function (<code>ofMap</code>) that maps the noise value (which is 0 - 1) to the
+range 0 - height.</p>
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>

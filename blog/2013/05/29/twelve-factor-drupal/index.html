@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> The Twelve-Factor Drupal Web App |  Darren Mothersele</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
+    
+    <link rel="stylesheet" href="/css/clean.css">
+</head>
+<body>
+
+<header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header>
+
+<div class="page">
+<h1 class="post-title">The Twelve-Factor Drupal Web App</h1>
+
+  <span class="">29 May 2013</span>
+
+
+            <img class="avatar" src="/img/darren100.jpg" alt="Author" width="50">
+            <p>Darren Mothersele, London UK</p>
+
+
+
+            
+              <p class="lead">Drupal is a good choice as a platform for building web apps thanks to devops advances that work around PHP's inadequacies as a modern programming language. Web app builders can benefit from the extensive ecosystem of Drupal modules, and the unrivalled community support, while still complying (almost) with the best practises for web apps set out in the Twelve Factor web app methodology.</p>
+
+
+
+              
+<h3>Introduction</h3>
+<p>Modern software is delivered as a service, via the web. Drupal is a CMS framework that can be used for building web apps, leveraging the extensive ecosystem of modules, and unrivaled community support. But, Drupal's disadvantage for app developers is that it is built on PHP, which lacks some of the features of modern programming languages, and some features of the Drupal architecture are hard to scale. </p>
+<p>You might argue that Drupal is designed for building websites, but I don't really see an important distinction between web app or website. Perhaps for a website the focus is more on content, and for a web app the focus is functionality? Whatever your thoughts on this, I believe the twelve factors still apply, so if you're that way inclined just substitute the word site for the word app in the rest of this article. </p>
+<p>The <a href="http://www.12factor.net/">Twelve-Factor App</a> is a methodology for building software-as-a-service apps that offers solid advice for both web app developers and op engineers that deploy or manage web apps. It is based on the authors' extensive experience is the development and deployment of apps via the <a href="https://www.heroku.com/">Heroku</a> platform. </p>
+<p>I suggest reading the original manifesto as I am not going to go into detail, nor repeat or explain each of the twelve factors. In this article I will present the advances in Drupal devops and practises I have been using that move us towards complying with each of the twelve factors. </p>
+<p><strong>I. Codebase</strong></p>
+<p>There is one single code repository per app. There is no code in this repo that is shared. Any shared code should be refactored into separate modules that can be linked in using the dependency management. </p>
+<p>The implication of this is that your codebase repo does not include the Drupal codebase, it contains only the custom modules and themes that are used in your app. </p>
+<p>The solution to this is to develop each app as a separate "install profile" which contains a make file for the dependencies, and any custom modules or themes required by the app. You can read more about this approach in the article <a href="http://walkah.net/blog/every-drupal-site-install-profile/">Every Drupal Site is an Install Profile</a>.</p>
+<p><strong>II. Dependencies</strong></p>
+<p>All dependencies of your app are defined in the Drush Make file.  This includes the Drupal Core version that the site is built on, and any contrib modules, themes, and your own shared libraries references via Git.</p>
+<p>Do not write any custom code (or use any contrib module) that relies implicitly on the existence of system-wide packages. All dependencies must be defined explicitly in the Drush Make file. </p>
+<p>I would suggest refactoring code that relied implicitly on a system-wide package into an external resource (see IV Backing Services) and explicitly define the library/module to connect to it as a dependency. For example, rather than writing transcoding code that refers to ffmpeg, you should create a Backing Service for performing the transcode operations. This not only removes the implicit dependency, but has the added advantage of giving you extra scaling options. </p>
+<p>To be truly twelve-factor you should use *dependency isolation* to ensure that no implicit dependencies "leak in" from the environment. Ruby and Python offer tools for this, but it's not usually possible in PHP. I don't have a fully worked out answer for this, but I am experimenting with defining system dependencies in a manifest, such as PHP version and required PHP extensions, and then via the magic of Nginx and PHPFPM allowing multiple process to use different PHP versions. </p>
+<p><strong>III. Config</strong></p>
+<p>This factor relates to the the configuration that varies between deployments. This is a function of the environment in which the build runs so the config should come from the environment. </p>
+<p>You can see an example of how to do this by looking at Aegir where Drupal uses a settings.php file in which the app config is set by reading from environment variables. These variables are set in the server vhost configuration for the deployment. This means you can have separate settings (e.g. Database settings) for dev, staging and production. </p>
+<p>You should be able to set any Drupal variable by setting values in the $conf array in settings.php and reading the values from the environment. Some configuration is not stored in variables, but in (ctools) exportable objects in the database in this case you need some bridging code to set the configuration values in the exportable objects saved in code. </p>
+<p><strong>IV. Backing Services</strong></p>
+<p>Every Drupal app will have at least a database, an usually other "resources" such as queueing systems, email sending, and caches. Each distinct service is a resource, and there is a loose coupling. They can be swapped without code changes (just change settings).</p>
+<p><strong>V. Build, Release, Run</strong></p>
+<p>The Twelve-factor approach to deployment has three phases. Build, release and run. This translates to Drupal as follows:</p>
+<p>1) Build - basically running Drush Make to download Drupal core and the dependencies as defined in your make file. </p>
+<p>2) Release - a scripted mechanism for combining the "build" with the correct config for the deploy into a "release"</p>
+<p>3) Run - the server processes are repointed to the new release. This could by as simple as changing the symlink for the Apache vhost record, but more likely involves a bit more complexity than this in the case you're running a more advanced nginx setup with multiple backend workers. </p>
+<p>A "release" (i.e. combination of build and config) js never changed. You can keep a folder of "releases" named by either an incrementing ID, or timestamp, that means you can, for example, simplify the task of rolling back by repointing the vhost directory to a different release folder. </p>
+<p><strong>VI. Processes</strong></p>
+<p>In a more complex hosting environment (like the one I've been implementing recently) you have multiple workers per site. This allows you to easily scale your app (up and down) as required. This allows for robustness as the site stays up if one worker dies, and performance as you balance the load across multiple workers. </p>
+<p>In this kind of environment having stateless processes is essential, but this is tricky to achieve with Drupal as you have to think about sessions and the "files" folder. We also have the problem that CSS and Javascript assets are compiled (aggregated) at run time, not at build time. </p>
+<p>To configure Drupal to comply with this factor you first have to be using a separate cache backend (e.g. Redis or Memcache) for sessions that can be shared by all the workers. You also need to think about storing the files folder where it can be shared among the workers. There are better solutions than NFS for this but perhaps that's a topic for later. Drupal has issues when working with NFS due the excessive use of include_once, <a href="http://tag1consulting.com/blog/nfs-drupal-and-realpath-cache">although increasing the realpath cache helps</a>. Thanks to <a href="https://twitter.com/iamreevo">Paul Reeves</a> for the heads up on this one. </p>
+<p><strong>VII. Port binding</strong></p>
+<p>This factor is harder to implement in PHP as it's not usual to link in a web server library and run in "user space" as part of the process. The usual approach in PHP is to run as a module inside Apache or another web server daemon. </p>
+<p>As a compromise I have started working with nginx and PHP-FPM. This setup gives me much more flexibility as to how to configure the system for multiple workers. </p>
+<p>There is a project on GitHub called <a href="https://github.com/rdconseil/phttpd">phttpd</a> that promises to embed nginx and php-fpm into an isolated install to allow it to run in userspace. I've not looked at this yet, but it's could be interesting.</p>
+<p><strong>VIII. Concurrency</strong></p>
+<p>The twelve-factor app suggests architecting the app by assigning work to a process type, so having HTTP requests handled by a "web process" and having background tasks handled by "worker" processes. </p>
+<p>I had success with this on the MTV project I was involved in recently, where certain administration or editorial tasks would be queued for execution rather than attempted straight away by using the Drupal Queue system. The queue items are sent to a queue (use an external system like beanstalkd) and then executed by separate background "queue-runner" processes. </p>
+<p>By offloading tasks for asynchronous processing and using separate workers this gives two dimensions for how you can scale your app. You can scale up by adding more process of each type, or you can scale out by increasing workload diversity amongst more worker types. Having more worker types means you can scale up just the type of work that needs to be scaled, while staying lean on process that don't need it. </p>
+<p>The twelve-factor app warns that processes should never daemonize themselves. If you've tried demonising PHP you'll know this can be tricky. To comply with this factor I think it is possible using something like supervisord and rely on the operating system process manager. </p>
+<p><strong>IX. Disposability</strong></p>
+<p>In the context of a Drupal app, this factor relates to having multiple workers that can be stopped and started on demand easily. This means keeping HTTP requests times short (helped by the actions taken in #VIII Concurrency). </p>
+<p>In the case of background worker tasks (for example, queue runners) they should return any unprocessed items back to the Drupal Queue before shutting down. The web server container should stop accepting requests and shutdown when it's finished serving active requests - which should be quick because you've kept HTTP request times down, right? </p>
+<p><strong>X. Dev/prod parity</strong></p>
+<p>In order to comply with this factor we need to address the three areas where gaps between dev and production occur. </p>
+<p>The time gap between when a developer commits a change and it is deployed should be as small as possible. If you've got the build/release/run process working well, and done as much as you can to remove other sources of friction in the process (e.g. by doing automated testing), then you're on your way with this one. </p>
+<p>Reducing the personnel gap in Drupal means empowering developers with tools to get involved in deployments, and monitoring the app in production. </p>
+<p>And to address the parity between the tools used in production and dev, basically, you need to be using Vagrant. If you're not then you're doing it wrong. It's not hard to find information on using Vagrant for Drupal development, but you will have to do some work to get the repeatable config that matches your production environment. </p>
+<p><strong>XI. Logs</strong></p>
+<p>The Drupal watchdog is an essential debugging tool for any Drupal dev, plus in production it provides essential information on the operation, health, and performance of the app, and useful information for auditing. </p>
+<p>There are flexible options for logging in Drupal 7 including the built in watchdog database log, but I would urge that you disable this and use a separate central repository for all logs. The monolog module for Drupal will allow you to send logs anywhere, for example a GrayLog2 server or Splunk, but a better solution is to log to the system logs using the syslog module in Drupal core and use a log router to centralise your logging. </p>
+<p><strong>XII. Admin processes</strong></p>
+<p>Drush provides a REPL shell for Drupal, and it's fairly straightforward to create drush commands for admin tasks and deploy them with your codebase as part of a release. Running database updates from modules and core should be done via the Drush update command against a deployed release using a worker, and against a test release first before altering the production DB.</p>
+<h3>Conclusion</h3>
+<p>I hope in posting this comparison between advances in Drupal devops and the manifesto of the Twelve-Factor App, I might have at least raised awareness of the importance of devops in the Drupal community a little (for anyone who's not already aware!).</p>
+<p>Drupal is awesomely powerful, it's fun to work with, and we can work around the disadvantages with great tools and practises. It is possible to build modern web apps and scale them in the cloud with maximum portability, maximum agility, and minimise the effects of software erosion. </p>
+
+
+            
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'darrenmothersele';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+<footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>
