@@ -63,33 +63,33 @@ had from <a href="http://nvie.com/posts/a-successful-git-branching-model/">this 
 <p>Because of this, our current version of the code was on staging branch, and
 wanted to move over to the master branch. Merge into master branch, but avoid
 losing the branching information by using the --no-ff flag.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git merge --no-ff staging
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git merge --no-ff staging
+</code></pre></figure>
 <p>You can delete remote branches, with</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git push origin :staging
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git push origin :staging
+</code></pre></figure>
 <p>This removes the staging branch from origin (it&#39;s ok the commit and branching
 history was retained thanks to the --no-ff merge option).</p>
 
 <p>Then, as mentioned in <a href="http://nuclearsquid.com/writings/subtree-merging-and-you/">
 this article</a>, you add the original repo as a remote, adapt the command
 to pull from github. The -f fetches the commits...</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git remote add -f other-project git@git...
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git remote add -f other-project git@git...
+</code></pre></figure>
 <p>Then prepare the sub-tree merge. Then actually read the sub tree over, applying
 prefix (i.e. put it in a sub folder).</p>
 
 <p>Commit merge and push back up to GitHub.</p>
 
 <p><em>As an aside:</em> if you accidentally push a merge you can undo it with:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git revert -m 1 commit_hash
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git revert -m 1 commit_hash
+</code></pre></figure>
 <p>Now I want to move some stuff from one repo to another. But I don&#39;t want the
 whole lot!. So, this time I clone a brand new copy - and remove everything
 I don&#39;t want:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git clone...
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git clone...
 git filter-branch --subdirectory-filter dir_to_save -- -- all
-</code></pre></div>
+</code></pre></figure>
 <p>That removes everything except dir<em>to</em>save, resulting in a clean repo with only
 files and history from dir<em>to</em>save.</p>
 

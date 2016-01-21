@@ -7,6 +7,51 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Surviving - and thriving - during the transition to Drupal 8</title>
+                                <description>&lt;p&gt;This is my proposal for a session at the upcoming &lt;a href=&quot;http://drupalcamp.london/&quot;&gt;Drupal Camp in London&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Drupal is going through some big changes. And, so is the world. Now may be an unsettled period, but, times of disturbance can also be times of great opportunity.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I will share my experiences with Drupal and my research into how the web and society are transforming. This will include my personal manifesto and ideas about Drupal&amp;#39;s role in the future of the web.&lt;/p&gt;
+
+&lt;p&gt;The Drupal community helped me transform in many ways. I have had the opportunity to work on some of the biggest, flagship Drupal websites, and in teams of all sizes. I&amp;#39;ve grown and advanced as a developer and a human.&lt;/p&gt;
+
+&lt;p&gt;There have also been difficult times. These have included my own personal challenges, and stories I have heard from others. In my work at Ideation Networks I sit with clients as they weigh up the pros and cons of Drupal. Many organisations feel they have been burnt by Drupal. And, for some, PHP (and by association Drupal) is just not cool.&lt;/p&gt;
+
+&lt;p&gt;But, on the whole, these are exciting times for Drupal.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 is the biggest achievement of our community to date. The latest version has been completely rewritten to use modern object-oriented PHP. We refer to this process as &amp;quot;getting off the island&amp;quot;. It means dropping the &amp;quot;not invented here&amp;quot; philosophy, and embracing the wider PHP community.&lt;/p&gt;
+
+&lt;p&gt;Drupal as a product, a community, and a movement, is our co-creation.&lt;/p&gt;
+
+&lt;p&gt;We have all played a part in Drupal&amp;#39;s success: Dries and the core development team; the wider community of contributors; the attendees of Drupal camps and conferences; people who talk about Drupal; and the developers, agencies, companies and users that drive Drupal&amp;#39;s adoption.&lt;/p&gt;
+
+&lt;p&gt;In this session I will attempt to answer these questions:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What have we gained, and what have we sacrificed along the way?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;NGOs, charities, smaller organisations, and hobbyists made up Drupal&amp;#39;s traditional user-base. Have we shunned them as we&amp;#39;ve chased the enterprise client and big budget projects? Or, does Drupal 8 bring more of these users back into the fold?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Now that we&amp;#39;ve got this amazing platform, what do we do with it?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The Egyptian Revolution of 2011 is just one example of the web enabling real change in the world. How does Drupal fit into the bigger picture? How can we empower more positive change in the world?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Where do we go next? How can Drupal continue to transform and grow?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Everyone is talking about front-end frameworks, progressive decoupling, big pipe, micro-services. Innovation is more than just jumping on bandwagons. Considered from a deeper place, what do these trends tell us about the real changes that are happening? How does Drupal embrace these changes?&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m excited. There are some tensions to resolve, and some challenges ahead, but also big opportunities.&lt;/p&gt;
+
+&lt;p&gt;Join me for this session. Let&amp;#39;s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
+</description>
+                                <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
+                        </item>
+                
+                        <item>
                                 <title>In Summary...</title>
                                 <description>&lt;p&gt;Things are becoming clearer.
 I wrote a bit &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;last week&lt;/a&gt;
@@ -835,13 +880,13 @@ run in the same &amp;quot;world&amp;quot; as the GitHub page Javascript, and thu
 rewritings of the UI based off the pjax events fired there.
 To do this, we use a Content Script, &lt;code&gt;injector.js&lt;/code&gt; that just injects our
 script into page, via the DOM:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
 s.src = chrome.extension.getURL(&amp;#39;scripts/bootstrap.js&amp;#39;);
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(s);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;For &lt;a href=&quot;https://github.com/OpenMatt/GitDone/tree/v0.1&quot;&gt;v 0.1&lt;/a&gt; it was enough to
 inject the main JS, and do the rewriting in the &amp;quot;world&amp;quot; of the GitHub page.
 This is isolated from the Content Script that injects it. Unfortunately,
@@ -866,7 +911,7 @@ work in my tests).&lt;/p&gt;
 
 &lt;p&gt;For example, in the injected JS we can react to a jQuery event, and turn it
 into a DOM event:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
 // Add out listener to pjax events
 $(document).ready(function () {
   $(document).on(&amp;quot;pjax:end&amp;quot;, function (e) {
@@ -877,34 +922,34 @@ $(document).ready(function () {
     document.dispatchEvent(applyModsEvent);
   });
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And, in the injector Content Script listen for the event:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 window.addEventListener(&amp;quot;gitdone:apply&amp;quot;, applyModsEventHandler);
 function applyModsEventHandler(e) {
   console.log(&amp;#39;Apply modifications for &amp;#39; + e.detail.activeRoute);
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;The injected JS can&amp;#39;t communicate with the background script, but the content
 script can. In the content script you send a message event:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 chrome.runtime.sendMessage({msg: &amp;quot;init&amp;quot;});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Which you can react to in the background script:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
 chrome.runtime.onMessage.addListener(function (message, sender) {
 
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And, in the background script, send messages back to the Content Script:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
 chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Which the content script can receive:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 chrome.runtime.onMessage.addListener(function (message, sender) {
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;So that solves the issue of communicating across the three scripts. We have the
@@ -959,8 +1004,8 @@ want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&
 have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
 all you need to do is create a folder for your
 project and run the following command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
 &lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
 a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
@@ -970,14 +1015,14 @@ a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
 called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
 require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
 
 $app = new Stylex\Application();
 $app-&amp;gt;run();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
   &amp;lt;head&amp;gt;
     &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
   &amp;lt;/head&amp;gt;
@@ -987,21 +1032,21 @@ $app-&amp;gt;run();
     {% endblock %}
   &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
 
 &lt;h2&gt;Adding pages&lt;/h2&gt;
 
 &lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
 
 {% block content %}
   &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
 {% endblock %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
 a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
 the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
@@ -1009,67 +1054,67 @@ the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt
 &lt;h2&gt;Using data&lt;/h2&gt;
 
 &lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
   path: /
 - title: About Us
   path: /about
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
 Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
   {% for item in main_menu %}
     &amp;lt;li&amp;gt;
       &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
     &amp;lt;/li&amp;gt;
   {% endfor %}
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2&gt;Using sample content&lt;/h2&gt;
 
 &lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
 
 &lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
 title: My First Post
 excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: http://placebee.co.uk/640x480/1
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
 
 &lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
   &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
 {% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
   {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
 {% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
   &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
     {{ title }}
   &amp;lt;/h2&amp;gt;
   &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
   {{ content|raw }}
 &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2&gt; Debugging&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
@@ -1211,62 +1256,6 @@ what most people expect. I thought about this a lot, and what I came up with was
                                 <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
-                        </item>
-                
-                        <item>
-                                <title>DrupalCamp London 2015 - Intermediate Drupal Training</title>
-                                <description>&lt;p&gt;I&amp;#39;m excited to annouce that I&amp;#39;ll be providing training at the DrupalCamp to be
-held in London at the end of the month. There will be a training day at the
-camp and it coincides with the &lt;a href=&quot;https://www.drupal.org/learn-drupal&quot;&gt;Drupal Global Training Days&lt;/a&gt;
-initiative to be held on Friday 27th February. Last year I ran the beginner&amp;#39;s
-Drupal training, but this year I am going to be providing an intermediate
-level training.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2&gt;Course Outline&lt;/h2&gt;
-
-&lt;p&gt;It&amp;#39;s going to be intensive, so you&amp;#39;ll need a little bit of exposure to Drupal before (or be a very enthusiastic beginner) in order to get the best out of it.&lt;/p&gt;
-
-&lt;p&gt;In this training you will learn effective techniques for evaluating the various options Drupal gives you. We look at how to design novel solutions using Drupal&amp;#39;s building blocks, and look at some typical requirements and various ways they can be tackled with Drupal.&lt;/p&gt;
-
-&lt;p&gt;This one day training course will provide helpful advice, tips, tricks and best practices for Drupal professionals wanting to work more efficiently and create better websites by truly understanding what&amp;#39;s going on inside Drupal and the most popular contributed modules.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Architecting Drupal sites and understanding Drupal building blocks&lt;/li&gt;
-&lt;li&gt;Advanced configurations and knowing when to use them. Featuring: Views, Rules, Display Suite, Context, and Panels&lt;/li&gt;
-&lt;li&gt;Custom editorial and site management workflows&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Course format&lt;/h2&gt;
-
-&lt;p&gt;The material is presented using a combination of lecture/presentation style demonstrations and hands-on workshops.&lt;/p&gt;
-
-&lt;h2&gt;Who’s it for?&lt;/h2&gt;
-
-&lt;p&gt;The course is aimed at intermediate site builders (or beginners with a lot of enthusiasm) who want to understand the various options in order to make better architectural decisions when building sites with Drupal. We will not be covering the very basics of getting started with Drupal. You should have configured at least one Drupal site. You do not need advanced programming knowledge to benefit from this training as we will learn how to create advanced features without resorting to code. If you are a developer you will benefit by gaining a greater understanding of how to use Drupal’s configuration and site-building tools to your advantage.&lt;/p&gt;
-
-&lt;h2&gt;Who’s the trainer?&lt;/h2&gt;
-
-&lt;p&gt;Darren Mothersele has over 15 years experience developing for the web and created his first web development training programme in 2001 for the Institute for Lifelong Learning at The University of Sheffield. Darren has spent the last 7 years working full-time with Drupal. In this time he’s had the privilege of working on projects for clients such as Paul McCartney, MTV, Victoria &amp;amp; Albert Museum, Elsevier, Dixons, Santander, and consulted on EU-funded research projects P2P Next and Saracen.&lt;/p&gt;
-
-&lt;h2&gt;What shall I bring?&lt;/h2&gt;
-
-&lt;p&gt;To make the most out of the day you will require a laptop with a local development environment and a fresh copy of Drupal to work with. Sandbox sites on a cloud server can be provided, but you are encouraged to use a local copy of Drupal so you can continue working should there be any issues with Wifi, and you will be able to keep the demo site after the training.&lt;/p&gt;
-
-&lt;p&gt;Acquia provide a &lt;a href=&quot;https://www.acquia.com/products-services/dev-desktop&quot;&gt;Drupal Dev Desktop&lt;/a&gt; installer that is a quick and easy way to get up and running with a local Drupal site on your laptop.&lt;/p&gt;
-
-&lt;p&gt;If you already have a local development environment, like Vagrant, VirtualBox, MAMP, XAMP, or any other LAMP stack then this will work great as well. If you want to use a sandbox site on a cloud server then please let us know in advance.&lt;/p&gt;
-
-&lt;h2&gt;Details&lt;/h2&gt;
-
-&lt;p&gt;The training day costs &amp;pound;50 and lunch will be provided. The trainers have kindly volunteered their time and donated 50-100% of the fee for the day in support of DrupalCamp London.&lt;/p&gt;
-
-&lt;h2&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?llr=4pjm6bpab&amp;oeidk=a07ea558hp6fbb0d0de&quot;&gt;Get tickets here&lt;/a&gt;&lt;/h2&gt;
-</description>
-                                <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/02/05/drupal-training-drupalcamp-london/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/05/drupal-training-drupalcamp-london/</guid>
                         </item>
                 
         </channel>

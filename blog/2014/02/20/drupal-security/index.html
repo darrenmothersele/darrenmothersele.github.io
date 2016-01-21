@@ -257,9 +257,9 @@ be done in custom database queries by using `$query-&gt;addtag(&#39;node</em>acc
 <p>A big mistake I have seen a couple of times in custom code is to accidentally assign to the global user object. In one particular case a faulty <code>if</code> statement in a template
 file was giving every user who accessed a specific node admin access. This is
 possible the most dangerous typo I have ever seen in over 20 years of programming!</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">global $user;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">global $user;
 if ($user-&gt;uid = 1) { echo &#39;hello admin&#39;; }
-</code></pre></div>
+</code></pre></figure>
 <p>That&#39;s not the actual code, but a similar example. Obviously the programmer had meant
 to write <code>if ($user-&gt;uid == 1)</code>, which is a check for equality. There were many
 other errors in the code which made this situation much worse. My recommendations were:</p>

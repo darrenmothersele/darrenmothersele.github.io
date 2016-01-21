@@ -7,6 +7,51 @@
     <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Surviving - and thriving - during the transition to Drupal 8</title>
+        <description>&lt;p&gt;This is my proposal for a session at the upcoming &lt;a href=&quot;http://drupalcamp.london/&quot;&gt;Drupal Camp in London&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Drupal is going through some big changes. And, so is the world. Now may be an unsettled period, but, times of disturbance can also be times of great opportunity.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;I will share my experiences with Drupal and my research into how the web and society are transforming. This will include my personal manifesto and ideas about Drupal&amp;#39;s role in the future of the web.&lt;/p&gt;
+
+&lt;p&gt;The Drupal community helped me transform in many ways. I have had the opportunity to work on some of the biggest, flagship Drupal websites, and in teams of all sizes. I&amp;#39;ve grown and advanced as a developer and a human.&lt;/p&gt;
+
+&lt;p&gt;There have also been difficult times. These have included my own personal challenges, and stories I have heard from others. In my work at Ideation Networks I sit with clients as they weigh up the pros and cons of Drupal. Many organisations feel they have been burnt by Drupal. And, for some, PHP (and by association Drupal) is just not cool.&lt;/p&gt;
+
+&lt;p&gt;But, on the whole, these are exciting times for Drupal.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 is the biggest achievement of our community to date. The latest version has been completely rewritten to use modern object-oriented PHP. We refer to this process as &amp;quot;getting off the island&amp;quot;. It means dropping the &amp;quot;not invented here&amp;quot; philosophy, and embracing the wider PHP community.&lt;/p&gt;
+
+&lt;p&gt;Drupal as a product, a community, and a movement, is our co-creation.&lt;/p&gt;
+
+&lt;p&gt;We have all played a part in Drupal&amp;#39;s success: Dries and the core development team; the wider community of contributors; the attendees of Drupal camps and conferences; people who talk about Drupal; and the developers, agencies, companies and users that drive Drupal&amp;#39;s adoption.&lt;/p&gt;
+
+&lt;p&gt;In this session I will attempt to answer these questions:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What have we gained, and what have we sacrificed along the way?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;NGOs, charities, smaller organisations, and hobbyists made up Drupal&amp;#39;s traditional user-base. Have we shunned them as we&amp;#39;ve chased the enterprise client and big budget projects? Or, does Drupal 8 bring more of these users back into the fold?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Now that we&amp;#39;ve got this amazing platform, what do we do with it?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The Egyptian Revolution of 2011 is just one example of the web enabling real change in the world. How does Drupal fit into the bigger picture? How can we empower more positive change in the world?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Where do we go next? How can Drupal continue to transform and grow?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Everyone is talking about front-end frameworks, progressive decoupling, big pipe, micro-services. Innovation is more than just jumping on bandwagons. Considered from a deeper place, what do these trends tell us about the real changes that are happening? How does Drupal embrace these changes?&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m excited. There are some tensions to resolve, and some challenges ahead, but also big opportunities.&lt;/p&gt;
+
+&lt;p&gt;Join me for this session. Let&amp;#39;s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
+      </item>
+    
+      <item>
         <title>How to Survive Gentrification of the Drupal Community</title>
         <description>&lt;p&gt;We&amp;#39;re finally approaching the release of
 &lt;a href=&quot;https://www.drupal.org/node/2605142&quot;&gt;Drupal 8.0.0 on 19th Nov&lt;/a&gt;. The
@@ -362,8 +407,8 @@ want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&
 have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
 all you need to do is create a folder for your
 project and run the following command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
 &lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
 a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
@@ -373,14 +418,14 @@ a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
 called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
 require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
 
 $app = new Stylex\Application();
 $app-&amp;gt;run();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
   &amp;lt;head&amp;gt;
     &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
   &amp;lt;/head&amp;gt;
@@ -390,21 +435,21 @@ $app-&amp;gt;run();
     {% endblock %}
   &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
 
 &lt;h2&gt;Adding pages&lt;/h2&gt;
 
 &lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
 
 {% block content %}
   &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
 {% endblock %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
 a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
 the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
@@ -412,67 +457,67 @@ the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt
 &lt;h2&gt;Using data&lt;/h2&gt;
 
 &lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
   path: /
 - title: About Us
   path: /about
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
 Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
   {% for item in main_menu %}
     &amp;lt;li&amp;gt;
       &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
     &amp;lt;/li&amp;gt;
   {% endfor %}
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2&gt;Using sample content&lt;/h2&gt;
 
 &lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
 
 &lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
 title: My First Post
 excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: http://placebee.co.uk/640x480/1
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
 
 &lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
   &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
 {% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
   {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
 {% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
   &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
     {{ title }}
   &amp;lt;/h2&amp;gt;
   &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
   {{ content|raw }}
 &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2&gt; Debugging&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
@@ -995,14 +1040,14 @@ tools that involve code generation. For example, have you seen BDD using
 &lt;a href=&quot;http://behat.org/&quot;&gt;Behat&lt;/a&gt;? When define a test scenario in Behat it generates
 stub code for any unrecognised steps in your tests. For example, if you say
 &amp;quot;Given I am in a directory&amp;quot;, you would get the generated stub code:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/**
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/**
  * @Given /^I am in a directory &amp;quot;([^&amp;quot;]*)&amp;quot;$/
  */
 public function iAmInADirectory($argument1)
 {
   throw new PendingException();
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;I think the theme generator could do something similar for elements marked as
 requiring pre-processing in the template file. This needs some further
 thought and perhaps a couple of experiements.&lt;/p&gt;
@@ -1219,259 +1264,6 @@ signed up to the Meetup group so I hope I get in!&lt;/p&gt;
         <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2014/03/13/dennis-dropin-drupal-bdd/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/13/dennis-dropin-drupal-bdd/</guid>
-      </item>
-    
-      <item>
-        <title>Death of the Drupal Themer</title>
-        <description>&lt;p&gt;At Drupal Camp London 2013 &lt;a href=&quot;https://twitter.com/mcjim&quot;&gt;James Panton&lt;/a&gt; presented
-a methodology for implementing designs in Drupal without resorting to custom
-theme development. At this years Drupal Camp I pulled together two BoF
-(Birds of a Feather) sessions to continue the conversation and discuss
-prototyping designs, atomic design, and
-challenges of incorporating design activities into development workflow.&lt;/p&gt;
-
-&lt;p&gt;In recent posts I&amp;#39;ve talked about
-&lt;a href=&quot;http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/&quot;&gt;prototyping&lt;/a&gt;
-and a bit about
-&lt;a href=&quot;http://darrenmothersele.com/blog/2014/02/07/from-prototype-to-drupal-theme-2/&quot;&gt;using Jekyll for prototyping&lt;/a&gt;.
-In many ways this discussion is a continuation of those ideas, but also
-much more general in it&amp;#39;s scope, and more wide-reaching in it&amp;#39;s potential.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2&gt;Death of the Themer?&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve become interested in this area after recently facing challenges bringing
-design activities into the development workflow of an agile project. But first, for
-some context, let me explain where this all began...&lt;/p&gt;
-
-&lt;p&gt;Last year, Jim presented a methodology for implementing designs in Drupal
-without having to do any custom theme development.&lt;/p&gt;
-
-&lt;p&gt;First, Drupal is stripped of all it&amp;#39;s markup. Jim presented to a packed
-room at Drupal Camp London, and received a big whooping
-round of applause when he showed naked Drupal markup. Perhaps indicating the
-general level of frustration the developers/themers have from battling with
-Drupal markup. Also, there&amp;#39;s a general preconception that Drupal suffers very badly
-from &amp;quot;Divitis&amp;quot;, &amp;quot;Classitis&amp;quot; and &amp;quot;Span-mania&amp;quot;. This demo showed that this need
-not be the case.&lt;/p&gt;
-
-&lt;p&gt;Next, markup is added back in bit by bit to match the markup in the flat
-HTML/CSS design. This means that the eventual markup produced by Drupal should
-exactly (or almost!) match what the designer originally intended. The rendered
-HTML is therefore cured of it&amp;#39;s divitis (contains much less bloat),
-works with the CSS styles from the design with little or no tweaking, and
-can make use semantic HTML5 tags.&lt;/p&gt;
-
-&lt;p&gt;The tools used to reset Drupal default markup include:
-&lt;a href=&quot;https://drupal.org/project/semanticviews&quot;&gt;Semanic Views&lt;/a&gt;,
-&lt;a href=&quot;https://drupal.org/project/ds&quot;&gt;Display Suite&lt;/a&gt;,
-&lt;a href=&quot;https://drupal.org/project/panels&quot;&gt;Panels&lt;/a&gt;,
-and a fork of &lt;a href=&quot;https://drupal.org/project/semantic_panels&quot;&gt;Semantic Panels&lt;/a&gt;
-that I can&amp;#39;t seem to find a reference for.
-&lt;a href=&quot;https://drupal.org/project/fences&quot;&gt;Fences&lt;/a&gt; can also be useful, although
-functionality to override field wrappers is also part of Display Suite.&lt;/p&gt;
-
-&lt;p&gt;One of the main benefits of this approach is that it allows designers and
-Front-end developers to work freely, using whatever tools they want, and
-without consideration for any of Drupal&amp;#39;s (perceived) limitations. There have
-been lots of really cool developments in front-end, including CSS and HTML
-preprocessors, and the multitude of CSS and JS frameworks. This approach allows
-designers, front end developers, UXs, and IAs to take advantage of all of these tools
-when prototyping sites.&lt;/p&gt;
-
-&lt;p&gt;During the BoF sessions at this year&amp;#39;s Drupal Camp London a few limitations and
-disadvantages were discussed. This methodology moves the implementation of
-design from development (writing code) to configuration. This can become quite
-repetitive as each individual bit of output has to be configured with appropriate
-resets and the correct wrappers to build up the markup.&lt;/p&gt;
-
-&lt;h2&gt;Custom Plugins?&lt;/h2&gt;
-
-&lt;p&gt;In the BoF sessions I presented a methodology that I had been playing with,
-inspired by Death of a Themer, whereby designs are implemented
-in a similar way, without the need for a custom theme. Drupal markup is taken
-to a &amp;quot;full reset&amp;quot; state, and then just the required markup is introduced
-through various plugins.&lt;/p&gt;
-
-&lt;p&gt;This differs from the original methodology as it does not use configuration
-to add wrappers back in to fields, view modes, views, panels, etc. Instead,
-the markup is taken from the prototype (flat HTML and CSS) and copied into
-&amp;quot;plugins&amp;quot;. Various plugins are used:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Display Suite plugins to add markup to content/entities in various view modes.&lt;/li&gt;
-&lt;li&gt;Views styles to output list markup&lt;/li&gt;
-&lt;li&gt;Panel&amp;#39;s style plugins to add &amp;quot;box&amp;quot; markup, and,&lt;/li&gt;
-&lt;li&gt;Panel&amp;#39;s layout plugins to add layout markup.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The result is the same markup as the flat prototype, and the same result
-as with the original Death of a Themer approach, but with much less configuration
-required.&lt;/p&gt;
-
-&lt;p&gt;The real big win for this approach, is that the components of the design are
-reusable across various content types and sections of the site without
-having to repeatedly configure each occurrence.&lt;/p&gt;
-
-&lt;p&gt;Building out these plugins for every bit of a design might seem like over-kill
-and more work than is really necessary, but it is a much more scalable way of theming
-as you end up with design components that can be reused across the site.&lt;/p&gt;
-
-&lt;p&gt;This version of &amp;quot;Death of a Themer&amp;quot; means the Themer is replaced with a developer,
-rather than a site-builder, as the emphasis moves away from configuration towards
-writing custom plugins in code.  However, I think a lot of the grunt work can
-be automated, as I&amp;#39;ll explain in a bit.&lt;/p&gt;
-
-&lt;h2&gt;Atomic Design&lt;/h2&gt;
-
-&lt;p&gt;I saw parallels between this approach (of reusable theme components) and the
-emerging trend of &lt;a href=&quot;http://bradfrostweb.com/blog/post/atomic-web-design/&quot;&gt;atomic design&lt;/a&gt;.
-In fact, I think atomic design is more than
-just a current trend but a real leap forward in design methodology.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We&amp;#39;re not designing pages, we&amp;#39;re designing systems of components. &lt;br&gt;
- -- &lt;a href=&quot;http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/&quot;&gt;Stephen Hay&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;While producing an atomic design the designer is effectively breaking down the
-design into components. This is exactly what a good themer does when they take a design
-and decide how to implement it as a Drupal theme.&lt;/p&gt;
-
-&lt;h2&gt;From Design to Theme&lt;/h2&gt;
-
-&lt;p&gt;When a designer hands over a design (let&amp;#39;s assume static HTML and CSS) the
-developer (or themer, or site-builder) has to make several decisions about
-how this will be implemented.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Assumptions are made and things get &amp;quot;lost in translation&amp;quot;&lt;/li&gt;
-&lt;li&gt;Compromises are made due to limitations in implementation (i.e. limitations of the CMS, content model, etc)&lt;/li&gt;
-&lt;li&gt;Markup is augmented to add in extra properties like RDFa, etc&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Agile&lt;/h2&gt;
-
-&lt;p&gt;There shouldn&amp;#39;t really be a &amp;quot;handover&amp;quot; of design. The style guide / atomic design
-or static mockup that is the result of prototyping should evolve as the product
-evolves.&lt;/p&gt;
-
-&lt;p&gt;If something comes up that needs design we go back to the static HTML/CSS to
-implement it. If using atomic design, this means adding any required &amp;quot;atoms&amp;quot;,
-&amp;quot;molecules&amp;quot;, etc.&lt;/p&gt;
-
-&lt;p&gt;If changes have been made as a design is implemented these need to be flowed
-back upstream to the style guide so that further development of the design can
-happen, and then (some of) the conversion process is repeated to bring across
-new design elements into the theme/templates.&lt;/p&gt;
-
-&lt;p&gt;This process can be hard to manage and bring duplication of effort into
-the process.&lt;/p&gt;
-
-&lt;p&gt;If we can automate some of the steps involved in going from static HTML and CSS
-to Drupal theme then we can move towards a more agile, and robust design-dev
-workflow.&lt;/p&gt;
-
-&lt;h2&gt;Proof of concept&lt;/h2&gt;
-
-&lt;p&gt;Automatically generating a Drupal theme from either a style guide, atomic design,
-pattern library, static mockup, prototype (or whatever you want to call it!)
-might sound like a crazy idea, but I&amp;#39;ve got a working proof of concept.&lt;/p&gt;
-
-&lt;p&gt;I decided to start from just pure HTML/CSS. After experimenting with static
-site generators (HTML preprocessors), and CSS preprocessors like
-SASS, I decided that it was best to take pure HTML/CSS as the starting point.
-This works because every design eventually ends up as HTML/CSS. It&amp;#39;s the
-language of the web, so it&amp;#39;s unavoidable. It means designers can use
-any combination of tools they like, as long as they produce HTML/CSS as the
-end result.&lt;/p&gt;
-
-&lt;p&gt;As an example, I&amp;#39;m using Jekyll to compile the static mockup, and Compass
-to compile the CSS, but this could be any combination of tools, or just
-hand-crafted HTML and CSS.&lt;/p&gt;
-
-&lt;p&gt;The next stage is to add annotations into the source of the HTML to
-identify and describe each of the design &amp;quot;components&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;#39;t have any terminology yet. Drupal has it&amp;#39;s own jargon, as does
-SMACSS, Atomic Design, OOCSS, KSS, etc.  I&amp;#39;m not sure what to call
-things. I&amp;#39;m tending towards a combination of Atomic Design and Drupal
-terminology, but this will change.&lt;/p&gt;
-
-&lt;h2&gt;Annotations&lt;/h2&gt;
-
-&lt;p&gt;There has been some discussion in the design community about
-&lt;a href=&quot;https://www.youtube.com/watch?v=ROaXVB-bbek&quot;&gt;Pattern Library Annotations&lt;/a&gt;
-documentation, etc.&lt;/p&gt;
-
-&lt;p&gt;I want to use annotations in designs so that they can be automatically
-parsed and converted.&lt;/p&gt;
-
-&lt;p&gt;In this proof of concept, annotations in the HTML source code map directly to
-the appropriate Drupal templates and plugins.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m using the &lt;code&gt;x-&lt;/code&gt; prefix for my custom attributes. This mechanism is intended for use
-in vendor prefixing for vendor specific attributes. It distinguishes them nicely from
-&lt;code&gt;data-&lt;/code&gt; custom attributes, results in valid HTML5, and therefore I think it&amp;#39;s an
-acceptable abuse of the feature.&lt;/p&gt;
-
-&lt;p&gt;For example, annotate a certain part of the source code as being responsible
-for layout and it will be automatically compiled into a Panels Layout Plugin:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; &amp;lt;div x-drupal-type=&amp;quot;layout&amp;quot; x-drupal-name=&amp;quot;front_page&amp;quot; x-drupal-label=&amp;quot;Front page&amp;quot; x-drupal-no-wrap&amp;gt;
-   &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
-     &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
-     &amp;lt;div class=&amp;quot;span8&amp;quot; x-drupal-region x-drupal-name=&amp;quot;content&amp;quot;&amp;gt;
-     ...
-     &amp;lt;/div&amp;gt;
-     &amp;lt;div class=&amp;quot;span4&amp;quot; x-drupal-region x-drupal-name=&amp;quot;sidebar&amp;quot;&amp;gt;
-     ...
-     &amp;lt;/div&amp;gt;
-   &amp;lt;/div&amp;gt;
-  &amp;lt;/div&amp;gt;
- &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Another example, this is content shown in a particular preview style called &amp;quot;Box&amp;quot;.
-It maps to a Drupal view mode:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; &amp;lt;div class=&amp;quot;box&amp;quot; x-drupal-type=&amp;quot;display&amp;quot; x-drupal-name=&amp;quot;box_teaser&amp;quot; x-drupal-label=&amp;quot;Box teaser&amp;quot;&amp;gt;
-  &amp;lt;img src=&amp;quot;&amp;quot; width=&amp;quot;100&amp;quot; height=&amp;quot;100&amp;quot; alt=&amp;quot;&amp;quot; x-drupal-region x-drupal-name=&amp;quot;image&amp;quot; x-drupal-no-wrap&amp;gt;
-  &amp;lt;h6 x-drupal-region x-drupal-name=&amp;quot;title&amp;quot;&amp;gt;Easy to use&amp;lt;/h6&amp;gt;
-  &amp;lt;p x-drupal-region x-drupal-name=&amp;quot;summary&amp;quot; x-drupal-no-wrap&amp;gt;
-    To get started, you select the desired sample and base the entire website on it. It’s that simple!
-  &amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Many other attributes are identified and the system currently supports
-panels layouts, panels styles, views styles, display suite (view mode templates),
-menus (kinda), and image styles.&lt;/p&gt;
-
-&lt;p&gt;During the compilation process the various components are identified and
-the appropriate plugins are created. Any required static files, such as
-CSS and JS are copied across. Any content in the various regions is removed
-from the markup, and the generated plugins therefore only contain the markup
-to wrap the various parts of Drupal output.&lt;/p&gt;
-
-&lt;p&gt;You can see the (very!) rough proof-of-concept here:
-&lt;a href=&quot;https://github.com/darrenmothersele/hyde&quot;&gt;https://github.com/darrenmothersele/hyde&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You really shouldn&amp;#39;t try using this yet, but if you insist, install the
-modules on a Drupal site with Display Suite, Panels, etc,
-then enable both modules, and configure to point at the folder with your
-HTML/CSS design. Then click the &amp;quot;Sync&amp;quot; button to parse your design files and create
-and register the appropriate plugins based on the design.&lt;/p&gt;
-
-&lt;p&gt;Warning: You are probably better off waiting for the next version or some
-actual documentation!&lt;/p&gt;
-
-&lt;h2&gt;Rather see it in action?&lt;/h2&gt;
-
-&lt;p&gt;If you would rather see it in action, then come along to the next
-&lt;a href=&quot;http://www.meetup.com/drupal-show-and-tell/events/168733432/&quot;&gt;Drupal Show and Tell&lt;/a&gt;
-where I&amp;#39;ll be demonstrating the early version of the theme generator and asking for feedback!&lt;/p&gt;
-</description>
-        <pubDate>Wed, 12 Mar 2014 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2014/03/12/automatic-drupal-theme-generation/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/12/automatic-drupal-theme-generation/</guid>
       </item>
     
   </channel>

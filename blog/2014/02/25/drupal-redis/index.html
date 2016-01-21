@@ -52,27 +52,27 @@ are for Ubuntu 12.04.</p>
 
 <p>You need to install compilation tools as we&#39;ll be compiling the most recent
 version of Redis from source. TCL is also a requirement.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install build-essential
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install build-essential
 sudo apt-get install tcl8.5
-</code></pre></div>
+</code></pre></figure>
 <h3>Download and Compile Redis</h3>
 
 <p>First download the most recent stable Redis version. At the time of writing
 this is 2.8.6. Extract the source code and compile. Do this as root:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">wget http://download.redis.io/releases/redis-2.8.6.tar.gz
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wget http://download.redis.io/releases/redis-2.8.6.tar.gz
 cs redis-2.8.6
 make
-</code></pre></div>
+</code></pre></figure>
 <p>After compilation it&#39;s a good idea to run the tests. You&#39;ll fail at this point
 if you didn&#39;t install TCL.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">make test
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">make test
+</code></pre></figure>
 <p>Then install Redis on your system, again as root:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">make install
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">make install
+</code></pre></figure>
 <p>There is a script provided that will install the Redis service on Ubuntu.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo ./utils/install_server.sh
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo ./utils/install_server.sh
+</code></pre></figure>
 <h3>Drupal configuration</h3>
 
 <p>First download the Predis PHP library for Redis into your sites Libraries folder.
@@ -84,12 +84,12 @@ be installed in <code>sites/all/libraries/predis</code>.</p>
 <p>Add the connection details to <code>settings.php</code> and the configuration required to
 allow Drupal&#39;s cache system to use Redis, rather than the database.
 Append this to <code>settings.php</code>...</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$conf[&#39;redis_client_interface&#39;] = &#39;Predis&#39;;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$conf[&#39;redis_client_interface&#39;] = &#39;Predis&#39;;
 $conf[&#39;redis_client_host&#39;]      = &#39;127.0.0.1&#39;;
 $conf[&#39;lock_inc&#39;]               = &#39;sites/all/modules/contrib/redis/redis.lock.inc&#39;;
 $conf[&#39;cache_backends&#39;][]       = &#39;sites/all/modules/contrib/redis/redis.autoload.inc&#39;;
 $conf[&#39;cache_default_class&#39;]    = &#39;Redis_Cache&#39;;
-</code></pre></div>
+</code></pre></figure>
 <p>Note that in these settings I have installed the redis module in <code>sites/all/modules/contrib</code>.</p>
 
 <p>Now enjoy super fast Drupal!</p>
