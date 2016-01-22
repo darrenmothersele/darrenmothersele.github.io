@@ -7,6 +7,69 @@
     <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Session submission guidelines for conferences and camps</title>
+        <description>&lt;p&gt;Earlier this week I found out that the date for my nephew&amp;#39;s christening has changed. This means I can now make it to the Drupal Camp in London. I decided to propose a session so that I can share my recent insights, research, and learning.&lt;/p&gt;
+
+&lt;p&gt;The Drupal Camp London team have kept the session submission process minimal. This makes it easy for people to submit proposals, but it makes it unclear what the expectations are. What are they looking for in proposed sessions? How long are the sessions expected to be? What is the review process?&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;As I only found out I could attend at the last minute, I had no time to enquire about the process. So I made some assumptions based on my experiences of programming at previous camps. I also did some research into other Drupal camp and conference session submission processes.
+The &lt;a href=&quot;https://amsterdam2014.drupal.org/news/session-selection-drupalcon-inside-out.html&quot;&gt;Amsterdam Drupalcon site&lt;/a&gt; had this to say:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;There’s a lot of elements to session selection. We need to make sure that sessions are of value to a wide audience. The presenters must be engaging speakers who can interest a large crowd of attendees. We try as hard as we can to bring in new (to DrupalCon) speakers, and speakers who bring something from outside of the Drupal sphere. We want to make sure that the diversity of the community is represented and encouraged. And we need to work across track teams to ensure that one speaker is not speaking in several tracks; both for the sake of their stress and sanity in preparing the talks and to ensure that everyone who applied has the best chance of speaking. Finally, we need to make sure that sessions fit both the theme of the track and of the conference.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While the &lt;a href=&quot;https://events.drupal.org/barcelona2015/session-submission-live&quot;&gt;Barcelona Drupalcon&lt;/a&gt; offered the following 3 part session submission formula...&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Part 1: Describe a compelling topic that affects the reader directly, maybe a pain point, or juicy new technology. &lt;br&gt;
+Part 2: Allude to your solution, sharing just enough that the reader has a moment of &amp;quot;I need that ...how do I not know this already?&amp;quot; &lt;br&gt;
+Part 3: Explain how awesome the session will be because you are going to cover &amp;quot;XYZ&amp;quot; and make the reader&amp;#39;s life so much better.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;My session selection criteria&lt;/h2&gt;
+
+&lt;p&gt;I realised that I&amp;#39;ve done session selection myself many times. At every conference, camp, and symposium I attend I make my own selection of sessions to attend. The key to making the most out of attending a conference is to attend the right sessions.&lt;/p&gt;
+
+&lt;p&gt;At Resonate last year I set the intention of broadening my horizons, so intentionally selected session that I would not normally be exposed to. And sessions that offered something new. At DrupalCon in Amsterdam I set the intension of getting as deep into Drupal 8 as possible. So I attended every D8 session I could. Selecting the sessions I thought offered the most opportunity for learning. It helps if they are recognisable names, or people I&amp;#39;ve seen present before and know they do a good session.&lt;/p&gt;
+
+&lt;p&gt;When I think about my own criteria, I get it down to five things...&lt;/p&gt;
+
+&lt;h3&gt;Importance&lt;/h3&gt;
+
+&lt;p&gt;Is this definitely a session worth attending? Is the session topic cutting edge, or immediately relevant to the my situation. Is it ground breaking or offer a significant contribution to the field?&lt;/p&gt;
+
+&lt;h3&gt;Purpose&lt;/h3&gt;
+
+&lt;p&gt;Is this the right type of session? Is the purpose of the session clear? Does the description make it clear what the expected participant outcomes are? Does the description give enough specific information to make me want to know more?&lt;/p&gt;
+
+&lt;h3&gt;Motivation&lt;/h3&gt;
+
+&lt;p&gt;Is the session motivated by theory, practice, and/or research? Is this presented in a detailed, thorough, and comprehensible way?&lt;/p&gt;
+
+&lt;h3&gt;Substantiated&lt;/h3&gt;
+
+&lt;p&gt;Are all claims (practices, conclusions, proposals) well substantiated. Is the speaker presenting something they know about? Is the speaker well positioned to be giving the session.&lt;/p&gt;
+
+&lt;h3&gt;Clarity&lt;/h3&gt;
+
+&lt;p&gt;Is the session proposal clear? A well written session description indicates the presentation itself will be of professional quality.&lt;/p&gt;
+
+&lt;p&gt;I hope I managed to purvey these five points in my own
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/01/21/survive-and-thrive-drupal-8/&quot;&gt;session proposal&lt;/a&gt;. I&amp;#39;d love to hear from you if you have your own ideas about what makes a good Drupalcamp session. If you drop me a line or leave a comment I will take them into account while planning my own session.&lt;/p&gt;
+
+&lt;p&gt;Thanks,&lt;/p&gt;
+
+&lt;p&gt;Darren&lt;/p&gt;
+</description>
+        <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
+      </item>
+    
+      <item>
         <title>Surviving - and thriving - during the transition to Drupal 8</title>
         <description>&lt;p&gt;This is my proposal for a session at the upcoming &lt;a href=&quot;http://drupalcamp.london/&quot;&gt;Drupal Camp in London&lt;/a&gt;.&lt;/p&gt;
 
@@ -407,8 +470,8 @@ want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&
 have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
 all you need to do is create a folder for your
 project and run the following command:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
 &lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
 a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
@@ -418,14 +481,14 @@ a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
 called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
 require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
 
 $app = new Stylex\Application();
 $app-&amp;gt;run();
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
   &amp;lt;head&amp;gt;
     &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
   &amp;lt;/head&amp;gt;
@@ -435,21 +498,21 @@ $app-&amp;gt;run();
     {% endblock %}
   &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
 
 &lt;h2&gt;Adding pages&lt;/h2&gt;
 
 &lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
 
 {% block content %}
   &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
 {% endblock %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
 a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
 the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
@@ -457,67 +520,67 @@ the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt
 &lt;h2&gt;Using data&lt;/h2&gt;
 
 &lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
   path: /
 - title: About Us
   path: /about
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
 Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
   {% for item in main_menu %}
     &amp;lt;li&amp;gt;
       &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
     &amp;lt;/li&amp;gt;
   {% endfor %}
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Using sample content&lt;/h2&gt;
 
 &lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
 
 &lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
 title: My First Post
 excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: http://placebee.co.uk/640x480/1
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
 
 &lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
   &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
 {% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
   {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
 {% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
   &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
     {{ title }}
   &amp;lt;/h2&amp;gt;
   &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
   {{ content|raw }}
 &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2&gt; Debugging&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
@@ -1040,14 +1103,14 @@ tools that involve code generation. For example, have you seen BDD using
 &lt;a href=&quot;http://behat.org/&quot;&gt;Behat&lt;/a&gt;? When define a test scenario in Behat it generates
 stub code for any unrecognised steps in your tests. For example, if you say
 &amp;quot;Given I am in a directory&amp;quot;, you would get the generated stub code:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/**
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/**
  * @Given /^I am in a directory &amp;quot;([^&amp;quot;]*)&amp;quot;$/
  */
 public function iAmInADirectory($argument1)
 {
   throw new PendingException();
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I think the theme generator could do something similar for elements marked as
 requiring pre-processing in the template file. This needs some further
 thought and perhaps a couple of experiements.&lt;/p&gt;
@@ -1186,84 +1249,6 @@ Show and Tell...&lt;/p&gt;
         <pubDate>Fri, 28 Mar 2014 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2014/03/28/drupal-theme-generator-demo/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/28/drupal-theme-generator-demo/</guid>
-      </item>
-    
-      <item>
-        <title>Dennis Dropin - BDD and Drupal</title>
-        <description>&lt;p&gt;Last night I attended the
-&lt;a href=&quot;http://www.meetup.com/DennisDropIn-Drupal-OpenSource/events/169988982/&quot;&gt;Dennis Dropin&lt;/a&gt;
-event on Behavior-Driven Development (BDD) and Drupal. This is a new event on the
-Drupal London scene hosted by Dennis Publishing.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;I&amp;#39;ve been attending Drupal events in London since 2007, and there have been
-a wide variety of different types of events. There have been high points, such as
-&lt;a href=&quot;http://darrenmothersele.com/blog/2013/03/05/drupal-camp-london-review.html&quot;&gt;Drupal Camp London 2013&lt;/a&gt;,
-and low points (we had quite a lot of Microsoft sponsored events, but one in particular
-springs to mind where every presentation was also either paid for by Microsoft or
-about Microsoft technology - I&amp;#39;m not complaining - I have no right to complain
-as I&amp;#39;ve eaten enough of their free pizza over the years!). From
-Drupal Camps, Drupalcon, code sprints, workshops, trainings, and just regular pub meetups,
-London has a really exciting and active Drupal-scene.&lt;/p&gt;
-
-&lt;p&gt;Do we need another event?&lt;/p&gt;
-
-&lt;p&gt;Well, if this first event in the series is anything to go by I&amp;#39;d say
-definitely, yes please!
-The event took place in the boardroom at Dennis Publishing, so it was limited
-in capacity, about 25 people in attendance and the room was nicely packed.
-&lt;a href=&quot;https://twitter.com/PaulLomax&quot;&gt;Paul Lomax&lt;/a&gt;, the CTO, did say that they had plans
-for a bigger space so by July we could see this expand into a
-bigger event.&lt;/p&gt;
-
-&lt;p&gt;I can think of at least three reasons why this event was a success:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It really felt like this was Dennis Publishing wanting to give something back
-to the Drupal community. The two presentations were perfectly matched.
-The first to motivate reasons for adopting BDD, and the second to give practical examples.
-There was enough technical detail to be useful, without being overwhelming.&lt;/li&gt;
-&lt;li&gt;Dennis&amp;#39; approach to digital is exemplary, probably due to Paul&amp;#39;s leadership.
-It comes across that the whole team have the right balance of
-formal process and pragmatism.&lt;/li&gt;
-&lt;li&gt;It seemed like a lot of the Dennis team were in attendance and the experience
-level of attendees was high. This meant there were some interesting discussions
-around the presentations too.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The event had a natural split in two parts, which I&amp;#39;d never really considered
-before, but perhaps others planning events could take into account. Pairing a
-presentation of motivating business cases with a more technical presentation of
-practical examples and inner workings.&lt;/p&gt;
-
-&lt;p&gt;It was interesting to hear in the discussion alongside the presentations
-real world cases of how BDD had caught bugs that would have cost them
-ad revenue or resulted in financial losses if they had made it into production.&lt;/p&gt;
-
-&lt;p&gt;I asked about Continuous Deployment and if introducing testing and increased the frequency of deployment.
-Paul confirmed they had been able to do more regular deployments, but gave
-a good reason (one I hadn&amp;#39;t thought of) for why Continuous Deployment is not
-viable in a Drupal environment. His argument was that when you do a deployment
-you have to do a cache clear, and when you do a cache clear you clear the form
-cache. This kicks out any content editors that might be working on the site
-so deployments have to be limited and controlled. This lead to some discussion
-of a growl-like notification system with Node.js to push notifications to
-content editors logged in to the site.&lt;/p&gt;
-
-&lt;p&gt;Another really interesting idea was the integration of visual diff into
-the Behat tests. This allows them to do a pixel-by-pixel comparison between
-the staging environment and production to flag up any major changes. A great
-extra precaution to pick up any bugs that may cause blocks to disappear or
-display incorrectly.&lt;/p&gt;
-
-&lt;p&gt;The next event in the series,
-&lt;a href=&quot;http://www.meetup.com/DennisDropIn-Drupal-OpenSource/events/169953872/&quot;&gt;Responsive Web design: How Dennis are skinning this cat&lt;/a&gt; is scheduled for April 16th. Already 17 people
-signed up to the Meetup group so I hope I get in!&lt;/p&gt;
-</description>
-        <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2014/03/13/dennis-dropin-drupal-bdd/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/03/13/dennis-dropin-drupal-bdd/</guid>
       </item>
     
   </channel>

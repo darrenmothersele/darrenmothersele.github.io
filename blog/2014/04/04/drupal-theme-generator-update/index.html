@@ -133,14 +133,14 @@ tools that involve code generation. For example, have you seen BDD using
 <a href="http://behat.org/">Behat</a>? When define a test scenario in Behat it generates
 stub code for any unrecognised steps in your tests. For example, if you say
 &quot;Given I am in a directory&quot;, you would get the generated stub code:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/**
+<div class="highlight"><pre><code class="language-text" data-lang="text">/**
  * @Given /^I am in a directory &quot;([^&quot;]*)&quot;$/
  */
 public function iAmInADirectory($argument1)
 {
   throw new PendingException();
 }
-</code></pre></figure>
+</code></pre></div>
 <p>I think the theme generator could do something similar for elements marked as
 requiring pre-processing in the template file. This needs some further
 thought and perhaps a couple of experiements.</p>
