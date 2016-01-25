@@ -9,11 +9,26 @@
     
     <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
     
-    <link rel="stylesheet" href="/css/clean.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
 
-<header>
+
+<header id="header">
+    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
+    <h1>
+       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
+    </h1>
+
+<ul class="menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+
+</header>
+
+<!-- <header>
 
 <div class="top-nav">
 
@@ -27,8 +42,9 @@
 </div>
 <br clear="both">
 
-</header>
+</header> -->
 
+<div id="main">
 <div class="page">
 <div>
     <!-- <span class="text-white alt-font"></span> -->
@@ -40,13 +56,13 @@
   <div class="posts">
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2014/03/12/automatic-drupal-theme-generation/">Death of the Drupal Themer</a></h1>
-        <p class="lead">
-          <p>At Drupal Camp London 2013 <a href="https://twitter.com/mcjim">James Panton</a> presented
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2014/03/12/automatic-drupal-theme-generation/">Death of the Drupal Themer</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 12 Mar 2014</span></p>
+  </header>
+
+    <p class="lead"><p>At Drupal Camp London 2013 <a href="https://twitter.com/mcjim">James Panton</a> presented
 a methodology for implementing designs in Drupal without resorting to custom
 theme development. At this years Drupal Camp I pulled together two BoF
 (Birds of a Feather) sessions to continue the conversation and discuss
@@ -59,23 +75,18 @@ and a bit about
 <a href="http://darrenmothersele.com/blog/2014/02/07/from-prototype-to-drupal-theme-2/">using Jekyll for prototyping</a>.
 In many ways this discussion is a continuation of those ideas, but also
 much more general in it&#39;s scope, and more wide-reaching in it&#39;s potential.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 12 Mar 2014</span><br>
-        <a href="/blog/2014/03/12/automatic-drupal-theme-generation/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2014/03/12/automatic-drupal-theme-generation/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2014/03/05/drupal-camp-london-2014/">My Review of Drupal Camp London 2014</a></h1>
-        <p class="lead">
-          <p>Last weekend I was back at City University for the second
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2014/03/05/drupal-camp-london-2014/">My Review of Drupal Camp London 2014</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 05 Mar 2014</span></p>
+  </header>
+
+    <p class="lead"><p>Last weekend I was back at City University for the second
 Drupal Camp London. This year even bigger than the last, with over
 600 attendees!</p>
 
@@ -86,43 +97,33 @@ catching up with old friends and talking about the future of Drupal. I also
 ran two Bird of a Feather sessions on Atomic Design, Design Patterns,
 Death of the Themer, automated theme building, and general issues around
 bringing design into the development workflow, in particular for agile projects.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 05 Mar 2014</span><br>
-        <a href="/blog/2014/03/05/drupal-camp-london-2014/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2014/03/05/drupal-camp-london-2014/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2014/02/25/drupal-redis/">Drupal, Redis</a></h1>
-        <p class="lead">
-          <p>The easiest performance boost for any Drupal site is to install Redis.
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2014/02/25/drupal-redis/">Drupal, Redis</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 25 Feb 2014</span></p>
+  </header>
+
+    <p class="lead"><p>The easiest performance boost for any Drupal site is to install Redis.
 This is a key-value store that you can use as a cache to drastically cut
 down on the number of database calls Drupal is making. These instructions
 are for Ubuntu 12.04.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 25 Feb 2014</span><br>
-        <a href="/blog/2014/02/25/drupal-redis/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2014/02/25/drupal-redis/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2014/02/20/drupal-security/">Security, and Drupal</a></h1>
-        <p class="lead">
-          <p>Did you know I provide various infosec services, including security audits
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2014/02/20/drupal-security/">Security, and Drupal</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 20 Feb 2014</span></p>
+  </header>
+
+    <p class="lead"><p>Did you know I provide various infosec services, including security audits
 of code and infrastructure, penetration testing, etc, for Drupal websites?
 It&#39;s not a subject that has featured in my blogs before, but having recently
 done many site audits, including reviewing sites for security issues,
@@ -134,23 +135,18 @@ and this got me thinking. Although I&#39;ve touched on security issues in previo
 posts (for example,
 <a href="http://darrenmothersele.com/blog/2013/12/19/drupal-common-mistakes/">common Drupal mistakes</a>),
 It&#39;s about time I posted something more comprehensive on the issue.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 20 Feb 2014</span><br>
-        <a href="/blog/2014/02/20/drupal-security/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2014/02/20/drupal-security/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2014/02/07/from-prototype-to-drupal-theme-2/">From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!)</a></h1>
-        <p class="lead">
-          <p>In this series of posts I&#39;m talking about my website prototyping processes.
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2014/02/07/from-prototype-to-drupal-theme-2/">From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!)</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 07 Feb 2014</span></p>
+  </header>
+
+    <p class="lead"><p>In this series of posts I&#39;m talking about my website prototyping processes.
 Starting from early throwaway draft prototypes, through to clean, efficiently
 coded, designs that can be easily translated into Drupal websites.</p>
 
@@ -158,23 +154,18 @@ coded, designs that can be easily translated into Drupal websites.</p>
 explained why I prototype, and introduced some useful tools for website prototyping.
 In this post I combine all the tools previously mentioned into one simple
 prototype tool.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 07 Feb 2014</span><br>
-        <a href="/blog/2014/02/07/from-prototype-to-drupal-theme-2/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2014/02/07/from-prototype-to-drupal-theme-2/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2014/02/06/from-prototype-to-drupal-theme/">From Prototype to Drupal (part 1)</a></h1>
-        <p class="lead">
-          <p>The wrong way to build a Drupal site is to jump straight into Drupal and
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2014/02/06/from-prototype-to-drupal-theme/">From Prototype to Drupal (part 1)</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 06 Feb 2014</span></p>
+  </header>
+
+    <p class="lead"><p>The wrong way to build a Drupal site is to jump straight into Drupal and
 start building out content types. I&#39;ve heard a lot of people praise Drupal
 for it&#39;s usefulness in prototyping, and I&#39;ve been guilty of doing this myself in
 the past, but this is not a good idea for many reasons.</p>
@@ -183,96 +174,71 @@ the past, but this is not a good idea for many reasons.</p>
 tools to help with prototyping.
 In future parts will look at the process of building a prototype in a way
 that supports effortless translation into a Drupal website.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 06 Feb 2014</span><br>
-        <a href="/blog/2014/02/06/from-prototype-to-drupal-theme/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2014/02/06/from-prototype-to-drupal-theme/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2013/12/19/drupal-common-mistakes/">Some Common Drupal Mistakes</a></h1>
-        <p class="lead">
-          <p>Over the past few months I&#39;ve had the privilege of being asked to audit
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2013/12/19/drupal-common-mistakes/">Some Common Drupal Mistakes</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 19 Dec 2013</span></p>
+  </header>
+
+    <p class="lead"><p>Over the past few months I&#39;ve had the privilege of being asked to audit
 several Drupal websites, both large, small, and very large. This is a
 collection of common mistakes I&#39;ve spotted. This is by no means an
 extensive check list, and you may disagree with some of my conclusions,
 but I&#39;m posting this here in the hope that it is of help to the community.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 19 Dec 2013</span><br>
-        <a href="/blog/2013/12/19/drupal-common-mistakes/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2013/12/19/drupal-common-mistakes/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/">How to Be a Cloud Survivalist (part 3)</a></h1>
-        <p class="lead">
-          <p>This is the third post in a series where I document the process of
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/">How to Be a Cloud Survivalist (part 3)</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 16 Dec 2013</span></p>
+  </header>
+
+    <p class="lead"><p>This is the third post in a series where I document the process of
 implementing your own suite of cloud services. I covered the requirements
 in the <a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">previous post</a>,
 and in this instalment I take a deeper look at what it takes to run your own email service.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 16 Dec 2013</span><br>
-        <a href="/blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">How to Be a Cloud Survivalist (part 2)</a></h1>
-        <p class="lead">
-          <p>This is the second in a series of posts where I document the process of
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">How to Be a Cloud Survivalist (part 2)</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 12 Dec 2013</span></p>
+  </header>
+
+    <p class="lead"><p>This is the second in a series of posts where I document the process of
 implementing your own suite of cloud services.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 12 Dec 2013</span><br>
-        <a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
-  <div class="blog-snippet-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h1 class="post-title-sm"><a href="/blog/2013/12/11/how-to-be-a-cloud-survivalist/">How to Be a Cloud Survivalist (part 1)</a></h1>
-        <p class="lead">
-          <p>This is the first in a series of posts where I document the process of
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2013/12/11/how-to-be-a-cloud-survivalist/">How to Be a Cloud Survivalist (part 1)</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 11 Dec 2013</span></p>
+  </header>
+
+    <p class="lead"><p>This is the first in a series of posts where I document the process of
 implementing your own suite of cloud services.</p>
 
 <p>With a little bit of effort you can quite easily set-up your own suite of
 cloud services to rival the likes of Google. If you&#39;re concerned about
 communication surveillance programs, selling of your personal data to
 advertisers, security breaches, or maybe you just want to own and control your own data, there are some great options out there.</p>
-
-        </p>
-        <i class="icon-calendar"></i><span class="alt-font">Published 11 Dec 2013</span><br>
-        <a href="/blog/2013/12/11/how-to-be-a-cloud-survivalist/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a>
-      </div>
-    </div><!--end of row-->
-  </div><!--end of container-->
-</div><!--end of blog-snippet-3-->
+</p>
+    <p><a href="/blog/2013/12/11/how-to-be-a-cloud-survivalist/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
 
 
 </div>
@@ -335,9 +301,51 @@ advertisers, security breaches, or maybe you just want to own and control your o
 
 
 
+
+
+
+
+
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+    <h4>Updates...</h4>
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+
+
+
 </div>
 
-<footer>
+
+
+</div>
+</div>
+
+<!-- <footer>
 
 
 
@@ -411,6 +419,28 @@ advertisers, security breaches, or maybe you just want to own and control your o
 </p>
 </div>
 
+</footer> -->
+
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://twitter.com/mothersele" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="https://github.com/darrenmothersele" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="#" class="icon fa-envelope-o"><span class="label">
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script></span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>
+        &copy;2007-2016 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
+    </ul>
 </footer>
 
 </body>
