@@ -190,8 +190,8 @@ behalf of this domain. You will need to create this (as a TXT record) in the
 DNS for every domain name you will be hosting email for.
 The SPF record should look like this, but with x.x.x.x replaced with your
 server IP address:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&quot;v=spf1 ip4:x.x.x.x -all&quot;
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&quot;v=spf1 ip4:x.x.x.x -all&quot;
+</code></pre></figure>
 <p>There are also DNS records that need to be created for DKIM but I&#39;ll explain what
 this is all about in a bit, as you need to configure the mail server first.</p>
 
@@ -205,14 +205,14 @@ and update all packages with <em>ap-get update ; apt-get upgrade</em>.</p>
 
 <p>Now on to configure iRedMail. You&#39;ll need sudo access for this. So, as the root
 user, download and extract the iRedMail package:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd /root
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /root
 wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
 tar xjf iRedMail-0.8.6.tar.bz2
-</code></pre></div>
+</code></pre></figure>
 <p>Then change into the iRedMail directory and execute the installer:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd iRedMail-0.8.6/
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd iRedMail-0.8.6/
 bash iRedMail.sh
-</code></pre></div>
+</code></pre></figure>
 <p>You should then be presented with this welcome screen. Please note that I
 took these screenshots last week and so they are of v0.8.5.</p>
 
@@ -284,17 +284,17 @@ certificate signing request. I need all three of these files, so I upload them
 to the server and move them to the appropriate places. Put the private key in
 <code>/etc/ssl/private</code>, and the other two files in <code>/etc/ssl/certs</code>
 so you have something that looks like this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/etc/ssl/private/example.com.key
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/etc/ssl/private/example.com.key
 /etc/ssl/certs/example.com.crt
 /etc/ssl/certs/example.com.ca.crt
-</code></pre></div>
+</code></pre></figure>
 <p>Now in your Apache configuration (<code>/etc/apache2/sites-enabled/default-ssl</code>)
 find the appropriate place for SSL keys, remove the references to self-signed
 certificates, and enter location of your SSL certs and keys:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">SSLCertificateFile /etc/ssl/certs/example.com.crt
+<figure class="highlight"><pre><code class="language-text" data-lang="text">SSLCertificateFile /etc/ssl/certs/example.com.crt
 SSLCertificateKeyFile /etc/ssl/private/example.com.key
 SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
-</code></pre></div>
+</code></pre></figure>
 <p>Once you restart Apache that should remove the browser warnings. We also need to
 update the certificates in use by dovecot and postfix to prevent SSL error
 messages when sending and receiving email via other apps.</p>
@@ -312,18 +312,18 @@ in this order:</p>
 <p>For incoming email
 (IMAP/POP) update the dovecot configuration in <code>/etc/dovecot/dovecot.conf</code>
 and update the following to point at your cert and key files:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ssl_key_file = /etc/ssl/private/example.com.key
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ssl_key_file = /etc/ssl/private/example.com.key
 ssl_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre></div>
+</code></pre></figure>
 <p>For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">smtpd_tls_key_file = /etc/ssl/private/example.com.key
+<figure class="highlight"><pre><code class="language-text" data-lang="text">smtpd_tls_key_file = /etc/ssl/private/example.com.key
 ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre></div>
+</code></pre></figure>
 <p>Now restart the services so the changes take effect.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo service apache2 restart
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo service apache2 restart
 sudo service postfix restart
 sudo service dovecot restart
-</code></pre></div>
+</code></pre></figure>
 <p>You should now be able to connect to iRedAdmin and Roundcube via the web
 interface without getting SSL error messages.</p>
 
@@ -335,22 +335,22 @@ and that you wont get flagged as a spammer or unknown mail server.</p>
 
 <p>DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
 a list of the keys.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">amavisd-new showkeys
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">amavisd-new showkeys
+</code></pre></figure>
 <p>You will see something like the following output:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">; key#1, domain example.com, /var/lib/dkim/example.com.pem
+<figure class="highlight"><pre><code class="language-text" data-lang="text">; key#1, domain example.com, /var/lib/dkim/example.com.pem
 dkim._domainkey.example.com. 3600 TXT (
   &quot;v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
   ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB&quot;)
-</code></pre></div>
+</code></pre></figure>
 <p>In the DNS settings for your domain, create a new TXT record for dkim._domainkey
 and enter the whole string that is shown between () in the output of the showkeys
 command.  Once you have created the DNS record, you will need to wait a while for
 the change to propagate, then you can test your keys are working correctly with
 the testkeys command:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"># amavisd-new testkeys
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># amavisd-new testkeys
 TESTING#1: dkim._domainkey.example.com    =&gt; pass
-</code></pre></div>
+</code></pre></figure>
 <p>Once you have verified that the key is working here, you can use a verification
 service to test deliverability of your email. I found the port25 service useful,
 all you have to do is send an email to check-auth@verifier.port25.com and you will
@@ -382,23 +382,23 @@ to the DKIM configuration.</p>
 
 <p>Login as root to the server, change into the folder where DKIM keys are stored
 and generate a new key for the domain:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd /var/lib/dkim
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /var/lib/dkim
 amavisd-new genrsa test.com.pem
 chmod 0644 test.com.pem
-</code></pre></div>
+</code></pre></figure>
 <p>Now edit the confuration file at <code>/etc/amavis/conf.d/50-user</code>
 to include the new key. Find the section in the configuration file where
 keys are declared and add:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">dkim_key(&quot;test.com&quot;, &quot;dkim&quot;, &quot;/var/lib/dkim/test.com.pem&quot;);
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dkim_key(&quot;test.com&quot;, &quot;dkim&quot;, &quot;/var/lib/dkim/test.com.pem&quot;);
+</code></pre></figure>
 <p>Then find where the local domains are defined (in the same config file) and add your new domain:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@local_domains_maps = [&#39;mx.example.com&#39;, &#39;example.com&#39;, &#39;test.com&#39;];
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@local_domains_maps = [&#39;mx.example.com&#39;, &#39;example.com&#39;, &#39;test.com&#39;];
+</code></pre></figure>
 <p>Restart <code>amavis</code> and show the new list of keys. You should see your
 new key listed. Copy the TXT record and add it to the DNS for the new domain:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/etc/init.d/amavis restart
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/etc/init.d/amavis restart
 amavisd-new showkeys
-</code></pre></div>
+</code></pre></figure>
 <p>Also remember to add the SPF record to the new domain, and set the MX records
 so they point at mx.example.com.</p>
 
@@ -415,8 +415,8 @@ to get through.</p>
 
 <p>I had comment out the following line from <code>/etc/postfix/helo_access.pcre</code>
 to allow these messages through:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/\.local$/                  REJECT Go away, bad guy (.local).
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/\.local$/                  REJECT Go away, bad guy (.local).
+</code></pre></figure>
 <h3>Syncing</h3>
 
 <p>Now I&#39;ve got email working, and thanks to IMAP, I have my email accessible

@@ -136,13 +136,13 @@ run in the same &quot;world&quot; as the GitHub page Javascript, and thus do our
 rewritings of the UI based off the pjax events fired there.
 To do this, we use a Content Script, <code>injector.js</code> that just injects our
 script into page, via the DOM:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var s = document.createElement(&#39;script&#39;);
+<figure class="highlight"><pre><code class="language-text" data-lang="text">var s = document.createElement(&#39;script&#39;);
 s.src = chrome.extension.getURL(&#39;scripts/bootstrap.js&#39;);
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(s);
-</code></pre></div>
+</code></pre></figure>
 <p>For <a href="https://github.com/OpenMatt/GitDone/tree/v0.1">v 0.1</a> it was enough to
 inject the main JS, and do the rewriting in the &quot;world&quot; of the GitHub page.
 This is isolated from the Content Script that injects it. Unfortunately,
@@ -167,7 +167,7 @@ work in my tests).</p>
 
 <p>For example, in the injected JS we can react to a jQuery event, and turn it
 into a DOM event:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// in injected JS
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// in injected JS
 // Add out listener to pjax events
 $(document).ready(function () {
   $(document).on(&quot;pjax:end&quot;, function (e) {
@@ -178,34 +178,34 @@ $(document).ready(function () {
     document.dispatchEvent(applyModsEvent);
   });
 });
-</code></pre></div>
+</code></pre></figure>
 <p>And, in the injector Content Script listen for the event:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// in content script
 window.addEventListener(&quot;gitdone:apply&quot;, applyModsEventHandler);
 function applyModsEventHandler(e) {
   console.log(&#39;Apply modifications for &#39; + e.detail.activeRoute);
 }
-</code></pre></div>
+</code></pre></figure>
 <p>The injected JS can&#39;t communicate with the background script, but the content
 script can. In the content script you send a message event:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// in content script
 chrome.runtime.sendMessage({msg: &quot;init&quot;});
-</code></pre></div>
+</code></pre></figure>
 <p>Which you can react to in the background script:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
 chrome.runtime.onMessage.addListener(function (message, sender) {
 
 });
-</code></pre></div>
+</code></pre></figure>
 <p>And, in the background script, send messages back to the Content Script:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
 chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
-</code></pre></div>
+</code></pre></figure>
 <p>Which the content script can receive:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// in content script
 chrome.runtime.onMessage.addListener(function (message, sender) {
 }
-</code></pre></div>
+</code></pre></figure>
 <h2>Conclusion</h2>
 
 <p>So that solves the issue of communicating across the three scripts. We have the

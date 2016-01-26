@@ -7,13 +7,40 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Buckminster Fuller, in Plain English</title>
+        <description>&lt;p&gt;I &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/07/12/happy-birthday-bucky/&quot;&gt;wrote a blog post&lt;/a&gt;
+to commemorate Buckminster Fuller&amp;#39;s birthday back in July,
+and have now returned to his works. I am watching again
+his lecture series &amp;quot;Everything I Know&amp;quot;.
+There are many important messages and deep lessons in Bucky&amp;#39;s lectures that
+still apply today. I am only
+starting to scratch the surface.&lt;/p&gt;
+
+&lt;p&gt;As I watch, and follow the transcripts, I am
+working on my own set of notes.
+I hope by rewriting Bucky&amp;#39;s words in plain english
+I can help make these lessons accessible to more people.&lt;/p&gt;
+
+&lt;p&gt;You can read the
+&lt;a href=&quot;https://medium.com/@mothersele/everything-i-know-by-buckminster-fuller-9dc49c643588&quot;&gt;first installment on Medium&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I using the &lt;a href=&quot;https://archive.org/details/buckminsterfuller&quot;&gt;video series uploaded to archive.org&lt;/a&gt;
+and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
+as the source of these works.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
+      </item>
+    
+      <item>
         <title>The clouds made me do it...</title>
         <description>&lt;p&gt;I wrote &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;my first ever poem&lt;/a&gt;.
 It&amp;#39;s about machine learning algorithms.
 You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
 Let me know what you think.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
       </item>
@@ -955,13 +982,13 @@ run in the same &amp;quot;world&amp;quot; as the GitHub page Javascript, and thu
 rewritings of the UI based off the pjax events fired there.
 To do this, we use a Content Script, &lt;code&gt;injector.js&lt;/code&gt; that just injects our
 script into page, via the DOM:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
 s.src = chrome.extension.getURL(&amp;#39;scripts/bootstrap.js&amp;#39;);
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(s);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;For &lt;a href=&quot;https://github.com/OpenMatt/GitDone/tree/v0.1&quot;&gt;v 0.1&lt;/a&gt; it was enough to
 inject the main JS, and do the rewriting in the &amp;quot;world&amp;quot; of the GitHub page.
 This is isolated from the Content Script that injects it. Unfortunately,
@@ -986,7 +1013,7 @@ work in my tests).&lt;/p&gt;
 
 &lt;p&gt;For example, in the injected JS we can react to a jQuery event, and turn it
 into a DOM event:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
 // Add out listener to pjax events
 $(document).ready(function () {
   $(document).on(&amp;quot;pjax:end&amp;quot;, function (e) {
@@ -997,34 +1024,34 @@ $(document).ready(function () {
     document.dispatchEvent(applyModsEvent);
   });
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And, in the injector Content Script listen for the event:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 window.addEventListener(&amp;quot;gitdone:apply&amp;quot;, applyModsEventHandler);
 function applyModsEventHandler(e) {
   console.log(&amp;#39;Apply modifications for &amp;#39; + e.detail.activeRoute);
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;The injected JS can&amp;#39;t communicate with the background script, but the content
 script can. In the content script you send a message event:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 chrome.runtime.sendMessage({msg: &amp;quot;init&amp;quot;});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Which you can react to in the background script:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
 chrome.runtime.onMessage.addListener(function (message, sender) {
 
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And, in the background script, send messages back to the Content Script:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
 chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Which the content script can receive:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 chrome.runtime.onMessage.addListener(function (message, sender) {
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;So that solves the issue of communicating across the three scripts. We have the
@@ -1043,73 +1070,6 @@ will develop into something useful too.&lt;/p&gt;
         <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/</guid>
-      </item>
-    
-      <item>
-        <title>Happy Birthday Bucky! How do we celebrate Buckminster Fuller?</title>
-        <description>&lt;p&gt;Buckminster Fuller (aka Bucky) was born on this day (12th July) in 1895. He was one of the most significant thinkers of the 20th century, the developer of the geodesic dome, and the first person to live consciously as a global citizen.&lt;/p&gt;
-
-&lt;p&gt;But, despite the importance of his ideas, he&amp;#39;s relatively obscure and largely unknown by the majority of the population.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2&gt;Guinea Pig B&lt;/h2&gt;
-
-&lt;p&gt;Bucky lived his life as &amp;quot;an experiment, to find what a single individual can contribute to changing the world and benefiting all humanity.&amp;quot; His 56 year experiment started in 1927 when contemplating suicide during a bout of severe depression. It was after the death of his first daughter, and the failure of the company he started, he was an unemployed and became an alcoholic. On the brink of suicide he had an epiphany.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;“I could commit an exclusively ego-suicide – a personal ego ‘throwaway’.”
-- Buckminster Fuller&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;From this point onwards he lived his life as an experiment, and a demonstration of what an individual can do to help change the world.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;I vowed to keep myself alive, but only if I would never use me again for just me. I vowed to do my own thinking, instead of trying to accommodate everyone else&amp;#39;s opinion, credos and theories. I vowed to apply my own inventory of experiences to the solving of problems that affect everyone aboard planet Earth.&amp;quot;
-- Buckminster Fuller&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Bucky&amp;#39;s life (experiment) provides a framework for each and every one of us to overcome ego. Instead of feeling like a failure, we learn to understand negative events and use them to grow.&lt;/p&gt;
-
-&lt;h2&gt;Cooperation&lt;/h2&gt;
-
-&lt;p&gt;His work really resonates with me because he believed in the power of
-cooperation. He sums up this goal in the introduction to &amp;quot;Operating Manual for Spaceship Earth&amp;quot;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;To make the world work for 100 percent of humanity in the shortest possible time through spontaneous cooperation without ecological damage or disadvantage to anyone.&amp;quot;
-- Buckminster Fuller&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;He didn&amp;#39;t believe in the idea of scare resources. He was convinced there was enough to go around for all, and that there was no energy crisis, food crisis or environmental crisis, only a &amp;quot;crisis of ignorance.&amp;quot;&lt;/p&gt;
-
-&lt;p&gt;So strong was his conviction that he lived his life on the brink of bankruptcy. He never did anything just for the money, but went ahead with complete faith that the universe would provide for him and his family. He found that when he was on the right track, this would always be the case.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;It is now highly feasible to take care of everybody on Earth at a higher standard of living than any have ever known. It no longer has to be you or me. Selfishness is unnecessary. War is obsolete. It is a mater of converting the high technology from weaponry to livingry.&amp;quot;
-- Buckminster Fuller&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And one final, powerful quote from Bucky...&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;“Never forget that you are one of a kind. Never forget that if there weren&amp;#39;t any need for you in all your uniqueness to be on this earth, you wouldn&amp;#39;t be here in the first place. And never forget, no matter how overwhelming life&amp;#39;s challenges and problems seem to be, that one person can make a difference in the world. In fact, it is always because of one person that all the changes that matter in the world come about. So be that one person. ”
-- Buckminster Fuller&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/be-the-change2.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;Be the change&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;Thanks Bucky!&lt;/h2&gt;
-
-&lt;p&gt;I commemorate Bucky&amp;#39;s birthday today by starting work on my own &amp;quot;Chronofile&amp;quot;.
-Bucky&amp;#39;s &lt;a href=&quot;https://en.wikipedia.org/wiki/Dymaxion_Chronofile&quot;&gt;Dymaxion Chronofile&lt;/a&gt; was the way in which
-he documented his life.
-This follows on very nicely from the discussions I was having yesterday at the &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;Indie Web Camp&lt;/a&gt;
-but that&amp;#39;s a story for another day...&lt;/p&gt;
-</description>
-        <pubDate>Sun, 12 Jul 2015 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</guid>
       </item>
     
   </channel>

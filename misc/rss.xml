@@ -7,13 +7,40 @@
                 <atom:link href="http://www.darrenmothersele.com/misc/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Buckminster Fuller, in Plain English</title>
+                                <description>&lt;p&gt;I &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/07/12/happy-birthday-bucky/&quot;&gt;wrote a blog post&lt;/a&gt;
+to commemorate Buckminster Fuller&amp;#39;s birthday back in July,
+and have now returned to his works. I am watching again
+his lecture series &amp;quot;Everything I Know&amp;quot;.
+There are many important messages and deep lessons in Bucky&amp;#39;s lectures that
+still apply today. I am only
+starting to scratch the surface.&lt;/p&gt;
+
+&lt;p&gt;As I watch, and follow the transcripts, I am
+working on my own set of notes.
+I hope by rewriting Bucky&amp;#39;s words in plain english
+I can help make these lessons accessible to more people.&lt;/p&gt;
+
+&lt;p&gt;You can read the
+&lt;a href=&quot;https://medium.com/@mothersele/everything-i-know-by-buckminster-fuller-9dc49c643588&quot;&gt;first installment on Medium&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I using the &lt;a href=&quot;https://archive.org/details/buckminsterfuller&quot;&gt;video series uploaded to archive.org&lt;/a&gt;
+and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
+as the source of these works.&lt;/p&gt;
+</description>
+                                <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
+                        </item>
+                
+                        <item>
                                 <title>The clouds made me do it...</title>
                                 <description>&lt;p&gt;I wrote &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;my first ever poem&lt;/a&gt;.
 It&amp;#39;s about machine learning algorithms.
 You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
 Let me know what you think.&lt;/p&gt;
 </description>
-                                <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+                                <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
                         </item>
@@ -222,8 +249,8 @@ behalf of this domain. You will need to create this (as a TXT record) in the
 DNS for every domain name you will be hosting email for.
 The SPF record should look like this, but with x.x.x.x replaced with your
 server IP address:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;v=spf1 ip4:x.x.x.x -all&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;v=spf1 ip4:x.x.x.x -all&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;There are also DNS records that need to be created for DKIM but I&amp;#39;ll explain what
 this is all about in a bit, as you need to configure the mail server first.&lt;/p&gt;
 
@@ -237,14 +264,14 @@ and update all packages with &lt;em&gt;ap-get update ; apt-get upgrade&lt;/em&gt
 
 &lt;p&gt;Now on to configure iRedMail. You&amp;#39;ll need sudo access for this. So, as the root
 user, download and extract the iRedMail package:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /root
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /root
 wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
 tar xjf iRedMail-0.8.6.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Then change into the iRedMail directory and execute the installer:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd iRedMail-0.8.6/
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd iRedMail-0.8.6/
 bash iRedMail.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You should then be presented with this welcome screen. Please note that I
 took these screenshots last week and so they are of v0.8.5.&lt;/p&gt;
 
@@ -316,17 +343,17 @@ certificate signing request. I need all three of these files, so I upload them
 to the server and move them to the appropriate places. Put the private key in
 &lt;code&gt;/etc/ssl/private&lt;/code&gt;, and the other two files in &lt;code&gt;/etc/ssl/certs&lt;/code&gt;
 so you have something that looks like this:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/ssl/private/example.com.key
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/ssl/private/example.com.key
 /etc/ssl/certs/example.com.crt
 /etc/ssl/certs/example.com.ca.crt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now in your Apache configuration (&lt;code&gt;/etc/apache2/sites-enabled/default-ssl&lt;/code&gt;)
 find the appropriate place for SSL keys, remove the references to self-signed
 certificates, and enter location of your SSL certs and keys:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;SSLCertificateFile /etc/ssl/certs/example.com.crt
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;SSLCertificateFile /etc/ssl/certs/example.com.crt
 SSLCertificateKeyFile /etc/ssl/private/example.com.key
 SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Once you restart Apache that should remove the browser warnings. We also need to
 update the certificates in use by dovecot and postfix to prevent SSL error
 messages when sending and receiving email via other apps.&lt;/p&gt;
@@ -344,18 +371,18 @@ in this order:&lt;/p&gt;
 &lt;p&gt;For incoming email
 (IMAP/POP) update the dovecot configuration in &lt;code&gt;/etc/dovecot/dovecot.conf&lt;/code&gt;
 and update the following to point at your cert and key files:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ssl_key_file = /etc/ssl/private/example.com.key
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ssl_key_file = /etc/ssl/private/example.com.key
 ssl_cert_file = /etc/ssl/certs/example.chain.key
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;smtpd_tls_key_file = /etc/ssl/private/example.com.key
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;smtpd_tls_key_file = /etc/ssl/private/example.com.key
 ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now restart the services so the changes take effect.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service apache2 restart
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service apache2 restart
 sudo service postfix restart
 sudo service dovecot restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You should now be able to connect to iRedAdmin and Roundcube via the web
 interface without getting SSL error messages.&lt;/p&gt;
 
@@ -367,22 +394,22 @@ and that you wont get flagged as a spammer or unknown mail server.&lt;/p&gt;
 
 &lt;p&gt;DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
 a list of the keys.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;amavisd-new showkeys
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;amavisd-new showkeys
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You will see something like the following output:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;; key#1, domain example.com, /var/lib/dkim/example.com.pem
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;; key#1, domain example.com, /var/lib/dkim/example.com.pem
 dkim._domainkey.example.com. 3600 TXT (
   &amp;quot;v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
   ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;In the DNS settings for your domain, create a new TXT record for dkim._domainkey
 and enter the whole string that is shown between () in the output of the showkeys
 command.  Once you have created the DNS record, you will need to wait a while for
 the change to propagate, then you can test your keys are working correctly with
 the testkeys command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# amavisd-new testkeys
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# amavisd-new testkeys
 TESTING#1: dkim._domainkey.example.com    =&amp;gt; pass
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Once you have verified that the key is working here, you can use a verification
 service to test deliverability of your email. I found the port25 service useful,
 all you have to do is send an email to check-auth@verifier.port25.com and you will
@@ -414,23 +441,23 @@ to the DKIM configuration.&lt;/p&gt;
 
 &lt;p&gt;Login as root to the server, change into the folder where DKIM keys are stored
 and generate a new key for the domain:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /var/lib/dkim
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /var/lib/dkim
 amavisd-new genrsa test.com.pem
 chmod 0644 test.com.pem
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now edit the confuration file at &lt;code&gt;/etc/amavis/conf.d/50-user&lt;/code&gt;
 to include the new key. Find the section in the configuration file where
 keys are declared and add:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;dkim_key(&amp;quot;test.com&amp;quot;, &amp;quot;dkim&amp;quot;, &amp;quot;/var/lib/dkim/test.com.pem&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;dkim_key(&amp;quot;test.com&amp;quot;, &amp;quot;dkim&amp;quot;, &amp;quot;/var/lib/dkim/test.com.pem&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Then find where the local domains are defined (in the same config file) and add your new domain:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@local_domains_maps = [&amp;#39;mx.example.com&amp;#39;, &amp;#39;example.com&amp;#39;, &amp;#39;test.com&amp;#39;];
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@local_domains_maps = [&amp;#39;mx.example.com&amp;#39;, &amp;#39;example.com&amp;#39;, &amp;#39;test.com&amp;#39;];
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Restart &lt;code&gt;amavis&lt;/code&gt; and show the new list of keys. You should see your
 new key listed. Copy the TXT record and add it to the DNS for the new domain:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/init.d/amavis restart
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/init.d/amavis restart
 amavisd-new showkeys
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Also remember to add the SPF record to the new domain, and set the MX records
 so they point at mx.example.com.&lt;/p&gt;
 
@@ -447,8 +474,8 @@ to get through.&lt;/p&gt;
 
 &lt;p&gt;I had comment out the following line from &lt;code&gt;/etc/postfix/helo_access.pcre&lt;/code&gt;
 to allow these messages through:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/\.local$/                  REJECT Go away, bad guy (.local).
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/\.local$/                  REJECT Go away, bad guy (.local).
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h3&gt;Syncing&lt;/h3&gt;
 
 &lt;p&gt;Now I&amp;#39;ve got email working, and thanks to IMAP, I have my email accessible
