@@ -7,6 +7,18 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The clouds made me do it...</title>
+        <description>&lt;p&gt;I wrote &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;my first ever poem&lt;/a&gt;.
+It&amp;#39;s about machine learning algorithms.
+You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
+Let me know what you think.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
+      </item>
+    
+      <item>
         <title>Session submission guidelines for conferences and camps</title>
         <description>&lt;p&gt;Earlier this week I found out that the date for my nephew&amp;#39;s christening has changed. This means I can now make it to the Drupal Camp in London. I decided to propose a session so that I can share my recent insights, research, and learning.&lt;/p&gt;
 
@@ -1098,170 +1110,6 @@ but that&amp;#39;s a story for another day...&lt;/p&gt;
         <pubDate>Sun, 12 Jul 2015 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</guid>
-      </item>
-    
-      <item>
-        <title>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</title>
-        <description>&lt;p&gt;I&amp;#39;ve been working a lot with Atomic design (component-based design)
-with Drupal recently, and I&amp;#39;ve witnessed huge improvements on projects
-where it has been introduced. The main advantage being the decoupling of
-the development of the back-end from the development of the front-end
-code. &lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I&amp;#39;m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
-and I have more to say on this in the future. Today I want to tell you about a simple
-tool I&amp;#39;m using to speed up the process. &lt;a href=&quot;https://github.com/darrenmothersele/stylex&quot;&gt;Stylex&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
-sites or style guides for front-end code. There are several tools already available,
-including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
-incredibly simple. &lt;/p&gt;
-
-&lt;p&gt;I basically just wanted to make use of the power of Twig templates 
-for mocking up front-end code, with an easy way to load in demo content (from
-yml files). &lt;/p&gt;
-
-&lt;h2&gt; Barebones project&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve created a &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;barebones Stylex project&lt;/a&gt; on GitHub that demonstrates this, but you probably 
-want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&gt;
-
-&lt;h2&gt;Basic setup&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve packaged this for Composer so getting started is easy. Assuming you already
-have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
-all you need to do is create a folder for your
-project and run the following command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
-&lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
-a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
-
-&lt;p&gt;As a bare minimum you will need to create a &lt;code&gt;index.php&lt;/code&gt; to run the application, and 
-a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
-
-&lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
-called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
-require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
-
-$app = new Stylex\Application();
-$app-&amp;gt;run();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-    {% block content %}
-      &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
-    {% endblock %}
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
-
-&lt;h2&gt;Adding pages&lt;/h2&gt;
-
-&lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
-
-{% block content %}
-  &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
-{% endblock %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
-a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
-the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
-
-&lt;h2&gt;Using data&lt;/h2&gt;
-
-&lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
-  path: /
-- title: About Us
-  path: /about
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
-Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
-  {% for item in main_menu %}
-    &amp;lt;li&amp;gt;
-      &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
-    &amp;lt;/li&amp;gt;
-  {% endfor %}
-&amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Using sample content&lt;/h2&gt;
-
-&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
-
-&lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
-title: My First Post
-excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-image: http://placebee.co.uk/640x480/1
----
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
-
-&lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
-  &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
-{% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
-  {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
-{% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
-  &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
-    {{ title }}
-  &amp;lt;/h2&amp;gt;
-  &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
-  {{ content|raw }}
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2&gt; Debugging&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
-
-&lt;p&gt;The next step is to reset Drupal&amp;#39;s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
-
-&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-
-&lt;p&gt;Darren&lt;/p&gt;
-</description>
-        <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
       </item>
     
   </channel>
