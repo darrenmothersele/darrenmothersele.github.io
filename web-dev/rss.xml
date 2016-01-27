@@ -7,6 +7,59 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Work in Progress: The Future of (My) Web (Part 2, Leaving WhatsApp)</title>
+                                <description>&lt;p&gt;I&amp;#39;ve deleted WhatsApp. I wasn&amp;#39;t going to post about this,
+as I don&amp;#39;t want to sound like a broken record.
+But, as several people have emailed me asking why,
+I thought I would explain my decision.&lt;/p&gt;
+
+&lt;p&gt;I have &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;posted about this before&lt;/a&gt;
+when I left Facebook.
+I&amp;#39;m not just ranting about data surveillance and privacy concerns.
+I have other concerns about our relationship with technology. There are
+certain ideas that are in danger of becoming locked in unless
+we come up with alternatives.
+My attitude is solution focused.&lt;/p&gt;
+
+&lt;p&gt;So WhatsWrong with WhatsApp?&lt;/p&gt;
+
+&lt;h2&gt;It&amp;#39;s free.&lt;/h2&gt;
+
+&lt;p&gt;They annouced recently that they are removing the subscription and making the service free.
+There is now no doubt what the real business model is.
+You are not their customer, you are their product.&lt;/p&gt;
+
+&lt;h2&gt;No API&lt;/h2&gt;
+
+&lt;p&gt;Brian Acton, WhatsApp cofounder, has publicly stated that there will never be an API.
+Interoperability is never going to be an option with Whatsapp.&lt;/p&gt;
+
+&lt;p&gt;Compare with email: You use gmail, someone else uses hotmail, and I have my own email
+software I built myself. We can all freely email each other.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re on different mobile networks, but we can still freely send each other SMS messages.&lt;/p&gt;
+
+&lt;p&gt;This will never be the case with WhatsApp.
+If you&amp;#39;re not on WhatsApp you don&amp;#39;t exist.
+WhatsApp is a monoculture silo.&lt;/p&gt;
+
+&lt;p&gt;I want to be part of building an independent, open future.
+The involves removing myself from networks that don&amp;#39;t support open standards, interoperability, and diversity.&lt;/p&gt;
+
+&lt;p&gt;By the principle of &amp;quot;selfdogfooding&amp;quot;, removing myself gives me the motiviation
+I need to build and contribute to an alternative
+&lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;Indie Web&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;The IndieWeb is a people-focused alternative to the ‘corporate web’.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+                                <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
+                        </item>
+                
+                        <item>
                                 <title>Session submission guidelines for conferences and camps</title>
                                 <description>&lt;p&gt;Earlier this week I found out that the date for my nephew&amp;#39;s christening has changed. This means I can now make it to the Drupal Camp in London. I decided to propose a session so that I can share my recent insights, research, and learning.&lt;/p&gt;
 
@@ -1195,67 +1248,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
                                 <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
-                        </item>
-                
-                        <item>
-                                <title>Atomic Drupal Workshop</title>
-                                <description>&lt;p&gt;If you&amp;#39;re a frustrated web developer spending more time battling with Drupal than enjoying its benefits then read on, as I&amp;#39;m going to explain how I&amp;#39;ve hacked the Drupal site building process to make it easier and more fun.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;I started exploring this process a couple of years ago. After years of Drupal experience, with it&amp;#39;s ups and downs, something clicked. I thought I was in control before, but there would always be some part of a project where I felt like I was fighting with Drupal. I tried many different approaches, but once I found this methodology there was no looking back.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ve been developing this system for a couple of years, and in recent months I&amp;#39;ve started to see more people talking about it, conference sessions, and blog posts that talk about some of these ideas. None of this is unique, but I have pulled together various elements into a process, or system that anyone can use to simplify their Drupal site building.&lt;/p&gt;
-
-&lt;p&gt;In this article I hope to bring together a few key points that I think make the most difference to the success of a project.&lt;/p&gt;
-
-&lt;p&gt;My work in the past year has taken me into many agencies and I&amp;#39;ve worked with experienced Drupal developers, and with excellent developers but who were new to Drupal. On the one hand I&amp;#39;ve seen Drupal developers artificially constrained to produce &amp;quot;Drupaly&amp;quot; solutions because of perceived limitations of what&amp;#39;s possible with Drupal, and on the other hand I&amp;#39;ve seen developers struggle to get Drupal to do what they want to do.&lt;/p&gt;
-
-&lt;h2&gt;Perhaps you can relate to this story...&lt;/h2&gt;
-
-&lt;p&gt;I went into an agency early last year to help with a late running project. There was nothing particularly unique about this website, other than it had some really nice design elements and was a stunning example of responsive design. But, hiding below the surface was a confusing Drupal implementation and a mess of spaghetti code.&lt;/p&gt;
-
-&lt;p&gt;Several developers had worked on the project, and it showed. Competing Drupal modules were being used to achieve the same thing in different parts of the site, the CSS used multiple grid systems, and the general lack of consistency meant the final stages of the project, bug fixing and cross device testing were proving difficult.&lt;/p&gt;
-
-&lt;p&gt;Requirements and designs had changed during the project, and so had the developers, which meant that rather than understand what had been done before, the developers hacked on extra bits of code, put in more and more CSS overrides to target specific elements to tweak the styles.&lt;/p&gt;
-
-&lt;p&gt;The result was a site that was proving impossible to get working across all devices, and as bugs were fixed, more were being introduced and discovered. Slight changes were having unexpected knock on effects across the whole site.&lt;/p&gt;
-
-&lt;p&gt;When I looked at the site, I congratulated them. They had produced a great prototype. They had gone a long way around to get there, but what they had done was understand the problem, and discover exactly what was required in a solution. This resulted in something that worked really well as a prototype. What they hadn&amp;#39;t done was produce a production-ready site.&lt;/p&gt;
-
-&lt;p&gt;I helped them take a few steps back, which at the same time was a huge leap forward. With the knowledge they had gained we could work with Drupal to get the project completed, rather than battling against it.&lt;/p&gt;
-
-&lt;h2&gt;What to learn from this?&lt;/h2&gt;
-
-&lt;p&gt;Consistency is important, and prototyping helps to clarify what is required in a solution. Doing all the testing and bug fixing at the end of a project is hard, gets out of control, and causes missed deadlines.&lt;/p&gt;
-
-&lt;h2&gt;Introducing Atomic Drupal&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve been looking at the emerging atomic design movement, component-based design, or style-guide driven development, and I&amp;#39;ve taken best practise from the cutting edge of web design and combined it with over 7 years experience of pushing Drupal to it&amp;#39;s limits and past them.&lt;/p&gt;
-
-&lt;p&gt;Where I&amp;#39;ve ended up is a system for converting ideas into effective websites. A way of working with Drupal rather than against it, with the aim of shifting the focus of a project from development and bug fixing to solving new and interesting problems. Making the basics of site building easy and fun.&lt;/p&gt;
-
-&lt;p&gt;People I&amp;#39;ve introduced to this already have found they can now do more with Drupal and say yes to more of clients requirements, and work on more interesting projects.&lt;/p&gt;
-
-&lt;h2&gt;Atomic Design&lt;/h2&gt;
-
-&lt;p&gt;A component-based approach to the front end means creating more maintainable and flexible designs. There are a few tricks to getting this to work in Drupal, but the most important are: taking full control over Drupal&amp;#39;s markup, and planning out a consistent approach to building the site.&lt;/p&gt;
-
-&lt;h2&gt;Prototyping&lt;/h2&gt;
-
-&lt;p&gt;An added benefit of taking a component-based approach is the decoupling of front-end design and development from the back-end CMS implementation. The biggest win is that you can build and test all your front-end code separately to the CMS build (you&amp;#39;re not constrained to using Drupal&amp;#39;s markup). This means you can test and validate your front-end code early on in the project, you can test across devices and browsers earlier in the process, and therefore not leave all your big fixing until the end of the project.&lt;/p&gt;
-
-&lt;h2&gt;Workshop&lt;/h2&gt;
-
-&lt;p&gt;Get in touch if you&amp;#39;re interested in learning more as I am running workshops on Atomic design with Drupal for agencies and individual developers. Check my training page to see upcoming dates for public courses (at the time of writing the next scheduled public workshop is 24th April).&lt;/p&gt;
-
-&lt;p&gt;This workshop will cover how to take full control over Drupal&amp;#39;s markup, resetting and removing Drupal&amp;#39;s own markup and replacing it with your own. How to work with Atomic design and component based design principles in Drupal. Debunking the most common myths around Drupal front end code, and fixing the single biggest cause for late running projects and missed deadlines.&lt;/p&gt;
-
-&lt;p&gt;&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/atomic-drupal-workshop-tickets-16052157435&quot;&gt;Book Ticket&lt;/a&gt; &lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/atomic-drupal-workshop-tickets-16052157435&quot;&gt;More info&lt;/a&gt;&lt;/p&gt;
-</description>
-                                <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</guid>
                         </item>
                 
         </channel>
