@@ -27,14 +27,14 @@ do to recover from this bug...&lt;/p&gt;
 &lt;h3&gt;Check OpenSSL version&lt;/h3&gt;
 
 &lt;p&gt;You need to be running &lt;strong&gt;OpenSSL 1.0.1g&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;openssl version
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;openssl version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Just running this command doesn&amp;#39;t report back full version information.
 If you check &lt;a href=&quot;http://serverfault.com/questions/587324/heartbleed-how-to-reliably-and-portably-check-the-openssl-version&quot;&gt;this post&lt;/a&gt; you will find further information on what to look for.&lt;/p&gt;
 
 &lt;p&gt;If you are on Ubuntu 12.04 the package you are looking for is this one:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;openssl 1.0.1-4ubuntu5.12
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;openssl 1.0.1-4ubuntu5.12
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Further recovery...&lt;/h3&gt;
 
 &lt;p&gt;But, patching OpenSSL is only a small part of the fix for this bug.

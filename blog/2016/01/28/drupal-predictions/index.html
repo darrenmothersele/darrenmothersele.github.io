@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> Work in Progress: The Future of (My) Web (Part 2, Leaving WhatsApp) |  Darren Mothersele</title>
+    <title> Drupal Predictions for 2016 |  Darren Mothersele</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,60 +50,95 @@
 <div class="post dm-post">
 
   <header class="post-header">
-    <h1 class="post-title">Work in Progress: The Future of (My) Web (Part 2, Leaving WhatsApp)</h1>
-    <p class="post-meta">Jan 27, 2016
+    <h1 class="post-title">Drupal Predictions for 2016</h1>
+    <p class="post-meta">Jan 28, 2016
     </p>
   </header>
 
   <article class="post-content">
     
-      <p class="lead">I&#39;ve deleted WhatsApp. I wasn&#39;t going to post about this,
-as I don&#39;t want to sound like a broken record.
-But, as several people have emailed me asking why,
-I thought I would explain my decision.</p>
+      <p class="lead">This will be a momentus year for Drupal.</p>
+
+<p class="lead">David H, Drupal.org webmaster, was
+<a href="https://twitter.com/FromWayDowntown/status/692375858175148032">soliciting responses</a>
+to <a href="https://www.drupal.org/node/2652402">this thread</a> on Twitter.
+I kept my <a href="https://www.drupal.org/node/2652402#comment-10792382">predictions</a>
+brief, but thought I would post here to elaborate.</p>
 
       
 
-<p>I have <a href="http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/">posted about this before</a>
-when I left Facebook.
-I&#39;m not just ranting about data surveillance and privacy concerns.
-I have other concerns about our relationship with technology. There are
-certain ideas that are in danger of becoming locked in unless
-we come up with alternatives.
-My attitude is solution focused.</p>
+<p>Some people may be predicting <a href="https://securityintelligence.com/news/new-year-new-problems-cms-vulnerabilites-take-on-2016/">a year of security vulnerabilities</a>. I believe we have a
+year of innovation ahead of us.</p>
 
-<p>So WhatsWrong with WhatsApp?</p>
+<p>Drupal&#39;s ecosystem of contributed modules is playing catch-up since the
+release of version 8. It has been years since CCK and Views were just
+experiments in the contrib module space.
+They are now established as foundation of Drupal core.
+Contrib (the wider community of Drupal developers) can now get back to innovating.</p>
 
-<h2>It&#39;s free.</h2>
+<p>&quot;Get back to innovating&quot; isn&#39;t much of a prediction. I thought about it
+some more and came up with three things I think are likely to happen in 2016...</p>
 
-<p>They annouced recently that they are removing the subscription and making the service free.
-There is now no doubt what the real business model is.
-You are not their customer, you are their product.</p>
+<h2>CMS-as-a-Service</h2>
 
-<h2>No API</h2>
+<p>The era of the monolythic, does-it-all, CMS is coming to an end.
+The Drupal community talk a lot about <em>progressive decoupling</em>
+<a href="http://buytaert.net/should-we-decouple-drupal-with-a-client-side-framework">[1]</a>
+<a href="http://buytaert.net/selecting-a-client-side-framework-for-drupal">[2]</a>.
+But, the idea of a <em>fully decoupled</em> backend is becoming established
+in other areas. Services like <a href="https://www.contentful.com/">Contentful</a> already
+provide a fully decoupled, headless CMS.</p>
 
-<p>Brian Acton, WhatsApp cofounder, has publicly stated that there will never be an API.
-Interoperability is never going to be an option with Whatsapp.</p>
+<p>Systems become decoupled, we move to a microservice architecture, and evaluate server-less options. It is conceivable that a Content API could become part of the infrastructure. Amazon are the leading Infrastructure-as-a-Service provider. A Content API (or CMS-as-a-Service) would fit in their suite of cloud computing services.</p>
 
-<p>Compare with email: You use gmail, someone else uses hotmail, and I have my own email
-software I built myself. We can all freely email each other.</p>
+<p>I did an experiment recently where I put Amazon&#39;s API Gateway in front of an EC2 instance running Drupal. This gives a more robust API on top of Drupal 8&#39;s Rest support. Monitoring, traffic management, and flexible security controls are standard.
+This approach offers several advantages, including: <a href="http://swagger.io/">Swagger</a> support;
+CloudFront caching for performance; and input/output
+translation with data models defined with JSON schema.</p>
 
-<p>We&#39;re on different mobile networks, but we can still freely send each other SMS messages.</p>
+<h2>Acquia IPO</h2>
 
-<p>This will never be the case with WhatsApp.
-If you&#39;re not on WhatsApp you don&#39;t exist.
-WhatsApp is a monoculture silo.</p>
+<p>Going public was always on the cards for Acquia, but they said they
+<a href="http://bostinno.streetwise.co/2015/10/21/acquia-engage-ceo-talks-content-hub-valuation-ipo/">are in no rush to IPO</a>. This could be the year. Adoption of D8 will being changes
+to the user base and continued adoption at the enterprise level.</p>
 
-<p>I want to be part of building an independent, open future.
-The involves removing myself from networks that don&#39;t support open standards, interoperability, and diversity.</p>
+<p>This will be accompanied by more consolidation in the Drupal world.
+One of the biggest risks I see is with Drupal companies taking on
+bigger projects. A single client becomes a large contributer to their
+revenue, in some cases I&#39;ve heard as much as 70%. This is a risky situation
+to be in, if you rely on one client for a majority of your business.
+The solution is for Drupal companies to come together to form larger entities.</p>
 
-<p>By the principle of &quot;selfdogfooding&quot;, removing myself gives me the motiviation
-I need to build and contribute to an alternative
-<a href="http://indiewebcamp.com/">Indie Web</a></p>
+<p>This is just a continuation of an existing trend.
+<a href="http://www.wunderkraut.com/blog/worlds-largest-drupal-provider-created-by-merger/2012-08-20">Wunderkraut</a>,
+was the most high-profile merger in the community.
+Followed by many more, involving companies such as
+<a href="http://wearepropeople.com/news/propeople-and-blink-reaction-come-together-to-form-ffw-a-new-global-digital-agency">FFW</a>,
+<a href="http://www.mediacurrent.com/blog/mediacurrent-acquired-by-code-and-theory">MediaCurrent</a>,
+<a href="https://www.phase2technology.com/blog/phase2-and-opensourcery-whats-new-in-portland/">Phase2</a>, and
+<a href="http://i-kos.com/press-release/2014-09-22/mogdesign-joins-ikos-digital-accelerate-drupal-growth">i-Kos</a>.</p>
 
-<blockquote>
-<p>&quot;The IndieWeb is a people-focused alternative to the ‘corporate web’.&quot;</p>
-</blockquote>
+<h2>Composer Support and Decoupled Components</h2>
+
+<p>Composer support in Drupal needs some work.
+There are some big wins to be had by embracing the
+Composer (and Packagist) workflow.</p>
+
+<p>Commerce Guys are leading the way with Drupal Commerce. They have been
+<a href="https://github.com/commerceguys">factoring out components into separate libraries</a>.
+Other PHP projects beyond Drupal are making use of them, and contributing to
+their development.
+Expect more contrib projects to factor out separate PHP packages of re-usable code.
+Then Drupal modules become just a thin layer of glue.</p>
+
+<p>There has been a trend for PHP Frameworks to decouple their core components.
+The Symfony Components split from the full stack framework has
+meant much wider adoption. They are used in <a href="http://symfony.com/projects">many PHP projects</a>,
+including Drupal.</p>
+
+<p>PHP-FIG exists to promote interoperability between frameworks. This year will see further initiatives to clean up Drupal&#39;s code. Such as, removal of anti-patterns like service locator. The eventual aim will be to decoupling components from Drupal core.</p>
+
+<p>Can you imagine using Views on a non-drupal project?</p>
 
     
   </article>
@@ -113,7 +148,7 @@ I need to build and contribute to an alternative
   <div id="disqus_thread"></div>
   <script>
       var disqus_config = function () {
-          this.page.url = 'http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/';
+          this.page.url = 'http://www.darrenmothersele.com/blog/2016/01/28/drupal-predictions/';
       };
       (function() {
           var d = document, s = d.createElement('script');

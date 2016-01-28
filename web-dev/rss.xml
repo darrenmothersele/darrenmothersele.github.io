@@ -7,11 +7,103 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Drupal Predictions for 2016</title>
+                                <description>&lt;p&gt;This will be a momentus year for Drupal.&lt;/p&gt;
+
+&lt;p&gt;David H, Drupal.org webmaster, was
+&lt;a href=&quot;https://twitter.com/FromWayDowntown/status/692375858175148032&quot;&gt;soliciting responses&lt;/a&gt;
+to &lt;a href=&quot;https://www.drupal.org/node/2652402&quot;&gt;this thread&lt;/a&gt; on Twitter.
+I kept my &lt;a href=&quot;https://www.drupal.org/node/2652402#comment-10792382&quot;&gt;predictions&lt;/a&gt;
+brief, but thought I would post here to elaborate.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Some people may be predicting &lt;a href=&quot;https://securityintelligence.com/news/new-year-new-problems-cms-vulnerabilites-take-on-2016/&quot;&gt;a year of security vulnerabilities&lt;/a&gt;. I believe we have a
+year of innovation ahead of us.&lt;/p&gt;
+
+&lt;p&gt;Drupal&amp;#39;s ecosystem of contributed modules is playing catch-up since the
+release of version 8. It has been years since CCK and Views were just
+experiments in the contrib module space.
+They are now established as foundation of Drupal core.
+Contrib (the wider community of Drupal developers) can now get back to innovating.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Get back to innovating&amp;quot; isn&amp;#39;t much of a prediction. I thought about it
+some more and came up with three things I think are likely to happen in 2016...&lt;/p&gt;
+
+&lt;h2&gt;CMS-as-a-Service&lt;/h2&gt;
+
+&lt;p&gt;The era of the monolythic, does-it-all, CMS is coming to an end.
+The Drupal community talk a lot about &lt;em&gt;progressive decoupling&lt;/em&gt;
+&lt;a href=&quot;http://buytaert.net/should-we-decouple-drupal-with-a-client-side-framework&quot;&gt;[1]&lt;/a&gt;
+&lt;a href=&quot;http://buytaert.net/selecting-a-client-side-framework-for-drupal&quot;&gt;[2]&lt;/a&gt;.
+But, the idea of a &lt;em&gt;fully decoupled&lt;/em&gt; backend is becoming established
+in other areas. Services like &lt;a href=&quot;https://www.contentful.com/&quot;&gt;Contentful&lt;/a&gt; already
+provide a fully decoupled, headless CMS.&lt;/p&gt;
+
+&lt;p&gt;Systems become decoupled, we move to a microservice architecture, and evaluate server-less options. It is conceivable that a Content API could become part of the infrastructure. Amazon are the leading Infrastructure-as-a-Service provider. A Content API (or CMS-as-a-Service) would fit in their suite of cloud computing services.&lt;/p&gt;
+
+&lt;p&gt;I did an experiment recently where I put Amazon&amp;#39;s API Gateway in front of an EC2 instance running Drupal. This gives a more robust API on top of Drupal 8&amp;#39;s Rest support. Monitoring, traffic management, and flexible security controls are standard.
+This approach offers several advantages, including: &lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; support;
+CloudFront caching for performance; and input/output
+translation with data models defined with JSON schema.&lt;/p&gt;
+
+&lt;h2&gt;Acquia IPO&lt;/h2&gt;
+
+&lt;p&gt;Going public was always on the cards for Acquia, but they said they
+&lt;a href=&quot;http://bostinno.streetwise.co/2015/10/21/acquia-engage-ceo-talks-content-hub-valuation-ipo/&quot;&gt;are in no rush to IPO&lt;/a&gt;. This could be the year. Adoption of D8 will being changes
+to the user base and continued adoption at the enterprise level.&lt;/p&gt;
+
+&lt;p&gt;This will be accompanied by more consolidation in the Drupal world.
+One of the biggest risks I see is with Drupal companies taking on
+bigger projects. A single client becomes a large contributer to their
+revenue, in some cases I&amp;#39;ve heard as much as 70%. This is a risky situation
+to be in, if you rely on one client for a majority of your business.
+The solution is for Drupal companies to come together to form larger entities.&lt;/p&gt;
+
+&lt;p&gt;This is just a continuation of an existing trend.
+&lt;a href=&quot;http://www.wunderkraut.com/blog/worlds-largest-drupal-provider-created-by-merger/2012-08-20&quot;&gt;Wunderkraut&lt;/a&gt;,
+was the most high-profile merger in the community.
+Followed by many more, involving companies such as
+&lt;a href=&quot;http://wearepropeople.com/news/propeople-and-blink-reaction-come-together-to-form-ffw-a-new-global-digital-agency&quot;&gt;FFW&lt;/a&gt;,
+&lt;a href=&quot;http://www.mediacurrent.com/blog/mediacurrent-acquired-by-code-and-theory&quot;&gt;MediaCurrent&lt;/a&gt;,
+&lt;a href=&quot;https://www.phase2technology.com/blog/phase2-and-opensourcery-whats-new-in-portland/&quot;&gt;Phase2&lt;/a&gt;, and
+&lt;a href=&quot;http://i-kos.com/press-release/2014-09-22/mogdesign-joins-ikos-digital-accelerate-drupal-growth&quot;&gt;i-Kos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Composer Support and Decoupled Components&lt;/h2&gt;
+
+&lt;p&gt;Composer support in Drupal needs some work.
+There are some big wins to be had by embracing the
+Composer (and Packagist) workflow.&lt;/p&gt;
+
+&lt;p&gt;Commerce Guys are leading the way with Drupal Commerce. They have been
+&lt;a href=&quot;https://github.com/commerceguys&quot;&gt;factoring out components into separate libraries&lt;/a&gt;.
+Other PHP projects beyond Drupal are making use of them, and contributing to
+their development.
+Expect more contrib projects to factor out separate PHP packages of re-usable code.
+Then Drupal modules become just a thin layer of glue.&lt;/p&gt;
+
+&lt;p&gt;There has been a trend for PHP Frameworks to decouple their core components.
+The Symfony Components split from the full stack framework has
+meant much wider adoption. They are used in &lt;a href=&quot;http://symfony.com/projects&quot;&gt;many PHP projects&lt;/a&gt;,
+including Drupal.&lt;/p&gt;
+
+&lt;p&gt;PHP-FIG exists to promote interoperability between frameworks. This year will see further initiatives to clean up Drupal&amp;#39;s code. Such as, removal of anti-patterns like service locator. The eventual aim will be to decoupling components from Drupal core.&lt;/p&gt;
+
+&lt;p&gt;Can you imagine using Views on a non-drupal project?&lt;/p&gt;
+</description>
+                                <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
+                        </item>
+                
+                        <item>
                                 <title>Work in Progress: The Future of (My) Web (Part 2, Leaving WhatsApp)</title>
                                 <description>&lt;p&gt;I&amp;#39;ve deleted WhatsApp. I wasn&amp;#39;t going to post about this,
 as I don&amp;#39;t want to sound like a broken record.
 But, as several people have emailed me asking why,
 I thought I would explain my decision.&lt;/p&gt;
+
+&lt;!--break--&gt;
 
 &lt;p&gt;I have &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;posted about this before&lt;/a&gt;
 when I left Facebook.
@@ -996,13 +1088,13 @@ run in the same &amp;quot;world&amp;quot; as the GitHub page Javascript, and thu
 rewritings of the UI based off the pjax events fired there.
 To do this, we use a Content Script, &lt;code&gt;injector.js&lt;/code&gt; that just injects our
 script into page, via the DOM:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var s = document.createElement(&amp;#39;script&amp;#39;);
 s.src = chrome.extension.getURL(&amp;#39;scripts/bootstrap.js&amp;#39;);
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(s);
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For &lt;a href=&quot;https://github.com/OpenMatt/GitDone/tree/v0.1&quot;&gt;v 0.1&lt;/a&gt; it was enough to
 inject the main JS, and do the rewriting in the &amp;quot;world&amp;quot; of the GitHub page.
 This is isolated from the Content Script that injects it. Unfortunately,
@@ -1027,7 +1119,7 @@ work in my tests).&lt;/p&gt;
 
 &lt;p&gt;For example, in the injected JS we can react to a jQuery event, and turn it
 into a DOM event:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in injected JS
 // Add out listener to pjax events
 $(document).ready(function () {
   $(document).on(&amp;quot;pjax:end&amp;quot;, function (e) {
@@ -1038,34 +1130,34 @@ $(document).ready(function () {
     document.dispatchEvent(applyModsEvent);
   });
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And, in the injector Content Script listen for the event:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 window.addEventListener(&amp;quot;gitdone:apply&amp;quot;, applyModsEventHandler);
 function applyModsEventHandler(e) {
   console.log(&amp;#39;Apply modifications for &amp;#39; + e.detail.activeRoute);
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The injected JS can&amp;#39;t communicate with the background script, but the content
 script can. In the content script you send a message event:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 chrome.runtime.sendMessage({msg: &amp;quot;init&amp;quot;});
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Which you can react to in the background script:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
 chrome.runtime.onMessage.addListener(function (message, sender) {
 
 });
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And, in the background script, send messages back to the Content Script:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in background.js
 chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Which the content script can receive:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// in content script
 chrome.runtime.onMessage.addListener(function (message, sender) {
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;So that solves the issue of communicating across the three scripts. We have the
@@ -1084,170 +1176,6 @@ will develop into something useful too.&lt;/p&gt;
                                 <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/10/gitdone-mozfest-learning-firefox-addons/</guid>
-                        </item>
-                
-                        <item>
-                                <title>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</title>
-                                <description>&lt;p&gt;I&amp;#39;ve been working a lot with Atomic design (component-based design)
-with Drupal recently, and I&amp;#39;ve witnessed huge improvements on projects
-where it has been introduced. The main advantage being the decoupling of
-the development of the back-end from the development of the front-end
-code. &lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I&amp;#39;m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
-and I have more to say on this in the future. Today I want to tell you about a simple
-tool I&amp;#39;m using to speed up the process. &lt;a href=&quot;https://github.com/darrenmothersele/stylex&quot;&gt;Stylex&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
-sites or style guides for front-end code. There are several tools already available,
-including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
-incredibly simple. &lt;/p&gt;
-
-&lt;p&gt;I basically just wanted to make use of the power of Twig templates 
-for mocking up front-end code, with an easy way to load in demo content (from
-yml files). &lt;/p&gt;
-
-&lt;h2&gt; Barebones project&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve created a &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;barebones Stylex project&lt;/a&gt; on GitHub that demonstrates this, but you probably 
-want to follow along in the setup, so you know what&amp;#39;s going on...&lt;/p&gt;
-
-&lt;h2&gt;Basic setup&lt;/h2&gt;
-
-&lt;p&gt;I&amp;#39;ve packaged this for Composer so getting started is easy. Assuming you already
-have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;Composer installed globally&lt;/a&gt; 
-all you need to do is create a folder for your
-project and run the following command:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;composer require darrenmothersele/stylex dev-master
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
-&lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
-a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
-
-&lt;p&gt;As a bare minimum you will need to create a &lt;code&gt;index.php&lt;/code&gt; to run the application, and 
-a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
-
-&lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
-called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
-require_once __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
-
-$app = new Stylex\Application();
-$app-&amp;gt;run();
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;html&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-    {% block content %}
-      &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
-    {% endblock %}
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;You can run the application with PHP&amp;#39;s build in web server. Simply run the following command:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;php -S localhost:8000
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
-
-&lt;h2&gt;Adding pages&lt;/h2&gt;
-
-&lt;p&gt;You can add more pages, and make use of Twig&amp;#39;s awesome template inheritance feature. For example, to create an &amp;#39;About us&amp;#39; page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% extends &amp;#39;index.html&amp;#39; %}
-
-{% block content %}
-  &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
-{% endblock %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
-a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
-the result (make sure PHP&amp;#39;s web server is running - see above).&lt;/p&gt;
-
-&lt;h2&gt;Using data&lt;/h2&gt;
-
-&lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- title: Home
-  path: /
-- title: About Us
-  path: /about
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
-Let&amp;#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
-  {% for item in main_menu %}
-    &amp;lt;li&amp;gt;
-      &amp;lt;a href=&amp;quot;{{ item.path }}&amp;quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
-    &amp;lt;/li&amp;gt;
-  {% endfor %}
-&amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% include &amp;#39;components/menu.html&amp;#39; %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;h2&gt;Using sample content&lt;/h2&gt;
-
-&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
-
-&lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let&amp;#39;s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
-title: My First Post
-excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-image: http://placebee.co.uk/640x480/1
----
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I&amp;#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
-
-&lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{{ content.articles.first_post.title }}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
-  &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
-{% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;Or, yet even more useful (if you&amp;#39;re building an atomic design), output all the articles using a component template: &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% for post in content.articles %}
-  {% include &amp;#39;components/teaser.html&amp;#39; with post only %}
-{% endfor %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;teaser&amp;quot;&amp;gt;
-  &amp;lt;h2 class=&amp;quot;teaser-title&amp;quot;&amp;gt;
-    {{ title }}
-  &amp;lt;/h2&amp;gt;
-  &amp;lt;img src=&amp;quot;{{ image }}&amp;quot; alt=&amp;quot;&amp;quot; class=&amp;quot;teaser-image&amp;quot;&amp;gt;
-  {{ content|raw }}
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2&gt; Debugging&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;#39;re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$app[&amp;#39;debug&amp;#39;] = TRUE;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
-
-&lt;p&gt;The next step is to reset Drupal&amp;#39;s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
-
-&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-
-&lt;p&gt;Darren&lt;/p&gt;
-</description>
-                                <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
                         </item>
                 
         </channel>
