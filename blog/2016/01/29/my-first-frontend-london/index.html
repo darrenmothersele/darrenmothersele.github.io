@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!) |  Darren Mothersele</title>
+    <title> My First Front-end London |  Darren Mothersele</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,121 +47,37 @@
 <div id="main">
 <div class="page">
   <header class="post-header">
-<h2 class="post-title">From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!)</h2>
+<h2 class="post-title">My First Front-end London</h2>
 
-  <p class="">07 Feb 2014</p>
+  <p class="">29 Jan 2016</p>
 
   </header>
 
 
             
-              <p class="lead">In this series of posts I&#39;m talking about my website prototyping processes.
-Starting from early throwaway draft prototypes, through to clean, efficiently
-coded, designs that can be easily translated into Drupal websites.</p>
-
-<p class="lead">The <a href="http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/">first post in this series</a>
-explained why I prototype, and introduced some useful tools for website prototyping.
-In this post I combine all the tools previously mentioned into one simple
-prototype tool.</p>
+              <p class="lead">Last night I got to attend <a href="http://www.frontendlondon.co.uk/">FEL</a> for the first time. The popular meetup, hosted by <a href="http://madebymany.com/">Made by Many</a>, celebrating it&#39;s 3rd anniversary last night. I have
+<a href="https://calumryan.com/">Calum Ryan</a>, fellow Indiewebber, to thank for sorting me out a ticket.</p>
 
               
 
-<h2>All you need is a hammer...</h2>
+<p>Calum was up first talking about <a href="http://indiewebcamp.com/">#indieweb</a>. He summarised the movement well. The talk gave detail of the motivations, principles, and technology. I was happy to learn that <a href="https://www.w3.org/TR/2016/WD-webmention-20160112/">Webmention has a first draft of a W3C standard</a>.</p>
 
-<p>In April last year I purchased a Mac app called <a href="http://hammerformac.com/index.html">Hammer</a>
-that promised to &quot;Super-charge&quot; my web development. What I got was a
-fairly basic HTML preprocessor with a snazzy GUI and limited support for SASS.</p>
+<p>It was encouraging to hear this was Calum&#39;s first presentation. A great start, and I hope he continues on this path.</p>
 
-<p>Hammer doesn&#39;t work for me as it doesn&#39;t easily support Foundation because
-of it&#39;s lack of support for Compass. The developer has made a
-<a href="http://hammerformac.com/news/compass.html">bold statement</a>
-as to why they believe &quot;Compass is not ... the right approach for the web industry&quot;
-and that they &quot;think you&#39;ll be better off without Compass&quot;.</p>
+<p>Then <a href="http://bodil.lol/">Bodil Stokke</a> took us on a tour of generators in ES6. This makes me want to do more Javascript. If only because I have a thing for the world <em>yield</em>. It might be my favourite word. I love all that it implies. For me, in conjures up images of Taoism, effortless action, and the path of least resistance.</p>
 
-<p>Their main objection to Compass seems to be that it uses RubyGems as they call that
-an &quot;Outdated installation process&quot;. That&#39;s quite clearly misinformed rubbish,
-as any real developer can testify to the importance of dependency management.</p>
+<p>Of particular interest was the backwards use of generators as consumers used in monads. We saw generators combined with Promises to write asynchronous code without callbacks. Simply beautiful.</p>
 
-<p>Anyway, the great news is that you don&#39;t need Hammer if you&#39;ve got Jekyll because
-you&#39;ve got a much more powerful HTML preprocessor, and you can easily add support
-for Compass into Jekyll so you don&#39;t need to run the two separately.</p>
+<p>The presentation is <a href="http://bodil.lol/generators/">online here</a>.
+I also made a note to check out the <a href="http://github.com/tj/co">Co library</a>.</p>
 
-<h2>The Amazing All-in-one Prototyping tool!</h2>
+<p>Wrapping up the trio of speakers for the night was <a href="http://macr.ae/">Callum Macrae</a>.
+With more Ls and more LOLs that the first Calum.
+He took us on a humorous tour of ES6, under the guise of deprecating jQuery.</p>
 
-<p>With a bit of tweaking Jekyll can be configured to do all that Hammer does and
-more, using just open-source tools.</p>
+<p>We saw how to replace jQuery features with native Javascript. With a polyfil, or transpiling, it seems jQuery does not add anything. Native Javascript winning on features in some cases. Callum also added that the overhead of using Babel is less than including jQuery. So there is no need for jQuery. Unless you want <a href="https://gist.github.com/rwaldron/8720084#file-reasons-md">old browser compatibility</a> or are using a library with a dependency on jQuery.</p>
 
-<h3>Jekyll, Compass and Foundation</h3>
-
-<p>Here&#39;s how to get Jekyll, SASS/Compass, and Foundation all running together
-nicely.</p>
-
-<p>First, install Jekyll:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">gem install jekyll
-</code></pre></figure>
-<p>Make sure you&#39;ve got Foundation installed, following the instructions for installing
-via the SASS page on the <a href="http://foundation.zurb.com/docs/sass.html">Foundation docs</a> website.
-Assuming you&#39;ve already got the prerequisites, this is essentially just:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">gem install foundation
-</code></pre></figure>
-<p>You can then create a new Foundation project with</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">foundation new my_prototype
-cd my_prototype
-</code></pre></figure>
-<p>Jekyll will compile everything into the site unless
-you specifically tell it not to. So, create a configuration file
-(Jekyll expects this to be called <code>_config.yml</code>) in your prototype folder
-with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">name: My Prototype
-exclude: [README.md, bower.json, config.rb, scss]
-</code></pre></figure>
-<p>If you run Jekyll now with the serve command you can preview what you&#39;ve done in
-the browser. By default Jekyll will run a server locally at <code>http://0.0.0.0:4000/</code>
-for you to preview the
-site as you&#39;re building it. Add the <code>-w</code> option and it watches the files and automatically
-regenerates the site when any of the files change.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">jekyll serve -w
-</code></pre></figure>
-<p>You can also see what is generated by looking in the <code>_site</code> folder.</p>
-
-<p>You will notice that the site doesn&#39;t have any CSS yet, because we&#39;ve not compiled
-the SCSS from Foundation down to CSS. You could at this stage just run Compass
-to do this, but let&#39;s add the Compass compilation step to Jekyll so that it
-can take care of this for us, and automatically recompile when we edit any of
-the source files.</p>
-
-<p>This turns out to be very easy. I originally found the code to do this from
-<a href="https://gist.github.com/davidpots/5853188">this Gist</a>, but I have adapted
-it to work with the file structure of a generated Foundation project.</p>
-
-<p>All you need to do is create a folder called <code>_plugins</code> and create a file
-called <code>generator_scss.rb</code> that contains the following code:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">require &#39;sass&#39;
-require &#39;pathname&#39;
-require &#39;compass&#39;
-require &#39;compass/exec&#39;
-
-module Jekyll
-  class CompassGenerator &lt; Generator
-    safe true
-    def generate(site)
-      Compass::Exec::SubCommandUI.new(%w(compile)).run!
-    end
-  end
-end
-</code></pre></figure>
-<p>Now when you run <code>jekyll serve -w</code> you should notice that it compiles the SASS
-source down to CSS and includes it in the site. I had to run <code>jekyll serve -w</code> twice
-as Jekyll didn&#39;t copy the stylesheets folder into the build on the first attempt because it
-hadn&#39;t been created yet. After running it the second time the site showed up
-fine with all the compiled CSS and automatically refreshed when I edited any files.</p>
-
-<h2>Next time...</h2>
-
-<p>In the next post of the series I&#39;m going to jump ahead to the final stages of
-prototyping when designs start to get real. I&#39;ve got some recommendations for
-refactoring the code from a high-def prototype (i.e. final-ish designs) that
-will simplify the conversion to Drupal, and result in a better end product.</p>
+<p>An entertaining and informative night. I&#39;ll definitely be back.</p>
 
             
 
