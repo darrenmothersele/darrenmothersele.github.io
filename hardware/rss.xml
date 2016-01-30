@@ -53,7 +53,7 @@ Brain Library with this configuration. I&amp;#39;m working on an update for this
 &lt;p&gt;The TGAM1 chip still sends the summary data packets that you get in normal mode
 once per second, but now you will also get a packet containing the raw EEG reading 512 times per second, approximately once every 2ms.&lt;/p&gt;
 </description>
-                                <pubDate>Mon, 07 Oct 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Mon, 07 Oct 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/10/07/mindflex-raw-eeg-data/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/10/07/mindflex-raw-eeg-data/</guid>
                         </item>
@@ -84,7 +84,7 @@ help generate the various pages of reports and control that the system required.
 Of course, it was all running on a rasbpi, so the code had to be minimal, and
 other developers had pushed for simple PHP code.&lt;/p&gt;
 </description>
-                                <pubDate>Sun, 22 Sep 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Sun, 22 Sep 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/09/22/horniman-hackathon/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/09/22/horniman-hackathon/</guid>
                         </item>
@@ -220,7 +220,7 @@ the data via the serial port.&lt;/p&gt;
 
 &lt;p&gt;I am working on a Processing library that will work with the updated headset in full EEG mode, this giving access to the eSense meters, the EEG power band values, and the full EEG raw data. I&amp;#39;ll be expanding this section as I make more progress with the libraries and visualisations.&lt;/p&gt;
 </description>
-                                <pubDate>Sat, 21 Sep 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Sat, 21 Sep 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/09/21/brain-wave-visualisation/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/09/21/brain-wave-visualisation/</guid>
                         </item>
@@ -240,7 +240,7 @@ been revised and appeared at London Decompression 2013.&lt;/p&gt;
 
 &lt;p&gt;A new version is planned for 2014...&lt;/p&gt;
 </description>
-                                <pubDate>Mon, 09 Sep 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Mon, 09 Sep 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/09/09/pixel-coat/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/09/09/pixel-coat/</guid>
                         </item>

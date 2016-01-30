@@ -58,6 +58,32 @@
 
   <div class="post-container">
   <header>
+    <h4><a href="/blog/2008/05/15/using-external-data-source-drupal-user-authentication-and-login/">Using an external data source for Drupal user authentication and login</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 15 May 2008</span></p>
+  </header>
+
+    <p class="lead"><p><strong>Update:</strong> This information is not applicable to Drupal 6. To use an external data source for authentication in Drupal 6 you need to use hook_form_alter to add your own validation function to the login form. The two functions below are intended as an outline of how it was done in Drupal 5. You only need these two hooks to extend the authentication - anything further than this will be specific to your requirements.</p>
+
+<p>You can use any database table to validate users for your Drupal site. In this case I'm validating users against a database of clients. This client database is maintained outside of Drupal. It's a simple two step process, and just needs a couple of PHP functions in a custom module: </p>
+</p>
+    <p><a href="/blog/2008/05/15/using-external-data-source-drupal-user-authentication-and-login/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
+
+
+  <div class="post-container">
+  <header>
+    <h4><a href="/blog/2008/05/14/image-resizing-with-cck-imagefields-imagecache-and-phptemplate/">Image Resizing with CCK, Imagefields, Imagecache and PHPTemplate</a></h4>
+    <p><i class="icon-calendar"></i><span class="alt-font">Published 14 May 2008</span></p>
+  </header>
+
+    <p class="lead"><p>If you have a CCK content type with an image field you get display options that allow you to change the image size on teasers and full node views. First you set up your image presets using the imagecache settings. I usually let users upload at any size, and deal with the resizing as required. Here's how to ensure you get best results from imagecache, and how to embed imagefield images into your PHPtemplates using the theme functions provided by imagecache:</p>
+</p>
+    <p><a href="/blog/2008/05/14/image-resizing-with-cck-imagefields-imagecache-and-phptemplate/"><i class="icon-forward"></i><span class="alt-font">Read more</span></a></p>
+</div>
+
+
+  <div class="post-container">
+  <header>
     <h4><a href="/blog/2008/04/23/programmatically-creating-cck-nodes-and-adding-images-with-imagefield/">Programmatically Creating CCK Nodes and Adding Images with Imagefield</a></h4>
     <p><i class="icon-calendar"></i><span class="alt-font">Published 23 Apr 2008</span></p>
   </header>

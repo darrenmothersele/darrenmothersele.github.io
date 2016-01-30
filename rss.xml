@@ -32,7 +32,7 @@ He took us on a humorous tour of ES6, under the guise of deprecating jQuery.&lt;
 
 &lt;p&gt;An entertaining and informative night. I&amp;#39;ll definitely be back.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 29 Jan 2016 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</guid>
       </item>
@@ -122,7 +122,7 @@ including Drupal.&lt;/p&gt;
 
 &lt;p&gt;Can you imagine using Views on a non-drupal project?&lt;/p&gt;
 </description>
-        <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
+        <pubDate>Thu, 28 Jan 2016 14:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
       </item>
@@ -177,7 +177,7 @@ I need to build and contribute to an alternative
 &lt;p&gt;&amp;quot;The IndieWeb is a people-focused alternative to the ‘corporate web’.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-        <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 27 Jan 2016 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
       </item>
@@ -206,7 +206,7 @@ I can help make these lessons accessible to more people.&lt;/p&gt;
 and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
 as the source of these works.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
+        <pubDate>Tue, 26 Jan 2016 02:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
       </item>
@@ -218,7 +218,7 @@ It&amp;#39;s about machine learning algorithms.
 You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
 Let me know what you think.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
+        <pubDate>Tue, 26 Jan 2016 01:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
       </item>
@@ -281,7 +281,7 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Darren&lt;/p&gt;
 </description>
-        <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 22 Jan 2016 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
       </item>
@@ -326,9 +326,119 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Join me for this session. Let&amp;#39;s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 21 Jan 2016 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
+      </item>
+    
+      <item>
+        <title>TinyLetter #2 - The Difficult Second Letter</title>
+        <description>&lt;p&gt;Backfill on 30/01/2016: Posting up my second TinyLetter for posterity.&lt;/p&gt;
+
+&lt;p&gt;Happy new year! and welcome to my second TinyLetter.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;In case you missed &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/12/my-first-tinyletter/&quot;&gt;the first one&lt;/a&gt;, you are receiving this because you are on my list of friends and family. I don&amp;#39;t use Facebook, so this is a way to follow my updates. If you don&amp;#39;t want this, let me know or unsubscribe. No hard feelings! :)&lt;/p&gt;
+
+&lt;p&gt;Thank you to everyone who gave me feedback after &lt;a href=&quot;http://localhost:4000/blog/2015/12/12/my-first-tinyletter/&quot;&gt;my first letter&lt;/a&gt;. It has been really great to hear people&amp;#39;s encouragement, and hear that other people are also starting to question the way we connect online, our relationship with technology, and the way technology is shaping us. Also, a big thank you to people who still invite me to things, despite not being on Facebook! :)&lt;/p&gt;
+
+&lt;p&gt;Someone sent me &lt;a href=&quot;http://www.theguardian.com/music/2015/dec/13/ed-sheeran-quits-social-media-instagram-world-tour&quot;&gt;an article from the Guardian&lt;/a&gt; about Ed Sheeran (pop star?) leaving social media for a year. He&amp;#39;s quoted as saying “I find myself seeing the world through a screen and not my eyes.” Perhaps Ed Sheeran will now go on a killing spree, thus proving the daily mail were correct when &lt;a href=&quot;http://http//www.dailymail.co.uk/news/article-2184658/Is-joining-Facebook-sign-youre-psychopath-Some-employers-psychologists-say-suspicious.html&quot;&gt;they reported&lt;/a&gt; that people not on social media are &amp;quot;abnormal,&amp;quot; &amp;quot;suspicious,&amp;quot; and &amp;quot;possibly even psychopaths&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;I hope you had a relaxing and restorative break, and had a great start to the year. Sometimes we&amp;#39;re forced to stop and relax. That&amp;#39;s what happened to me on new years eve, when I came down with a 24hr bug. Notwithstanding the bouts of vomiting, and missing Rob and Verity&amp;#39;s NYE party, it was a great start to the year. Resting, watching the fireworks out of the window from bed, and being entertained by the amazing Nikki!&lt;/p&gt;
+
+&lt;p&gt;New year is a time of reflection and resolution. For me, this year, resolutions don&amp;#39;t mean starting something or giving something up, but instead mean being resolute (purposeful) about continuing to simplify and live freely. This has been a gradual shift for me, but became a thing when Nikki and I named it. Several months ago, when we were out walking and talking, we coined the term &lt;em&gt;simplivfree&lt;/em&gt; - a portmanteau of the words &lt;em&gt;simply&lt;/em&gt;, &lt;em&gt;living&lt;/em&gt;, and &lt;em&gt;free&lt;/em&gt;. It&amp;#39;s our joint manifesto for how we intend to live our life.&lt;/p&gt;
+
+&lt;p&gt;I remember when we first came up with this phrase. We&amp;#39;d spent a day walking, with no real plan or aim. Something Nikki and I have taken to doing quite often. The great thing about being spontaneous is that it&amp;#39;s always a surprise where you end up. This particular day we ended up walking for several hours, along the canal, from west London, Ladbroke Grove, through Little Venice, by Regents Park, and eventually out at Camden and up to Primrose Hill.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s magic that happens by the canal. The hustle and bustle of london fades away as soon as you go down to the tow path. It&amp;#39;s peaceful. No one is going anywhere fast. Apart from maybe the occasional cyclists or jogger, but they smile and say hi as they pass by. A slow walk among the communities of people living on boats demonstrates that there are many, very different, ways to live life. And that we have choice.&lt;/p&gt;
+
+&lt;p&gt;Simplivfree has become our manifesto, our mantra.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simply&lt;/strong&gt; = focusing on what&amp;#39;s important. It means finding the signal and filtering out the noise. Simple doesn&amp;#39;t necessarily mean easy, but if something seems hard or feels forced, then it&amp;#39;s probably not &amp;quot;the way&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Living&lt;/strong&gt; = being in the present moment. Getting real. Experiencing and making the most of every moment.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Free&lt;/strong&gt; = being independent. It means not being locked in.&lt;/p&gt;
+
+&lt;p&gt;A couple of replies to my previous letter commented that they couldn&amp;#39;t leave Facebook because they were locked in. For me, it&amp;#39;s a sacrifice I&amp;#39;m willing to make because I believe the potential gains of living more real are unbounded. Plus, it gives me the incentive I need to build my own tools, and contribute to the &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt; (a people-focused alternative to the &amp;quot;corporate web&amp;quot;). This also plays out in my work, as I continue to attract clients that want to switch to open-source content management systems, rather than be locked into proprietary systems.&lt;/p&gt;
+
+&lt;p&gt;This year I plan to go &amp;quot;serverless&amp;quot;. For readers who can relate to this, you will understand how much simpler my life will be when I don&amp;#39;t have several servers to manage. The challenge will be to do this, and retain independence. I&amp;#39;ll save the details of why this is a challenge, and how I think it can be solved, for a more technical post on &lt;a href=&quot;http://www.darrenmothersele.com/blog/&quot;&gt;my blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sorry, this letter has ended up much longer than I planned. But, I&amp;#39;ve saved the best news &amp;#39;til last...&lt;/p&gt;
+
+&lt;h2&gt;The Vows&lt;/h2&gt;
+
+&lt;p&gt;Nikki and I are getting married! :)&lt;/p&gt;
+
+&lt;p&gt;Our first joint &amp;quot;Simplivfree&amp;quot; project is to work out what that means to us. This will then guide us as we work out how best to celebrate our union. To do this, we&amp;#39;re embarking on a journey of learning about marriage in it&amp;#39;s many forms. We&amp;#39;re starting this as an open-source project (working title = The Vows) where we will compile everything we learn about engagements, weddings and marriages.&lt;/p&gt;
+
+&lt;p&gt;We want to consider a wide variety of different approaches to marriage in our research, so we&amp;#39;re interested in talking to anyone who believes they could offer any insight - conventional or otherwise. How does marriage work in different cultures, inter-faith marriages, non-conventional relationships, weddings, and marriages.&lt;/p&gt;
+
+&lt;p&gt;If you know anyone who might be interested in having a conversation with us about this, please get in touch.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading,&lt;/p&gt;
+
+&lt;p&gt;Have a great month!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Jan 2016 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</guid>
+      </item>
+    
+      <item>
+        <title>TinyLetter #1 - My First TinyLetter</title>
+        <description>&lt;p&gt;Backfill on 30/01/2016: Posting up my first TinyLetter for posterity.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Thanks for joining my TinyLetter&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re wondering why you are getting this, it&amp;#39;s because you&amp;#39;ve ended up on my list of friends and family. I don&amp;#39;t post on Facebook, so I&amp;#39;m trying this as an easy way to follow my updates. If you don&amp;#39;t want this, let me know or unsubscribe. No hard feelings! :)&lt;/p&gt;
+
+&lt;h2&gt;What is TinyLetter?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://daz.is/l/tlwired&quot;&gt;Here&amp;#39;s an interesting article&lt;/a&gt; about TinyLetter from Wired.&lt;/p&gt;
+
+&lt;p&gt;For me, it&amp;#39;s &lt;strong&gt;a stop-gap fix until there&amp;#39;s a federated social web that we can all use&lt;/strong&gt;. Even then, I might just keep using it, because I like that email is a little more personal than twittering or posting online.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s basically the kind of stuff I may have once upon a time posted on Facebook, but now in an easy to digest (or delete) format, and with some level of quality control filter as I&amp;#39;m aiming for each letter to be less than 600 words.&lt;/p&gt;
+
+&lt;h2&gt;Why am I doing this?&lt;/h2&gt;
+
+&lt;p&gt;By leaving Facebook I&amp;#39;m forcing myself to think about alternatives, by necessity. By &amp;quot;opting out&amp;quot; of Facebook&amp;#39;s idea of what it means to be connected online, I&amp;#39;m motivated to think about what I really want and build tools for myself. Hopefully what I build will eventually be useful for others too. The predominant business model online now is providing &amp;quot;free&amp;quot; services, locking people in, stealing their data, and selling it to advertisers. I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and co-creation, and use it to inform, to connect, and to empower.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;The most important thing about a technology is how it changes people.&amp;quot;&lt;br&gt;
+- Jaron Lanier&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Cyril in Print&lt;/h2&gt;
+
+&lt;p&gt;I was pretty excited when I saw that the programming language I created for live coding visuals,
+&lt;a href=&quot;http://cyrilcode.com/&quot;&gt;Cyril&lt;/a&gt;, is now
+&lt;a href=&quot;http://danhett.tictail.com/&quot;&gt;in printed format&lt;/a&gt;! - Cyril user Dan Hett recorded some of the visuals from his live shows and created these awesome prints. They look (and feel) great!&lt;/p&gt;
+
+&lt;h2&gt;MozFest&lt;/h2&gt;
+
+&lt;p&gt;Last month I was at Mozilla Festival. I love MozFest because it&amp;#39;s a weekend of hanging out with doers and dreamers, who all want a better web. I love how it attracts such a diverse audience. My highlight was meeting @openmatt and @phillipadsmith and hacking with them on &lt;a href=&quot;https://github.com/OpenMatt/GitDone/&quot;&gt;GitDone&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Drupal 8&lt;/h2&gt;
+
+&lt;p&gt;The new version of Drupal finally got released. It&amp;#39;s a complete rebuild. A great example of what an open-source community can do. The community has changed a lot over the years, so &lt;a href=&quot;http://daz.is/l/d8&quot;&gt;I wrote an article&lt;/a&gt; comparing the changes in the Drupal community to a process of gentrification.&lt;/p&gt;
+
+&lt;h2&gt;London Decompression&lt;/h2&gt;
+
+&lt;p&gt;Nikki and I had a lot of fun taking our art project, &amp;quot;En-lighten-me&amp;quot; to the Burning Man decompression event. Highlights for me were Johnny Moy and &lt;a href=&quot;https://soundcloud.com/adhsofficial&quot;&gt;ADHS&lt;/a&gt; in the Minstry of Fluffistry room. - Michael and his team created an amazing space, with great music.&lt;/p&gt;
+
+&lt;h2&gt;Next month...&lt;/h2&gt;
+
+&lt;p&gt;A well earned break for xmas? Hopefully I&amp;#39;ll see you before, but if not, happy holidays! :)
+If you get a moment, please let me know what you think of this TinyLetter idea. Should I write regular updates? Do you think it is better/worse than posting on Facebook? I&amp;#39;d love to hear your thoughts.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Dec 2015 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2015/12/12/my-first-tinyletter/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/my-first-tinyletter/</guid>
       </item>
     
       <item>
@@ -362,317 +472,9 @@ eventually be useful for others too.&lt;/p&gt;
 
 &lt;p&gt;I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and cocreation, and use it to inform, to connect, and to empower.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 12 Dec 2015 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</guid>
-      </item>
-    
-      <item>
-        <title>Work in Progress: The Future of (My) Web (Part 1, Leaving Facebook)</title>
-        <description>&lt;p&gt;I wanted to write a post about my decision to leave Facebook (again).
-It was in danger of turning into a treatise on how I see the future of the
-web. So, instead, I&amp;#39;ve decided to summarise my thoughts, and post this up as a &amp;quot;Work-in-progress&amp;quot;.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;If this feels a bit like déjà vu, you&amp;#39;re right. I have 
-&lt;a href=&quot;http://www.darrenmothersele.com/blog/2013/12/09/create-not-consume/&quot;&gt;posted before&lt;/a&gt; about my decision to leave Facebook. 
-In fact, that was almost exactly 2 years ago.&lt;/p&gt;
-
-&lt;p&gt;I tried to leave. It didn&amp;#39;t work. Six months later I returned.&lt;/p&gt;
-
-&lt;p&gt;The main reason for my return was that Facebook had become
-the single place where my friends organised social events.
-I was locked in. &lt;/p&gt;
-
-&lt;p&gt;NB: I use the phrase &amp;quot;locked-in&amp;quot; here as a hat tip to 
-&lt;a href=&quot;http://www.jaronlanier.com/gadgetwebresources.html&quot;&gt;Jaron Lanier&lt;/a&gt;
-and as a reminder to my future self to fully explain the
-influence his book, You are not a Gadget, has had on my
-&amp;quot;digital awakening&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;I deleted my Facebook account on 10th November 2015.
-This time there&amp;#39;s no going back.&lt;/p&gt;
-
-&lt;h3&gt;Why will it be different this time?&lt;/h3&gt;
-
-&lt;p&gt;First, the community (friendship group) that prompted my 
-return to Facebook last year has since gone way past 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Dunbar&amp;#x27;s_number&quot;&gt;Dunbar&amp;#39;s number&lt;/a&gt; 
-and people around me are also starting to change the way they 
-use Facebook. So hopefully I wont be alone in this. 
-But, I will have to make a real concerted effort to keep up with friends, 
-which I hope will lead to more meaningful relationships. &lt;/p&gt;
-
-&lt;p&gt;Secondly, I&amp;#39;m building a replacement. 
-No, I&amp;#39;m not building a new Facebook. 
-Let me explain...&lt;/p&gt;
-
-&lt;p&gt;One response I&amp;#39;ve had from people who disagree with my decision is that they could never live without Facebook. In 
-particular, this tends to come from people who have family and friends scattered around the world. &lt;/p&gt;
-
-&lt;p&gt;But, the truth is, Facebook doesn&amp;#39;t allow you
-to do anything you couldn&amp;#39;t do before you got &amp;quot;locked in&amp;quot; to 
-Facebook.&lt;/p&gt;
-
-&lt;p&gt;Facebook is not innovative. At least not for users. All Facebook did 
-was popularise one single methodology for using the web. It created
-a template into which you put yourself. &lt;/p&gt;
-
-&lt;p&gt;You might have 1000 friends on Facebook. But, only if you 
-reduce your definition of what a friend is.&lt;/p&gt;
-
-&lt;p&gt;You define yourself using a discrete set of options, you conform to
-Facebook&amp;#39;s &amp;quot;schema&amp;quot;, so you can be more easily packaged and 
-sold to advertisers. I noticed Firefox put out a 
-&lt;a href=&quot;https://www.youtube.com/watch?v=HALw5kXPeKE&quot;&gt;video on the hidden business of data&lt;/a&gt; yesterday. Kind of relevant.&lt;/p&gt;
-
-&lt;p&gt;Facebook is a &lt;a href=&quot;https://indiewebcamp.com/monoculture&quot;&gt;monoculture&lt;/a&gt;
-and that is damaging the web. 
-It&amp;#39;s built by middle class white males in their 20s and 30s. 
-This leads to things like 
-&lt;a href=&quot;http://meyerweb.com/eric/thoughts/2014/12/24/inadvertent-algorithmic-cruelty/&quot;&gt;Inadvertent Algorithmic Cruelty&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The world is diverse, and the web should reflect that.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m getting distracted.&lt;/p&gt;
-
-&lt;p&gt;I was talking about building a replacement...&lt;/p&gt;
-
-&lt;h3&gt;IndieWeb&lt;/h3&gt;
-
-&lt;p&gt;Earlier this year I attended the Indie Web Camp in Brighton.&lt;/p&gt;
-
-&lt;blockquote&gt;
-The IndieWeb is a people-focused alternative to the &#39;corporate web&#39;. 
-&lt;br&gt;-- &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Here, I found a community of people building the web that
-they want, &lt;a href=&quot;http://indiewebcamp.com/Selfdogfood&quot;&gt;Selfdogfood&lt;/a&gt; 
-style.&lt;/p&gt;
-
-&lt;p&gt;The IndieWeb is about having your own website. I&amp;#39;ve pretty
-much always had my own website, since I started using the 
-web in the 90s. &lt;/p&gt;
-
-&lt;p&gt;I wrote &lt;a href=&quot;http://www.darrenmothersele.com/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/&quot;&gt;a post&lt;/a&gt; in 2013 about the importance of owning your own personal domain name.&lt;/p&gt;
-
-&lt;h3&gt;Web 1.0&lt;/h3&gt;
-
-&lt;p&gt;Back in the early days of the web everyone created their own little 
-space on the web.  &lt;/p&gt;
-
-&lt;p&gt;You &amp;quot;surfed&amp;quot; the web. Browsed from one site to another. 
-Each site different, each site an individual expression
-of creativity, each site opinionated and varied.
-But now we don&amp;#39;t have variety. 
-(and we&amp;#39;re in danger of not having opinion either - 
-if we take all our info from Wikipedia).&lt;/p&gt;
-
-&lt;p&gt;And, as the internet opens up to more of the world, 
-we should be getting more diversity, not less. 
-It should be getting more interesting, more opinionated,
-more personal. &lt;/p&gt;
-
-&lt;h3&gt;Web 2.0&lt;/h3&gt;
-
-&lt;p&gt;After the original dot-com bubble and collapse, 
-into 2000, things look different on the web.
-The &amp;quot;hype&amp;quot; of the web was over. &lt;/p&gt;
-
-&lt;p&gt;But, Web 2.0 rose from the ashes, and offered new
-opportunities, slick new designs and new business
-models. &lt;/p&gt;
-
-&lt;p&gt;The legacy of Web 2.0 is that we&amp;#39;re left with 
-corporate silos and monoculture. &lt;/p&gt;
-
-&lt;h3&gt;Future web&lt;/h3&gt;
-
-&lt;p&gt;The current accepted definition of Web 3.0 is
-related to the &amp;quot;Semantic Web&amp;quot;. It brings together
-ubiquitous computing, open data, and machine learning
-to a point where the network becomes &amp;quot;intelligent&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;But, any &amp;quot;intelligent&amp;quot; behaviour by the network requires 
-us as humans to reduce what we think intelligence is.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;d rather take an optimistic view
-about human potential, and then think about how the web can be used
-to benefit humanity. &lt;/p&gt;
-
-&lt;blockquote&gt;
-I&#39;ve always felt that the human-centered approach to computer science leads to more interesting, more exotic, 
-more wild, and more heroic adventures than the machine-supremacy approach, where information is the highest goal.
-&lt;br&gt;-- &lt;a href=&quot;http://www.jaronlanier.com/&quot;&gt;Jaron Lanier&lt;/a&gt;
-&lt;/blockquote&gt;
-
-&lt;h2&gt;Next Steps&lt;/h2&gt;
-
-&lt;p&gt;So, my next steps, are to continue to eat my own dog food.
-That is, to keep building my own tools, that will hopefully
-eventually be useful to others.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s move away from the &amp;quot;&lt;b&gt;lock in&lt;/b&gt;&amp;quot; of the current dominant
-corporate silos, and work to offer new ways to 
-&amp;quot;&lt;b&gt;unlock&lt;/b&gt;&amp;quot; the benefits technology 
-can offer society.&lt;/p&gt;
-
-&lt;p&gt;That means tools for communities to cocreate. 
-Tools for collaboration. And tools where individual creativity
-is the default option, not conforming to a standardised 
-template.&lt;/p&gt;
-
-&lt;p&gt;You can no longer follow me on Facebook, but, if you&amp;#39;re still
-interested in hearing about what I&amp;#39;m up to, join 
-my &amp;quot;tinyletter&amp;quot; personal newsletter.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</guid>
-      </item>
-    
-      <item>
-        <title>Identity Proxy</title>
-        <description>&lt;p&gt;If you&amp;#39;ve got 5 mins, I would really appreciate it if
-you could read this. Then, tell me what you think 
-of the idea.  &lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;We&amp;#39;re calling this &lt;a href=&quot;http://idproxy.co&quot;&gt;Identity Proxy&lt;/a&gt;. A bit like an 
-escrow service for your contact details. 
-First let me explain some of the problems we think
-this solves:&lt;/p&gt;
-
-&lt;h2&gt;Scenario 1&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re looking for an apartment. You do some online research.
-You signup to several websites, services, and 
-email various estate agents. You&amp;#39;ve given away your contact details
-to 20 different companies. &lt;/p&gt;
-
-&lt;p&gt;You then have 20 different companies contacting you via
-email, phone, SMS notifications, etc. That&amp;#39;s a lot of 
-communication coming in through different channels and at
-different times.&lt;/p&gt;
-
-&lt;p&gt;You make a decision and rent a flat with one of the companies,
-but 19 others have your details. What are they going to 
-do with them? Sell them? Market to you later? Call you back
-every few months asking if you&amp;#39;re still looking for an apartment?&lt;/p&gt;
-
-&lt;p&gt;What if you could manage all this communication in once place?
-Decide how and when you get contacted? And, only give your details
-to the 1 company you decide to rent with.&lt;/p&gt;
-
-&lt;h2&gt;Scenario 2&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re looking for a new job. You sign up to 10 different
-recruitment websites, and job portals. 
-You get a regular stream of newsletters, several per
-day from different sources. &lt;/p&gt;
-
-&lt;p&gt;Once you&amp;#39;ve found a job you have to remember everywhere you
-signed up and go around unsubscribing from each of the 
-emails. Or you don&amp;#39;t and they keep filling your inbox.&lt;/p&gt;
-
-&lt;p&gt;What if you could unsubscribe from all of them at the same time, 
-in one simple operation?&lt;/p&gt;
-
-&lt;h2&gt;Scenario 3&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re planning a holiday or a trip somewhere. You use the 
-web to do research. This involves filling in lots of 
-contact forms around the web while you make enquiries about
-places to visit, things to do, and places to stay. &lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;re never sure who you&amp;#39;re giving your personal details
-to. Are companies going to keep marketing to you? 
-Will they sell your details on as a qualified &amp;quot;lead&amp;quot; to other 
-companies?&lt;/p&gt;
-
-&lt;p&gt;What if you could make an enquiry online and only share 
-your personal details once you&amp;#39;re more comfortable with who
-you&amp;#39;re doing business with?&lt;/p&gt;
-
-&lt;h2&gt;Current solutions&lt;/h2&gt;
-
-&lt;p&gt;How many sites have you signed up to in the past?
-If you use a login manager or password manager, then at least you 
-might have some idea of where you&amp;#39;ve given away your details, and 
-what websites you&amp;#39;re registered with. &lt;/p&gt;
-
-&lt;p&gt;Maybe you&amp;#39;ve resorted to using a fake email address, or
-a temporary email account? This only solves part of the 
-problem, because if you&amp;#39;re expecting a reply you have to check
-a separate email account. Also, many contact forms and email
-services try to reject temporary email accounts because
-they are often a source of spam or abuse. &lt;/p&gt;
-
-&lt;h2&gt;Identity Proxy&lt;/h2&gt;
-
-&lt;p&gt;What if we take a different approach, and instead of a &amp;quot;fake&amp;quot;
-temporary identity, we use a &amp;quot;verified&amp;quot; temporary identity?
-The company can see you&amp;#39;re a real verified person, but 
-you stay in control of what information you want to give 
-away. &lt;/p&gt;
-
-&lt;p&gt;We also group enquiries and registrations into projects. 
-This means that once you&amp;#39;ve found your apartment, finished
-your job hunt, or returned from holiday, you can 
-close your temporary identity, and shut off contact from
-all the companies you sent enquiries to, or registered with.
-Apart from the companies you want to continue to do business
-with, who have been given your real contact details. &lt;/p&gt;
-
-&lt;p&gt;This is why we think of it as escrow for your contact details.&lt;/p&gt;
-
-&lt;p&gt;Also, by grouping enquiries into projects and sending them
-via the proxy, you can also decide how, and when, you want
-to receive replies. This makes the communication easier to
-manage, plus they can be combined into a standard
-format to make it easy to compare. &lt;/p&gt;
-
-&lt;h2&gt;What about the companies?&lt;/h2&gt;
-
-&lt;p&gt;Companies that are good internet citizens, and don&amp;#39;t hassle
-customers, and abide by best practises should welcome this idea.
-It&amp;#39;s better than receiving a fake temporary email address, because they
-are assured by the verification that it is a real enquiry.&lt;/p&gt;
-
-&lt;p&gt;We plan to support the &lt;a href=&quot;http://www.list-unsubscribe.com/&quot;&gt;list unsubscribe header&lt;/a&gt;.
-If you&amp;#39;re running a mailing list or registration system, 
-you should already be implementing this on every message you send.
-We are building support for this standard into our system to help companies 
-keep their lists clean.&lt;/p&gt;
-
-&lt;h2&gt; That all sounds very complicated&lt;/h2&gt;
-
-&lt;p&gt;Well, behind the scenes there&amp;#39;s a lot we&amp;#39;re doing to make it 
-work seamlessly. But, it should be no more difficult than
-sending an email, or filling in a contact form on a website.&lt;/p&gt;
-
-&lt;p&gt;There&amp;#39;s no extra work involved for the person making the 
-enquiries, and it will save them lots of time being able
-to &amp;quot;unsubscribe&amp;quot; to a whole project group in one go.&lt;/p&gt;
-
-&lt;h2&gt;What&amp;#39;s next?&lt;/h2&gt;
-
-&lt;p&gt;We&amp;#39;re going to continue development. We&amp;#39;ve started a 
-website at &lt;a href=&quot;http://idproxy.co&quot;&gt;idproxy.co&lt;/a&gt; where you can 
-register to be notified when we launch the service. &lt;/p&gt;
-
-&lt;p&gt;Any questions, feedback, thoughts, please get in touch.&lt;/p&gt;
-
-&lt;p&gt;Is this a service you would use? &lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-</description>
-        <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</guid>
       </item>
     
   </channel>

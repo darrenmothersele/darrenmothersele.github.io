@@ -69,7 +69,7 @@ has been compromised.&lt;/p&gt;
 &lt;p&gt;Final note, it&amp;#39;s worth pointing out that this doesn&amp;#39;t affect OpenSSH, just OpenSSL,
 as OpenSSH doesn&amp;#39;t include the broken TLS implementation.&lt;/p&gt;
 </description>
-                                <pubDate>Tue, 08 Apr 2014 00:00:00 +0100</pubDate>
+                                <pubDate>Tue, 08 Apr 2014 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2014/04/08/heartbleed/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/08/heartbleed/</guid>
                         </item>
@@ -84,7 +84,7 @@ bit weird after I converted to PDF and uploaded to slideshare.&lt;/p&gt;
 
 &lt;iframe width=&quot;476&quot; scrolling=&quot;no&quot; height=&quot;400&quot; frameborder=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;http://www.slideshare.net/slideshow/embed_code/24415658&quot;&gt;&lt;/iframe&gt;
 </description>
-                                <pubDate>Fri, 19 Jul 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Fri, 19 Jul 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/07/19/devministration/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/07/19/devministration/</guid>
                         </item>
@@ -125,7 +125,7 @@ bit weird after I converted to PDF and uploaded to slideshare.&lt;/p&gt;
 &lt;p&gt;Now start (or restart) nginx to see the site working in the browser:&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;&lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;sudo service nginx restart&lt;/code&gt;&lt;/div&gt;
 </description>
-                                <pubDate>Mon, 08 Jul 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Mon, 08 Jul 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/07/08/testing-d8-nginx/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/07/08/testing-d8-nginx/</guid>
                         </item>
@@ -191,7 +191,7 @@ bit weird after I converted to PDF and uploaded to slideshare.&lt;/p&gt;
 &lt;p&gt;Drupal is awesomely powerful, it&#39;s fun to work with, and we can work around the disadvantages with great tools and practises. It is possible to build modern web apps and scale them in the cloud with maximum portability, maximum agility, and minimise the effects of software erosion. &lt;/p&gt;
 
 </description>
-                                <pubDate>Wed, 29 May 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Wed, 29 May 2013 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/05/29/twelve-factor-drupal/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/05/29/twelve-factor-drupal/</guid>
                         </item>
@@ -213,7 +213,7 @@ bit weird after I converted to PDF and uploaded to slideshare.&lt;/p&gt;
 &lt;p&gt;Both modules need installing in your Aegir site same way you install any Drupal module. I recommend putting them in your aegir sites folder, (not the sites/all), so that when you upgrade Aegir using apt-get the modules are taken along with the site. &lt;/p&gt;
 &lt;p&gt;You also need to copy the provision script into your .drush folder, so that the Aegir backend can find it.&lt;/p&gt;
 </description>
-                                <pubDate>Sat, 19 May 2012 00:00:00 +0100</pubDate>
+                                <pubDate>Sat, 19 May 2012 00:00:00 +0200</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2012/05/19/two-simple-aegir-add-ons/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2012/05/19/two-simple-aegir-add-ons/</guid>
                         </item>
@@ -242,7 +242,7 @@ so you can be sure that any routine tasks get taken care of. This would also be 
 &lt;p&gt;&lt;strong&gt;8. Tweak the robots.txt&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You can tell Search engines to leave bits of your site out of their indexes. This is useful again for duplicate content, especially if you are using Path aliases. By default all your content is available via it&#39;s node address, eg &quot;node/1&quot; and it&#39;s alias address which could be anything set by you or pathauto. You simple add     &quot;Disallow: /node/&quot; to the robots.txt file. &lt;a href=&quot;http://blamcast.net/articles/drupal-seo&quot;&gt;This page&lt;/a&gt; on blamcast has more information on this.&lt;/p&gt;
 </description>
-                                <pubDate>Fri, 21 Nov 2008 00:00:00 +0000</pubDate>
+                                <pubDate>Fri, 21 Nov 2008 00:00:00 +0100</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2008/11/21/8-drupal-admin-tasks-complete-putting-your-site-live/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2008/11/21/8-drupal-admin-tasks-complete-putting-your-site-live/</guid>
                         </item>
