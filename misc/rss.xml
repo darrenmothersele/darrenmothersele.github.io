@@ -30,7 +30,7 @@ I can help make these lessons accessible to more people.&lt;/p&gt;
 and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
 as the source of these works.&lt;/p&gt;
 </description>
-                                <pubDate>Tue, 26 Jan 2016 02:00:00 +0100</pubDate>
+                                <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
                         </item>
@@ -42,7 +42,7 @@ It&amp;#39;s about machine learning algorithms.
 You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
 Let me know what you think.&lt;/p&gt;
 </description>
-                                <pubDate>Tue, 26 Jan 2016 01:00:00 +0100</pubDate>
+                                <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
                         </item>
@@ -109,7 +109,7 @@ he documented his life.
 This follows on very nicely from the discussions I was having yesterday at the &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;Indie Web Camp&lt;/a&gt;
 but that&amp;#39;s a story for another day...&lt;/p&gt;
 </description>
-                                <pubDate>Sun, 12 Jul 2015 00:00:00 +0200</pubDate>
+                                <pubDate>Sun, 12 Jul 2015 00:00:00 +0100</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/07/12/happy-birthday-bucky/</guid>
                         </item>
@@ -251,8 +251,8 @@ behalf of this domain. You will need to create this (as a TXT record) in the
 DNS for every domain name you will be hosting email for.
 The SPF record should look like this, but with x.x.x.x replaced with your
 server IP address:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;v=spf1 ip4:x.x.x.x -all&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;v=spf1 ip4:x.x.x.x -all&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;There are also DNS records that need to be created for DKIM but I&amp;#39;ll explain what
 this is all about in a bit, as you need to configure the mail server first.&lt;/p&gt;
 
@@ -266,14 +266,14 @@ and update all packages with &lt;em&gt;ap-get update ; apt-get upgrade&lt;/em&gt
 
 &lt;p&gt;Now on to configure iRedMail. You&amp;#39;ll need sudo access for this. So, as the root
 user, download and extract the iRedMail package:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /root
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /root
 wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
 tar xjf iRedMail-0.8.6.tar.bz2
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then change into the iRedMail directory and execute the installer:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd iRedMail-0.8.6/
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd iRedMail-0.8.6/
 bash iRedMail.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You should then be presented with this welcome screen. Please note that I
 took these screenshots last week and so they are of v0.8.5.&lt;/p&gt;
 
@@ -345,17 +345,17 @@ certificate signing request. I need all three of these files, so I upload them
 to the server and move them to the appropriate places. Put the private key in
 &lt;code&gt;/etc/ssl/private&lt;/code&gt;, and the other two files in &lt;code&gt;/etc/ssl/certs&lt;/code&gt;
 so you have something that looks like this:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/ssl/private/example.com.key
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/ssl/private/example.com.key
 /etc/ssl/certs/example.com.crt
 /etc/ssl/certs/example.com.ca.crt
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now in your Apache configuration (&lt;code&gt;/etc/apache2/sites-enabled/default-ssl&lt;/code&gt;)
 find the appropriate place for SSL keys, remove the references to self-signed
 certificates, and enter location of your SSL certs and keys:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;SSLCertificateFile /etc/ssl/certs/example.com.crt
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;SSLCertificateFile /etc/ssl/certs/example.com.crt
 SSLCertificateKeyFile /etc/ssl/private/example.com.key
 SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once you restart Apache that should remove the browser warnings. We also need to
 update the certificates in use by dovecot and postfix to prevent SSL error
 messages when sending and receiving email via other apps.&lt;/p&gt;
@@ -373,18 +373,18 @@ in this order:&lt;/p&gt;
 &lt;p&gt;For incoming email
 (IMAP/POP) update the dovecot configuration in &lt;code&gt;/etc/dovecot/dovecot.conf&lt;/code&gt;
 and update the following to point at your cert and key files:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ssl_key_file = /etc/ssl/private/example.com.key
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ssl_key_file = /etc/ssl/private/example.com.key
 ssl_cert_file = /etc/ssl/certs/example.chain.key
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;smtpd_tls_key_file = /etc/ssl/private/example.com.key
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;smtpd_tls_key_file = /etc/ssl/private/example.com.key
 ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now restart the services so the changes take effect.&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service apache2 restart
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service apache2 restart
 sudo service postfix restart
 sudo service dovecot restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You should now be able to connect to iRedAdmin and Roundcube via the web
 interface without getting SSL error messages.&lt;/p&gt;
 
@@ -396,22 +396,22 @@ and that you wont get flagged as a spammer or unknown mail server.&lt;/p&gt;
 
 &lt;p&gt;DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
 a list of the keys.&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;amavisd-new showkeys
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;amavisd-new showkeys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You will see something like the following output:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;; key#1, domain example.com, /var/lib/dkim/example.com.pem
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;; key#1, domain example.com, /var/lib/dkim/example.com.pem
 dkim._domainkey.example.com. 3600 TXT (
   &amp;quot;v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
   ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In the DNS settings for your domain, create a new TXT record for dkim._domainkey
 and enter the whole string that is shown between () in the output of the showkeys
 command.  Once you have created the DNS record, you will need to wait a while for
 the change to propagate, then you can test your keys are working correctly with
 the testkeys command:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# amavisd-new testkeys
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# amavisd-new testkeys
 TESTING#1: dkim._domainkey.example.com    =&amp;gt; pass
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once you have verified that the key is working here, you can use a verification
 service to test deliverability of your email. I found the port25 service useful,
 all you have to do is send an email to check-auth@verifier.port25.com and you will
@@ -443,23 +443,23 @@ to the DKIM configuration.&lt;/p&gt;
 
 &lt;p&gt;Login as root to the server, change into the folder where DKIM keys are stored
 and generate a new key for the domain:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /var/lib/dkim
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /var/lib/dkim
 amavisd-new genrsa test.com.pem
 chmod 0644 test.com.pem
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now edit the confuration file at &lt;code&gt;/etc/amavis/conf.d/50-user&lt;/code&gt;
 to include the new key. Find the section in the configuration file where
 keys are declared and add:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;dkim_key(&amp;quot;test.com&amp;quot;, &amp;quot;dkim&amp;quot;, &amp;quot;/var/lib/dkim/test.com.pem&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;dkim_key(&amp;quot;test.com&amp;quot;, &amp;quot;dkim&amp;quot;, &amp;quot;/var/lib/dkim/test.com.pem&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then find where the local domains are defined (in the same config file) and add your new domain:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@local_domains_maps = [&amp;#39;mx.example.com&amp;#39;, &amp;#39;example.com&amp;#39;, &amp;#39;test.com&amp;#39;];
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@local_domains_maps = [&amp;#39;mx.example.com&amp;#39;, &amp;#39;example.com&amp;#39;, &amp;#39;test.com&amp;#39;];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Restart &lt;code&gt;amavis&lt;/code&gt; and show the new list of keys. You should see your
 new key listed. Copy the TXT record and add it to the DNS for the new domain:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/init.d/amavis restart
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/etc/init.d/amavis restart
 amavisd-new showkeys
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Also remember to add the SPF record to the new domain, and set the MX records
 so they point at mx.example.com.&lt;/p&gt;
 
@@ -476,8 +476,8 @@ to get through.&lt;/p&gt;
 
 &lt;p&gt;I had comment out the following line from &lt;code&gt;/etc/postfix/helo_access.pcre&lt;/code&gt;
 to allow these messages through:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/\.local$/                  REJECT Go away, bad guy (.local).
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/\.local$/                  REJECT Go away, bad guy (.local).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Syncing&lt;/h3&gt;
 
 &lt;p&gt;Now I&amp;#39;ve got email working, and thanks to IMAP, I have my email accessible
@@ -487,7 +487,7 @@ more at what is possible now I have a working LDAP server for my domain.
 Then I&amp;#39;m going to quickly move on to implementing other cloud services, in particular
 the synchronisation of other data across my devices, like calendars and contacts.&lt;/p&gt;
 </description>
-                                <pubDate>Mon, 16 Dec 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Mon, 16 Dec 2013 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/16/how-to-be-a-cloud-survivalist-pt3/</guid>
                         </item>
@@ -646,7 +646,7 @@ and look at simple way to set-up the full stack of email server software using
 &lt;a href=&quot;http://owncloud.org/&quot;&gt;ownCloud&lt;/a&gt; to provide some of the other cloud services
 I&amp;#39;m looking for.&lt;/p&gt;
 </description>
-                                <pubDate>Thu, 12 Dec 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Thu, 12 Dec 2013 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/</guid>
                         </item>
@@ -741,7 +741,7 @@ future instalment when I look at backup and failure planning.&lt;/p&gt;
 
 &lt;p&gt;Continue to &lt;a href=&quot;/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/&quot;&gt;How to Be a Cloud Survivalist (part 2)&lt;/a&gt;&lt;/p&gt;
 </description>
-                                <pubDate>Wed, 11 Dec 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Wed, 11 Dec 2013 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/12/11/how-to-be-a-cloud-survivalist/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/11/how-to-be-a-cloud-survivalist/</guid>
                         </item>
@@ -790,7 +790,7 @@ creators than consumers. I think projects like
 &lt;a href=&quot;https://webmaker.org/en-GB/&quot;&gt;Mozilla&amp;#39;s webmaker&lt;/a&gt; can help
 with this. But, the first step is to regain control...&lt;/p&gt;
 </description>
-                                <pubDate>Mon, 09 Dec 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/12/09/create-not-consume/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/12/09/create-not-consume/</guid>
                         </item>
@@ -864,7 +864,7 @@ is hard because your digestive system destroys it so it&amp;#39;s hard to just t
 
 &lt;p&gt;P.s. Drink loads of water.&lt;/p&gt;
 </description>
-                                <pubDate>Wed, 08 May 2013 00:00:00 +0200</pubDate>
+                                <pubDate>Wed, 08 May 2013 00:00:00 +0100</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/05/08/hackers-diet/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/05/08/hackers-diet/</guid>
                         </item>

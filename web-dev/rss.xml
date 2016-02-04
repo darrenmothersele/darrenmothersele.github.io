@@ -7,6 +7,80 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>The Future of (My) Web Part 3 - Rethinking Twitter</title>
+                                <description>&lt;p&gt;I feel sorry for Twitter. It&amp;#39;s never been sure what it&amp;#39;s supposed to be. Twitter pioneered and popularised the idea of microblogging, then  almost killed it.&lt;/p&gt;
+
+&lt;p&gt;As part of my ongoing experiment I have stopped using
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;Facebook&lt;/a&gt; and
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/&quot;&gt;WhatsApp&lt;/a&gt;. The decision is not as simple this time as I don&amp;#39;t want to completely remove myself from Twitter.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;What&amp;#39;s wrong with Twitter&lt;/h2&gt;
+
+&lt;p&gt;I joined Twitter in April 2008 while at the first Social Innovation camp. The camp organisers used Twitter to broadcast messages to all attendees. It was useful.&lt;/p&gt;
+
+&lt;p&gt;Twitter&amp;#39;s functionality was simple. It became a great example of how innovation can come from users. Features such as hash-tags emerged from how people used the technology. Compare this with other services that learnt how to limit and control their users by progressively introducing features. Such as Facebook&amp;#39;s slow boiling of the privacy frog.&lt;/p&gt;
+
+&lt;p&gt;Twitter is another corporate controlled silo. And, compared to the lo-fi, elegant, and clean idea of 140 character public messaging, Twitter today is a mess. My stream flooded with image spam posted to draw attention to tweets. And, unnecessary screenshots of text posted to bypass the limited message size.&lt;/p&gt;
+
+&lt;h2&gt;How I Currently use Twitter&lt;/h2&gt;
+
+&lt;p&gt;To plan my future relationship with Twitter I have first looked at
+how I currently use the service. I&amp;#39;ve identified the following types of usage:&lt;/p&gt;
+
+&lt;h3&gt;0. Aggregator&lt;/h3&gt;
+
+&lt;p&gt;I have a network of friends and colleagues in digital technology, creative coding, free software, and other interests. Twitter collects the thoughts, opinions, and silliness from this eclectic mix of people. This makes it fun and serious, informative and weird.&lt;/p&gt;
+
+&lt;p&gt;I wouldn&amp;#39;t find this variety of updates if they were not all aggregated into once place. But, at the same time, this can be a distracting waste of time. And it&amp;#39;s getting harder to filter out the signal from the noise.&lt;/p&gt;
+
+&lt;h3&gt;1. Live-blogging&lt;/h3&gt;
+
+&lt;p&gt;If I&amp;#39;m at an event with Wifi signal I tend to tweet a lot more than usual. I &lt;em&gt;live-blog&lt;/em&gt; my experience of the event, mainly for my own benefit. This makes it easier to remember what I did when I review the event afterwards.&lt;/p&gt;
+
+&lt;h3&gt;2. RSS feed&lt;/h3&gt;
+
+&lt;p&gt;Back in the day, people would subscribe to my RSS feed to get updated when I added new content to my site. Since Google killed RSS when they shut down Reader, nobody seems to do that anymore.&lt;/p&gt;
+
+&lt;p&gt;I use Twitter to post up bits from my own blog and writing, with links back to my site. Using it as a way to let people know I&amp;#39;ve posted something new.&lt;/p&gt;
+
+&lt;h3&gt;3. Web Links&lt;/h3&gt;
+
+&lt;p&gt;I also post up quotes and links to things I&amp;#39;ve found on the net. Useful stuff I&amp;#39;ve found for work, quotes for inspiration, or things related to my interests.&lt;/p&gt;
+
+&lt;h3&gt;4. Observations&lt;/h3&gt;
+
+&lt;p&gt;Sometimes I feel the need to comment on things I observe. I particularly enjoy paradox and inconsistency. If I have my phone on me, and I&amp;#39;m in the right mood, I share on Twitter.&lt;/p&gt;
+
+&lt;h3&gt;5. Conversation&lt;/h3&gt;
+
+&lt;p&gt;Twitter is a noisy place to try and have a conversation with people. I love how anyone can chime in and join a conversation. I always enjoy hearing from other points of view.&lt;/p&gt;
+
+&lt;p&gt;Sometimes I start public conversations with companies that have disappointed me. It&amp;#39;s a way to get a response, when they don&amp;#39;t answer the phone or emails.&lt;/p&gt;
+
+&lt;h3&gt;6. Brain-dump&lt;/h3&gt;
+
+&lt;p&gt;Sometimes I just post up random thoughts I&amp;#39;ve been having. Maybe these are things I don&amp;#39;t need to shout out to the world. But stuff I still want to log somewhere. Twitter isn&amp;#39;t the correct place for this.&lt;/p&gt;
+
+&lt;h2&gt;Alternative to Twitter&lt;/h2&gt;
+
+&lt;p&gt;I still want to engage with my network on Twitter. But I want to decouple my communication from the silo. This is what the Indie Web refer to as &lt;a href=&quot;https://indiewebcamp.com/POSSE&quot;&gt;POSSE&lt;/a&gt; (Post on Own Site, Syndicate Elsewhere).&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve been thinking of what I&amp;#39;d like to build as an alternative to Twitter.
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/07/12/happy-birthday-bucky/&quot;&gt;Buckminster Fuller&lt;/a&gt;&amp;#39;s Dymaxion Chronofile comes to mind. Bucky documented his entire life, from the point where he started to live his life as an experiment, in what he called a &amp;quot;Chronofile&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;I have already implemented a private &amp;quot;idea log&amp;quot;. This is somewhere to post all the random thoughts that are not yet fully formed. This helps me collect disparate thoughts and allow them to coalesce
+into something more considered. It creates space in my mind by getting things out of my head. Working like a real extension to my memory, some things stick around. But, also like real memory, I need a way to forget. Sometimes, it&amp;#39;s good to let go.&lt;/p&gt;
+
+&lt;p&gt;Posting notes to my own site, and syndicating them to Twitter, is now top of my list. This will be the next feature to develop for my website.&lt;/p&gt;
+</description>
+                                <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/02/02/rethinking-twitter/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/02/rethinking-twitter/</guid>
+                        </item>
+                
+                        <item>
                                 <title>My First Front-end London</title>
                                 <description>&lt;p&gt;Last night I got to attend &lt;a href=&quot;http://www.frontendlondon.co.uk/&quot;&gt;FEL&lt;/a&gt; for the first time. The popular meetup, hosted by &lt;a href=&quot;http://madebymany.com/&quot;&gt;Made by Many&lt;/a&gt;, celebrating it&amp;#39;s 3rd anniversary last night. I have
 &lt;a href=&quot;https://calumryan.com/&quot;&gt;Calum Ryan&lt;/a&gt;, fellow Indiewebber, to thank for sorting me out a ticket.&lt;/p&gt;
@@ -32,7 +106,7 @@ He took us on a humorous tour of ES6, under the guise of deprecating jQuery.&lt;
 
 &lt;p&gt;An entertaining and informative night. I&amp;#39;ll definitely be back.&lt;/p&gt;
 </description>
-                                <pubDate>Fri, 29 Jan 2016 00:00:00 +0100</pubDate>
+                                <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</guid>
                         </item>
@@ -122,7 +196,7 @@ including Drupal.&lt;/p&gt;
 
 &lt;p&gt;Can you imagine using Views on a non-drupal project?&lt;/p&gt;
 </description>
-                                <pubDate>Thu, 28 Jan 2016 14:00:00 +0100</pubDate>
+                                <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
                         </item>
@@ -177,7 +251,7 @@ I need to build and contribute to an alternative
 &lt;p&gt;&amp;quot;The IndieWeb is a people-focused alternative to the ‘corporate web’.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-                                <pubDate>Wed, 27 Jan 2016 00:00:00 +0100</pubDate>
+                                <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
                         </item>
@@ -240,7 +314,7 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Darren&lt;/p&gt;
 </description>
-                                <pubDate>Fri, 22 Jan 2016 00:00:00 +0100</pubDate>
+                                <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
                         </item>
@@ -285,7 +359,7 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Join me for this session. Let&amp;#39;s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
 </description>
-                                <pubDate>Thu, 21 Jan 2016 00:00:00 +0100</pubDate>
+                                <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
                         </item>
@@ -321,7 +395,7 @@ eventually be useful for others too.&lt;/p&gt;
 
 &lt;p&gt;I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and cocreation, and use it to inform, to connect, and to empower.&lt;/p&gt;
 </description>
-                                <pubDate>Sat, 12 Dec 2015 00:00:00 +0100</pubDate>
+                                <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</guid>
                         </item>
@@ -487,7 +561,7 @@ template.&lt;/p&gt;
 interested in hearing about what I&amp;#39;m up to, join 
 my &amp;quot;tinyletter&amp;quot; personal newsletter.&lt;/p&gt;
 </description>
-                                <pubDate>Thu, 03 Dec 2015 00:00:00 +0100</pubDate>
+                                <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</guid>
                         </item>
@@ -629,7 +703,7 @@ register to be notified when we launch the service. &lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
-                                <pubDate>Tue, 24 Nov 2015 00:00:00 +0100</pubDate>
+                                <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</guid>
                         </item>
@@ -711,331 +785,9 @@ amount of time to start planning.&lt;/p&gt;
 And, I&amp;#39;m excited to work on this all weekend, with this
 amazing team, and see where we get to.&lt;/p&gt;
 </description>
-                                <pubDate>Fri, 20 Nov 2015 00:00:00 +0100</pubDate>
+                                <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/11/20/global-startup-battle-2015-kickoff/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/20/global-startup-battle-2015-kickoff/</guid>
-                        </item>
-                
-                        <item>
-                                <title>How to Survive Gentrification of the Drupal Community</title>
-                                <description>&lt;p&gt;We&amp;#39;re finally approaching the release of
-&lt;a href=&quot;https://www.drupal.org/node/2605142&quot;&gt;Drupal 8.0.0 on 19th Nov&lt;/a&gt;. The
-biggest achievement of the Drupal community to date. A complete rewrite of the core
-system to use modern object-oriented PHP. An effort that is often referred to as
-&amp;quot;getting off the island&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;While the switch from Drupal 7 to Drupal 8 is a big change for developers, it is
-the result of a slow process of maturation of the Drupal community. Drupal 8
-brings changes that will be welcomed by many, will bring in many new users, and of
-course, will push a few people out. How can we survive this &amp;quot;gentrification&amp;quot;
-of the Drupal community and prosper without losing touch with why we loved
-Drupal in the first place.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2&gt;Gentrification&lt;/h2&gt;
-
-&lt;p&gt;Cities all over the world are becoming more exclusive, more expensive, and a
-natural result of this is gentrification. It&amp;#39;s contentious. Some see this as
-urban improvement, some as social cleansing.&lt;/p&gt;
-
-&lt;p&gt;I moved to London nearly 12 years ago. Dalston, to be precise. I was back in
-Dalston this weekend for a party, and it&amp;#39;s very different to how I remember it
-from 2004. I compared the nice clean overground train to the unreliable
-and dirty Silverlink trains that used to run to Dalston. Then, walking down Kingsland
-road without being on guard. When I lived there in 2004 it was often cordoned off by police.
-The hipsters, the trendy coffee shops, and other obvious signs of gentrification
-proliferate.&lt;/p&gt;
-
-&lt;p&gt;Brixton was my home for many years, and I witnessed first hand the results of gentrification.
-I had an office space in Brixton, and decided to
-leave it when the landlord announced he was increasing the rent by 25%.
-I lived in several flats around Brixton over the years, and eventually moved
-(a bit) further south as rental prices in Brixton soared.
-I say this with tongue in cheek, well aware that to many I&amp;#39;d be seen as one of
-the gentrifiers!
-It&amp;#39;s the communities that settled here during the
-&lt;a href=&quot;http://www.urban75.org/brixton/history/history.html&quot;&gt;1940s and 1950s&lt;/a&gt;
-that gave the area it&amp;#39;s eclectic multi-cultural feel. They&amp;#39;re the ones who
-have been displaced, losing their homes and community as developers and &amp;quot;yuppies&amp;quot;
-take over.&lt;/p&gt;
-
-&lt;h2&gt;Gentrification of the Drupal Community&lt;/h2&gt;
-
-&lt;p&gt;I first used Drupal back in 2003, version 4 point something. It was fun.
-Hacky, but fun. I had to quickly get a site up for an event we were organising
-and Drupal offered a collaborative content model that set it apart from the
-other products we evaluated.&lt;/p&gt;
-
-&lt;p&gt;I came back to Drupal in 2007 for another community site build, and Drupal 5
-had been released. It was really fun. Yes, still very hacky, but it came with
-the power to build a CMS exactly the way I wanted it to work, and it came with
-an awesome community of other hackers. A community of dedicated open-source
-types, who valued openness, and working on projects for good. I was hooked and
-made the leap to full time Drupal development. Through Drupal
-I got involved in the first social innovation camp, and other tech-for-good
-type things.&lt;/p&gt;
-
-&lt;p&gt;Szeged 2008 was my first Drupalcon. 500 Drupal contributors and users in a small
-university town in Hungary. Everyone I met truly cared about
-making Drupal an awesome project and was contributing time and effort in any
-way they could. Several years later and Drupalcon have grown. 2000+ attendees in
-Barcelona this year, 2300+ in Amsterdam last year. But, as the community has
-grown, so has the commercial influence. With sales pitches as prevalent as
-learning sessions on the schedule.&lt;/p&gt;
-
-&lt;p&gt;One thing I noticed this year was that several sessions concluded, or included,
-a call for donations or funding to accelerate a particular module or project&amp;#39;s
-development. The precedent was set in the starting session of the conference when
-the Drupal Association made an announcement about the Drupal 8 accelerate
-funding programme. I&amp;#39;m not saying this is a bad thing. If this is what it
-takes to get Drupal 8 finished in today&amp;#39;s conditions, then that&amp;#39;s great. But,
-look at it as an indicator of how the community has changed, when compared to
-the sessions at Szeged seven years earlier. You would not have seen a call for
-quarter of a million dollar funding back then. Everyone was there because they
-loved it, not because they were being paid.&lt;/p&gt;
-
-&lt;h2&gt;Hacking the hackers&lt;/h2&gt;
-
-&lt;p&gt;While doing research for this post, I came across this brilliant essay,
-&lt;a href=&quot;https://aeon.co/essays/how-yuppies-hacked-the-original-hacker-ethos&quot;&gt;The hacker hacked&lt;/a&gt;,
-by Brett Scott about the gentrification of hacker culture. I quote his summary
-of the gentrification process:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Key to any gentrification process are successive waves of pioneers who gradually reduce the perceived risk of the form in question. In property gentrification, this starts with the artists and disenchanted dropouts from mainstream society who are drawn to marginalised areas. This, in turn, creates the seeds for certain markets to take root. A WiFi coffeeshop appears next to the Somalian community centre. And that, in turn, sends signals back into the mainstream that the area is slightly less alien than it used to be.
-&lt;/p&gt;&lt;p&gt;
-If you repeat this cycle enough times, the perceived dangers that keep the property developers and yuppies away gradually erode. Suddenly, the tipping point arrives. Through a myriad of individual actions under no one person’s control, the exotic other suddenly appears within a safe frame: interesting, exciting and cool, but not threatening. It becomes open to a carefree voyeurism, like a tiger being transformed into a zoo animal, and then a picture, and then a tiger-print dress to wear at cocktail parties. Something feels ‘gentrified’ when this shallow aesthetic of tiger takes over from the authentic lived experience of tiger.&lt;br /&gt;
--- Brett Scott&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;How does this relate to the Drupal community? Perhaps it starts with the
-NGOs and charities, our original flagship Drupal sites, that became our
-&amp;quot;artists and disenchanted dropouts from mainstream society&amp;quot;. Then the
-big media companies move in as the &amp;quot;perceived dangers gradually erode&amp;quot;.
-Eventually, The White House start using Drupal, and we&amp;#39;re at home with the large
-enterprise clients and big corporate contracts.&lt;/p&gt;
-
-&lt;p&gt;As the Drupal project developed the requirements changed. Drupal&amp;#39;s capabilities
-improve, and the Drupal user base and community advanced too.&lt;/p&gt;
-
-&lt;p&gt;This is evident in the development, and
-standardisation of things like configuration management. Something that was
-never an issue in the early days, as the community became more professional,
-solutions for configuration management were hacked together, and then
-became standardised.&lt;/p&gt;
-
-&lt;p&gt;Configuration management is just one example of the many benefits the Drupal
-community has experienced through the process of gentrification. There&amp;#39;s also
-great test coverage, performance improvements, greater tooling, and many other
-advancements that came to Drupal as the community matured. Drupal became less
-about hacking and more about software engineering.&lt;/p&gt;
-
-&lt;h2&gt;Drupal 8&lt;/h2&gt;
-
-&lt;p&gt;Development on Drupal 8 started in March 2011 and four years later, is to set to
-be released on November 19, 2015. Over these years, Drupal has been rewritten,
-removing most of the pre-OO era PHP legacy.&lt;/p&gt;
-
-&lt;p&gt;Drupal&amp;#39;s legacy was the &amp;quot;not invented here&amp;quot; mindset that became entrenched in
-the community through hacking solutions to extensibility into a language that
-was not designed to support it. And, a culture of not depending on third-party
-code due to early well publicised security issues with PHP extensions.&lt;/p&gt;
-
-&lt;p&gt;The move away from this legacy, the move to &amp;quot;get off the island&amp;quot;, is a move
-towards more standardised, modern, development practises, and a move to
-embrace the wider PHP community.&lt;/p&gt;
-
-&lt;h2&gt;Social cleansing&lt;/h2&gt;
-
-&lt;p&gt;I mentioned before that gentrification is contentious. For some see it as
-urban improvement, some as social cleansing. Drupal and the Drupal community
-have clearly benefitted already, and it looks like prosperous times ahead for
-those who come along for the ride, and the newcomers who join and adopt Drupal.&lt;/p&gt;
-
-&lt;p&gt;But, what about the social cleansing. Will parts of the community be pushed out?
-Who gets left behind?&lt;/p&gt;
-
-&lt;p&gt;Drupal has suffered from an identity crisis. Because of it&amp;#39;s flexibility, it&amp;#39;s
-been used for many things. Drupal&amp;#39;s openness to hacking, extending and ability to
-do just about anything, meant it was more than just a CMS. Over the years many
-talked about &amp;quot;small core&amp;quot;, many used Drupal&amp;#39;s core tools as a Framework, building
-apps and tools well beyond what a typical CMS would be used for.&lt;/p&gt;
-
-&lt;p&gt;Drupal 8 is a content management system.&lt;/p&gt;
-
-&lt;p&gt;Drupal 8 focuses on content management, on providing tools for non-technical
-users to build and manage sites. &lt;b&gt;That&amp;#39;s what it always wanted to be anyway&lt;/b&gt;.&lt;/p&gt;
-
-&lt;p&gt;Drupal 8 leverages the wider PHP community, in particular the Symfony
-components, as it&amp;#39;s core.  It no longer makes sense to see Drupal as a
-framework.&lt;/p&gt;
-
-&lt;p&gt;One of the parts of the community being displaced, are those using
-Drupal as a framework. If this is you then you may already be looking at a fork,
-like &lt;a href=&quot;https://backdropcms.org/&quot;&gt;Backdrop&lt;/a&gt;, or playing with other frameworks,
-like the beautiful &lt;a href=&quot;http://laravel.com/&quot;&gt;Laravel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Another section of the community that may be displaced are those running Drupal
-on low end and shared hosting. Through the
-gentrification process, Drupal&amp;#39;s requirements have increased.
-The increased hosting requirements have meant that dedicated Drupal platform
-hosting providers have emerged. More options for scalability and custom
-software stacks have taken precedent over solutions for smaller websites.&lt;/p&gt;
-
-&lt;p&gt;Drupal also potentially loses the innovators.
-Drupal always had a reputation for being cutting edge and innovative.
-As it moves to become the enterprise choice of open-source CMS, innovation
-becomes less important, and stability, security, and backwards compatibility
-become more important. The biggest innovations in Drupal (flexible content
-types and Views) date back to the 4.7 era. Views is now in core in Drupal 8.
-As Drupal matures further from this point, we&amp;#39;ll probably see Drupal adopting
-innovations from other systems and ecosystems, rather than innovating on it&amp;#39;s own.
-It&amp;#39;s well placed to do this now, built on Symfony components, innovations
-from the wider community will be easier to integrate.&lt;/p&gt;
-
-&lt;h2&gt;Surviving Gentrification&lt;/h2&gt;
-
-&lt;blockquote&gt;
-Do you abandon the form, leave it to the yuppies and head to the next wild frontier?
-Or do you attempt to break the cycle, deface the estate-agent signs,
-and picket outside the wine bar with placards reading &quot;Yuppies Go Home&quot;?&lt;br /&gt;
--- Brett Scott
-&lt;/blockquote&gt;
-
-&lt;p&gt;Or, do come along for the ride? Enjoy the benefits of gentrification, without
-losing the reason why you got involved in the first place?&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;re going to stick around then you&amp;#39;re going to need change a few things.
-Here&amp;#39;s 5 steps that will get you started:&lt;/p&gt;
-
-&lt;h3&gt;1. Learn the foundations that Drupal is now built on.&lt;/h3&gt;
-
-&lt;p&gt;If (like me) you&amp;#39;ve got a background in OO then this shouldn&amp;#39;t be too hard.
-I did several years of post-graduate research into semantics and verification
-of object-oriented software. You definitely don&amp;#39;t need to go that deep, but I would
-highly recommend getting to grips with classic works on
-design patterns such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Design_Patterns&quot;&gt;Gang of Four&lt;/a&gt;
-and &lt;a href=&quot;http://martinfowler.com/books/eaa.html&quot;&gt;Martin Fowler&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;With a basic understanding of the core &amp;quot;patterns&amp;quot; of object-oriented software,
-you start to appreciate how Symfony works.&lt;/p&gt;
-
-&lt;p&gt;Drupal, Silex, Laravel, Symfony Full Stack, Symfony CMF, phpBB, Joomla,
-Magento, Piwik, PHPUnit, Sonata, and many more projects are built on this same
-foundation. So, it&amp;#39;s definitely worth learning, and Drupal can be a good way
-to learn it, while still working with a system you know well.&lt;/p&gt;
-
-&lt;p&gt;Try building a simple app with &lt;a href=&quot;http://silex.sensiolabs.org/&quot;&gt;Silex&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Check out &lt;a href=&quot;https://www.youtube.com/playlist?list=PLpeDXSh4nHjR26Dheb6U1NUSp0aACYGvE&quot;&gt;Drupalcon&lt;/a&gt;
-(and &lt;a href=&quot;https://www.youtube.com/channel/UCb9XEo_1SDNR8Ucpbktrg5A&quot;&gt;Laracon&lt;/a&gt;) on
-YouTube. There&amp;#39;s some great stuff. Like this talk from Ryan Weaver about
-&lt;a href=&quot;https://www.youtube.com/watch?v=iQL1joxljho&quot;&gt;Symfony&lt;/a&gt; and
-this talk by Ross Tuck about &lt;a href=&quot;https://www.youtube.com/watch?v=ajhqScWECMo&quot;&gt;Models and Service Layers&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3&gt;2. Do PHP the right way.&lt;/h3&gt;
-
-&lt;p&gt;PHP has changed. There&amp;#39;s a lot of outdated information and a lot of legacy code.
-Drupal 8 has been rewritten to remove this legacy code, but there&amp;#39;s still a
-lot of bad advice on how to write PHP out there.
-Read &lt;a href=&quot;http://www.phptherightway.com/&quot;&gt;PHP The Right Way&lt;/a&gt; for a full guide on
-how modern PHP should be crafted.&lt;/p&gt;
-
-&lt;h3&gt;3. Use Composer, use and create PHP packages.&lt;/h3&gt;
-
-&lt;p&gt;Getting off the island, and embracing the wider PHP ecosystem means using
-Composer, and it&amp;#39;s ecosystem of PHP packages. There are many more packages that
-are potentially compatible with Drupal, and by architecting your Drupal
-extensions as more general PHP packages you have access to a much wider
-pool of potential collaborators.&lt;/p&gt;
-
-&lt;p&gt;Creating PHP packages also forces you to write clean code, think like a
-software engineer, and write more maintainable, extensible, and reusable code.
-Check out &lt;a href=&quot;http://thephpleague.com/&quot;&gt;The PHP League&lt;/a&gt; as examples of solid
-PHP packages. They have a good &lt;a href=&quot;https://github.com/thephpleague/skeleton&quot;&gt;Skeleton&lt;/a&gt;
-starting package.&lt;/p&gt;
-
-&lt;p&gt;You may have made custom Drupal modules before. Try thinking about how you
-can refactor these into separate packages, and using the Drupal &amp;quot;module&amp;quot;
-as a small layer that integrates your logic with Drupal.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29&quot;&gt;SOLID&lt;/a&gt;
-principles will guide you towards creating good packages.&lt;/p&gt;
-
-&lt;h3&gt;4. Use an IDE&lt;/h3&gt;
-
-&lt;p&gt;This was a big one for me. I was always against using an IDE, burnt by early
-experiences with open-source IDEs. I settled on a customised Sublime Text
-setup, and various other apps. I didn&amp;#39;t see much benefit over using one app
-for everything when I could combine a selection of my favorite apps to do
-the same thing.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m not sure why I stuck to this. I also do a lot of C++ programming. I have
-my own programming language (&lt;a href=&quot;http://cyrilcode.com&quot;&gt;Cyril&lt;/a&gt;) for creating
-audio-reactive visuals. I use XCode for C++ as the debugging tools are
-essential when you&amp;#39;re dealing with object graphs, memory management, and
-debugging pointer issues. So, why not use an IDE for my web development?&lt;/p&gt;
-
-&lt;p&gt;I tried &lt;a href=&quot;https://www.jetbrains.com/phpstorm/&quot;&gt;PHPStorm&lt;/a&gt; and it&amp;#39;s great.
-Far from the cumbersome experience I had in the early days with open-source
-IDEs, it offers a smooth, fast, integrated experience.&lt;/p&gt;
-
-&lt;p&gt;I think you can get away without an IDE when you&amp;#39;re hacking on Drupal 7, but
-on an OO system like Drupal 8 you will need an IDE.
-You will need the integrated tooling, testing, and you&amp;#39;ll be much more efficient
-with intelligent autocompletion, hinting, quick access to docs, and fast
-navigation of the huge codebase.&lt;/p&gt;
-
-&lt;h3&gt;5. Identify your values and serve your purpose.&lt;/h3&gt;
-
-&lt;p&gt;As the corporates, enterprises, and big businesses take over, it&amp;#39;s important to
-remain true to your yourself.
-By &lt;a href=&quot;https://www.mindtools.com/pages/article/newTED_85.htm&quot;&gt;identifying your values&lt;/a&gt;
-you will be well placed to notice when they are being compromised.&lt;/p&gt;
-
-&lt;p&gt;You probably got into open-source because you believe in
-the power of collaboration. But, this value of collaboration can often be at odds
-with the cut-throat corporate culture of competition.&lt;/p&gt;
-
-&lt;p&gt;To be aware of this is to be aware of the opportunity to spread openness and
-collaboration with our work.&lt;/p&gt;
-
-&lt;p&gt;As the proceeds of Drupal&amp;#39;s success flow into the community, it&amp;#39;s important to
-use this to do good. To continue to serve our communities and society as a whole.
-To enable collaboration, share our work, and use openness to build the world we want.&lt;/p&gt;
-
-&lt;h2&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;The real opportunity, is to spread Drupal&amp;#39;s values of cooperation to the wider
-population.&lt;/p&gt;
-
-&lt;p&gt;This is part of a bigger shift in society to adopt open-source values, principles,
-and methodologies. Chris Anderson says it best:&lt;/p&gt;
-
-&lt;blockquote&gt;
-If the past ten years have been about discovering new social and innovation models
-on the Web, then the next ten years will be about applying them to the real world.&lt;br /&gt;
--- Chris Anderson
-&lt;/blockquote&gt;
-
-&lt;p&gt;The &lt;a href=&quot;http://blog.workopen.org/manifesto/&quot;&gt;Work Open Manifesto&lt;/a&gt; offers a useful
-formulation of what it means to be open that can apply beyond open source
-software: &lt;b&gt;&amp;quot;Think Big, Start Small, Work Open&amp;quot;&lt;/b&gt;.&lt;/p&gt;
-
-&lt;p&gt;Drupal is great case study for starting small, thinking big, and working openly.&lt;/p&gt;
-
-&lt;p&gt;The Drupal community has always has been
-transforming, improving ourselves, improving the product, improving our practises,
-and improving our tools.&lt;/p&gt;
-
-&lt;p&gt;Now it&amp;#39;s time to think beyond Drupal, beyond the Drupal community, and to see
-Drupal&amp;#39;s values of collaboration, teamwork, and openness spread through the wider
-community, society, and the world.&lt;/p&gt;
-</description>
-                                <pubDate>Mon, 16 Nov 2015 00:00:00 +0100</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</guid>
                         </item>
                 
         </channel>

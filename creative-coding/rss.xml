@@ -31,7 +31,7 @@ a standard form item to the form.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/darrenmothersele/7597016.js&quot;&gt;&lt;/script&gt;
 </description>
-                                <pubDate>Fri, 22 Nov 2013 00:00:00 +0100</pubDate>
+                                <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/11/22/sending-base64-encoded-data-poco-net-openframeworks/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/11/22/sending-base64-encoded-data-poco-net-openframeworks/</guid>
                         </item>
@@ -103,7 +103,7 @@ It returns a float between 0 and 1. openFrameworks also has an equivalent of
 map function (&lt;code&gt;ofMap&lt;/code&gt;) that maps the noise value (which is 0 - 1) to the
 range 0 - height.&lt;/p&gt;
 </description>
-                                <pubDate>Fri, 11 Oct 2013 00:00:00 +0200</pubDate>
+                                <pubDate>Fri, 11 Oct 2013 00:00:00 +0100</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2013/10/11/nature-of-openframeworks/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2013/10/11/nature-of-openframeworks/</guid>
                         </item>

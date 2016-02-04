@@ -7,6 +7,80 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Future of (My) Web Part 3 - Rethinking Twitter</title>
+        <description>&lt;p&gt;I feel sorry for Twitter. It&amp;#39;s never been sure what it&amp;#39;s supposed to be. Twitter pioneered and popularised the idea of microblogging, then  almost killed it.&lt;/p&gt;
+
+&lt;p&gt;As part of my ongoing experiment I have stopped using
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;Facebook&lt;/a&gt; and
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/&quot;&gt;WhatsApp&lt;/a&gt;. The decision is not as simple this time as I don&amp;#39;t want to completely remove myself from Twitter.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;What&amp;#39;s wrong with Twitter&lt;/h2&gt;
+
+&lt;p&gt;I joined Twitter in April 2008 while at the first Social Innovation camp. The camp organisers used Twitter to broadcast messages to all attendees. It was useful.&lt;/p&gt;
+
+&lt;p&gt;Twitter&amp;#39;s functionality was simple. It became a great example of how innovation can come from users. Features such as hash-tags emerged from how people used the technology. Compare this with other services that learnt how to limit and control their users by progressively introducing features. Such as Facebook&amp;#39;s slow boiling of the privacy frog.&lt;/p&gt;
+
+&lt;p&gt;Twitter is another corporate controlled silo. And, compared to the lo-fi, elegant, and clean idea of 140 character public messaging, Twitter today is a mess. My stream flooded with image spam posted to draw attention to tweets. And, unnecessary screenshots of text posted to bypass the limited message size.&lt;/p&gt;
+
+&lt;h2&gt;How I Currently use Twitter&lt;/h2&gt;
+
+&lt;p&gt;To plan my future relationship with Twitter I have first looked at
+how I currently use the service. I&amp;#39;ve identified the following types of usage:&lt;/p&gt;
+
+&lt;h3&gt;0. Aggregator&lt;/h3&gt;
+
+&lt;p&gt;I have a network of friends and colleagues in digital technology, creative coding, free software, and other interests. Twitter collects the thoughts, opinions, and silliness from this eclectic mix of people. This makes it fun and serious, informative and weird.&lt;/p&gt;
+
+&lt;p&gt;I wouldn&amp;#39;t find this variety of updates if they were not all aggregated into once place. But, at the same time, this can be a distracting waste of time. And it&amp;#39;s getting harder to filter out the signal from the noise.&lt;/p&gt;
+
+&lt;h3&gt;1. Live-blogging&lt;/h3&gt;
+
+&lt;p&gt;If I&amp;#39;m at an event with Wifi signal I tend to tweet a lot more than usual. I &lt;em&gt;live-blog&lt;/em&gt; my experience of the event, mainly for my own benefit. This makes it easier to remember what I did when I review the event afterwards.&lt;/p&gt;
+
+&lt;h3&gt;2. RSS feed&lt;/h3&gt;
+
+&lt;p&gt;Back in the day, people would subscribe to my RSS feed to get updated when I added new content to my site. Since Google killed RSS when they shut down Reader, nobody seems to do that anymore.&lt;/p&gt;
+
+&lt;p&gt;I use Twitter to post up bits from my own blog and writing, with links back to my site. Using it as a way to let people know I&amp;#39;ve posted something new.&lt;/p&gt;
+
+&lt;h3&gt;3. Web Links&lt;/h3&gt;
+
+&lt;p&gt;I also post up quotes and links to things I&amp;#39;ve found on the net. Useful stuff I&amp;#39;ve found for work, quotes for inspiration, or things related to my interests.&lt;/p&gt;
+
+&lt;h3&gt;4. Observations&lt;/h3&gt;
+
+&lt;p&gt;Sometimes I feel the need to comment on things I observe. I particularly enjoy paradox and inconsistency. If I have my phone on me, and I&amp;#39;m in the right mood, I share on Twitter.&lt;/p&gt;
+
+&lt;h3&gt;5. Conversation&lt;/h3&gt;
+
+&lt;p&gt;Twitter is a noisy place to try and have a conversation with people. I love how anyone can chime in and join a conversation. I always enjoy hearing from other points of view.&lt;/p&gt;
+
+&lt;p&gt;Sometimes I start public conversations with companies that have disappointed me. It&amp;#39;s a way to get a response, when they don&amp;#39;t answer the phone or emails.&lt;/p&gt;
+
+&lt;h3&gt;6. Brain-dump&lt;/h3&gt;
+
+&lt;p&gt;Sometimes I just post up random thoughts I&amp;#39;ve been having. Maybe these are things I don&amp;#39;t need to shout out to the world. But stuff I still want to log somewhere. Twitter isn&amp;#39;t the correct place for this.&lt;/p&gt;
+
+&lt;h2&gt;Alternative to Twitter&lt;/h2&gt;
+
+&lt;p&gt;I still want to engage with my network on Twitter. But I want to decouple my communication from the silo. This is what the Indie Web refer to as &lt;a href=&quot;https://indiewebcamp.com/POSSE&quot;&gt;POSSE&lt;/a&gt; (Post on Own Site, Syndicate Elsewhere).&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve been thinking of what I&amp;#39;d like to build as an alternative to Twitter.
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/07/12/happy-birthday-bucky/&quot;&gt;Buckminster Fuller&lt;/a&gt;&amp;#39;s Dymaxion Chronofile comes to mind. Bucky documented his entire life, from the point where he started to live his life as an experiment, in what he called a &amp;quot;Chronofile&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;I have already implemented a private &amp;quot;idea log&amp;quot;. This is somewhere to post all the random thoughts that are not yet fully formed. This helps me collect disparate thoughts and allow them to coalesce
+into something more considered. It creates space in my mind by getting things out of my head. Working like a real extension to my memory, some things stick around. But, also like real memory, I need a way to forget. Sometimes, it&amp;#39;s good to let go.&lt;/p&gt;
+
+&lt;p&gt;Posting notes to my own site, and syndicating them to Twitter, is now top of my list. This will be the next feature to develop for my website.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/02/rethinking-twitter/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/02/rethinking-twitter/</guid>
+      </item>
+    
+      <item>
         <title>My First Front-end London</title>
         <description>&lt;p&gt;Last night I got to attend &lt;a href=&quot;http://www.frontendlondon.co.uk/&quot;&gt;FEL&lt;/a&gt; for the first time. The popular meetup, hosted by &lt;a href=&quot;http://madebymany.com/&quot;&gt;Made by Many&lt;/a&gt;, celebrating it&amp;#39;s 3rd anniversary last night. I have
 &lt;a href=&quot;https://calumryan.com/&quot;&gt;Calum Ryan&lt;/a&gt;, fellow Indiewebber, to thank for sorting me out a ticket.&lt;/p&gt;
@@ -32,7 +106,7 @@ He took us on a humorous tour of ES6, under the guise of deprecating jQuery.&lt;
 
 &lt;p&gt;An entertaining and informative night. I&amp;#39;ll definitely be back.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 29 Jan 2016 00:00:00 +0100</pubDate>
+        <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</guid>
       </item>
@@ -122,7 +196,7 @@ including Drupal.&lt;/p&gt;
 
 &lt;p&gt;Can you imagine using Views on a non-drupal project?&lt;/p&gt;
 </description>
-        <pubDate>Thu, 28 Jan 2016 14:00:00 +0100</pubDate>
+        <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
       </item>
@@ -177,7 +251,7 @@ I need to build and contribute to an alternative
 &lt;p&gt;&amp;quot;The IndieWeb is a people-focused alternative to the ‘corporate web’.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-        <pubDate>Wed, 27 Jan 2016 00:00:00 +0100</pubDate>
+        <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
       </item>
@@ -206,7 +280,7 @@ I can help make these lessons accessible to more people.&lt;/p&gt;
 and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
 as the source of these works.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 26 Jan 2016 02:00:00 +0100</pubDate>
+        <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
       </item>
@@ -218,7 +292,7 @@ It&amp;#39;s about machine learning algorithms.
 You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
 Let me know what you think.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 26 Jan 2016 01:00:00 +0100</pubDate>
+        <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
       </item>
@@ -281,7 +355,7 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Darren&lt;/p&gt;
 </description>
-        <pubDate>Fri, 22 Jan 2016 00:00:00 +0100</pubDate>
+        <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
       </item>
@@ -326,7 +400,7 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Join me for this session. Let&amp;#39;s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 21 Jan 2016 00:00:00 +0100</pubDate>
+        <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
       </item>
@@ -381,7 +455,7 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 
 &lt;p&gt;Have a great month!&lt;/p&gt;
 </description>
-        <pubDate>Sun, 17 Jan 2016 00:00:00 +0100</pubDate>
+        <pubDate>Sun, 17 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</guid>
       </item>
@@ -436,45 +510,9 @@ Part 3: Explain how awesome the session will be because you are going to cover &
 &lt;p&gt;A well earned break for xmas? Hopefully I&amp;#39;ll see you before, but if not, happy holidays! :)
 If you get a moment, please let me know what you think of this TinyLetter idea. Should I write regular updates? Do you think it is better/worse than posting on Facebook? I&amp;#39;d love to hear your thoughts.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 12 Dec 2015 00:00:00 +0100</pubDate>
+        <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2015/12/12/my-first-tinyletter/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/my-first-tinyletter/</guid>
-      </item>
-    
-      <item>
-        <title>In Summary...</title>
-        <description>&lt;p&gt;Things are becoming clearer.
-I wrote a bit &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;last week&lt;/a&gt;
-about my decision to leave Facebook.
-I&amp;#39;m still exploring what this means, and here&amp;#39;s where I&amp;#39;m at now.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;&amp;quot;The most important thing about technology is how it changes people.&amp;quot;
--- Jaron Lanier&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ve been thinking a lot about tech in terms of it&amp;#39;s effect on people.
-Jaron Lanier, in his book
-&lt;a href=&quot;http://www.jaronlanier.com/gadgetwebresources.html&quot;&gt;You are not a Gadget&lt;/a&gt;,
-talks about the idea of &amp;quot;Lock in&amp;quot; as when a technology
-becomes so established (ingrained?) that it is impossible to change.&lt;/p&gt;
-
-&lt;p&gt;I see we&amp;#39;re in danger of becoming &amp;quot;locked in&amp;quot; to certain ways of thinking
-about how we operate online, and by leaving Facebook I&amp;#39;m forcing myself to
-think about alternatives, by necessity. By &amp;quot;opting out&amp;quot; of Facebook&amp;#39;s idea
-of what it means to be connected online, I&amp;#39;m motivated to think about what
-I really want and build tools for myself. Hopefully what I build will
-eventually be useful for others too.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt; is a growing movement to build a people-focused alternative to the corporate web.&lt;/p&gt;
-
-&lt;p&gt;The predominant business model online now is providing &amp;quot;free&amp;quot; services, locking people in, stealing their data, and selling it to advertisers.&lt;/p&gt;
-
-&lt;p&gt;I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and cocreation, and use it to inform, to connect, and to empower.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 12 Dec 2015 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</guid>
       </item>
     
   </channel>
