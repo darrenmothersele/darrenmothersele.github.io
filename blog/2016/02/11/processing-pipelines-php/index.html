@@ -103,7 +103,7 @@ class Square {
 }
 </code></pre></figure>
 <p>Then create a <code>Pipeline</code> to chain the stages together:</p>
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$pipe = (new Pipeline-&gt;Double()-&gt;Square()-&gt;Add(10);
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
 </code></pre></figure>
 <p>And then you can process values using the Pipeline:</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php">echo $pipe-&gt;process(10), PHP_EOL;
