@@ -7,6 +7,82 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>PHP Processing Pipeline</title>
+        <description>&lt;p&gt;If you&amp;#39;re faced with refactoring a huge bunch of sequential code
+then a pipeline my be the answer.
+With a processing pipeline you create your code in stages.
+You then compose your stages into a pipeline, and pass in your
+input for processing.&lt;/p&gt;
+
+&lt;p&gt;This is great because each of the stages can be easily tested
+independently. It also makes the code much easier to read and
+maintain.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;There&amp;#39;s a nice and simple implementation published by the
+&lt;a href=&quot;http://thephpleague.com/&quot;&gt;League of Extraordinary Packages&lt;/a&gt;.
+I&amp;#39;ve created a fork (&lt;a href=&quot;https://github.com/darrenmothersele/pipeline&quot;&gt;on GitHub here&lt;/a&gt;)
+which offers an even simpler syntax.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a very basic example to show off this new syntax.
+You create your stages as simple classes with an invoke method.
+For example:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Double {
+    public function __invoke($payload)
+    {
+        return $payload * 2;
+    }
+}
+
+class Square {
+    public function __invoke($payload)
+    {
+        return $payload * $payload;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Add {
+    private $i;
+    public function __construct($i)
+    {
+        $this-&amp;gt;i = $i;
+    }
+    public function __invoke($payload)
+    {
+        return $payload + $this-&amp;gt;i;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Then create a &lt;code&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$pipe = (new Pipeline-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;You can even process a list of values:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(array_map($pipe, [1, 2, 3]));
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Obviously you are not just limited to processing integers as in these
+examples. XML documents, converting to JSON, filtering, translating
+and other transformations are great candidates for pipelines stages.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve submitted a pull request for my simple modification. All I did
+was add an implementation of the &lt;code&gt;__invoke()&lt;/code&gt; method so you can
+add stages without having to explicitly &lt;em&gt;new&lt;/em&gt;-up objects and
+pass them into the &lt;code&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;Hopefully my pull request gets accepted. The only thing to be aware
+of is that I made use of the variadic operator, so it needs a PHP
+version of 5.6 or greater.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</guid>
+      </item>
+    
+      <item>
         <title>The Future of (My) Web Part 3 - Rethinking Twitter</title>
         <description>&lt;p&gt;I feel sorry for Twitter. It&amp;#39;s never been sure what it&amp;#39;s supposed to be. Twitter pioneered and popularised the idea of microblogging, then  almost killed it.&lt;/p&gt;
 
@@ -273,12 +349,43 @@ working on my own set of notes.
 I hope by rewriting Bucky&amp;#39;s words in plain english
 I can help make these lessons accessible to more people.&lt;/p&gt;
 
-&lt;p&gt;You can read the
-&lt;a href=&quot;https://medium.com/@mothersele/everything-i-know-by-buckminster-fuller-9dc49c643588&quot;&gt;first installment on Medium&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;I using the &lt;a href=&quot;https://archive.org/details/buckminsterfuller&quot;&gt;video series uploaded to archive.org&lt;/a&gt;
 and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
 as the source of these works.&lt;/p&gt;
+
+&lt;h2&gt;Everything I Know by Buckminster Fuller&lt;/h2&gt;
+
+&lt;p&gt;An attempt to better understand the lessons of Buckminster Fuller, by translating into Plain English.&lt;/p&gt;
+
+&lt;h3&gt;Session 1 - Part 1&lt;/h3&gt;
+
+&lt;p&gt;We are all born naked, helpless, and ignorant. That’s where humanity has always started. We have had to find our own way, by trial and error, driven by instinctive urges.&lt;/p&gt;
+
+&lt;p&gt;Humans have been on our planet for millions of years with very little physiological change. In India and China, as far back as 5,000 years ago, we were thinking extraordinarily well about our experience and the principles of our universe. Astonishing, in view of the limited amount of information humanity had at that time.&lt;/p&gt;
+
+&lt;p&gt;Now, because we have systems to record information, we can see the rapid rate at which it is increasing. We can’t keep track of the rate at which we are discovering more. Like a child, formed in the womb for nine months, being born into an entire new world — we are coming out of a common womb of ignorance, transitioning into a new relationship with the universe. Not, as a divided humanity spread across the planet, but as a whole.&lt;/p&gt;
+
+&lt;p&gt;We are living as people of the world. Things thought impossible become reality within a generation. Things once dismissed as nonsense, become typical. None of it was planned. There was nobody in previous generations prophesying about the impossibles that are happening today. Not one of these steps was anticipated by any of the preceding. But, no sooner than it has happened, the human says “I knew it all the time. I’m not one of those who are suprised… I was a little bit responsible.”&lt;/p&gt;
+
+&lt;p&gt;There is a strange vanity inherent in humans. Essential to being born naked and helpless, and having to make the fantastic number of mistakes in order to learn. Without which, we would have become disgruntled, and dismayed by our mistakes, and not been able to carry on. And so we were given this strange vanity so we are able to decieve ourselves. Like saying “getting to the moon, anybody can do that. It’s simple and logical.” Now it’s obvious, but only because it happened in your lifetime, and you can see how it happened.&lt;/p&gt;
+
+&lt;h3&gt;Session 1 - Part 2&lt;/h3&gt;
+
+&lt;p&gt;When people say natural they mean as it was in their day. As rules and customs change over time, so the young people begin to see things differently. Any tension between generations is down to the young being born into a new natural, which is unnatural to their elders.&lt;/p&gt;
+
+&lt;p&gt;The lily might assume it was always going to be a seed, then it grows up and gets leaves, then it flowers. Each of these changes a surprise. Patterns like this operate on humanity too, but the vanity of human beings is such that they don’t like to be caught by surprise. Humans have always had troubles, but have never before been so aware of the troubles of others, and so aware of the totality of great trouble. The vanity factor again makes them feel responsible.&lt;/p&gt;
+
+&lt;p&gt;If something is unfamiliar we say it is artificial or unnatural. There is nothing artifical or unnatural. If nature permits it, it is natural. If nature doesn’t permit it, you can’t do it. You may not be familiar with the fact nature allows it, but your unfamiliarity doesn’t make it unnatural.&lt;/p&gt;
+
+&lt;p&gt;Our earth is 8,000 miles diameter, a hundredth the size of the sun, our star, which itself is a minor star. From the moon you can’t make out a mountain on earth, let alone a human being. The aberration of the highest mountain to the deepest depth of the ocean, when taken over 8,000 miles of the earth’s diameter, is insignificant. A polished steel ball is rougher.&lt;/p&gt;
+
+&lt;p&gt;We are invisible on a tiny planet. Orbiting a negligible little star. Which is one of a hundred billion stars in one of a known billion galaxies. As tiny as we are, we have information of an 11 1/2 light year radius. The fact that we have this kind of capability, despite our physical insignificance, hints that we have some very great significance in the scheme.&lt;/p&gt;
+
+&lt;p&gt;We don’t know of any other phenomena that has this mind. There are many creatures that have brains, each combine individual senses to create a special case. But the human mind we find able to do something that the brain cannot do. To review the special case experiences, and from time to time intuit that something else is going on. Something that was not predicted or suggested by the special case experiences considered only by themselves.&lt;/p&gt;
+
+&lt;p&gt;The earliest annals of man record five bright lights in the sky. Much smaller than the sun and the moon, but behaving in ways the other myriad of lights in the sky did not. The others stayed constant, but these five moved around and were a little brighter than the others. We tracked where they would appear and saw regularities. Good recordings of these behaviours were made, of what we began to call the planets. Five special cases differentiated by their unique behaviour.&lt;/p&gt;
+
+&lt;h3&gt;TBC...&lt;/h3&gt;
 </description>
         <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
@@ -287,10 +394,21 @@ as the source of these works.&lt;/p&gt;
     
       <item>
         <title>The clouds made me do it...</title>
-        <description>&lt;p&gt;I wrote &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;my first ever poem&lt;/a&gt;.
-It&amp;#39;s about machine learning algorithms.
-You can find it on &lt;a href=&quot;https://medium.com/@mothersele/dear-algorithm-2afe4e55263a&quot;&gt;Medium&lt;/a&gt;.
-Let me know what you think.&lt;/p&gt;
+        <description>&lt;p&gt;Dear Algorithm,&lt;/p&gt;
+
+&lt;p&gt;I have no idea what I’m doing. But you do. Notwithstanding statistical anomalies and a slight margin of error.&lt;/p&gt;
+
+&lt;p&gt;Look at the clouds in the sky. You might recognise the stratus and cumulus. But, you can’t see the timid blue with brave orange flourishes that I experience.&lt;/p&gt;
+
+&lt;p&gt;This unique display, never before seen, and never to appear again, can never be predicted in all its beautiful complexity.&lt;/p&gt;
+
+&lt;p&gt;Simple to observe and experience. Impossible to know.&lt;/p&gt;
+
+&lt;p&gt;Your models can guess what I will do. But I am one with the clouds, and you will never know me.&lt;/p&gt;
+
+&lt;p&gt;Love,&lt;/p&gt;
+
+&lt;p&gt;Human&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
@@ -458,61 +576,6 @@ Part 3: Explain how awesome the session will be because you are going to cover &
         <pubDate>Sun, 17 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</guid>
-      </item>
-    
-      <item>
-        <title>TinyLetter #1 - My First TinyLetter</title>
-        <description>&lt;p&gt;Backfill on 30/01/2016: Posting up my first TinyLetter for posterity.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2&gt;Thanks for joining my TinyLetter&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;#39;re wondering why you are getting this, it&amp;#39;s because you&amp;#39;ve ended up on my list of friends and family. I don&amp;#39;t post on Facebook, so I&amp;#39;m trying this as an easy way to follow my updates. If you don&amp;#39;t want this, let me know or unsubscribe. No hard feelings! :)&lt;/p&gt;
-
-&lt;h2&gt;What is TinyLetter?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://daz.is/l/tlwired&quot;&gt;Here&amp;#39;s an interesting article&lt;/a&gt; about TinyLetter from Wired.&lt;/p&gt;
-
-&lt;p&gt;For me, it&amp;#39;s &lt;strong&gt;a stop-gap fix until there&amp;#39;s a federated social web that we can all use&lt;/strong&gt;. Even then, I might just keep using it, because I like that email is a little more personal than twittering or posting online.&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s basically the kind of stuff I may have once upon a time posted on Facebook, but now in an easy to digest (or delete) format, and with some level of quality control filter as I&amp;#39;m aiming for each letter to be less than 600 words.&lt;/p&gt;
-
-&lt;h2&gt;Why am I doing this?&lt;/h2&gt;
-
-&lt;p&gt;By leaving Facebook I&amp;#39;m forcing myself to think about alternatives, by necessity. By &amp;quot;opting out&amp;quot; of Facebook&amp;#39;s idea of what it means to be connected online, I&amp;#39;m motivated to think about what I really want and build tools for myself. Hopefully what I build will eventually be useful for others too. The predominant business model online now is providing &amp;quot;free&amp;quot; services, locking people in, stealing their data, and selling it to advertisers. I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and co-creation, and use it to inform, to connect, and to empower.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;quot;The most important thing about a technology is how it changes people.&amp;quot;&lt;br&gt;
-- Jaron Lanier&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2&gt;Cyril in Print&lt;/h2&gt;
-
-&lt;p&gt;I was pretty excited when I saw that the programming language I created for live coding visuals,
-&lt;a href=&quot;http://cyrilcode.com/&quot;&gt;Cyril&lt;/a&gt;, is now
-&lt;a href=&quot;http://danhett.tictail.com/&quot;&gt;in printed format&lt;/a&gt;! - Cyril user Dan Hett recorded some of the visuals from his live shows and created these awesome prints. They look (and feel) great!&lt;/p&gt;
-
-&lt;h2&gt;MozFest&lt;/h2&gt;
-
-&lt;p&gt;Last month I was at Mozilla Festival. I love MozFest because it&amp;#39;s a weekend of hanging out with doers and dreamers, who all want a better web. I love how it attracts such a diverse audience. My highlight was meeting @openmatt and @phillipadsmith and hacking with them on &lt;a href=&quot;https://github.com/OpenMatt/GitDone/&quot;&gt;GitDone&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Drupal 8&lt;/h2&gt;
-
-&lt;p&gt;The new version of Drupal finally got released. It&amp;#39;s a complete rebuild. A great example of what an open-source community can do. The community has changed a lot over the years, so &lt;a href=&quot;http://daz.is/l/d8&quot;&gt;I wrote an article&lt;/a&gt; comparing the changes in the Drupal community to a process of gentrification.&lt;/p&gt;
-
-&lt;h2&gt;London Decompression&lt;/h2&gt;
-
-&lt;p&gt;Nikki and I had a lot of fun taking our art project, &amp;quot;En-lighten-me&amp;quot; to the Burning Man decompression event. Highlights for me were Johnny Moy and &lt;a href=&quot;https://soundcloud.com/adhsofficial&quot;&gt;ADHS&lt;/a&gt; in the Minstry of Fluffistry room. - Michael and his team created an amazing space, with great music.&lt;/p&gt;
-
-&lt;h2&gt;Next month...&lt;/h2&gt;
-
-&lt;p&gt;A well earned break for xmas? Hopefully I&amp;#39;ll see you before, but if not, happy holidays! :)
-If you get a moment, please let me know what you think of this TinyLetter idea. Should I write regular updates? Do you think it is better/worse than posting on Facebook? I&amp;#39;d love to hear your thoughts.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/12/12/my-first-tinyletter/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/my-first-tinyletter/</guid>
       </item>
     
   </channel>

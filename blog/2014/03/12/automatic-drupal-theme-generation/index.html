@@ -13,6 +13,7 @@
 </head>
 <body>
 
+
 <header id="header">
     <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
     <h1>
@@ -27,6 +28,21 @@
 
 </header>
 
+<!-- <header>
+
+<div class="top-nav">
+
+<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
+
+<ul class="menu menu-list">
+    <li><a href="/about/">About me</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+</div>
+<br clear="both">
+
+</header> -->
 
 <div id="main">
 <div class="page">
@@ -234,7 +250,7 @@ acceptable abuse of the feature.</p>
 
 <p>For example, annotate a certain part of the source code as being responsible
 for layout and it will be automatically compiled into a Panels Layout Plugin:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div x-drupal-type=&quot;layout&quot; x-drupal-name=&quot;front_page&quot; x-drupal-label=&quot;Front page&quot; x-drupal-no-wrap&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div x-drupal-type=&quot;layout&quot; x-drupal-name=&quot;front_page&quot; x-drupal-label=&quot;Front page&quot; x-drupal-no-wrap&gt;
    &lt;div class=&quot;container&quot;&gt;
      &lt;div class=&quot;row&quot;&gt;
      &lt;div class=&quot;span8&quot; x-drupal-region x-drupal-name=&quot;content&quot;&gt;
@@ -246,17 +262,17 @@ for layout and it will be automatically compiled into a Panels Layout Plugin:</p
    &lt;/div&gt;
   &lt;/div&gt;
  &lt;/div&gt;
-</code></pre></div>
+</code></pre></figure>
 <p>Another example, this is content shown in a particular preview style called &quot;Box&quot;.
 It maps to a Drupal view mode:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div class=&quot;box&quot; x-drupal-type=&quot;display&quot; x-drupal-name=&quot;box_teaser&quot; x-drupal-label=&quot;Box teaser&quot;&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div class=&quot;box&quot; x-drupal-type=&quot;display&quot; x-drupal-name=&quot;box_teaser&quot; x-drupal-label=&quot;Box teaser&quot;&gt;
   &lt;img src=&quot;&quot; width=&quot;100&quot; height=&quot;100&quot; alt=&quot;&quot; x-drupal-region x-drupal-name=&quot;image&quot; x-drupal-no-wrap&gt;
   &lt;h6 x-drupal-region x-drupal-name=&quot;title&quot;&gt;Easy to use&lt;/h6&gt;
   &lt;p x-drupal-region x-drupal-name=&quot;summary&quot; x-drupal-no-wrap&gt;
     To get started, you select the desired sample and base the entire website on it. It’s that simple!
   &lt;/p&gt;
 &lt;/div&gt;
-</code></pre></div>
+</code></pre></figure>
 <p>Many other attributes are identified and the system currently supports
 panels layouts, panels styles, views styles, display suite (view mode templates),
 menus (kinda), and image styles.</p>
@@ -324,7 +340,7 @@ where I&#39;ll be demonstrating the early version of the theme generator and ask
     <h4>Updates...</h4>
 <form action="https://tinyletter.com/dazm" method="post">
     <p>
-        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
     </p>
     <p>
         <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
@@ -346,6 +362,84 @@ No tracking is used on this site.</p>
 
 </div>
 </div>
+
+<!-- <footer>
+
+
+
+<div class="footer">
+
+<p>
+    <i class="icon">&#128681;</i>
+    Brixton, London, UK
+    <br>
+    <i class="icon">&#9993;</i>
+    <script type="text/javascript">
+    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
+    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
+    + "&#108;&#101;&#46;&#99;&#111;&#109;";
+    document.write(data);
+    </script>
+</p>
+
+<div class="my-tinyletter">
+<form action="https://tinyletter.com/dazm" method="post">
+    <p>
+        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
+    </p>
+    <p>
+        <input type="text" style="width:140px" name="email" id="tlemail" />
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" /><br>
+        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
+            powered by TinyLetter
+        </a>
+    </p>
+</form>
+</div>
+
+
+<ul class="social-icons text-right menu-list hidden-sm">
+
+
+    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
+
+    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
+
+    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
+
+    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
+
+
+</ul>
+
+
+<ul class="menu-list">
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/training/">Training</a></li>
+    <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<p class="sub">
+    <small>
+        &copy;2007-2015 Darren Mothersele.
+        Unless specified otherwise, content is licensed under a
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+            Commons Attribution-ShareAlike 3.0 Unported License</a>.
+
+
+        Source code is either released into the public domain, or under
+        an MIT / BSD license where possible. If this is not possible
+        (due to restrictions of the GPL) then code will be released
+        as GPL. See individual project license files for details.
+    </small>
+</p>
+</div>
+
+</footer> -->
+
+
 
 <footer id="footer">
     <ul class="icons">

@@ -7,6 +7,82 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>PHP Processing Pipeline</title>
+                                <description>&lt;p&gt;If you&amp;#39;re faced with refactoring a huge bunch of sequential code
+then a pipeline my be the answer.
+With a processing pipeline you create your code in stages.
+You then compose your stages into a pipeline, and pass in your
+input for processing.&lt;/p&gt;
+
+&lt;p&gt;This is great because each of the stages can be easily tested
+independently. It also makes the code much easier to read and
+maintain.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;There&amp;#39;s a nice and simple implementation published by the
+&lt;a href=&quot;http://thephpleague.com/&quot;&gt;League of Extraordinary Packages&lt;/a&gt;.
+I&amp;#39;ve created a fork (&lt;a href=&quot;https://github.com/darrenmothersele/pipeline&quot;&gt;on GitHub here&lt;/a&gt;)
+which offers an even simpler syntax.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a very basic example to show off this new syntax.
+You create your stages as simple classes with an invoke method.
+For example:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Double {
+    public function __invoke($payload)
+    {
+        return $payload * 2;
+    }
+}
+
+class Square {
+    public function __invoke($payload)
+    {
+        return $payload * $payload;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Add {
+    private $i;
+    public function __construct($i)
+    {
+        $this-&amp;gt;i = $i;
+    }
+    public function __invoke($payload)
+    {
+        return $payload + $this-&amp;gt;i;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Then create a &lt;code&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$pipe = (new Pipeline-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;You can even process a list of values:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(array_map($pipe, [1, 2, 3]));
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Obviously you are not just limited to processing integers as in these
+examples. XML documents, converting to JSON, filtering, translating
+and other transformations are great candidates for pipelines stages.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve submitted a pull request for my simple modification. All I did
+was add an implementation of the &lt;code&gt;__invoke()&lt;/code&gt; method so you can
+add stages without having to explicitly &lt;em&gt;new&lt;/em&gt;-up objects and
+pass them into the &lt;code&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;Hopefully my pull request gets accepted. The only thing to be aware
+of is that I made use of the variadic operator, so it needs a PHP
+version of 5.6 or greater.&lt;/p&gt;
+</description>
+                                <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</guid>
+                        </item>
+                
+                        <item>
                                 <title>The Future of (My) Web Part 3 - Rethinking Twitter</title>
                                 <description>&lt;p&gt;I feel sorry for Twitter. It&amp;#39;s never been sure what it&amp;#39;s supposed to be. Twitter pioneered and popularised the idea of microblogging, then  almost killed it.&lt;/p&gt;
 
@@ -706,88 +782,6 @@ register to be notified when we launch the service. &lt;/p&gt;
                                 <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</guid>
-                        </item>
-                
-                        <item>
-                                <title>Global Startup Battle 2015 Kickoff</title>
-                                <description>&lt;p&gt;I&amp;#39;m at a hackathon this weekend. The Global Startup
-battle to be precise.&lt;/p&gt;
-
-&lt;p&gt;I came along as a developer, excited to see what kind of
-projects would be proposed, unsure what I would be
-getting involved in. I didn&amp;#39;t expect to be
-getting up and pitching an idea of my own...&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;I didn&amp;#39;t come expecting to pitch. In fact I was a bit
-terrified of doing so. I hadn&amp;#39;t prepared, but I got up
-and did it anyway.&lt;/p&gt;
-
-&lt;p&gt;I had one minute to pitch an idea. The recommended format was:
-Name, problem, solution, and who you needed for the team.&lt;/p&gt;
-
-&lt;p&gt;The problem I see is that advertising is breaking the internet.
-The current solutions of &lt;a href=&quot;http://lifehacker.com/turn-on-tracking-protection-in-firefox-to-make-pages-lo-1706946166&quot;&gt;tracker blocking&lt;/a&gt; in browsers, addons that
-block adverts, and &lt;a href=&quot;http://lifehacker.com/the-best-ad-blockers-for-ios-9-1731433501&quot;&gt;iOS ad blockers&lt;/a&gt;
-are inadequate.&lt;/p&gt;
-
-&lt;p&gt;I can configure my browser so I never
-see adverts, and I can make it harder for companies to track me,
-but sometimes I like to buy stuff, and I like to know what the options
-are. Sometimes I like to read content or use services, where publishers
-fund themselves via advertising.&lt;/p&gt;
-
-&lt;p&gt;Tonight I used the example
-of a company looking to get a website built. They send out an
-RFP to agencies. The more information they give about what they
-are looking for, what their situation is, and what their budget is,
-the better the proposals they get, and the more informed decision
-they can make. Why can&amp;#39;t we do this with all our purchasing decisions?
-Rather than companies tracking us and building secret profiles,
-how about we decide what data we want to share, and what our
-intensions are?&lt;/p&gt;
-
-&lt;p&gt;The other issue with blocking adverts across the board is
-that publishers who rely on advertising income need an alternative
-way of generating revenue. I don&amp;#39;t want to see them disappear if everyone
-starts using adblockers. I think we can offer an alternative.&lt;/p&gt;
-
-&lt;p&gt;The pitches were followed by time to
-circulate the room and try to round up votes.
-I thought it might be a process like
-&lt;a href=&quot;http://www.idearatingsheets.org/&quot;&gt;idea rating sheets&lt;/a&gt;,
-but some of the other contenders quickly set about sweeping
-the room rounding up votes, while I was still trying to work
-out what the protocol was.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m not naturally inclined to promote myself in situations like this.
-So, I quietly mingled, hoping to pick up a few votes.&lt;/p&gt;
-
-&lt;p&gt;I had a moment where I thought perhaps I&amp;#39;d pitched the wrong crowd.
-What was I thinking?
-A lot of startups build their business models based off of advertising,
-and I&amp;#39;m talking about blocking ads and services that track you.&lt;/p&gt;
-
-&lt;p&gt;Some people didn&amp;#39;t get it. I don&amp;#39;t blame them. I think I was a bit
-confusing as I was still working out how to present my ideas.
-Some people got it, but thought the
-solutions were too complex to comprehend.&lt;/p&gt;
-
-&lt;p&gt;But, amazingly, my idea got selected!&lt;/p&gt;
-
-&lt;p&gt;It&amp;#39;s happening!&lt;/p&gt;
-
-&lt;p&gt;Over the rest of the evening, the team formed, and we had a short
-amount of time to start planning.&lt;/p&gt;
-
-&lt;p&gt;In this short time, the idea has transformed.
-And, I&amp;#39;m excited to work on this all weekend, with this
-amazing team, and see where we get to.&lt;/p&gt;
-</description>
-                                <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/11/20/global-startup-battle-2015-kickoff/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/20/global-startup-battle-2015-kickoff/</guid>
                         </item>
                 
         </channel>
