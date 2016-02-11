@@ -69,7 +69,7 @@ examples. XML documents, converting to JSON, filtering, translating
 and other transformations are great candidates for pipelines stages.&lt;/p&gt;
 
 &lt;p&gt;I&amp;#39;ve submitted a pull request for my simple modification. All I did
-was add an implementation of the &lt;code&gt;__invoke()&lt;/code&gt; method so you can
+was add an implementation of the &lt;code&gt;__call()&lt;/code&gt; method so you can
 add stages without having to explicitly &lt;em&gt;new&lt;/em&gt;-up objects and
 pass them into the &lt;code&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
 
