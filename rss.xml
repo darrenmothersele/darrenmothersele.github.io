@@ -9,9 +9,9 @@
       <item>
         <title>PHP Processing Pipeline</title>
         <description>&lt;p&gt;If you&amp;#39;re faced with refactoring a huge bunch of sequential code
-then a pipeline my be the answer.
+then a pipeline may be the answer.
 With a processing pipeline you create your code in stages.
-You then compose your stages into a pipeline, and pass in your
+Then you compose the stages into a pipeline, and pass your
 input for processing.&lt;/p&gt;
 
 &lt;p&gt;This is great because each of the stages can be easily tested
