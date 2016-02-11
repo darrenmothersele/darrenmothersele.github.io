@@ -7,6 +7,35 @@
     <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Build Your Own PHP Framework</title>
+        <description>&lt;p&gt;I&amp;#39;m excited to announce that I&amp;#39;ll be back running training at this year&amp;#39;s Drupal Camp in London. This will be the 3rd year in a row that I&amp;#39;ve offered training at the camp. I&amp;#39;m doing something a bit different this time...&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Build Your Own PHP Framework&lt;/h2&gt;
+
+&lt;p&gt;In this training you will build your own PHP framework.&lt;/p&gt;
+
+&lt;p&gt;But, why reinvent the wheel?&lt;/p&gt;
+
+&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
+
+&lt;p&gt;If you are a developer going from Drupal 7 to Drupal 8 then you need to adopt an object-oriented mindset.&lt;/p&gt;
+
+&lt;p&gt;Drupal doesn&amp;#39;t always get it right. If you understand the basic principles you know when and why you&amp;#39;re breaking them. You can make pragmatic choices as a programmer, without embodying bad practices.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Build Your Own Framework&amp;quot; is a fun training to learn modern PHP. You will learn the &amp;quot;SOLID&amp;quot; principles of PHP package design. The training will demystify dependency injection, hexagonal architecture and other design patterns. We will look at HTTP Foundation and the other Symfony components.&lt;/p&gt;
+
+&lt;p&gt;Come armed with a basic knowledge of PHP, a laptop that can run PHP, and an open mind. Leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+</description>
+        <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
+      </item>
+    
+      <item>
         <title>Drupal Predictions for 2016</title>
         <description>&lt;p&gt;This will be a momentus year for Drupal.&lt;/p&gt;
 
@@ -1097,148 +1126,6 @@ a free job board on &lt;a href=&quot;http://www.drupaldeveloper.co.uk/jobs&quot;
         <pubDate>Mon, 14 Apr 2014 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2014/04/14/no-recruiters/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/14/no-recruiters/</guid>
-      </item>
-    
-      <item>
-        <title>Drupal Theme Generator Update</title>
-        <description>&lt;p&gt;It&amp;#39;s been a week now since I demoed my proof-of-concept for an automated
-theme generator at the Drupal show and tell event so I thought I&amp;#39;d collect together
-the feedback I&amp;#39;ve received so far and post an update.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h3&gt;Wrong Approach?&lt;/h3&gt;
-
-&lt;p&gt;Almost unanimously positive feedback. In fact, it seems other people have been
-thinking along similar lines:&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; dude! just saw &lt;a href=&quot;http://t.co/GyV2m41eUe&quot;&gt;http://t.co/GyV2m41eUe&lt;/a&gt; This is something that &lt;a href=&quot;https://twitter.com/jenlampton&quot;&gt;@jenlampton&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/mortendk&quot;&gt;@mortendk&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Cottser&quot;&gt;@Cottser&lt;/a&gt; and I have discussed for 8.x twig!&lt;/p&gt;&amp;mdash; Mark Carver (@mark_carver) &lt;a href=&quot;https://twitter.com/mark_carver/statuses/450016685752201216&quot;&gt;March 29, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;The one opposing view I have encountered wasn&amp;#39;t actually against any of the ideas
-in the theme generator, but suggested that taking over Drupal markup was wrong
-and that we should be working with what Drupal provides. I know there are
-arguments for this, and if you want to go this route then you will need some
-other mechanism for documenting the conversion of your design to Drupal theme.
-If you want to argue this case, I&amp;#39;d suggest first try having that discussion with
-&lt;a href=&quot;https://twitter.com/mortendk&quot;&gt;Morten&lt;/a&gt;, as I&amp;#39;m going to assume that
-we&amp;#39;re all OK with the concept of taking complete control of (completely rewriting)
-Drupal&amp;#39;s markup output.&lt;/p&gt;
-
-&lt;h3&gt;Annotation&lt;/h3&gt;
-
-&lt;p&gt;In an earlier prototype I had started working with annotations inside HTML comments
-but I found these increasing harder to parse as the extractions became more
-sophisticated.  Someone in conversation brought up ideas from KSS and suggested
-looking at CSS comments as an alternative.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m still proposing this as a possible approach (see
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Docblock&quot;&gt;Docblock&lt;/a&gt;), but for now I&amp;#39;m going to
-continue to annotate the markup (not the CSS) with x- attributes, as no
-one has had an issue with this, and at this stage it&amp;#39;s easier to work with
-QueryPath to create the extractions based on these attributes.
-It seems that annotating the markup with x- attributes will be acceptable
-as long as they are stripped from the markup during the build process.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/rootwork&quot;&gt;@rootwork&lt;/a&gt; &lt;a href=&quot;https://twitter.com/illepic&quot;&gt;@illepic&lt;/a&gt; &lt;a href=&quot;https://twitter.com/micahgodbolt&quot;&gt;@micahgodbolt&lt;/a&gt; &lt;a href=&quot;https://twitter.com/EvanLovely&quot;&gt;@EvanLovely&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; Interesting! Do the data attributes get stripped out during the build step?&lt;/p&gt;&amp;mdash; Brad Frost (@brad_frost) &lt;a href=&quot;https://twitter.com/brad_frost/statuses/449662512624328704&quot;&gt;March 28, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;It was great to get feedback from &lt;a href=&quot;http://bradfrostweb.com/&quot;&gt;Brad Frost&lt;/a&gt;
-as his work on Atomic Design has been influential in the development of
-this process.&lt;/p&gt;
-
-&lt;h3&gt;In code, or config&lt;/h3&gt;
-
-&lt;p&gt;In this first proof-of-concept, the generated theme is held in memory, well
-actually it is persisted as a Drupal variable containing a single object that
-holds the result of all the &amp;#39;extractions&amp;#39; from the source. The original intention
-was that this would actually be a ctools exportable, so that it could be exported
-and managed as part of the configuration management process for the site.&lt;/p&gt;
-
-&lt;p&gt;This is how the Panels flexible layout builder works. It has one parent layout
-plugin that programmatically declares child layout plugins based on the layouts
-you define using the layout builder tool. These child layouts are stored as
-exportable objects, so they can be exported using
-&lt;a href=&quot;https://drupal.org/project/features&quot;&gt;Features&lt;/a&gt;. The current Hyde theme generator
-approach is similar, except that the parent plugins (for layout or styles)
-programmatically declare child layout and style plugins based on the result
-of each extraction from the HTML source design.&lt;/p&gt;
-
-&lt;p&gt;Storing the result of the build in configuration or database raised some concerns,
-mainly over capturing the results in version control. These tweets summarise the
-issue:&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; interesting implementation. But I believe that should definitely generate theme in code, not just DB&amp;#10;&lt;a href=&quot;https://twitter.com/mcjim&quot;&gt;@mcjim&lt;/a&gt; &lt;a href=&quot;https://twitter.com/MattFielding&quot;&gt;@MattFielding&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tom Bamford (@waako) &lt;a href=&quot;https://twitter.com/waako/statuses/449539868411322368&quot;&gt;March 28, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/waako&quot;&gt;@waako&lt;/a&gt; If a prototype is always in sync with a Drupal theme, the markup *is* all in code right? // &lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mcjim&quot;&gt;@mcjim&lt;/a&gt;&lt;/p&gt;&amp;mdash; Matt Fielding (@MattFielding) &lt;a href=&quot;https://twitter.com/MattFielding/statuses/449551562344386560&quot;&gt;March 28, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;Matt picks up on my original intention, in that the design/theme would be
-captured in code and be version-able because the translation is automatic from the
-design&amp;#39;s HTML/CSS/JS.&lt;/p&gt;
-
-&lt;p&gt;The difficulty is in managing any changes that happen to the generated code
-once it becomes a Drupal theme. This is exactly the problem that using the
-theme generator is trying to solve. That it provides a documented, repeatable
-conversion process, so that design can become part of the (agile) development workflow.&lt;/p&gt;
-
-&lt;p&gt;However, it is going to be unavoidable that some tweaking will be needed.
-This covers a couple more issues that were raised at the Drupal show-and-tell
-event:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;How to manage logic in template files?&lt;/li&gt;
-&lt;li&gt;How to capture Drupal&amp;#39;s pre-process functions?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The approach I am looking at to solve this, is one I&amp;#39;ve seen practised by other
-tools that involve code generation. For example, have you seen BDD using
-&lt;a href=&quot;http://behat.org/&quot;&gt;Behat&lt;/a&gt;? When define a test scenario in Behat it generates
-stub code for any unrecognised steps in your tests. For example, if you say
-&amp;quot;Given I am in a directory&amp;quot;, you would get the generated stub code:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/**
- * @Given /^I am in a directory &amp;quot;([^&amp;quot;]*)&amp;quot;$/
- */
-public function iAmInADirectory($argument1)
-{
-  throw new PendingException();
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;I think the theme generator could do something similar for elements marked as
-requiring pre-processing in the template file. This needs some further
-thought and perhaps a couple of experiements.&lt;/p&gt;
-
-&lt;h3&gt;Terminology&lt;/h3&gt;
-
-&lt;p&gt;Still struggling with naming conventions. If this is going to be a more general
-tool then need generally understandable terms (like &amp;#39;component&amp;#39;). But, need
-to avoid overloading terms even more, as it&amp;#39;s already quite confusing having
-SMACSS modules, Drupal modules, panels, blocks, boxes, styles, layouts. urgh!&lt;/p&gt;
-
-&lt;h3&gt;Next steps...&lt;/h3&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en-gb&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/mothersele&quot;&gt;@mothersele&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mark_carver&quot;&gt;@mark_carver&lt;/a&gt; I love it. Also love that it works w/ panels! Q: Are the layout plugins placed in the theme? &lt;a href=&quot;https://twitter.com/mortendk&quot;&gt;@mortendk&lt;/a&gt; &lt;a href=&quot;https://twitter.com/Cottser&quot;&gt;@Cottser&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jen Lampton (@jenlampton) &lt;a href=&quot;https://twitter.com/jenlampton/statuses/450703701263388672&quot;&gt;March 31, 2014&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;So, I&amp;#39;m going to revise the current proof-of-concept and produce a second
-prototype. This time as a Drush command that generates an actual Drupal theme.
-Rather than holding the extracted theme in configuration it will generate
-a theme folder, that will include all the usual Drupal theme files, plus any plugins for
-Panels layouts, styles, display suite etc, and the CSS/JS copied across
-from the source design.&lt;/p&gt;
-
-&lt;p&gt;This will allow Hyde to generate stub code for pre-processing or
-other programmatic tweaks that are needed to get Drupal&amp;#39;s output to match the
-design markup. I also think people
-will be more accepting of this approach as it&amp;#39;s probably more like how it is
-expected to work.&lt;/p&gt;
-
-&lt;p&gt;My worry is that people will then hack the generated theme, it will go
-out of sync with the source design markup, and that will break the whole process.&lt;/p&gt;
-
-&lt;p&gt;If you want to get involved, please drop me a line. I need input from designers,
-themers, and developers. In particular, I&amp;#39;d be interested to speak to anyone else
-already using Atomic Design and/or SMACSS on Drupal projects.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 04 Apr 2014 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2014/04/04/drupal-theme-generator-update/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/04/drupal-theme-generator-update/</guid>
       </item>
     
   </channel>

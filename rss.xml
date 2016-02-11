@@ -7,6 +7,35 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Build Your Own PHP Framework</title>
+        <description>&lt;p&gt;I&amp;#39;m excited to announce that I&amp;#39;ll be back running training at this year&amp;#39;s Drupal Camp in London. This will be the 3rd year in a row that I&amp;#39;ve offered training at the camp. I&amp;#39;m doing something a bit different this time...&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Build Your Own PHP Framework&lt;/h2&gt;
+
+&lt;p&gt;In this training you will build your own PHP framework.&lt;/p&gt;
+
+&lt;p&gt;But, why reinvent the wheel?&lt;/p&gt;
+
+&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
+
+&lt;p&gt;If you are a developer going from Drupal 7 to Drupal 8 then you need to adopt an object-oriented mindset.&lt;/p&gt;
+
+&lt;p&gt;Drupal doesn&amp;#39;t always get it right. If you understand the basic principles you know when and why you&amp;#39;re breaking them. You can make pragmatic choices as a programmer, without embodying bad practices.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Build Your Own Framework&amp;quot; is a fun training to learn modern PHP. You will learn the &amp;quot;SOLID&amp;quot; principles of PHP package design. The training will demystify dependency injection, hexagonal architecture and other design patterns. We will look at HTTP Foundation and the other Symfony components.&lt;/p&gt;
+
+&lt;p&gt;Come armed with a basic knowledge of PHP, a laptop that can run PHP, and an open mind. Leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+</description>
+        <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
+      </item>
+    
+      <item>
         <title>PHP Processing Pipeline</title>
         <description>&lt;p&gt;If you&amp;#39;re faced with refactoring a huge bunch of sequential code
 then a pipeline may be the answer.
@@ -77,7 +106,7 @@ pass them into the &lt;code&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
 of is that I made use of the variadic operator, so it needs a PHP
 version of 5.6 or greater.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 11 Feb 2016 14:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</guid>
       </item>
@@ -521,61 +550,6 @@ Part 3: Explain how awesome the session will be because you are going to cover &
         <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
-      </item>
-    
-      <item>
-        <title>TinyLetter #2 - The Difficult Second Letter</title>
-        <description>&lt;p&gt;Backfill on 30/01/2016: Posting up my second TinyLetter for posterity.&lt;/p&gt;
-
-&lt;p&gt;Happy new year! and welcome to my second TinyLetter.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;In case you missed &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/12/my-first-tinyletter/&quot;&gt;the first one&lt;/a&gt;, you are receiving this because you are on my list of friends and family. I don&amp;#39;t use Facebook, so this is a way to follow my updates. If you don&amp;#39;t want this, let me know or unsubscribe. No hard feelings! :)&lt;/p&gt;
-
-&lt;p&gt;Thank you to everyone who gave me feedback after &lt;a href=&quot;http://localhost:4000/blog/2015/12/12/my-first-tinyletter/&quot;&gt;my first letter&lt;/a&gt;. It has been really great to hear people&amp;#39;s encouragement, and hear that other people are also starting to question the way we connect online, our relationship with technology, and the way technology is shaping us. Also, a big thank you to people who still invite me to things, despite not being on Facebook! :)&lt;/p&gt;
-
-&lt;p&gt;Someone sent me &lt;a href=&quot;http://www.theguardian.com/music/2015/dec/13/ed-sheeran-quits-social-media-instagram-world-tour&quot;&gt;an article from the Guardian&lt;/a&gt; about Ed Sheeran (pop star?) leaving social media for a year. He&amp;#39;s quoted as saying “I find myself seeing the world through a screen and not my eyes.” Perhaps Ed Sheeran will now go on a killing spree, thus proving the daily mail were correct when &lt;a href=&quot;http://http//www.dailymail.co.uk/news/article-2184658/Is-joining-Facebook-sign-youre-psychopath-Some-employers-psychologists-say-suspicious.html&quot;&gt;they reported&lt;/a&gt; that people not on social media are &amp;quot;abnormal,&amp;quot; &amp;quot;suspicious,&amp;quot; and &amp;quot;possibly even psychopaths&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;I hope you had a relaxing and restorative break, and had a great start to the year. Sometimes we&amp;#39;re forced to stop and relax. That&amp;#39;s what happened to me on new years eve, when I came down with a 24hr bug. Notwithstanding the bouts of vomiting, and missing Rob and Verity&amp;#39;s NYE party, it was a great start to the year. Resting, watching the fireworks out of the window from bed, and being entertained by the amazing Nikki!&lt;/p&gt;
-
-&lt;p&gt;New year is a time of reflection and resolution. For me, this year, resolutions don&amp;#39;t mean starting something or giving something up, but instead mean being resolute (purposeful) about continuing to simplify and live freely. This has been a gradual shift for me, but became a thing when Nikki and I named it. Several months ago, when we were out walking and talking, we coined the term &lt;em&gt;simplivfree&lt;/em&gt; - a portmanteau of the words &lt;em&gt;simply&lt;/em&gt;, &lt;em&gt;living&lt;/em&gt;, and &lt;em&gt;free&lt;/em&gt;. It&amp;#39;s our joint manifesto for how we intend to live our life.&lt;/p&gt;
-
-&lt;p&gt;I remember when we first came up with this phrase. We&amp;#39;d spent a day walking, with no real plan or aim. Something Nikki and I have taken to doing quite often. The great thing about being spontaneous is that it&amp;#39;s always a surprise where you end up. This particular day we ended up walking for several hours, along the canal, from west London, Ladbroke Grove, through Little Venice, by Regents Park, and eventually out at Camden and up to Primrose Hill.&lt;/p&gt;
-
-&lt;p&gt;There&amp;#39;s magic that happens by the canal. The hustle and bustle of london fades away as soon as you go down to the tow path. It&amp;#39;s peaceful. No one is going anywhere fast. Apart from maybe the occasional cyclists or jogger, but they smile and say hi as they pass by. A slow walk among the communities of people living on boats demonstrates that there are many, very different, ways to live life. And that we have choice.&lt;/p&gt;
-
-&lt;p&gt;Simplivfree has become our manifesto, our mantra.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Simply&lt;/strong&gt; = focusing on what&amp;#39;s important. It means finding the signal and filtering out the noise. Simple doesn&amp;#39;t necessarily mean easy, but if something seems hard or feels forced, then it&amp;#39;s probably not &amp;quot;the way&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Living&lt;/strong&gt; = being in the present moment. Getting real. Experiencing and making the most of every moment.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Free&lt;/strong&gt; = being independent. It means not being locked in.&lt;/p&gt;
-
-&lt;p&gt;A couple of replies to my previous letter commented that they couldn&amp;#39;t leave Facebook because they were locked in. For me, it&amp;#39;s a sacrifice I&amp;#39;m willing to make because I believe the potential gains of living more real are unbounded. Plus, it gives me the incentive I need to build my own tools, and contribute to the &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt; (a people-focused alternative to the &amp;quot;corporate web&amp;quot;). This also plays out in my work, as I continue to attract clients that want to switch to open-source content management systems, rather than be locked into proprietary systems.&lt;/p&gt;
-
-&lt;p&gt;This year I plan to go &amp;quot;serverless&amp;quot;. For readers who can relate to this, you will understand how much simpler my life will be when I don&amp;#39;t have several servers to manage. The challenge will be to do this, and retain independence. I&amp;#39;ll save the details of why this is a challenge, and how I think it can be solved, for a more technical post on &lt;a href=&quot;http://www.darrenmothersele.com/blog/&quot;&gt;my blog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Sorry, this letter has ended up much longer than I planned. But, I&amp;#39;ve saved the best news &amp;#39;til last...&lt;/p&gt;
-
-&lt;h2&gt;The Vows&lt;/h2&gt;
-
-&lt;p&gt;Nikki and I are getting married! :)&lt;/p&gt;
-
-&lt;p&gt;Our first joint &amp;quot;Simplivfree&amp;quot; project is to work out what that means to us. This will then guide us as we work out how best to celebrate our union. To do this, we&amp;#39;re embarking on a journey of learning about marriage in it&amp;#39;s many forms. We&amp;#39;re starting this as an open-source project (working title = The Vows) where we will compile everything we learn about engagements, weddings and marriages.&lt;/p&gt;
-
-&lt;p&gt;We want to consider a wide variety of different approaches to marriage in our research, so we&amp;#39;re interested in talking to anyone who believes they could offer any insight - conventional or otherwise. How does marriage work in different cultures, inter-faith marriages, non-conventional relationships, weddings, and marriages.&lt;/p&gt;
-
-&lt;p&gt;If you know anyone who might be interested in having a conversation with us about this, please get in touch.&lt;/p&gt;
-
-&lt;p&gt;Thanks for reading,&lt;/p&gt;
-
-&lt;p&gt;Have a great month!&lt;/p&gt;
-</description>
-        <pubDate>Sun, 17 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/17/second-tinyletter/</guid>
       </item>
     
   </channel>

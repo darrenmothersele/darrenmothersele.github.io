@@ -7,6 +7,35 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Build Your Own PHP Framework</title>
+                                <description>&lt;p&gt;I&amp;#39;m excited to announce that I&amp;#39;ll be back running training at this year&amp;#39;s Drupal Camp in London. This will be the 3rd year in a row that I&amp;#39;ve offered training at the camp. I&amp;#39;m doing something a bit different this time...&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2&gt;Build Your Own PHP Framework&lt;/h2&gt;
+
+&lt;p&gt;In this training you will build your own PHP framework.&lt;/p&gt;
+
+&lt;p&gt;But, why reinvent the wheel?&lt;/p&gt;
+
+&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
+
+&lt;p&gt;If you are a developer going from Drupal 7 to Drupal 8 then you need to adopt an object-oriented mindset.&lt;/p&gt;
+
+&lt;p&gt;Drupal doesn&amp;#39;t always get it right. If you understand the basic principles you know when and why you&amp;#39;re breaking them. You can make pragmatic choices as a programmer, without embodying bad practices.&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Build Your Own Framework&amp;quot; is a fun training to learn modern PHP. You will learn the &amp;quot;SOLID&amp;quot; principles of PHP package design. The training will demystify dependency injection, hexagonal architecture and other design patterns. We will look at HTTP Foundation and the other Symfony components.&lt;/p&gt;
+
+&lt;p&gt;Come armed with a basic knowledge of PHP, a laptop that can run PHP, and an open mind. Leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+</description>
+                                <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
+                        </item>
+                
+                        <item>
                                 <title>PHP Processing Pipeline</title>
                                 <description>&lt;p&gt;If you&amp;#39;re faced with refactoring a huge bunch of sequential code
 then a pipeline may be the answer.
@@ -77,7 +106,7 @@ pass them into the &lt;code&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
 of is that I made use of the variadic operator, so it needs a PHP
 version of 5.6 or greater.&lt;/p&gt;
 </description>
-                                <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+                                <pubDate>Thu, 11 Feb 2016 14:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</guid>
                         </item>
@@ -640,148 +669,6 @@ my &amp;quot;tinyletter&amp;quot; personal newsletter.&lt;/p&gt;
                                 <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/03/work-in-progress/</guid>
-                        </item>
-                
-                        <item>
-                                <title>Identity Proxy</title>
-                                <description>&lt;p&gt;If you&amp;#39;ve got 5 mins, I would really appreciate it if
-you could read this. Then, tell me what you think 
-of the idea.  &lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;We&amp;#39;re calling this &lt;a href=&quot;http://idproxy.co&quot;&gt;Identity Proxy&lt;/a&gt;. A bit like an 
-escrow service for your contact details. 
-First let me explain some of the problems we think
-this solves:&lt;/p&gt;
-
-&lt;h2&gt;Scenario 1&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re looking for an apartment. You do some online research.
-You signup to several websites, services, and 
-email various estate agents. You&amp;#39;ve given away your contact details
-to 20 different companies. &lt;/p&gt;
-
-&lt;p&gt;You then have 20 different companies contacting you via
-email, phone, SMS notifications, etc. That&amp;#39;s a lot of 
-communication coming in through different channels and at
-different times.&lt;/p&gt;
-
-&lt;p&gt;You make a decision and rent a flat with one of the companies,
-but 19 others have your details. What are they going to 
-do with them? Sell them? Market to you later? Call you back
-every few months asking if you&amp;#39;re still looking for an apartment?&lt;/p&gt;
-
-&lt;p&gt;What if you could manage all this communication in once place?
-Decide how and when you get contacted? And, only give your details
-to the 1 company you decide to rent with.&lt;/p&gt;
-
-&lt;h2&gt;Scenario 2&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re looking for a new job. You sign up to 10 different
-recruitment websites, and job portals. 
-You get a regular stream of newsletters, several per
-day from different sources. &lt;/p&gt;
-
-&lt;p&gt;Once you&amp;#39;ve found a job you have to remember everywhere you
-signed up and go around unsubscribing from each of the 
-emails. Or you don&amp;#39;t and they keep filling your inbox.&lt;/p&gt;
-
-&lt;p&gt;What if you could unsubscribe from all of them at the same time, 
-in one simple operation?&lt;/p&gt;
-
-&lt;h2&gt;Scenario 3&lt;/h2&gt;
-
-&lt;p&gt;You&amp;#39;re planning a holiday or a trip somewhere. You use the 
-web to do research. This involves filling in lots of 
-contact forms around the web while you make enquiries about
-places to visit, things to do, and places to stay. &lt;/p&gt;
-
-&lt;p&gt;You&amp;#39;re never sure who you&amp;#39;re giving your personal details
-to. Are companies going to keep marketing to you? 
-Will they sell your details on as a qualified &amp;quot;lead&amp;quot; to other 
-companies?&lt;/p&gt;
-
-&lt;p&gt;What if you could make an enquiry online and only share 
-your personal details once you&amp;#39;re more comfortable with who
-you&amp;#39;re doing business with?&lt;/p&gt;
-
-&lt;h2&gt;Current solutions&lt;/h2&gt;
-
-&lt;p&gt;How many sites have you signed up to in the past?
-If you use a login manager or password manager, then at least you 
-might have some idea of where you&amp;#39;ve given away your details, and 
-what websites you&amp;#39;re registered with. &lt;/p&gt;
-
-&lt;p&gt;Maybe you&amp;#39;ve resorted to using a fake email address, or
-a temporary email account? This only solves part of the 
-problem, because if you&amp;#39;re expecting a reply you have to check
-a separate email account. Also, many contact forms and email
-services try to reject temporary email accounts because
-they are often a source of spam or abuse. &lt;/p&gt;
-
-&lt;h2&gt;Identity Proxy&lt;/h2&gt;
-
-&lt;p&gt;What if we take a different approach, and instead of a &amp;quot;fake&amp;quot;
-temporary identity, we use a &amp;quot;verified&amp;quot; temporary identity?
-The company can see you&amp;#39;re a real verified person, but 
-you stay in control of what information you want to give 
-away. &lt;/p&gt;
-
-&lt;p&gt;We also group enquiries and registrations into projects. 
-This means that once you&amp;#39;ve found your apartment, finished
-your job hunt, or returned from holiday, you can 
-close your temporary identity, and shut off contact from
-all the companies you sent enquiries to, or registered with.
-Apart from the companies you want to continue to do business
-with, who have been given your real contact details. &lt;/p&gt;
-
-&lt;p&gt;This is why we think of it as escrow for your contact details.&lt;/p&gt;
-
-&lt;p&gt;Also, by grouping enquiries into projects and sending them
-via the proxy, you can also decide how, and when, you want
-to receive replies. This makes the communication easier to
-manage, plus they can be combined into a standard
-format to make it easy to compare. &lt;/p&gt;
-
-&lt;h2&gt;What about the companies?&lt;/h2&gt;
-
-&lt;p&gt;Companies that are good internet citizens, and don&amp;#39;t hassle
-customers, and abide by best practises should welcome this idea.
-It&amp;#39;s better than receiving a fake temporary email address, because they
-are assured by the verification that it is a real enquiry.&lt;/p&gt;
-
-&lt;p&gt;We plan to support the &lt;a href=&quot;http://www.list-unsubscribe.com/&quot;&gt;list unsubscribe header&lt;/a&gt;.
-If you&amp;#39;re running a mailing list or registration system, 
-you should already be implementing this on every message you send.
-We are building support for this standard into our system to help companies 
-keep their lists clean.&lt;/p&gt;
-
-&lt;h2&gt; That all sounds very complicated&lt;/h2&gt;
-
-&lt;p&gt;Well, behind the scenes there&amp;#39;s a lot we&amp;#39;re doing to make it 
-work seamlessly. But, it should be no more difficult than
-sending an email, or filling in a contact form on a website.&lt;/p&gt;
-
-&lt;p&gt;There&amp;#39;s no extra work involved for the person making the 
-enquiries, and it will save them lots of time being able
-to &amp;quot;unsubscribe&amp;quot; to a whole project group in one go.&lt;/p&gt;
-
-&lt;h2&gt;What&amp;#39;s next?&lt;/h2&gt;
-
-&lt;p&gt;We&amp;#39;re going to continue development. We&amp;#39;ve started a 
-website at &lt;a href=&quot;http://idproxy.co&quot;&gt;idproxy.co&lt;/a&gt; where you can 
-register to be notified when we launch the service. &lt;/p&gt;
-
-&lt;p&gt;Any questions, feedback, thoughts, please get in touch.&lt;/p&gt;
-
-&lt;p&gt;Is this a service you would use? &lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-</description>
-                                <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/24/identity-proxy-and-the-startup-battle/</guid>
                         </item>
                 
         </channel>
