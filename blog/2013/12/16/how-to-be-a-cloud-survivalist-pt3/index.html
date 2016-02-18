@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
 <header id="header">
     <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
     <h1>
@@ -28,21 +27,6 @@
 
 </header>
 
-<!-- <header>
-
-<div class="top-nav">
-
-<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
-
-<ul class="menu menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-</div>
-<br clear="both">
-
-</header> -->
 
 <div id="main">
 <div class="page">
@@ -190,8 +174,8 @@ behalf of this domain. You will need to create this (as a TXT record) in the
 DNS for every domain name you will be hosting email for.
 The SPF record should look like this, but with x.x.x.x replaced with your
 server IP address:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&quot;v=spf1 ip4:x.x.x.x -all&quot;
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&quot;v=spf1 ip4:x.x.x.x -all&quot;
+</code></pre></div>
 <p>There are also DNS records that need to be created for DKIM but I&#39;ll explain what
 this is all about in a bit, as you need to configure the mail server first.</p>
 
@@ -205,14 +189,14 @@ and update all packages with <em>ap-get update ; apt-get upgrade</em>.</p>
 
 <p>Now on to configure iRedMail. You&#39;ll need sudo access for this. So, as the root
 user, download and extract the iRedMail package:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /root
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd /root
 wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
 tar xjf iRedMail-0.8.6.tar.bz2
-</code></pre></figure>
+</code></pre></div>
 <p>Then change into the iRedMail directory and execute the installer:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd iRedMail-0.8.6/
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd iRedMail-0.8.6/
 bash iRedMail.sh
-</code></pre></figure>
+</code></pre></div>
 <p>You should then be presented with this welcome screen. Please note that I
 took these screenshots last week and so they are of v0.8.5.</p>
 
@@ -284,17 +268,17 @@ certificate signing request. I need all three of these files, so I upload them
 to the server and move them to the appropriate places. Put the private key in
 <code>/etc/ssl/private</code>, and the other two files in <code>/etc/ssl/certs</code>
 so you have something that looks like this:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/etc/ssl/private/example.com.key
+<div class="highlight"><pre><code class="language-text" data-lang="text">/etc/ssl/private/example.com.key
 /etc/ssl/certs/example.com.crt
 /etc/ssl/certs/example.com.ca.crt
-</code></pre></figure>
+</code></pre></div>
 <p>Now in your Apache configuration (<code>/etc/apache2/sites-enabled/default-ssl</code>)
 find the appropriate place for SSL keys, remove the references to self-signed
 certificates, and enter location of your SSL certs and keys:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">SSLCertificateFile /etc/ssl/certs/example.com.crt
+<div class="highlight"><pre><code class="language-text" data-lang="text">SSLCertificateFile /etc/ssl/certs/example.com.crt
 SSLCertificateKeyFile /etc/ssl/private/example.com.key
 SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
-</code></pre></figure>
+</code></pre></div>
 <p>Once you restart Apache that should remove the browser warnings. We also need to
 update the certificates in use by dovecot and postfix to prevent SSL error
 messages when sending and receiving email via other apps.</p>
@@ -312,18 +296,18 @@ in this order:</p>
 <p>For incoming email
 (IMAP/POP) update the dovecot configuration in <code>/etc/dovecot/dovecot.conf</code>
 and update the following to point at your cert and key files:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">ssl_key_file = /etc/ssl/private/example.com.key
+<div class="highlight"><pre><code class="language-text" data-lang="text">ssl_key_file = /etc/ssl/private/example.com.key
 ssl_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre></figure>
+</code></pre></div>
 <p>For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">smtpd_tls_key_file = /etc/ssl/private/example.com.key
+<div class="highlight"><pre><code class="language-text" data-lang="text">smtpd_tls_key_file = /etc/ssl/private/example.com.key
 ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre></figure>
+</code></pre></div>
 <p>Now restart the services so the changes take effect.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo service apache2 restart
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo service apache2 restart
 sudo service postfix restart
 sudo service dovecot restart
-</code></pre></figure>
+</code></pre></div>
 <p>You should now be able to connect to iRedAdmin and Roundcube via the web
 interface without getting SSL error messages.</p>
 
@@ -335,22 +319,22 @@ and that you wont get flagged as a spammer or unknown mail server.</p>
 
 <p>DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
 a list of the keys.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">amavisd-new showkeys
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">amavisd-new showkeys
+</code></pre></div>
 <p>You will see something like the following output:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">; key#1, domain example.com, /var/lib/dkim/example.com.pem
+<div class="highlight"><pre><code class="language-text" data-lang="text">; key#1, domain example.com, /var/lib/dkim/example.com.pem
 dkim._domainkey.example.com. 3600 TXT (
   &quot;v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
   ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB&quot;)
-</code></pre></figure>
+</code></pre></div>
 <p>In the DNS settings for your domain, create a new TXT record for dkim._domainkey
 and enter the whole string that is shown between () in the output of the showkeys
 command.  Once you have created the DNS record, you will need to wait a while for
 the change to propagate, then you can test your keys are working correctly with
 the testkeys command:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text"># amavisd-new testkeys
+<div class="highlight"><pre><code class="language-text" data-lang="text"># amavisd-new testkeys
 TESTING#1: dkim._domainkey.example.com    =&gt; pass
-</code></pre></figure>
+</code></pre></div>
 <p>Once you have verified that the key is working here, you can use a verification
 service to test deliverability of your email. I found the port25 service useful,
 all you have to do is send an email to check-auth@verifier.port25.com and you will
@@ -382,23 +366,23 @@ to the DKIM configuration.</p>
 
 <p>Login as root to the server, change into the folder where DKIM keys are stored
 and generate a new key for the domain:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /var/lib/dkim
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd /var/lib/dkim
 amavisd-new genrsa test.com.pem
 chmod 0644 test.com.pem
-</code></pre></figure>
+</code></pre></div>
 <p>Now edit the confuration file at <code>/etc/amavis/conf.d/50-user</code>
 to include the new key. Find the section in the configuration file where
 keys are declared and add:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">dkim_key(&quot;test.com&quot;, &quot;dkim&quot;, &quot;/var/lib/dkim/test.com.pem&quot;);
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">dkim_key(&quot;test.com&quot;, &quot;dkim&quot;, &quot;/var/lib/dkim/test.com.pem&quot;);
+</code></pre></div>
 <p>Then find where the local domains are defined (in the same config file) and add your new domain:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">@local_domains_maps = [&#39;mx.example.com&#39;, &#39;example.com&#39;, &#39;test.com&#39;];
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@local_domains_maps = [&#39;mx.example.com&#39;, &#39;example.com&#39;, &#39;test.com&#39;];
+</code></pre></div>
 <p>Restart <code>amavis</code> and show the new list of keys. You should see your
 new key listed. Copy the TXT record and add it to the DNS for the new domain:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/etc/init.d/amavis restart
+<div class="highlight"><pre><code class="language-text" data-lang="text">/etc/init.d/amavis restart
 amavisd-new showkeys
-</code></pre></figure>
+</code></pre></div>
 <p>Also remember to add the SPF record to the new domain, and set the MX records
 so they point at mx.example.com.</p>
 
@@ -415,8 +399,8 @@ to get through.</p>
 
 <p>I had comment out the following line from <code>/etc/postfix/helo_access.pcre</code>
 to allow these messages through:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/\.local$/                  REJECT Go away, bad guy (.local).
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/\.local$/                  REJECT Go away, bad guy (.local).
+</code></pre></div>
 <h3>Syncing</h3>
 
 <p>Now I&#39;ve got email working, and thanks to IMAP, I have my email accessible
@@ -487,84 +471,6 @@ No tracking is used on this site.</p>
 
 </div>
 </div>
-
-<!-- <footer>
-
-
-
-<div class="footer">
-
-<p>
-    <i class="icon">&#128681;</i>
-    Brixton, London, UK
-    <br>
-    <i class="icon">&#9993;</i>
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script>
-</p>
-
-<div class="my-tinyletter">
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" style="width:140px" name="email" id="tlemail" />
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-</div>
-
-
-<ul class="social-icons text-right menu-list hidden-sm">
-
-
-    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
-
-    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
-
-    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
-
-    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
-
-
-</ul>
-
-
-<ul class="menu-list">
-    <li><a href="/contact/">Contact</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/training/">Training</a></li>
-    <li><a href="/blog/">Blog</a></li>
-</ul>
-
-<p class="sub">
-    <small>
-        &copy;2007-2015 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.
-
-
-        Source code is either released into the public domain, or under
-        an MIT / BSD license where possible. If this is not possible
-        (due to restrictions of the GPL) then code will be released
-        as GPL. See individual project license files for details.
-    </small>
-</p>
-</div>
-
-</footer> -->
-
-
 
 <footer id="footer">
     <ul class="icons">

@@ -7,6 +7,123 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Playing with Infinity in PHP</title>
+        <description>&lt;p&gt;I&amp;#39;ve been playing around with lazy evaluation in PHP.
+This is made possible by using Generators, added to PHP 5.5
+and refined in PHP 7.
+You can do some cool stuff with infinite (or very
+large) data sets, and avoid getting stuck in infinite loops.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Imagine you want to create an infinitely long array of the same value.
+Here&amp;#39;s a simple bit of code that would do this. Obviously don&amp;#39;t try this.
+Just read the code and imagine a world where this is a good idea...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function repeat($i)
+{
+    $output = [];
+    while (true)
+    {
+        $output[] = $i;
+    }
+    return $output;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This function would never terminate. You get stuck in an
+infinite loop. &lt;code&gt;while(true)&lt;/code&gt; is not something you ever want to see
+in a program, right?&lt;/p&gt;
+
+&lt;p&gt;Well, not if you do lazy evaluation. In this context lazy means you
+only evaluate as much code as you need to get the result. So you
+can have large, even infinite, sets of data, without getting stuck in
+long, or infinite, loops.&lt;/p&gt;
+
+&lt;p&gt;PHP has a feature for lazy evaluation. It&amp;#39;s called a Generator,
+summoned into being using the magical &lt;code&gt;yield&lt;/code&gt; keyword.
+Here&amp;#39;s the stupid repeat, but this time as a generator...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function repeat($i)
+{
+    while (true)
+    {
+        yield $i;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You have to be careful using infinite sets.
+You can still easily create an unterminating program if you tried to print
+out the whole of this Generator function.&lt;/p&gt;
+
+&lt;p&gt;But, what if we just wanted to work with the first 5 items from
+our infinite computation. This is now possible because of lazy
+evaulation. Here&amp;#39;s a take function that will take
+any number of items from any Generator:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function take($i, Generator $generator)
+{
+    while ($i-- &amp;gt; 0 &amp;amp;&amp;amp; $generator-&amp;gt;valid())
+    {
+        yield $generator-&amp;gt;current();
+        $generator-&amp;gt;next();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s take 5...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;foreach (take(5, repeat(&amp;#39;Hello&amp;#39;)) as $item)
+{
+    echo $item, PHP_EOL;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OK, that was a stupid example. What about something a bit more
+interesting? How about the classic fibonnacci sequence generator?&lt;/p&gt;
+
+&lt;p&gt;For some reason the examples I found on both
+&lt;a href=&quot;http://stackoverflow.com/questions/19835499/recursive-generators-in-php&quot;&gt;Stack Overflow&lt;/a&gt;
+and the &lt;a href=&quot;http://php.net/manual/en/language.generators.syntax.php&quot;&gt;PHP Manual&lt;/a&gt;
+were more complex than they needed to be.&lt;/p&gt;
+
+&lt;p&gt;Here is the simplist infinite fibonacci generator I can think of...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function fib()
+{
+    yield $i = 0;
+    yield $j = 1;
+    while (true) {
+        yield $k = $i + $j;
+        $i = $j;
+        $j = $k;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And here&amp;#39;s the first 50 fibonacci numbers...&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;foreach (take(50, fib()) as $item)
+{
+    echo $item, PHP_EOL;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And, here&amp;#39;s the first 10, skipping the first 0 using a tail function:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function tail(Generator $list)
+{
+    $list-&amp;gt;next();
+    yield from $list;
+}
+
+foreach (take(50, tail(fib())) as $item)
+{
+    echo $item, PHP_EOL;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In case you&amp;#39;re curious, there are actual use cases for this.
+For example, this &lt;a href=&quot;https://github.com/MarkBaker/GeneratorQuadTrees&quot;&gt;Quad Tree&lt;/a&gt;
+data structure implementation.&lt;/p&gt;
+
+&lt;p&gt;Generators may not offer better performance in terms of execution speed.
+But, generator based algorythms offer a much lower memory overhead
+as you&amp;#39;re not having to pass around the full data sets.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 18 Feb 2016 09:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/18/php-to-infinity/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/18/php-to-infinity/</guid>
+      </item>
+    
+      <item>
         <title>Build Your Own PHP Framework</title>
         <description>&lt;p&gt;I&amp;#39;m excited to announce that I&amp;#39;ll be back running training at this year&amp;#39;s Drupal Camp in London. This will be the 3rd year in a row that I&amp;#39;ve offered training at the camp. I&amp;#39;m doing something a bit different this time...&lt;/p&gt;
 
@@ -59,7 +176,7 @@ which offers an even simpler syntax.&lt;/p&gt;
 &lt;p&gt;Here&amp;#39;s a very basic example to show off this new syntax.
 You create your stages as simple classes with an invoke method.
 For example:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Double {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
@@ -72,9 +189,9 @@ class Square {
         return $payload * $payload;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Add {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Add {
     private $i;
     public function __construct($i)
     {
@@ -85,16 +202,16 @@ class Square {
         return $payload + $this-&amp;gt;i;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then create a &lt;code&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can even process a list of values:&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(array_map($pipe, [1, 2, 3]));
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(array_map($pipe, [1, 2, 3]));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Obviously you are not just limited to processing integers as in these
 examples. XML documents, converting to JSON, filtering, translating
 and other transformations are great candidates for pipelines stages.&lt;/p&gt;
@@ -507,51 +624,6 @@ Part 3: Explain how awesome the session will be because you are going to cover &
         <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
-      </item>
-    
-      <item>
-        <title>Surviving - and thriving - during the transition to Drupal&amp;nbsp;8</title>
-        <description>&lt;p&gt;This is my proposal for a session at the upcoming &lt;a href=&quot;http://drupalcamp.london/&quot;&gt;Drupal Camp in London&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Drupal is going through some big changes. And, so is the world. Now may be an unsettled period, but, times of disturbance can also be times of great opportunity.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;I will share my experiences with Drupal and my research into how the web and society are transforming. This will include my personal manifesto and ideas about Drupal&amp;#39;s role in the future of the web.&lt;/p&gt;
-
-&lt;p&gt;The Drupal community helped me transform in many ways. I have had the opportunity to work on some of the biggest, flagship Drupal websites, and in teams of all sizes. I&amp;#39;ve grown and advanced as a developer and a human.&lt;/p&gt;
-
-&lt;p&gt;There have also been difficult times. These have included my own personal challenges, and stories I have heard from others. In my work at &lt;a href=&quot;http://ideationnetworks.com/&quot;&gt;Ideation Networks&lt;/a&gt; I sit with clients as they weigh up the pros and cons of Drupal. Many organisations feel they have been burnt by Drupal. And, for some, PHP (and by association Drupal) is just not cool.&lt;/p&gt;
-
-&lt;p&gt;But, on the whole, these are exciting times for Drupal.&lt;/p&gt;
-
-&lt;p&gt;Drupal 8 is the biggest achievement of our community to date. The latest version has been completely rewritten to use modern object-oriented PHP. We refer to this process as &amp;quot;getting off the island&amp;quot;. It means dropping the &amp;quot;not invented here&amp;quot; philosophy, and embracing the wider PHP community.&lt;/p&gt;
-
-&lt;p&gt;Drupal as a product, a community, and a movement, is our co-creation.&lt;/p&gt;
-
-&lt;p&gt;We have all played a part in Drupal&amp;#39;s success: Dries and the core development team; the wider community of contributors; the attendees of Drupal camps and conferences; people who talk about Drupal; and the developers, agencies, companies and users that drive Drupal&amp;#39;s adoption.&lt;/p&gt;
-
-&lt;p&gt;In this session I will attempt to answer these questions:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;What have we gained, and what have we sacrificed along the way?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;NGOs, charities, smaller organisations, and hobbyists made up Drupal&amp;#39;s traditional user-base. Have we shunned them as we&amp;#39;ve chased the enterprise client and big budget projects? Or, does Drupal 8 bring more of these users back into the fold?&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Now that we&amp;#39;ve got this amazing platform, what do we do with it?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The Egyptian Revolution of 2011 is just one example of the web enabling real change in the world. How does Drupal fit into the bigger picture? How can we empower more positive change in the world?&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Where do we go next? How can Drupal continue to transform and grow?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Everyone is talking about front-end frameworks, progressive decoupling, big pipe, micro-services. Innovation is more than just jumping on bandwagons. Considered from a deeper place, what do these trends tell us about the real changes that are happening? How does Drupal embrace these changes?&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m excited. There are some tensions to resolve, and some challenges ahead, but also big opportunities.&lt;/p&gt;
-
-&lt;p&gt;Join me for this session. Let&amp;#39;s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
       </item>
     
   </channel>

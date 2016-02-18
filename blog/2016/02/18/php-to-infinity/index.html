@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> PHP Processing Pipeline |  Darren Mothersele</title>
+    <title> Playing with Infinity in PHP |  Darren Mothersele</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,82 +31,123 @@
 <div id="main">
 <div class="page">
   <header class="post-header">
-<h2 class="post-title">PHP Processing Pipeline</h2>
+<h2 class="post-title">Playing with Infinity in PHP</h2>
 
-  <p class="">11 Feb 2016</p>
+  <p class="">18 Feb 2016</p>
 
   </header>
 
 
             
-              <p class="lead">If you&#39;re faced with refactoring a huge bunch of sequential code
-then a pipeline may be the answer.
-With a processing pipeline you create your code in stages.
-Then you compose the stages into a pipeline, and pass your
-input for processing.</p>
-
-<p class="lead">This is great because each of the stages can be easily tested
-independently. It also makes the code much easier to read and
-maintain.</p>
+              <p class="lead">I&#39;ve been playing around with lazy evaluation in PHP.
+This is made possible by using Generators, added to PHP 5.5
+and refined in PHP 7.
+You can do some cool stuff with infinite (or very
+large) data sets, and avoid getting stuck in infinite loops.</p>
 
               
 
-<p>There&#39;s a nice and simple implementation published by the
-<a href="http://thephpleague.com/">League of Extraordinary Packages</a>.
-I&#39;ve created a fork (<a href="https://github.com/darrenmothersele/pipeline">on GitHub here</a>)
-which offers an even simpler syntax.</p>
-
-<p>Here&#39;s a very basic example to show off this new syntax.
-You create your stages as simple classes with an invoke method.
-For example:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">class Double {
-    public function __invoke($payload)
+<p>Imagine you want to create an infinitely long array of the same value.
+Here&#39;s a simple bit of code that would do this. Obviously don&#39;t try this.
+Just read the code and imagine a world where this is a good idea...</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">function repeat($i)
+{
+    $output = [];
+    while (true)
     {
-        return $payload * 2;
+        $output[] = $i;
     }
-}
-
-class Square {
-    public function __invoke($payload)
-    {
-        return $payload * $payload;
-    }
+    return $output;
 }
 </code></pre></div>
-<p>You could even pass in parameters to the stage constructor:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">class Add {
-    private $i;
-    public function __construct($i)
+<p>This function would never terminate. You get stuck in an
+infinite loop. <code>while(true)</code> is not something you ever want to see
+in a program, right?</p>
+
+<p>Well, not if you do lazy evaluation. In this context lazy means you
+only evaluate as much code as you need to get the result. So you
+can have large, even infinite, sets of data, without getting stuck in
+long, or infinite, loops.</p>
+
+<p>PHP has a feature for lazy evaluation. It&#39;s called a Generator,
+summoned into being using the magical <code>yield</code> keyword.
+Here&#39;s the stupid repeat, but this time as a generator...</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">function repeat($i)
+{
+    while (true)
     {
-        $this-&gt;i = $i;
-    }
-    public function __invoke($payload)
-    {
-        return $payload + $this-&gt;i;
+        yield $i;
     }
 }
 </code></pre></div>
-<p>Then create a <code>Pipeline</code> to chain the stages together:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
-</code></pre></div>
-<p>And then you can process values using the Pipeline:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">echo $pipe-&gt;process(10), PHP_EOL;
-</code></pre></div>
-<p>You can even process a list of values:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">var_dump(array_map($pipe, [1, 2, 3]));
-</code></pre></div>
-<p>Obviously you are not just limited to processing integers as in these
-examples. XML documents, converting to JSON, filtering, translating
-and other transformations are great candidates for pipelines stages.</p>
+<p>You have to be careful using infinite sets.
+You can still easily create an unterminating program if you tried to print
+out the whole of this Generator function.</p>
 
-<p>I&#39;ve submitted a pull request for my simple modification. All I did
-was add an implementation of the <code>__call()</code> method so you can
-add stages without having to explicitly <em>new</em>-up objects and
-pass them into the <code>pipe()</code> method.</p>
+<p>But, what if we just wanted to work with the first 5 items from
+our infinite computation. This is now possible because of lazy
+evaulation. Here&#39;s a take function that will take
+any number of items from any Generator:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">function take($i, Generator $generator)
+{
+    while ($i-- &gt; 0 &amp;&amp; $generator-&gt;valid())
+    {
+        yield $generator-&gt;current();
+        $generator-&gt;next();
+    }
+}
+</code></pre></div>
+<p>Let&#39;s take 5...</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">foreach (take(5, repeat(&#39;Hello&#39;)) as $item)
+{
+    echo $item, PHP_EOL;
+}
+</code></pre></div>
+<p>OK, that was a stupid example. What about something a bit more
+interesting? How about the classic fibonnacci sequence generator?</p>
 
-<p>Hopefully my pull request gets accepted. The only thing to be aware
-of is that I made use of the variadic operator, so it needs a PHP
-version of 5.6 or greater.</p>
+<p>For some reason the examples I found on both
+<a href="http://stackoverflow.com/questions/19835499/recursive-generators-in-php">Stack Overflow</a>
+and the <a href="http://php.net/manual/en/language.generators.syntax.php">PHP Manual</a>
+were more complex than they needed to be.</p>
+
+<p>Here is the simplist infinite fibonacci generator I can think of...</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">function fib()
+{
+    yield $i = 0;
+    yield $j = 1;
+    while (true) {
+        yield $k = $i + $j;
+        $i = $j;
+        $j = $k;
+    }
+}
+</code></pre></div>
+<p>And here&#39;s the first 50 fibonacci numbers...</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">foreach (take(50, fib()) as $item)
+{
+    echo $item, PHP_EOL;
+}
+</code></pre></div>
+<p>And, here&#39;s the first 10, skipping the first 0 using a tail function:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">function tail(Generator $list)
+{
+    $list-&gt;next();
+    yield from $list;
+}
+
+foreach (take(50, tail(fib())) as $item)
+{
+    echo $item, PHP_EOL;
+}
+</code></pre></div>
+<p>In case you&#39;re curious, there are actual use cases for this.
+For example, this <a href="https://github.com/MarkBaker/GeneratorQuadTrees">Quad Tree</a>
+data structure implementation.</p>
+
+<p>Generators may not offer better performance in terms of execution speed.
+But, generator based algorythms offer a much lower memory overhead
+as you&#39;re not having to pass around the full data sets.</p>
 
             
 

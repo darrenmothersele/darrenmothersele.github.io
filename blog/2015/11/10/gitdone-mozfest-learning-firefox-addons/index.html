@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
 <header id="header">
     <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
     <h1>
@@ -28,21 +27,6 @@
 
 </header>
 
-<!-- <header>
-
-<div class="top-nav">
-
-<a href="/" class="top-nav-logo"><img src="/img/daz-logo.png" class="logo" alt="Logo" width="100"></a>
-
-<ul class="menu menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-</div>
-<br clear="both">
-
-</header> -->
 
 <div id="main">
 <div class="page">
@@ -136,13 +120,13 @@ run in the same &quot;world&quot; as the GitHub page Javascript, and thus do our
 rewritings of the UI based off the pjax events fired there.
 To do this, we use a Content Script, <code>injector.js</code> that just injects our
 script into page, via the DOM:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">var s = document.createElement(&#39;script&#39;);
+<div class="highlight"><pre><code class="language-text" data-lang="text">var s = document.createElement(&#39;script&#39;);
 s.src = chrome.extension.getURL(&#39;scripts/bootstrap.js&#39;);
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(s);
-</code></pre></figure>
+</code></pre></div>
 <p>For <a href="https://github.com/OpenMatt/GitDone/tree/v0.1">v 0.1</a> it was enough to
 inject the main JS, and do the rewriting in the &quot;world&quot; of the GitHub page.
 This is isolated from the Content Script that injects it. Unfortunately,
@@ -167,7 +151,7 @@ work in my tests).</p>
 
 <p>For example, in the injected JS we can react to a jQuery event, and turn it
 into a DOM event:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">// in injected JS
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in injected JS
 // Add out listener to pjax events
 $(document).ready(function () {
   $(document).on(&quot;pjax:end&quot;, function (e) {
@@ -178,34 +162,34 @@ $(document).ready(function () {
     document.dispatchEvent(applyModsEvent);
   });
 });
-</code></pre></figure>
+</code></pre></div>
 <p>And, in the injector Content Script listen for the event:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
 window.addEventListener(&quot;gitdone:apply&quot;, applyModsEventHandler);
 function applyModsEventHandler(e) {
   console.log(&#39;Apply modifications for &#39; + e.detail.activeRoute);
 }
-</code></pre></figure>
+</code></pre></div>
 <p>The injected JS can&#39;t communicate with the background script, but the content
 script can. In the content script you send a message event:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
 chrome.runtime.sendMessage({msg: &quot;init&quot;});
-</code></pre></figure>
+</code></pre></div>
 <p>Which you can react to in the background script:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
 chrome.runtime.onMessage.addListener(function (message, sender) {
 
 });
-</code></pre></figure>
+</code></pre></div>
 <p>And, in the background script, send messages back to the Content Script:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in background.js
 chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
-</code></pre></figure>
+</code></pre></div>
 <p>Which the content script can receive:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">// in content script
+<div class="highlight"><pre><code class="language-text" data-lang="text">// in content script
 chrome.runtime.onMessage.addListener(function (message, sender) {
 }
-</code></pre></figure>
+</code></pre></div>
 <h2>Conclusion</h2>
 
 <p>So that solves the issue of communicating across the three scripts. We have the
@@ -288,84 +272,6 @@ No tracking is used on this site.</p>
 
 </div>
 </div>
-
-<!-- <footer>
-
-
-
-<div class="footer">
-
-<p>
-    <i class="icon">&#128681;</i>
-    Brixton, London, UK
-    <br>
-    <i class="icon">&#9993;</i>
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script>
-</p>
-
-<div class="my-tinyletter">
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" style="width:140px" name="email" id="tlemail" />
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-</div>
-
-
-<ul class="social-icons text-right menu-list hidden-sm">
-
-
-    <li><a href="https://twitter.com/mothersele"><i class="icon-twitter3"></i> Twitter</a></li>
-
-    <li><a href="https://github.com/darrenmothersele/"><i class="icon-github"></i> GitHub</a></li>
-
-    <li><a href="https://vimeo.com/user437927"><i class="icon-vimeo3"></i> Vimeo</a></li>
-
-    <li><a href="https://uk.linkedin.com/in/dmothersele"><i class="icon-linkedin2"></i> LinkedIn</a></li>
-
-
-</ul>
-
-
-<ul class="menu-list">
-    <li><a href="/contact/">Contact</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/training/">Training</a></li>
-    <li><a href="/blog/">Blog</a></li>
-</ul>
-
-<p class="sub">
-    <small>
-        &copy;2007-2015 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.
-
-
-        Source code is either released into the public domain, or under
-        an MIT / BSD license where possible. If this is not possible
-        (due to restrictions of the GPL) then code will be released
-        as GPL. See individual project license files for details.
-    </small>
-</p>
-</div>
-
-</footer> -->
-
-
 
 <footer id="footer">
     <ul class="icons">
