@@ -19,7 +19,7 @@ large) data sets, and avoid getting stuck in infinite loops.&lt;/p&gt;
 &lt;p&gt;Imagine you want to create an infinitely long array of the same value.
 Here&amp;#39;s a simple bit of code that would do this. Obviously don&amp;#39;t try this.
 Just read the code and imagine a world where this is a good idea...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function repeat($i)
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function repeat($i)
 {
     $output = [];
     while (true)
@@ -28,7 +28,7 @@ Just read the code and imagine a world where this is a good idea...&lt;/p&gt;
     }
     return $output;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;This function would never terminate. You get stuck in an
 infinite loop. &lt;code&gt;while(true)&lt;/code&gt; is not something you ever want to see
 in a program, right?&lt;/p&gt;
@@ -41,14 +41,14 @@ long, or infinite, loops.&lt;/p&gt;
 &lt;p&gt;PHP has a feature for lazy evaluation. It&amp;#39;s called a Generator,
 summoned into being using the magical &lt;code&gt;yield&lt;/code&gt; keyword.
 Here&amp;#39;s the stupid repeat, but this time as a generator...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function repeat($i)
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function repeat($i)
 {
     while (true)
     {
         yield $i;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You have to be careful using infinite sets.
 You can still easily create an unterminating program if you tried to print
 out the whole of this Generator function.&lt;/p&gt;
@@ -57,7 +57,7 @@ out the whole of this Generator function.&lt;/p&gt;
 our infinite computation. This is now possible because of lazy
 evaulation. Here&amp;#39;s a take function that will take
 any number of items from any Generator:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function take($i, Generator $generator)
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function take($i, Generator $generator)
 {
     while ($i-- &amp;gt; 0 &amp;amp;&amp;amp; $generator-&amp;gt;valid())
     {
@@ -65,13 +65,13 @@ any number of items from any Generator:&lt;/p&gt;
         $generator-&amp;gt;next();
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Let&amp;#39;s take 5...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;foreach (take(5, repeat(&amp;#39;Hello&amp;#39;)) as $item)
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;foreach (take(5, repeat(&amp;#39;Hello&amp;#39;)) as $item)
 {
     echo $item, PHP_EOL;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;OK, that was a stupid example. What about something a bit more
 interesting? How about the classic fibonnacci sequence generator?&lt;/p&gt;
 
@@ -81,7 +81,7 @@ and the &lt;a href=&quot;http://php.net/manual/en/language.generators.syntax.php
 were more complex than they needed to be.&lt;/p&gt;
 
 &lt;p&gt;Here is the simplist infinite fibonacci generator I can think of...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function fib()
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function fib()
 {
     yield $i = 0;
     yield $j = 1;
@@ -91,15 +91,15 @@ were more complex than they needed to be.&lt;/p&gt;
         $j = $k;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And here&amp;#39;s the first 50 fibonacci numbers...&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;foreach (take(50, fib()) as $item)
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;foreach (take(50, fib()) as $item)
 {
     echo $item, PHP_EOL;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And, here&amp;#39;s the first 10, skipping the first 0 using a tail function:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function tail(Generator $list)
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function tail(Generator $list)
 {
     $list-&amp;gt;next();
     yield from $list;
@@ -109,7 +109,7 @@ foreach (take(50, tail(fib())) as $item)
 {
     echo $item, PHP_EOL;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;In case you&amp;#39;re curious, there are actual use cases for this.
 For example, this &lt;a href=&quot;https://github.com/MarkBaker/GeneratorQuadTrees&quot;&gt;Quad Tree&lt;/a&gt;
 data structure implementation.&lt;/p&gt;
@@ -176,7 +176,7 @@ which offers an even simpler syntax.&lt;/p&gt;
 &lt;p&gt;Here&amp;#39;s a very basic example to show off this new syntax.
 You create your stages as simple classes with an invoke method.
 For example:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Double {
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
@@ -189,9 +189,9 @@ class Square {
         return $payload * $payload;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Add {
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;class Add {
     private $i;
     public function __construct($i)
     {
@@ -202,16 +202,16 @@ class Square {
         return $payload + $this-&amp;gt;i;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Then create a &lt;code&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;You can even process a list of values:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(array_map($pipe, [1, 2, 3]));
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(array_map($pipe, [1, 2, 3]));
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Obviously you are not just limited to processing integers as in these
 examples. XML documents, converting to JSON, filtering, translating
 and other transformations are great candidates for pipelines stages.&lt;/p&gt;

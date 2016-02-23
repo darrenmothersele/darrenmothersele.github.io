@@ -59,7 +59,7 @@ which offers an even simpler syntax.</p>
 <p>Here&#39;s a very basic example to show off this new syntax.
 You create your stages as simple classes with an invoke method.
 For example:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">class Double {
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
@@ -72,9 +72,9 @@ class Square {
         return $payload * $payload;
     }
 }
-</code></pre></div>
+</code></pre></figure>
 <p>You could even pass in parameters to the stage constructor:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">class Add {
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Add {
     private $i;
     public function __construct($i)
     {
@@ -85,16 +85,16 @@ class Square {
         return $payload + $this-&gt;i;
     }
 }
-</code></pre></div>
+</code></pre></figure>
 <p>Then create a <code>Pipeline</code> to chain the stages together:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
+</code></pre></figure>
 <p>And then you can process values using the Pipeline:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">echo $pipe-&gt;process(10), PHP_EOL;
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">echo $pipe-&gt;process(10), PHP_EOL;
+</code></pre></figure>
 <p>You can even process a list of values:</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">var_dump(array_map($pipe, [1, 2, 3]));
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">var_dump(array_map($pipe, [1, 2, 3]));
+</code></pre></figure>
 <p>Obviously you are not just limited to processing integers as in these
 examples. XML documents, converting to JSON, filtering, translating
 and other transformations are great candidates for pipelines stages.</p>
