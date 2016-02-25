@@ -7,6 +7,47 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Build Your Own PHP Framework at DrupalCamp London</title>
+        <description>&lt;p&gt;I have revised and improved the training in preparation for DrupalCamp next week. I&amp;#39;ve incorporated some feedback, added a bit of theory, and included more practical examples. Join me and level up your PHP development skills in this 1 day course.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Build Your Own PHP Framework.&lt;/p&gt;
+
+&lt;p&gt;Learn modern PHP practices and see the benefits first hand via practical examples. Learn object oriented design and how to apply design patterns.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s a lot of old PHP code and information around on the web. With the massive improvements in PHP in recent years, a lot of this information is wrong and out of date. In this course I will be focusing on only modern, state of the art PHP.&lt;/p&gt;
+
+&lt;p&gt;Moving from Drupal 7 to Drupal 8 means adopting modern, object-oriented, PHP practices. Drupal 8 has gone through a process of &amp;quot;getting off the island&amp;quot; and embracing the wider PHP ecosystem. We, as PHP developers using Drupal, can improve our own processes by doing the same.&lt;/p&gt;
+
+&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
+
+&lt;p&gt;Details:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Learn framework decoupling techniques.&lt;/li&gt;
+&lt;li&gt;Write better code by avoiding unnecessary complexity.&lt;/li&gt;
+&lt;li&gt;Use Domain Driven Design to tackle complexity and design better solutions.&lt;/li&gt;
+&lt;li&gt;Go beyond MVC and start to explore other design patterns such as command bus and repositories.&lt;/li&gt;
+&lt;li&gt;Learn simple strategies you can immediately apply to develop better code.&lt;/li&gt;
+&lt;li&gt;Understand the components at the core of Drupal 8, many other PHP frameworks and popular PHP apps.&lt;/li&gt;
+&lt;li&gt;Digestible 40 minute sections interspersed with practical workshop where you get hands-on experience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You will need a basic knowledge of PHP and a laptop that can run PHP. You will leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+
+&lt;p&gt;&amp;pound;295.00 or
+&amp;pound;95.00 concession tickets for sole traders, students and charities.
+The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Feb 2016 10:30:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+      </item>
+    
+      <item>
         <title>TinyLetter #3 - is the Magic Number</title>
         <description>&lt;p&gt;Posting up my third TinyLetter for posterity.
 See my &lt;a href=&quot;http://www.darrenmothersele.com/contact/&quot;&gt;contact page&lt;/a&gt; for details of how to join my &amp;quot;Friends and Family&amp;quot; email list.&lt;/p&gt;
@@ -57,7 +98,7 @@ See my &lt;a href=&quot;http://www.darrenmothersele.com/contact/&quot;&gt;contac
 
 &lt;p&gt;Daz&lt;/p&gt;
 </description>
-        <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 23 Feb 2016 14:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/02/23/tinyletter-3/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/23/tinyletter-3/</guid>
       </item>
@@ -594,29 +635,6 @@ as the source of these works.&lt;/p&gt;
         <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
-      </item>
-    
-      <item>
-        <title>The clouds made me do it...</title>
-        <description>&lt;p&gt;Dear Algorithm,&lt;/p&gt;
-
-&lt;p&gt;I have no idea what I’m doing. But you do. Notwithstanding statistical anomalies and a slight margin of error.&lt;/p&gt;
-
-&lt;p&gt;Look at the clouds in the sky. You might recognise the stratus and cumulus. But, you can’t see the timid blue with brave orange flourishes that I experience.&lt;/p&gt;
-
-&lt;p&gt;This unique display, never before seen, and never to appear again, can never be predicted in all its beautiful complexity.&lt;/p&gt;
-
-&lt;p&gt;Simple to observe and experience. Impossible to know.&lt;/p&gt;
-
-&lt;p&gt;Your models can guess what I will do. But I am one with the clouds, and you will never know me.&lt;/p&gt;
-
-&lt;p&gt;Love,&lt;/p&gt;
-
-&lt;p&gt;Human&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Jan 2016 01:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/the-clouds-made-me-do-it/</guid>
       </item>
     
   </channel>

@@ -7,6 +7,47 @@
                 <atom:link href="http://www.darrenmothersele.com/web-dev/rss.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Build Your Own PHP Framework at DrupalCamp London</title>
+                                <description>&lt;p&gt;I have revised and improved the training in preparation for DrupalCamp next week. I&amp;#39;ve incorporated some feedback, added a bit of theory, and included more practical examples. Join me and level up your PHP development skills in this 1 day course.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Build Your Own PHP Framework.&lt;/p&gt;
+
+&lt;p&gt;Learn modern PHP practices and see the benefits first hand via practical examples. Learn object oriented design and how to apply design patterns.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s a lot of old PHP code and information around on the web. With the massive improvements in PHP in recent years, a lot of this information is wrong and out of date. In this course I will be focusing on only modern, state of the art PHP.&lt;/p&gt;
+
+&lt;p&gt;Moving from Drupal 7 to Drupal 8 means adopting modern, object-oriented, PHP practices. Drupal 8 has gone through a process of &amp;quot;getting off the island&amp;quot; and embracing the wider PHP ecosystem. We, as PHP developers using Drupal, can improve our own processes by doing the same.&lt;/p&gt;
+
+&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
+
+&lt;p&gt;Details:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Learn framework decoupling techniques.&lt;/li&gt;
+&lt;li&gt;Write better code by avoiding unnecessary complexity.&lt;/li&gt;
+&lt;li&gt;Use Domain Driven Design to tackle complexity and design better solutions.&lt;/li&gt;
+&lt;li&gt;Go beyond MVC and start to explore other design patterns such as command bus and repositories.&lt;/li&gt;
+&lt;li&gt;Learn simple strategies you can immediately apply to develop better code.&lt;/li&gt;
+&lt;li&gt;Understand the components at the core of Drupal 8, many other PHP frameworks and popular PHP apps.&lt;/li&gt;
+&lt;li&gt;Digestible 40 minute sections interspersed with practical workshop where you get hands-on experience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You will need a basic knowledge of PHP and a laptop that can run PHP. You will leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+
+&lt;p&gt;&amp;pound;295.00 or
+&amp;pound;95.00 concession tickets for sole traders, students and charities.
+The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt;
+</description>
+                                <pubDate>Thu, 25 Feb 2016 10:30:00 +0000</pubDate>
+                                <link>http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
+                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+                        </item>
+                
+                        <item>
                                 <title>Playing with Infinity in PHP</title>
                                 <description>&lt;p&gt;I&amp;#39;ve been playing around with lazy evaluation in PHP.
 This is made possible by using Generators, added to PHP 5.5
@@ -586,42 +627,6 @@ Part 3: Explain how awesome the session will be because you are going to cover &
                                 <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
                                 <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
                                 <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
-                        </item>
-                
-                        <item>
-                                <title>In Summary...</title>
-                                <description>&lt;p&gt;Things are becoming clearer.
-I wrote a bit &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;last week&lt;/a&gt;
-about my decision to leave Facebook.
-I&amp;#39;m still exploring what this means, and here&amp;#39;s where I&amp;#39;m at now.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;&amp;quot;The most important thing about technology is how it changes people.&amp;quot;
--- Jaron Lanier&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ve been thinking a lot about tech in terms of it&amp;#39;s effect on people.
-Jaron Lanier, in his book
-&lt;a href=&quot;http://www.jaronlanier.com/gadgetwebresources.html&quot;&gt;You are not a Gadget&lt;/a&gt;,
-talks about the idea of &amp;quot;Lock in&amp;quot; as when a technology
-becomes so established (ingrained?) that it is impossible to change.&lt;/p&gt;
-
-&lt;p&gt;I see we&amp;#39;re in danger of becoming &amp;quot;locked in&amp;quot; to certain ways of thinking
-about how we operate online, and by leaving Facebook I&amp;#39;m forcing myself to
-think about alternatives, by necessity. By &amp;quot;opting out&amp;quot; of Facebook&amp;#39;s idea
-of what it means to be connected online, I&amp;#39;m motivated to think about what
-I really want and build tools for myself. Hopefully what I build will
-eventually be useful for others too.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;IndieWeb&lt;/a&gt; is a growing movement to build a people-focused alternative to the corporate web.&lt;/p&gt;
-
-&lt;p&gt;The predominant business model online now is providing &amp;quot;free&amp;quot; services, locking people in, stealing their data, and selling it to advertisers.&lt;/p&gt;
-
-&lt;p&gt;I believe the web can be much more than this. But it means putting people first, rather than seeing them as just &amp;quot;data&amp;quot;. Then we can unlock the power of the web as an open platform for collaboration and cocreation, and use it to inform, to connect, and to empower.&lt;/p&gt;
-</description>
-                                <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
-                                <link>http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</link>
-                                <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/12/12/in-summary/</guid>
                         </item>
                 
         </channel>

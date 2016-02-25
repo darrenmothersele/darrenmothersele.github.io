@@ -7,6 +7,47 @@
     <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Build Your Own PHP Framework at DrupalCamp London</title>
+        <description>&lt;p&gt;I have revised and improved the training in preparation for DrupalCamp next week. I&amp;#39;ve incorporated some feedback, added a bit of theory, and included more practical examples. Join me and level up your PHP development skills in this 1 day course.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Build Your Own PHP Framework.&lt;/p&gt;
+
+&lt;p&gt;Learn modern PHP practices and see the benefits first hand via practical examples. Learn object oriented design and how to apply design patterns.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s a lot of old PHP code and information around on the web. With the massive improvements in PHP in recent years, a lot of this information is wrong and out of date. In this course I will be focusing on only modern, state of the art PHP.&lt;/p&gt;
+
+&lt;p&gt;Moving from Drupal 7 to Drupal 8 means adopting modern, object-oriented, PHP practices. Drupal 8 has gone through a process of &amp;quot;getting off the island&amp;quot; and embracing the wider PHP ecosystem. We, as PHP developers using Drupal, can improve our own processes by doing the same.&lt;/p&gt;
+
+&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
+
+&lt;p&gt;Details:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Learn framework decoupling techniques.&lt;/li&gt;
+&lt;li&gt;Write better code by avoiding unnecessary complexity.&lt;/li&gt;
+&lt;li&gt;Use Domain Driven Design to tackle complexity and design better solutions.&lt;/li&gt;
+&lt;li&gt;Go beyond MVC and start to explore other design patterns such as command bus and repositories.&lt;/li&gt;
+&lt;li&gt;Learn simple strategies you can immediately apply to develop better code.&lt;/li&gt;
+&lt;li&gt;Understand the components at the core of Drupal 8, many other PHP frameworks and popular PHP apps.&lt;/li&gt;
+&lt;li&gt;Digestible 40 minute sections interspersed with practical workshop where you get hands-on experience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You will need a basic knowledge of PHP and a laptop that can run PHP. You will leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+
+&lt;p&gt;&amp;pound;295.00 or
+&amp;pound;95.00 concession tickets for sole traders, students and charities.
+The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Feb 2016 10:30:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+      </item>
+    
+      <item>
         <title>Build Your Own PHP Framework</title>
         <description>&lt;p&gt;I&amp;#39;m excited to announce that I&amp;#39;ll be back running training at this year&amp;#39;s Drupal Camp in London. This will be the 3rd year in a row that I&amp;#39;ve offered training at the camp. I&amp;#39;m doing something a bit different this time...&lt;/p&gt;
 
@@ -1042,92 +1083,6 @@ or grab a ticket on &lt;a href=&quot;http://www.eventbrite.com/e/everything-i-kn
         <pubDate>Wed, 23 Apr 2014 00:00:00 +0100</pubDate>
         <link>http://www.darrenmothersele.com//blog/2014/04/23/drupal-patterns-state-machine/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/23/drupal-patterns-state-machine/</guid>
-      </item>
-    
-      <item>
-        <title>I Don&#39;t Use Recruitment Agents</title>
-        <description>&lt;p&gt;I started working with Drupal full time in 2007. I knew back then I was on to
-a winner, as none of the other open-source systems I evaluated at the time
-offered the same power and flexibility. It took a while for mainstream
-web development community to catch on, but over the years the Drupal
-community has seen massive growth, and now Drupal powers some of the biggest
-sites on the internet, well over 1 million websites.&lt;/p&gt;
-
-&lt;p&gt;But, this success brings problems, and one recurring complaint I&amp;#39;ve heard over
-the years has been about the difficulty in finding top Drupal talent.
-This has made Drupal a prime target for recruitment agencies deception and dirty
-tricks.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;Wunderroot are a well known company in the Drupal world, and are known to be
-a good employer. As UK MD, Steve Parks, says in his blog
-&lt;a href=&quot;http://wunderroot.co.uk/blog/we-dont-use-recruitment-agents&quot;&gt;We Don&amp;#39;t Use Recruitment Agents&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-We would really love to be able to use recruitment agencies — imagine: a team of people with genuine experience in hiring great staff, with fantastic contacts books, and taking the role of a trusted friend to guide us through advertising, filtering, selecting and engaging the right people. It&#39;d be fantastic. We&#39;d pay good money for that.
-&lt;strong&gt;Unfortunately, that&#39;s not how most recruitment agencies work in reality.&lt;/strong&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I have experience with working with recruitment consultants from both sides.
-Before I started freelancing in Drupal full time I was running a
-digital music startup. As a successful startup we experienced fast growth, and
-didn&amp;#39;t have the resources in-house to do thorough candidate searches.
-We used a couple of recruitment consultants and were consistently disappointed.
-Candidates were misrepresented, to the point where one didn&amp;#39;t recognise his own CV
-in an interview.&lt;/p&gt;
-
-&lt;p&gt;On the other side, as a candidate, I do not use agencies for work.
-One experience in particular put me off for many years.&lt;/p&gt;
-
-&lt;p&gt;I interviewed for a position, but decided after the first interview that,
-although the opportunity was interesting, I knew I was not the right candidate.
-The company wanted to invite me back for a second interview, but I told the
-consultant that I was not interested, and explained my reasons. Unfortunately,
-the consultant would not take no for an answer, and I was subjected to a
-week of harassment (to the point of bullying) over my decision.&lt;/p&gt;
-
-&lt;p&gt;In &lt;a href=&quot;http://wunderroot.co.uk/blog/we-dont-use-recruitment-agents&quot;&gt;We Don&amp;#39;t Use Recruitment Agents&lt;/a&gt;,
-Steve Parks tells of a &amp;quot;bait and switch&amp;quot; operation where developers had been
-approached by recruitment agencies saying that they had been engaged by
-Wunderroot to headhunt (the bait) in order to get someone interested, but then
-saying the position was filled and proposing other positions (the switch).&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m not sure if it&amp;#39;s the same dirty tactic in operation, but I have heard in the
-past of an employer receiving my CV from an agency claiming to represent me.
-The employer knew me directly, so checked, and they had an out-of-date CV that
-I had given to the agency for a different opportunity previously.
-This came up in conversation at a Drupal meetup and it was suggested that this
-is probably not a mistake as other developers had heard of it happening too.&lt;/p&gt;
-
-&lt;p&gt;The extreme of recruiters&amp;#39; tricks are documented in &lt;a href=&quot;http://web.archive.org/web/20120601080215/http://www.kernelmag.com/scene/2133/consol-yourself-with-this-one/&quot;&gt;this old post&lt;/a&gt;
-from Kernel Mag in which Consol Partners are accused of
-&amp;quot;telling outrageous lies to candidates and start-ups&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;In a post on &lt;a href=&quot;http://www.ere.net/2013/12/16/the-top-25-recruiting-trends-problems-and-opportunities-for-2014-part-2-of-2/&quot;&gt;recruiting trends&lt;/a&gt; ERE suggest that, in an era when candidate sourcing is
-becoming easier as everyone is &amp;quot;findable&amp;quot; on the internet, recruiters
-should &amp;quot;shift toward improving the various selling components of recruiting&amp;quot;.
-I&amp;#39;m not sure exactly what they mean by &amp;#39;&lt;em&gt;selling components&lt;/em&gt;&amp;#39; but I would beg recruitment agencies
-not to do this, and instead focus on providing &lt;em&gt;value&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3&gt;Recruiters - Do This:&lt;/h3&gt;
-
-&lt;p&gt;Here&amp;#39;s a short TODO list for recruiters:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Clean up your industry: Get rid of the deception and bullying.&lt;/li&gt;
-&lt;li&gt;Provide genuine value (c.f. Steve Parks quote above).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Until then...&lt;/h3&gt;
-
-&lt;p&gt;If you&amp;#39;re a reputable company looking to source Drupal developers, or you are
-a Drupal developer working in London or the UK, get in touch. I&amp;#39;m starting
-a free job board on &lt;a href=&quot;http://www.drupaldeveloper.co.uk/jobs&quot;&gt;DrupalDeveloper.co.uk&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 14 Apr 2014 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2014/04/14/no-recruiters/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/14/no-recruiters/</guid>
       </item>
     
   </channel>
