@@ -1,74 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> CMSs are dead, long live CMSs |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>CMSs are dead, long live CMSs | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">CMSs are dead, long live CMSs</h2>
-
-  <p class="">02 Aug 2013</p>
-
-  </header>
-
-
-            
-              <p class="lead">A few people have asked me what happened to my site: is it still Drupal?
-Where did the comments go? The short answer is I&#39;ve joined cool crowd and
-started experimenting with static site generators, but I&#39;m going to give
-you the long answer. It&#39;s a multi-faceted issue, and an excuse to finally
-blog about the end of the CMS era. And, no, I&#39;m not leaving Drupal. I
+<hgroup class="alignCenter">
+  <h1>CMSs are dead, long live CMSs</h1>
+        <h6>Aug 2, 2013 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>A few people have asked me what happened to my site: is it still Drupal?
+Where did the comments go? The short answer is I’ve joined cool crowd and
+started experimenting with static site generators, but I’m going to give
+you the long answer. It’s a multi-faceted issue, and an excuse to finally
+blog about the end of the CMS era. And, no, I’m not leaving Drupal. I
 still very much believe that Drupal is the best tool for a lot of
-projects. I just don&#39;t want to manage my own site that way.</p>
+projects. I just don’t want to manage my own site that way.</p>
 
-              
+<!--break-->
 
-<p>I&#39;ve always believed in finding the right tool for the job and over the past
-six months I&#39;ve become more convinced that a CMS is not the correct tool
+<p>I’ve always believed in finding the right tool for the job and over the past
+six months I’ve become more convinced that a CMS is not the correct tool
 for simple projects (like my little website).
-I don&#39;t need fancy editing tools or online administration.
-In fact, I&#39;m more than happy to edit my site in my text editor of choice
+I don’t need fancy editing tools or online administration.
+In fact, I’m more than happy to edit my site in my text editor of choice
 (Sublime Text). I spend most of my working life inside Sublime Text, so it
 makes sense for me to edit my blog here.</p>
 
-<h2>Death of the CMS?</h2>
+<h2 id="death-of-the-cms">Death of the CMS?</h2>
 
-<p>I think we&#39;re in a post-CMS world now. I don&#39;t think there&#39;s any need for
-the WCMS (Web Content Management Systems) we&#39;ve become accustom to.
-I&#39;m talking about the kind of web page editing CMS, like Wordpress,
+<p>I think we’re in a post-CMS world now. I don’t think there’s any need for
+the WCMS (Web Content Management Systems) we’ve become accustom to.
+I’m talking about the kind of web page editing CMS, like Wordpress,
 Joomla, and probably most installs of Drupal. We should be thinking about
 <a href="http://futurefriend.ly/">Future friendly</a> content,
 structured content, mobile first, COPE (Create Once Publish Everywhere).
 Content needs to be structured and needs to be flexible, and that means
-we&#39;re not just editing web pages anymore. Instead we need to think about
+we’re not just editing web pages anymore. Instead we need to think about
 Microdata, RDF, RSS, Web Services, mobile first, Apps, etc, and of course
-whatever the future may bring. It&#39;s impossible to future-proof yourself
+whatever the future may bring. It’s impossible to future-proof yourself
 entirely, but with a strategic approach to content, and well defined
 content model you can at least be prepared for whatever may come along
 in the future. Essentially, modelling and capturing your content
@@ -77,157 +56,111 @@ without thinking about how it is displayed.</p>
 <p>The second driver for this is marketing automation and full digital
 platform integration. The enterprise
 world is full of horrible buzzwords around WEM (Web Experience Management)
-and it&#39;s clearly something that Dries is gearing up the Drupal project
+and it’s clearly something that Dries is gearing up the Drupal project
 for. Did you notice this in his <a href="https://portland2013.drupal.org/keynote/dries-buytaert">keynote at Drupalcon Portland</a>? Dries
 no longer mentions Wordpress or Joomla as competitors to Drupal, instead
-he&#39;d rather talk about Adobe&#39;s CQ5, Sitecore, and Oracle&#39;s WEM.</p>
+he’d rather talk about Adobe’s CQ5, Sitecore, and Oracle’s WEM.</p>
 
-<h2>Long live the CMS</h2>
+<h2 id="long-live-the-cms">Long live the CMS</h2>
 
 <p>So the CMS has to adapt. Drupal is already well placed to do this
-because of it&#39;s flexibility and existing ecosystem of integrations,
+because of it’s flexibility and existing ecosystem of integrations,
 and Drupal 8 brings us even closer putting web services at the core
 of Drupal.</p>
 
 <p>The end result of this though is that CMS become much more complicated
 beasts than they already are if they want to remain relevant and useful.
-This puts them out of reach for a lot of people, and there&#39;s a lot of
-simple projects that don&#39;t need all these features. That&#39;s where the static site generators join the party.</p>
+This puts them out of reach for a lot of people, and there’s a lot of
+simple projects that don’t need all these features. That’s where the static site generators join the party.</p>
 
 <p>I think in this post-CMS world, systems either join the big leagues and
 get enterprise features, or they simplify and become tools for quickly
 building sites.</p>
 
-<p>For my blog I&#39;ve gone with the latter. A simple tool that just generates
+<p>For my blog I’ve gone with the latter. A simple tool that just generates
 static web pages from a template.</p>
 
-<h2>Motivation</h2>
+<h2 id="motivation">Motivation</h2>
 
 <p>The decision to change my site was motivated by several things:</p>
 
 <ul>
-<li><strong>My old site wasn&#39;t mobile friendly</strong>. I can hardly go around telling people about the importance of mobile when my own site looks shit when viewed on anything other than a desktop or laptop!</li>
-<li><strong>The comments were really low quality</strong>. I had a handful of good comments but the rest added nothing of value. I also had to pre-moderate everything because of the huge amount of spam. Apologies to the few people who had left really good comments - you know who you are. I&#39;ll send a prize to the best and I might repost some of the good ones as updates to the articles.</li>
-<li><strong>Speed</strong>, there&#39;s nothing faster than serving static files! That makes it easier and cheaper to run. Apparently there&#39;s SEO benefits of having a fast site too! ;)</li>
-<li><strong>There was too much bloat</strong>. In the words of Brad Frost: <a href="http://bradfrostweb.com/blog/post/death-to-bullshit-at-creative-mornings/">Death to bullshit!</a>. Actually, I did some comparisons, let me elaborate...</li>
+  <li><strong>My old site wasn’t mobile friendly</strong>. I can hardly go around telling people about the importance of mobile when my own site looks shit when viewed on anything other than a desktop or laptop!</li>
+  <li><strong>The comments were really low quality</strong>. I had a handful of good comments but the rest added nothing of value. I also had to pre-moderate everything because of the huge amount of spam. Apologies to the few people who had left really good comments - you know who you are. I’ll send a prize to the best and I might repost some of the good ones as updates to the articles.</li>
+  <li><strong>Speed</strong>, there’s nothing faster than serving static files! That makes it easier and cheaper to run. Apparently there’s SEO benefits of having a fast site too! ;)</li>
+  <li><strong>There was too much bloat</strong>. In the words of Brad Frost: <a href="http://bradfrostweb.com/blog/post/death-to-bullshit-at-creative-mornings/">Death to bullshit!</a>. Actually, I did some comparisons, let me elaborate…</li>
 </ul>
 
-<h2>Bloat</h2>
+<h2 id="bloat">Bloat</h2>
 
 <p>I took the text of some articles from my site and gzipped them (because my web server does that too before sending). An average article came out at 7kB when zipped. When viewed as part of my old Drupal-based site it came out at 14.4kB, and when you include downloading the CSS, JS, etc it would be 158.6kB. Wow, 158k for a 7k article!</p>
 
-<p>But I&#39;m not the worst offender. I tried some random other sites. For example CNET, a 1.2kB article resulted in a 18.1kB HTML source, and 1.3MB total download for a single page. On the BBC News website a 758 byte article (tiny!) came out at 71kB HTML source, and 501.5kB for the whole page.</p>
+<p>But I’m not the worst offender. I tried some random other sites. For example CNET, a 1.2kB article resulted in a 18.1kB HTML source, and 1.3MB total download for a single page. On the BBC News website a 758 byte article (tiny!) came out at 71kB HTML source, and 501.5kB for the whole page.</p>
 
-<p>I&#39;m pleased to say this new site, for the same 7kB article, comes out at about 50kB with all the CSS, images and JS. that&#39;s less than a third, and most of that is the PNG of my smiley face! :)</p>
+<p>I’m pleased to say this new site, for the same 7kB article, comes out at about 50kB with all the CSS, images and JS. that’s less than a third, and most of that is the PNG of my smiley face! :)</p>
 
-<h2>Middleman</h2>
+<h2 id="middleman">Middleman</h2>
 
 <p>I played around with <a href="http://jekyllrb.com/">Jekyll</a> initially but
-I found <a href="http://middlemanapp.com/">Middleman</a> to be much more flexible. Plus, Middleman is what we&#39;re using for prototyping responsive
+I found <a href="http://middlemanapp.com/">Middleman</a> to be much more flexible. Plus, Middleman is what we’re using for prototyping responsive
 designs and quickly building mockups.</p>
 
 <p>Basically, you give your files two extensions, what you want it to be, and what it is, then Middleman watches the files and translates them as needed.
-For example, if you&#39;ve got a <code>style.css.scss</code> file then Middleman converts it from SASS into CSS. I&#39;m writing my blog posts in files like <code>2013-08-02-new-blog.html.md</code> and it&#39;s converting them from markdown to HTML.</p>
+For example, if you’ve got a <code>style.css.scss</code> file then Middleman converts it from SASS into CSS. I’m writing my blog posts in files like <code>2013-08-02-new-blog.html.md</code> and it’s converting them from markdown to HTML.</p>
 
-<p>You&#39;ve also got loads of cool preprocessing stuff like partials, and
+<p>You’ve also got loads of cool preprocessing stuff like partials, and
 you can use Ruby templates, Rack plugins for your asset pipeline, and
 deploy your website with just one command: <code>middleman deploy</code></p>
 
-<p>There&#39;s a load of contributed modules that add on extra functionality. It comes with a blogging module that adds some nice features for managing a blog.</p>
+<p>There’s a load of contributed modules that add on extra functionality. It comes with a blogging module that adds some nice features for managing a blog.</p>
 
-<h2>Migration</h2>
+<h2 id="migration">Migration</h2>
 
-<p>I wrote a very simple Drush command that output the content from my blog to a set of flat files. I could just render the nodes and save them as HTML because Middleman can use that as a post format. I&#39;ve switched to using Markdown for future posts, but it doesn&#39;t matter that the old posts are in HTML.</p>
+<p>I wrote a very simple Drush command that output the content from my blog to a set of flat files. I could just render the nodes and save them as HTML because Middleman can use that as a post format. I’ve switched to using Markdown for future posts, but it doesn’t matter that the old posts are in HTML.</p>
 
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
-<p>I can edit my blog posts in the text editor (Sublime Text) where I spend most of my life. I can easily preview edits (with Live Reload, nice!), and then build and deploy updates in just one command. The server does very little work to serve the pages, and it&#39;s very cacheable. I could even now move my site to being served by GitHub Pages or similar.</p>
+<p>I can edit my blog posts in the text editor (Sublime Text) where I spend most of my life. I can easily preview edits (with Live Reload, nice!), and then build and deploy updates in just one command. The server does very little work to serve the pages, and it’s very cacheable. I could even now move my site to being served by GitHub Pages or similar.</p>
 
 <p>A static site generator is a good idea for simple web projects. CMSs
 are adapting, and Drupal is preparing to take on big enterprise projects.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

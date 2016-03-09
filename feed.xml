@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
+    <title>Darren Mothersele</title>
     <description>Software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future.
 </description>
-    <link>http://www.darrenmothersele.com</link>
-    <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://www.darrenmothersele.com/</link>
+    <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 09 Mar 2016 17:00:47 +0000</pubDate>
+    <lastBuildDate>Wed, 09 Mar 2016 17:00:47 +0000</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>Build Your Own PHP Framework at DrupalCamp London</title>
@@ -44,8 +47,18 @@
 The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt;
 </description>
         <pubDate>Thu, 25 Feb 2016 10:30:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/02/25/php-training-at-drupalcamp-london/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+        
+        <category>drupal</category>
+        
+        <category>featured</category>
+        
+        <category>drupal-planet</category>
+        
+        
+        <category>Drupal Planet</category>
+        
       </item>
     
       <item>
@@ -101,8 +114,16 @@ See my &lt;a href=&quot;http://www.darrenmothersele.com/contact/&quot;&gt;contac
 
 </description>
         <pubDate>Tue, 23 Feb 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/23/tinyletter-3/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/23/tinyletter-3/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/02/23/tinyletter-3/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/23/tinyletter-3/</guid>
+        
+        <category>misc</category>
+        
+        <category>featured</category>
+        
+        
+        <category>personal</category>
+        
       </item>
     
       <item>
@@ -232,8 +253,16 @@ But, generator based algorythms offer a much lower memory overhead
 as you’re not having to pass around the full data sets.&lt;/p&gt;
 </description>
         <pubDate>Thu, 18 Feb 2016 09:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/18/php-to-infinity/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/18/php-to-infinity/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/02/18/php-to-infinity/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/18/php-to-infinity/</guid>
+        
+        <category>featured</category>
+        
+        <category>php</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -263,8 +292,18 @@ as you’re not having to pass around the full data sets.&lt;/p&gt;
 &lt;p&gt;The training will be held on Friday March 4, 2016 at City University London.&lt;/p&gt;
 </description>
         <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/02/11/drupal-camp-london-training/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/11/drupal-camp-london-training/</guid>
+        
+        <category>drupal</category>
+        
+        <category>featured</category>
+        
+        <category>drupal-planet</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -355,8 +394,16 @@ version of 5.6 or greater.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 11 Feb 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/02/11/processing-pipelines-php/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/11/processing-pipelines-php/</guid>
+        
+        <category>featured</category>
+        
+        <category>php</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -430,8 +477,16 @@ into something more considered. It creates space in my mind by getting things ou
 
 </description>
         <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/02/rethinking-twitter/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/02/rethinking-twitter/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/02/02/rethinking-twitter/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/02/rethinking-twitter/</guid>
+        
+        <category>misc</category>
+        
+        <category>featured</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -461,8 +516,14 @@ He took us on a humorous tour of ES6, under the guise of deprecating jQuery.&lt;
 &lt;p&gt;An entertaining and informative night. I’ll definitely be back.&lt;/p&gt;
 </description>
         <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/01/29/my-first-frontend-london/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/01/29/my-first-frontend-london/</guid>
+        
+        <category>featured</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -552,8 +613,18 @@ including Drupal.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/01/28/drupal-predictions/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/01/28/drupal-predictions/</guid>
+        
+        <category>drupal</category>
+        
+        <category>featured</category>
+        
+        <category>drupal-planet</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -608,8 +679,16 @@ I need to build and contribute to an alternative
 
 </description>
         <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/</guid>
+        
+        <category>misc</category>
+        
+        <category>featured</category>
+        
+        
+        <category>web-dev</category>
+        
       </item>
     
       <item>
@@ -669,8 +748,16 @@ as the source of these works.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
+        <link>http://www.darrenmothersele.com/blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
+        
+        <category>misc</category>
+        
+        <category>featured</category>
+        
+        
+        <category>misc</category>
+        
       </item>
     
   </channel>

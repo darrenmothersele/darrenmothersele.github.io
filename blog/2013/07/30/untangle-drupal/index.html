@@ -1,70 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Untangling Drupal |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Untangling Drupal | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Untangling Drupal</h2>
-
-  <p class="">30 Jul 2013</p>
-
-  </header>
-
-
-            
-              <p class="lead">I presented yesterday at the July edition of the &quot;Untangle the Web&quot; meetup
+<hgroup class="alignCenter">
+  <h1>Untangling Drupal</h1>
+        <h6>Jul 30, 2013 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>I presented yesterday at the July edition of the “Untangle the Web” meetup
 being held at the Google Campus in London.
 When I was invited to speak, I was asked to give an introductory talk about
-Drupal and what kind of things it&#39;s good for. To do this, I decided to talk
-about how I was introduced to Drupal, how it&#39;s developed over the years,
-metadata and future-friendly content, and a preview of what&#39;s coming in
+Drupal and what kind of things it’s good for. To do this, I decided to talk
+about how I was introduced to Drupal, how it’s developed over the years,
+metadata and future-friendly content, and a preview of what’s coming in
 the next version of Drupal.</p>
 
-              
+<!--break-->
 
-<h2>Early History</h2>
+<h2 id="early-history">Early History</h2>
 
 <p>Drupal started life as a message-board, and the source code was first released
 to the world as open-source software in 2001. At this stage Drupal was a bit
-like a &quot;slashdot&quot; clone.</p>
+like a “slashdot” clone.</p>
 
 <p>My first introduction to Drupal was in 2003. I was building a community site
 for an event/record label I was involved in. Thanks to the
-<a href="http://archive.org/web/web.php">Wayback Machine</a> here&#39;s a grab
+<a href="http://archive.org/web/web.php">Wayback Machine</a> here’s a grab
 of this early Drupal v4.3 website:</p>
 
 <p><img src="/img/2013-07-30-untangle-drupal/ib-screenshot.png" alt="Screenshot of International Bastard Website" /></p>
 
 <p>I found Drupal while comparing a few solutions and it seemed like a perfect
 fit. I needed something between a blog and a forum, plus it had
-modules like &quot;event&quot; which allowed me to quickly get an events calendar
+modules like “event” which allowed me to quickly get an events calendar
 up and running. None of the other systems I compared allowed me to do this
 as easily, and Drupal also had some nice moderation features and user
 management.</p>
@@ -83,20 +62,20 @@ of our metadata was the key thing that allowed us to do this.</p>
 <p>I had learnt the value of metadata, and also the folly of building a CMS
 from scratch!</p>
 
-<h2>Meanwhile...</h2>
+<h2 id="meanwhile">Meanwhile…</h2>
 
 <p>I was away from Drupal for a few years, and during this time some
 key developments had happened in the Drupal community.</p>
 
 <blockquote>
-<p>&ldquo;Drupal 4.7 ... changed the way that Drupal worked;
-not Drupal core, but Drupal the meta-project.&rdquo;
+  <p>“Drupal 4.7 … changed the way that Drupal worked;
+not Drupal core, but Drupal the meta-project.”
 <a href="http://www.palantir.net/blog/drupal-not-cms">Larry Garfield</a></p>
 </blockquote>
 
 <p>The change that Larry refers to here is the appearence of key modules like
 CCK and Views. This is when Drupal started to abstract functionality and was
-a turning point in Drupal&#39;s development.</p>
+a turning point in Drupal’s development.</p>
 
 <p>Before this stage you would build up your site by adding on modules that
 provided new node types, and some predefined functionality, then customise
@@ -117,15 +96,15 @@ really blew me away. I had a lot to learn, very quickly, so I started reading
 every book, blog, and tutorial I could find. Attending the local Drupal user-group
 events was also invaluable.</p>
 
-<p>Almost everything I&#39;ve done since then has been Drupal. Either developing for
+<p>Almost everything I’ve done since then has been Drupal. Either developing for
 Drupal, or working with the complimentary technologies in the Drupal stack.
-Over the years I&#39;ve been doing this I&#39;ve come to realise that Drupal is
+Over the years I’ve been doing this I’ve come to realise that Drupal is
 three things:</p>
 
 <ul>
-<li>CMS</li>
-<li>Framework</li>
-<li>Community</li>
+  <li>CMS</li>
+  <li>Framework</li>
+  <li>Community</li>
 </ul>
 
 <p>Drupal is a CMS out-of-the-box, and with the various additional modules it can
@@ -133,46 +112,46 @@ be a powerful, enterprise level CMS. When viewed as a set of APIs, Drupal
 provides a rapid-application development environment in which to build
 websites (or apps). And, one of the differenciating factors, is the community.</p>
 
-<p>There&#39;s a saying in Drupal that you &quot;come for the code, stay for the
-community&quot;. This is definitely true for me. One of the great things about
-Drupal is that it&#39;s a really good place to have a problem. Having been involved
+<p>There’s a saying in Drupal that you “come for the code, stay for the
+community”. This is definitely true for me. One of the great things about
+Drupal is that it’s a really good place to have a problem. Having been involved
 in developing a bespoke CMS, where you are pretty much on your own when you
 encouter issues, this is not the case with Drupal. When you have an issue,
-perhaps two modules don&#39;t work together quite as easily as you expected, there&#39;s
+perhaps two modules don’t work together quite as easily as you expected, there’s
 usually someone else trying the same thing, or you can turn to the issue
 queues. The issue queues are full of great advice, useful patches, and
 other developers willing to help when they can.</p>
 
-<h2>Drupal 7</h2>
+<h2 id="drupal-7">Drupal 7</h2>
 
 <p>The current version of Drupal is v7. The biggest change in v7 was the move
 to everything being an entity, and what was previously CCK moving into
-the core of Drupal as &quot;Fields in Core&quot;.</p>
+the core of Drupal as “Fields in Core”.</p>
 
-<p>Users, taxonomy and content are now all based on the same API, and they&#39;re
+<p>Users, taxonomy and content are now all based on the same API, and they’re
 all fieldable. So, with functionality in Drupal core, you can create different
 types of content, add fields to them, but now also add fields to users,
 taxonomy etc. Which gives a really flexible content model:</p>
 
 <ul>
-<li>Define custom content types (entities)</li>
-<li>Add attributes (fields in core)</li>
-<li>Define relationships (references / relation)</li>
-<li>Alternative display of content for different contexts (view modes)</li>
+  <li>Define custom content types (entities)</li>
+  <li>Add attributes (fields in core)</li>
+  <li>Define relationships (references / relation)</li>
+  <li>Alternative display of content for different contexts (view modes)</li>
 </ul>
 
-<h2> There&#39;s a module for that</h2>
+<h2 id="theres-a-module-for-that"> There’s a module for that</h2>
 
 <p><a href="http://blog.amazeelabs.com/en/periodic-table-drupal-modules-infographic">
 <img src="/img/2013-07-30-untangle-drupal/drupal-periodic-table.png" alt="Periodic table of Drupal modules" />
 <br /><small>Amazee Labs</small>
 </a></p>
 
-<p>On top of a flexible content model, there&#39;s a huge array of modules to add
+<p>On top of a flexible content model, there’s a huge array of modules to add
 extra functionality. Two indispensable modules are Views and Panels.</p>
 
 <p>Views gives the site builder power through the admin interface to define
-custom lists of content. It&#39;s a visual query builder that lets you build up
+custom lists of content. It’s a visual query builder that lets you build up
 custom queries against your content, and configure how it is displayed.</p>
 
 <p>Panels is a layout builder. It allows you to override internal paths, and create
@@ -182,7 +161,7 @@ decide which variant a user will see. For example, showing a different layout
 or content for users on mobile devices, or having a different set of content
 for logged in users.</p>
 
-<h2>Flexibility comes at a price</h2>
+<h2 id="flexibility-comes-at-a-price">Flexibility comes at a price</h2>
 
 <p>All this flexibility comes at a price, which is why Drupal is not the best solution
 to every problem, and may not be the right technology for some people.</p>
@@ -190,54 +169,51 @@ to every problem, and may not be the right technology for some people.</p>
 <p>The image gallery is a classic example. Other systems might provide a nice
 image gallery, or have an add-on that provides all the functionality you need
 to get up and running with an image gallery. Drupal moved away from these
-fully featured modules, to more abstract components. Hence, the best you&#39;re going
+fully featured modules, to more abstract components. Hence, the best you’re going
 to get when search for an image gallery is a 7 or 8 step tutorial that shows you
 how to build it yourself out of component parts.</p>
 
-<p>Distributions help bridge this gap. Drupal core itself doesn&#39;t come with very
-much, and out-of-the-box doesn&#39;t really showcase the full potential of Drupal.
-There&#39;s a wide variety of &quot;distributions&quot; available that pre-configure Drupal
-for specific use cases. If you&#39;re just starting out with Drupal it&#39;s a good
-idea to see if there&#39;s a distribution that meets your needs, or at least
+<p>Distributions help bridge this gap. Drupal core itself doesn’t come with very
+much, and out-of-the-box doesn’t really showcase the full potential of Drupal.
+There’s a wide variety of “distributions” available that pre-configure Drupal
+for specific use cases. If you’re just starting out with Drupal it’s a good
+idea to see if there’s a distribution that meets your needs, or at least
 provides some of the functionality you need. That way you will not have to
 configure it all yourself.</p>
 
-<h2>A custom Drupal CMS is not a proprietary CMS</h2>
+<h2 id="a-custom-drupal-cms-is-not-a-proprietary-cms">A custom Drupal CMS is not a proprietary CMS</h2>
 
 <p>A bespoke CMS is by definition a proprietary CMS. Even if you get the code,
-there&#39;s still a degree of vendor lock-in because of the custom nature of the
-code. Drupal allows you to build a custom CMS, but because it&#39;s built from
-components that are in use of 1000s of other Drupal sites, you&#39;re not alone.
+there’s still a degree of vendor lock-in because of the custom nature of the
+code. Drupal allows you to build a custom CMS, but because it’s built from
+components that are in use of 1000s of other Drupal sites, you’re not alone.
 You can build a fully bespoke content model and workflow, and provided you
 follow best practises, you can tap into the huge Drupal community when you
 need help and support.</p>
 
-<h2>Why custom CMS?</h2>
+<h2 id="why-custom-cms">Why custom CMS?</h2>
 
-<p>But why would you want a custom CMS when it&#39;s more work to put together than
+<p>But why would you want a custom CMS when it’s more work to put together than
 using something like Wordpress that comes fully featured out-of-the-box?
 The issue with one-size-fits-all CMSs is that you essentially get a web-page
 editor.</p>
 
 <p>So you edit your content like this:</p>
 
-<p><img src="/img/2013-07-30-untangle-drupal/content-here-2.png"
-alt="Screenshot of wysiwyg editor" /></p>
+<p><img src="/img/2013-07-30-untangle-drupal/content-here-2.png" alt="Screenshot of wysiwyg editor" /></p>
 
 <p>Which looks like this on your website:</p>
 
-<p><img src="/img/2013-07-30-untangle-drupal/content-here-3.png"
-alt="Screenshot of website template" /></p>
+<p><img src="/img/2013-07-30-untangle-drupal/content-here-3.png" alt="Screenshot of website template" /></p>
 
-<p>But you can&#39;t guarantee where your content will be viewed:</p>
+<p>But you can’t guarantee where your content will be viewed:</p>
 
-<p><img src="/img/2013-07-30-untangle-drupal/content-here-4.png"
-alt="Screenshot of broken layout on mobile" /></p>
+<p><img src="/img/2013-07-30-untangle-drupal/content-here-4.png" alt="Screenshot of broken layout on mobile" /></p>
 
 <p>This is covered in A List Apart 345, in an article called Future-Ready Content:</p>
 
 <blockquote>
-<p>we need to relinquish control of our content as well, setting it free from
+  <p>we need to relinquish control of our content as well, setting it free from
 the boundaries of a traditional webpage to flow as needed through varied
 displays and contexts. <br />
 <a href="http://alistapart.com/article/future-ready-content">Sara Wachter-Boettcher (A List Apart)</a></p>
@@ -246,7 +222,7 @@ displays and contexts. <br />
 <p>Or more directly:</p>
 
 <blockquote>
-<p>get your content ready to go anywhere because it’s going to go everywhere.
+  <p>get your content ready to go anywhere because it’s going to go everywhere.
 <a href="http://bradfrostweb.com/blog/web/for-a-future-friendly-web/">Brad Frost</a></p>
 </blockquote>
 
@@ -258,7 +234,7 @@ of the assets we were managing meant we could do more with it. This is true for
 all organisation that want to make their content future-friendly. Having good
 metadata, i.e. Structured content, is essential.</p>
 
-<h2>COPE - Create Once Publish Everywhere</h2>
+<h2 id="cope---create-once-publish-everywhere">COPE - Create Once Publish Everywhere</h2>
 
 <p>This idea comes from an initiative by NPR to create a system that allows them to
 <a href="http://blog.programmableweb.com/2009/10/13/cope-create-once-publish-everywhere/">
@@ -266,140 +242,93 @@ metadata, i.e. Structured content, is essential.</p>
 Having well structured data, and good metadata opens up lots of possibilities:</p>
 
 <ul>
-<li>Microdata, RDF, the SEO benefits of rich snippets, twitter cards and open graph tags.</li>
-<li>RSS and podcasts</li>
-<li>APIs</li>
-<li>Mobile</li>
+  <li>Microdata, RDF, the SEO benefits of rich snippets, twitter cards and open graph tags.</li>
+  <li>RSS and podcasts</li>
+  <li>APIs</li>
+  <li>Mobile</li>
 </ul>
 
-<p>But it&#39;s not just about what you can do now. It&#39;s getting your content ready
+<p>But it’s not just about what you can do now. It’s getting your content ready
 for whatever the future will bring:</p>
 
 <blockquote>
-<p>Technology will change. Standards will evolve. But the need for understanding
+  <p>Technology will change. Standards will evolve. But the need for understanding
 our content — its purpose, meaning, structure, relationships, and value — will remain. <br />
 <a href="http://alistapart.com/article/future-ready-content">Sara Wachter-Boettcher (A List Apart)</a></p>
 </blockquote>
 
-<p><img src="/img/2013-07-30-untangle-drupal/metadata-future.jpg"
-alt="Metadata is a love note to the future" /></p>
+<p><img src="/img/2013-07-30-untangle-drupal/metadata-future.jpg" alt="Metadata is a love note to the future" /></p>
 
-<h2> Metadata</h2>
+<h2 id="metadata"> Metadata</h2>
 
 <ul>
-<li><strong>Descriptive</strong>: taxonomy, classification</li>
-<li><strong>Administrative</strong>: status, licensing, etc</li>
-<li><strong>Structural</strong>: content model, attributes, relationships...</li>
+  <li><strong>Descriptive</strong>: taxonomy, classification</li>
+  <li><strong>Administrative</strong>: status, licensing, etc</li>
+  <li><strong>Structural</strong>: content model, attributes, relationships…</li>
 </ul>
 
 <p>Descriptive metadata allows you to catalogue and classify your content.
 Administrative metadata is useful in the workflow, for example, publishing
 status, flagging content for review prior to publising, or marking content
-for translation. I&#39;ve also encounted workflows that have needed licensing data
+for translation. I’ve also encounted workflows that have needed licensing data
 to control where content is allowed to be distributed.</p>
 
-<h2>The Future...</h2>
+<h2 id="the-future">The Future…</h2>
 
 <p>Drupal 8 is the future. Here are some of the main improvements to look forward
 to:</p>
 
 <ul>
-<li>Content authoring improvements including in-place editing.</li>
-<li>A better out of the box multi-lingual experience</li>
-<li>Web services are now at the core of Drupal - export every entity as XML or JSON!</li>
-<li>Views in core, plus frontpage and admin pages are now views</li>
-<li>Configuration management - all config now stored in files to allow versioning and manage separately from database</li>
-<li>Twig templating engine</li>
+  <li>Content authoring improvements including in-place editing.</li>
+  <li>A better out of the box multi-lingual experience</li>
+  <li>Web services are now at the core of Drupal - export every entity as XML or JSON!</li>
+  <li>Views in core, plus frontpage and admin pages are now views</li>
+  <li>Configuration management - all config now stored in files to allow versioning and manage separately from database</li>
+  <li>Twig templating engine</li>
 </ul>
 
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>I hope that gave a good overview of Drupal, and why you might want to use it.
-This was my first time at an &quot;Untangle the Web&quot; event. The other presentations
+This was my first time at an “Untangle the Web” event. The other presentations
 were really interesting, and I look forward to attending the next one.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

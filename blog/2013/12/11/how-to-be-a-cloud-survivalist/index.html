@@ -1,68 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> How to Be a Cloud Survivalist (part 1) |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>How to Be a Cloud Survivalist (part 1) | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">How to Be a Cloud Survivalist (part 1)</h2>
-
-  <p class="">11 Dec 2013</p>
-
-  </header>
-
-
-            
-              <p class="lead">This is the first in a series of posts where I document the process of
+<hgroup class="alignCenter">
+  <h1>How to Be a Cloud Survivalist (part 1)</h1>
+        <h6>Dec 11, 2013 · By Darren Mothersele</h6>
+  <p class="sc">misc</p>
+</hgroup>
+<p>This is the first in a series of posts where I document the process of
 implementing your own suite of cloud services.</p>
 
-<p class="lead">With a little bit of effort you can quite easily set-up your own suite of
-cloud services to rival the likes of Google. If you&#39;re concerned about
+<p>With a little bit of effort you can quite easily set-up your own suite of
+cloud services to rival the likes of Google. If you’re concerned about
 communication surveillance programs, selling of your personal data to
 advertisers, security breaches, or maybe you just want to own and control your own data, there are some great options out there.</p>
 
-              
-
+<!--break-->
 <p>A few months ago there was an article in Scientific American by Wendy Grossman
 called <a href="http://www.scientificamerican.com/article.cfm?id=how-to-be-an-e-mail-survivalist">How to Be an E-Mail Survivalist</a>. In this article Wendy
-discusses the pros and cons of running your own email service. I&#39;m going to
+discusses the pros and cons of running your own email service. I’m going to
 ignore the fact that the article fails to mention any of the solid, robust,
 open source mail server projects, in favour of recommending some weird proprietary
 email server, as she makes a few interesting observations:</p>
 
 <blockquote>
 In the early 2000s it was the height of geek fashion to run your own e-mail server - then along came Gmail with two gigabytes of free storage and excellent spam filtering. Now even most people with their own domain names use e-mail provided by Google, Microsoft or their Internet Service Provider (ISP).
-<br>&mdash;<cite> Wendy Grossman</cite>
+<br />&mdash;<cite> Wendy Grossman</cite>
 </blockquote>
 
 <p>I used to run my own mail server until Gmail came along. Prior to that I had
-the headaches, the &quot;occasional day of pain&quot; as Wendy calls it,
+the headaches, the "occasional day of pain" as Wendy calls it,
 when things stopped working for seemingly no reason. Back then I was stupidly
 trying to run everything on one server. Not a good idea!</p>
 
@@ -71,144 +49,98 @@ reliable email servers for use with your own domain. And, they gave it away
 for free. All you had to do was give away ownership of your entire digital life
 to them. A small price to pay for reliable email service?</p>
 
-<h3> A small price to pay?</h3>
+<h3 id="a-small-price-to-pay"> A small price to pay?</h3>
 
 <p>Maybe that seemed like a small price to pay at the time, but now I think
-we&#39;re starting to realise the true costs. First up there&#39;s the issue
-of government mass surveillance programmes. If you&#39;re wondering what all the fuss is about, then you need to read this excellent article from the EFF, <a href="https://www.eff.org/deeplinks/2013/11/busting-eight-common-excuses-nsa-surveillance">Busting Eight Common Excuses for NSA Mass Surveillance</a>.</p>
+we’re starting to realise the true costs. First up there’s the issue
+of government mass surveillance programmes. If you’re wondering what all the fuss is about, then you need to read this excellent article from the EFF, <a href="https://www.eff.org/deeplinks/2013/11/busting-eight-common-excuses-nsa-surveillance">Busting Eight Common Excuses for NSA Mass Surveillance</a>.</p>
 
-<p>Next there&#39;s the issue of T&amp;Cs. Have you ever read one of these documents?
+<p>Next there’s the issue of T&amp;Cs. Have you ever read one of these documents?
 What are you actually giving away when you
 tick that box and agree to the terms and conditions? Giving away ownership of
-data and the content you create? Agreeing that they&#39;re not responsible if
+data and the content you create? Agreeing that they’re not responsible if
 anything should happen to your data? Agreeing to sharing of your data with
 third parties? Remember that even
 <a href="http://news.cnet.com/8301-13739_3-9826608-46.html">anonymised data
 can be de-anonymised</a>.</p>
 
-<p>Then, there&#39;s the security issue. The news is full of high-profile security breaches, like customer data being stolen from Adobe, DropBox, Evernote and
-posted publicly on the internet. I know there&#39;s nothing to say you will be
-able to implement any better security than these guys, but at least you&#39;ll be
-less of a target. More importantly though, it&#39;s under your control, so you
+<p>Then, there’s the security issue. The news is full of high-profile security breaches, like customer data being stolen from Adobe, DropBox, Evernote and
+posted publicly on the internet. I know there’s nothing to say you will be
+able to implement any better security than these guys, but at least you’ll be
+less of a target. More importantly though, it’s under your control, so you
 can be as militant or relaxed about security as you wish.</p>
 
-<h3>Fashionable again</h3>
+<h3 id="fashionable-again">Fashionable again</h3>
 
-<p>I&#39;ve recently been rethinking that decision to move everything to Google,
-and I&#39;ve decided it&#39;s probably about
+<p>I’ve recently been rethinking that decision to move everything to Google,
+and I’ve decided it’s probably about
 time it was fashionable to run your own email server again and take back
-control. But, now I&#39;m expecting a lot more from my own set-up. It&#39;s not just a
-reliable email service. I&#39;m now looking for options to sync data (contacts,
-calendars, files) across all my devices, access them from anywhere, and share them with friends.  Luckily in the self-hosted options have come along leaps and bounds in recent years so you can literally run the suite of entire cloud services that we&#39;ve come to expect.</p>
+control. But, now I’m expecting a lot more from my own set-up. It’s not just a
+reliable email service. I’m now looking for options to sync data (contacts,
+calendars, files) across all my devices, access them from anywhere, and share them with friends.  Luckily in the self-hosted options have come along leaps and bounds in recent years so you can literally run the suite of entire cloud services that we’ve come to expect.</p>
 
 <p>This will require some digging about in the technical details of how
-all this stuff works. I&#39;ve explained here the technology I&#39;m using and how I&#39;ve
+all this stuff works. I’ve explained here the technology I’m using and how I’ve
 glued it all together, but this is far from a complete solution. On the plus
-side you don&#39;t have to compromise at all on functionality:</p>
+side you don’t have to compromise at all on functionality:</p>
 
 <ul>
-<li>You&#39;ll be able to access your email, files, documents, music and photos from anywhere in the word, and have state of the art malware and spam protection.</li>
-<li>You will own and control all your own data. It doesn&#39;t completely protect you
-from surveillance, as you could always have your internet connection tapped, but
-that wasn&#39;t a major concern for me. It certainly does make it harder though as your archive is under your control.</li>
-<li>You&#39;ll not be subject to automated analysis of your data (unless for some
-crazy reason you want to, but that&#39;s the subject for future blog post!),
-no ad targeting, or selling on of your personal data.</li>
+  <li>You’ll be able to access your email, files, documents, music and photos from anywhere in the word, and have state of the art malware and spam protection.</li>
+  <li>You will own and control all your own data. It doesn’t completely protect you
+ from surveillance, as you could always have your internet connection tapped, but
+ that wasn’t a major concern for me. It certainly does make it harder though as your archive is under your control.</li>
+  <li>You’ll not be subject to automated analysis of your data (unless for some
+ crazy reason you want to, but that’s the subject for future blog post!),
+ no ad targeting, or selling on of your personal data.</li>
 </ul>
 
-<blockquote>There is something extraordinarily empowering about firing up e-mail software, connecting to your own server and retrieving your messages. Being in charge of a fundamental part of your communications life can restore your view of the Internet as a modern marvel. <br>&mdash;<cite> Wendy Grossman</cite></blockquote>
+<blockquote>There is something extraordinarily empowering about firing up e-mail software, connecting to your own server and retrieving your messages. Being in charge of a fundamental part of your communications life can restore your view of the Internet as a modern marvel. <br />&mdash;<cite> Wendy Grossman</cite></blockquote>
 
-<p>There are a few downsides, which we&#39;ll have to try and work around. One issue
-is that because your email is not coming from one of the big mail companies, there&#39;s a higher chance that receiving servers will flag your email as spam. You also risk the chance of losing mails because of power outages or technical issues.
-There&#39;s a few options to try and mitigate this which will be discussed in a
+<p>There are a few downsides, which we’ll have to try and work around. One issue
+is that because your email is not coming from one of the big mail companies, there’s a higher chance that receiving servers will flag your email as spam. You also risk the chance of losing mails because of power outages or technical issues.
+There’s a few options to try and mitigate this which will be discussed in a
 future instalment when I look at backup and failure planning.</p>
 
-<p>Tomorrow, in part 2, I&#39;ll be building up a list of requirements and looking at the various options that are available.</p>
+<p>Tomorrow, in part 2, I’ll be building up a list of requirements and looking at the various options that are available.</p>
 
 <p>Continue to <a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">How to Be a Cloud Survivalist (part 2)</a></p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

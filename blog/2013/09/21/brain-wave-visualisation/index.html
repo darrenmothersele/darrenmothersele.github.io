@@ -1,64 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Visualising mind activity with a hacked toy EEG |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Visualising mind activity with a hacked toy EEG | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Visualising mind activity with a hacked toy EEG</h2>
-
-  <p class="">21 Sep 2013</p>
-
-  </header>
-
-
-            
-              <p class="lead">The MindFlex toy includes a headset that reads EEG wave data. There&#39;s
+<hgroup class="alignCenter">
+  <h1>Visualising mind activity with a hacked toy EEG</h1>
+        <h6>Sep 21, 2013 · By Darren Mothersele</h6>
+  <p class="sc">hardware</p>
+</hgroup>
+<p>The MindFlex toy includes a headset that reads EEG wave data. There’s
 lots of information on hacking this toy to create a simple EEG machine
 using the limited data the headset provides by default. In this project
 I have extracted the full RAW EEG data using the same toy headset from
 the MindFlex game.</p>
 
-              
+<!--break-->
 
-<p><strong>Update: </strong> I&#39;ve posted an update to this blog, where I provide
+<p><strong>Update: </strong> I’ve posted an update to this blog, where I provide
 details of how to extract the <a href="/blog/2013/10/07/mindflex-raw-eeg-data/">
 full RAW EEG data from the MindFlex headset</a>.</p>
 
 <p><strong>Friendly Warning and Disclaimer:</strong>
-Hack your toys at your own risk. I&#39;m not responsible for any damage you do
+Hack your toys at your own risk. I’m not responsible for any damage you do
 to yourself or your belongings. This information is provided here for
 information and education only. If you use the original hack and just use the
 data available in normal mode then the MindFlex still works as a game as
 originally intended. If you enable RAW EEG output then you break the toy!</p>
 
-<h2>Reading brain waves</h2>
+<h2 id="reading-brain-waves">Reading brain waves</h2>
 
 <p>An obvious place for us to start on this project might have been with the
 excellent OpenEEG project, but while being open, it still has substantial
@@ -66,19 +45,19 @@ costs and complexity in getting up and running. For this project we looked
 for a simpler approach.</p>
 
 <p>EEG technology has been incorporated into various toys and household items
-before. There are various commercial options available based on NeuroSky&#39;s
+before. There are various commercial options available based on NeuroSky’s
 ThinkGear chip.</p>
 
 <p>The original <a href="http://frontiernerds.com/brain-hack">Frontier Nerds</a>
-blog post from 2010 provides a great starting point, but I&#39;ve made a few
+blog post from 2010 provides a great starting point, but I’ve made a few
 changes along the way, including successfully extracting the RAW EEG values
 from the MindFlex toy.</p>
 
-<h2>Budget EEG with the TGAM1</h2>
+<h2 id="budget-eeg-with-the-tgam1">Budget EEG with the TGAM1</h2>
 
 <p>The TGAM1 is the controller board responsible for processing the EEG signals
 in all of the products based on the NeuroSky ThinkGear chip. NeuroSky no longer
-sell the boards in small quantities (I&#39;ve had confirmation of this from
+sell the boards in small quantities (I’ve had confirmation of this from
 their business development team that this is due to support resources) and
 instead recommend that you buy the BrainWave starter kit. This is probably a
 good idea if you want easy access to EEG data, but they are still over 100 GBP
@@ -86,7 +65,7 @@ to buy in the UK, and the toys are available for only 40.</p>
 
 <p>When you open the left compartment on the MindFlex you will see this:</p>
 
-<p><img src="/img/project/mindflex-inner.jpg" alt="Inside the MindFlex"></p>
+<p><img src="/img/project/mindflex-inner.jpg" alt="Inside the MindFlex" /></p>
 
 <p>The small board located on the top at the bottom right is the TGAM1 board.</p>
 
@@ -95,43 +74,43 @@ pin to get the data out, and another connection for a common ground between
 your arduino circuit and the TGAM1. I have also solder two more connections on,
 which I will explain later.</p>
 
-<p><img src="/img/project/mindflex-hack.png" alt="Connection on the TGAM1"></p>
+<p><img src="/img/project/mindflex-hack.png" alt="Connection on the TGAM1" /></p>
 
-<h2>Simple EEG reading</h2>
+<h2 id="simple-eeg-reading">Simple EEG reading</h2>
 
 <p>The basic data that comes out of the MindFlex headset by default actually gives
-us quite a lot of information for only &pound;40. In the default configuration
+us quite a lot of information for only £40. In the default configuration
 you have soldered on only two connections, one for a common ground and one for
 the serial data stream. I connect this to a SoftwareSerial pin on the Arduino
-and read in the packets. Here&#39;s what data you get:</p>
+and read in the packets. Here’s what data you get:</p>
 
 <ul>
-<li>Signal strength (0 - 200) where 0 means good signal, and 200 indicates a problem with the connection.</li>
-<li>Attention and Meditation eSense values. These are a proprietary measure that is calculated by the TGAM1 using NeuroSky&#39;s own algorithm. The toys based on this technology use the attention measure.</li>
-<li>EEG power band values: A measure of the various power bands that has been pre-calculated by the chip, this updates once per second.</li>
+  <li>Signal strength (0 - 200) where 0 means good signal, and 200 indicates a problem with the connection.</li>
+  <li>Attention and Meditation eSense values. These are a proprietary measure that is calculated by the TGAM1 using NeuroSky’s own algorithm. The toys based on this technology use the attention measure.</li>
+  <li>EEG power band values: A measure of the various power bands that has been pre-calculated by the chip, this updates once per second.</li>
 </ul>
 
 <p>The <a href="https://github.com/kitschpatrol/Arduino-Brain-Library/">Arduino
 Brain Library</a> already includes functionality for working with these
 values.</p>
 
-<h2>TGAM1 Region Change</h2>
+<h2 id="tgam1-region-change">TGAM1 Region Change</h2>
 
-<p>If you bought the EU version and you&#39;re in EU then skip this bit.</p>
+<p>If you bought the EU version and you’re in EU then skip this bit.</p>
 
 <p>The MindFlex, MindSet, Necomimi, etc all based on the TGAM1 that includes a
 notch filter on the EEG wave to remove electrical noise from the data. If you
 bought a MindFlex from a different region then you will need to adapt it to
-work for you. For example, if you&#39;ve bought a headset from the US it will have
-a notch filter at 60Hz. In Europe our &quot;mains hum&quot; is at 50Hz. You can switch
+work for you. For example, if you’ve bought a headset from the US it will have
+a notch filter at 60Hz. In Europe our “mains hum” is at 50Hz. You can switch
 the notch filter to work at the correct frequency with a bit of soldering.</p>
 
-<h2>Getting full RAW EEG data</h2>
+<h2 id="getting-full-raw-eeg-data">Getting full RAW EEG data</h2>
 
 <p>Now on to getting the full raw EEG data from the MindFlex headset. In addition
 to the two connections you soldered on before there are two extra connections
 required. This allows you to configure the TGAM1 board that is in the MindFlex
-to switch between two modes. The &#39;configure&#39; connection is actually called B1
+to switch between two modes. The ‘configure’ connection is actually called B1
 on the TGAM1 board. In the MindFlex headset B1 is connected to GND via a 10K
 resistor. I have marked this resistor with an X on the image.</p>
 
@@ -145,111 +124,64 @@ same packets as in normal mode.</p>
 rate of 9600 by connecting B1 back to GND with the 10K resistor instead of the
 VCC connection.</p>
 
-<h2>Signal strength</h2>
+<h2 id="signal-strength">Signal strength</h2>
 
 <p>The normal data and raw data modes both give you the summary packet once every second. In this is a measure of signal strength. It should be zero to indicate that the board is getting good measurements. Anything more than 0 indicates poor signal, and 200 is used to indicate a problem.</p>
 
-<p>When I had the Arduino hooked up to the computer serial port I struggled to get the signal strength to 0. When running off batteries (I have an Arduino Pro mini connected to the headset&#39;s battery pack) I have had no issues with
+<p>When I had the Arduino hooked up to the computer serial port I struggled to get the signal strength to 0. When running off batteries (I have an Arduino Pro mini connected to the headset’s battery pack) I have had no issues with
 signal strength.</p>
 
-<p>The issues were resolved by adding an extra GND connection from the Arduino and connecting to the body of the person being tested. I don&#39;t recommend this
+<p>The issues were resolved by adding an extra GND connection from the Arduino and connecting to the body of the person being tested. I don’t recommend this
 approach and running the headset completely off batteries is recommended.</p>
 
 <p>This requires no wired connection to the computer, hence the RF link that has been implemented.</p>
 
-<h2>RF data link</h2>
+<h2 id="rf-data-link">RF data link</h2>
 
 <p>I am using a cheap low-power RF transceiver to send the EEG packets to the computer. This makes the headset wireless and solves the signal strength problem that required the extra ground connection.</p>
 
-<h2>Receiving the data</h2>
+<h2 id="receiving-the-data">Receiving the data</h2>
 
 <p>The <a href="https://github.com/kitschpatrol/Processing-Brain-Grapher">Processing Brain Grapher</a> is a good starting point to check everything is working but it only works when the headset is in normal mode and sending
 the data via the serial port.</p>
 
-<p>I am working on a Processing library that will work with the updated headset in full EEG mode, this giving access to the eSense meters, the EEG power band values, and the full EEG raw data. I&#39;ll be expanding this section as I make more progress with the libraries and visualisations.</p>
-
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<p>I am working on a Processing library that will work with the updated headset in full EEG mode, this giving access to the eSense meters, the EEG power band values, and the full EEG raw data. I’ll be expanding this section as I make more progress with the libraries and visualisations.</p>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

@@ -1,52 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> How to Be a Cloud Survivalist (part 3) |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>How to Be a Cloud Survivalist (part 3) | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">How to Be a Cloud Survivalist (part 3)</h2>
-
-  <p class="">16 Dec 2013</p>
-
-  </header>
-
-
-            
-              <p class="lead">This is the third post in a series where I document the process of
+<hgroup class="alignCenter">
+  <h1>How to Be a Cloud Survivalist (part 3)</h1>
+        <h6>Dec 16, 2013 · By Darren Mothersele</h6>
+  <p class="sc">misc</p>
+</hgroup>
+<p>This is the third post in a series where I document the process of
 implementing your own suite of cloud services. I covered the requirements
 in the <a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">previous post</a>,
 and in this instalment I take a deeper look at what it takes to run your own email service.</p>
 
-              
+<!--break-->
 
-<h3>Email server overview</h3>
+<h3 id="email-server-overview">Email server overview</h3>
 
 <p>Setting up an email server has a reputation for being
 incredibly complicated, and needing a lot of work to keep safe and secure.
@@ -58,42 +37,42 @@ exploit in order to send spam.</p>
 <p>The main components of a mail system are</p>
 
 <ul>
-<li>Mail User Agent (MUA) is the application you use to create, view, send and receive mail.</li>
-<li>Mail Transfer Agent (MTA) is the SMTP bit of email. Simple Mail Transfer
-Protocol (SMTP) is the protocol for passing messages between servers. Common
-Linux MTAs are Postfix, Exim or Sendmail.</li>
-<li>A Mail Delivery Agent (MDA) deal with getting the messages to the local mail
-storage (mailboxes). On Linux MDA this could be procmail, maildrop, or part of what Dovecot does.</li>
-<li>Mail Storage Server (MSS) deals with delivering mail to the MUA. This is the bit
-that implements the other mail protocols you&#39;re familiar with such as IMAP and POP.
-On Linux this could be Dovecot or Courier.</li>
+  <li>Mail User Agent (MUA) is the application you use to create, view, send and receive mail.</li>
+  <li>Mail Transfer Agent (MTA) is the SMTP bit of email. Simple Mail Transfer
+ Protocol (SMTP) is the protocol for passing messages between servers. Common
+ Linux MTAs are Postfix, Exim or Sendmail.</li>
+  <li>A Mail Delivery Agent (MDA) deal with getting the messages to the local mail
+ storage (mailboxes). On Linux MDA this could be procmail, maildrop, or part of what Dovecot does.</li>
+  <li>Mail Storage Server (MSS) deals with delivering mail to the MUA. This is the bit
+ that implements the other mail protocols you’re familiar with such as IMAP and POP.
+ On Linux this could be Dovecot or Courier.</li>
 </ul>
 
 <p>You will also need:</p>
 
 <ul>
-<li>Some way to manage users, domains and mailboxes. You can use OS user accounts
-but more commonly you would use a more scalable option such as LDAP.</li>
-<li>Virus and malware scanning.</li>
-<li>A database for storing settings and other info, SQLite, MariaDB or MySQL.</li>
+  <li>Some way to manage users, domains and mailboxes. You can use OS user accounts
+ but more commonly you would use a more scalable option such as LDAP.</li>
+  <li>Virus and malware scanning.</li>
+  <li>A database for storing settings and other info, SQLite, MariaDB or MySQL.</li>
 </ul>
 
 <p>While researching the various options, and looking at how to configure them
 to work together I came across <a href="http://www.iredmail.org/">iRedMail</a>,
-a fully-fledged email solution. It doesn&#39;t re-implement any existing technology
+a fully-fledged email solution. It doesn’t re-implement any existing technology
 and instead builds on top of popular and robust open-source projects, it uses
 your OS package manager to install the requirements, and then configures
 each bit to work together. It can be configured to use LDAP or MySQL as a
 back-end for storing user accounts.</p>
 
-<h3>Getting started</h3>
+<h3 id="getting-started">Getting started</h3>
 
-<p>I&#39;m going to demonstrate the process of setting up an email server using a
-VPS server at Digital Ocean, and I&#39;m going to use Ubuntu 12.04 because that
-is the OS I&#39;m most familiar with. The process should be pretty similar for your
+<p>I’m going to demonstrate the process of setting up an email server using a
+VPS server at Digital Ocean, and I’m going to use Ubuntu 12.04 because that
+is the OS I’m most familiar with. The process should be pretty similar for your
 own choice of host and OS.</p>
 
-<h3>Deliverability</h3>
+<h3 id="deliverability">Deliverability</h3>
 
 <p>In <a href="/blog/2013/12/11/how-to-be-a-cloud-survivalist/">How to Be a Cloud Survivalist (part 1)</a>,
 I mentioned that when you run your own mail server there is a higher chance that
@@ -114,47 +93,47 @@ reverse DNS lookup, then check this matches against the mail server settings
 for the email domain of the sender.</p>
 
 <p>If you control the authoritative DNS for the IP address of the server you
-are using then you will need to <a href="http://www.itworld.com/networking/362601/how-setup-reverse-dns-and-ptr-records">configure the reverse DNS records yourself</a>, otherwise you&#39;ll have
-to contact your ISP or hosting company. I&#39;m using Digital Ocean, and they
+are using then you will need to <a href="http://www.itworld.com/networking/362601/how-setup-reverse-dns-and-ptr-records">configure the reverse DNS records yourself</a>, otherwise you’ll have
+to contact your ISP or hosting company. I’m using Digital Ocean, and they
 automatically configure the PTR record to match the hostname you use when
 you provision your server.</p>
 
-<h3>STEP 1: Provision server</h3>
+<h3 id="step-1-provision-server">STEP 1: Provision server</h3>
 
 <p>As discussed above, in order to get the correct PTR record for the server,
 enter a name for the server that matches the name you will be using when you
-assign the server as a mail server in your email domain&#39;s DNS records.</p>
+assign the server as a mail server in your email domain’s DNS records.</p>
 
-<p>You can&#39;t actually create the DNS settings for the domain until you&#39;ve
-provisioned the server and know it&#39;s IP address. I&#39;ll assume you&#39;re going to
-be using <em>example.com</em> as your main domain, and so we&#39;ll use
+<p>You can’t actually create the DNS settings for the domain until you’ve
+provisioned the server and know it’s IP address. I’ll assume you’re going to
+be using <em>example.com</em> as your main domain, and so we’ll use
 <em>mx.example.com</em> for the server name.</p>
 
-<p><img src="/img/cloud-pt3/01-create.png" alt="Screenshot of provisioning server"></p>
+<p><img src="/img/cloud-pt3/01-create.png" alt="Screenshot of provisioning server" /></p>
 
-<p>I&#39;ve selected a 1GB instance as the iRedMail requirements suggest this much
+<p>I’ve selected a 1GB instance as the iRedMail requirements suggest this much
 memory if you are going to enable spam filtering of incoming email.</p>
 
-<h3>STEP 2: Register domain, DNS settings</h3>
+<h3 id="step-2-register-domain-dns-settings">STEP 2: Register domain, DNS settings</h3>
 
-<p>After you have registered your name (I&#39;ll stick to convention and use
+<p>After you have registered your name (I’ll stick to convention and use
 <em>example.com</em> in the examples), you should set up some DNS settings.
 The process for doing this will depend on where where you registered your domain.</p>
 
-<p>I don&#39;t have any recommendations
-for domain registrars. This time I used 123-reg, but I&#39;m not going to recommend
+<p>I don’t have any recommendations
+for domain registrars. This time I used 123-reg, but I’m not going to recommend
 them because they have told me they are NOT implementing
 2-factor authentication and they have no plans to do so.</p>
 
-<p>I&#39;m using a separate domain
-for setting up email services, so I&#39;ve registered a cheap £9 SSL cert for that
+<p>I’m using a separate domain
+for setting up email services, so I’ve registered a cheap £9 SSL cert for that
 domain just to get rid of browser security warnings. This only certifies one domain
 so be sure to use the domain name you want to be using for your mail server
-settings, and not the same as your website (if you have one) as you don&#39;t want
+settings, and not the same as your website (if you have one) as you don’t want
 to tie your website to the same domain as your email as you probably want to
 run them on separate servers.</p>
 
-<p>So, if you&#39;re using <em>mail.example.com</em> or <em>example.com</em> (depending on your SSL cert)
+<p>So, if you’re using <em>mail.example.com</em> or <em>example.com</em> (depending on your SSL cert)
 create A records that point at the IP address of the server you configured in the
 last step.</p>
 
@@ -174,91 +153,97 @@ behalf of this domain. You will need to create this (as a TXT record) in the
 DNS for every domain name you will be hosting email for.
 The SPF record should look like this, but with x.x.x.x replaced with your
 server IP address:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&quot;v=spf1 ip4:x.x.x.x -all&quot;
-</code></pre></figure>
-<p>There are also DNS records that need to be created for DKIM but I&#39;ll explain what
+
+<pre><code>"v=spf1 ip4:x.x.x.x -all"
+</code></pre>
+
+<p>There are also DNS records that need to be created for DKIM but I’ll explain what
 this is all about in a bit, as you need to configure the mail server first.</p>
 
-<h3>STEP 3: Install iRedMail</h3>
+<h3 id="step-3-install-iredmail">STEP 3: Install iRedMail</h3>
 
 <p>I selected to add my SSH key to the server when I provisioned it, so
-login is straightforward, and doesn&#39;t need a password. First thing I do
-is add a Linux account for myself, so I don&#39;t have to login as the root
+login is straightforward, and doesn’t need a password. First thing I do
+is add a Linux account for myself, so I don’t have to login as the root
 user, give myself sudo privileges, disable root and password logins via SSH,
 and update all packages with <em>ap-get update ; apt-get upgrade</em>.</p>
 
-<p>Now on to configure iRedMail. You&#39;ll need sudo access for this. So, as the root
+<p>Now on to configure iRedMail. You’ll need sudo access for this. So, as the root
 user, download and extract the iRedMail package:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /root
+
+<pre><code>cd /root
 wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
 tar xjf iRedMail-0.8.6.tar.bz2
-</code></pre></figure>
+</code></pre>
+
 <p>Then change into the iRedMail directory and execute the installer:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd iRedMail-0.8.6/
+
+<pre><code>cd iRedMail-0.8.6/
 bash iRedMail.sh
-</code></pre></figure>
+</code></pre>
+
 <p>You should then be presented with this welcome screen. Please note that I
 took these screenshots last week and so they are of v0.8.5.</p>
 
-<p><img src="/img/cloud-pt3/03-welcome.png" alt="iRedMail welcome screen"></p>
+<p><img src="/img/cloud-pt3/03-welcome.png" alt="iRedMail welcome screen" /></p>
 
 <p>Once you go past the welcome screen you will see a series of screens that
 prompt you for various bits of information. First select the
 location on the file system to store the mail boxes. I see no reason not
 to go with the default:</p>
 
-<p><img src="/img/cloud-pt3/04-storage.png" alt=""></p>
+<p><img src="/img/cloud-pt3/04-storage.png" alt="" /></p>
 
 <p>Select a back-end to use for storage of user accounts. I prefer LDAP for this
-as I&#39;ll be using it to integrate with some of the other components of my cloud
+as I’ll be using it to integrate with some of the other components of my cloud
 services in addition to email.</p>
 
-<p><img src="/img/cloud-pt3/05-db.png" alt=""></p>
+<p><img src="/img/cloud-pt3/05-db.png" alt="" /></p>
 
 <p>When you create your LDAP suffix, work from just the domain name. So, even though
 the server name is <em>mx.example.com</em>, you should just use <em>example.com</em>
-to calculate your LDAP suffix. In fact, I&#39;m going to add extra domains later
-and I&#39;m not really going to use this domain name for user accounts.</p>
+to calculate your LDAP suffix. In fact, I’m going to add extra domains later
+and I’m not really going to use this domain name for user accounts.</p>
 
-<p><img src="/img/cloud-pt3/06-ldap.png" alt=""></p>
+<p><img src="/img/cloud-pt3/06-ldap.png" alt="" /></p>
 
 <p>Make sure you generate a secure (truly random) password for the LDAP root:</p>
 
-<p><img src="/img/cloud-pt3/07-ldap-pass.png" alt=""></p>
+<p><img src="/img/cloud-pt3/07-ldap-pass.png" alt="" /></p>
 
 <p>Enter the domain name for this server. This is going to be the domain name you use
 in email settings later. It should match the domain name that you have (or will)
 generate the SSL certificate for:</p>
 
-<p><img src="/img/cloud-pt3/08-domain.png" alt=""></p>
+<p><img src="/img/cloud-pt3/08-domain.png" alt="" /></p>
 
-<p>There are some optional extras you can install. I&#39;m going to install all of them
-except the phpMyAdmin and phpLDAPadmin as I don&#39;t want to maintain these two
+<p>There are some optional extras you can install. I’m going to install all of them
+except the phpMyAdmin and phpLDAPadmin as I don’t want to maintain these two
 bits of software. phpMyAdmin in the past has been a source of security vulnerabilities
-and I&#39;m not going to use it anyway, so no point having it installed.</p>
+and I’m not going to use it anyway, so no point having it installed.</p>
 
-<p><img src="/img/cloud-pt3/09-options.png" alt=""></p>
+<p><img src="/img/cloud-pt3/09-options.png" alt="" /></p>
 
-<p>Once you&#39;ve provided values for all the options the configuration will continue
+<p>Once you’ve provided values for all the options the configuration will continue
 automatically and you will see progress reported. You will see a couple of questions
 along the way that you can answer y/n to.</p>
 
-<p><img src="/img/cloud-pt3/10-progress.png" alt=""></p>
+<p><img src="/img/cloud-pt3/10-progress.png" alt="" /></p>
 
 <p>iRedMail has now finished installing and configuring the packages, during this process
-it created some firewall rules. I&#39;m just going check what they
-are using <code>sudo iptables -L</code>, once I&#39;ve confirmed I&#39;m happy with them
+it created some firewall rules. I’m just going check what they
+are using <code>sudo iptables -L</code>, once I’ve confirmed I’m happy with them
 I reboot the server.</p>
 
 <p>Once the server has finished rebooting and it back online, I browse to my domain in a web browser and I
 see this:</p>
 
-<p><img src="/img/cloud-pt3/11-ssl-error.png" alt=""></p>
+<p><img src="/img/cloud-pt3/11-ssl-error.png" alt="" /></p>
 
-<h3>Configure iRedMail to use custom SSL certificate</h3>
+<h3 id="configure-iredmail-to-use-custom-ssl-certificate">Configure iRedMail to use custom SSL certificate</h3>
 
-<p>When you install iRedMail it creates it&#39;s own self-signed certificate
-for SSL communication. In order to get rid of browser warnings I&#39;m going to
+<p>When you install iRedMail it creates it’s own self-signed certificate
+for SSL communication. In order to get rid of browser warnings I’m going to
 install my own certificate.</p>
 
 <p>After verifying ownership of the domain name I was given two files. The first
@@ -268,50 +253,60 @@ certificate signing request. I need all three of these files, so I upload them
 to the server and move them to the appropriate places. Put the private key in
 <code>/etc/ssl/private</code>, and the other two files in <code>/etc/ssl/certs</code>
 so you have something that looks like this:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/etc/ssl/private/example.com.key
+
+<pre><code>/etc/ssl/private/example.com.key
 /etc/ssl/certs/example.com.crt
 /etc/ssl/certs/example.com.ca.crt
-</code></pre></figure>
+</code></pre>
+
 <p>Now in your Apache configuration (<code>/etc/apache2/sites-enabled/default-ssl</code>)
 find the appropriate place for SSL keys, remove the references to self-signed
 certificates, and enter location of your SSL certs and keys:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">SSLCertificateFile /etc/ssl/certs/example.com.crt
+
+<pre><code>SSLCertificateFile /etc/ssl/certs/example.com.crt
 SSLCertificateKeyFile /etc/ssl/private/example.com.key
 SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
-</code></pre></figure>
+</code></pre>
+
 <p>Once you restart Apache that should remove the browser warnings. We also need to
 update the certificates in use by dovecot and postfix to prevent SSL error
 messages when sending and receiving email via other apps.</p>
 
-<p>For dovecot and postfix we don&#39;t use separate chain and cert files, so we need
+<p>For dovecot and postfix we don’t use separate chain and cert files, so we need
 to concatenate them into a single file (eg <code>/etc/ssl/certs/example.chain.cert</code>),
 in this order:</p>
 
 <ol>
-<li>Your public SSL certificate</li>
-<li>The provided CA certificate</li>
-<li>Any other root CA certificate for signer of your SSL</li>
+  <li>Your public SSL certificate</li>
+  <li>The provided CA certificate</li>
+  <li>Any other root CA certificate for signer of your SSL</li>
 </ol>
 
 <p>For incoming email
 (IMAP/POP) update the dovecot configuration in <code>/etc/dovecot/dovecot.conf</code>
 and update the following to point at your cert and key files:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">ssl_key_file = /etc/ssl/private/example.com.key
+
+<pre><code>ssl_key_file = /etc/ssl/private/example.com.key
 ssl_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre></figure>
+</code></pre>
+
 <p>For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">smtpd_tls_key_file = /etc/ssl/private/example.com.key
+
+<pre><code>smtpd_tls_key_file = /etc/ssl/private/example.com.key
 ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre></figure>
+</code></pre>
+
 <p>Now restart the services so the changes take effect.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo service apache2 restart
+
+<pre><code>sudo service apache2 restart
 sudo service postfix restart
 sudo service dovecot restart
-</code></pre></figure>
+</code></pre>
+
 <p>You should now be able to connect to iRedAdmin and Roundcube via the web
 interface without getting SSL error messages.</p>
 
-<h3>DomainKeys Identified Mail</h3>
+<h3 id="domainkeys-identified-mail">DomainKeys Identified Mail</h3>
 
 <p>One more bit of configuration that needs setting up is DKIM. This is another
 change to make to the DNS records that helps ensure deliverability of emails
@@ -319,77 +314,91 @@ and that you wont get flagged as a spammer or unknown mail server.</p>
 
 <p>DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
 a list of the keys.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">amavisd-new showkeys
-</code></pre></figure>
+
+<pre><code>amavisd-new showkeys
+</code></pre>
+
 <p>You will see something like the following output:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">; key#1, domain example.com, /var/lib/dkim/example.com.pem
+
+<pre><code>; key#1, domain example.com, /var/lib/dkim/example.com.pem
 dkim._domainkey.example.com. 3600 TXT (
-  &quot;v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
-  ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB&quot;)
-</code></pre></figure>
+  "v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
+  ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB")
+</code></pre>
+
 <p>In the DNS settings for your domain, create a new TXT record for dkim._domainkey
 and enter the whole string that is shown between () in the output of the showkeys
 command.  Once you have created the DNS record, you will need to wait a while for
 the change to propagate, then you can test your keys are working correctly with
 the testkeys command:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text"># amavisd-new testkeys
+
+<pre><code># amavisd-new testkeys
 TESTING#1: dkim._domainkey.example.com    =&gt; pass
-</code></pre></figure>
+</code></pre>
+
 <p>Once you have verified that the key is working here, you can use a verification
 service to test deliverability of your email. I found the port25 service useful,
 all you have to do is send an email to check-auth@verifier.port25.com and you will
 get a response with lots of useful information, summarised like this:</p>
 
-<p><img src="/img/cloud-pt3/12-verify.png" alt=""></p>
+<p><img src="/img/cloud-pt3/12-verify.png" alt="" /></p>
 
-<h3>Configure mail client</h3>
+<h3 id="configure-mail-client">Configure mail client</h3>
 
 <p>You should now be ready to start using your email server. When you setup your
-account you will probably have to select &quot;Manual configuration&quot;, or if a list
-of standard email providers is listed then select &quot;Other&quot;.</p>
+account you will probably have to select “Manual configuration”, or if a list
+of standard email providers is listed then select “Other”.</p>
 
 <p>The server address is
 your domain (example.com), you should select IMAP for incoming mail. Note
 that the mail server is example.com and not imap.example.com which some
 software defaults to. Make sure you use the full email address as the account
-name, else you may be prompted for a &quot;prefix&quot;. The outgoing email server is SMTP
+name, else you may be prompted for a “prefix”. The outgoing email server is SMTP
 and again is on example.com and not smtp.example.com as some apps will default to.</p>
 
-<h3>Adding an extra domain to iRedMail</h3>
+<h3 id="adding-an-extra-domain-to-iredmail">Adding an extra domain to iRedMail</h3>
 
 <p>I wanted to add accounts for friends and have email hosted for some other domain
-names. Here&#39;s how to add an extra domain name to iRedMail.</p>
+names. Here’s how to add an extra domain name to iRedMail.</p>
 
 <p>The first, simple, step is to add the domain to iRedAdmin. I wont explain this
-as it&#39;s very straightforward. Once you&#39;ve done that you need to add the domain
+as it’s very straightforward. Once you’ve done that you need to add the domain
 to the DKIM configuration.</p>
 
 <p>Login as root to the server, change into the folder where DKIM keys are stored
 and generate a new key for the domain:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /var/lib/dkim
+
+<pre><code>cd /var/lib/dkim
 amavisd-new genrsa test.com.pem
 chmod 0644 test.com.pem
-</code></pre></figure>
+</code></pre>
+
 <p>Now edit the confuration file at <code>/etc/amavis/conf.d/50-user</code>
 to include the new key. Find the section in the configuration file where
 keys are declared and add:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">dkim_key(&quot;test.com&quot;, &quot;dkim&quot;, &quot;/var/lib/dkim/test.com.pem&quot;);
-</code></pre></figure>
+
+<pre><code>dkim_key("test.com", "dkim", "/var/lib/dkim/test.com.pem");
+</code></pre>
+
 <p>Then find where the local domains are defined (in the same config file) and add your new domain:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">@local_domains_maps = [&#39;mx.example.com&#39;, &#39;example.com&#39;, &#39;test.com&#39;];
-</code></pre></figure>
+
+<pre><code>@local_domains_maps = ['mx.example.com', 'example.com', 'test.com'];
+</code></pre>
+
 <p>Restart <code>amavis</code> and show the new list of keys. You should see your
 new key listed. Copy the TXT record and add it to the DNS for the new domain:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/etc/init.d/amavis restart
+
+<pre><code>/etc/init.d/amavis restart
 amavisd-new showkeys
-</code></pre></figure>
+</code></pre>
+
 <p>Also remember to add the SPF record to the new domain, and set the MX records
 so they point at mx.example.com.</p>
 
 <p>You may want to send an email to check-auth@verifier.port25.com from the new
 domain just to check everything is working correctly.</p>
 
-<h3>Check logs</h3>
+<h3 id="check-logs">Check logs</h3>
 
 <p>Once you start using your new email server you will want to check the logs now
 and again to check everything is running OK. I looked in <code>/var/log/mail.log</code>
@@ -399,99 +408,55 @@ to get through.</p>
 
 <p>I had comment out the following line from <code>/etc/postfix/helo_access.pcre</code>
 to allow these messages through:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/\.local$/                  REJECT Go away, bad guy (.local).
-</code></pre></figure>
-<h3>Syncing</h3>
 
-<p>Now I&#39;ve got email working, and thanks to IMAP, I have my email accessible
+<pre><code>/\.local$/                  REJECT Go away, bad guy (.local).
+</code></pre>
+
+<h3 id="syncing">Syncing</h3>
+
+<p>Now I’ve got email working, and thanks to IMAP, I have my email accessible
 across all my devices.
-In the next post in this series I&#39;m going to take a slight detour while I look
+In the next post in this series I’m going to take a slight detour while I look
 more at what is possible now I have a working LDAP server for my domain.
-Then I&#39;m going to quickly move on to implementing other cloud services, in particular
+Then I’m going to quickly move on to implementing other cloud services, in particular
 the synchronisation of other data across my devices, like calendars and contacts.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

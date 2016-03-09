@@ -1,132 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Identity Proxy |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Identity Proxy | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-<div class="dm-page">
-<div class="post dm-post">
-
-  <header class="post-header">
-    <h1 class="post-title">Identity Proxy</h1>
-    <p class="post-meta">Nov 24, 2015
-    </p>
-  </header>
-
-  <article class="post-content">
-    
-      <p class="lead">If you&#39;ve got 5 mins, I would really appreciate it if
+<hgroup class="alignCenter">
+  <h1>Identity Proxy</h1>
+        <h6>Nov 24, 2015 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>If you’ve got 5 mins, I would really appreciate it if
 you could read this. Then, tell me what you think 
 of the idea.  </p>
 
-      
+<!--break-->
 
-<p>We&#39;re calling this <a href="http://idproxy.co">Identity Proxy</a>. A bit like an 
+<p>We’re calling this <a href="http://idproxy.co">Identity Proxy</a>. A bit like an 
 escrow service for your contact details. 
 First let me explain some of the problems we think
 this solves:</p>
 
-<h2>Scenario 1</h2>
+<h2 id="scenario-1">Scenario 1</h2>
 
-<p>You&#39;re looking for an apartment. You do some online research.
+<p>You’re looking for an apartment. You do some online research.
 You signup to several websites, services, and 
-email various estate agents. You&#39;ve given away your contact details
+email various estate agents. You’ve given away your contact details
 to 20 different companies. </p>
 
 <p>You then have 20 different companies contacting you via
-email, phone, SMS notifications, etc. That&#39;s a lot of 
+email, phone, SMS notifications, etc. That’s a lot of 
 communication coming in through different channels and at
 different times.</p>
 
 <p>You make a decision and rent a flat with one of the companies,
 but 19 others have your details. What are they going to 
 do with them? Sell them? Market to you later? Call you back
-every few months asking if you&#39;re still looking for an apartment?</p>
+every few months asking if you’re still looking for an apartment?</p>
 
 <p>What if you could manage all this communication in once place?
 Decide how and when you get contacted? And, only give your details
 to the 1 company you decide to rent with.</p>
 
-<h2>Scenario 2</h2>
+<h2 id="scenario-2">Scenario 2</h2>
 
-<p>You&#39;re looking for a new job. You sign up to 10 different
+<p>You’re looking for a new job. You sign up to 10 different
 recruitment websites, and job portals. 
 You get a regular stream of newsletters, several per
 day from different sources. </p>
 
-<p>Once you&#39;ve found a job you have to remember everywhere you
+<p>Once you’ve found a job you have to remember everywhere you
 signed up and go around unsubscribing from each of the 
-emails. Or you don&#39;t and they keep filling your inbox.</p>
+emails. Or you don’t and they keep filling your inbox.</p>
 
 <p>What if you could unsubscribe from all of them at the same time, 
 in one simple operation?</p>
 
-<h2>Scenario 3</h2>
+<h2 id="scenario-3">Scenario 3</h2>
 
-<p>You&#39;re planning a holiday or a trip somewhere. You use the 
+<p>You’re planning a holiday or a trip somewhere. You use the 
 web to do research. This involves filling in lots of 
 contact forms around the web while you make enquiries about
 places to visit, things to do, and places to stay. </p>
 
-<p>You&#39;re never sure who you&#39;re giving your personal details
+<p>You’re never sure who you’re giving your personal details
 to. Are companies going to keep marketing to you? 
-Will they sell your details on as a qualified &quot;lead&quot; to other 
+Will they sell your details on as a qualified “lead” to other 
 companies?</p>
 
 <p>What if you could make an enquiry online and only share 
-your personal details once you&#39;re more comfortable with who
-you&#39;re doing business with?</p>
+your personal details once you’re more comfortable with who
+you’re doing business with?</p>
 
-<h2>Current solutions</h2>
+<h2 id="current-solutions">Current solutions</h2>
 
 <p>How many sites have you signed up to in the past?
 If you use a login manager or password manager, then at least you 
-might have some idea of where you&#39;ve given away your details, and 
-what websites you&#39;re registered with. </p>
+might have some idea of where you’ve given away your details, and 
+what websites you’re registered with. </p>
 
-<p>Maybe you&#39;ve resorted to using a fake email address, or
+<p>Maybe you’ve resorted to using a fake email address, or
 a temporary email account? This only solves part of the 
-problem, because if you&#39;re expecting a reply you have to check
+problem, because if you’re expecting a reply you have to check
 a separate email account. Also, many contact forms and email
 services try to reject temporary email accounts because
 they are often a source of spam or abuse. </p>
 
-<h2>Identity Proxy</h2>
+<h2 id="identity-proxy">Identity Proxy</h2>
 
-<p>What if we take a different approach, and instead of a &quot;fake&quot;
-temporary identity, we use a &quot;verified&quot; temporary identity?
-The company can see you&#39;re a real verified person, but 
+<p>What if we take a different approach, and instead of a “fake”
+temporary identity, we use a “verified” temporary identity?
+The company can see you’re a real verified person, but 
 you stay in control of what information you want to give 
 away. </p>
 
 <p>We also group enquiries and registrations into projects. 
-This means that once you&#39;ve found your apartment, finished
+This means that once you’ve found your apartment, finished
 your job hunt, or returned from holiday, you can 
 close your temporary identity, and shut off contact from
 all the companies you sent enquiries to, or registered with.
@@ -141,32 +118,32 @@ to receive replies. This makes the communication easier to
 manage, plus they can be combined into a standard
 format to make it easy to compare. </p>
 
-<h2>What about the companies?</h2>
+<h2 id="what-about-the-companies">What about the companies?</h2>
 
-<p>Companies that are good internet citizens, and don&#39;t hassle
+<p>Companies that are good internet citizens, and don’t hassle
 customers, and abide by best practises should welcome this idea.
-It&#39;s better than receiving a fake temporary email address, because they
+It’s better than receiving a fake temporary email address, because they
 are assured by the verification that it is a real enquiry.</p>
 
 <p>We plan to support the <a href="http://www.list-unsubscribe.com/">list unsubscribe header</a>.
-If you&#39;re running a mailing list or registration system, 
+If you’re running a mailing list or registration system, 
 you should already be implementing this on every message you send.
 We are building support for this standard into our system to help companies 
 keep their lists clean.</p>
 
-<h2> That all sounds very complicated</h2>
+<h2 id="that-all-sounds-very-complicated"> That all sounds very complicated</h2>
 
-<p>Well, behind the scenes there&#39;s a lot we&#39;re doing to make it 
+<p>Well, behind the scenes there’s a lot we’re doing to make it 
 work seamlessly. But, it should be no more difficult than
 sending an email, or filling in a contact form on a website.</p>
 
-<p>There&#39;s no extra work involved for the person making the 
+<p>There’s no extra work involved for the person making the 
 enquiries, and it will save them lots of time being able
-to &quot;unsubscribe&quot; to a whole project group in one go.</p>
+to “unsubscribe” to a whole project group in one go.</p>
 
-<h2>What&#39;s next?</h2>
+<h2 id="whats-next">What’s next?</h2>
 
-<p>We&#39;re going to continue development. We&#39;ve started a 
+<p>We’re going to continue development. We’ve started a 
 website at <a href="http://idproxy.co">idproxy.co</a> where you can 
 register to be notified when we launch the service. </p>
 
@@ -176,94 +153,43 @@ register to be notified when we launch the service. </p>
 
 <p>Thanks!</p>
 
-    
-  </article>
-</div>
 
-<div class="post-comments">
-  <div id="disqus_thread"></div>
-  <script>
-      var disqus_config = function () {
-          this.page.url = 'http://www.darrenmothersele.com/blog/2015/11/24/identity-proxy-and-the-startup-battle/';
-      };
-      (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//darrenmothersele.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the comments (powered by Disqus).</noscript>
-</div>
+
+
+
+<div class="author-line">
+
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
+
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
-
-
-
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
 
 
-</div>
-</div>
-
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

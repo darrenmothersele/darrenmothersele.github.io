@@ -1,55 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</h2>
-
-  <p class="">20 Mar 2015</p>
-
-  </header>
-
-
-            
-              <p class="lead">I&#39;ve been working a lot with Atomic design (component-based design)
-with Drupal recently, and I&#39;ve witnessed huge improvements on projects
+<hgroup class="alignCenter">
+  <h1>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig</h1>
+        <h6>Mar 20, 2015 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>I’ve been working a lot with Atomic design (component-based design)
+with Drupal recently, and I’ve witnessed huge improvements on projects
 where it has been introduced. The main advantage being the decoupling of
 the development of the back-end from the development of the front-end
 code. </p>
 
-<p class="lead">I&#39;ve covered this in more detail <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">previously</a>, I&#39;m running some workshops on <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a>,
+<p>I’ve covered this in more detail <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">previously</a>, I’m running some workshops on <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a>,
 and I have more to say on this in the future. Today I want to tell you about a simple
-tool I&#39;m using to speed up the process. <a href="https://github.com/darrenmothersele/stylex">Stylex</a>.</p>
+tool I’m using to speed up the process. <a href="https://github.com/darrenmothersele/stylex">Stylex</a>.</p>
 
-              
+<!--break-->
 
 <p>The main purpose of this tool is to simplify the construction of prototype
 sites or style guides for front-end code. There are several tools already available,
@@ -60,19 +39,22 @@ incredibly simple. </p>
 for mocking up front-end code, with an easy way to load in demo content (from
 yml files). </p>
 
-<h2> Barebones project</h2>
+<h2 id="barebones-project"> Barebones project</h2>
 
-<p>I&#39;ve created a <a href="https://github.com/darrenmothersele/stylex-barebones">barebones Stylex project</a> on GitHub that demonstrates this, but you probably 
-want to follow along in the setup, so you know what&#39;s going on...</p>
+<p>I’ve created a <a href="https://github.com/darrenmothersele/stylex-barebones">barebones Stylex project</a> on GitHub that demonstrates this, but you probably 
+want to follow along in the setup, so you know what’s going on…</p>
 
-<h2>Basic setup</h2>
+<h2 id="basic-setup">Basic setup</h2>
 
-<p>I&#39;ve packaged this for Composer so getting started is easy. Assuming you already
+<p>I’ve packaged this for Composer so getting started is easy. Assuming you already
 have <a href="https://getcomposer.org/doc/00-intro.md#globally">Composer installed globally</a> 
 all you need to do is create a folder for your
 project and run the following command:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">composer require darrenmothersele/stylex dev-master
-</code></pre></figure>
+
+<p><code>
+composer require darrenmothersele/stylex dev-master
+</code></p>
+
 <p>This will download Stylex from Github and all the dependencies. It creates the 
 <code>composer.json</code> file for you and downloads all the code for the dependencies into
 a <code>vendor</code> folder. </p>
@@ -82,14 +64,17 @@ a starter template <code>templates/index.html</code>. </p>
 
 <p>Create a file in the project root (same location as the generated <code>composer.json</code> file)
 called <code>index.php</code> with the following code:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;?php
-require_once __DIR__ . &#39;/vendor/autoload.php&#39;;
+
+<pre><code>&lt;?php
+require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new Stylex\Application();
 $app-&gt;run();
-</code></pre></figure>
+</code></pre>
+
 <p>Then create a <code>templates</code> folder and create the first page template, <code>templates/index.html</code> in this folder:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+
+<pre><code>&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Hello!&lt;/title&gt;
   &lt;/head&gt;
@@ -99,96 +84,119 @@ $app-&gt;run();
     {% endblock %}
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></figure>
-<p>You can run the application with PHP&#39;s build in web server. Simply run the following command:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">php -S localhost:8000
-</code></pre></figure>
+</code></pre>
+
+<p>You can run the application with PHP’s build in web server. Simply run the following command:</p>
+
+<pre><code>php -S localhost:8000
+</code></pre>
+
 <p>Now, browse to <code>http://localhost:8000</code> to see the website.</p>
 
-<h2>Adding pages</h2>
+<h2 id="adding-pages">Adding pages</h2>
 
-<p>You can add more pages, and make use of Twig&#39;s awesome template inheritance feature. For example, to create an &#39;About us&#39; page, create a new file in the <code>templates</code> folder called <code>about.html</code> with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">{% extends &#39;index.html&#39; %}
+<p>You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the <code>templates</code> folder called <code>about.html</code> with the following content:</p>
+
+<pre><code>{% extends 'index.html' %}
 
 {% block content %}
   &lt;h1&gt;About us&lt;/h1&gt;
 {% endblock %}
-</code></pre></figure>
+</code></pre>
+
 <p>This inherits the whole template from index.html but replaces the <code>content</code> block with
 a new block of content specific to this page. Browse to <code>http://localhost:8000/about</code> to see
-the result (make sure PHP&#39;s web server is running - see above).</p>
+the result (make sure PHP’s web server is running - see above).</p>
 
-<h2>Using data</h2>
+<h2 id="using-data">Using data</h2>
 
 <p>You can create YAML data files and then use them in your templates. Create a folder called <code>data</code> and then add <code>*.yml</code> files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called <code>data/main_menu.yml</code> with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">- title: Home
+
+<pre><code>- title: Home
   path: /
 - title: About Us
   path: /about
-</code></pre></figure>
+</code></pre>
+
 <p>Because the filename is <code>main_menu.yml</code> this data is now available to read in template files using <code>{{ main_menu }}</code>. 
-Let&#39;s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in <code>templates/components/menu.html</code> with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul&gt;
+Let’s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in <code>templates/components/menu.html</code> with the following content:</p>
+
+<pre><code>&lt;ul&gt;
   {% for item in main_menu %}
     &lt;li&gt;
-      &lt;a href=&quot;{{ item.path }}&quot;&gt;{{ item.title }}&lt;/a&gt;
+      &lt;a href="{{ item.path }}"&gt;{{ item.title }}&lt;/a&gt;
     &lt;/li&gt;
   {% endfor %}
 &lt;/ul&gt;
-</code></pre></figure>
+</code></pre>
+
 <p>Now you can include the menu in your page template, by adding the following to your <code>index.html</code> file:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">{% include &#39;components/menu.html&#39; %}
-</code></pre></figure>
-<h2>Using sample content</h2>
+
+<pre><code>{% include 'components/menu.html' %}
+</code></pre>
+
+<h2 id="using-sample-content">Using sample content</h2>
 
 <p>Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. </p>
 
-<p>In this approach sample content is stored in subfolders under a <code>content</code> folder. You can have multiple types of content, and organise them into subfolders under a main <code>content</code> folder. Let&#39;s create a first article as an example. First create your <code>content</code> and then <code>content/articles</code> folder, then create a sample file called <code>content/articles/first_post.md</code> with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">---
+<p>In this approach sample content is stored in subfolders under a <code>content</code> folder. You can have multiple types of content, and organise them into subfolders under a main <code>content</code> folder. Let’s create a first article as an example. First create your <code>content</code> and then <code>content/articles</code> folder, then create a sample file called <code>content/articles/first_post.md</code> with the following content:</p>
+
+<pre><code>---
 title: My First Post
 excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: http://placebee.co.uk/640x480/1
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
-</code></pre></figure>
-<p>See the <a href="https://github.com/darrenmothersele/stylex-barebones">Stylex Barebones</a> for the full example, I&#39;ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.</p>
+</code></pre>
+
+<p>See the <a href="https://github.com/darrenmothersele/stylex-barebones">Stylex Barebones</a> for the full example, I’ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.</p>
 
 <p>You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">{{ content.articles.first_post.title }}
-</code></pre></figure>
+
+<pre><code>{{ content.articles.first_post.title }}
+</code></pre>
+
 <p>Or, more useful, print out the titles of all articles:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">{% for post in content.articles %}
+
+<pre><code>{% for post in content.articles %}
   &lt;h2&gt;{{ post.title }}&lt;/h2&gt;
 {% endfor %}
-</code></pre></figure>
-<p>Or, yet even more useful (if you&#39;re building an atomic design), output all the articles using a component template: </p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">{% for post in content.articles %}
-  {% include &#39;components/teaser.html&#39; with post only %}
+</code></pre>
+
+<p>Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template: </p>
+
+<pre><code>{% for post in content.articles %}
+  {% include 'components/teaser.html' with post only %}
 {% endfor %}
-</code></pre></figure>
+</code></pre>
+
 <p>For this to work, create a component template for the <code>teaser</code> by creating a <code>templates/components/teaser.html</code> file with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;teaser&quot;&gt;
-  &lt;h2 class=&quot;teaser-title&quot;&gt;
+
+<pre><code>&lt;div class="teaser"&gt;
+  &lt;h2 class="teaser-title"&gt;
     {{ title }}
   &lt;/h2&gt;
-  &lt;img src=&quot;{{ image }}&quot; alt=&quot;&quot; class=&quot;teaser-image&quot;&gt;
+  &lt;img src="{{ image }}" alt="" class="teaser-image"&gt;
   {{ content|raw }}
 &lt;/div&gt;
-</code></pre></figure>
+</code></pre>
+
 <p>You can create subfolders to organise different types of sample content, for example, add an events folder <code>content/events</code> and they will be available in your templates as <code>{{ content.events }}</code></p>
 
-<h2> Debugging</h2>
+<h2 id="debugging"> Debugging</h2>
 
-<p>If you&#39;re getting error messages, you can turn on debugging. In the <code>index.php</code> file that you created simple add the following line before <code>$app-&gt;run();</code></p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$app[&#39;debug&#39;] = TRUE;
-</code></pre></figure>
-<h2>Conclusion</h2>
+<p>If you’re getting error messages, you can turn on debugging. In the <code>index.php</code> file that you created simple add the following line before <code>$app-&gt;run();</code></p>
+
+<pre><code>$app['debug'] = TRUE;
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
 
 <p>This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. </p>
 
-<p>The next step is to reset Drupal&#39;s markup and get it generating the exact same markup. This is covered more in my <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a> workshops. </p>
+<p>The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a> workshops. </p>
 
-<p>You&#39;ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. </p>
+<p>You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. </p>
 
 <p>Drop me a line if you find this useful, or have any ideas for how it can be improved. </p>
 
@@ -196,88 +204,42 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 <p>Darren</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

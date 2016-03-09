@@ -1,145 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Drupal Views2 Handlers |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Drupal Views2 Handlers | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
+<hgroup class="alignCenter">
+  <h1>Drupal Views2 Handlers</h1>
+        <h6>Sep 9, 2008 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>Views2 is an awesome progression from the original views interface. I've got a feeling the new UI will not please everyone, but I really like the fact it gives a good overview of the current configuration of a view without having to explore lots of collapsible fieldsets. </p>
+<p>Views2 is still Release Candidate status, but there's already good support for the new API in other contrib modules such as the excellent Flag module (the progression of views_bookmark). I was forced today to start getting my head around the new Views2 API because I am trying to do something with the BuddyList2 module that requires views - but BuddyList does not yet have Views integration. Here's what I found out...</p>
 
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Drupal Views2 Handlers</h2>
-
-  <p class="">09 Sep 2008</p>
-
-  </header>
-
-
-            
-              <p class="lead">Views2 is an awesome progression from the original views interface. I've got a feeling the new UI will not please everyone, but I really like the fact it gives a good overview of the current configuration of a view without having to explore lots of collapsible fieldsets. </p>
-
-<p class="lead">Views2 is still Release Candidate status, but there's already good support for the new API in other contrib modules such as the excellent Flag module (the progression of views_bookmark). I was forced today to start getting my head around the new Views2 API because I am trying to do something with the BuddyList2 module that requires views - but BuddyList does not yet have Views integration. Here's what I found out...</p>
-
-              
-
+<!--break-->
 <p>There's two places to start understanding the Views API. First port of call is the built in Advanced Help which you get when you install the module, and is also <a href="http://views-help.doc.logrus.com/admin/advanced_help/views">available online</a>. Start with the (very brief) <a href="http://views-help.doc.logrus.com/help/views/api">description of the API</a>. Once you start to get your head around how the API interacts with the Views system you can start to explore the <a href="http://views.doc.logrus.com/">Views2 API documentation</a>.</p>
-
 <p>My problem here was that I needed to show a list of nodes that had been created by friends of the currently logged in user. To do this I need to make the Views system aware of the Buddylist table by implementing hook_views_data. This is a function that just returns an array of information about the BuddyList database tables. I only need to return some basics here because the only information I'm interested in is that which will help me decide if a node has been authored by one of my 'buddies'. </p>
-
 <p>There's a <a href="http://views-help.doc.logrus.com/help/views/api-tables">whole page of documentation</a> on how to implement hook_views_data() but I found looking at some examples examples was essential before I could get my head around what it was doing. Basically you need to return an array. The first element is an array that defines your table info, then you include elements for each field you want to make available.  Here's the code that makes the BuddyList relationships available to Views. It's very basic at the moment as it doesn't account for different types of relationship - but let's take a look at how it works...</p>
-
-<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">buddylist_api_views_data</span><span style="color: #007700">() {<br />  </span><span style="color: #0000BB">$data </span><span style="color: #007700">= array();<br /><br />  </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'buddylist_relations'</span><span style="color: #007700">][</span><span style="color: #DD0000">'table'</span><span style="color: #007700">][</span><span style="color: #DD0000">'group'</span><span style="color: #007700">] = </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Buddylist'</span><span style="color: #007700">);<br /><br />  </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'buddylist_relations'</span><span style="color: #007700">][</span><span style="color: #DD0000">'requester_id'</span><span style="color: #007700">] = array(<br />    </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Your Buddy'</span><span style="color: #007700">),<br />    </span><span style="color: #DD0000">'help' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'A link if your buddy did create the node'</span><span style="color: #007700">),<br />    </span><span style="color: #DD0000">'filter' </span><span style="color: #007700">=&gt; array(<br />      </span><span style="color: #DD0000">'handler' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'views_handler_filter_user_current'</span><span style="color: #007700">,<br />    ),<br />  );<br /><br />  </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'buddylist_relations'</span><span style="color: #007700">][</span><span style="color: #DD0000">'table'</span><span style="color: #007700">][</span><span style="color: #DD0000">'join'</span><span style="color: #007700">][</span><span style="color: #DD0000">'node'</span><span style="color: #007700">] = array(<br />    </span><span style="color: #DD0000">'left_field' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'uid'</span><span style="color: #007700">,<br />    </span><span style="color: #DD0000">'field' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'requestee_id'</span><span style="color: #007700">,<br />  );<br />  return </span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p></p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">buddylist_api_views_data</span><span style="color: #007700">() {<br />  </span><span style="color: #0000BB">$data </span><span style="color: #007700">= array();<br /><br />  </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'buddylist_relations'</span><span style="color: #007700">][</span><span style="color: #DD0000">'table'</span><span style="color: #007700">][</span><span style="color: #DD0000">'group'</span><span style="color: #007700">] = </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Buddylist'</span><span style="color: #007700">);<br /><br />  </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'buddylist_relations'</span><span style="color: #007700">][</span><span style="color: #DD0000">'requester_id'</span><span style="color: #007700">] = array(<br />    </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'Your Buddy'</span><span style="color: #007700">),<br />    </span><span style="color: #DD0000">'help' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'A link if your buddy did create the node'</span><span style="color: #007700">),<br />    </span><span style="color: #DD0000">'filter' </span><span style="color: #007700">=&gt; array(<br />      </span><span style="color: #DD0000">'handler' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'views_handler_filter_user_current'</span><span style="color: #007700">,<br />    ),<br />  );<br /><br />  </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'buddylist_relations'</span><span style="color: #007700">][</span><span style="color: #DD0000">'table'</span><span style="color: #007700">][</span><span style="color: #DD0000">'join'</span><span style="color: #007700">][</span><span style="color: #DD0000">'node'</span><span style="color: #007700">] = array(<br />    </span><span style="color: #DD0000">'left_field' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'uid'</span><span style="color: #007700">,<br />    </span><span style="color: #DD0000">'field' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'requestee_id'</span><span style="color: #007700">,<br />  );<br />  return </span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
 <p>As you can see we're creating an array called $data and returning this. In this array we put information about our database tables. In order to find the nodes created by the people I befriended I need to join the node table to the buddylist_relations table based on the requestee_id. The requestee_id contains the uid (user id) of people on the receiving end of a friend request. You can see this join happening in the second half of the code. </p>
-
 <p>The first half of the code exposes another of the Buddylist database columns as a filter. It uses the requester_id which is the uid (user id) of the person initiating the friend request. This is passed to one of the pre-existing handlers - so we don't have to write any more code! The views_handler_filter_user_current handler exists within the <a href="http://views.doc.logrus.com/group__views__user__module.html#g51925c2452e1d30a13a4969e4a701c30">views user.module handlers</a>. This takes the database field and will filter out the records that match the current logged in user.</p>
-
 <p>I think the next step is to considering the effect of different user relationships defined in the BuddyList module, and how a custom handler would be built to accommodate this.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

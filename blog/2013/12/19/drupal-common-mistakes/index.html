@@ -1,112 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Some Common Drupal Mistakes |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Some Common Drupal Mistakes | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Some Common Drupal Mistakes</h2>
-
-  <p class="">19 Dec 2013</p>
-
-  </header>
-
-
-            
-              <p class="lead">Over the past few months I&#39;ve had the privilege of being asked to audit
+<hgroup class="alignCenter">
+  <h1>Some Common Drupal Mistakes</h1>
+        <h6>Dec 19, 2013 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>Over the past few months I’ve had the privilege of being asked to audit
 several Drupal websites, both large, small, and very large. This is a
-collection of common mistakes I&#39;ve spotted. This is by no means an
+collection of common mistakes I’ve spotted. This is by no means an
 extensive check list, and you may disagree with some of my conclusions,
-but I&#39;m posting this here in the hope that it is of help to the community.</p>
+but I’m posting this here in the hope that it is of help to the community.</p>
 
-              
+<!--break-->
 
-<p>Every developer loves code review right? I know I do, as it&#39;s always
-interesting to get someone else&#39;s point of view, and always leads to better
-code. It&#39;s impossible for a single developer to produce quality code.
-That&#39;s an immutable law of software engineering. In an ideal world
-we&#39;d all have an infinite supply of inspiration, attention span, time,
+<p>Every developer loves code review right? I know I do, as it’s always
+interesting to get someone else’s point of view, and always leads to better
+code. It’s impossible for a single developer to produce quality code.
+That’s an immutable law of software engineering. In an ideal world
+we’d all have an infinite supply of inspiration, attention span, time,
 and client patience. But, in the real world we make compromises, because
 either budgets are tight, time is short, or scope is just too wide ranging.</p>
 
-<p>These are some observations I&#39;ve made over the past few months while performing
+<p>These are some observations I’ve made over the past few months while performing
 code review, site audits, or security checks.</p>
 
-<h3>Configuration Management</h3>
+<h3 id="configuration-management">Configuration Management</h3>
 
 <p>One of the main issues with Drupal (which is being addressed in Drupal 8) is the lack of separation between content and configuration. It is important to distinguish between the two in order to manage configuration separately to content.
 Ideally it should be possible to construct a bare version of the site without content using just the codebase as all configuration should be captured in code.
 There are several approaches to this in Drupal including
 the popular <a href="http://drupal.org/project/features">Features</a> module.</p>
 
-<h3> Unnecessary module use</h3>
+<h3 id="unnecessary-module-use"> Unnecessary module use</h3>
 
 <p>Adding extra modules to a Drupal site adds overhead. The extra source code has to be parsed by PHP and modules add hooks which can expand the call graph for every page request.
-With each extra module you&#39;re adding another dependency to keep updated and maintained.
+With each extra module you’re adding another dependency to keep updated and maintained.
 Some modules add 100s of kilobytes of source code for a bit of functionality that
 could have been added with a few lines of code.</p>
 
 <p>Sometimes modules are left hanging around from earlier in development. You may
-have installed a module to evaluate it but decided not to use it. Make sure it&#39;s
+have installed a module to evaluate it but decided not to use it. Make sure it’s
 uninstalled (remove database tables) and deleted from the codebase.</p>
 
-<p>Also, remember to disable any developer modules on the production site. You don&#39;t
+<p>Also, remember to disable any developer modules on the production site. You don’t
 often need the Views UI, devel and many other administration modules on a production
 site.</p>
 
-<h3> Views issues</h3>
+<h3 id="views-issues"> Views issues</h3>
 
-<p>Views causes loads of issues. Out of all the sites I&#39;ve looked at recently, none
-of them had adequate configuration of the Views module. It&#39;s all to easy for
+<p>Views causes loads of issues. Out of all the sites I’ve looked at recently, none
+of them had adequate configuration of the Views module. It’s all to easy for
 site builders to create lots of extra Views, but many neglect to enable caching.
 You should at least enable a short query cache time. You can set a long rendered
 output cache, because it gets invalidated every time the query reruns anyway.</p>
 
 <p>More often than not, anything but the most basic View does not have adequate
-indexing defined in the database. I think you&#39;d be surprised when you look into
+indexing defined in the database. I think you’d be surprised when you look into
 the MySQL slow query log and see how many times the database has been forced
-to filesort. This is a performance killer and it means that MySQL didn&#39;t have
+to filesort. This is a performance killer and it means that MySQL didn’t have
 appropriate indexes for the query, and had to result to writing out to disk to
 sort the results.</p>
 
 <p>Consider replacing some views with blocks and a direct database query. This has
-it&#39;s advantages at times.</p>
+it’s advantages at times.</p>
 
-<h3>Diff analysis</h3>
+<h3 id="diff-analysis">Diff analysis</h3>
 
-<p>If you&#39;ve got access to Drush you can generate a make file from a working Drupal
+<p>If you’ve got access to Drush you can generate a make file from a working Drupal
 site, then run Drush Make to recreate a clean copy of the codebase.</p>
 
 <p>Then use the diff tool to see differences between the two code bases. This will
 highlight if any of the Drupal core or contrib module files have been hacked.</p>
 
-<h3>Full HTML input filter</h3>
+<h3 id="full-html-input-filter">Full HTML input filter</h3>
 
 <p>A very popular mistake is giving away permission to post HTML code to your site.
 This is really dangerous. Only the most trusted users should be given permission to
@@ -114,116 +93,70 @@ post HTML, and even then it should be filtered to just the set of tags they
 actually need. Even an image (img) tag in the wrong hands is a security
 nightmare and will lead to XSS and other issues.</p>
 
-<h3>Output of unsanitised user input</h3>
+<h3 id="output-of-unsanitised-user-input">Output of unsanitised user input</h3>
 
-<p>Remember that Drupal&#39;s approach is to store raw user input and sanitise it on
+<p>Remember that Drupal’s approach is to store raw user input and sanitise it on
 display. Never output any user generated text without first running it through
-one of Drupal&#39;s sanitisation functions.
+one of Drupal’s sanitisation functions.
 Double check any custom code and template files for <code>echo</code> or <code>print</code>ing of
 fields without sanitisation.</p>
 
-<h3>PHP Errors</h3>
+<h3 id="php-errors">PHP Errors</h3>
 
 <p>I often see lots of PHP errors building up in the watchdog table. This is bad, not
-only because it indicates there is some coding error on the site, but it&#39;s bad
-even if the error isn&#39;t manifesting itself in any visible effect on the site,
+only because it indicates there is some coding error on the site, but it’s bad
+even if the error isn’t manifesting itself in any visible effect on the site,
 because it locks the watchdog table every time it logs an error. This is a
 performance killer, so clear up those PHP errors!</p>
 
-<p>You probably don&#39;t want to use database logging on a production site anyway.
-I&#39;d recommend logging to syslog and then moving logs out to an central place,
+<p>You probably don’t want to use database logging on a production site anyway.
+I’d recommend logging to syslog and then moving logs out to an central place,
 like elasticsearch or similar.</p>
 
-<h3>Conclusion</h3>
+<h3 id="conclusion">Conclusion</h3>
 
 <p>These are just a few of the issues that I commonly see on sites, and specifically
-related to Drupal issues. I&#39;m sure there&#39;s more that&#39;s all that came to mind right
+related to Drupal issues. I’m sure there’s more that’s all that came to mind right
 now.</p>
 
 <p>You can always tweet at me if you disagree or have anything to add. Thanks.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

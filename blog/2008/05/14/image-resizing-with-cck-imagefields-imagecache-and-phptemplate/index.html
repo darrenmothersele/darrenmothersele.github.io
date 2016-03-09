@@ -1,153 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Image Resizing with CCK, Imagefields, Imagecache and PHPTemplate |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Image Resizing with CCK, Imagefields, Imagecache and PHPTemplate | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Image Resizing with CCK, Imagefields, Imagecache and PHPTemplate</h2>
-
-  <p class="">14 May 2008</p>
-
-  </header>
-
-
-            
-              <p class="lead">If you have a CCK content type with an image field you get display options that allow you to change the image size on teasers and full node views. First you set up your image presets using the imagecache settings. I usually let users upload at any size, and deal with the resizing as required. Here's how to ensure you get best results from imagecache, and how to embed imagefield images into your PHPtemplates using the theme functions provided by imagecache:</p>
-
-              
+<hgroup class="alignCenter">
+  <h1>Image Resizing with CCK, Imagefields, Imagecache and PHPTemplate</h1>
+        <h6>May 14, 2008 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>If you have a CCK content type with an image field you get display options that allow you to change the image size on teasers and full node views. First you set up your image presets using the imagecache settings. I usually let users upload at any size, and deal with the resizing as required. Here's how to ensure you get best results from imagecache, and how to embed imagefield images into your PHPtemplates using the theme functions provided by imagecache:</p>
+<!--break-->
 <p><strong>Update:</strong> I recommend upgrading to the latest version of Imagecache - The interface is much improved and "crop and resize" are now available as a combined option.</p>
-
 <p>In the imagecache options set up presets for each size you are going to need. You get several options for resizing. You want to use <em>scale</em> so the images are not distorted, and use <em>outside</em> dimensions so that the image is at least as big as your required thumbnail. Then use clip to remove any image outside of your thumbnail area. This means that your thumbnails are always the same size. I prefer this to using <em>inside</em> for the scale options, as that causes the images to come out at various different sizes. I like thumbnails to all be the same size, and cropping is usually acceptable. </p>
-
 <p>I use the scale <em>inside</em> option to reduce pictures for screen size display. This works well for images used in full node templates as I'm not as fussy about making them all the same size.</p>
-
 <p>Now you've got a CCK content type with an image field, and you have imagecache setup to give you the images at the size you need. Now you need to display them in your template. </p>
-
 <p>The CCK field display options gives you the opportunity to select a size for the image as displayed in either the teaser or node view, but in your template you might want more control than this. That's when you need to turn to the theme functions provided by imagecache. In this code snippit I render a thumbnail from a <em>$node</em> object with an imagefield called event_photo:</p>
-
 <p>&lt;?php<br />
 print theme('imagecache', 'thumbnail', $node-&gt;field_event_photo[0]['filename'])<br />
 ?&gt;</p>
-
 <p>In your own template substitute <em>thumbnail</em> with the imagecache preset name as required, and <em>field_event_photo</em> with your CCK field name.</p>
-
 <p>You might want to link the image to something. Here's how you do this and render the correct Drupal path (it may have been aliased by an administrator):</p>
-
 <p>&lt;?php<br />
 print drupal_get_path_alias('node/'.$node-&gt;nid)<br />
 ?&gt;</p>
-
 <p>Put that in an &lt;a&gt; tag around your themed image display code from before.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

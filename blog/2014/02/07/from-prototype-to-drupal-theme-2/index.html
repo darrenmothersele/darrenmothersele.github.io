@@ -1,116 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!) |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!) | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!)</h2>
-
-  <p class="">07 Feb 2014</p>
-
-  </header>
-
-
-            
-              <p class="lead">In this series of posts I&#39;m talking about my website prototyping processes.
+<hgroup class="alignCenter">
+  <h1>From Prototype to Drupal (part 2, The Amazing All-in-one Prototyping tool!)</h1>
+        <h6>Feb 7, 2014 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>In this series of posts I’m talking about my website prototyping processes.
 Starting from early throwaway draft prototypes, through to clean, efficiently
 coded, designs that can be easily translated into Drupal websites.</p>
 
-<p class="lead">The <a href="http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/">first post in this series</a>
+<p>The <a href="http://www.darrenmothersele.com/blog/2014/02/06/from-prototype-to-drupal-theme/">first post in this series</a>
 explained why I prototype, and introduced some useful tools for website prototyping.
 In this post I combine all the tools previously mentioned into one simple
 prototype tool.</p>
 
-              
+<!--break-->
 
-<h2>All you need is a hammer...</h2>
+<h2 id="all-you-need-is-a-hammer">All you need is a hammer…</h2>
 
 <p>In April last year I purchased a Mac app called <a href="http://hammerformac.com/index.html">Hammer</a>
-that promised to &quot;Super-charge&quot; my web development. What I got was a
+that promised to “Super-charge” my web development. What I got was a
 fairly basic HTML preprocessor with a snazzy GUI and limited support for SASS.</p>
 
-<p>Hammer doesn&#39;t work for me as it doesn&#39;t easily support Foundation because
-of it&#39;s lack of support for Compass. The developer has made a
+<p>Hammer doesn’t work for me as it doesn’t easily support Foundation because
+of it’s lack of support for Compass. The developer has made a
 <a href="http://hammerformac.com/news/compass.html">bold statement</a>
-as to why they believe &quot;Compass is not ... the right approach for the web industry&quot;
-and that they &quot;think you&#39;ll be better off without Compass&quot;.</p>
+as to why they believe “Compass is not … the right approach for the web industry”
+and that they “think you’ll be better off without Compass”.</p>
 
 <p>Their main objection to Compass seems to be that it uses RubyGems as they call that
-an &quot;Outdated installation process&quot;. That&#39;s quite clearly misinformed rubbish,
+an “Outdated installation process”. That’s quite clearly misinformed rubbish,
 as any real developer can testify to the importance of dependency management.</p>
 
-<p>Anyway, the great news is that you don&#39;t need Hammer if you&#39;ve got Jekyll because
-you&#39;ve got a much more powerful HTML preprocessor, and you can easily add support
-for Compass into Jekyll so you don&#39;t need to run the two separately.</p>
+<p>Anyway, the great news is that you don’t need Hammer if you’ve got Jekyll because
+you’ve got a much more powerful HTML preprocessor, and you can easily add support
+for Compass into Jekyll so you don’t need to run the two separately.</p>
 
-<h2>The Amazing All-in-one Prototyping tool!</h2>
+<h2 id="the-amazing-all-in-one-prototyping-tool">The Amazing All-in-one Prototyping tool!</h2>
 
 <p>With a bit of tweaking Jekyll can be configured to do all that Hammer does and
 more, using just open-source tools.</p>
 
-<h3>Jekyll, Compass and Foundation</h3>
+<h3 id="jekyll-compass-and-foundation">Jekyll, Compass and Foundation</h3>
 
-<p>Here&#39;s how to get Jekyll, SASS/Compass, and Foundation all running together
+<p>Here’s how to get Jekyll, SASS/Compass, and Foundation all running together
 nicely.</p>
 
 <p>First, install Jekyll:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">gem install jekyll
-</code></pre></figure>
-<p>Make sure you&#39;ve got Foundation installed, following the instructions for installing
+
+<pre><code>gem install jekyll
+</code></pre>
+
+<p>Make sure you’ve got Foundation installed, following the instructions for installing
 via the SASS page on the <a href="http://foundation.zurb.com/docs/sass.html">Foundation docs</a> website.
-Assuming you&#39;ve already got the prerequisites, this is essentially just:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">gem install foundation
-</code></pre></figure>
+Assuming you’ve already got the prerequisites, this is essentially just:</p>
+
+<pre><code>gem install foundation
+</code></pre>
+
 <p>You can then create a new Foundation project with</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">foundation new my_prototype
+
+<pre><code>foundation new my_prototype
 cd my_prototype
-</code></pre></figure>
+</code></pre>
+
 <p>Jekyll will compile everything into the site unless
 you specifically tell it not to. So, create a configuration file
 (Jekyll expects this to be called <code>_config.yml</code>) in your prototype folder
 with the following content:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">name: My Prototype
+
+<pre><code>name: My Prototype
 exclude: [README.md, bower.json, config.rb, scss]
-</code></pre></figure>
-<p>If you run Jekyll now with the serve command you can preview what you&#39;ve done in
+</code></pre>
+
+<p>If you run Jekyll now with the serve command you can preview what you’ve done in
 the browser. By default Jekyll will run a server locally at <code>http://0.0.0.0:4000/</code>
 for you to preview the
-site as you&#39;re building it. Add the <code>-w</code> option and it watches the files and automatically
+site as you’re building it. Add the <code>-w</code> option and it watches the files and automatically
 regenerates the site when any of the files change.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">jekyll serve -w
-</code></pre></figure>
+
+<pre><code>jekyll serve -w
+</code></pre>
+
 <p>You can also see what is generated by looking in the <code>_site</code> folder.</p>
 
-<p>You will notice that the site doesn&#39;t have any CSS yet, because we&#39;ve not compiled
+<p>You will notice that the site doesn’t have any CSS yet, because we’ve not compiled
 the SCSS from Foundation down to CSS. You could at this stage just run Compass
-to do this, but let&#39;s add the Compass compilation step to Jekyll so that it
+to do this, but let’s add the Compass compilation step to Jekyll so that it
 can take care of this for us, and automatically recompile when we edit any of
 the source files.</p>
 
@@ -120,10 +109,11 @@ it to work with the file structure of a generated Foundation project.</p>
 
 <p>All you need to do is create a folder called <code>_plugins</code> and create a file
 called <code>generator_scss.rb</code> that contains the following code:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">require &#39;sass&#39;
-require &#39;pathname&#39;
-require &#39;compass&#39;
-require &#39;compass/exec&#39;
+
+<pre><code>require 'sass'
+require 'pathname'
+require 'compass'
+require 'compass/exec'
 
 module Jekyll
   class CompassGenerator &lt; Generator
@@ -133,102 +123,57 @@ module Jekyll
     end
   end
 end
-</code></pre></figure>
+</code></pre>
+
 <p>Now when you run <code>jekyll serve -w</code> you should notice that it compiles the SASS
 source down to CSS and includes it in the site. I had to run <code>jekyll serve -w</code> twice
-as Jekyll didn&#39;t copy the stylesheets folder into the build on the first attempt because it
-hadn&#39;t been created yet. After running it the second time the site showed up
+as Jekyll didn’t copy the stylesheets folder into the build on the first attempt because it
+hadn’t been created yet. After running it the second time the site showed up
 fine with all the compiled CSS and automatically refreshed when I edited any files.</p>
 
-<h2>Next time...</h2>
+<h2 id="next-time">Next time…</h2>
 
-<p>In the next post of the series I&#39;m going to jump ahead to the final stages of
-prototyping when designs start to get real. I&#39;ve got some recommendations for
+<p>In the next post of the series I’m going to jump ahead to the final stages of
+prototyping when designs start to get real. I’ve got some recommendations for
 refactoring the code from a high-def prototype (i.e. final-ish designs) that
 will simplify the conversion to Drupal, and result in a better end product.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

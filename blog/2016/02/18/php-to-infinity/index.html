@@ -1,56 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Playing with Infinity in PHP |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Playing with Infinity in PHP | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Playing with Infinity in PHP</h2>
-
-  <p class="">18 Feb 2016</p>
-
-  </header>
-
-
-            
-              <p class="lead">I&#39;ve been playing around with lazy evaluation in PHP.
+<hgroup class="alignCenter">
+  <h1>Playing with Infinity in PHP</h1>
+        <h6>Feb 18, 2016 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>I’ve been playing around with lazy evaluation in PHP.
 This is made possible by using Generators, added to PHP 5.5
 and refined in PHP 7.
 You can do some cool stuff with infinite (or very
 large) data sets, and avoid getting stuck in infinite loops.</p>
 
-              
+<!--break-->
 
 <p>Imagine you want to create an infinitely long array of the same value.
-Here&#39;s a simple bit of code that would do this. Obviously don&#39;t try this.
-Just read the code and imagine a world where this is a good idea...</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">function repeat($i)
+Here’s a simple bit of code that would do this. Obviously don’t try this.
+Just read the code and imagine a world where this is a good idea…</p>
+
+<pre><code>function repeat($i)
 {
     $output = [];
     while (true)
@@ -59,7 +39,8 @@ Just read the code and imagine a world where this is a good idea...</p>
     }
     return $output;
 }
-</code></pre></figure>
+</code></pre>
+
 <p>This function would never terminate. You get stuck in an
 infinite loop. <code>while(true)</code> is not something you ever want to see
 in a program, right?</p>
@@ -69,26 +50,29 @@ only evaluate as much code as you need to get the result. So you
 can have large, even infinite, sets of data, without getting stuck in
 long, or infinite, loops.</p>
 
-<p>PHP has a feature for lazy evaluation. It&#39;s called a Generator,
+<p>PHP has a feature for lazy evaluation. It’s called a Generator,
 summoned into being using the magical <code>yield</code> keyword.
-Here&#39;s the stupid repeat, but this time as a generator...</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">function repeat($i)
+Here’s the stupid repeat, but this time as a generator…</p>
+
+<pre><code>function repeat($i)
 {
     while (true)
     {
         yield $i;
     }
 }
-</code></pre></figure>
+</code></pre>
+
 <p>You have to be careful using infinite sets.
 You can still easily create an unterminating program if you tried to print
 out the whole of this Generator function.</p>
 
 <p>But, what if we just wanted to work with the first 5 items from
 our infinite computation. This is now possible because of lazy
-evaulation. Here&#39;s a take function that will take
+evaulation. Here’s a take function that will take
 any number of items from any Generator:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">function take($i, Generator $generator)
+
+<pre><code>function take($i, Generator $generator)
 {
     while ($i-- &gt; 0 &amp;&amp; $generator-&gt;valid())
     {
@@ -96,13 +80,16 @@ any number of items from any Generator:</p>
         $generator-&gt;next();
     }
 }
-</code></pre></figure>
-<p>Let&#39;s take 5...</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">foreach (take(5, repeat(&#39;Hello&#39;)) as $item)
+</code></pre>
+
+<p>Let’s take 5…</p>
+
+<pre><code>foreach (take(5, repeat('Hello')) as $item)
 {
     echo $item, PHP_EOL;
 }
-</code></pre></figure>
+</code></pre>
+
 <p>OK, that was a stupid example. What about something a bit more
 interesting? How about the classic fibonnacci sequence generator?</p>
 
@@ -111,8 +98,9 @@ interesting? How about the classic fibonnacci sequence generator?</p>
 and the <a href="http://php.net/manual/en/language.generators.syntax.php">PHP Manual</a>
 were more complex than they needed to be.</p>
 
-<p>Here is the simplist infinite fibonacci generator I can think of...</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">function fib()
+<p>Here is the simplist infinite fibonacci generator I can think of…</p>
+
+<pre><code>function fib()
 {
     yield $i = 0;
     yield $j = 1;
@@ -122,15 +110,19 @@ were more complex than they needed to be.</p>
         $j = $k;
     }
 }
-</code></pre></figure>
-<p>And here&#39;s the first 50 fibonacci numbers...</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">foreach (take(50, fib()) as $item)
+</code></pre>
+
+<p>And here’s the first 50 fibonacci numbers…</p>
+
+<pre><code>foreach (take(50, fib()) as $item)
 {
     echo $item, PHP_EOL;
 }
-</code></pre></figure>
-<p>And, here&#39;s the first 10, skipping the first 0 using a tail function:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">function tail(Generator $list)
+</code></pre>
+
+<p>And, here’s the first 10, skipping the first 0 using a tail function:</p>
+
+<pre><code>function tail(Generator $list)
 {
     $list-&gt;next();
     yield from $list;
@@ -140,97 +132,51 @@ foreach (take(50, tail(fib())) as $item)
 {
     echo $item, PHP_EOL;
 }
-</code></pre></figure>
-<p>In case you&#39;re curious, there are actual use cases for this.
+</code></pre>
+
+<p>In case you’re curious, there are actual use cases for this.
 For example, this <a href="https://github.com/MarkBaker/GeneratorQuadTrees">Quad Tree</a>
 data structure implementation.</p>
 
 <p>Generators may not offer better performance in terms of execution speed.
 But, generator based algorythms offer a much lower memory overhead
-as you&#39;re not having to pass around the full data sets.</p>
-
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+as you’re not having to pass around the full data sets.</p>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

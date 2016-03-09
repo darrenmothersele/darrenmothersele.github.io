@@ -1,56 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> jQuery UI Widgets, Drag and Drop (London Drupal Drop In Dec 2011) |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>jQuery UI Widgets, Drag and Drop (London Drupal Drop In Dec 2011) | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">jQuery UI Widgets, Drag and Drop (London Drupal Drop In Dec 2011)</h2>
-
-  <p class="">13 Dec 2011</p>
-
-  </header>
-
-
-            
-              <p class="lead"><strong>UPDATE (Feb, 2014):</strong>This post offers a simple way to
+<hgroup class="alignCenter">
+  <h1>jQuery UI Widgets, Drag and Drop (London Drupal Drop In Dec 2011)</h1>
+        <h6>Dec 13, 2011 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p><strong>UPDATE (Feb, 2014):</strong>This post offers a simple way to
 update entities using a module from the Rules Bonus Pack that allows you
 to trigger a Rule from a Panels page variant. This is not a good idea.
 The HTTP protocol states that you should not implement any state change via HTTP GET.
 If you do this, you open yourself up to CSRF vulnerabilities.
 A better approach would be to use the <a href="https://drupal.org/project/rules_link">Rules Link</a> module that allows you to use tokenized links, or confirmation pages.</p>
-<p class="lead">Another great Drupal London event last night!</p>
-<p class="lead">Chris (matason on Drupal.org) gave a great presentation of the new Drupal 7 Workbench module. It was great to see it in action and one I can see using myself a lot in the future. John and Rob demonstrated their Survey Builder module, a new backend for the excellent Form Builder tool. This looks like it has a lot of potential, so one to keep an eye on for the future I think. Vamory gave a really useful guide to making multi-step forms in FAPI, and then I got to talk about one of my pet favourite subjects, jQuery!</p>
-
-
-
-              
+<p>Another great Drupal London event last night!</p>
+<p>Chris (matason on Drupal.org) gave a great presentation of the new Drupal 7 Workbench module. It was great to see it in action and one I can see using myself a lot in the future. John and Rob demonstrated their Survey Builder module, a new backend for the excellent Form Builder tool. This looks like it has a lot of potential, so one to keep an eye on for the future I think. Vamory gave a really useful guide to making multi-step forms in FAPI, and then I got to talk about one of my pet favourite subjects, jQuery!</p>
+<!--break-->
 <iframe src="http://www.youtube.com/embed/7NnO90cyP0c" allowfullscreen="" frameborder="0" height="315" width="420"></iframe><p>
 I showed the Active Tags module, and demonstrated adding some of the jQuery UI widgets to a Drupal 7 site, then showed how to build up a more complex interaction by adding Drag and Drop functionality to a couple of Drupal Views, then hooking up a Rules backend linked together by Page Manager. In case you missed it, or wanted more details, read on...</p>
 <p><a href="http://www.slideshare.net/darrenmothersele/jquery-ui-widgets-drag-and-drop-drupal-7-javascript" title="jQuery UI Widgets, Drag and Drop, Drupal 7 Javascript" target="_blank"><img src="/img/2011-12-13-jquery-ui-widgets-drag-and-drop/DrupalLondon_Dec2011.001-001.jpg" width="450px"></a></p>
@@ -102,88 +78,41 @@ what will be used to attach the draggable interaction. In the second view I have
 <li>Force a redirect to a page that just includes the updated view matching the droppable.</li>
 </ul><p>I hope that explains everything. If you have any questions, drop me a line or leave a comment and I'd be happy to try an explain further.</p>
 
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>

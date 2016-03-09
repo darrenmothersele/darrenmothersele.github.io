@@ -1,142 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title> Programmatically Creating CCK Nodes and Adding Images with Imagefield |  Darren Mothersele</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <link rel="alternate" type="application/rss+xml" title="Darren Mothersele" href="http://www.darrenmothersele.com/rss.xml">
-    
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Programmatically Creating CCK Nodes and Adding Images with Imagefield | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-<header id="header">
-    <a href="/" class="image avatar"><img src="/img/darren100.jpg" alt="" /></a>
-    <h1>
-       <strong>Darren Mothersele</strong> </h1><h1> Creative Technologist
-    </h1>
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
 
-<ul class="menu-list">
-    <li><a href="/about/">About me</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contact/">Contact</a></li>
-</ul>
-
-</header>
-
-
-<div id="main">
-<div class="page">
-  <header class="post-header">
-<h2 class="post-title">Programmatically Creating CCK Nodes and Adding Images with Imagefield</h2>
-
-  <p class="">23 Apr 2008</p>
-
-  </header>
-
-
-            
-              <p class="lead">There's a useful post on <a href="http://www.civicactions.com/blog/cck_import_and_update">civicactions</a> that explains how to create nodes in your Drupal site programmatically. I'm using this technique to create an import script for processing bulk quantities of XML files.</p>
-
-<p class="lead">There's a facet to the create node process, in that I couldn't get it to import images using the $values[] array.</p>
-
-              
+<hgroup class="alignCenter">
+  <h1>Programmatically Creating CCK Nodes and Adding Images with Imagefield</h1>
+        <h6>Apr 23, 2008 · By Darren Mothersele</h6>
+  <p class="sc">web-dev</p>
+</hgroup>
+<p>There's a useful post on <a href="http://www.civicactions.com/blog/cck_import_and_update">civicactions</a> that explains how to create nodes in your Drupal site programmatically. I'm using this technique to create an import script for processing bulk quantities of XML files.</p>
+<p>There's a facet to the create node process, in that I couldn't get it to import images using the $values[] array.</p>
+<!--break-->
 <p>I found that I could create all the CCK fields by assigning them fields in the $value[] array, but for imagefield values I had to instantiate them in the $node object instead.</p>
-
 <p>Here's my code for importing imagefields, taken from the XML/JPEG import script:</p>
-
-<p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br />  $node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">type </span><span style="color: #007700">= </span><span style="color: #DD0000">'album'</span><span style="color: #007700">;<br />  </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">field_cover_image </span><span style="color: #007700">= array(<br />    array(<br />      </span><span style="color: #DD0000">'fid' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'upload'</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; (string)</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album_title</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'filename' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$img_file</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filename</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'filepath' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$img_file</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filepath</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'filesize' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$img_file</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">,<br />    ),<br />  );<br />  </span><span style="color: #0000BB">$values </span><span style="color: #007700">= array();<br />  </span><span style="color: #0000BB">$values</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_album_upc'</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">'value'</span><span style="color: #007700">] = (string)</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album_upc</span><span style="color: #007700">;<br />  </span><span style="color: #0000BB">$values</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">] = (string)</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album_title</span><span style="color: #007700">;<br />  </span><span style="color: #0000BB">$values</span><span style="color: #007700">[...] = ...; </span><span style="color: #FF8000">// rest of CCK fields created here<br />  </span><span style="color: #0000BB">drupal_execute</span><span style="color: #007700">(</span><span style="color: #DD0000">'album_node_form'</span><span style="color: #007700">, </span><span style="color: #0000BB">$values</span><span style="color: #007700">, </span><span style="color: #0000BB">$node</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p></p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br />  $node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">type </span><span style="color: #007700">= </span><span style="color: #DD0000">'album'</span><span style="color: #007700">;<br />  </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">field_cover_image </span><span style="color: #007700">= array(<br />    array(<br />      </span><span style="color: #DD0000">'fid' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'upload'</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; (string)</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album_title</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'filename' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$img_file</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filename</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'filepath' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$img_file</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filepath</span><span style="color: #007700">,<br />      </span><span style="color: #DD0000">'filesize' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$img_file</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">,<br />    ),<br />  );<br />  </span><span style="color: #0000BB">$values </span><span style="color: #007700">= array();<br />  </span><span style="color: #0000BB">$values</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_album_upc'</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">'value'</span><span style="color: #007700">] = (string)</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album_upc</span><span style="color: #007700">;<br />  </span><span style="color: #0000BB">$values</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">] = (string)</span><span style="color: #0000BB">$xml</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">album_title</span><span style="color: #007700">;<br />  </span><span style="color: #0000BB">$values</span><span style="color: #007700">[...] = ...; </span><span style="color: #FF8000">// rest of CCK fields created here<br />  </span><span style="color: #0000BB">drupal_execute</span><span style="color: #007700">(</span><span style="color: #DD0000">'album_node_form'</span><span style="color: #007700">, </span><span style="color: #0000BB">$values</span><span style="color: #007700">, </span><span style="color: #0000BB">$node</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
 <p><strong>Update:</strong></p>
-
 <p>As requested in the comments, here is an import with images working in Drupal 6. This is the code I am using, I'm not sure it's the 100% best recommended way of doing this, but it works for me and it may assist you:</p>
-
-<p><p></p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br />$imageFile </span><span style="color: #007700">= </span><span style="color: #0000BB">$originalPath </span><span style="color: #007700">. </span><span style="color: #0000BB">$imageFilename</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$original<em>path </span><span style="color: #007700">= </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$imageFile </span><span style="color: #007700">= </span><span style="color: #0000BB">file</em>directory<em>path</span><span style="color: #007700">() .</span><span style="color: #DD0000">&#39;/images/&#39;</span><span style="color: #007700">. </span><span style="color: #0000BB">$imageFilename</span><span style="color: #007700">;<br />if (!</span><span style="color: #0000BB">file</em>copy</span><span style="color: #007700">(</span><span style="color: #0000BB">$original<em>path</span><span style="color: #007700">, </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">)) {<br /></span><span style="color: #FF8000">// check file can be copied<br /></span><span style="color: #007700">return </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$fileUp </span><span style="color: #007700">= array(<br /></span><span style="color: #DD0000">&#39;title&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">&#39;title&#39;</span><span style="color: #007700">],<br /></span><span style="color: #DD0000">&#39;filename&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">),<br /></span><span style="color: #DD0000">&#39;destination&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">&#39;filepath&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">&#39;filemime&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">&#39;image/jpeg&#39;</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">&#39;filesize&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">),<br /></span><span style="color: #DD0000">&#39;source&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">&#39;field</em>cover<em>0&#39;</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">&#39;uid&#39; </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">uid</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">$node</span><span style="color: #007700">[</span><span style="color: #DD0000">&#39;field</em>cover&#39;</span><span style="color: #007700">] = array(</span><span style="color: #0000BB">$fileUp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$node </span><span style="color: #007700">= </span><span style="color: #0000BB">node<em>submit</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fileSaved </span><span style="color: #007700">= </span><span style="color: #0000BB">drupal</em>write_record</span><span style="color: #007700">(</span><span style="color: #DD0000">&#39;files&#39;</span><span style="color: #007700">, </span><span style="color: #0000BB">$fileUp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div></p>
-
-            
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'darrenmothersele';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<p></p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br />$imageFile </span><span style="color: #007700">= </span><span style="color: #0000BB">$originalPath </span><span style="color: #007700">. </span><span style="color: #0000BB">$imageFilename</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$original_path </span><span style="color: #007700">= </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$imageFile </span><span style="color: #007700">= </span><span style="color: #0000BB">file_directory_path</span><span style="color: #007700">() .</span><span style="color: #DD0000">'/images/'</span><span style="color: #007700">. </span><span style="color: #0000BB">$imageFilename</span><span style="color: #007700">;<br />if (!</span><span style="color: #0000BB">file_copy</span><span style="color: #007700">(</span><span style="color: #0000BB">$original_path</span><span style="color: #007700">, </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">)) {<br /></span><span style="color: #FF8000">// check file can be copied<br /></span><span style="color: #007700">return </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$fileUp </span><span style="color: #007700">= array(<br /></span><span style="color: #DD0000">'title' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">],<br /></span><span style="color: #DD0000">'filename' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">),<br /></span><span style="color: #DD0000">'destination' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">'filepath' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">'filemime' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'image/jpeg'</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">'filesize' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$imageFile</span><span style="color: #007700">),<br /></span><span style="color: #DD0000">'source' </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">'field_cover_0'</span><span style="color: #007700">,<br /></span><span style="color: #DD0000">'uid' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">uid</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">$node</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_cover'</span><span style="color: #007700">] = array(</span><span style="color: #0000BB">$fileUp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$node </span><span style="color: #007700">= </span><span style="color: #0000BB">node_submit</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fileSaved </span><span style="color: #007700">= </span><span style="color: #0000BB">drupal_write_record</span><span style="color: #007700">(</span><span style="color: #DD0000">'files'</span><span style="color: #007700">, </span><span style="color: #0000BB">$fileUp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div>
 
 
 
+<div class="author-line">
 
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
 
-
-
-<div class="h-card">
-
-  <a class="p-name u-url" href="http://www.darrenmothersele.com">Darren Mothersele</a>
-    <i class="icon">&#128681;</i>
-    <span class="p-locality">London</span>, <span class="p-country-name">UK</span>
-    <br>
-    <i class="icon">&#9993;</i>
-  <a class="u-email" href="mailto:darren@darrenmothersele.com">darren@darrenmothersele.com</a>
-  <p class="p-note">Creative Technologist</p>
-
-    <img class="u-photo" src="/img/darren100.jpg" alt="" width="40px" />
-</div>
-
-<div class="my-tinyletter">
-    <h4>Updates...</h4>
-<form action="https://tinyletter.com/dazm" method="post">
-    <p>
-        <label for="tlemail">To get my monthly 'friends and family' newsletter, enter your email address:</label>
-    </p>
-    <p>
-        <input type="text" name="email" id="tlemail" placeholder="Email" /><br>
-        <input type="hidden" value="1" name="embed"/>
-        <input type="submit" value="Subscribe" /><br>
-        <a href="https://tinyletter.com" target="_blank" style="font-size:75%;">
-            powered by TinyLetter
-        </a>
-    </p>
-</form>
-
-<p><a href="/indieweb">Am I Indie Yet?</a> <br>
-<a href="https://github.com/darrenmothersele/ama">Ask me anything!</a> <br>
-No tracking is used on this site.</p>
-
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future. <a href="/about">Read more &raquo;</a></p>
 </div>
 
 
-
+<div class="alignCenter">
+  <p class="sc">Responses</p>
 </div>
-</div>
+<p>I've removed the Disqus commenting system from my site
+  to prevent your browsing activity being sent to a third party.
+  No tracking is used on this site.
+</p>
+<p>Please bear with me while I find a replacement.
+I will be porting over previous comments.
+For now, if you want to comment, please
+<a href="/contact">get in touch</a>.</p>
 
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/mothersele" rel="me" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://github.com/darrenmothersele" rel="me" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:darren@darrenmothersele.com" class="icon fa-envelope-o"><span class="label">
-    <script type="text/javascript">
-    var data = "&#100;&#97;&#114;&#114;&#101;&#110;&#64;&#100;&#97;&#114;"
-    + "&#114;&#101;&#110;&#109;&#111;&#116;&#104;&#101;&#114;&#115;&#101;"
-    + "&#108;&#101;&#46;&#99;&#111;&#109;";
-    document.write(data);
-    </script></span></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>
-        &copy;2007-2016 Darren Mothersele.
-        Unless specified otherwise, content is licensed under a
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
-            Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
-    </ul>
+
+
+<footer>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>
+    </small>
+  </p>
 </footer>
-
 </body>
 </html>
