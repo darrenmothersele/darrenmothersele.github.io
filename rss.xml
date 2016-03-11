@@ -8,6 +8,27 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Semantic Drift</title>
+        <description>&lt;p&gt;Language is always evolving. Words go out of common usage, new words appear, and words change their meaning. The firehose of social media has given us new words, like the “selfie” and “clickbait”. The narcissistic undercurrent in these new terms indicates how these technologies are changing us. But, more concerning, are words where the actual meaning is changing. &lt;/p&gt;
+
+&lt;p&gt;George Orwell coined the term &lt;em&gt;doublethink&lt;/em&gt; in the novel 1984. It formed part of Big Brother’s brainwashing programmes. Words take on dual meanings, leading to acceptance of conflict or contradiction via language. &lt;/p&gt;
+
+&lt;p&gt;We talk about &lt;em&gt;social&lt;/em&gt; media, but a more appropriate term would be &lt;em&gt;anti-social&lt;/em&gt; media. When you hear phrases like “my selfie has 50 likes”, it’s less about being social, and more about bragging. A “social stream” feeds trivialities to followers, fans and friends. The danger is that this shallow form of connection, via the screen, mediated by technology, is replacing real meaningful connection and companionship. &lt;/p&gt;
+
+&lt;p&gt;This brings us to the concept of &lt;em&gt;friend&lt;/em&gt;. As I mentioned in my post about &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;why I left Facebook&lt;/a&gt;, “you can have 1000 friends on Facebook, but only if you reduce your definition of what it means to be a friend.” We also now have &lt;em&gt;unfriend&lt;/em&gt; as a verb. &lt;/p&gt;
+
+&lt;p&gt;Other nouns are becoming verbs, like &lt;em&gt;inbox&lt;/em&gt;. I hear people saying “inbox me”, or “I’ll inbox you”, when they referring to sending a private message. This annoys me. It may seem innocuous, but it highlights a lack of understanding about the difference between a message and where the message is stored. We have, in one word, conflated the process of sending a message with both it’s place of storage and the act of receiving it. When you consider the temporal aspects of this, it reveals the acceptance of omnipresent access to our attention. &lt;/p&gt;
+
+&lt;p&gt;Perhaps the most abused word is &lt;em&gt;share&lt;/em&gt;. We have lost touch completely with what it really means to share something. From the compulsive &lt;em&gt;sharing&lt;/em&gt; of &lt;em&gt;selfies&lt;/em&gt; driven by a need for acceptance and dopamine reward, to the rebranding of “unsolicited advertising” as “sharing” on social media. &lt;/p&gt;
+
+&lt;p&gt;We also hear a lot of the word &lt;em&gt;share&lt;/em&gt; with the rise of the (so called) &lt;em&gt;sharing&lt;/em&gt; economy. Uber and AirBnB are not based on sharing at all. It’s not sharing if you are paying a fee. And, the focus of startups in the “sharing economy” isn’t on creating a cooperative (shared) platform. They are actually about crowd-sourcing a monopoly. &lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/03/11/semantic-drift/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/03/11/semantic-drift/</guid>
+      </item>
+    
+      <item>
         <title>AMA: What search engine(s) do you favour? I&#39;m assuming you&#39;re not a Google fan!</title>
         <description>&lt;p&gt;Good question.&lt;/p&gt;
 
@@ -584,62 +605,6 @@ including Drupal.&lt;/p&gt;
         <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
-      </item>
-    
-      <item>
-        <title>Work in Progress: The Future of (My) Web (Part 2, Leaving WhatsApp)</title>
-        <description>&lt;p&gt;I’ve deleted WhatsApp. I wasn’t going to post about this,
-as I don’t want to sound like a broken record.
-But, as several people have emailed me asking why,
-I thought I would explain my decision.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;I have &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;posted about this before&lt;/a&gt;
-when I left Facebook.
-I’m not just ranting about data surveillance and privacy concerns.
-I have other concerns about our relationship with technology. There are
-certain ideas that are in danger of becoming locked in unless
-we come up with alternatives.
-My attitude is solution focused.&lt;/p&gt;
-
-&lt;p&gt;So WhatsWrong with WhatsApp?&lt;/p&gt;
-
-&lt;h2 id=&quot;its-free&quot;&gt;It’s free.&lt;/h2&gt;
-
-&lt;p&gt;They annouced recently that they are removing the subscription and making the service free.
-There is now no doubt what the real business model is.
-You are not their customer, you are their product.&lt;/p&gt;
-
-&lt;h2 id=&quot;no-api&quot;&gt;No API&lt;/h2&gt;
-
-&lt;p&gt;Brian Acton, WhatsApp cofounder, has publicly stated that there will never be an API.
-Interoperability is never going to be an option with Whatsapp.&lt;/p&gt;
-
-&lt;p&gt;Compare with email: You use gmail, someone else uses hotmail, and I have my own email
-software I built myself. We can all freely email each other.&lt;/p&gt;
-
-&lt;p&gt;We’re on different mobile networks, but we can still freely send each other SMS messages.&lt;/p&gt;
-
-&lt;p&gt;This will never be the case with WhatsApp.
-If you’re not on WhatsApp you don’t exist.
-WhatsApp is a monoculture silo.&lt;/p&gt;
-
-&lt;p&gt;I want to be part of building an independent, open future.
-The involves removing myself from networks that don’t support open standards, interoperability, and diversity.&lt;/p&gt;
-
-&lt;p&gt;By the principle of “selfdogfooding”, removing myself gives me the motiviation
-I need to build and contribute to an alternative
-&lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;Indie Web&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“The IndieWeb is a people-focused alternative to the ‘corporate web’.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
       </item>
     
   </channel>
