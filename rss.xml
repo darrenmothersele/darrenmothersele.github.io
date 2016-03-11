@@ -8,6 +8,29 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>AMA: What search engine(s) do you favour? I&#39;m assuming you&#39;re not a Google fan!</title>
+        <description>&lt;p&gt;Good question.&lt;/p&gt;
+
+&lt;p&gt;The search engine is the filter through which we access the vast information available on the web. This is a powerful position to be in, considering the influence that the web has on our lives. I would love to pay for a premium search service that operates on my behalf. But, unfortunately, that is not an option.&lt;/p&gt;
+
+&lt;p&gt;Instead we have chosen dependency on free services run by huge corporations that make billions of dollars by manipulating what we see online. We license them free access to our valuable data. They build a rich profile of us from data about every aspect of our lives. They own our phone, email, documents, search history, DNS lookups, and web browsing.&lt;/p&gt;
+
+&lt;p&gt;I would suggest not using the same company for search as you use for email or other personal information. Unfortunately, no search engine has the power of Google to produce such good results.&lt;/p&gt;
+
+&lt;p&gt;I use DuckDuckGo as my default search engine. I like to use an alternative as my first attempt to find what I’m looking for. I then revert to Google as a second resort. 80% of the time the results don’t match what I’m expecting to see. In which case I prepend ‘!g ‘ to the search term in DuckDuckGo. This redirects to Google search results.&lt;/p&gt;
+
+&lt;p&gt;Somehow this also avoids the privacy pop-up I see when I go straight to Google:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/blog/google-popup.png&quot; alt=&quot;Screenshot of Google Privacy Popup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Searching Google via the &lt;a href=&quot;https://duckduckgo.com/bang&quot;&gt;DuckDuckGo Bang&lt;/a&gt; leads me straight to the results. I don’t know what happens to the annoying pop-up.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Feb 2016 14:30:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/02/25/ama-search-engine/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/ama-search-engine/</guid>
+      </item>
+    
+      <item>
         <title>Build Your Own PHP Framework at DrupalCamp London</title>
         <description>&lt;p&gt;I have revised and improved the training in preparation for DrupalCamp next week. I’ve incorporated some feedback, added a bit of theory, and included more practical examples. Join me and level up your PHP development skills in this 1 day course.&lt;/p&gt;
 
@@ -617,67 +640,6 @@ I need to build and contribute to an alternative
         <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/27/why-i-left-whatsapp/</guid>
-      </item>
-    
-      <item>
-        <title>Buckminster Fuller, in Plain English</title>
-        <description>&lt;p&gt;I &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/07/12/happy-birthday-bucky/&quot;&gt;wrote a blog post&lt;/a&gt;
-to commemorate Buckminster Fuller’s birthday back in July,
-and have now returned to his works. I am watching again
-his lecture series “Everything I Know”.
-There are many important messages and deep lessons in Bucky’s lectures that
-still apply today. I am only
-starting to scratch the surface.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;As I watch, and follow the transcripts, I am
-working on my own set of notes.
-I hope by rewriting Bucky’s words in plain english
-I can help make these lessons accessible to more people.&lt;/p&gt;
-
-&lt;p&gt;I using the &lt;a href=&quot;https://archive.org/details/buckminsterfuller&quot;&gt;video series uploaded to archive.org&lt;/a&gt;
-and &lt;a href=&quot;https://bfi.org/about-fuller/resources/everything-i-know/session-1&quot;&gt;transcribed here&lt;/a&gt;
-as the source of these works.&lt;/p&gt;
-
-&lt;h2 id=&quot;everything-i-know-by-buckminster-fuller&quot;&gt;Everything I Know by Buckminster Fuller&lt;/h2&gt;
-
-&lt;p&gt;An attempt to better understand the lessons of Buckminster Fuller, by translating into Plain English.&lt;/p&gt;
-
-&lt;h3 id=&quot;session-1---part-1&quot;&gt;Session 1 - Part 1&lt;/h3&gt;
-
-&lt;p&gt;We are all born naked, helpless, and ignorant. That’s where humanity has always started. We have had to find our own way, by trial and error, driven by instinctive urges.&lt;/p&gt;
-
-&lt;p&gt;Humans have been on our planet for millions of years with very little physiological change. In India and China, as far back as 5,000 years ago, we were thinking extraordinarily well about our experience and the principles of our universe. Astonishing, in view of the limited amount of information humanity had at that time.&lt;/p&gt;
-
-&lt;p&gt;Now, because we have systems to record information, we can see the rapid rate at which it is increasing. We can’t keep track of the rate at which we are discovering more. Like a child, formed in the womb for nine months, being born into an entire new world — we are coming out of a common womb of ignorance, transitioning into a new relationship with the universe. Not, as a divided humanity spread across the planet, but as a whole.&lt;/p&gt;
-
-&lt;p&gt;We are living as people of the world. Things thought impossible become reality within a generation. Things once dismissed as nonsense, become typical. None of it was planned. There was nobody in previous generations prophesying about the impossibles that are happening today. Not one of these steps was anticipated by any of the preceding. But, no sooner than it has happened, the human says “I knew it all the time. I’m not one of those who are suprised… I was a little bit responsible.”&lt;/p&gt;
-
-&lt;p&gt;There is a strange vanity inherent in humans. Essential to being born naked and helpless, and having to make the fantastic number of mistakes in order to learn. Without which, we would have become disgruntled, and dismayed by our mistakes, and not been able to carry on. And so we were given this strange vanity so we are able to decieve ourselves. Like saying “getting to the moon, anybody can do that. It’s simple and logical.” Now it’s obvious, but only because it happened in your lifetime, and you can see how it happened.&lt;/p&gt;
-
-&lt;h3 id=&quot;session-1---part-2&quot;&gt;Session 1 - Part 2&lt;/h3&gt;
-
-&lt;p&gt;When people say natural they mean as it was in their day. As rules and customs change over time, so the young people begin to see things differently. Any tension between generations is down to the young being born into a new natural, which is unnatural to their elders.&lt;/p&gt;
-
-&lt;p&gt;The lily might assume it was always going to be a seed, then it grows up and gets leaves, then it flowers. Each of these changes a surprise. Patterns like this operate on humanity too, but the vanity of human beings is such that they don’t like to be caught by surprise. Humans have always had troubles, but have never before been so aware of the troubles of others, and so aware of the totality of great trouble. The vanity factor again makes them feel responsible.&lt;/p&gt;
-
-&lt;p&gt;If something is unfamiliar we say it is artificial or unnatural. There is nothing artifical or unnatural. If nature permits it, it is natural. If nature doesn’t permit it, you can’t do it. You may not be familiar with the fact nature allows it, but your unfamiliarity doesn’t make it unnatural.&lt;/p&gt;
-
-&lt;p&gt;Our earth is 8,000 miles diameter, a hundredth the size of the sun, our star, which itself is a minor star. From the moon you can’t make out a mountain on earth, let alone a human being. The aberration of the highest mountain to the deepest depth of the ocean, when taken over 8,000 miles of the earth’s diameter, is insignificant. A polished steel ball is rougher.&lt;/p&gt;
-
-&lt;p&gt;We are invisible on a tiny planet. Orbiting a negligible little star. Which is one of a hundred billion stars in one of a known billion galaxies. As tiny as we are, we have information of an 11 1/2 light year radius. The fact that we have this kind of capability, despite our physical insignificance, hints that we have some very great significance in the scheme.&lt;/p&gt;
-
-&lt;p&gt;We don’t know of any other phenomena that has this mind. There are many creatures that have brains, each combine individual senses to create a special case. But the human mind we find able to do something that the brain cannot do. To review the special case experiences, and from time to time intuit that something else is going on. Something that was not predicted or suggested by the special case experiences considered only by themselves.&lt;/p&gt;
-
-&lt;p&gt;The earliest annals of man record five bright lights in the sky. Much smaller than the sun and the moon, but behaving in ways the other myriad of lights in the sky did not. The others stayed constant, but these five moved around and were a little brighter than the others. We tracked where they would appear and saw regularities. Good recordings of these behaviours were made, of what we began to call the planets. Five special cases differentiated by their unique behaviour.&lt;/p&gt;
-
-&lt;h3 id=&quot;tbc&quot;&gt;TBC…&lt;/h3&gt;
-
-</description>
-        <pubDate>Tue, 26 Jan 2016 02:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/26/buckminster-fuller-in-plain-english/</guid>
       </item>
     
   </channel>
