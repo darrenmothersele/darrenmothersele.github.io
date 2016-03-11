@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Security, and Drupal | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -33,7 +34,7 @@ It’s about time I posted something more comprehensive on the issue.</p>
 
 <!--break-->
 
-<h2 id="dont-ignore-minor-bugs">Don’t ignore minor bugs</h2>
+<p>##Don’t ignore minor bugs</p>
 
 <p>The most interesting thing about Egor’s compromise of GitHub security was that
 he used 5 issues, which independently would have been very minor, but through
@@ -44,7 +45,7 @@ on GitHub.</p>
 <p>Egor reported the vulnerabilities under <a href="https://bounty.github.com/">GitHub’s bounty programme</a>, so they could be fixed before details were released. He was awarded a bounty of $4000 USD for his
 work.</p>
 
-<h3 id="the-cost-of-insecurity">The cost of (in)security</h3>
+<p>###The cost of (in)security</p>
 
 <p>Many of the <a href="https://news.ycombinator.com/item?id=7197048">comments on Hacker News</a>
 argued that this reward was far too low considering the sensitive nature of the
@@ -59,7 +60,7 @@ on how to implement their findings.</p>
 be found and exploited on your site, but it should be obvious that investment
 in security review and penetration testing is a Good Thing.</p>
 
-<h3 id="white-hats">White-hats</h3>
+<p>###White-hats</p>
 
 <p>Egor reported his findings to GitHub so they could be fixed before details
 were released publicly. GitHub recently adopted a bounty program, which had already been
@@ -85,7 +86,7 @@ information disclosure issue to the site, to which they responded:</p>
 regularly do “security research”, but I do know what mistakes to look for when
 reviewing a Drupal site and it’s supporting infrastructure.</p>
 
-<h2 id="security-is-hard">Security is hard</h2>
+<p>##Security is hard</p>
 
 <p>Further comments about Egor’s post on Hacker News go on to talk about why
 security is hard.</p>
@@ -100,7 +101,7 @@ This comes up time and time again in any defensive discipline.
  The one peculiarity of InfoSec; you do not have any offensive capabilities. -
 <cite>dfc (Hacker News)</cite></blockquote>
 
-<h3 id="minor-flaws-combine-to-make-serious-exploits">Minor flaws combine to make serious exploits</h3>
+<p>###Minor flaws combine to make serious exploits</p>
 
 <p>The GitHub vulnerability was found in their implementation of the
 <a href="http://en.wikipedia.org/wiki/OAuth">OAuth 2</a> standard.
@@ -116,7 +117,7 @@ of the standard.</p>
 mistakes can be disastrous for security as when
 combined they can lead to much bigger issues.</p>
 
-<h3 id="no-one-gets-it-right-every-time">No one gets it right every time</h3>
+<p>###No one gets it right every time</p>
 
 <p>Everyone makes mistakes. No programmer has ever written perfect code, especially
 when working under the time and budget pressures of commercial projects.</p>
@@ -126,7 +127,7 @@ when working under the time and budget pressures of commercial projects.</p>
 
 <p>You need to implement code review, and ideally hire third-parties to conduct audits.</p>
 
-<h2 id="drupal-security">Drupal security</h2>
+<p>##Drupal security</p>
 
 <p>Drupal has it’s own <a href="https://drupal.org/security-team">Security Team</a>
 and <a href="https://drupal.org/node/101494">processes for reporting security issues</a>.
@@ -141,19 +142,19 @@ same level of public scrutiny as the open-source code released on Drupal.org.</p
 <p>Here are some pointers, to help with Drupal security. But, I highly recommend getting
 someone else to look over your code before pushing it into production.</p>
 
-<h3 id="secure-coding">Secure coding</h3>
+<p>###Secure coding</p>
 
 <p>According to the <a href="http://mdsec.net/wahh/">Web Application Hacker’s Handbook</a>
 only a small percentage of website vulnerabilities today come from SQL injection.
 This is easy to protect against in Drupal by making correct use of the
-database abstraction layer. Check all custom code for calls to <code>db_query</code> to
+database abstraction layer. Check all custom code for calls to <code class="highlighter-rouge">db_query</code> to
 ensure it correctly passes in parameters to queries using the provided mechanism
 for escaping dangerous characters.</p>
 
 <p>More common vulnerabilities today come from Cross-Site scripting (XSS) and
 Cross-site Request Forgeries (CSRF).</p>
 
-<h4 id="xss">XSS</h4>
+<p>####XSS</p>
 
 <p>XSS is the result of failing to take proper care when dealing with user input.
 Drupal provides many mechanisms for dealing with user-input, but you have to
@@ -167,10 +168,10 @@ reviewed have missed this somewhere in their custom code.</p>
 your code then you are doing something wrong. The functions to look for are:</p>
 
 <ul>
-  <li><a href="https://api.drupal.org/api/drupal/includes!common.inc/function/check_url/7"><code>check_url</code></a></li>
-  <li><a href="https://api.drupal.org/api/drupal/includes!bootstrap.inc/function/check_plain/7"><code>check_plain</code></a></li>
-  <li><a href="https://api.drupal.org/api/drupal/modules!filter!filter.module/function/check_markup/7"><code>check_markup</code></a></li>
-  <li><a href="https://api.drupal.org/api/drupal/includes!common.inc/function/filter_xss/7"><code>filter_xss</code></a></li>
+  <li><a href="https://api.drupal.org/api/drupal/includes!common.inc/function/check_url/7"><code class="highlighter-rouge">check_url</code></a></li>
+  <li><a href="https://api.drupal.org/api/drupal/includes!bootstrap.inc/function/check_plain/7"><code class="highlighter-rouge">check_plain</code></a></li>
+  <li><a href="https://api.drupal.org/api/drupal/modules!filter!filter.module/function/check_markup/7"><code class="highlighter-rouge">check_markup</code></a></li>
+  <li><a href="https://api.drupal.org/api/drupal/includes!common.inc/function/filter_xss/7"><code class="highlighter-rouge">filter_xss</code></a></li>
 </ul>
 
 <p>Another essential requirement in protection against XSS is to ensure that you have
@@ -191,7 +192,7 @@ users posting images ensure they are always correctly filtered and always hosted
 from your server. The <a href="https://drupal.org/project/image_resize_filter">image resize filter</a>
 can help with this.</p>
 
-<h4 id="csrf">CSRF</h4>
+<p>####CSRF</p>
 
 <p>CSRF exploits a user’s logged in session by forging requests to the site that are
 initiated without the user being aware. If you have a GET request that
@@ -220,7 +221,7 @@ CSRF protection in the Drupal Form API. Make sure that all forms on your site
 are generated and processed correctly. There’s an old docs page
 <a href="https://drupal.org/node/178896">here</a> as a starting point.</p>
 
-<h4 id="access-bypass">Access bypass</h4>
+<p>####Access bypass</p>
 
 <p>All custom code must use the proper mechanisms to ensure controlled access to
 resources. The Drupal API provides various mechanisms to do this, including:</p>
@@ -228,34 +229,34 @@ resources. The Drupal API provides various mechanisms to do this, including:</p>
 <ul>
   <li>The Drupal menu system defines routes from URL paths to actual callbacks. It includes
  an access callback mechanism to check permissions before allowing access to the URL.</li>
-  <li>The <code>user_access</code> API function can be used to check the current user has a specified
+  <li>The <code class="highlighter-rouge">user_access</code> API function can be used to check the current user has a specified
  permission.</li>
   <li>The node_access API should be used to correctly check access to content. This can
- be done in custom database queries by using <code>$query-&gt;addtag('node_access')</code></li>
+ be done in custom database queries by using <code class="highlighter-rouge">$query-&gt;addtag('node_access')</code></li>
   <li>Code that works defines custom entity types should also define their own access callbacks.</li>
 </ul>
 
-<p>A big mistake I have seen a couple of times in custom code is to accidentally assign to the global user object. In one particular case a faulty <code>if</code> statement in a template
+<p>A big mistake I have seen a couple of times in custom code is to accidentally assign to the global user object. In one particular case a faulty <code class="highlighter-rouge">if</code> statement in a template
 file was giving every user who accessed a specific node admin access. This is
 possible the most dangerous typo I have ever seen in over 20 years of programming!</p>
 
-<p><code>
-global $user;
+<div class="highlighter-rouge"><pre class="highlight"><code>global $user;
 if ($user-&gt;uid = 1) { echo 'hello admin'; }
-</code></p>
+</code></pre>
+</div>
 
 <p>That’s not the actual code, but a similar example. Obviously the programmer had meant
-to write <code>if ($user-&gt;uid == 1)</code>, which is a check for equality. There were many
+to write <code class="highlighter-rouge">if ($user-&gt;uid == 1)</code>, which is a check for equality. There were many
 other errors in the code which made this situation much worse. My recommendations were:</p>
 
 <ul>
   <li>Move logic out of template files into a preprocess function.</li>
-  <li>Don’t access the global <code>$user</code> object and instead pass an <code>$account</code> variable as a parameter to the template file.</li>
-  <li>Don’t mess with the global <code>$user</code> object.</li>
-  <li>Oh, and don’t mess with the global <code>$user</code> object.</li>
+  <li>Don’t access the global <code class="highlighter-rouge">$user</code> object and instead pass an <code class="highlighter-rouge">$account</code> variable as a parameter to the template file.</li>
+  <li>Don’t mess with the global <code class="highlighter-rouge">$user</code> object.</li>
+  <li>Oh, and don’t mess with the global <code class="highlighter-rouge">$user</code> object.</li>
 </ul>
 
-<h3 id="passwords">Passwords</h3>
+<p>###Passwords</p>
 
 <p>You may have several different levels of user account (different roles) all
 with different levels of authorisation. Enforcing strong passwords across all
@@ -294,7 +295,7 @@ There are a few Drupal modules to help with this:</p>
  core password reset should really work!</li>
 </ul>
 
-<h3 id="ssl">SSL</h3>
+<p>###SSL</p>
 
 <p><strong>If you are not logging in to your site via HTTPS they you are handing out your
 password to anyone on the same network as you.</strong> If any of your users access
@@ -311,7 +312,7 @@ to ensure that all logins and passwords are sent encrypted.</p>
 before enabling secure pages. Also be aware that serving over HTTPS is more
 resource intensive than HTTP.</p>
 
-<h3 id="server-issues">Server issues</h3>
+<p>###Server issues</p>
 
 <p>Securing your servers is a whole other story, and could take up several blogs
 worth of information. Here’s the basics:</p>
@@ -326,7 +327,7 @@ applications like version control servers, and development and QA environments.<
   <li>The server OS and all other software needs to be kept up-to-date.</li>
 </ul>
 
-<h3 id="information-disclosure">Information disclosure</h3>
+<p>###Information disclosure</p>
 
 <p>This is a common issue that is picked up by penetration testers employed to
 do testing on Drupal websites. There are many ways that a Drupal website
@@ -341,17 +342,17 @@ discloses more information that it needs to. Including:</p>
 </ul>
 
 <p>Perhaps the most revealing information disclosure issue is with sites that
-leave the <code>CHANGELOG.txt</code> file visible to the public. This file reveals the
+leave the <code class="highlighter-rouge">CHANGELOG.txt</code> file visible to the public. This file reveals the
 exact version of Drupal that you are using, and from there it’s easy to work out
 what vulnerabilities your site could be open to.</p>
 
-<p>My recommendation is to rewrite the location of <code>CHANGELOG.txt</code> and other
+<p>My recommendation is to rewrite the location of <code class="highlighter-rouge">CHANGELOG.txt</code> and other
 unnecessary files to a 404 error in the server config. This is better than
 removing the files, as they could be accidentally restored during future
 upgrades. The Apache config rules to do this are quoted in
 <a href="https://github.com/darrenmothersele/aegir_secure_mods/blob/master/provision/securemods.drush.inc">this file</a>.</p>
 
-<h3 id="and-finally">And finally…</h3>
+<p>###And finally…</p>
 
 <p>Turn off access for user 1. The super admin user who can do anything is never
 required on a production site. Turn it off by setting status=0 in the database.</p>

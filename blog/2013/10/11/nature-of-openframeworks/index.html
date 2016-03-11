@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nature of openFrameworks (part 1) | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -37,13 +38,13 @@ Cinder instead.</p>
 <h3 id="a-hrefhttpsgistgithubcomdarrenmothersele6934845random-walkera"><a href="https://gist.github.com/darrenmothersele/6934845">Random Walker</a></h3>
 
 <p>This is the first example from the introduction. It just moves a point around
-the screen randomly. There is no <code>point()</code> method in openFrameworks so to draw
+the screen randomly. There is no <code class="highlighter-rouge">point()</code> method in openFrameworks so to draw
 a single pixel we just draw a 1x1 rectangle.</p>
 
 <p>The App class just needs a variable to store an instance of the Walker:</p>
 
-<p>The <code>step()</code> and <code>display()</code> methods are both called from within Processing’s
-draw loop, but in openFrameworks we use the <code>update()</code> method to update state
+<p>The <code class="highlighter-rouge">step()</code> and <code class="highlighter-rouge">display()</code> methods are both called from within Processing’s
+draw loop, but in openFrameworks we use the <code class="highlighter-rouge">update()</code> method to update state
 separately from the draw loop.</p>
 
 <p>Finally, the main file to launch the openFrameworks app.</p>
@@ -55,15 +56,15 @@ separately from the draw loop.</p>
 <p>There’s no method for finding the array length in C++ so we hard code the
 length of the array used to store the count of the generated random numbers.
 You can find the length of a simple array (not an array of pointers) using
-the <code>sizeof()</code> function, by dividing the size of the array by the size of
-each element, like this: <code>(sizeof(a)/sizeof(*a))</code> or preferably use a container
+the <code class="highlighter-rouge">sizeof()</code> function, by dividing the size of the array by the size of
+each element, like this: <code class="highlighter-rouge">(sizeof(a)/sizeof(*a))</code> or preferably use a container
 class like std::vector which will be covered later.</p>
 
 <h3 id="a-hrefhttpsgistgithubcomdarrenmothersele7875908gaussian-distributiona"><a href="https://gist.github.com/darrenmothersele/7875908">Gaussian distribution</a></h3>
 
 <p>In Processing you have to clear the screen each time in the draw loop, but
 openFrameworks does this for you by default. To disable this you add a call
-to <code>ofSetBackgroundAuto(false)</code> in setup. To create the alpha background
+to <code class="highlighter-rouge">ofSetBackgroundAuto(false)</code> in setup. To create the alpha background
 effect I draw a rectangle over the whole screen area. Here’s a version that
 uses a complete random distribution:</p>
 
@@ -77,9 +78,9 @@ to specify a function to calculate the next Gaussian number:</p>
 
 <h3 id="a-hrefhttpsgistgithubcomdarrenmothersele7875942perlin-noisea"><a href="https://gist.github.com/darrenmothersele/7875942">Perlin Noise</a></h3>
 
-<p><code>ofNoise</code> is the openFrameworks equivalent of Processing’s <code>noise()</code> function.
+<p><code class="highlighter-rouge">ofNoise</code> is the openFrameworks equivalent of Processing’s <code class="highlighter-rouge">noise()</code> function.
 It returns a float between 0 and 1. openFrameworks also has an equivalent of
-map function (<code>ofMap</code>) that maps the noise value (which is 0 - 1) to the
+map function (<code class="highlighter-rouge">ofMap</code>) that maps the noise value (which is 0 - 1) to the
 range 0 - height.</p>
 
 

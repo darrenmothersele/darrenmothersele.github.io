@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GitDone, MozFest 2015, and Learning Firefox WebExtensions | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -95,16 +96,17 @@ handlers in either of the “worlds”. But, for the first working version, it
 was enough to use the DOM to “inject” our Javascript into the DOM so it could
 run in the same “world” as the GitHub page Javascript, and thus do our
 rewritings of the UI based off the pjax events fired there.
-To do this, we use a Content Script, <code>injector.js</code> that just injects our
+To do this, we use a Content Script, <code class="highlighter-rouge">injector.js</code> that just injects our
 script into page, via the DOM:</p>
 
-<pre><code>var s = document.createElement('script');
+<div class="highlighter-rouge"><pre class="highlight"><code>var s = document.createElement('script');
 s.src = chrome.extension.getURL('scripts/bootstrap.js');
 s.onload = function() {
     this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(s);
 </code></pre>
+</div>
 
 <p>For <a href="https://github.com/OpenMatt/GitDone/tree/v0.1">v 0.1</a> it was enough to
 inject the main JS, and do the rewriting in the “world” of the GitHub page.
@@ -131,7 +133,7 @@ work in my tests).</p>
 <p>For example, in the injected JS we can react to a jQuery event, and turn it
 into a DOM event:</p>
 
-<pre><code>// in injected JS
+<div class="highlighter-rouge"><pre class="highlight"><code>// in injected JS
 // Add out listener to pjax events
 $(document).ready(function () {
   $(document).on("pjax:end", function (e) {
@@ -143,43 +145,49 @@ $(document).ready(function () {
   });
 });
 </code></pre>
+</div>
 
 <p>And, in the injector Content Script listen for the event:</p>
 
-<pre><code>// in content script
+<div class="highlighter-rouge"><pre class="highlight"><code>// in content script
 window.addEventListener("gitdone:apply", applyModsEventHandler);
 function applyModsEventHandler(e) {
   console.log('Apply modifications for ' + e.detail.activeRoute);
 }
 </code></pre>
+</div>
 
 <p>The injected JS can’t communicate with the background script, but the content
 script can. In the content script you send a message event:</p>
 
-<pre><code>// in content script
+<div class="highlighter-rouge"><pre class="highlight"><code>// in content script
 chrome.runtime.sendMessage({msg: "init"});
 </code></pre>
+</div>
 
 <p>Which you can react to in the background script:</p>
 
-<pre><code>// in background.js
+<div class="highlighter-rouge"><pre class="highlight"><code>// in background.js
 chrome.runtime.onMessage.addListener(function (message, sender) {
 
 });
 </code></pre>
+</div>
 
 <p>And, in the background script, send messages back to the Content Script:</p>
 
-<pre><code>// in background.js
+<div class="highlighter-rouge"><pre class="highlight"><code>// in background.js
 chrome.tabs.sendMessage(sender.tab.id, state.gitdone);
 </code></pre>
+</div>
 
 <p>Which the content script can receive:</p>
 
-<pre><code>// in content script
+<div class="highlighter-rouge"><pre class="highlight"><code>// in content script
 chrome.runtime.onMessage.addListener(function (message, sender) {
 }
 </code></pre>
+</div>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -191,7 +199,7 @@ across this barrier is via DOM events.</p>
 
 <p>We also have the background script, having access to all the WebExtension APIs
 like local storage, notifications, etc. The content script and background
-script communicate via message events on <code>chrome.runtime</code>.</p>
+script communicate via message events on <code class="highlighter-rouge">chrome.runtime</code>.</p>
 
 <p>Useful learnings, and hopefully <a href="https://github.com/OpenMatt/GitDone">GitDone</a>
 will develop into something useful too.</p>

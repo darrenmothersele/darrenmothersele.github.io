@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Introducing Stylex: Atomic design, style guides, and prototyping with Silex and Twig | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -22,7 +23,7 @@
 with Drupal recently, and I’ve witnessed huge improvements on projects
 where it has been introduced. The main advantage being the decoupling of
 the development of the back-end from the development of the front-end
-code. </p>
+code.</p>
 
 <p>I’ve covered this in more detail <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">previously</a>, I’m running some workshops on <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a>,
 and I have more to say on this in the future. Today I want to tell you about a simple
@@ -33,13 +34,13 @@ tool I’m using to speed up the process. <a href="https://github.com/darrenmoth
 <p>The main purpose of this tool is to simplify the construction of prototype
 sites or style guides for front-end code. There are several tools already available,
 including the excellent <a href="http://patternlab.io/">Pattern Lab</a>, but I wanted something
-incredibly simple. </p>
+incredibly simple.</p>
 
 <p>I basically just wanted to make use of the power of Twig templates 
 for mocking up front-end code, with an easy way to load in demo content (from
-yml files). </p>
+yml files).</p>
 
-<h2 id="barebones-project"> Barebones project</h2>
+<p>## Barebones project</p>
 
 <p>I’ve created a <a href="https://github.com/darrenmothersele/stylex-barebones">barebones Stylex project</a> on GitHub that demonstrates this, but you probably 
 want to follow along in the setup, so you know what’s going on…</p>
@@ -51,77 +52,82 @@ have <a href="https://getcomposer.org/doc/00-intro.md#globally">Composer install
 all you need to do is create a folder for your
 project and run the following command:</p>
 
-<p><code>
-composer require darrenmothersele/stylex dev-master
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>composer require darrenmothersele/stylex dev-master
+</code></pre>
+</div>
 
 <p>This will download Stylex from Github and all the dependencies. It creates the 
-<code>composer.json</code> file for you and downloads all the code for the dependencies into
-a <code>vendor</code> folder. </p>
+<code class="highlighter-rouge">composer.json</code> file for you and downloads all the code for the dependencies into
+a <code class="highlighter-rouge">vendor</code> folder.</p>
 
-<p>As a bare minimum you will need to create a <code>index.php</code> to run the application, and 
-a starter template <code>templates/index.html</code>. </p>
+<p>As a bare minimum you will need to create a <code class="highlighter-rouge">index.php</code> to run the application, and 
+a starter template <code class="highlighter-rouge">templates/index.html</code>.</p>
 
-<p>Create a file in the project root (same location as the generated <code>composer.json</code> file)
-called <code>index.php</code> with the following code:</p>
+<p>Create a file in the project root (same location as the generated <code class="highlighter-rouge">composer.json</code> file)
+called <code class="highlighter-rouge">index.php</code> with the following code:</p>
 
-<pre><code>&lt;?php
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
 require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new Stylex\Application();
 $app-&gt;run();
 </code></pre>
+</div>
 
-<p>Then create a <code>templates</code> folder and create the first page template, <code>templates/index.html</code> in this folder:</p>
+<p>Then create a <code class="highlighter-rouge">templates</code> folder and create the first page template, <code class="highlighter-rouge">templates/index.html</code> in this folder:</p>
 
-<pre><code>&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Hello!&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Hello!<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
     {% block content %}
-      &lt;h1&gt;Hello, world!&lt;/h1&gt;
+      <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
     {% endblock %}
-  &lt;/body&gt;
-&lt;/html&gt;
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+</div>
 
 <p>You can run the application with PHP’s build in web server. Simply run the following command:</p>
 
-<pre><code>php -S localhost:8000
+<div class="highlighter-rouge"><pre class="highlight"><code>php -S localhost:8000
 </code></pre>
+</div>
 
-<p>Now, browse to <code>http://localhost:8000</code> to see the website.</p>
+<p>Now, browse to <code class="highlighter-rouge">http://localhost:8000</code> to see the website.</p>
 
 <h2 id="adding-pages">Adding pages</h2>
 
-<p>You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the <code>templates</code> folder called <code>about.html</code> with the following content:</p>
+<p>You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the <code class="highlighter-rouge">templates</code> folder called <code class="highlighter-rouge">about.html</code> with the following content:</p>
 
-<pre><code>{% extends 'index.html' %}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">extends</span><span class="w"> </span><span class="err">'index.html'</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
 
-{% block content %}
-  &lt;h1&gt;About us&lt;/h1&gt;
-{% endblock %}
-</code></pre>
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">block</span><span class="w"> </span><span class="err">content</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="err">&lt;h</span><span class="mi">1</span><span class="err">&gt;About</span><span class="w"> </span><span class="err">us&lt;/h</span><span class="mi">1</span><span class="err">&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endblock</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>This inherits the whole template from index.html but replaces the <code>content</code> block with
-a new block of content specific to this page. Browse to <code>http://localhost:8000/about</code> to see
+<p>This inherits the whole template from index.html but replaces the <code class="highlighter-rouge">content</code> block with
+a new block of content specific to this page. Browse to <code class="highlighter-rouge">http://localhost:8000/about</code> to see
 the result (make sure PHP’s web server is running - see above).</p>
 
 <h2 id="using-data">Using data</h2>
 
-<p>You can create YAML data files and then use them in your templates. Create a folder called <code>data</code> and then add <code>*.yml</code> files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called <code>data/main_menu.yml</code> with the following content:</p>
+<p>You can create YAML data files and then use them in your templates. Create a folder called <code class="highlighter-rouge">data</code> and then add <code class="highlighter-rouge">*.yml</code> files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called <code class="highlighter-rouge">data/main_menu.yml</code> with the following content:</p>
 
-<pre><code>- title: Home
+<div class="highlighter-rouge"><pre class="highlight"><code>- title: Home
   path: /
 - title: About Us
   path: /about
 </code></pre>
+</div>
 
-<p>Because the filename is <code>main_menu.yml</code> this data is now available to read in template files using <code>{{ main_menu }}</code>. 
-Let’s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in <code>templates/components/menu.html</code> with the following content:</p>
+<p>Because the filename is <code class="highlighter-rouge">main_menu.yml</code> this data is now available to read in template files using <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">main_menu</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code>. 
+Let’s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in <code class="highlighter-rouge">templates/components/menu.html</code> with the following content:</p>
 
-<pre><code>&lt;ul&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul&gt;
   {% for item in main_menu %}
     &lt;li&gt;
       &lt;a href="{{ item.path }}"&gt;{{ item.title }}&lt;/a&gt;
@@ -129,50 +135,56 @@ Let’s add a component template to style the menu. See my posts on Atomic desig
   {% endfor %}
 &lt;/ul&gt;
 </code></pre>
+</div>
 
-<p>Now you can include the menu in your page template, by adding the following to your <code>index.html</code> file:</p>
+<p>Now you can include the menu in your page template, by adding the following to your <code class="highlighter-rouge">index.html</code> file:</p>
 
-<pre><code>{% include 'components/menu.html' %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">'components/menu.html'</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <h2 id="using-sample-content">Using sample content</h2>
 
-<p>Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. </p>
+<p>Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier.</p>
 
-<p>In this approach sample content is stored in subfolders under a <code>content</code> folder. You can have multiple types of content, and organise them into subfolders under a main <code>content</code> folder. Let’s create a first article as an example. First create your <code>content</code> and then <code>content/articles</code> folder, then create a sample file called <code>content/articles/first_post.md</code> with the following content:</p>
+<p>In this approach sample content is stored in subfolders under a <code class="highlighter-rouge">content</code> folder. You can have multiple types of content, and organise them into subfolders under a main <code class="highlighter-rouge">content</code> folder. Let’s create a first article as an example. First create your <code class="highlighter-rouge">content</code> and then <code class="highlighter-rouge">content/articles</code> folder, then create a sample file called <code class="highlighter-rouge">content/articles/first_post.md</code> with the following content:</p>
 
-<pre><code>---
+<div class="highlighter-rouge"><pre class="highlight"><code>---
 title: My First Post
 excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: http://placebee.co.uk/640x480/1
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
 </code></pre>
+</div>
 
 <p>See the <a href="https://github.com/darrenmothersele/stylex-barebones">Stylex Barebones</a> for the full example, I’ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.</p>
 
 <p>You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:</p>
 
-<pre><code>{{ content.articles.first_post.title }}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">content.articles.first_post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>Or, more useful, print out the titles of all articles:</p>
 
-<pre><code>{% for post in content.articles %}
-  &lt;h2&gt;{{ post.title }}&lt;/h2&gt;
-{% endfor %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">content.articles</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="err">&lt;h</span><span class="mi">2</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/h</span><span class="mi">2</span><span class="err">&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template: </p>
+<p>Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template:</p>
 
-<pre><code>{% for post in content.articles %}
-  {% include 'components/teaser.html' with post only %}
-{% endfor %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">content.articles</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">'components/teaser.html'</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>For this to work, create a component template for the <code>teaser</code> by creating a <code>templates/components/teaser.html</code> file with the following content:</p>
+<p>For this to work, create a component template for the <code class="highlighter-rouge">teaser</code> by creating a <code class="highlighter-rouge">templates/components/teaser.html</code> file with the following content:</p>
 
-<pre><code>&lt;div class="teaser"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="teaser"&gt;
   &lt;h2 class="teaser-title"&gt;
     {{ title }}
   &lt;/h2&gt;
@@ -180,25 +192,27 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
   {{ content|raw }}
 &lt;/div&gt;
 </code></pre>
+</div>
 
-<p>You can create subfolders to organise different types of sample content, for example, add an events folder <code>content/events</code> and they will be available in your templates as <code>{{ content.events }}</code></p>
+<p>You can create subfolders to organise different types of sample content, for example, add an events folder <code class="highlighter-rouge">content/events</code> and they will be available in your templates as <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">content.events</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code></p>
 
-<h2 id="debugging"> Debugging</h2>
+<p>## Debugging</p>
 
-<p>If you’re getting error messages, you can turn on debugging. In the <code>index.php</code> file that you created simple add the following line before <code>$app-&gt;run();</code></p>
+<p>If you’re getting error messages, you can turn on debugging. In the <code class="highlighter-rouge">index.php</code> file that you created simple add the following line before <code class="highlighter-rouge">$app-&gt;run();</code></p>
 
-<pre><code>$app['debug'] = TRUE;
+<div class="highlighter-rouge"><pre class="highlight"><code>$app['debug'] = TRUE;
 </code></pre>
+</div>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. </p>
+<p>This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site.</p>
 
-<p>The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a> workshops. </p>
+<p>The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a> workshops.</p>
 
-<p>You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. </p>
+<p>You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc.</p>
 
-<p>Drop me a line if you find this useful, or have any ideas for how it can be improved. </p>
+<p>Drop me a line if you find this useful, or have any ideas for how it can be improved.</p>
 
 <p>Thanks!</p>
 

@@ -119,7 +119,7 @@ large) data sets, and avoid getting stuck in infinite loops.&lt;/p&gt;
 Here’s a simple bit of code that would do this. Obviously don’t try this.
 Just read the code and imagine a world where this is a good idea…&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function repeat($i)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function repeat($i)
 {
     $output = [];
     while (true)
@@ -129,9 +129,10 @@ Just read the code and imagine a world where this is a good idea…&lt;/p&gt;
     return $output;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;This function would never terminate. You get stuck in an
-infinite loop. &lt;code&gt;while(true)&lt;/code&gt; is not something you ever want to see
+infinite loop. &lt;code class=&quot;highlighter-rouge&quot;&gt;while(true)&lt;/code&gt; is not something you ever want to see
 in a program, right?&lt;/p&gt;
 
 &lt;p&gt;Well, not if you do lazy evaluation. In this context lazy means you
@@ -140,10 +141,10 @@ can have large, even infinite, sets of data, without getting stuck in
 long, or infinite, loops.&lt;/p&gt;
 
 &lt;p&gt;PHP has a feature for lazy evaluation. It’s called a Generator,
-summoned into being using the magical &lt;code&gt;yield&lt;/code&gt; keyword.
+summoned into being using the magical &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; keyword.
 Here’s the stupid repeat, but this time as a generator…&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function repeat($i)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function repeat($i)
 {
     while (true)
     {
@@ -151,6 +152,7 @@ Here’s the stupid repeat, but this time as a generator…&lt;/p&gt;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You have to be careful using infinite sets.
 You can still easily create an unterminating program if you tried to print
@@ -161,7 +163,7 @@ our infinite computation. This is now possible because of lazy
 evaulation. Here’s a take function that will take
 any number of items from any Generator:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function take($i, Generator $generator)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function take($i, Generator $generator)
 {
     while ($i-- &amp;gt; 0 &amp;amp;&amp;amp; $generator-&amp;gt;valid())
     {
@@ -170,14 +172,16 @@ any number of items from any Generator:&lt;/p&gt;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Let’s take 5…&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;foreach (take(5, repeat(&#39;Hello&#39;)) as $item)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;foreach (take(5, repeat(&#39;Hello&#39;)) as $item)
 {
     echo $item, PHP_EOL;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;OK, that was a stupid example. What about something a bit more
 interesting? How about the classic fibonnacci sequence generator?&lt;/p&gt;
@@ -189,7 +193,7 @@ were more complex than they needed to be.&lt;/p&gt;
 
 &lt;p&gt;Here is the simplist infinite fibonacci generator I can think of…&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function fib()
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function fib()
 {
     yield $i = 0;
     yield $j = 1;
@@ -200,18 +204,20 @@ were more complex than they needed to be.&lt;/p&gt;
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;And here’s the first 50 fibonacci numbers…&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;foreach (take(50, fib()) as $item)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;foreach (take(50, fib()) as $item)
 {
     echo $item, PHP_EOL;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;And, here’s the first 10, skipping the first 0 using a tail function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function tail(Generator $list)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function tail(Generator $list)
 {
     $list-&amp;gt;next();
     yield from $list;
@@ -222,6 +228,7 @@ foreach (take(50, tail(fib())) as $item)
     echo $item, PHP_EOL;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;In case you’re curious, there are actual use cases for this.
 For example, this &lt;a href=&quot;https://github.com/MarkBaker/GeneratorQuadTrees&quot;&gt;Quad Tree&lt;/a&gt;
@@ -290,26 +297,25 @@ which offers an even simpler syntax.&lt;/p&gt;
 You create your stages as simple classes with an invoke method.
 For example:&lt;/p&gt;
 
-&lt;p&gt;```php
-class Double {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
     }
-}&lt;/p&gt;
+}
 
-&lt;p&gt;class Square {
+class Square {
     public function __invoke($payload)
     {
         return $payload * $payload;
     }
 }
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;php
-class Add {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Add {
     private $i;
     public function __construct($i)
     {
@@ -320,34 +326,35 @@ class Add {
         return $payload + $this-&amp;gt;i;
     }
 }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Then create a &lt;code&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
+&lt;p&gt;Then create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;php
-$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;php
-echo $pipe-&amp;gt;process(10), PHP_EOL;
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You can even process a list of values:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;php
-var_dump(array_map($pipe, [1, 2, 3]));
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var_dump(array_map($pipe, [1, 2, 3]));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Obviously you are not just limited to processing integers as in these
 examples. XML documents, converting to JSON, filtering, translating
 and other transformations are great candidates for pipelines stages.&lt;/p&gt;
 
 &lt;p&gt;I’ve submitted a pull request for my simple modification. All I did
-was add an implementation of the &lt;code&gt;__call()&lt;/code&gt; method so you can
+was add an implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;__call()&lt;/code&gt; method so you can
 add stages without having to explicitly &lt;em&gt;new&lt;/em&gt;-up objects and
-pass them into the &lt;code&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
+pass them into the &lt;code class=&quot;highlighter-rouge&quot;&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
 
 &lt;p&gt;Hopefully my pull request gets accepted. The only thing to be aware
 of is that I made use of the variadic operator, so it needs a PHP

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Some Common Drupal Mistakes | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -44,7 +45,7 @@ Ideally it should be possible to construct a bare version of the site without co
 There are several approaches to this in Drupal including
 the popular <a href="http://drupal.org/project/features">Features</a> module.</p>
 
-<h3 id="unnecessary-module-use"> Unnecessary module use</h3>
+<p>### Unnecessary module use</p>
 
 <p>Adding extra modules to a Drupal site adds overhead. The extra source code has to be parsed by PHP and modules add hooks which can expand the call graph for every page request.
 With each extra module you’re adding another dependency to keep updated and maintained.
@@ -59,7 +60,7 @@ uninstalled (remove database tables) and deleted from the codebase.</p>
 often need the Views UI, devel and many other administration modules on a production
 site.</p>
 
-<h3 id="views-issues"> Views issues</h3>
+<p>### Views issues</p>
 
 <p>Views causes loads of issues. Out of all the sites I’ve looked at recently, none
 of them had adequate configuration of the Views module. It’s all to easy for
@@ -98,7 +99,7 @@ nightmare and will lead to XSS and other issues.</p>
 <p>Remember that Drupal’s approach is to store raw user input and sanitise it on
 display. Never output any user generated text without first running it through
 one of Drupal’s sanitisation functions.
-Double check any custom code and template files for <code>echo</code> or <code>print</code>ing of
+Double check any custom code and template files for <code class="highlighter-rouge">echo</code> or <code class="highlighter-rouge">print</code>ing of
 fields without sanitisation.</p>
 
 <h3 id="php-errors">PHP Errors</h3>
