@@ -35,24 +35,22 @@ do to recover from this bug…</p>
 
 <!--break-->
 
-<p>###Check OpenSSL version</p>
+<h3 id="check-openssl-version">Check OpenSSL version</h3>
 
 <p>You need to be running <strong>OpenSSL 1.0.1g</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>openssl version
+<pre><code>openssl version
 </code></pre>
-</div>
 
 <p>Just running this command doesn’t report back full version information.
 If you check <a href="http://serverfault.com/questions/587324/heartbleed-how-to-reliably-and-portably-check-the-openssl-version">this post</a> you will find further information on what to look for.</p>
 
 <p>If you are on Ubuntu 12.04 the package you are looking for is this one:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>openssl 1.0.1-4ubuntu5.12
+<pre><code>openssl 1.0.1-4ubuntu5.12
 </code></pre>
-</div>
 
-<p>###Further recovery…</p>
+<h3 id="further-recovery">Further recovery…</h3>
 
 <p>But, patching OpenSSL is only a small part of the fix for this bug.
 The consequences of this are much deeper.</p>
@@ -75,7 +73,7 @@ steps are required (see <a href="http://security.stackexchange.com/questions/550
   <li>Evaluating any other information that could have been revealed, like memory addresses and security measures</li>
 </ul>
 
-<p>###Leaves no trace…</p>
+<h3 id="leaves-no-trace">Leaves no trace…</h3>
 
 <p>It’s also worth noting that exploiting the vulnerability leaves no trace, so
 there is no way to know if your system, encryption keys, passwords or content

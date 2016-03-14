@@ -295,7 +295,7 @@ Drupal in the first place.&lt;/p&gt;
 
 &lt;!--break--&gt;
 
-&lt;p&gt;##Gentrification&lt;/p&gt;
+&lt;h2 id=&quot;gentrification&quot;&gt;Gentrification&lt;/h2&gt;
 
 &lt;p&gt;Cities all over the world are becoming more exclusive, more expensive, and a
 natural result of this is gentrification. It’s contentious. Some see this as
@@ -322,7 +322,7 @@ that gave the area it’s eclectic multi-cultural feel. They’re the ones who
 have been displaced, losing their homes and community as developers and “yuppies”
 take over.&lt;/p&gt;
 
-&lt;p&gt;##Gentrification of the Drupal Community&lt;/p&gt;
+&lt;h2 id=&quot;gentrification-of-the-drupal-community&quot;&gt;Gentrification of the Drupal Community&lt;/h2&gt;
 
 &lt;p&gt;I first used Drupal back in 2003, version 4 point something. It was fun.
 Hacky, but fun. I had to quickly get a site up for an event we were organising
@@ -357,7 +357,7 @@ the sessions at Szeged seven years earlier. You would not have seen a call for
 quarter of a million dollar funding back then. Everyone was there because they
 loved it, not because they were being paid.&lt;/p&gt;
 
-&lt;p&gt;##Hacking the hackers&lt;/p&gt;
+&lt;h2 id=&quot;hacking-the-hackers&quot;&gt;Hacking the hackers&lt;/h2&gt;
 
 &lt;p&gt;While doing research for this post, I came across this brilliant essay,
 &lt;a href=&quot;https://aeon.co/essays/how-yuppies-hacked-the-original-hacker-ethos&quot;&gt;The hacker hacked&lt;/a&gt;,
@@ -393,7 +393,7 @@ great test coverage, performance improvements, greater tooling, and many other
 advancements that came to Drupal as the community matured. Drupal became less
 about hacking and more about software engineering.&lt;/p&gt;
 
-&lt;p&gt;##Drupal 8&lt;/p&gt;
+&lt;h2 id=&quot;drupal-8&quot;&gt;Drupal 8&lt;/h2&gt;
 
 &lt;p&gt;Development on Drupal 8 started in March 2011 and four years later, is to set to
 be released on November 19, 2015. Over these years, Drupal has been rewritten,
@@ -408,7 +408,7 @@ code due to early well publicised security issues with PHP extensions.&lt;/p&gt;
 towards more standardised, modern, development practises, and a move to
 embrace the wider PHP community.&lt;/p&gt;
 
-&lt;p&gt;##Social cleansing&lt;/p&gt;
+&lt;h2 id=&quot;social-cleansing&quot;&gt;Social cleansing&lt;/h2&gt;
 
 &lt;p&gt;I mentioned before that gentrification is contentious. For some see it as
 urban improvement, some as social cleansing. Drupal and the Drupal community
@@ -456,7 +456,7 @@ innovations from other systems and ecosystems, rather than innovating on it’s 
 It’s well placed to do this now, built on Symfony components, innovations
 from the wider community will be easier to integrate.&lt;/p&gt;
 
-&lt;p&gt;##Surviving Gentrification&lt;/p&gt;
+&lt;h2 id=&quot;surviving-gentrification&quot;&gt;Surviving Gentrification&lt;/h2&gt;
 
 &lt;blockquote&gt;
 Do you abandon the form, leave it to the yuppies and head to the next wild frontier?
@@ -471,7 +471,7 @@ losing the reason why you got involved in the first place?&lt;/p&gt;
 &lt;p&gt;If you’re going to stick around then you’re going to need change a few things.
 Here’s 5 steps that will get you started:&lt;/p&gt;
 
-&lt;p&gt;###1. Learn the foundations that Drupal is now built on.&lt;/p&gt;
+&lt;h3 id=&quot;learn-the-foundations-that-drupal-is-now-built-on&quot;&gt;1. Learn the foundations that Drupal is now built on.&lt;/h3&gt;
 
 &lt;p&gt;If (like me) you’ve got a background in OO then this shouldn’t be too hard.
 I did several years of post-graduate research into semantics and verification
@@ -496,7 +496,7 @@ YouTube. There’s some great stuff. Like this talk from Ryan Weaver about
 &lt;a href=&quot;https://www.youtube.com/watch?v=iQL1joxljho&quot;&gt;Symfony&lt;/a&gt; and
 this talk by Ross Tuck about &lt;a href=&quot;https://www.youtube.com/watch?v=ajhqScWECMo&quot;&gt;Models and Service Layers&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;###2. Do PHP the right way.&lt;/p&gt;
+&lt;h3 id=&quot;do-php-the-right-way&quot;&gt;2. Do PHP the right way.&lt;/h3&gt;
 
 &lt;p&gt;PHP has changed. There’s a lot of outdated information and a lot of legacy code.
 Drupal 8 has been rewritten to remove this legacy code, but there’s still a
@@ -504,7 +504,7 @@ lot of bad advice on how to write PHP out there.
 Read &lt;a href=&quot;http://www.phptherightway.com/&quot;&gt;PHP The Right Way&lt;/a&gt; for a full guide on
 how modern PHP should be crafted.&lt;/p&gt;
 
-&lt;p&gt;###3. Use Composer, use and create PHP packages.&lt;/p&gt;
+&lt;h3 id=&quot;use-composer-use-and-create-php-packages&quot;&gt;3. Use Composer, use and create PHP packages.&lt;/h3&gt;
 
 &lt;p&gt;Getting off the island, and embracing the wider PHP ecosystem means using
 Composer, and it’s ecosystem of PHP packages. There are many more packages that
@@ -525,7 +525,7 @@ as a small layer that integrates your logic with Drupal.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29&quot;&gt;SOLID&lt;/a&gt;
 principles will guide you towards creating good packages.&lt;/p&gt;
 
-&lt;p&gt;###4. Use an IDE&lt;/p&gt;
+&lt;h3 id=&quot;use-an-ide&quot;&gt;4. Use an IDE&lt;/h3&gt;
 
 &lt;p&gt;This was a big one for me. I was always against using an IDE, burnt by early
 experiences with open-source IDEs. I settled on a customised Sublime Text
@@ -549,7 +549,7 @@ You will need the integrated tooling, testing, and you’ll be much more efficie
 with intelligent autocompletion, hinting, quick access to docs, and fast
 navigation of the huge codebase.&lt;/p&gt;
 
-&lt;p&gt;###5. Identify your values and serve your purpose.&lt;/p&gt;
+&lt;h3 id=&quot;identify-your-values-and-serve-your-purpose&quot;&gt;5. Identify your values and serve your purpose.&lt;/h3&gt;
 
 &lt;p&gt;As the corporates, enterprises, and big businesses take over, it’s important to
 remain true to your yourself.
@@ -567,7 +567,7 @@ collaboration with our work.&lt;/p&gt;
 use this to do good. To continue to serve our communities and society as a whole.
 To enable collaboration, share our work, and use openness to build the world we want.&lt;/p&gt;
 
-&lt;p&gt;##Final thoughts&lt;/p&gt;
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
 
 &lt;p&gt;The real opportunity, is to spread Drupal’s values of cooperation to the wider
 population.&lt;/p&gt;
@@ -607,7 +607,7 @@ community, society, and the world.&lt;/p&gt;
 with Drupal recently, and I’ve witnessed huge improvements on projects
 where it has been introduced. The main advantage being the decoupling of
 the development of the back-end from the development of the front-end
-code.&lt;/p&gt;
+code. &lt;/p&gt;
 
 &lt;p&gt;I’ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I’m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
 and I have more to say on this in the future. Today I want to tell you about a simple
@@ -618,13 +618,13 @@ tool I’m using to speed up the process. &lt;a href=&quot;https://github.com/da
 &lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
 sites or style guides for front-end code. There are several tools already available,
 including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
-incredibly simple.&lt;/p&gt;
+incredibly simple. &lt;/p&gt;
 
 &lt;p&gt;I basically just wanted to make use of the power of Twig templates 
 for mocking up front-end code, with an easy way to load in demo content (from
-yml files).&lt;/p&gt;
+yml files). &lt;/p&gt;
 
-&lt;p&gt;## Barebones project&lt;/p&gt;
+&lt;h2 id=&quot;barebones-project&quot;&gt; Barebones project&lt;/h2&gt;
 
 &lt;p&gt;I’ve created a &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;barebones Stylex project&lt;/a&gt; on GitHub that demonstrates this, but you probably 
 want to follow along in the setup, so you know what’s going on…&lt;/p&gt;
@@ -636,82 +636,77 @@ have &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md#globally&quot;&gt;
 all you need to do is create a folder for your
 project and run the following command:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer require darrenmothersele/stylex dev-master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;
+composer require darrenmothersele/stylex dev-master
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
-a &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt; folder.&lt;/p&gt;
+&lt;code&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
+a &lt;code&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
 
-&lt;p&gt;As a bare minimum you will need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; to run the application, and 
-a starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As a bare minimum you will need to create a &lt;code&gt;index.php&lt;/code&gt; to run the application, and 
+a starter template &lt;code&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
 
-&lt;p&gt;Create a file in the project root (same location as the generated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file)
-called &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
+&lt;p&gt;Create a file in the project root (same location as the generated &lt;code&gt;composer.json&lt;/code&gt; file)
+called &lt;code&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?php
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
 require_once __DIR__ . &#39;/vendor/autoload.php&#39;;
 
 $app = new Stylex\Application();
 $app-&amp;gt;run();
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;Then create a &lt;code class=&quot;highlighter-rouge&quot;&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
+&lt;p&gt;Then create a &lt;code&gt;templates&lt;/code&gt; folder and create the first page template, &lt;code&gt;templates/index.html&lt;/code&gt; in this folder:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Hello!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;Hello!&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
     {% block content %}
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello, world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+      &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
     {% endblock %}
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;You can run the application with PHP’s build in web server. Simply run the following command:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;php -S localhost:8000
+&lt;pre&gt;&lt;code&gt;php -S localhost:8000
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;Now, browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
+&lt;p&gt;Now, browse to &lt;code&gt;http://localhost:8000&lt;/code&gt; to see the website.&lt;/p&gt;
 
 &lt;h2 id=&quot;adding-pages&quot;&gt;Adding pages&lt;/h2&gt;
 
-&lt;p&gt;You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;templates&lt;/code&gt; folder called &lt;code class=&quot;highlighter-rouge&quot;&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;p&gt;You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the &lt;code&gt;templates&lt;/code&gt; folder called &lt;code&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;index.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;pre&gt;&lt;code&gt;{% extends &#39;index.html&#39; %}
 
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;About&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;us&amp;lt;/h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endblock&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+{% block content %}
+  &amp;lt;h1&amp;gt;About us&amp;lt;/h1&amp;gt;
+{% endblock %}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; block with
-a new block of content specific to this page. Browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8000/about&lt;/code&gt; to see
+&lt;p&gt;This inherits the whole template from index.html but replaces the &lt;code&gt;content&lt;/code&gt; block with
+a new block of content specific to this page. Browse to &lt;code&gt;http://localhost:8000/about&lt;/code&gt; to see
 the result (make sure PHP’s web server is running - see above).&lt;/p&gt;
 
 &lt;h2 id=&quot;using-data&quot;&gt;Using data&lt;/h2&gt;
 
-&lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; and then add &lt;code class=&quot;highlighter-rouge&quot;&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code class=&quot;highlighter-rouge&quot;&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;p&gt;You can create YAML data files and then use them in your templates. Create a folder called &lt;code&gt;data&lt;/code&gt; and then add &lt;code&gt;*.yml&lt;/code&gt; files with your data. In any template these are then available using the filename. For example, to create a data file for your navigation links, create a file called &lt;code&gt;data/main_menu.yml&lt;/code&gt; with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- title: Home
+&lt;pre&gt;&lt;code&gt;- title: Home
   path: /
 - title: About Us
   path: /about
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;Because the filename is &lt;code class=&quot;highlighter-rouge&quot;&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;main_menu&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;. 
-Let’s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;p&gt;Because the filename is &lt;code&gt;main_menu.yml&lt;/code&gt; this data is now available to read in template files using &lt;code&gt;{{ main_menu }}&lt;/code&gt;. 
+Let’s add a component template to style the menu. See my posts on Atomic design in Drupal to find out more about component templates. For now, just create a file in &lt;code&gt;templates/components/menu.html&lt;/code&gt; with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
   {% for item in main_menu %}
     &amp;lt;li&amp;gt;
       &amp;lt;a href=&quot;{{ item.path }}&quot;&amp;gt;{{ item.title }}&amp;lt;/a&amp;gt;
@@ -719,56 +714,50 @@ Let’s add a component template to style the menu. See my posts on Atomic desig
   {% endfor %}
 &amp;lt;/ul&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;components/menu.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;{% include &#39;components/menu.html&#39; %}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;using-sample-content&quot;&gt;Using sample content&lt;/h2&gt;
 
-&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier.&lt;/p&gt;
+&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
 
-&lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; folder. Let’s create a first article as an example. First create your &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code class=&quot;highlighter-rouge&quot;&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code&gt;content&lt;/code&gt; folder. Let’s create a first article as an example. First create your &lt;code&gt;content&lt;/code&gt; and then &lt;code&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+&lt;pre&gt;&lt;code&gt;---
 title: My First Post
 excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 image: http://placebee.co.uk/640x480/1
 ---
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritatis officia unde incidunt doloribus veniam eligendi ea maiores delectus excepturi aspernatur illum, voluptates quas odit harum cupiditate cum maxime...
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;See the &lt;a href=&quot;https://github.com/darrenmothersele/stylex-barebones&quot;&gt;Stylex Barebones&lt;/a&gt; for the full example, I’ve abbreviated the content here. The main point is to show how you can include YAML metadata above the main Markdown formatted content.&lt;/p&gt;
 
 &lt;p&gt;You can then reference this content from your templates. For example, to print out the title of that first post you created, use the following in your Twig template:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.articles.first_post.title&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;{{ content.articles.first_post.title }}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Or, more useful, print out the titles of all articles:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.articles&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post.title&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&amp;lt;/h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;{% for post in content.articles %}
+  &amp;lt;h2&amp;gt;{{ post.title }}&amp;lt;/h2&amp;gt;
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template:&lt;/p&gt;
+&lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template: &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.articles&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;components/teaser.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;{% for post in content.articles %}
+  {% include &#39;components/teaser.html&#39; with post only %}
+{% endfor %}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;For this to work, create a component template for the &lt;code class=&quot;highlighter-rouge&quot;&gt;teaser&lt;/code&gt; by creating a &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
+&lt;p&gt;For this to work, create a component template for the &lt;code&gt;teaser&lt;/code&gt; by creating a &lt;code&gt;templates/components/teaser.html&lt;/code&gt; file with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;teaser&quot;&amp;gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;teaser&quot;&amp;gt;
   &amp;lt;h2 class=&quot;teaser-title&quot;&amp;gt;
     {{ title }}
   &amp;lt;/h2&amp;gt;
@@ -776,27 +765,25 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
   {{ content|raw }}
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code class=&quot;highlighter-rouge&quot;&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.events&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can create subfolders to organise different types of sample content, for example, add an events folder &lt;code&gt;content/events&lt;/code&gt; and they will be available in your templates as &lt;code&gt;{{ content.events }}&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;## Debugging&lt;/p&gt;
+&lt;h2 id=&quot;debugging&quot;&gt; Debugging&lt;/h2&gt;
 
-&lt;p&gt;If you’re getting error messages, you can turn on debugging. In the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code class=&quot;highlighter-rouge&quot;&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you’re getting error messages, you can turn on debugging. In the &lt;code&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$app[&#39;debug&#39;] = TRUE;
+&lt;pre&gt;&lt;code&gt;$app[&#39;debug&#39;] = TRUE;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site.&lt;/p&gt;
+&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
 
-&lt;p&gt;The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops.&lt;/p&gt;
+&lt;p&gt;The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
 
-&lt;p&gt;You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc.&lt;/p&gt;
+&lt;p&gt;You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
 
-&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved.&lt;/p&gt;
+&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 
@@ -822,7 +809,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 &lt;p&gt;My work in the past year has taken me into many agencies and I’ve worked with experienced Drupal developers, and with excellent developers but who were new to Drupal. On the one hand I’ve seen Drupal developers artificially constrained to produce “Drupaly” solutions because of perceived limitations of what’s possible with Drupal, and on the other hand I’ve seen developers struggle to get Drupal to do what they want to do.&lt;/p&gt;
 
-&lt;p&gt;##Perhaps you can relate to this story…&lt;/p&gt;
+&lt;h2 id=&quot;perhaps-you-can-relate-to-this-story&quot;&gt;Perhaps you can relate to this story…&lt;/h2&gt;
 
 &lt;p&gt;I went into an agency early last year to help with a late running project. There was nothing particularly unique about this website, other than it had some really nice design elements and was a stunning example of responsive design. But, hiding below the surface was a confusing Drupal implementation and a mess of spaghetti code.&lt;/p&gt;
 
@@ -836,11 +823,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 &lt;p&gt;I helped them take a few steps back, which at the same time was a huge leap forward. With the knowledge they had gained we could work with Drupal to get the project completed, rather than battling against it.&lt;/p&gt;
 
-&lt;p&gt;##What to learn from this?&lt;/p&gt;
+&lt;h2 id=&quot;what-to-learn-from-this&quot;&gt;What to learn from this?&lt;/h2&gt;
 
 &lt;p&gt;Consistency is important, and prototyping helps to clarify what is required in a solution. Doing all the testing and bug fixing at the end of a project is hard, gets out of control, and causes missed deadlines.&lt;/p&gt;
 
-&lt;p&gt;##Introducing Atomic Drupal&lt;/p&gt;
+&lt;h2 id=&quot;introducing-atomic-drupal&quot;&gt;Introducing Atomic Drupal&lt;/h2&gt;
 
 &lt;p&gt;I’ve been looking at the emerging atomic design movement, component-based design, or style-guide driven development, and I’ve taken best practise from the cutting edge of web design and combined it with over 7 years experience of pushing Drupal to it’s limits and past them.&lt;/p&gt;
 
@@ -848,15 +835,15 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 &lt;p&gt;People I’ve introduced to this already have found they can now do more with Drupal and say yes to more of clients requirements, and work on more interesting projects.&lt;/p&gt;
 
-&lt;p&gt;##Atomic Design&lt;/p&gt;
+&lt;h2 id=&quot;atomic-design&quot;&gt;Atomic Design&lt;/h2&gt;
 
 &lt;p&gt;A component-based approach to the front end means creating more maintainable and flexible designs. There are a few tricks to getting this to work in Drupal, but the most important are: taking full control over Drupal’s markup, and planning out a consistent approach to building the site.&lt;/p&gt;
 
-&lt;p&gt;##Prototyping&lt;/p&gt;
+&lt;h2 id=&quot;prototyping&quot;&gt;Prototyping&lt;/h2&gt;
 
 &lt;p&gt;An added benefit of taking a component-based approach is the decoupling of front-end design and development from the back-end CMS implementation. The biggest win is that you can build and test all your front-end code separately to the CMS build (you’re not constrained to using Drupal’s markup). This means you can test and validate your front-end code early on in the project, you can test across devices and browsers earlier in the process, and therefore not leave all your big fixing until the end of the project.&lt;/p&gt;
 
-&lt;p&gt;##Workshop&lt;/p&gt;
+&lt;h2 id=&quot;workshop&quot;&gt;Workshop&lt;/h2&gt;
 
 &lt;p&gt;Get in touch if you’re interested in learning more as I am running workshops on Atomic design with Drupal for agencies and individual developers. Check my training page to see upcoming dates for public courses (at the time of writing the next scheduled public workshop is 24th April).&lt;/p&gt;
 
@@ -946,7 +933,7 @@ bit, but I think it’s useful for context.&lt;/p&gt;
 
 &lt;!--break--&gt;
 
-&lt;p&gt;###Design patterns?&lt;/p&gt;
+&lt;h3 id=&quot;design-patterns&quot;&gt;Design patterns?&lt;/h3&gt;
 
 &lt;p&gt;Here’s a quote from the original &lt;a href=&quot;http://en.wikipedia.org/wiki/Design_Patterns&quot;&gt;Gang of Four book&lt;/a&gt; on
 design patterns. That book is about design of object-oriented software, but I think it
@@ -994,7 +981,7 @@ of the original design patterns from the Gang of Four book:&lt;/p&gt;
 &lt;p&gt;So, first let’s look at what a state machine is, and what problems it solves,
 before going on to look at how to configure it in Drupal.&lt;/p&gt;
 
-&lt;p&gt;###State Machine&lt;/p&gt;
+&lt;h3 id=&quot;state-machine&quot;&gt;State Machine&lt;/h3&gt;
 
 &lt;p&gt;A state machine is a theoretical computer science concept that provides a
 &lt;a href=&quot;http://blog.markshead.com/869/state-machines-computer-science/&quot;&gt;mathematical basis for modelling computation&lt;/a&gt;. But don’t worry, the kind of state machines we’ll be
@@ -1030,7 +1017,7 @@ implement this in Drupal!&lt;/p&gt;
 &lt;p&gt;In this simple ticket example the states are “In progress”, “Approval”, and
 “Finished”. The transitions are “Completed”, “Rejected”, “Accepted”.&lt;/p&gt;
 
-&lt;p&gt;###When to use it?&lt;/p&gt;
+&lt;h3 id=&quot;when-to-use-it&quot;&gt;When to use it?&lt;/h3&gt;
 
 &lt;p&gt;It might be useful to think that in business speak, when they say “business
 processes” they are actually talking about state machines. Here are some
@@ -1051,7 +1038,7 @@ really useful to help identify any “edge-case” scenarios you may not have
 thought of, and capture them early in the design process. It also shows you
 exactly what you need to test further along in the site build.&lt;/p&gt;
 
-&lt;p&gt;###Let’s build it&lt;/p&gt;
+&lt;h3 id=&quot;lets-build-it&quot;&gt;Let’s build it&lt;/h3&gt;
 
 &lt;p&gt;As with anything in Drupal there are several ways to achieve this functionality,
 in fact there’s even a &lt;a href=&quot;https://drupal.org/project/state_machine&quot;&gt;State Machine&lt;/a&gt;
@@ -1134,7 +1121,7 @@ you use the rules reaction to set the value of the state field to the new
 value (and perform any other actions that you want as a side effect of the
 transition).&lt;/p&gt;
 
-&lt;p&gt;###Considerations&lt;/p&gt;
+&lt;h3 id=&quot;considerations&quot;&gt;Considerations&lt;/h3&gt;
 
 &lt;p&gt;It’s good to follow a principle of audit-ability, so you probably need to keep
 the transition history. A simple solution might be to
@@ -1143,7 +1130,7 @@ If using node, you could log revisions to track state changes in the revision
 log for the node. Or you could look at Messages module to log messages when state
 changes happen.&lt;/p&gt;
 
-&lt;p&gt;###More patterns&lt;/p&gt;
+&lt;h3 id=&quot;more-patterns&quot;&gt;More patterns&lt;/h3&gt;
 
 &lt;p&gt;If you’re interested in learning more from my 7 years of Drupal experience
 (and if you’re based in London) why not

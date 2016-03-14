@@ -35,7 +35,7 @@ much more general in it’s scope, and more wide-reaching in it’s potential.</
 
 <!--break-->
 
-<p>##Death of the Themer?</p>
+<h2 id="death-of-the-themer">Death of the Themer?</h2>
 
 <p>I’ve become interested in this area after recently facing challenges bringing
 design activities into the development workflow of an agile project. But first, for
@@ -82,7 +82,7 @@ design from development (writing code) to configuration. This can become quite
 repetitive as each individual bit of output has to be configured with appropriate
 resets and the correct wrappers to build up the markup.</p>
 
-<p>##Custom Plugins?</p>
+<h2 id="custom-plugins">Custom Plugins?</h2>
 
 <p>In the BoF sessions I presented a methodology that I had been playing with,
 inspired by Death of a Themer, whereby designs are implemented
@@ -119,7 +119,7 @@ rather than a site-builder, as the emphasis moves away from configuration toward
 writing custom plugins in code.  However, I think a lot of the grunt work can
 be automated, as I’ll explain in a bit.</p>
 
-<p>##Atomic Design</p>
+<h2 id="atomic-design">Atomic Design</h2>
 
 <p>I saw parallels between this approach (of reusable theme components) and the
 emerging trend of <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">atomic design</a>.
@@ -135,7 +135,7 @@ just a current trend but a real leap forward in design methodology.</p>
 design into components. This is exactly what a good themer does when they take a design
 and decide how to implement it as a Drupal theme.</p>
 
-<p>##From Design to Theme</p>
+<h2 id="from-design-to-theme">From Design to Theme</h2>
 
 <p>When a designer hands over a design (let’s assume static HTML and CSS) the
 developer (or themer, or site-builder) has to make several decisions about
@@ -147,7 +147,7 @@ how this will be implemented.</p>
   <li>Markup is augmented to add in extra properties like RDFa, etc</li>
 </ul>
 
-<p>##Agile</p>
+<h2 id="agile">Agile</h2>
 
 <p>There shouldn’t really be a “handover” of design. The style guide / atomic design
 or static mockup that is the result of prototyping should evolve as the product
@@ -169,7 +169,7 @@ the process.</p>
 to Drupal theme then we can move towards a more agile, and robust design-dev
 workflow.</p>
 
-<p>##Proof of concept</p>
+<h2 id="proof-of-concept">Proof of concept</h2>
 
 <p>Automatically generating a Drupal theme from either a style guide, atomic design,
 pattern library, static mockup, prototype (or whatever you want to call it!)
@@ -195,7 +195,7 @@ SMACSS, Atomic Design, OOCSS, KSS, etc.  I’m not sure what to call
 things. I’m tending towards a combination of Atomic Design and Drupal
 terminology, but this will change.</p>
 
-<p>##Annotations</p>
+<h2 id="annotations">Annotations</h2>
 
 <p>There has been some discussion in the design community about
 <a href="https://www.youtube.com/watch?v=ROaXVB-bbek">Pattern Library Annotations</a>
@@ -207,15 +207,16 @@ parsed and converted.</p>
 <p>In this proof of concept, annotations in the HTML source code map directly to
 the appropriate Drupal templates and plugins.</p>
 
-<p>I’m using the <code class="highlighter-rouge">x-</code> prefix for my custom attributes. This mechanism is intended for use
+<p>I’m using the <code>x-</code> prefix for my custom attributes. This mechanism is intended for use
 in vendor prefixing for vendor specific attributes. It distinguishes them nicely from
-<code class="highlighter-rouge">data-</code> custom attributes, results in valid HTML5, and therefore I think it’s an
+<code>data-</code> custom attributes, results in valid HTML5, and therefore I think it’s an
 acceptable abuse of the feature.</p>
 
 <p>For example, annotate a certain part of the source code as being responsible
 for layout and it will be automatically compiled into a Panels Layout Plugin:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> &lt;div x-drupal-type="layout" x-drupal-name="front_page" x-drupal-label="Front page" x-drupal-no-wrap&gt;
+<p><code>
+ &lt;div x-drupal-type="layout" x-drupal-name="front_page" x-drupal-label="Front page" x-drupal-no-wrap&gt;
    &lt;div class="container"&gt;
      &lt;div class="row"&gt;
      &lt;div class="span8" x-drupal-region x-drupal-name="content"&gt;
@@ -227,21 +228,20 @@ for layout and it will be automatically compiled into a Panels Layout Plugin:</p
    &lt;/div&gt;
   &lt;/div&gt;
  &lt;/div&gt;
-</code></pre>
-</div>
+</code></p>
 
 <p>Another example, this is content shown in a particular preview style called “Box”.
 It maps to a Drupal view mode:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> &lt;div class="box" x-drupal-type="display" x-drupal-name="box_teaser" x-drupal-label="Box teaser"&gt;
+<p><code>
+ &lt;div class="box" x-drupal-type="display" x-drupal-name="box_teaser" x-drupal-label="Box teaser"&gt;
   &lt;img src="" width="100" height="100" alt="" x-drupal-region x-drupal-name="image" x-drupal-no-wrap&gt;
   &lt;h6 x-drupal-region x-drupal-name="title"&gt;Easy to use&lt;/h6&gt;
   &lt;p x-drupal-region x-drupal-name="summary" x-drupal-no-wrap&gt;
     To get started, you select the desired sample and base the entire website on it. It’s that simple!
   &lt;/p&gt;
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></p>
 
 <p>Many other attributes are identified and the system currently supports
 panels layouts, panels styles, views styles, display suite (view mode templates),
@@ -265,7 +265,7 @@ and register the appropriate plugins based on the design.</p>
 <p>Warning: You are probably better off waiting for the next version or some
 actual documentation!</p>
 
-<p>##Rather see it in action?</p>
+<h2 id="rather-see-it-in-action">Rather see it in action?</h2>
 
 <p>If you would rather see it in action, then come along to the next
 <a href="http://www.meetup.com/drupal-show-and-tell/events/168733432/">Drupal Show and Tell</a>

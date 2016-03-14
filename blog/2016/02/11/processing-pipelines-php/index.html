@@ -40,25 +40,26 @@ which offers an even simpler syntax.</p>
 You create your stages as simple classes with an invoke method.
 For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Double {
+<p>```php
+class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
     }
-}
+}</p>
 
-class Square {
+<p>class Square {
     public function __invoke($payload)
     {
         return $payload * $payload;
     }
 }
-</code></pre>
-</div>
+```</p>
 
 <p>You could even pass in parameters to the stage constructor:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Add {
+<p><code>php
+class Add {
     private $i;
     public function __construct($i)
     {
@@ -69,35 +70,34 @@ class Square {
         return $payload + $this-&gt;i;
     }
 }
-</code></pre>
-</div>
+</code></p>
 
-<p>Then create a <code class="highlighter-rouge">Pipeline</code> to chain the stages together:</p>
+<p>Then create a <code>Pipeline</code> to chain the stages together:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
-</code></pre>
-</div>
+<p><code>php
+$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
+</code></p>
 
 <p>And then you can process values using the Pipeline:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>echo $pipe-&gt;process(10), PHP_EOL;
-</code></pre>
-</div>
+<p><code>php
+echo $pipe-&gt;process(10), PHP_EOL;
+</code></p>
 
 <p>You can even process a list of values:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var_dump(array_map($pipe, [1, 2, 3]));
-</code></pre>
-</div>
+<p><code>php
+var_dump(array_map($pipe, [1, 2, 3]));
+</code></p>
 
 <p>Obviously you are not just limited to processing integers as in these
 examples. XML documents, converting to JSON, filtering, translating
 and other transformations are great candidates for pipelines stages.</p>
 
 <p>I’ve submitted a pull request for my simple modification. All I did
-was add an implementation of the <code class="highlighter-rouge">__call()</code> method so you can
+was add an implementation of the <code>__call()</code> method so you can
 add stages without having to explicitly <em>new</em>-up objects and
-pass them into the <code class="highlighter-rouge">pipe()</code> method.</p>
+pass them into the <code>pipe()</code> method.</p>
 
 <p>Hopefully my pull request gets accepted. The only thing to be aware
 of is that I made use of the variadic operator, so it needs a PHP
