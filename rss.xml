@@ -8,6 +8,34 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Unwired</title>
+        <description>&lt;p&gt;In a bold move, Wired have removed themselves from the open web.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/blog/wired-blocked.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I enjoy buying the printed version of Wired magazine. Packed full of glossy adverts, I assumed this supported the online version. It seems that is not the case.&lt;/p&gt;
+
+&lt;p&gt;I understand why Wired are doing this. With a more tech savvy audience, I guess they are suffering more from the rise of adblocking than others. Reports have claimed publishers earn less from advertising than users pay in bandwidth charges. Using an adblocker is now a necessity. It saves money, and improves the experience and performance of the open web. I’m sure Wired have taken this all into account. It is clear we need new a new model, and it’s brave of Wired to push this on us.&lt;/p&gt;
+
+&lt;p&gt;The open web is the platform we are all building together. Our competition are the walled-garden silos. We are building a free and open ecosystem. Our competition are the closed monoliths with a single gatekeeper. The variety of experience across the open web can be our strength, but also our weakness. Our competition has tight control over user experience and strives to remove all friction. They may disrespect and exploit users in many ways, but they do respect user experience.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, this doesn’t just remove Wired from the open web. This is a blow to everyone building the open web. It degrades the experience for our users. It contributes to the ruining of the open web, pushing users to centralised silos.&lt;/p&gt;
+
+&lt;p&gt;I hit this barrier when following a link to an article on Wired from the open web. Wired refused access. Unexpected blockages like this create a bad experience for our (the open web’s) users. By degrading the experience on the open web we push people to centralised silos.&lt;/p&gt;
+
+&lt;p&gt;How are we going to deal with this on the open web? Do we need some way to mark up links that lead away from the open web?&lt;/p&gt;
+
+&lt;p&gt;Can we make it clear when links go off to centralised silos? Can we markup links to paywalls, adblock-blockers, or with otherwise unexpected behaviour?&lt;/p&gt;
+
+&lt;p&gt;Can we (the open web) innovate a way to renumerate publishers? Can we do this without blocking, creating friction, or otherwise ruining user experience?&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/03/14/un-wired-blocked/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/03/14/un-wired-blocked/</guid>
+      </item>
+    
+      <item>
         <title>Semantic Drift</title>
         <description>&lt;p&gt;Language is always evolving. Words go out of common usage, new words appear, and words change their meaning. The firehose of social media has given us new words, like the “selfie” and “clickbait”. The narcissistic undercurrent in these new terms indicates how these technologies are changing us. But, more concerning, are words where the actual meaning is changing. &lt;/p&gt;
 
@@ -514,97 +542,6 @@ He took us on a humorous tour of ES6, under the guise of deprecating jQuery.&lt;
         <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/29/my-first-frontend-london/</guid>
-      </item>
-    
-      <item>
-        <title>Drupal Predictions for 2016</title>
-        <description>&lt;p&gt;This will be a momentus year for Drupal.&lt;/p&gt;
-
-&lt;p&gt;David H, Drupal.org webmaster, was
-&lt;a href=&quot;https://twitter.com/FromWayDowntown/status/692375858175148032&quot;&gt;soliciting responses&lt;/a&gt;
-to &lt;a href=&quot;https://www.drupal.org/node/2652402&quot;&gt;this thread&lt;/a&gt; on Twitter.
-I kept my &lt;a href=&quot;https://www.drupal.org/node/2652402#comment-10792382&quot;&gt;predictions&lt;/a&gt;
-brief, but thought I would post here to elaborate.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;Some people may be predicting &lt;a href=&quot;https://securityintelligence.com/news/new-year-new-problems-cms-vulnerabilites-take-on-2016/&quot;&gt;a year of security vulnerabilities&lt;/a&gt;. I believe we have a
-year of innovation ahead of us.&lt;/p&gt;
-
-&lt;p&gt;Drupal’s ecosystem of contributed modules is playing catch-up since the
-release of version 8. It has been years since CCK and Views were just
-experiments in the contrib module space.
-They are now established as foundation of Drupal core.
-Contrib (the wider community of Drupal developers) can now get back to innovating.&lt;/p&gt;
-
-&lt;p&gt;“Get back to innovating” isn’t much of a prediction. I thought about it
-some more and came up with three things I think are likely to happen in 2016…&lt;/p&gt;
-
-&lt;h2 id=&quot;cms-as-a-service&quot;&gt;CMS-as-a-Service&lt;/h2&gt;
-
-&lt;p&gt;The era of the monolythic, does-it-all, CMS is coming to an end.
-The Drupal community talk a lot about &lt;em&gt;progressive decoupling&lt;/em&gt;
-&lt;a href=&quot;http://buytaert.net/should-we-decouple-drupal-with-a-client-side-framework&quot;&gt;[1]&lt;/a&gt;
-&lt;a href=&quot;http://buytaert.net/selecting-a-client-side-framework-for-drupal&quot;&gt;[2]&lt;/a&gt;.
-But, the idea of a &lt;em&gt;fully decoupled&lt;/em&gt; backend is becoming established
-in other areas. Services like &lt;a href=&quot;https://www.contentful.com/&quot;&gt;Contentful&lt;/a&gt; already
-provide a fully decoupled, headless CMS.&lt;/p&gt;
-
-&lt;p&gt;Systems become decoupled, we move to a microservice architecture, and evaluate server-less options. It is conceivable that a Content API could become part of the infrastructure. Amazon are the leading Infrastructure-as-a-Service provider. A Content API (or CMS-as-a-Service) would fit in their suite of cloud computing services.&lt;/p&gt;
-
-&lt;p&gt;I did an experiment recently where I put Amazon’s API Gateway in front of an EC2 instance running Drupal. This gives a more robust API on top of Drupal 8’s Rest support. Monitoring, traffic management, and flexible security controls are standard.
-This approach offers several advantages, including: &lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; support;
-CloudFront caching for performance; and input/output
-translation with data models defined with JSON schema.&lt;/p&gt;
-
-&lt;h2 id=&quot;acquia-ipo&quot;&gt;Acquia IPO&lt;/h2&gt;
-
-&lt;p&gt;Going public was always on the cards for Acquia, but they said they
-&lt;a href=&quot;http://bostinno.streetwise.co/2015/10/21/acquia-engage-ceo-talks-content-hub-valuation-ipo/&quot;&gt;are in no rush to IPO&lt;/a&gt;. This could be the year. Adoption of D8 will being changes
-to the user base and continued adoption at the enterprise level.&lt;/p&gt;
-
-&lt;p&gt;This will be accompanied by more consolidation in the Drupal world.
-One of the biggest risks I see is with Drupal companies taking on
-bigger projects. A single client becomes a large contributer to their
-revenue, in some cases I’ve heard as much as 70%. This is a risky situation
-to be in, if you rely on one client for a majority of your business.
-The solution is for Drupal companies to come together to form larger entities.&lt;/p&gt;
-
-&lt;p&gt;This is just a continuation of an existing trend.
-&lt;a href=&quot;http://www.wunderkraut.com/blog/worlds-largest-drupal-provider-created-by-merger/2012-08-20&quot;&gt;Wunderkraut&lt;/a&gt;,
-was the most high-profile merger in the community.
-Followed by many more, involving companies such as
-&lt;a href=&quot;http://wearepropeople.com/news/propeople-and-blink-reaction-come-together-to-form-ffw-a-new-global-digital-agency&quot;&gt;FFW&lt;/a&gt;,
-&lt;a href=&quot;http://www.mediacurrent.com/blog/mediacurrent-acquired-by-code-and-theory&quot;&gt;MediaCurrent&lt;/a&gt;,
-&lt;a href=&quot;https://www.phase2technology.com/blog/phase2-and-opensourcery-whats-new-in-portland/&quot;&gt;Phase2&lt;/a&gt;, and
-&lt;a href=&quot;http://i-kos.com/press-release/2014-09-22/mogdesign-joins-ikos-digital-accelerate-drupal-growth&quot;&gt;i-Kos&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;composer-support-and-decoupled-components&quot;&gt;Composer Support and Decoupled Components&lt;/h2&gt;
-
-&lt;p&gt;Composer support in Drupal needs some work.
-There are some big wins to be had by embracing the
-Composer (and Packagist) workflow.&lt;/p&gt;
-
-&lt;p&gt;Commerce Guys are leading the way with Drupal Commerce. They have been
-&lt;a href=&quot;https://github.com/commerceguys&quot;&gt;factoring out components into separate libraries&lt;/a&gt;.
-Other PHP projects beyond Drupal are making use of them, and contributing to
-their development.
-Expect more contrib projects to factor out separate PHP packages of re-usable code.
-Then Drupal modules become just a thin layer of glue.&lt;/p&gt;
-
-&lt;p&gt;There has been a trend for PHP Frameworks to decouple their core components.
-The Symfony Components split from the full stack framework has
-meant much wider adoption. They are used in &lt;a href=&quot;http://symfony.com/projects&quot;&gt;many PHP projects&lt;/a&gt;,
-including Drupal.&lt;/p&gt;
-
-&lt;p&gt;PHP-FIG exists to promote interoperability between frameworks. This year will see further initiatives to clean up Drupal’s code. Such as, removal of anti-patterns like service locator. The eventual aim will be to decoupling components from Drupal core.&lt;/p&gt;
-
-&lt;p&gt;Can you imagine using Views on a non-drupal project?&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
       </item>
     
   </channel>
