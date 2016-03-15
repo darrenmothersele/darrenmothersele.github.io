@@ -31,7 +31,7 @@ large) data sets, and avoid getting stuck in infinite loops.</p>
 Here’s a simple bit of code that would do this. Obviously don’t try this.
 Just read the code and imagine a world where this is a good idea…</p>
 
-<pre><code>function repeat($i)
+<div class="highlighter-rouge"><pre class="highlight"><code>function repeat($i)
 {
     $output = [];
     while (true)
@@ -41,9 +41,10 @@ Just read the code and imagine a world where this is a good idea…</p>
     return $output;
 }
 </code></pre>
+</div>
 
 <p>This function would never terminate. You get stuck in an
-infinite loop. <code>while(true)</code> is not something you ever want to see
+infinite loop. <code class="highlighter-rouge">while(true)</code> is not something you ever want to see
 in a program, right?</p>
 
 <p>Well, not if you do lazy evaluation. In this context lazy means you
@@ -52,10 +53,10 @@ can have large, even infinite, sets of data, without getting stuck in
 long, or infinite, loops.</p>
 
 <p>PHP has a feature for lazy evaluation. It’s called a Generator,
-summoned into being using the magical <code>yield</code> keyword.
+summoned into being using the magical <code class="highlighter-rouge">yield</code> keyword.
 Here’s the stupid repeat, but this time as a generator…</p>
 
-<pre><code>function repeat($i)
+<div class="highlighter-rouge"><pre class="highlight"><code>function repeat($i)
 {
     while (true)
     {
@@ -63,6 +64,7 @@ Here’s the stupid repeat, but this time as a generator…</p>
     }
 }
 </code></pre>
+</div>
 
 <p>You have to be careful using infinite sets.
 You can still easily create an unterminating program if you tried to print
@@ -73,7 +75,7 @@ our infinite computation. This is now possible because of lazy
 evaulation. Here’s a take function that will take
 any number of items from any Generator:</p>
 
-<pre><code>function take($i, Generator $generator)
+<div class="highlighter-rouge"><pre class="highlight"><code>function take($i, Generator $generator)
 {
     while ($i-- &gt; 0 &amp;&amp; $generator-&gt;valid())
     {
@@ -82,14 +84,16 @@ any number of items from any Generator:</p>
     }
 }
 </code></pre>
+</div>
 
 <p>Let’s take 5…</p>
 
-<pre><code>foreach (take(5, repeat('Hello')) as $item)
+<div class="highlighter-rouge"><pre class="highlight"><code>foreach (take(5, repeat('Hello')) as $item)
 {
     echo $item, PHP_EOL;
 }
 </code></pre>
+</div>
 
 <p>OK, that was a stupid example. What about something a bit more
 interesting? How about the classic fibonnacci sequence generator?</p>
@@ -101,7 +105,7 @@ were more complex than they needed to be.</p>
 
 <p>Here is the simplist infinite fibonacci generator I can think of…</p>
 
-<pre><code>function fib()
+<div class="highlighter-rouge"><pre class="highlight"><code>function fib()
 {
     yield $i = 0;
     yield $j = 1;
@@ -112,18 +116,20 @@ were more complex than they needed to be.</p>
     }
 }
 </code></pre>
+</div>
 
 <p>And here’s the first 50 fibonacci numbers…</p>
 
-<pre><code>foreach (take(50, fib()) as $item)
+<div class="highlighter-rouge"><pre class="highlight"><code>foreach (take(50, fib()) as $item)
 {
     echo $item, PHP_EOL;
 }
 </code></pre>
+</div>
 
 <p>And, here’s the first 10, skipping the first 0 using a tail function:</p>
 
-<pre><code>function tail(Generator $list)
+<div class="highlighter-rouge"><pre class="highlight"><code>function tail(Generator $list)
 {
     $list-&gt;next();
     yield from $list;
@@ -134,6 +140,7 @@ foreach (take(50, tail(fib())) as $item)
     echo $item, PHP_EOL;
 }
 </code></pre>
+</div>
 
 <p>In case you’re curious, there are actual use cases for this.
 For example, this <a href="https://github.com/MarkBaker/GeneratorQuadTrees">Quad Tree</a>

@@ -25,7 +25,7 @@ the feedback I’ve received so far and post an update.</p>
 
 <!--break-->
 
-<h3 id="wrong-approach">Wrong Approach?</h3>
+<p>###Wrong Approach?</p>
 
 <p>Almost unanimously positive feedback. In fact, it seems other people have been
 thinking along similar lines:</p>
@@ -42,7 +42,7 @@ If you want to argue this case, I’d suggest first try having that discussion w
 we’re all OK with the concept of taking complete control of (completely rewriting)
 Drupal’s markup output.</p>
 
-<h3 id="annotation">Annotation</h3>
+<p>###Annotation</p>
 
 <p>In an earlier prototype I had started working with annotations inside HTML comments
 but I found these increasing harder to parse as the extractions became more
@@ -63,7 +63,7 @@ as long as they are stripped from the markup during the build process.</p>
 as his work on Atomic Design has been influential in the development of
 this process.</p>
 
-<h3 id="in-code-or-config">In code, or config</h3>
+<p>###In code, or config</p>
 
 <p>In this first proof-of-concept, the generated theme is held in memory, well
 actually it is persisted as a Drupal variable containing a single object that
@@ -112,7 +112,7 @@ tools that involve code generation. For example, have you seen BDD using
 stub code for any unrecognised steps in your tests. For example, if you say
 “Given I am in a directory”, you would get the generated stub code:</p>
 
-<pre><code>/**
+<div class="highlighter-rouge"><pre class="highlight"><code>/**
  * @Given /^I am in a directory "([^"]*)"$/
  */
 public function iAmInADirectory($argument1)
@@ -120,19 +120,20 @@ public function iAmInADirectory($argument1)
   throw new PendingException();
 }
 </code></pre>
+</div>
 
 <p>I think the theme generator could do something similar for elements marked as
 requiring pre-processing in the template file. This needs some further
 thought and perhaps a couple of experiements.</p>
 
-<h3 id="terminology">Terminology</h3>
+<p>###Terminology</p>
 
 <p>Still struggling with naming conventions. If this is going to be a more general
 tool then need generally understandable terms (like ‘component’). But, need
 to avoid overloading terms even more, as it’s already quite confusing having
 SMACSS modules, Drupal modules, panels, blocks, boxes, styles, layouts. urgh!</p>
 
-<h3 id="next-steps">Next steps…</h3>
+<p>###Next steps…</p>
 
 <blockquote class="twitter-tweet" lang="en-gb"><p><a href="https://twitter.com/mothersele">@mothersele</a> <a href="https://twitter.com/mark_carver">@mark_carver</a> I love it. Also love that it works w/ panels! Q: Are the layout plugins placed in the theme? <a href="https://twitter.com/mortendk">@mortendk</a> <a href="https://twitter.com/Cottser">@Cottser</a></p>&mdash; Jen Lampton (@jenlampton) <a href="https://twitter.com/jenlampton/statuses/450703701263388672">March 31, 2014</a></blockquote>
 

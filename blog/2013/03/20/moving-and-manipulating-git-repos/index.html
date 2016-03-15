@@ -42,13 +42,15 @@ had from <a href="http://nvie.com/posts/a-successful-git-branching-model/">this 
 wanted to move over to the master branch. Merge into master branch, but avoid
 losing the branching information by using the –no-ff flag.</p>
 
-<pre><code>git merge --no-ff staging
+<div class="highlighter-rouge"><pre class="highlight"><code>git merge --no-ff staging
 </code></pre>
+</div>
 
 <p>You can delete remote branches, with</p>
 
-<pre><code>git push origin :staging
+<div class="highlighter-rouge"><pre class="highlight"><code>git push origin :staging
 </code></pre>
+</div>
 
 <p>This removes the staging branch from origin (it’s ok the commit and branching
 history was retained thanks to the –no-ff merge option).</p>
@@ -57,8 +59,9 @@ history was retained thanks to the –no-ff merge option).</p>
 this article</a>, you add the original repo as a remote, adapt the command
 to pull from github. The -f fetches the commits…</p>
 
-<pre><code>git remote add -f other-project git@git...
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote add -f other-project git@git...
 </code></pre>
+</div>
 
 <p>Then prepare the sub-tree merge. Then actually read the sub tree over, applying
 prefix (i.e. put it in a sub folder).</p>
@@ -67,16 +70,18 @@ prefix (i.e. put it in a sub folder).</p>
 
 <p><em>As an aside:</em> if you accidentally push a merge you can undo it with:</p>
 
-<pre><code>git revert -m 1 commit_hash
+<div class="highlighter-rouge"><pre class="highlight"><code>git revert -m 1 commit_hash
 </code></pre>
+</div>
 
 <p>Now I want to move some stuff from one repo to another. But I don’t want the
 whole lot!. So, this time I clone a brand new copy - and remove everything
 I don’t want:</p>
 
-<pre><code>git clone...
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone...
 git filter-branch --subdirectory-filter dir_to_save -- -- all
 </code></pre>
+</div>
 
 <p>That removes everything except dir_to_save, resulting in a clean repo with only
 files and history from dir_to_save.</p>
