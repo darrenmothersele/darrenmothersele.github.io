@@ -6,9 +6,116 @@
 </description>
     <link>http://www.darrenmothersele.com/</link>
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Mar 2016 10:25:34 +0000</pubDate>
-    <lastBuildDate>Wed, 23 Mar 2016 10:25:34 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <pubDate>Thu, 16 Jun 2016 13:34:13 +0100</pubDate>
+    <lastBuildDate>Thu, 16 Jun 2016 13:34:13 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>PHP Framework in One Weekend</title>
+        <description>&lt;p&gt;Earlier this year I set about creating a day of training for 
+DrupalCamp London. It was based on a PHP Framework
+course I’d given, but reduced to fit into a day. 
+We ended up focusing on Modern PHP, as that was most useful for the
+attendees in their transition from Drupal 7 to Drupal 8.&lt;/p&gt;
+
+&lt;p&gt;It was a really successful day, and I had some great feedback. 
+I have since developed the idea into a two day training course,
+which looks at some of the core concepts behind most modern PHP apps.&lt;/p&gt;
+
+&lt;p&gt;Over the past couple of months I have worked hard to refine the 
+content and edit it down into a short guide. I’ve released it
+(thanks to &lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;Leanpub&lt;/a&gt;)
+in the form of a book. It guides the reader through a 
+weekend-long project to construct a simple PHP web framework.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“a weekend, the fundamental unit of coding self-improvement” 
+- Peter Shirley&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In particular, it uses Symfony Components, and some other popular
+PHP packages, to demonstrate the core features of
+web frameworks, like routing, templating, controllers, and 
+dependency injection. Projects such as Drupal, phpBB, Laravel, eZ Publish, Joomla!, Magento, Piwik, and many more are using Symfony Components as a foundation on which to build. The book uses these, and more, to build our own PHP Framework
+in a weekend.&lt;/p&gt;
+
+&lt;p&gt;Here’s the full contents:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Getting Started&lt;/li&gt;
+  &lt;li&gt;Managing Complexity&lt;/li&gt;
+  &lt;li&gt;Testing&lt;/li&gt;
+  &lt;li&gt;HTTP&lt;/li&gt;
+  &lt;li&gt;Templating&lt;/li&gt;
+  &lt;li&gt;Content&lt;/li&gt;
+  &lt;li&gt;Routing&lt;/li&gt;
+  &lt;li&gt;Controllers&lt;/li&gt;
+  &lt;li&gt;Dependency Injection&lt;/li&gt;
+  &lt;li&gt;Design and Layout&lt;/li&gt;
+  &lt;li&gt;Reuse&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Click the cover image below to get the book:&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;
+&lt;img src=&quot;/img/phpframework-book.png&quot; alt=&quot;PHP Framework in One Weekend&quot; /&gt;
+&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;Drop me a line if you have any questions.&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jun 2016 13:30:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com/blog/2016/06/16/php-framework-weekend/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/06/16/php-framework-weekend/</guid>
+        
+        <category>php</category>
+        
+        <category>featured</category>
+        
+        <category>drupal-planet</category>
+        
+        
+        <category>Web Dev</category>
+        
+      </item>
+    
+      <item>
+        <title>TinyLetter #4 - Tiny McLetterface</title>
+        <description>&lt;p&gt;Hello,  &lt;/p&gt;
+
+&lt;p&gt;That was March 2016!&lt;/p&gt;
+
+&lt;p&gt;I will always remember it as the month in which the British public voted to name a £200 million polar research vessel “Boaty McBoatface.” A clear winner, the name received over 90,000 more votes than the second closest rival name. I hope the Natural Environment Research Council follow through and name the ship after the public vote. Then we’ll have at least one positive outcome from voting in the UK this year. &lt;/p&gt;
+
+&lt;p&gt;I spoke at a conference earlier in the month. I tried something a bit different this time. Instead of a technical talk, I gave a more philosophical talk about changes in Drupal and the web. As a thought experiment, I went back in time to the mid 90s, and tried to explain to myself what we had done. Speaking to a room of web developers, I suggested that we have encouraged centralisation by ruining the experience on the open web. I presented some ideas to stop ruining the web, and some ideas to make it better. I think it went well, and I had some great feedback. The rest of the conference I spent catching up with people, and discussing ideas for new models of collaboration. I’ve been writing up my notes, and I’ll post them to my blog at some point soon. I hope to try out some of the ideas on future projects. &lt;/p&gt;
+
+&lt;p&gt;This month I attended London’s first Consciousness Hacking meetup. The highlight was Robert Thomas who uses biometric feedback to generate personalised music experiences. This took me back to my experiments with neurofeedback, when I hacked a MindFlex toy to make a basic EEG reader. These experiments lead to me inventing the Cyril programming language. This meetup got me excited about getting back into this. And, I’ve now got a new EEG headset to experiment with. &lt;/p&gt;
+
+&lt;p&gt;This event gave a different perspective on how technology might serve us. One of the presenters, Patrick Hilsbos, said “the world would be a better place if technology served as a catalyst for self-awareness, self-love, and true connection.” He is working on creating a “Spotify for experiences” using biofeedback for meditation, focus training, and relaxation.  &lt;/p&gt;
+
+&lt;p&gt;My contract at MTV is coming to an end this month. Once I’ve finished, I’ll be looking for other projects. I’ve got a few requests for training, but other than that, in the short term I’ll be going back to my own projects. In particular, Cyril, the programming language I invented for live coding visuals. &lt;/p&gt;
+
+&lt;p&gt;I’ll be returning to Serbia again next month, for Resonate. The conference which “brings together artists and educators to drive a forward-looking debate on the position of technology in art and culture.” It was one of my highlights of last year. Even more excited about it this year, because among the 44 lectures, will be one by Dan Hett. Dan makes use of my Cyril live coding language, and has contributed ideas (and code for Post Processing effects). I’m looking forward to seeing what Dan’s been up to. I hope it will be a chance for us to talk about the roadmap for future development of Cyril. &lt;/p&gt;
+
+&lt;p&gt;Have a great month, and drop me a line let me know what you’re up to, &lt;/p&gt;
+
+&lt;p&gt;Thanks for reading,  &lt;/p&gt;
+
+&lt;p&gt;Daz  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Apr 2016 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com/blog/2016/04/01/tiny-letter-4/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/04/01/tiny-letter-4/</guid>
+        
+        <category>misc</category>
+        
+        <category>featured</category>
+        
+        
+        <category>personal</category>
+        
+      </item>
     
       <item>
         <title>Unwired</title>
@@ -432,7 +539,7 @@ which offers an even simpler syntax.&lt;/p&gt;
 You create your stages as simple classes with an invoke method.
 For example:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Double {
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
@@ -450,7 +557,7 @@ class Square {
 
 &lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Add {
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Add {
     private $i;
     public function __construct($i)
     {
@@ -466,19 +573,19 @@ class Square {
 
 &lt;p&gt;Then create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;You can even process a list of values:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var_dump(array_map($pipe, [1, 2, 3]));
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var_dump(array_map($pipe, [1, 2, 3]));
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -503,126 +610,6 @@ version of 5.6 or greater.&lt;/p&gt;
         <category>featured</category>
         
         <category>php</category>
-        
-        
-        <category>web-dev</category>
-        
-      </item>
-    
-      <item>
-        <title>The Future of (My) Web Part 3 - Rethinking Twitter</title>
-        <description>&lt;p&gt;I feel sorry for Twitter. It’s never been sure what it’s supposed to be. Twitter pioneered and popularised the idea of microblogging, then  almost killed it.&lt;/p&gt;
-
-&lt;p&gt;As part of my ongoing experiment I have stopped using
-&lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;Facebook&lt;/a&gt; and
-&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/&quot;&gt;WhatsApp&lt;/a&gt;. The decision is not as simple this time as I don’t want to completely remove myself from Twitter.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2 id=&quot;whats-wrong-with-twitter&quot;&gt;What’s wrong with Twitter&lt;/h2&gt;
-
-&lt;p&gt;I joined Twitter in April 2008 while at the first Social Innovation camp. The camp organisers used Twitter to broadcast messages to all attendees. It was useful.&lt;/p&gt;
-
-&lt;p&gt;Twitter’s functionality was simple. It became a great example of how innovation can come from users. Features such as hash-tags emerged from how people used the technology. Compare this with other services that learnt how to limit and control their users by progressively introducing features. Such as Facebook’s slow boiling of the privacy frog.&lt;/p&gt;
-
-&lt;p&gt;Twitter is another corporate controlled silo. And, compared to the lo-fi, elegant, and clean idea of 140 character public messaging, Twitter today is a mess. My stream flooded with image spam posted to draw attention to tweets. And, unnecessary screenshots of text posted to bypass the limited message size.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-i-currently-use-twitter&quot;&gt;How I Currently use Twitter&lt;/h2&gt;
-
-&lt;p&gt;To plan my future relationship with Twitter I have first looked at
-how I currently use the service. I’ve identified the following types of usage:&lt;/p&gt;
-
-&lt;h3 id=&quot;aggregator&quot;&gt;0. Aggregator&lt;/h3&gt;
-
-&lt;p&gt;I have a network of friends and colleagues in digital technology, creative coding, free software, and other interests. Twitter collects the thoughts, opinions, and silliness from this eclectic mix of people. This makes it fun and serious, informative and weird.&lt;/p&gt;
-
-&lt;p&gt;I wouldn’t find this variety of updates if they were not all aggregated into once place. But, at the same time, this can be a distracting waste of time. And it’s getting harder to filter out the signal from the noise.&lt;/p&gt;
-
-&lt;h3 id=&quot;live-blogging&quot;&gt;1. Live-blogging&lt;/h3&gt;
-
-&lt;p&gt;If I’m at an event with Wifi signal I tend to tweet a lot more than usual. I &lt;em&gt;live-blog&lt;/em&gt; my experience of the event, mainly for my own benefit. This makes it easier to remember what I did when I review the event afterwards.&lt;/p&gt;
-
-&lt;h3 id=&quot;rss-feed&quot;&gt;2. RSS feed&lt;/h3&gt;
-
-&lt;p&gt;Back in the day, people would subscribe to my RSS feed to get updated when I added new content to my site. Since Google killed RSS when they shut down Reader, nobody seems to do that anymore.&lt;/p&gt;
-
-&lt;p&gt;I use Twitter to post up bits from my own blog and writing, with links back to my site. Using it as a way to let people know I’ve posted something new.&lt;/p&gt;
-
-&lt;h3 id=&quot;web-links&quot;&gt;3. Web Links&lt;/h3&gt;
-
-&lt;p&gt;I also post up quotes and links to things I’ve found on the net. Useful stuff I’ve found for work, quotes for inspiration, or things related to my interests.&lt;/p&gt;
-
-&lt;h3 id=&quot;observations&quot;&gt;4. Observations&lt;/h3&gt;
-
-&lt;p&gt;Sometimes I feel the need to comment on things I observe. I particularly enjoy paradox and inconsistency. If I have my phone on me, and I’m in the right mood, I share on Twitter.&lt;/p&gt;
-
-&lt;h3 id=&quot;conversation&quot;&gt;5. Conversation&lt;/h3&gt;
-
-&lt;p&gt;Twitter is a noisy place to try and have a conversation with people. I love how anyone can chime in and join a conversation. I always enjoy hearing from other points of view.&lt;/p&gt;
-
-&lt;p&gt;Sometimes I start public conversations with companies that have disappointed me. It’s a way to get a response, when they don’t answer the phone or emails.&lt;/p&gt;
-
-&lt;h3 id=&quot;brain-dump&quot;&gt;6. Brain-dump&lt;/h3&gt;
-
-&lt;p&gt;Sometimes I just post up random thoughts I’ve been having. Maybe these are things I don’t need to shout out to the world. But stuff I still want to log somewhere. Twitter isn’t the correct place for this.&lt;/p&gt;
-
-&lt;h2 id=&quot;alternative-to-twitter&quot;&gt;Alternative to Twitter&lt;/h2&gt;
-
-&lt;p&gt;I still want to engage with my network on Twitter. But I want to decouple my communication from the silo. This is what the Indie Web refer to as &lt;a href=&quot;https://indiewebcamp.com/POSSE&quot;&gt;POSSE&lt;/a&gt; (Post on Own Site, Syndicate Elsewhere).&lt;/p&gt;
-
-&lt;p&gt;I’ve been thinking of what I’d like to build as an alternative to Twitter.
-&lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/07/12/happy-birthday-bucky/&quot;&gt;Buckminster Fuller&lt;/a&gt;’s Dymaxion Chronofile comes to mind. Bucky documented his entire life, from the point where he started to live his life as an experiment, in what he called a “Chronofile”.&lt;/p&gt;
-
-&lt;p&gt;I have already implemented a private “idea log”. This is somewhere to post all the random thoughts that are not yet fully formed. This helps me collect disparate thoughts and allow them to coalesce
-into something more considered. It creates space in my mind by getting things out of my head. Working like a real extension to my memory, some things stick around. But, also like real memory, I need a way to forget. Sometimes, it’s good to let go.&lt;/p&gt;
-
-&lt;p&gt;Posting notes to my own site, and syndicating them to Twitter, is now top of my list. This will be the next feature to develop for my website.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com/blog/2016/02/02/rethinking-twitter/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/02/rethinking-twitter/</guid>
-        
-        <category>misc</category>
-        
-        <category>featured</category>
-        
-        
-        <category>web-dev</category>
-        
-      </item>
-    
-      <item>
-        <title>My First Front-end London</title>
-        <description>&lt;p&gt;Last night I got to attend &lt;a href=&quot;http://www.frontendlondon.co.uk/&quot;&gt;FEL&lt;/a&gt; for the first time. The popular meetup, hosted by &lt;a href=&quot;http://madebymany.com/&quot;&gt;Made by Many&lt;/a&gt;, celebrating it’s 3rd anniversary last night. I have
-&lt;a href=&quot;https://calumryan.com/&quot;&gt;Calum Ryan&lt;/a&gt;, fellow Indiewebber, to thank for sorting me out a ticket.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;Calum was up first talking about &lt;a href=&quot;http://indiewebcamp.com/&quot;&gt;#indieweb&lt;/a&gt;. He summarised the movement well. The talk gave detail of the motivations, principles, and technology. I was happy to learn that &lt;a href=&quot;https://www.w3.org/TR/2016/WD-webmention-20160112/&quot;&gt;Webmention has a first draft of a W3C standard&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It was encouraging to hear this was Calum’s first presentation. A great start, and I hope he continues on this path.&lt;/p&gt;
-
-&lt;p&gt;Then &lt;a href=&quot;http://bodil.lol/&quot;&gt;Bodil Stokke&lt;/a&gt; took us on a tour of generators in ES6. This makes me want to do more Javascript. If only because I have a thing for the world &lt;em&gt;yield&lt;/em&gt;. It might be my favourite word. I love all that it implies. For me, in conjures up images of Taoism, effortless action, and the path of least resistance.&lt;/p&gt;
-
-&lt;p&gt;Of particular interest was the backwards use of generators as consumers used in monads. We saw generators combined with Promises to write asynchronous code without callbacks. Simply beautiful.&lt;/p&gt;
-
-&lt;p&gt;The presentation is &lt;a href=&quot;http://bodil.lol/generators/&quot;&gt;online here&lt;/a&gt;.
-I also made a note to check out the &lt;a href=&quot;http://github.com/tj/co&quot;&gt;Co library&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Wrapping up the trio of speakers for the night was &lt;a href=&quot;http://macr.ae/&quot;&gt;Callum Macrae&lt;/a&gt;.
-With more Ls and more LOLs that the first Calum.
-He took us on a humorous tour of ES6, under the guise of deprecating jQuery.&lt;/p&gt;
-
-&lt;p&gt;We saw how to replace jQuery features with native Javascript. With a polyfil, or transpiling, it seems jQuery does not add anything. Native Javascript winning on features in some cases. Callum also added that the overhead of using Babel is less than including jQuery. So there is no need for jQuery. Unless you want &lt;a href=&quot;https://gist.github.com/rwaldron/8720084#file-reasons-md&quot;&gt;old browser compatibility&lt;/a&gt; or are using a library with a dependency on jQuery.&lt;/p&gt;
-
-&lt;p&gt;An entertaining and informative night. I’ll definitely be back.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com/blog/2016/01/29/my-first-frontend-london/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/01/29/my-first-frontend-london/</guid>
-        
-        <category>featured</category>
         
         
         <category>web-dev</category>

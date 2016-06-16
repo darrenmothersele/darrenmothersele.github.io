@@ -7,6 +7,66 @@
     <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>PHP Framework in One Weekend</title>
+        <description>&lt;p&gt;Earlier this year I set about creating a day of training for 
+DrupalCamp London. It was based on a PHP Framework
+course I’d given, but reduced to fit into a day. 
+We ended up focusing on Modern PHP, as that was most useful for the
+attendees in their transition from Drupal 7 to Drupal 8.&lt;/p&gt;
+
+&lt;p&gt;It was a really successful day, and I had some great feedback. 
+I have since developed the idea into a two day training course,
+which looks at some of the core concepts behind most modern PHP apps.&lt;/p&gt;
+
+&lt;p&gt;Over the past couple of months I have worked hard to refine the 
+content and edit it down into a short guide. I’ve released it
+(thanks to &lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;Leanpub&lt;/a&gt;)
+in the form of a book. It guides the reader through a 
+weekend-long project to construct a simple PHP web framework.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“a weekend, the fundamental unit of coding self-improvement” 
+- Peter Shirley&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In particular, it uses Symfony Components, and some other popular
+PHP packages, to demonstrate the core features of
+web frameworks, like routing, templating, controllers, and 
+dependency injection. Projects such as Drupal, phpBB, Laravel, eZ Publish, Joomla!, Magento, Piwik, and many more are using Symfony Components as a foundation on which to build. The book uses these, and more, to build our own PHP Framework
+in a weekend.&lt;/p&gt;
+
+&lt;p&gt;Here’s the full contents:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Getting Started&lt;/li&gt;
+  &lt;li&gt;Managing Complexity&lt;/li&gt;
+  &lt;li&gt;Testing&lt;/li&gt;
+  &lt;li&gt;HTTP&lt;/li&gt;
+  &lt;li&gt;Templating&lt;/li&gt;
+  &lt;li&gt;Content&lt;/li&gt;
+  &lt;li&gt;Routing&lt;/li&gt;
+  &lt;li&gt;Controllers&lt;/li&gt;
+  &lt;li&gt;Dependency Injection&lt;/li&gt;
+  &lt;li&gt;Design and Layout&lt;/li&gt;
+  &lt;li&gt;Reuse&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Click the cover image below to get the book:&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;
+&lt;img src=&quot;/img/phpframework-book.png&quot; alt=&quot;PHP Framework in One Weekend&quot; /&gt;
+&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;Drop me a line if you have any questions.&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jun 2016 13:30:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</guid>
+      </item>
+    
+      <item>
         <title>Build Your Own PHP Framework at DrupalCamp London</title>
         <description>&lt;p&gt;I have revised and improved the training in preparation for DrupalCamp next week. I’ve incorporated some feedback, added a bit of theory, and included more practical examples. Join me and level up your PHP development skills in this 1 day course.&lt;/p&gt;
 
@@ -932,233 +992,6 @@ what most people expect. I thought about this a lot, and what I came up with was
         <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
-      </item>
-    
-      <item>
-        <title>Drupal Site Builder Patterns - The State Machine</title>
-        <description>&lt;p&gt;In this new series for my blog, I’ll be documenting some common design patterns for
-Drupal site builds. This first post is about the State Machine pattern, which is
-something I’ve used on several sites recently.&lt;/p&gt;
-
-&lt;p&gt;First, let me explain what I mean by “pattern”. If you are already familiar with
-design patterns in Object-oriented software then you can probably skip this
-bit, but I think it’s useful for context.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;###Design patterns?&lt;/p&gt;
-
-&lt;p&gt;Here’s a quote from the original &lt;a href=&quot;http://en.wikipedia.org/wiki/Design_Patterns&quot;&gt;Gang of Four book&lt;/a&gt; on
-design patterns. That book is about design of object-oriented software, but I think it
-applies to Drupal development too.
-The quote is from p.1 of the book, apologies if I offend anyone by bastardising it.
-I’ve taken the liberty of substituting
-the words “Designing object-oriented software” with “building Drupal sites”,
-and a few other substitutions to make my point…&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;[Building large maintainable Drupal sites] is hard… Your design should be
-specific to the problem at hand but also general enough to address future
-problems and requirements [and be maintainable]… Experienced
-[Drupal site builders] will tell you that a reusable and flexible design
-is difficult if not impossible to get “right” the first time.&lt;/p&gt;
-
-  &lt;p&gt;Yet experienced [Drupal site builders] do make good designs. Meanwhile
-new [site builders] are overwhelmed by the options available and tend to fall
-back on non-[Drupal] techniques they’ve used before. It takes a long time for
-novices to learn what good [Drupal site building] is all about.
-Experienced [site builders] evidently know something inexperienced ones don’t.
-What is it?&lt;/p&gt;
-
-  &lt;p&gt;One thing expert [site builders] know NOT to do is solve every problem from
-first principles. Rather, they &lt;strong&gt;reuse solutions that have worked for them in
-the past&lt;/strong&gt;. When they find a good solution, they use it again and again.
-Such experience is part of what makes them experts.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So I’ve been looking at what these “good solutions” are that I might have been
-using, and as I identify them I’ve been documenting them along the same lines
-of the original design patterns from the Gang of Four book:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Pattern name - the handle we use to describe the problem&lt;/li&gt;
-  &lt;li&gt;Problem - explain the problem and its context, and when you might want to
- use this pattern&lt;/li&gt;
-  &lt;li&gt;Solution - describe the elements that make up the solution, in my case how the
- pattern can be best implemented in Drupal&lt;/li&gt;
-  &lt;li&gt;Consequences - results and trade-offs of using the pattern, in this case I
- also consider further issues that many need to be considered as a result of
- using the pattern.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, first let’s look at what a state machine is, and what problems it solves,
-before going on to look at how to configure it in Drupal.&lt;/p&gt;
-
-&lt;p&gt;###State Machine&lt;/p&gt;
-
-&lt;p&gt;A state machine is a theoretical computer science concept that provides a
-&lt;a href=&quot;http://blog.markshead.com/869/state-machines-computer-science/&quot;&gt;mathematical basis for modelling computation&lt;/a&gt;. But don’t worry, the kind of state machines we’ll be
-using don’t require a degree in computer science to understand.&lt;/p&gt;
-
-&lt;p&gt;All you really need to know is that the state machine (or more correctly a
-&lt;a href=&quot;http://en.wikipedia.org/wiki/Finite-state_machine&quot;&gt;Finite State Machine&lt;/a&gt;) has
-a finite number of “states” it can be in and the machine is only ever in one
-of these states at a time, it’s &lt;em&gt;current state&lt;/em&gt;. The state machine can
-change from one state to another triggered by an event or condition. This change
-of state is called a &lt;em&gt;transition&lt;/em&gt;. A state machine is typically visualised
-using a &lt;em&gt;state machine diagram&lt;/em&gt;, for example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://darrenmothersele.com/img/state-machine/diagram1.png&quot; alt=&quot;Simple state machine&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you can see the states are represented by an ellipse with the name of the
-state inside, the arrows denote the possible transitions. You can also see
-how the entry point and exit point would be notated.&lt;/p&gt;
-
-&lt;p&gt;Here’s a (very simplified) example of a ticket in an agile issue queue. In
-reality this would probably have several other states but for the sake of this
-example, here’s a simple state machine for the ticket:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://darrenmothersele.com/img/state-machine/diagram2.png&quot; alt=&quot;Example state machine&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A state machine is defined by the list of possible states and the event/condition
-that triggers each transition.&lt;/p&gt;
-
-&lt;p&gt;If you’re reading this and thinking “Events”, “Conditions”, sounds a bit like
-Drupal Rules, then you’ve already worked out how we’re going to
-implement this in Drupal!&lt;/p&gt;
-
-&lt;p&gt;In this simple ticket example the states are “In progress”, “Approval”, and
-“Finished”. The transitions are “Completed”, “Rejected”, “Accepted”.&lt;/p&gt;
-
-&lt;p&gt;###When to use it?&lt;/p&gt;
-
-&lt;p&gt;It might be useful to think that in business speak, when they say “business
-processes” they are actually talking about state machines. Here are some
-cases when you might want to think about state machines:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If you’ve ever had to model a “state” or “status” field, then you’ve got a good
-candidate for a state machine.&lt;/li&gt;
-  &lt;li&gt;If you’ve ever wanted to anything
-more complex than just published and unpublished nodes then you have a good
-candidate for using a state machine.&lt;/li&gt;
-  &lt;li&gt;If you have boolean fields in your content model called things like “paid/unpaid”.&lt;/li&gt;
-  &lt;li&gt;If you have records that need to expire after a specific period of time&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Drawing out a state machine diagram to model this kinds of problems can be
-really useful to help identify any “edge-case” scenarios you may not have
-thought of, and capture them early in the design process. It also shows you
-exactly what you need to test further along in the site build.&lt;/p&gt;
-
-&lt;p&gt;###Let’s build it&lt;/p&gt;
-
-&lt;p&gt;As with anything in Drupal there are several ways to achieve this functionality,
-in fact there’s even a &lt;a href=&quot;https://drupal.org/project/state_machine&quot;&gt;State Machine&lt;/a&gt;
-module, but that relies on creating custom plugins.
-If you’re a developer you might want to take a look at this module.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://drupal.org/project/workbench_moderation&quot;&gt;Workbench Moderation&lt;/a&gt; and
-various other workflow modules include a state machine implementation for a
-specific purpose.&lt;/p&gt;
-
-&lt;p&gt;The approach documented here is suitable for site builders, is flexible,
-and provides a neat solution that can be configured using the following
-contributed modules:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://drupal.org/project/rules_link&quot;&gt;Rules Link&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://drupal.org/project/field_permissions&quot;&gt;Field Permissions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I said before that the state machine is defined by it’s set of possible states
-and set of transitions. In Drupal we’ll be using a simple list field to store
-the list of possible states for the node.&lt;/p&gt;
-
-&lt;p&gt;In a &lt;a href=&quot;http://drupalize.me/blog/201404/hiding-form-fields-drupal-8&quot;&gt;recent post&lt;/a&gt;
-on Drupalize.me they mention the addition of the ability to hide form fields
-in Drupal 8 core. In Drupal 7 we need a module to help us do this. In this case we are adding
-a field that will never be directly edited by the user so we just deny access
-to edit that field using the &lt;a href=&quot;https://drupal.org/project/field_permissions&quot;&gt;Field Permissions&lt;/a&gt;
-module.&lt;/p&gt;
-
-&lt;p&gt;For the simple ticket example, we have 3 states. So use an integer list field with
-the following allowed values:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;0&lt;/td&gt;
-          &lt;td&gt;In progress&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;Awaiting approval&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;2&lt;/td&gt;
-          &lt;td&gt;Finished&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I said that the state machine was defined by the set of possible states
-(implemented by our list field), and a set of transitions. These transitions
-can be implemented using the &lt;a href=&quot;https://drupal.org/project/rules_link&quot;&gt;Rules Link&lt;/a&gt;
-module.&lt;/p&gt;
-
-&lt;p&gt;Using the Rules Link module you can add a button to the ticket node which
-manipulates the “state” value preventing the user from actually editing the
-value in the state field directly, and thus enforcing the workflow defined
-in our state machine.&lt;/p&gt;
-
-&lt;p&gt;Each “Rules link” is configured in two parts. First you define the conditions
-for when the link should be visible using standard Rules conditions. Secondly,
-you use the rules reaction to set the value of the state field to the new
-value (and perform any other actions that you want as a side effect of the
-transition).&lt;/p&gt;
-
-&lt;p&gt;###Considerations&lt;/p&gt;
-
-&lt;p&gt;It’s good to follow a principle of audit-ability, so you probably need to keep
-the transition history. A simple solution might be to
-add a timestamp field such as “confirmed at” to mark when it went to confirmed state.
-If using node, you could log revisions to track state changes in the revision
-log for the node. Or you could look at Messages module to log messages when state
-changes happen.&lt;/p&gt;
-
-&lt;p&gt;###More patterns&lt;/p&gt;
-
-&lt;p&gt;If you’re interested in learning more from my 7 years of Drupal experience
-(and if you’re based in London) why not
-join me for &lt;a href=&quot;http://www.eventbrite.com/e/everything-i-know-about-drupal-2-day-intensive-drupal-training-course-tickets-11153411153?aff=state&quot;&gt;Everything I Know About Drupal&lt;/a&gt; an
-intensive 2-day Drupal training I’ve been working on. It’s taken a lot of
-preparation, and there’s still a small number of tickets available.
-You can
-find more information on my &lt;a href=&quot;http://darrenmothersele.com/blog/2014/04/15/drupal-training-london/&quot;&gt;blog post&lt;/a&gt;
-about it
-or grab a ticket on &lt;a href=&quot;http://www.eventbrite.com/e/everything-i-know-about-drupal-2-day-intensive-drupal-training-course-tickets-11153411153?aff=state&quot;&gt;the Eventbrite page&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 23 Apr 2014 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2014/04/23/drupal-patterns-state-machine/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2014/04/23/drupal-patterns-state-machine/</guid>
       </item>
     
   </channel>
