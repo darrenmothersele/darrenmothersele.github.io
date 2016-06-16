@@ -68,6 +68,146 @@ in a weekend.&lt;/p&gt;
       </item>
     
       <item>
+        <title>3D Fractals</title>
+        <description>&lt;p&gt;Click images below to get the large, high-quality versions.&lt;/p&gt;
+
+&lt;p&gt;This is one of my most recent creations…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/13.png&quot;&gt;&lt;img src=&quot;/img/fractals/13sm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I created that image above with a program called Mandelbulb 3D. 
+It includes many fractal equations, including the 3D version of the
+famous Mandelbrot set, the Mandelbulb.&lt;/p&gt;
+
+&lt;p&gt;I found it hard at first to get anything interesting out of 
+Mandelbulb, so I went off on an exploration of fractal geometry.
+I figured I’d be able to get better results if I knew the theory
+behind what the equations were doing, rather than just randomly 
+combining fractal equations and randomly tweaking parameters.&lt;/p&gt;
+
+&lt;p&gt;I started with the Mandelbrot set, like most 
+people who start experimenting with fractals. I quickly moved on to some simple iterated functions. My very first experiments were with some equations I found in 
+an old book “Symmetry in Chaos” by Michael Field and Martin Golubitsky.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/05.png&quot;&gt;&lt;img src=&quot;/img/fractals/05tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;a href=&quot;/img/fractals/06.png&quot;&gt;&lt;img src=&quot;/img/fractals/06tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I combined this method of plotting the images, with 
+fractal equations, and it mainly went wrong. 
+Some of the wrong images actually looked quite interesting…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/09.png&quot;&gt;&lt;img src=&quot;/img/fractals/09tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Eventually, I accidentally came up with this:&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/08.jpg&quot;&gt;&lt;img src=&quot;/img/fractals/08sm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It was actually a black and white render, but I’ve applied some fake colouring. 
+I thought it looked a bit “spacey”, so I sampled colours from a 
+universe photo.&lt;/p&gt;
+
+&lt;p&gt;Going back to Mandelbulb, my search for interesting fractal combinations
+was much more fruitful. Some of my discoveries are below.&lt;/p&gt;
+
+&lt;p&gt;In the beginning, I was using fog to emphasise depth. In some
+cases I think I overdid it…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/01.jpg&quot;&gt;&lt;img src=&quot;/img/fractals/01tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I think the most “realistic” images have come from
+using colours sampled from real photos. The hardest part
+of creating this next image was getting the camera angle right. 
+I think the sampled colours make it look almost like a real
+forest scene. Natural colours (sampled from real photos) tend to be much more 
+desaturated than the colours picked manually…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/02.jpg&quot;&gt;&lt;img src=&quot;/img/fractals/02tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This was my first experiment with combining two fractal formulas. 
+Rather than alternating multiple formulas to create a combined 
+geometry, you can visualise the output of two formulas, if you can align 
+them correctly…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/03.jpg&quot;&gt;&lt;img src=&quot;/img/fractals/03tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This one has a grainy look because I reduced the quality to 
+speed up the rendering process. 
+I thought it looked a bit like a jellyfish, so I added some 
+colours to make it look like it was underwater. 
+Unfortunately, when I increased the quality to create the 
+final render it lost it’s form. So, here’s the grainy version…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/07.jpg&quot;&gt;&lt;img src=&quot;/img/fractals/07tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This next one might be my favourite so far. 
+Click to see full version. I really like the 
+shading on the “moon” in the background…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/10.png&quot;&gt;&lt;img src=&quot;/img/fractals/10tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here’s a few more of my fractal experiments…&lt;/p&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/04.jpg&quot;&gt;&lt;img src=&quot;/img/fractals/04tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/11.png&quot;&gt;&lt;img src=&quot;/img/fractals/11tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/12.png&quot;&gt;&lt;img src=&quot;/img/fractals/12tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/14.png&quot;&gt;&lt;img src=&quot;/img/fractals/14tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/15.png&quot;&gt;&lt;img src=&quot;/img/fractals/15tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/16.png&quot;&gt;&lt;img src=&quot;/img/fractals/16tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/17.png&quot;&gt;&lt;img src=&quot;/img/fractals/17tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/18.png&quot;&gt;&lt;img src=&quot;/img/fractals/18tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;a href=&quot;/img/fractals/19.png&quot;&gt;&lt;img src=&quot;/img/fractals/19tm.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 05 Jun 2016 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/06/05/more-3d-fractals/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/05/more-3d-fractals/</guid>
+      </item>
+    
+      <item>
         <title>TinyLetter #4 - Tiny McLetterface</title>
         <description>&lt;p&gt;Hello,  &lt;/p&gt;
 
@@ -433,98 +573,6 @@ as you’re not having to pass around the full data sets.&lt;/p&gt;
         <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
-      </item>
-    
-      <item>
-        <title>PHP Processing Pipeline</title>
-        <description>&lt;p&gt;If you’re faced with refactoring a huge bunch of sequential code
-then a pipeline may be the answer.
-With a processing pipeline you create your code in stages.
-Then you compose the stages into a pipeline, and pass your
-input for processing.&lt;/p&gt;
-
-&lt;p&gt;This is great because each of the stages can be easily tested
-independently. It also makes the code much easier to read and
-maintain.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;There’s a nice and simple implementation published by the
-&lt;a href=&quot;http://thephpleague.com/&quot;&gt;League of Extraordinary Packages&lt;/a&gt;.
-I’ve created a fork (&lt;a href=&quot;https://github.com/darrenmothersele/pipeline&quot;&gt;on GitHub here&lt;/a&gt;)
-which offers an even simpler syntax.&lt;/p&gt;
-
-&lt;p&gt;Here’s a very basic example to show off this new syntax.
-You create your stages as simple classes with an invoke method.
-For example:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Double {
-    public function __invoke($payload)
-    {
-        return $payload * 2;
-    }
-}
-
-class Square {
-    public function __invoke($payload)
-    {
-        return $payload * $payload;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You could even pass in parameters to the stage constructor:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Add {
-    private $i;
-    public function __construct($i)
-    {
-        $this-&amp;gt;i = $i;
-    }
-    public function __invoke($payload)
-    {
-        return $payload + $this-&amp;gt;i;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Then create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Pipeline&lt;/code&gt; to chain the stages together:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pipe = (new Pipeline)-&amp;gt;Double()-&amp;gt;Square()-&amp;gt;Add(10);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;And then you can process values using the Pipeline:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo $pipe-&amp;gt;process(10), PHP_EOL;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You can even process a list of values:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var_dump(array_map($pipe, [1, 2, 3]));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Obviously you are not just limited to processing integers as in these
-examples. XML documents, converting to JSON, filtering, translating
-and other transformations are great candidates for pipelines stages.&lt;/p&gt;
-
-&lt;p&gt;I’ve submitted a pull request for my simple modification. All I did
-was add an implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;__call()&lt;/code&gt; method so you can
-add stages without having to explicitly &lt;em&gt;new&lt;/em&gt;-up objects and
-pass them into the &lt;code class=&quot;highlighter-rouge&quot;&gt;pipe()&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;Hopefully my pull request gets accepted. The only thing to be aware
-of is that I made use of the variadic operator, so it needs a PHP
-version of 5.6 or greater.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 11 Feb 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/processing-pipelines-php/</guid>
       </item>
     
   </channel>
