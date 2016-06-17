@@ -8,6 +8,83 @@
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>TinyLetter #5 - Cyril, Fractals, and a Book</title>
+        <description>&lt;p&gt;Hello,  &lt;/p&gt;
+
+&lt;p&gt;If this is the first time you’ve received my TinyLetter, welcome!
+Since the last letter, a couple of people joined (via my website)
+and I added everyone from my LinkedIn account. 
+Apologies if you don’t want this. Let me know and I’ll remove you,
+or use the unsubscribe link. No hard feelings. 
+If you’re unsure what this is, check the letter archive on my
+website. I don’t use Facebook, so this is my way of
+spamming everyone I know.&lt;/p&gt;
+
+&lt;p&gt;I mentioned in the last letter that my contact at MTV was
+coming to an end. That’s done now, and I’m looking for new
+opportunities. I’ve been keeping myself busy for the past couple of months. 
+I’ve given a couple of training courses.
+One about Drupal 7, although with Drupal 8 adoption rising, I’m
+hoping that will be the last time I’m asked to do a D7 training.
+I’ve also been doing general PHP trainings, which I’ve written up into a book.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;
+&lt;img src=&quot;/img/letter5-book-sm.jpg&quot; alt=&quot;PHP Book&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s a short guide, intended to be a weekend project, based on teaching modern PHP to Drupal developers. It was originally intended to help developers move from Drupal 7 to Drupal 8. 
+I refined the content, rewrote it a few times, and it’s now a basic
+ introduction to modern PHP aimed at all web developers.
+It’s available from &lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;Leanpub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/img/letter5-cyril-resonate-sm.jpg&quot; alt=&quot;Cyril at Resonate&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve been dedicating some time to the development of Cyril.
+There’s been a mini spurt of interest in my live-coding language
+since the Resonate festival in Serbia. Cyril user Dan Hett gave a 
+lecture, and I had chance to demo it to a few new people. 
+Dan gave a great talk about his work, about live-coding in general, 
+and did a live demo of Cyril up on the big screen in the main hall.
+In response to feedback, I posted a &lt;a href=&quot;https://medium.com/cyril-live-coding/getting-started-with-beta-6-c74e93463c3d&quot;&gt;getting started guide&lt;/a&gt;, 
+and I have been working on a cross-platform build to get it
+working on Windows and Linux (yes, it’s OSX only at the moment).&lt;/p&gt;
+
+&lt;p&gt;I created a new website for Cyril, and I posted an article
+&lt;a href=&quot;https://medium.com/cyril-live-coding/cyril-the-story-so-far-b77a7f90d37f&quot;&gt;“Cyril, The Story So Far…”&lt;/a&gt; that explains how I got from mind-reading octopus, to
+live-coding language for visuals.&lt;/p&gt;
+
+&lt;p&gt;Resonate was awesome this year. I learned a lot, and found lots of inspiration. I’ve already 
+bought my ticket for next year!&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;a href=&quot;/blog/2016/06/05/more-3d-fractals/&quot;&gt;
+&lt;img src=&quot;/img/letter5-fractal-sm.jpg&quot; alt=&quot;Fractal #13&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve posted up some of my &lt;a href=&quot;/blog/2016/06/05/more-3d-fractals/&quot;&gt;fractal art&lt;/a&gt;. 
+This image above is my
+personal favourite out of all the “discoveries” I’ve made so far.
+I’ve posted up more creations on my 
+website &lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/06/05/more-3d-fractals/&quot;&gt;here&lt;/a&gt;, including a couple of failed experiments.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, I’m not going to be at Glastonbury this year, but
+I did find this interesting 
+&lt;a href=&quot;http://www.meetup.com/Hampstead-Heath-Philosophy-Walks/events/231660330/&quot;&gt;Philosophy walk&lt;/a&gt; 
+around Hampstead Heath, so I think I’ll be doing that 
+next weekend instead.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading, and do let me know what you’re up to,&lt;/p&gt;
+
+&lt;p&gt;Daz&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 17 Jun 2016 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com//blog/2016/06/17/tiny-letter-5/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/17/tiny-letter-5/</guid>
+      </item>
+    
+      <item>
         <title>PHP Framework in One Weekend</title>
         <description>&lt;p&gt;Earlier this year I set about creating a day of training for 
 DrupalCamp London. It was based on a PHP Framework
@@ -542,37 +619,6 @@ as you’re not having to pass around the full data sets.&lt;/p&gt;
         <pubDate>Thu, 18 Feb 2016 09:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com//blog/2016/02/18/php-to-infinity/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/18/php-to-infinity/</guid>
-      </item>
-    
-      <item>
-        <title>Build Your Own PHP Framework</title>
-        <description>&lt;p&gt;I’m excited to announce that I’ll be back running training at this year’s Drupal Camp in London. This will be the 3rd year in a row that I’ve offered training at the camp. I’m doing something a bit different this time…&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;h2 id=&quot;build-your-own-php-framework&quot;&gt;Build Your Own PHP Framework&lt;/h2&gt;
-
-&lt;p&gt;In this training you will build your own PHP framework.&lt;/p&gt;
-
-&lt;p&gt;But, why reinvent the wheel?&lt;/p&gt;
-
-&lt;p&gt;Building your own framework is a great way to learn the fundamentals of modern PHP. Regardless of your choice of framework, this will make you a better developer. A similar foundation of components underlies Drupal, Symfony, Silex, and Lavavel.&lt;/p&gt;
-
-&lt;p&gt;If you are a developer going from Drupal 7 to Drupal 8 then you need to adopt an object-oriented mindset.&lt;/p&gt;
-
-&lt;p&gt;Drupal doesn’t always get it right. If you understand the basic principles you know when and why you’re breaking them. You can make pragmatic choices as a programmer, without embodying bad practices.&lt;/p&gt;
-
-&lt;p&gt;“Build Your Own Framework” is a fun training to learn modern PHP. You will learn the “SOLID” principles of PHP package design. The training will demystify dependency injection, hexagonal architecture and other design patterns. We will look at HTTP Foundation and the other Symfony components.&lt;/p&gt;
-
-&lt;p&gt;Come armed with a basic knowledge of PHP, a laptop that can run PHP, and an open mind. Leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
-
-&lt;h3 id=&quot;tickets-available-herehttpseventsr20constantcontactcomregistereventregoeidka07ebt79sow1ef68caboseqcch&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
-
-&lt;p&gt;The training will be held on Friday March 4, 2016 at City University London.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
       </item>
     
   </channel>
