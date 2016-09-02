@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny PHP Micro-Framework in 40 Lines of Code | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
+
+<hgroup class="alignCenter">
+  <h1>Tiny PHP Micro-Framework in 40 Lines of Code</h1>
+        <h6>Sep 2, 2016 · By Darren Mothersele</h6>
+  <p class="sc">Web Dev</p>
+</hgroup>
+<p>I’m working on a project that needs a very simple backend.
+The app will only have a handful of users, and the frontend
+interface has been built in Angular 2. The backend is mainly 
+a proxy, with a bit of added configuration.</p>
+
+<p>Drupal 8, with it’s built in support for REST(ish) services,
+could be an option for modern web apps built with Angular 2.
+But, in this case, Drupal would have definitely been overkill.
+Perhaps <a href="http://expressjs.com/">Express</a> (Node.js) could have 
+been an option, or any of the multitude of PHP 
+Micro-frameworks. But this seemed like a good excuse to
+play with some modern PHP, and build something minimal.</p>
+
+<p>As this project just needed a simple proxy to a third-party API
+to add in some configuration and cache some things, it could
+have been done in a single PHP script. But, this is modern
+PHP - so we’re going to try and do things a bit neater than 
+that. We know that <a href="https://www.infoq.com/presentations/Simple-Made-Easy">easy is not always simple</a>.
+I want to keep this simple, which is not necessarily the
+easiest option. The most important rule to follow here is
+the <strong>single responsibility principle</strong>. Each file will
+contain just one class, each class with encapuslate one thing,
+and each block of code will have a single responsibility. 
+I may blog about other interesting parts of this app in 
+the future, but for now let’s just look at the core
+of the app.</p>
+
+<p>Here’s the code in it’s entirety. The astute among you may
+recognise this as a middleware dispatcher, like <a href="http://www.slimframework.com/">Slim</a>,
+<a href="http://stackphp.com/">Stack</a>, or <a href="http://relayphp.com/">Relay</a>…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>use DI\InvokerInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+class StackRunner
+{
+    /** @var InvokerInterface */
+    protected $invoker;
+
+    protected $stack = [];
+    protected $current = 0;
+
+    public function __construct(InvokerInterface $invoker, $stack)
+    {
+        $this-&gt;invoker = $invoker;
+        $this-&gt;stack = $stack;
+    }
+
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response)
+    {
+        if (!isset($this-&gt;stack[$this-&gt;current])) {
+            return $response;
+        }
+
+        $middleware = $this-&gt;stack[$this-&gt;current];
+        $this-&gt;current++;
+
+        return $this-&gt;invoker-&gt;call($middleware, [
+          'request' =&gt; $request,
+          'response' =&gt; $response,
+          'next' =&gt; $this,
+        ]);
+    }
+}
+</code></pre>
+</div>
+
+<p>That’s it. Less than 40 lines of code.</p>
+
+<p>There’s another <em>no-framework</em> implementation called 
+<a href="https://github.com/woohoolabs/harmony">Harmony</a> that takes a similar
+approach. It’s also very small at 200 lines. I think 
+this minimal version above, less than a quarter of the size, is
+useful because it’s so simple. But, it might not be obvious 
+at first glance what it’s doing. Let’s break it down, look 
+at how it works, and how to use it.</p>
+
+<p>The website for <a href="http://stackphp.com/">StackPHP</a> has a diagram that 
+shows how the middleware dispatcher idea works. They refer to this as an onion.</p>
+
+<p><img src="/img/onion.png" /></p>
+
+<p><strong>NB</strong>: Ignore the session layer. I’m building a restful API, and restful
+APIs should not have state. One of the six constraints for a REST 
+architecture is statelessness. I wont go into this now, but save
+this for a future blog post.</p>
+
+<p>In this model you build up a <em>stack</em> of middleware, then pass the request 
+through each one, then pass the response back out through each layer. 
+Each layer in the stack gets to process the request and response as they
+travel into the core of the app, and then back out again. 
+In my actual app I have layers that deal with CORS, JWT Authentication, 
+Exception Handling, Firewall, Logging, Routing to the correct controller,
+and JSON formatting. Everything is nicely separated into layers that deal with a single 
+step of the process.</p>
+
+<p>The core of the app is your business logic. Everything is separated
+into layers, and each can be tested and reasoned about in isolation.</p>
+
+<p>The stack of middleware is injected into the <code class="highlighter-rouge">StackRunner</code>
+as a dependency via the constructor, along with an instance
+of an implementation of the <code class="highlighter-rouge">InvokerInterface</code>.
+In my case I’m using <a href="http://php-di.org/">PHP-DI</a> as a dependency injection container
+and it’s container implements the required interface. 
+The interface provides a <code class="highlighter-rouge">call()</code> method that given a 
+PHP callable (or string registered in the container) 
+instantiates the callable (if required) and uses the container
+to provide any arguments.</p>
+
+<p>This <code class="highlighter-rouge">StackRunner</code> class produces an invokable object. When invoked
+the stack of middleware is traversed, executing each one (via the <code class="highlighter-rouge">InvokerInterface</code> object)
+and passing itself along, so that execution can continue.
+The implementation of the <code class="highlighter-rouge">__invoke()</code> method does this
+and has just 3 simple sections:</p>
+
+<p>1) First it checks to see if it has reached the end of the stack
+of middlware. In which case it just returns the current
+<code class="highlighter-rouge">$response</code> so that it can travel back up the stack.</p>
+
+<p>2) If not at the end of the stack, the current middleware
+is retrieved from the stack and the stack pointer 
+(<code class="highlighter-rouge">$this-&gt;current</code>) is moved along to the next middleware.</p>
+
+<p>3) The InvokerInterface is used to call the middleware,
+passing in the <code>$request</code>, <code class="highlighter-rouge">$response</code>, and the
+stack runner as <code class="highlighter-rouge">$next</code> so that it can be called
+from within the middleware to continue execution along
+the rest of the stack.</p>
+
+<p>So, how do you make use of this?</p>
+
+<p>Well, you need a few things to make it work.
+As you can see in the code above, it’s programmed against
+interfaces from PSR-7. This is the PHP-FIG (Framework
+Interoperability Group) effort to standardise the
+Request and Response object interfaces. 
+Any implementation of PSR-7 will do, for example
+the Diactoros package from Zend.</p>
+
+<p>You also need to register your dependencies with 
+a PHP-DI container and provide that to the constructor.
+Here’s an example of how it might be used:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$stack = [ExampleMiddleware::class];
+$builder = new ContainerBuilder;
+$builder-&gt;addDefinitions($config);
+$container = $builder-&gt;build();
+$runner = new StackRunner($container, $stack);
+$response = $runner($request, $response);
+</code></pre>
+</div>
+
+<p>So what does a middleware in this stack look like?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class ExampleMiddleware
+{
+    public function __invoke($request, $response, $next)
+    {
+        // 1. optionally do something with $request
+
+        // 2. continue execution down the stack
+        $response = $next($request, $response);
+
+        // 3. optionally do something with $response
+
+        // 4. return $response
+        return $response;
+    }
+}
+</code></pre>
+</div>
+
+<p>You can add type hints to the <code class="highlighter-rouge">__invoke</code> method. I left
+them off here for brevity. When invoked, the middleware
+receives the request and response. It can process these,
+call the next middleware (via the <code class="highlighter-rouge">$next</code> callable provided),
+then it <strong>must</strong> return a response object.</p>
+
+<p>Thanks to the <code class="highlighter-rouge">InvokerInterface</code> it’s possible to use the 
+DI container to instantiate the middleware to provide
+dependencies.</p>
+
+<p>By using a middleware stack runner like this you can 
+easily get separation of concerns and make your code simpler.
+For simple tasks a PHP framework can be overkill. You can 
+get a long way with a clean design by using a dependency injection
+container to instantiate your objects, and a layered calling
+mechanism like this. Your code will be more testable,
+maintainable, and reusable. And, you can get to working on the
+core domain of the problem without worrying about framework 
+or CMS issues. Rather than trying to fit your solution into
+the constraints of a framework, you can build your solution
+in the most appropriate way, deal with any complexities in the domain
+logic up front, and then wrap it up as required.</p>
+
+
+
+
+<div class="author-line">
+
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
+
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. <a href="/about">Read more &raquo;</a></p>
+</div>
+
+
+
+
+<footer>
+  <p>Want to support my work? Buy my <a href="/blog/2016/06/16/php-framework-weekend/">PHP Framework</a> book.
+  Available in paperback from <a href="http://amzn.to/2bNv560">Amazon</a> or eBook from <a href="https://leanpub.com/phpframework">Leanpub</a>.</p>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>.
+        <a href="/blog/">Blog Archive</a>.
+    </small>
+  </p>
+</footer>
+</body>
+</html>

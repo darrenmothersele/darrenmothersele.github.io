@@ -8,7 +8,12 @@
     
       <item>
         <title>PHP Framework in One Weekend</title>
-        <description>&lt;p&gt;Earlier this year I set about creating a day of training for 
+        <description>&lt;p&gt;&lt;b&gt;UPDATE: Now available in paperback from &lt;a href=&quot;http://amzn.to/2bNv560&quot;&gt;Amazon&lt;/a&gt; and other online retailers.
+The eBook is available on &lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;Leanpub&lt;/a&gt;.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Earlier this year I set about creating a day of training for 
 DrupalCamp London. It was based on a PHP Framework
 course I’d given, but reduced to fit into a day. 
 We ended up focusing on Modern PHP, as that was most useful for the

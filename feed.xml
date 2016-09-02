@@ -6,9 +6,221 @@
 </description>
     <link>http://www.darrenmothersele.com/</link>
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2016 08:29:30 +0100</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2016 08:29:30 +0100</lastBuildDate>
+    <pubDate>Fri, 02 Sep 2016 07:23:02 +0100</pubDate>
+    <lastBuildDate>Fri, 02 Sep 2016 07:23:02 +0100</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Tiny PHP Micro-Framework in 40 Lines of Code</title>
+        <description>&lt;p&gt;I’m working on a project that needs a very simple backend.
+The app will only have a handful of users, and the frontend
+interface has been built in Angular 2. The backend is mainly 
+a proxy, with a bit of added configuration.&lt;/p&gt;
+
+&lt;p&gt;Drupal 8, with it’s built in support for REST(ish) services,
+could be an option for modern web apps built with Angular 2.
+But, in this case, Drupal would have definitely been overkill.
+Perhaps &lt;a href=&quot;http://expressjs.com/&quot;&gt;Express&lt;/a&gt; (Node.js) could have 
+been an option, or any of the multitude of PHP 
+Micro-frameworks. But this seemed like a good excuse to
+play with some modern PHP, and build something minimal.&lt;/p&gt;
+
+&lt;p&gt;As this project just needed a simple proxy to a third-party API
+to add in some configuration and cache some things, it could
+have been done in a single PHP script. But, this is modern
+PHP - so we’re going to try and do things a bit neater than 
+that. We know that &lt;a href=&quot;https://www.infoq.com/presentations/Simple-Made-Easy&quot;&gt;easy is not always simple&lt;/a&gt;.
+I want to keep this simple, which is not necessarily the
+easiest option. The most important rule to follow here is
+the &lt;strong&gt;single responsibility principle&lt;/strong&gt;. Each file will
+contain just one class, each class with encapuslate one thing,
+and each block of code will have a single responsibility. 
+I may blog about other interesting parts of this app in 
+the future, but for now let’s just look at the core
+of the app.&lt;/p&gt;
+
+&lt;p&gt;Here’s the code in it’s entirety. The astute among you may
+recognise this as a middleware dispatcher, like &lt;a href=&quot;http://www.slimframework.com/&quot;&gt;Slim&lt;/a&gt;,
+&lt;a href=&quot;http://stackphp.com/&quot;&gt;Stack&lt;/a&gt;, or &lt;a href=&quot;http://relayphp.com/&quot;&gt;Relay&lt;/a&gt;…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use DI\InvokerInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+class StackRunner
+{
+    /** @var InvokerInterface */
+    protected $invoker;
+
+    protected $stack = [];
+    protected $current = 0;
+
+    public function __construct(InvokerInterface $invoker, $stack)
+    {
+        $this-&amp;gt;invoker = $invoker;
+        $this-&amp;gt;stack = $stack;
+    }
+
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response)
+    {
+        if (!isset($this-&amp;gt;stack[$this-&amp;gt;current])) {
+            return $response;
+        }
+
+        $middleware = $this-&amp;gt;stack[$this-&amp;gt;current];
+        $this-&amp;gt;current++;
+
+        return $this-&amp;gt;invoker-&amp;gt;call($middleware, [
+          &#39;request&#39; =&amp;gt; $request,
+          &#39;response&#39; =&amp;gt; $response,
+          &#39;next&#39; =&amp;gt; $this,
+        ]);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s it. Less than 40 lines of code.&lt;/p&gt;
+
+&lt;p&gt;There’s another &lt;em&gt;no-framework&lt;/em&gt; implementation called 
+&lt;a href=&quot;https://github.com/woohoolabs/harmony&quot;&gt;Harmony&lt;/a&gt; that takes a similar
+approach. It’s also very small at 200 lines. I think 
+this minimal version above, less than a quarter of the size, is
+useful because it’s so simple. But, it might not be obvious 
+at first glance what it’s doing. Let’s break it down, look 
+at how it works, and how to use it.&lt;/p&gt;
+
+&lt;p&gt;The website for &lt;a href=&quot;http://stackphp.com/&quot;&gt;StackPHP&lt;/a&gt; has a diagram that 
+shows how the middleware dispatcher idea works. They refer to this as an onion.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/onion.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NB&lt;/strong&gt;: Ignore the session layer. I’m building a restful API, and restful
+APIs should not have state. One of the six constraints for a REST 
+architecture is statelessness. I wont go into this now, but save
+this for a future blog post.&lt;/p&gt;
+
+&lt;p&gt;In this model you build up a &lt;em&gt;stack&lt;/em&gt; of middleware, then pass the request 
+through each one, then pass the response back out through each layer. 
+Each layer in the stack gets to process the request and response as they
+travel into the core of the app, and then back out again. 
+In my actual app I have layers that deal with CORS, JWT Authentication, 
+Exception Handling, Firewall, Logging, Routing to the correct controller,
+and JSON formatting. Everything is nicely separated into layers that deal with a single 
+step of the process.&lt;/p&gt;
+
+&lt;p&gt;The core of the app is your business logic. Everything is separated
+into layers, and each can be tested and reasoned about in isolation.&lt;/p&gt;
+
+&lt;p&gt;The stack of middleware is injected into the &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt;
+as a dependency via the constructor, along with an instance
+of an implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt;.
+In my case I’m using &lt;a href=&quot;http://php-di.org/&quot;&gt;PHP-DI&lt;/a&gt; as a dependency injection container
+and it’s container implements the required interface. 
+The interface provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;call()&lt;/code&gt; method that given a 
+PHP callable (or string registered in the container) 
+instantiates the callable (if required) and uses the container
+to provide any arguments.&lt;/p&gt;
+
+&lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt; class produces an invokable object. When invoked
+the stack of middleware is traversed, executing each one (via the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt; object)
+and passing itself along, so that execution can continue.
+The implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;__invoke()&lt;/code&gt; method does this
+and has just 3 simple sections:&lt;/p&gt;
+
+&lt;p&gt;1) First it checks to see if it has reached the end of the stack
+of middlware. In which case it just returns the current
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$response&lt;/code&gt; so that it can travel back up the stack.&lt;/p&gt;
+
+&lt;p&gt;2) If not at the end of the stack, the current middleware
+is retrieved from the stack and the stack pointer 
+(&lt;code class=&quot;highlighter-rouge&quot;&gt;$this-&amp;gt;current&lt;/code&gt;) is moved along to the next middleware.&lt;/p&gt;
+
+&lt;p&gt;3) The InvokerInterface is used to call the middleware,
+passing in the &lt;code&gt;$request&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$response&lt;/code&gt;, and the
+stack runner as &lt;code class=&quot;highlighter-rouge&quot;&gt;$next&lt;/code&gt; so that it can be called
+from within the middleware to continue execution along
+the rest of the stack.&lt;/p&gt;
+
+&lt;p&gt;So, how do you make use of this?&lt;/p&gt;
+
+&lt;p&gt;Well, you need a few things to make it work.
+As you can see in the code above, it’s programmed against
+interfaces from PSR-7. This is the PHP-FIG (Framework
+Interoperability Group) effort to standardise the
+Request and Response object interfaces. 
+Any implementation of PSR-7 will do, for example
+the Diactoros package from Zend.&lt;/p&gt;
+
+&lt;p&gt;You also need to register your dependencies with 
+a PHP-DI container and provide that to the constructor.
+Here’s an example of how it might be used:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$stack = [ExampleMiddleware::class];
+$builder = new ContainerBuilder;
+$builder-&amp;gt;addDefinitions($config);
+$container = $builder-&amp;gt;build();
+$runner = new StackRunner($container, $stack);
+$response = $runner($request, $response);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So what does a middleware in this stack look like?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class ExampleMiddleware
+{
+    public function __invoke($request, $response, $next)
+    {
+        // 1. optionally do something with $request
+
+        // 2. continue execution down the stack
+        $response = $next($request, $response);
+
+        // 3. optionally do something with $response
+
+        // 4. return $response
+        return $response;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can add type hints to the &lt;code class=&quot;highlighter-rouge&quot;&gt;__invoke&lt;/code&gt; method. I left
+them off here for brevity. When invoked, the middleware
+receives the request and response. It can process these,
+call the next middleware (via the &lt;code class=&quot;highlighter-rouge&quot;&gt;$next&lt;/code&gt; callable provided),
+then it &lt;strong&gt;must&lt;/strong&gt; return a response object.&lt;/p&gt;
+
+&lt;p&gt;Thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt; it’s possible to use the 
+DI container to instantiate the middleware to provide
+dependencies.&lt;/p&gt;
+
+&lt;p&gt;By using a middleware stack runner like this you can 
+easily get separation of concerns and make your code simpler.
+For simple tasks a PHP framework can be overkill. You can 
+get a long way with a clean design by using a dependency injection
+container to instantiate your objects, and a layered calling
+mechanism like this. Your code will be more testable,
+maintainable, and reusable. And, you can get to working on the
+core domain of the problem without worrying about framework 
+or CMS issues. Rather than trying to fit your solution into
+the constraints of a framework, you can build your solution
+in the most appropriate way, deal with any complexities in the domain
+logic up front, and then wrap it up as required.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 02 Sep 2016 00:00:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com/blog/2016/09/02/tiny-php-microframework-in-40-lines/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/09/02/tiny-php-microframework-in-40-lines/</guid>
+        
+        <category>php</category>
+        
+        <category>featured</category>
+        
+        
+        <category>Web Dev</category>
+        
+      </item>
     
       <item>
         <title>TinyLetter #6 - The Return</title>
@@ -143,7 +355,12 @@ next weekend instead.&lt;/p&gt;
     
       <item>
         <title>PHP Framework in One Weekend</title>
-        <description>&lt;p&gt;Earlier this year I set about creating a day of training for 
+        <description>&lt;p&gt;&lt;b&gt;UPDATE: Now available in paperback from &lt;a href=&quot;http://amzn.to/2bNv560&quot;&gt;Amazon&lt;/a&gt; and other online retailers.
+The eBook is available on &lt;a href=&quot;https://leanpub.com/phpframework&quot;&gt;Leanpub&lt;/a&gt;.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Earlier this year I set about creating a day of training for 
 DrupalCamp London. It was based on a PHP Framework
 course I’d given, but reduced to fit into a day. 
 We ended up focusing on Modern PHP, as that was most useful for the
@@ -540,71 +757,6 @@ The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt
         
         
         <category>Drupal Planet</category>
-        
-      </item>
-    
-      <item>
-        <title>TinyLetter #3 - is the Magic Number</title>
-        <description>&lt;p&gt;Posting up my third TinyLetter for posterity.
-See my &lt;a href=&quot;http://www.darrenmothersele.com/contact/&quot;&gt;contact page&lt;/a&gt; for details of how to join my “Friends and Family” email list.&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;Hello!&lt;/p&gt;
-
-&lt;p&gt;I’m happy to say that I’m writing this from the comfort of our new home. Nikki and I found a lovely little flat, just a few minutes walk from Queens Park in North West London.&lt;/p&gt;
-
-&lt;p&gt;A week overlap before Nikki’s tenancy is up has given me a chance to have a clear out. I finally got all my stuff out of storage, after 6 months, and immediately set about purging. And it feels great!&lt;/p&gt;
-
-&lt;p&gt;The last time I had a clear out like this was several years ago, before my sojourn in Sardegna. Since returning to London I’ve collected quite a lot of crap. I recently read “&lt;a href=&quot;http://http//tidyingup.com/books/the-life-changing-magic-of-tidying-up-hc&quot;&gt;The Life-Changing Magic of Tidying Up&lt;/a&gt;” by Marie Kondo. This gave me a different perspective on the process of tidying, and I hope this leads to lasting change. I’m certainly experiencing a clarity, and lightness, that tidying hasn’t given me before.&lt;/p&gt;
-
-&lt;p&gt;I spent a weekend in Brussels for FOSDEM, the annual Free and Open Source Developers Meeting. I joined over 5,000 developers to talk about open source and software freedom.&lt;/p&gt;
-
-&lt;p&gt;It was obvious, while enroute to the opening session, how different this event was going to be. If it wasn’t for the swarm of developers, or the delivery of a truck-load of Club Mate, you could have missed it.&lt;/p&gt;
-
-&lt;p&gt;This was my first FOSDEM. I’ve never been to a conference quite like this. There was no registration required to attend and the sponsorship was subtle. Unlike other tech conferences I’ve attended in recent years. Usually I’d expect excessive corporate branding, and sales pitches disguised as sessions.&lt;/p&gt;
-
-&lt;p&gt;In this sense, FOSDEM is the antithesis of the New Relic DevOps summit I attended last week. I had to leave this “summit” after just a couple of hours because it had been all sales pitch and no content.&lt;/p&gt;
-
-&lt;p&gt;FOSDEM packed in over 310 hours of scheduled content into the weekend. Various communities come together here united by common values of openness and freedom. Values that pervade through every aspect of the event.&lt;/p&gt;
-
-&lt;p&gt;My main takeaway from the weekend was a deeper understanding of the distinction between open source and free software. I’ve been struggling to reconcile my drive to be independent, and to go serverless. I didn’t reach any conclusions this weekend. I didn’t resolve anything, but hearing from others gave me some new perspectives.&lt;/p&gt;
-
-&lt;p&gt;On my return to London I attended Dialogue. I’ve become a regular attendee of these events, on the first Wednesday of the month. The event is “a creative dialogue between science, art, technology, ethics and politics.” Every month I leave frustrated, yet keep going back for more. This month was a subject close to my heart. The conversation was “Privacy, Protection, Publicity: Does Your Freedom Have Boundaries?”&lt;/p&gt;
-
-&lt;p&gt;As usual, there was an incredible panel of experts from various fields. But, as usual, the conversation didn’t go deep enough into any aspect of the topic. Instead, the discussion flits between reasoned insights and misinformed throwaway comments. Despite this the event is very entertaining and informative.&lt;/p&gt;
-
-&lt;p&gt;The current series has come to an end, and they’ve not annouced the next batch yet. I’ll keep an eye out, as it’s a worthwhile way to spend a Wednesday evening.&lt;/p&gt;
-
-&lt;p&gt;I continue to rethink my relationship with technology. This month I [wrote about my decision to leave WhatsApp](http://www.darrenmothersele.com/blog/2016/01/27/why-i-left-whatsapp/. I also summerised my ongoing dithering over &lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/02/02/rethinking-twitter/&quot;&gt;what to do about Twitter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Coming up in the next month…&lt;/p&gt;
-
-&lt;p&gt;DrupalCamp London accepted my session proposal. I’ll be talking about “&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/01/21/survive-and-thrive-drupal-8/&quot;&gt;surviving - and thriving - during the transition to Drupal 8&lt;/a&gt;”. This talk builds on a &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/11/16/surviving-open-source-gentrification/&quot;&gt;previous article&lt;/a&gt; where I used gentrification as a metaphore for changes in the Drupal community. I bring in some new research and experiences, and draw some interesting conclusions.&lt;/p&gt;
-
-&lt;p&gt;I will also be running a training day on the Friday. It will be the third year I’ve run training at the Camp. This time I’m doing something different. I’ve created a course called “&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/02/11/drupal-camp-london-training/&quot;&gt;Build your own PHP Framework&lt;/a&gt;.”&lt;/p&gt;
-
-&lt;p&gt;Conciousness Hacking&lt;/p&gt;
-
-&lt;p&gt;I’ll be attending this “&lt;a href=&quot;http://http//www.meetup.com/Consciousness-Hacking-London/events/228318878/&quot;&gt;Consciousness Hacking&lt;/a&gt;” meetup next month. I’m not sure what to expect, but the event intrigues me. It’s described as “a growing global community encouraging exploration into the ways that technology can be in service to the highest ideals of humanity and support the evolution of our individual and collective experience.” Sounds right up my street!&lt;/p&gt;
-
-&lt;p&gt;Have a great month! Drop me a line and let me know what you’re up to,&lt;/p&gt;
-
-&lt;p&gt;Thanks for reading,&lt;/p&gt;
-
-&lt;p&gt;Daz&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 23 Feb 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com/blog/2016/02/23/tinyletter-3/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/02/23/tinyletter-3/</guid>
-        
-        <category>misc</category>
-        
-        <category>featured</category>
-        
-        
-        <category>personal</category>
         
       </item>
     
