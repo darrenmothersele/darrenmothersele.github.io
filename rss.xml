@@ -90,7 +90,10 @@ at how it works, and how to use it.&lt;/p&gt;
 &lt;p&gt;The website for &lt;a href=&quot;http://stackphp.com/&quot;&gt;StackPHP&lt;/a&gt; has a diagram that 
 shows how the middleware dispatcher idea works. They refer to this as an onion.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/onion.png&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;&quot;&gt;
+    &lt;img src=&quot;/img/onion.png&quot; /&gt;
+    &lt;figcaption&gt;Middleware Onion (source: &lt;a href=&quot;http://stackphp.com/&quot;&gt;StackPHP&lt;/a&gt;)&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;NB&lt;/strong&gt;: Ignore the session layer. I’m building a restful API, and restful
 APIs should not have state. One of the six constraints for a REST 
