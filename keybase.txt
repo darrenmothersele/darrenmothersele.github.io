@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/mothersele
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.darrenmothersele.com
+  * I am mothersele (https://keybase.io/mothersele) on keybase.
+  * I have a public key ASD8xQOKZYoX4-VlRzCPjjI7h-oVz005gtd5Kqc2u9_zaQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120fcc5038a658a17e3e56547308f8e323b87ea15cf4d3982d7792aa736bbdff3690a",
+            "host": "keybase.io",
+            "kid": "0120fcc5038a658a17e3e56547308f8e323b87ea15cf4d3982d7792aa736bbdff3690a",
+            "uid": "1456dd41e324b9423f5f4aa1972e7019",
+            "username": "mothersele"
+        },
+        "service": {
+            "hostname": "www.darrenmothersele.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.17"
+    },
+    "ctime": 1474308929,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1474308864,
+        "hash": "1070c0b591951596bfe9b6d90d2f66cf7b1dce3e5a05ca7fc7c7f6f3d464dcbe82d561ecd8e76d005a88ca938d3ae16a0add6ccac97288c249b13326abb4492e",
+        "seqno": 643422
+    },
+    "prev": "c06960f69e83a133091fa665ad81ab772371200f6a65a9ce06cae1b09a96e4a8",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg/MUDimWKF+PlZUcwj44yO4fqFc9NOYLXeSqnNrvf82kKp3BheWxvYWTFAwF7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZmNjNTAzOGE2NThhMTdlM2U1NjU0NzMwOGY4ZTMyM2I4N2VhMTVjZjRkMzk4MmQ3NzkyYWE3MzZiYmRmZjM2OTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZmNjNTAzOGE2NThhMTdlM2U1NjU0NzMwOGY4ZTMyM2I4N2VhMTVjZjRkMzk4MmQ3NzkyYWE3MzZiYmRmZjM2OTBhIiwidWlkIjoiMTQ1NmRkNDFlMzI0Yjk0MjNmNWY0YWExOTcyZTcwMTkiLCJ1c2VybmFtZSI6Im1vdGhlcnNlbGUifSwic2VydmljZSI6eyJob3N0bmFtZSI6Ind3dy5kYXJyZW5tb3RoZXJzZWxlLmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTcifSwiY3RpbWUiOjE0NzQzMDg5MjksImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ3NDMwODg2NCwiaGFzaCI6IjEwNzBjMGI1OTE5NTE1OTZiZmU5YjZkOTBkMmY2NmNmN2IxZGNlM2U1YTA1Y2E3ZmM3YzdmNmYzZDQ2NGRjYmU4MmQ1NjFlY2Q4ZTc2ZDAwNWE4OGNhOTM4ZDNhZTE2YTBhZGQ2Y2NhYzk3Mjg4YzI0OWIxMzMyNmFiYjQ0OTJlIiwic2Vxbm8iOjY0MzQyMn0sInByZXYiOiJjMDY5NjBmNjllODNhMTMzMDkxZmE2NjVhZDgxYWI3NzIzNzEyMDBmNmE2NWE5Y2UwNmNhZTFiMDlhOTZlNGE4Iiwic2Vxbm8iOjYsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA8Ohqcf6uQBuVzJkncEzQSbW+JQF+9D9/TStW92cPZO0zY9nFQ/GOl42QxXpEjo3v0t9tiMQOdFssUorhnkq2CqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFGouGTgPyxTycKuJH/d/HPpm8u9EF2I1JqUo6uSQWyqo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mothersele
+
+==================================================================
