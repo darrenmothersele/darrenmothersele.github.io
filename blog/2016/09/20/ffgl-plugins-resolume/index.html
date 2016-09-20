@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FFGL Plugins for Resolume | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
+
+<hgroup class="alignCenter">
+  <h1>FFGL Plugins for Resolume</h1>
+        <h6>Sep 20, 2016 · By Darren Mothersele</h6>
+  <p class="sc">misc</p>
+</hgroup>
+<p>I recently spent some time learning how to build FFGL plugins.</p>
+
+<h2 id="download">Download</h2>
+
+<p>I’ve put examples up on GitHub in the
+<a href="https://github.com/cyrilcode/ffglplugin-examples">cyrilcode/ffglplugin-examples</a>
+repository.</p>
+
+<p>I’ve compiled and uploaded to the
+<a href="https://github.com/cyrilcode/ffglplugin-examples/releases">releases page</a>
+but I only have builds for OSX.</p>
+
+<h2 id="details">Details</h2>
+
+<p>The <a href="http://freeframe.sourceforge.net/">website</a> and
+<a href="http://freeframe.sourceforge.net/specification_1-5.html">the spec</a>
+give the details. But I found the spec quite hard to digest.
+The only time I’d compiled dynamic plugins like this was to
+create PHP extensions. This is very different.
+I got the <a href="https://sourceforge.net/projects/freeframe/files/FreeFrame%201.5%20FFGL/1.5/FFGLSDK_1_5.tar.gz/download">SDK examples</a> to compile eventually.
+It wasn’t easy. I had to hack a couple of files due to changes in the OpenGL
+header files. I’m not sure if this is an OSX issue, or just that the
+SDK is really old.</p>
+
+<p>There is an example in the <a href="https://github.com/resolume/ffgl">resolume/ffgl</a>
+GitHub repo that I found useful. I also found this <a href="https://github.com/leadedge/ShaderMaker">ShaderMaker</a>
+source code to be quite useful.</p>
+
+<p>I ended up creating my own <a href="https://github.com/cyrilcode/ffglplugin-examples/blob/master/MyPlugin.h">MyPlugin.h</a> header file to abstract
+some of the boiler-plate work you have to do to create each
+plugin. Using this header, creating a plugin is a simple matter of converting
+the GLSL code you want to use. For example:</p>
+
+<h3 id="emptyeffecth">EmptyEffect.h</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#include "MyPlugin.h"
+
+class EmptyEffect {
+
+    float redness = 0.5f;
+    float greenness = 0.5f;
+    float blueness = 0.5f;
+    GLint colorLocation;
+
+public:
+    PluginConfig getConfig();
+
+    void init(FFGLShader &amp;shader);
+    void process(std::vector&lt;float&gt; &amp;paramValues, FFGLExtensions &amp;extensions);
+
+};
+</code></pre>
+</div>
+
+<h3 id="emptyeffectcpp">EmptyEffect.cpp</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+#include "EmptyEffect.h"
+
+FFGL_PLUGIN(EmptyEffect,"DZ00","RGB Source",FF_SOURCE,"Sample FFGL Plugin",
+    "by Darren Mothersele - www.darrenmothersele.com")
+
+std::string fragmentShaderCode = R"GLSL(
+uniform vec3 color;
+void main()
+{
+    gl_FragColor = vec4(color,1);
+}
+)GLSL";
+
+PluginConfig EmptyEffect::getConfig() {
+    PluginConfig pluginConfig;
+    pluginConfig.shaderCode = fragmentShaderCode;
+    pluginConfig.params.push_back({"Red", FF_TYPE_STANDARD, 0.5f});
+    pluginConfig.params.push_back({"Green", FF_TYPE_STANDARD, 0.5f});
+    pluginConfig.params.push_back({"Blue", FF_TYPE_STANDARD, 0.5f});
+    return pluginConfig;
+}
+
+void EmptyEffect::init(FFGLShader &amp;shader) {
+    colorLocation = shader.FindUniform("color");
+}
+
+void EmptyEffect::process(std::vector&lt;float&gt; &amp;paramValues, FFGLExtensions &amp;extensions)
+{
+    extensions.glUniform3fARB(colorLocation, paramValues[0], paramValues[1], paramValues[2]);
+}
+</code></pre>
+</div>
+
+<h2 id="compiling">Compiling</h2>
+
+<p>I found I needed to build in 32-bit mode for the plugins to
+work in Resolume.</p>
+
+<p>See <a href="https://github.com/cyrilcode/ffglplugin-examples">GitHub</a> for more details.</p>
+
+
+
+
+<div class="author-line">
+
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
+
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. <a href="/about">Read more &raquo;</a></p>
+</div>
+
+
+
+
+<footer>
+  <p>Want to support my work? Buy my <a href="/blog/2016/06/16/php-framework-weekend/">PHP Framework</a> book.
+  Available in paperback from <a href="http://amzn.to/2bNv560">Amazon</a> or eBook from <a href="https://leanpub.com/phpframework">Leanpub</a>.</p>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>.
+        <a href="/blog/">Blog Archive</a>.
+    </small>
+  </p>
+</footer>
+</body>
+</html>
