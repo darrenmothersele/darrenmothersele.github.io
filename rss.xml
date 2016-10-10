@@ -118,7 +118,7 @@ work in Resolume.&lt;/p&gt;
         <description>&lt;p&gt;I’m working on a project that needs a very simple backend.
 The app will only have a handful of users, and the frontend
 interface has been built in Angular 2. The backend is mainly 
-a proxy, with a bit of added configuration.&lt;/p&gt;
+a proxy, with a bit of added configuration. &lt;/p&gt;
 
 &lt;p&gt;Drupal 8, with it’s built in support for REST(ish) services,
 could be an option for modern web apps built with Angular 2.
@@ -140,7 +140,7 @@ contain just one class, each class with encapuslate one thing,
 and each block of code will have a single responsibility. 
 I may blog about other interesting parts of this app in 
 the future, but for now let’s just look at the core
-of the app.&lt;/p&gt;
+of the app. &lt;/p&gt;
 
 &lt;p&gt;Here’s the code in it’s entirety. The astute among you may
 recognise this as a middleware dispatcher, like &lt;a href=&quot;http://www.slimframework.com/&quot;&gt;Slim&lt;/a&gt;,
@@ -174,9 +174,9 @@ class StackRunner
         $this-&amp;gt;current++;
 
         return $this-&amp;gt;invoker-&amp;gt;call($middleware, [
-          &#39;request&#39; =&amp;gt; $request,
-          &#39;response&#39; =&amp;gt; $response,
-          &#39;next&#39; =&amp;gt; $this,
+          'request' =&amp;gt; $request,
+          'response' =&amp;gt; $response,
+          'next' =&amp;gt; $this,
         ]);
     }
 }
@@ -204,7 +204,7 @@ shows how the middleware dispatcher idea works. They refer to this as an onion.&
 &lt;p&gt;&lt;strong&gt;NB&lt;/strong&gt;: Ignore the session layer. I’m building a restful API, and restful
 APIs should not have state. One of the six constraints for a REST 
 architecture is statelessness. I wont go into this now, but save
-this for a future blog post.&lt;/p&gt;
+this for a future blog post. &lt;/p&gt;
 
 &lt;p&gt;In this model you build up a &lt;em&gt;stack&lt;/em&gt; of middleware, then pass the request 
 through each one, then pass the response back out through each layer. 
@@ -213,10 +213,10 @@ travel into the core of the app, and then back out again.
 In my actual app I have layers that deal with CORS, JWT Authentication, 
 Exception Handling, Firewall, Logging, Routing to the correct controller,
 and JSON formatting. Everything is nicely separated into layers that deal with a single 
-step of the process.&lt;/p&gt;
+step of the process. &lt;/p&gt;
 
 &lt;p&gt;The core of the app is your business logic. Everything is separated
-into layers, and each can be tested and reasoned about in isolation.&lt;/p&gt;
+into layers, and each can be tested and reasoned about in isolation. &lt;/p&gt;
 
 &lt;p&gt;The stack of middleware is injected into the &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt;
 as a dependency via the constructor, along with an instance
@@ -226,7 +226,7 @@ and it’s container implements the required interface.
 The interface provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;call()&lt;/code&gt; method that given a 
 PHP callable (or string registered in the container) 
 instantiates the callable (if required) and uses the container
-to provide any arguments.&lt;/p&gt;
+to provide any arguments. &lt;/p&gt;
 
 &lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt; class produces an invokable object. When invoked
 the stack of middleware is traversed, executing each one (via the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt; object)
@@ -256,7 +256,7 @@ interfaces from PSR-7. This is the PHP-FIG (Framework
 Interoperability Group) effort to standardise the
 Request and Response object interfaces. 
 Any implementation of PSR-7 will do, for example
-the Diactoros package from Zend.&lt;/p&gt;
+the Diactoros package from Zend. &lt;/p&gt;
 
 &lt;p&gt;You also need to register your dependencies with 
 a PHP-DI container and provide that to the constructor.
@@ -299,7 +299,7 @@ then it &lt;strong&gt;must&lt;/strong&gt; return a response object.&lt;/p&gt;
 
 &lt;p&gt;Thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt; it’s possible to use the 
 DI container to instantiate the middleware to provide
-dependencies.&lt;/p&gt;
+dependencies. &lt;/p&gt;
 
 &lt;p&gt;By using a middleware stack runner like this you can 
 easily get separation of concerns and make your code simpler.
@@ -474,7 +474,7 @@ in a weekend.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Getting Started&lt;/li&gt;
   &lt;li&gt;Managing Complexity&lt;/li&gt;
-  &lt;li&gt;Testing&lt;/li&gt;
+  &lt;li&gt;Testing &lt;/li&gt;
   &lt;li&gt;HTTP&lt;/li&gt;
   &lt;li&gt;Templating&lt;/li&gt;
   &lt;li&gt;Content&lt;/li&gt;
@@ -491,7 +491,7 @@ in a weekend.&lt;/p&gt;
 &lt;img src=&quot;/img/phpframework-book.png&quot; alt=&quot;PHP Framework in One Weekend&quot; /&gt;
 &lt;/a&gt;&lt;/div&gt;
 
-&lt;p&gt;Drop me a line if you have any questions.&lt;/p&gt;
+&lt;p&gt;Drop me a line if you have any questions. &lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
@@ -512,13 +512,13 @@ in a weekend.&lt;/p&gt;
 
 &lt;p&gt;I created that image above with a program called Mandelbulb 3D. 
 It includes many fractal equations, including the 3D version of the
-famous Mandelbrot set, the Mandelbulb.&lt;/p&gt;
+famous Mandelbrot set, the Mandelbulb. &lt;/p&gt;
 
 &lt;p&gt;I found it hard at first to get anything interesting out of 
 Mandelbulb, so I went off on an exploration of fractal geometry.
 I figured I’d be able to get better results if I knew the theory
 behind what the equations were doing, rather than just randomly 
-combining fractal equations and randomly tweaking parameters.&lt;/p&gt;
+combining fractal equations and randomly tweaking parameters. &lt;/p&gt;
 
 &lt;p&gt;I started with the Mandelbrot set, like most 
 people who start experimenting with fractals. I quickly moved on to some simple iterated functions. My very first experiments were with some equations I found in 
@@ -545,10 +545,10 @@ Some of the wrong images actually looked quite interesting…&lt;/p&gt;
 
 &lt;p&gt;It was actually a black and white render, but I’ve applied some fake colouring. 
 I thought it looked a bit “spacey”, so I sampled colours from a 
-universe photo.&lt;/p&gt;
+universe photo. &lt;/p&gt;
 
 &lt;p&gt;Going back to Mandelbulb, my search for interesting fractal combinations
-was much more fruitful. Some of my discoveries are below.&lt;/p&gt;
+was much more fruitful. Some of my discoveries are below. &lt;/p&gt;
 
 &lt;p&gt;In the beginning, I was using fog to emphasise depth. In some
 cases I think I overdid it…&lt;/p&gt;
@@ -719,7 +719,7 @@ shading on the “moon” in the background…&lt;/p&gt;
       </item>
     
       <item>
-        <title>AMA: What search engine(s) do you favour? I&#39;m assuming you&#39;re not a Google fan!</title>
+        <title>AMA: What search engine(s) do you favour? I'm assuming you're not a Google fan!</title>
         <description>&lt;p&gt;Good question.&lt;/p&gt;
 
 &lt;p&gt;The search engine is the filter through which we access the vast information available on the web. This is a powerful position to be in, considering the influence that the web has on our lives. I would love to pay for a premium search service that operates on my behalf. But, unfortunately, that is not an option.&lt;/p&gt;

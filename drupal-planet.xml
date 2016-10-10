@@ -45,7 +45,7 @@ in a weekend.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Getting Started&lt;/li&gt;
   &lt;li&gt;Managing Complexity&lt;/li&gt;
-  &lt;li&gt;Testing&lt;/li&gt;
+  &lt;li&gt;Testing &lt;/li&gt;
   &lt;li&gt;HTTP&lt;/li&gt;
   &lt;li&gt;Templating&lt;/li&gt;
   &lt;li&gt;Content&lt;/li&gt;
@@ -62,7 +62,7 @@ in a weekend.&lt;/p&gt;
 &lt;img src=&quot;/img/phpframework-book.png&quot; alt=&quot;PHP Framework in One Weekend&quot; /&gt;
 &lt;/a&gt;&lt;/div&gt;
 
-&lt;p&gt;Drop me a line if you have any questions.&lt;/p&gt;
+&lt;p&gt;Drop me a line if you have any questions. &lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
@@ -672,7 +672,7 @@ community, society, and the world.&lt;/p&gt;
 with Drupal recently, and I’ve witnessed huge improvements on projects
 where it has been introduced. The main advantage being the decoupling of
 the development of the back-end from the development of the front-end
-code.&lt;/p&gt;
+code. &lt;/p&gt;
 
 &lt;p&gt;I’ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I’m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
 and I have more to say on this in the future. Today I want to tell you about a simple
@@ -683,11 +683,11 @@ tool I’m using to speed up the process. &lt;a href=&quot;https://github.com/da
 &lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
 sites or style guides for front-end code. There are several tools already available,
 including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
-incredibly simple.&lt;/p&gt;
+incredibly simple. &lt;/p&gt;
 
 &lt;p&gt;I basically just wanted to make use of the power of Twig templates 
 for mocking up front-end code, with an easy way to load in demo content (from
-yml files).&lt;/p&gt;
+yml files). &lt;/p&gt;
 
 &lt;p&gt;## Barebones project&lt;/p&gt;
 
@@ -707,16 +707,16 @@ project and run the following command:&lt;/p&gt;
 
 &lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
 &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
-a &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt; folder.&lt;/p&gt;
+a &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
 
 &lt;p&gt;As a bare minimum you will need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; to run the application, and 
-a starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/index.html&lt;/code&gt;.&lt;/p&gt;
+a starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;Create a file in the project root (same location as the generated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file)
 called &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?php
-require_once __DIR__ . &#39;/vendor/autoload.php&#39;;
+require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new Stylex\Application();
 $app-&amp;gt;run();
@@ -750,7 +750,7 @@ $app-&amp;gt;run();
 
 &lt;p&gt;You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;templates&lt;/code&gt; folder called &lt;code class=&quot;highlighter-rouge&quot;&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;index.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;About&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;us&amp;lt;/h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -788,13 +788,13 @@ Let’s add a component template to style the menu. See my posts on Atomic desig
 
 &lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;components/menu.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'components/menu.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;using-sample-content&quot;&gt;Using sample content&lt;/h2&gt;
 
-&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier.&lt;/p&gt;
+&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
 
 &lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; folder. Let’s create a first article as an example. First create your &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code class=&quot;highlighter-rouge&quot;&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
 
@@ -823,10 +823,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template:&lt;/p&gt;
+&lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template: &lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.articles&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;components/teaser.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'components/teaser.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -849,19 +849,19 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 &lt;p&gt;If you’re getting error messages, you can turn on debugging. In the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code class=&quot;highlighter-rouge&quot;&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$app[&#39;debug&#39;] = TRUE;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$app['debug'] = TRUE;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site.&lt;/p&gt;
+&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
 
-&lt;p&gt;The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops.&lt;/p&gt;
+&lt;p&gt;The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
 
-&lt;p&gt;You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc.&lt;/p&gt;
+&lt;p&gt;You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
 
-&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved.&lt;/p&gt;
+&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 
@@ -991,7 +991,7 @@ what most people expect. I thought about this a lot, and what I came up with was
 
 &lt;p&gt;We may not all know all the latest front-end tricks, but when given well build front-end code we know how to get Drupal to generate the appropriate markup.&lt;/p&gt;
 
-&lt;p class=&quot;lead&quot;&gt;Most importantly, we know how to get the best results out of Drupal&#39;s building blocks, we know how to turn good designs and ideas into great websites, and we know how to build websites in a methodical, flexible, and maintainable way.&lt;/p&gt;
+&lt;p class=&quot;lead&quot;&gt;Most importantly, we know how to get the best results out of Drupal's building blocks, we know how to turn good designs and ideas into great websites, and we know how to build websites in a methodical, flexible, and maintainable way.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
