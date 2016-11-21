@@ -23,7 +23,7 @@
 with Drupal recently, and I’ve witnessed huge improvements on projects
 where it has been introduced. The main advantage being the decoupling of
 the development of the back-end from the development of the front-end
-code. </p>
+code.</p>
 
 <p>I’ve covered this in more detail <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">previously</a>, I’m running some workshops on <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a>,
 and I have more to say on this in the future. Today I want to tell you about a simple
@@ -34,11 +34,11 @@ tool I’m using to speed up the process. <a href="https://github.com/darrenmoth
 <p>The main purpose of this tool is to simplify the construction of prototype
 sites or style guides for front-end code. There are several tools already available,
 including the excellent <a href="http://patternlab.io/">Pattern Lab</a>, but I wanted something
-incredibly simple. </p>
+incredibly simple.</p>
 
 <p>I basically just wanted to make use of the power of Twig templates 
 for mocking up front-end code, with an easy way to load in demo content (from
-yml files). </p>
+yml files).</p>
 
 <p>## Barebones project</p>
 
@@ -58,10 +58,10 @@ project and run the following command:</p>
 
 <p>This will download Stylex from Github and all the dependencies. It creates the 
 <code class="highlighter-rouge">composer.json</code> file for you and downloads all the code for the dependencies into
-a <code class="highlighter-rouge">vendor</code> folder. </p>
+a <code class="highlighter-rouge">vendor</code> folder.</p>
 
 <p>As a bare minimum you will need to create a <code class="highlighter-rouge">index.php</code> to run the application, and 
-a starter template <code class="highlighter-rouge">templates/index.html</code>. </p>
+a starter template <code class="highlighter-rouge">templates/index.html</code>.</p>
 
 <p>Create a file in the project root (same location as the generated <code class="highlighter-rouge">composer.json</code> file)
 called <code class="highlighter-rouge">index.php</code> with the following code:</p>
@@ -145,7 +145,7 @@ Let’s add a component template to style the menu. See my posts on Atomic desig
 
 <h2 id="using-sample-content">Using sample content</h2>
 
-<p>Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. </p>
+<p>Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier.</p>
 
 <p>In this approach sample content is stored in subfolders under a <code class="highlighter-rouge">content</code> folder. You can have multiple types of content, and organise them into subfolders under a main <code class="highlighter-rouge">content</code> folder. Let’s create a first article as an example. First create your <code class="highlighter-rouge">content</code> and then <code class="highlighter-rouge">content/articles</code> folder, then create a sample file called <code class="highlighter-rouge">content/articles/first_post.md</code> with the following content:</p>
 
@@ -174,7 +174,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 </span></code></pre>
 </div>
 
-<p>Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template: </p>
+<p>Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">content.articles</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">'components/teaser.html'</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
@@ -206,13 +206,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. </p>
+<p>This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site.</p>
 
-<p>The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a> workshops. </p>
+<p>The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my <a href="http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/">Atomic Design in Drupal</a> workshops.</p>
 
-<p>You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. </p>
+<p>You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc.</p>
 
-<p>Drop me a line if you find this useful, or have any ideas for how it can be improved. </p>
+<p>Drop me a line if you find this useful, or have any ideas for how it can be improved.</p>
 
 <p>Thanks!</p>
 

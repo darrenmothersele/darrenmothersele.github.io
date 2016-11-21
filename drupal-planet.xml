@@ -3,8 +3,8 @@
   <channel>
     <title> - Drupal Planet Feed</title>
     <description>Darren Mothersele's Drupal Planet Feed</description>
-    <link>http://www.darrenmothersele.com</link>
-    <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>PHP Framework in One Weekend</title>
@@ -45,7 +45,7 @@ in a weekend.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Getting Started&lt;/li&gt;
   &lt;li&gt;Managing Complexity&lt;/li&gt;
-  &lt;li&gt;Testing &lt;/li&gt;
+  &lt;li&gt;Testing&lt;/li&gt;
   &lt;li&gt;HTTP&lt;/li&gt;
   &lt;li&gt;Templating&lt;/li&gt;
   &lt;li&gt;Content&lt;/li&gt;
@@ -62,13 +62,13 @@ in a weekend.&lt;/p&gt;
 &lt;img src=&quot;/img/phpframework-book.png&quot; alt=&quot;PHP Framework in One Weekend&quot; /&gt;
 &lt;/a&gt;&lt;/div&gt;
 
-&lt;p&gt;Drop me a line if you have any questions. &lt;/p&gt;
+&lt;p&gt;Drop me a line if you have any questions.&lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2016 13:30:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</guid>
+        <link>http://localhost:4000//blog/2016/06/16/php-framework-weekend/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/16/php-framework-weekend/</guid>
       </item>
     
       <item>
@@ -101,15 +101,15 @@ in a weekend.&lt;/p&gt;
 
 &lt;p&gt;You will need a basic knowledge of PHP and a laptop that can run PHP. You will leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
 
-&lt;h3 id=&quot;tickets-available-herehttpseventsr20constantcontactcomregistereventregoeidka07ebt79sow1ef68caboseqcch&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+&lt;h3 id=&quot;tickets-available-here&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
 
 &lt;p&gt;£295.00 or
 £95.00 concession tickets for sole traders, students and charities.
 The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt;
 </description>
         <pubDate>Thu, 25 Feb 2016 10:30:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+        <link>http://localhost:4000//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
       </item>
     
       <item>
@@ -134,13 +134,13 @@ The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt
 
 &lt;p&gt;Come armed with a basic knowledge of PHP, a laptop that can run PHP, and an open mind. Leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
 
-&lt;h3 id=&quot;tickets-available-herehttpseventsr20constantcontactcomregistereventregoeidka07ebt79sow1ef68caboseqcch&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+&lt;h3 id=&quot;tickets-available-here&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
 
 &lt;p&gt;The training will be held on Friday March 4, 2016 at City University London.&lt;/p&gt;
 </description>
         <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
+        <link>http://localhost:4000//blog/2016/02/11/drupal-camp-london-training/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/02/11/drupal-camp-london-training/</guid>
       </item>
     
       <item>
@@ -230,8 +230,8 @@ including Drupal.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
+        <link>http://localhost:4000//blog/2016/01/28/drupal-predictions/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/01/28/drupal-predictions/</guid>
       </item>
     
       <item>
@@ -294,8 +294,8 @@ Part 3: Explain how awesome the session will be because you are going to cover �
 
 </description>
         <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
+        <link>http://localhost:4000//blog/2016/01/22/conference-session-submission-guidelines/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/01/22/conference-session-submission-guidelines/</guid>
       </item>
     
       <item>
@@ -339,8 +339,8 @@ Part 3: Explain how awesome the session will be because you are going to cover �
 &lt;p&gt;Join me for this session. Let’s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
+        <link>http://localhost:4000//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
       </item>
     
       <item>
@@ -662,8 +662,8 @@ community, society, and the world.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</guid>
+        <link>http://localhost:4000//blog/2015/11/16/surviving-open-source-gentrification/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2015/11/16/surviving-open-source-gentrification/</guid>
       </item>
     
       <item>
@@ -672,7 +672,7 @@ community, society, and the world.&lt;/p&gt;
 with Drupal recently, and I’ve witnessed huge improvements on projects
 where it has been introduced. The main advantage being the decoupling of
 the development of the back-end from the development of the front-end
-code. &lt;/p&gt;
+code.&lt;/p&gt;
 
 &lt;p&gt;I’ve covered this in more detail &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;previously&lt;/a&gt;, I’m running some workshops on &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt;,
 and I have more to say on this in the future. Today I want to tell you about a simple
@@ -683,11 +683,11 @@ tool I’m using to speed up the process. &lt;a href=&quot;https://github.com/da
 &lt;p&gt;The main purpose of this tool is to simplify the construction of prototype
 sites or style guides for front-end code. There are several tools already available,
 including the excellent &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt;, but I wanted something
-incredibly simple. &lt;/p&gt;
+incredibly simple.&lt;/p&gt;
 
 &lt;p&gt;I basically just wanted to make use of the power of Twig templates 
 for mocking up front-end code, with an easy way to load in demo content (from
-yml files). &lt;/p&gt;
+yml files).&lt;/p&gt;
 
 &lt;p&gt;## Barebones project&lt;/p&gt;
 
@@ -707,10 +707,10 @@ project and run the following command:&lt;/p&gt;
 
 &lt;p&gt;This will download Stylex from Github and all the dependencies. It creates the 
 &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file for you and downloads all the code for the dependencies into
-a &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt; folder. &lt;/p&gt;
+a &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt; folder.&lt;/p&gt;
 
 &lt;p&gt;As a bare minimum you will need to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; to run the application, and 
-a starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/index.html&lt;/code&gt;. &lt;/p&gt;
+a starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/index.html&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Create a file in the project root (same location as the generated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file)
 called &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
@@ -794,7 +794,7 @@ Let’s add a component template to style the menu. See my posts on Atomic desig
 
 &lt;h2 id=&quot;using-sample-content&quot;&gt;Using sample content&lt;/h2&gt;
 
-&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier. &lt;/p&gt;
+&lt;p&gt;Stylex supports creating sample content using Markdown format with YAML front matter. This is a simple way to manage blobs of content with associated metadata. By using Markdown and YAML together to create sample content you can keep the sample content out of your front-end mockups and prototypes. This is another useful decoupling that makes life easier.&lt;/p&gt;
 
 &lt;p&gt;In this approach sample content is stored in subfolders under a &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; folder. You can have multiple types of content, and organise them into subfolders under a main &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; folder. Let’s create a first article as an example. First create your &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;content/articles&lt;/code&gt; folder, then create a sample file called &lt;code class=&quot;highlighter-rouge&quot;&gt;content/articles/first_post.md&lt;/code&gt; with the following content:&lt;/p&gt;
 
@@ -823,7 +823,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template: &lt;/p&gt;
+&lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.articles&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'components/teaser.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -855,13 +855,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site. &lt;/p&gt;
+&lt;p&gt;This just does the basics to allow you to use Twig templates to quickly build out front-end code. It reads in sample content and data from yml files and allows you to easily combine them with template files to create a prototype site.&lt;/p&gt;
 
-&lt;p&gt;The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops. &lt;/p&gt;
+&lt;p&gt;The next step is to reset Drupal’s markup and get it generating the exact same markup. This is covered more in my &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/03/06/atomic-drupal-workshops/&quot;&gt;Atomic Design in Drupal&lt;/a&gt; workshops.&lt;/p&gt;
 
-&lt;p&gt;You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc. &lt;/p&gt;
+&lt;p&gt;You’ll probably want to add your favourite front-end tools into this. In particular, I like to add a Gruntfile to do less/sass compilation, etc.&lt;/p&gt;
 
-&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved. &lt;/p&gt;
+&lt;p&gt;Drop me a line if you find this useful, or have any ideas for how it can be improved.&lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 
@@ -869,8 +869,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 </description>
         <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
+        <link>http://localhost:4000//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
       </item>
     
       <item>
@@ -931,8 +931,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 </description>
         <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</guid>
+        <link>http://localhost:4000//blog/2015/03/06/atomic-drupal-workshops/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2015/03/06/atomic-drupal-workshops/</guid>
       </item>
     
       <item>
@@ -995,8 +995,8 @@ what most people expect. I thought about this a lot, and what I came up with was
 
 </description>
         <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
+        <link>http://localhost:4000//blog/2015/02/26/drupal-site-builder-manifesto/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
       </item>
     
   </channel>

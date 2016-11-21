@@ -40,7 +40,7 @@ which offers an even simpler syntax.</p>
 You create your stages as simple classes with an invoke method.
 For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Double {
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>class Double {
     public function __invoke($payload)
     {
         return $payload * 2;
@@ -58,7 +58,7 @@ class Square {
 
 <p>You could even pass in parameters to the stage constructor:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Add {
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>class Add {
     private $i;
     public function __construct($i)
     {
@@ -74,19 +74,19 @@ class Square {
 
 <p>Then create a <code class="highlighter-rouge">Pipeline</code> to chain the stages together:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$pipe = (new Pipeline)-&gt;Double()-&gt;Square()-&gt;Add(10);
 </code></pre>
 </div>
 
 <p>And then you can process values using the Pipeline:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>echo $pipe-&gt;process(10), PHP_EOL;
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>echo $pipe-&gt;process(10), PHP_EOL;
 </code></pre>
 </div>
 
 <p>You can even process a list of values:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var_dump(array_map($pipe, [1, 2, 3]));
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>var_dump(array_map($pipe, [1, 2, 3]));
 </code></pre>
 </div>
 

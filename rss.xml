@@ -4,8 +4,206 @@
     <title></title>
     <description>Software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future.
 </description>
-    <link>http://www.darrenmothersele.com</link>
-    <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>PHP PSR-7 Proxy</title>
+        <description>&lt;p&gt;Creating a proxy in PHP is easy thanks to the 
+&lt;a href=&quot;http://www.php-fig.org/psr/psr-7/&quot;&gt;PSR-7 HTTP message interface&lt;/a&gt; 
+definitions.&lt;/p&gt;
+
+&lt;p&gt;Different tools using these same interface definitions are
+interoperable, without any extra work. 
+With PSR-7 it is easy to write a simple proxy. 
+Like this one, that sits between a client and an API and
+performs some mapping and reformatting of the data.&lt;/p&gt;
+
+&lt;p&gt;I use the &lt;a href=&quot;http://docs.guzzlephp.org/en/latest/&quot;&gt;Guzzle&lt;/a&gt; 
+HTTP client to make API calls in my code.
+This works with HTTP message objects that conform to PSR-7.&lt;/p&gt;
+
+&lt;p&gt;Symfony HTTP Foundation (as used in Drupal) can work with
+PSR-7, but needs the PSR-7 Bridge library added.
+So, for simple projects, I prefer to use a standalone 
+implementation of PSR-7 like 
+&lt;a href=&quot;https://zendframework.github.io/zend-diactoros/&quot;&gt;Zend Diactoros&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On simple projects I tend to use &lt;a href=&quot;http://php-di.org/&quot;&gt;PHP-DI&lt;/a&gt; 
+to configure everything. So, a simple &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file 
+for this project might look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;php-di/php-di&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^5.4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;guzzlehttp/guzzle&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^6.2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;zendframework/zend-diactoros&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^1.3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;mtdowling/jmespath.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^2.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;autoload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;psr-4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;MyProxy\\&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’ve added &lt;a href=&quot;https://github.com/jmespath/jmespath.php&quot;&gt;JMESPath&lt;/a&gt; 
+to perform data manipulation.&lt;/p&gt;
+
+&lt;p&gt;I put some standard bootstrap stuff into an App class. In the
+simplest of cases this just builds the DI container, and 
+provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;run()&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class App
+{
+    /** @var Container */
+    protected $container;
+
+    public function __construct()
+    {
+        $builder = new ContainerBuilder;
+        $builder-&amp;gt;addDefinitions(__DIR__.'/di-config.php');
+        $this-&amp;gt;container = $builder-&amp;gt;build();
+    }
+
+    public function run(ServerRequestInterface $request, ResponseInterface $response)
+    {
+        $runner = $this-&amp;gt;container-&amp;gt;get(StackRunner::class);
+        return $runner($request, $response);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This uses the Container from PHP-DI, and makes use of the 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt; class I talked about in 
+&lt;a href=&quot;http://www.darrenmothersele.com/blog/2016/09/02/tiny-php-microframework-in-40-lines/&quot;&gt;a previous blog post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt; is given a stack of middleware to process requests. 
+They are configured in the &lt;code class=&quot;highlighter-rouge&quot;&gt;di-config.php&lt;/code&gt; file that is loaded
+into PHP-DI’s container. 
+Here’s my example config for a very simple proxy that forwards
+requests to an API, then does some manipulation of the data
+it receives before sending the reply back to the client.&lt;/p&gt;
+
+&lt;p&gt;Here’s the DI config, simplified to show the important bits:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return [
+
+    'target' =&amp;gt; 'http://example.com',
+
+    'middleware' =&amp;gt; [
+        ProxyMiddleware::class,
+        FilterMiddleware::class
+    ],
+
+    StackRunner::class =&amp;gt; object()
+        -&amp;gt;constructorParameter('stack', get('middleware')),
+
+    ProxyMiddleware::class =&amp;gt; object()
+        -&amp;gt;constructorParameter('target', get('target')),
+];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this example the middleware stack contains just two items. 
+The first one proxies the request, the second one applies
+a filter to the response, before returning.&lt;/p&gt;
+
+&lt;p&gt;The actual implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;ProxyMiddleware&lt;/code&gt; is very 
+straightforward, because of the use of compatible PSR-7 
+http message objects.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class ProxyMiddleware
+{
+    /** @var Client */
+    protected $client;
+
+    protected $target;
+
+    public function __construct(Client $client, $target)
+    {
+        $this-&amp;gt;client = $client;
+        $this-&amp;gt;target = $target;
+    }
+
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next)
+    {
+        $target = new Uri($this-&amp;gt;target);
+
+        /** @var Uri $uri */
+        $uri = $request-&amp;gt;getUri()
+            -&amp;gt;withScheme($target-&amp;gt;getScheme())
+            -&amp;gt;withHost($target-&amp;gt;getHost())
+            -&amp;gt;withPort($target-&amp;gt;getPort());
+
+        $request = $request-&amp;gt;withUri($uri);
+
+        $response = $this-&amp;gt;client-&amp;gt;send($request);
+
+        return $next($request, $response);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Notice the &lt;code class=&quot;highlighter-rouge&quot;&gt;ServerRequestInterface&lt;/code&gt; object it reused to
+send on to the API via the Guzzle HTTP client.
+I just reset the URI of the request and send it on.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;FilterMiddleware&lt;/code&gt; is just as simple.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class FilterMiddleware
+{
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $next)
+    {
+        $data = json_decode($response-&amp;gt;getBody()-&amp;gt;getContents(), true);
+        
+        // Do your manipulation of data here
+        
+        $body = new Stream('php://memory', 'w');
+        $body-&amp;gt;write(json_encode($data));
+        $response = $response
+            -&amp;gt;withoutHeader('Content-Length')
+            -&amp;gt;withBody($body);
+        return $next($request, $response);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The point of this article is not to discuss the 
+filtering and manipulating the data so I have omitted 
+those bits of the code. I actually pass in an object to do 
+the filtering, via the DI config. 
+Which makes this middleware reusable.&lt;/p&gt;
+
+&lt;p&gt;The important point I wanted to highlight was just how
+easy it is to make a simple proxy using PSR-7 for
+compatibility.&lt;/p&gt;
+
+&lt;p&gt;Here is how it is used, by creating a Diactoros 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ServerRequestInterface&lt;/code&gt; object from the incoming PHP
+request, and using the &lt;code class=&quot;highlighter-rouge&quot;&gt;SapiEmitter&lt;/code&gt; to output the
+response. Here’s my &lt;code class=&quot;highlighter-rouge&quot;&gt;proxy.php&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require_once __DIR__.'/../vendor/autoload.php';
+
+$request = ServerRequestFactory::fromGlobals();
+$response = (new App)-&amp;gt;run($request, new Response);
+(new SapiEmitter)-&amp;gt;emit($response);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can run this with PHP’s internal web server,
+by calling &lt;code class=&quot;highlighter-rouge&quot;&gt;php -S localhost:8080 proxy.php&lt;/code&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000//blog/2016/11/21/php-psr7-proxy/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/11/21/php-psr7-proxy/</guid>
+      </item>
     
       <item>
         <title>FFGL Plugins for Resolume</title>
@@ -109,8 +307,8 @@ work in Resolume.&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&quot;https://github.com/cyrilcode/ffglplugin-examples&quot;&gt;GitHub&lt;/a&gt; for more details.&lt;/p&gt;
 </description>
         <pubDate>Tue, 20 Sep 2016 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/09/20/ffgl-plugins-resolume/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/09/20/ffgl-plugins-resolume/</guid>
+        <link>http://localhost:4000//blog/2016/09/20/ffgl-plugins-resolume/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/09/20/ffgl-plugins-resolume/</guid>
       </item>
     
       <item>
@@ -118,7 +316,7 @@ work in Resolume.&lt;/p&gt;
         <description>&lt;p&gt;I’m working on a project that needs a very simple backend.
 The app will only have a handful of users, and the frontend
 interface has been built in Angular 2. The backend is mainly 
-a proxy, with a bit of added configuration. &lt;/p&gt;
+a proxy, with a bit of added configuration.&lt;/p&gt;
 
 &lt;p&gt;Drupal 8, with it’s built in support for REST(ish) services,
 could be an option for modern web apps built with Angular 2.
@@ -140,7 +338,7 @@ contain just one class, each class with encapuslate one thing,
 and each block of code will have a single responsibility. 
 I may blog about other interesting parts of this app in 
 the future, but for now let’s just look at the core
-of the app. &lt;/p&gt;
+of the app.&lt;/p&gt;
 
 &lt;p&gt;Here’s the code in it’s entirety. The astute among you may
 recognise this as a middleware dispatcher, like &lt;a href=&quot;http://www.slimframework.com/&quot;&gt;Slim&lt;/a&gt;,
@@ -204,7 +402,7 @@ shows how the middleware dispatcher idea works. They refer to this as an onion.&
 &lt;p&gt;&lt;strong&gt;NB&lt;/strong&gt;: Ignore the session layer. I’m building a restful API, and restful
 APIs should not have state. One of the six constraints for a REST 
 architecture is statelessness. I wont go into this now, but save
-this for a future blog post. &lt;/p&gt;
+this for a future blog post.&lt;/p&gt;
 
 &lt;p&gt;In this model you build up a &lt;em&gt;stack&lt;/em&gt; of middleware, then pass the request 
 through each one, then pass the response back out through each layer. 
@@ -213,10 +411,10 @@ travel into the core of the app, and then back out again.
 In my actual app I have layers that deal with CORS, JWT Authentication, 
 Exception Handling, Firewall, Logging, Routing to the correct controller,
 and JSON formatting. Everything is nicely separated into layers that deal with a single 
-step of the process. &lt;/p&gt;
+step of the process.&lt;/p&gt;
 
 &lt;p&gt;The core of the app is your business logic. Everything is separated
-into layers, and each can be tested and reasoned about in isolation. &lt;/p&gt;
+into layers, and each can be tested and reasoned about in isolation.&lt;/p&gt;
 
 &lt;p&gt;The stack of middleware is injected into the &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt;
 as a dependency via the constructor, along with an instance
@@ -226,7 +424,7 @@ and it’s container implements the required interface.
 The interface provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;call()&lt;/code&gt; method that given a 
 PHP callable (or string registered in the container) 
 instantiates the callable (if required) and uses the container
-to provide any arguments. &lt;/p&gt;
+to provide any arguments.&lt;/p&gt;
 
 &lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;StackRunner&lt;/code&gt; class produces an invokable object. When invoked
 the stack of middleware is traversed, executing each one (via the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt; object)
@@ -256,7 +454,7 @@ interfaces from PSR-7. This is the PHP-FIG (Framework
 Interoperability Group) effort to standardise the
 Request and Response object interfaces. 
 Any implementation of PSR-7 will do, for example
-the Diactoros package from Zend. &lt;/p&gt;
+the Diactoros package from Zend.&lt;/p&gt;
 
 &lt;p&gt;You also need to register your dependencies with 
 a PHP-DI container and provide that to the constructor.
@@ -299,7 +497,7 @@ then it &lt;strong&gt;must&lt;/strong&gt; return a response object.&lt;/p&gt;
 
 &lt;p&gt;Thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt; it’s possible to use the 
 DI container to instantiate the middleware to provide
-dependencies. &lt;/p&gt;
+dependencies.&lt;/p&gt;
 
 &lt;p&gt;By using a middleware stack runner like this you can 
 easily get separation of concerns and make your code simpler.
@@ -316,8 +514,8 @@ logic up front, and then wrap it up as required.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 02 Sep 2016 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/09/02/tiny-php-microframework-in-40-lines/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/09/02/tiny-php-microframework-in-40-lines/</guid>
+        <link>http://localhost:4000//blog/2016/09/02/tiny-php-microframework-in-40-lines/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/09/02/tiny-php-microframework-in-40-lines/</guid>
       </item>
     
       <item>
@@ -354,8 +552,8 @@ logic up front, and then wrap it up as required.&lt;/p&gt;
 &lt;p&gt;Daz&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/08/23/tiny-letter-6/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/08/23/tiny-letter-6/</guid>
+        <link>http://localhost:4000//blog/2016/08/23/tiny-letter-6/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/08/23/tiny-letter-6/</guid>
       </item>
     
       <item>
@@ -431,8 +629,8 @@ next weekend instead.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 17 Jun 2016 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/06/17/tiny-letter-5/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/17/tiny-letter-5/</guid>
+        <link>http://localhost:4000//blog/2016/06/17/tiny-letter-5/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/17/tiny-letter-5/</guid>
       </item>
     
       <item>
@@ -474,7 +672,7 @@ in a weekend.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Getting Started&lt;/li&gt;
   &lt;li&gt;Managing Complexity&lt;/li&gt;
-  &lt;li&gt;Testing &lt;/li&gt;
+  &lt;li&gt;Testing&lt;/li&gt;
   &lt;li&gt;HTTP&lt;/li&gt;
   &lt;li&gt;Templating&lt;/li&gt;
   &lt;li&gt;Content&lt;/li&gt;
@@ -491,13 +689,13 @@ in a weekend.&lt;/p&gt;
 &lt;img src=&quot;/img/phpframework-book.png&quot; alt=&quot;PHP Framework in One Weekend&quot; /&gt;
 &lt;/a&gt;&lt;/div&gt;
 
-&lt;p&gt;Drop me a line if you have any questions. &lt;/p&gt;
+&lt;p&gt;Drop me a line if you have any questions.&lt;/p&gt;
 
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2016 13:30:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</guid>
+        <link>http://localhost:4000//blog/2016/06/16/php-framework-weekend/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/16/php-framework-weekend/</guid>
       </item>
     
       <item>
@@ -512,13 +710,13 @@ in a weekend.&lt;/p&gt;
 
 &lt;p&gt;I created that image above with a program called Mandelbulb 3D. 
 It includes many fractal equations, including the 3D version of the
-famous Mandelbrot set, the Mandelbulb. &lt;/p&gt;
+famous Mandelbrot set, the Mandelbulb.&lt;/p&gt;
 
 &lt;p&gt;I found it hard at first to get anything interesting out of 
 Mandelbulb, so I went off on an exploration of fractal geometry.
 I figured I’d be able to get better results if I knew the theory
 behind what the equations were doing, rather than just randomly 
-combining fractal equations and randomly tweaking parameters. &lt;/p&gt;
+combining fractal equations and randomly tweaking parameters.&lt;/p&gt;
 
 &lt;p&gt;I started with the Mandelbrot set, like most 
 people who start experimenting with fractals. I quickly moved on to some simple iterated functions. My very first experiments were with some equations I found in 
@@ -545,10 +743,10 @@ Some of the wrong images actually looked quite interesting…&lt;/p&gt;
 
 &lt;p&gt;It was actually a black and white render, but I’ve applied some fake colouring. 
 I thought it looked a bit “spacey”, so I sampled colours from a 
-universe photo. &lt;/p&gt;
+universe photo.&lt;/p&gt;
 
 &lt;p&gt;Going back to Mandelbulb, my search for interesting fractal combinations
-was much more fruitful. Some of my discoveries are below. &lt;/p&gt;
+was much more fruitful. Some of my discoveries are below.&lt;/p&gt;
 
 &lt;p&gt;In the beginning, I was using fog to emphasise depth. In some
 cases I think I overdid it…&lt;/p&gt;
@@ -636,8 +834,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 05 Jun 2016 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/06/05/more-3d-fractals/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/05/more-3d-fractals/</guid>
+        <link>http://localhost:4000//blog/2016/06/05/more-3d-fractals/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/05/more-3d-fractals/</guid>
       </item>
     
       <item>
@@ -665,8 +863,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 &lt;p&gt;Daz  &lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Apr 2016 00:00:00 +0100</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/04/01/tiny-letter-4/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/04/01/tiny-letter-4/</guid>
+        <link>http://localhost:4000//blog/2016/04/01/tiny-letter-4/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/04/01/tiny-letter-4/</guid>
       </item>
     
       <item>
@@ -693,8 +891,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/03/14/un-wired-blocked/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/03/14/un-wired-blocked/</guid>
+        <link>http://localhost:4000//blog/2016/03/14/un-wired-blocked/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/03/14/un-wired-blocked/</guid>
       </item>
     
       <item>
@@ -714,31 +912,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 &lt;p&gt;We also hear a lot of the word &lt;em&gt;share&lt;/em&gt; with the rise of the (so called) &lt;em&gt;sharing&lt;/em&gt; economy. Uber and AirBnB are not based on sharing at all. It’s not sharing if you are paying a fee. And, the focus of startups in the “sharing economy” isn’t on creating a cooperative (shared) platform. They are actually about crowd-sourcing a monopoly. &lt;/p&gt;
 </description>
         <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/03/11/semantic-drift/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/03/11/semantic-drift/</guid>
-      </item>
-    
-      <item>
-        <title>AMA: What search engine(s) do you favour? I'm assuming you're not a Google fan!</title>
-        <description>&lt;p&gt;Good question.&lt;/p&gt;
-
-&lt;p&gt;The search engine is the filter through which we access the vast information available on the web. This is a powerful position to be in, considering the influence that the web has on our lives. I would love to pay for a premium search service that operates on my behalf. But, unfortunately, that is not an option.&lt;/p&gt;
-
-&lt;p&gt;Instead we have chosen dependency on free services run by huge corporations that make billions of dollars by manipulating what we see online. We license them free access to our valuable data. They build a rich profile of us from data about every aspect of our lives. They own our phone, email, documents, search history, DNS lookups, and web browsing.&lt;/p&gt;
-
-&lt;p&gt;I would suggest not using the same company for search as you use for email or other personal information. Unfortunately, no search engine has the power of Google to produce such good results.&lt;/p&gt;
-
-&lt;p&gt;I use DuckDuckGo as my default search engine. I like to use an alternative as my first attempt to find what I’m looking for. I then revert to Google as a second resort. 80% of the time the results don’t match what I’m expecting to see. In which case I prepend ‘!g ‘ to the search term in DuckDuckGo. This redirects to Google search results.&lt;/p&gt;
-
-&lt;p&gt;Somehow this also avoids the privacy pop-up I see when I go straight to Google:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/blog/google-popup.png&quot; alt=&quot;Screenshot of Google Privacy Popup&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Searching Google via the &lt;a href=&quot;https://duckduckgo.com/bang&quot;&gt;DuckDuckGo Bang&lt;/a&gt; leads me straight to the results. I don’t know what happens to the annoying pop-up.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 25 Feb 2016 14:30:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com//blog/2016/02/25/ama-search-engine/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/ama-search-engine/</guid>
+        <link>http://localhost:4000//blog/2016/03/11/semantic-drift/</link>
+        <guid isPermaLink="true">http://localhost:4000//blog/2016/03/11/semantic-drift/</guid>
       </item>
     
   </channel>

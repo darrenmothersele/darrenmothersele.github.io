@@ -22,7 +22,7 @@
 <p>I’m working on a project that needs a very simple backend.
 The app will only have a handful of users, and the frontend
 interface has been built in Angular 2. The backend is mainly 
-a proxy, with a bit of added configuration. </p>
+a proxy, with a bit of added configuration.</p>
 
 <p>Drupal 8, with it’s built in support for REST(ish) services,
 could be an option for modern web apps built with Angular 2.
@@ -44,7 +44,7 @@ contain just one class, each class with encapuslate one thing,
 and each block of code will have a single responsibility. 
 I may blog about other interesting parts of this app in 
 the future, but for now let’s just look at the core
-of the app. </p>
+of the app.</p>
 
 <p>Here’s the code in it’s entirety. The astute among you may
 recognise this as a middleware dispatcher, like <a href="http://www.slimframework.com/">Slim</a>,
@@ -108,7 +108,7 @@ shows how the middleware dispatcher idea works. They refer to this as an onion.<
 <p><strong>NB</strong>: Ignore the session layer. I’m building a restful API, and restful
 APIs should not have state. One of the six constraints for a REST 
 architecture is statelessness. I wont go into this now, but save
-this for a future blog post. </p>
+this for a future blog post.</p>
 
 <p>In this model you build up a <em>stack</em> of middleware, then pass the request 
 through each one, then pass the response back out through each layer. 
@@ -117,10 +117,10 @@ travel into the core of the app, and then back out again.
 In my actual app I have layers that deal with CORS, JWT Authentication, 
 Exception Handling, Firewall, Logging, Routing to the correct controller,
 and JSON formatting. Everything is nicely separated into layers that deal with a single 
-step of the process. </p>
+step of the process.</p>
 
 <p>The core of the app is your business logic. Everything is separated
-into layers, and each can be tested and reasoned about in isolation. </p>
+into layers, and each can be tested and reasoned about in isolation.</p>
 
 <p>The stack of middleware is injected into the <code class="highlighter-rouge">StackRunner</code>
 as a dependency via the constructor, along with an instance
@@ -130,7 +130,7 @@ and it’s container implements the required interface.
 The interface provides a <code class="highlighter-rouge">call()</code> method that given a 
 PHP callable (or string registered in the container) 
 instantiates the callable (if required) and uses the container
-to provide any arguments. </p>
+to provide any arguments.</p>
 
 <p>This <code class="highlighter-rouge">StackRunner</code> class produces an invokable object. When invoked
 the stack of middleware is traversed, executing each one (via the <code class="highlighter-rouge">InvokerInterface</code> object)
@@ -160,7 +160,7 @@ interfaces from PSR-7. This is the PHP-FIG (Framework
 Interoperability Group) effort to standardise the
 Request and Response object interfaces. 
 Any implementation of PSR-7 will do, for example
-the Diactoros package from Zend. </p>
+the Diactoros package from Zend.</p>
 
 <p>You also need to register your dependencies with 
 a PHP-DI container and provide that to the constructor.
@@ -203,7 +203,7 @@ then it <strong>must</strong> return a response object.</p>
 
 <p>Thanks to the <code class="highlighter-rouge">InvokerInterface</code> it’s possible to use the 
 DI container to instantiate the middleware to provide
-dependencies. </p>
+dependencies.</p>
 
 <p>By using a middleware stack runner like this you can 
 easily get separation of concerns and make your code simpler.

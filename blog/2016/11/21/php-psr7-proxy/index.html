@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHP PSR-7 Proxy | Darren Mothersele</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="home-logo">
+  <a href="/">
+<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
+</a>
+</div>
+
+<hgroup class="alignCenter">
+  <h1>PHP PSR-7 Proxy</h1>
+        <h6>Nov 21, 2016 · By Darren Mothersele</h6>
+  <p class="sc">Web Dev</p>
+</hgroup>
+<p>Creating a proxy in PHP is easy thanks to the 
+<a href="http://www.php-fig.org/psr/psr-7/">PSR-7 HTTP message interface</a> 
+definitions.</p>
+
+<p>Different tools using these same interface definitions are
+interoperable, without any extra work. 
+With PSR-7 it is easy to write a simple proxy. 
+Like this one, that sits between a client and an API and
+performs some mapping and reformatting of the data.</p>
+
+<p>I use the <a href="http://docs.guzzlephp.org/en/latest/">Guzzle</a> 
+HTTP client to make API calls in my code.
+This works with HTTP message objects that conform to PSR-7.</p>
+
+<p>Symfony HTTP Foundation (as used in Drupal) can work with
+PSR-7, but needs the PSR-7 Bridge library added.
+So, for simple projects, I prefer to use a standalone 
+implementation of PSR-7 like 
+<a href="https://zendframework.github.io/zend-diactoros/">Zend Diactoros</a>.</p>
+
+<p>On simple projects I tend to use <a href="http://php-di.org/">PHP-DI</a> 
+to configure everything. So, a simple <code class="highlighter-rouge">composer.json</code> file 
+for this project might look something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"php-di/php-di"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.4"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"guzzlehttp/guzzle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^6.2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"zendframework/zend-diactoros"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mtdowling/jmespath.php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"MyProxy\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">"src"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>I’ve added <a href="https://github.com/jmespath/jmespath.php">JMESPath</a> 
+to perform data manipulation.</p>
+
+<p>I put some standard bootstrap stuff into an App class. In the
+simplest of cases this just builds the DI container, and 
+provides a <code class="highlighter-rouge">run()</code> method.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class App
+{
+    /** @var Container */
+    protected $container;
+
+    public function __construct()
+    {
+        $builder = new ContainerBuilder;
+        $builder-&gt;addDefinitions(__DIR__.'/di-config.php');
+        $this-&gt;container = $builder-&gt;build();
+    }
+
+    public function run(ServerRequestInterface $request, ResponseInterface $response)
+    {
+        $runner = $this-&gt;container-&gt;get(StackRunner::class);
+        return $runner($request, $response);
+    }
+}
+</code></pre>
+</div>
+
+<p>This uses the Container from PHP-DI, and makes use of the 
+<code class="highlighter-rouge">StackRunner</code> class I talked about in 
+<a href="http://www.darrenmothersele.com/blog/2016/09/02/tiny-php-microframework-in-40-lines/">a previous blog post</a></p>
+
+<p>The <code class="highlighter-rouge">StackRunner</code> is given a stack of middleware to process requests. 
+They are configured in the <code class="highlighter-rouge">di-config.php</code> file that is loaded
+into PHP-DI’s container. 
+Here’s my example config for a very simple proxy that forwards
+requests to an API, then does some manipulation of the data
+it receives before sending the reply back to the client.</p>
+
+<p>Here’s the DI config, simplified to show the important bits:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>return [
+
+    'target' =&gt; 'http://example.com',
+
+    'middleware' =&gt; [
+        ProxyMiddleware::class,
+        FilterMiddleware::class
+    ],
+
+    StackRunner::class =&gt; object()
+        -&gt;constructorParameter('stack', get('middleware')),
+
+    ProxyMiddleware::class =&gt; object()
+        -&gt;constructorParameter('target', get('target')),
+];
+</code></pre>
+</div>
+
+<p>In this example the middleware stack contains just two items. 
+The first one proxies the request, the second one applies
+a filter to the response, before returning.</p>
+
+<p>The actual implementation of <code class="highlighter-rouge">ProxyMiddleware</code> is very 
+straightforward, because of the use of compatible PSR-7 
+http message objects.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class ProxyMiddleware
+{
+    /** @var Client */
+    protected $client;
+
+    protected $target;
+
+    public function __construct(Client $client, $target)
+    {
+        $this-&gt;client = $client;
+        $this-&gt;target = $target;
+    }
+
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next)
+    {
+        $target = new Uri($this-&gt;target);
+
+        /** @var Uri $uri */
+        $uri = $request-&gt;getUri()
+            -&gt;withScheme($target-&gt;getScheme())
+            -&gt;withHost($target-&gt;getHost())
+            -&gt;withPort($target-&gt;getPort());
+
+        $request = $request-&gt;withUri($uri);
+
+        $response = $this-&gt;client-&gt;send($request);
+
+        return $next($request, $response);
+    }
+}
+</code></pre>
+</div>
+
+<p>Notice the <code class="highlighter-rouge">ServerRequestInterface</code> object it reused to
+send on to the API via the Guzzle HTTP client.
+I just reset the URI of the request and send it on.</p>
+
+<p>The <code class="highlighter-rouge">FilterMiddleware</code> is just as simple.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class FilterMiddleware
+{
+    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $next)
+    {
+        $data = json_decode($response-&gt;getBody()-&gt;getContents(), true);
+        
+        // Do your manipulation of data here
+        
+        $body = new Stream('php://memory', 'w');
+        $body-&gt;write(json_encode($data));
+        $response = $response
+            -&gt;withoutHeader('Content-Length')
+            -&gt;withBody($body);
+        return $next($request, $response);
+    }
+}
+</code></pre>
+</div>
+
+<p>The point of this article is not to discuss the 
+filtering and manipulating the data so I have omitted 
+those bits of the code. I actually pass in an object to do 
+the filtering, via the DI config. 
+Which makes this middleware reusable.</p>
+
+<p>The important point I wanted to highlight was just how
+easy it is to make a simple proxy using PSR-7 for
+compatibility.</p>
+
+<p>Here is how it is used, by creating a Diactoros 
+<code class="highlighter-rouge">ServerRequestInterface</code> object from the incoming PHP
+request, and using the <code class="highlighter-rouge">SapiEmitter</code> to output the
+response. Here’s my <code class="highlighter-rouge">proxy.php</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require_once __DIR__.'/../vendor/autoload.php';
+
+$request = ServerRequestFactory::fromGlobals();
+$response = (new App)-&gt;run($request, new Response);
+(new SapiEmitter)-&gt;emit($response);
+</code></pre>
+</div>
+
+<p>You can run this with PHP’s internal web server,
+by calling <code class="highlighter-rouge">php -S localhost:8080 proxy.php</code>.</p>
+
+
+
+<div class="author-line">
+
+  <figure class="author-image">
+    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
+  </figure>
+
+<h4>Darren Mothersele</h4>
+<p>Darren is a software developer who builds simple, creative, and independent technology. <a href="/about">Read more &raquo;</a></p>
+</div>
+
+
+
+
+<footer>
+  <p>Want to support my work? Buy my <a href="/blog/2016/06/16/php-framework-weekend/">PHP Framework</a> book.
+  Available in paperback from <a href="http://amzn.to/2bNv560">Amazon</a> or eBook from <a href="https://leanpub.com/phpframework">Leanpub</a>.</p>
+  <p>
+    <small>
+      &copy;2007-2016 <a href="/about">Darren Mothersele</a>.
+        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
+        <a href="/contact">Contact</a>.
+        <a href="/blog/">Blog Archive</a>.
+    </small>
+  </p>
+</footer>
+</body>
+</html>
