@@ -29,6 +29,9 @@ With PSR-7 it is easy to write a simple proxy.
 Like this one, that sits between a client and an API and
 performs some mapping and reformatting of the data.</p>
 
+<p>If you’d rather read the code than the description
+go to <a href="https://github.com/darrenmothersele/php-psr7-proxy">this GitHub repo</a>.</p>
+
 <p>I use the <a href="http://docs.guzzlephp.org/en/latest/">Guzzle</a> 
 HTTP client to make API calls in my code.
 This works with HTTP message objects that conform to PSR-7.</p>
@@ -161,9 +164,11 @@ http message objects.</p>
 
 <p>Notice the <code class="highlighter-rouge">ServerRequestInterface</code> object it reused to
 send on to the API via the Guzzle HTTP client.
-I just reset the URI of the request and send it on.</p>
+I just reset the URI of the request and send it on.
+You might want to do more than this when manipulating the
+requests before passing them on, like removing/adding cookies.</p>
 
-<p>The <code class="highlighter-rouge">FilterMiddleware</code> is just as simple.</p>
+<p>The <code class="highlighter-rouge">FilterMiddleware</code> is just as simple…</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>class FilterMiddleware
 {
@@ -173,11 +178,7 @@ I just reset the URI of the request and send it on.</p>
         
         // Do your manipulation of data here
         
-        $body = new Stream('php://memory', 'w');
-        $body-&gt;write(json_encode($data));
-        $response = $response
-            -&gt;withoutHeader('Content-Length')
-            -&gt;withBody($body);
+        $response = new JsonResponse($data);
         return $next($request, $response);
     }
 }
@@ -209,6 +210,9 @@ $response = (new App)-&gt;run($request, new Response);
 
 <p>You can run this with PHP’s internal web server,
 by calling <code class="highlighter-rouge">php -S localhost:8080 proxy.php</code>.</p>
+
+<p>You can get the example code from 
+<a href="https://github.com/darrenmothersele/php-psr7-proxy">this GitHub repo</a>.</p>
 
 
 
