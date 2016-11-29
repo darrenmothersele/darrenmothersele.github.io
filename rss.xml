@@ -4,8 +4,8 @@
     <title></title>
     <description>Software developer who builds simple, creative, and independent technology. He believes this will empower humans to create a better future.
 </description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://www.darrenmothersele.com</link>
+    <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>PHP PSR-7 Proxy</title>
@@ -67,7 +67,7 @@ provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;run()&lt;/code&gt; me
     public function __construct()
     {
         $builder = new ContainerBuilder;
-        $builder-&amp;gt;addDefinitions(__DIR__.'/di-config.php');
+        $builder-&amp;gt;addDefinitions(__DIR__.&#39;/di-config.php&#39;);
         $this-&amp;gt;container = $builder-&amp;gt;build();
     }
 
@@ -95,18 +95,18 @@ it receives before sending the reply back to the client.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return [
 
-    'target' =&amp;gt; 'http://example.com',
+    &#39;target&#39; =&amp;gt; &#39;http://example.com&#39;,
 
-    'middleware' =&amp;gt; [
+    &#39;middleware&#39; =&amp;gt; [
         ProxyMiddleware::class,
         FilterMiddleware::class
     ],
 
     StackRunner::class =&amp;gt; object()
-        -&amp;gt;constructorParameter('stack', get('middleware')),
+        -&amp;gt;constructorParameter(&#39;stack&#39;, get(&#39;middleware&#39;)),
 
     ProxyMiddleware::class =&amp;gt; object()
-        -&amp;gt;constructorParameter('target', get('target')),
+        -&amp;gt;constructorParameter(&#39;target&#39;, get(&#39;target&#39;)),
 ];
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -190,7 +190,7 @@ compatibility.&lt;/p&gt;
 request, and using the &lt;code class=&quot;highlighter-rouge&quot;&gt;SapiEmitter&lt;/code&gt; to output the
 response. Here’s my &lt;code class=&quot;highlighter-rouge&quot;&gt;proxy.php&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require_once __DIR__.'/../vendor/autoload.php';
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require_once __DIR__.&#39;/../vendor/autoload.php&#39;;
 
 $request = ServerRequestFactory::fromGlobals();
 $response = (new App)-&amp;gt;run($request, new Response);
@@ -205,8 +205,8 @@ by calling &lt;code class=&quot;highlighter-rouge&quot;&gt;php -S localhost:8080
 &lt;a href=&quot;https://github.com/darrenmothersele/php-psr7-proxy&quot;&gt;this GitHub repo&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/11/21/php-psr7-proxy/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/11/21/php-psr7-proxy/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/11/21/php-psr7-proxy/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/11/21/php-psr7-proxy/</guid>
       </item>
     
       <item>
@@ -311,8 +311,8 @@ work in Resolume.&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&quot;https://github.com/cyrilcode/ffglplugin-examples&quot;&gt;GitHub&lt;/a&gt; for more details.&lt;/p&gt;
 </description>
         <pubDate>Tue, 20 Sep 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/09/20/ffgl-plugins-resolume/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/09/20/ffgl-plugins-resolume/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/09/20/ffgl-plugins-resolume/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/09/20/ffgl-plugins-resolume/</guid>
       </item>
     
       <item>
@@ -376,9 +376,9 @@ class StackRunner
         $this-&amp;gt;current++;
 
         return $this-&amp;gt;invoker-&amp;gt;call($middleware, [
-          'request' =&amp;gt; $request,
-          'response' =&amp;gt; $response,
-          'next' =&amp;gt; $this,
+          &#39;request&#39; =&amp;gt; $request,
+          &#39;response&#39; =&amp;gt; $response,
+          &#39;next&#39; =&amp;gt; $this,
         ]);
     }
 }
@@ -518,8 +518,8 @@ logic up front, and then wrap it up as required.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 02 Sep 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/09/02/tiny-php-microframework-in-40-lines/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/09/02/tiny-php-microframework-in-40-lines/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/09/02/tiny-php-microframework-in-40-lines/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/09/02/tiny-php-microframework-in-40-lines/</guid>
       </item>
     
       <item>
@@ -556,8 +556,8 @@ logic up front, and then wrap it up as required.&lt;/p&gt;
 &lt;p&gt;Daz&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/08/23/tiny-letter-6/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/08/23/tiny-letter-6/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/08/23/tiny-letter-6/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/08/23/tiny-letter-6/</guid>
       </item>
     
       <item>
@@ -633,8 +633,8 @@ next weekend instead.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 17 Jun 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/06/17/tiny-letter-5/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/17/tiny-letter-5/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/06/17/tiny-letter-5/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/17/tiny-letter-5/</guid>
       </item>
     
       <item>
@@ -698,8 +698,8 @@ in a weekend.&lt;/p&gt;
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2016 13:30:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/06/16/php-framework-weekend/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/16/php-framework-weekend/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</guid>
       </item>
     
       <item>
@@ -838,8 +838,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 05 Jun 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/06/05/more-3d-fractals/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/05/more-3d-fractals/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/06/05/more-3d-fractals/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/05/more-3d-fractals/</guid>
       </item>
     
       <item>
@@ -867,8 +867,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 &lt;p&gt;Daz  &lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Apr 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/04/01/tiny-letter-4/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/04/01/tiny-letter-4/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/04/01/tiny-letter-4/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/04/01/tiny-letter-4/</guid>
       </item>
     
       <item>
@@ -895,8 +895,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/03/14/un-wired-blocked/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/03/14/un-wired-blocked/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/03/14/un-wired-blocked/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/03/14/un-wired-blocked/</guid>
       </item>
     
       <item>
@@ -916,8 +916,8 @@ shading on the “moon” in the background…&lt;/p&gt;
 &lt;p&gt;We also hear a lot of the word &lt;em&gt;share&lt;/em&gt; with the rise of the (so called) &lt;em&gt;sharing&lt;/em&gt; economy. Uber and AirBnB are not based on sharing at all. It’s not sharing if you are paying a fee. And, the focus of startups in the “sharing economy” isn’t on creating a cooperative (shared) platform. They are actually about crowd-sourcing a monopoly. &lt;/p&gt;
 </description>
         <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/03/11/semantic-drift/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/03/11/semantic-drift/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/03/11/semantic-drift/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/03/11/semantic-drift/</guid>
       </item>
     
   </channel>

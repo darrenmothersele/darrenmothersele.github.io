@@ -3,8 +3,8 @@
   <channel>
     <title> - Drupal Planet Feed</title>
     <description>Darren Mothersele's Drupal Planet Feed</description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/drupal-planet.xml" rel="self" type="application/rss+xml" />
+    <link>http://www.darrenmothersele.com</link>
+    <atom:link href="http://www.darrenmothersele.com/drupal-planet.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>PHP Framework in One Weekend</title>
@@ -67,8 +67,8 @@ in a weekend.&lt;/p&gt;
 &lt;p&gt;Thanks!&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2016 13:30:00 +0100</pubDate>
-        <link>http://localhost:4000//blog/2016/06/16/php-framework-weekend/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/06/16/php-framework-weekend/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/06/16/php-framework-weekend/</guid>
       </item>
     
       <item>
@@ -101,15 +101,15 @@ in a weekend.&lt;/p&gt;
 
 &lt;p&gt;You will need a basic knowledge of PHP and a laptop that can run PHP. You will leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
 
-&lt;h3 id=&quot;tickets-available-here&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+&lt;h3 id=&quot;tickets-available-herehttpseventsr20constantcontactcomregistereventregoeidka07ebt79sow1ef68caboseqcch&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
 
 &lt;p&gt;£295.00 or
 £95.00 concession tickets for sole traders, students and charities.
 The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt;
 </description>
         <pubDate>Thu, 25 Feb 2016 10:30:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/25/php-training-at-drupalcamp-london/</guid>
       </item>
     
       <item>
@@ -134,13 +134,13 @@ The training will be on Friday March 4, 2016 at City University London.&lt;/p&gt
 
 &lt;p&gt;Come armed with a basic knowledge of PHP, a laptop that can run PHP, and an open mind. Leave with a better understanding of the principles behind modern PHP and Drupal 8.&lt;/p&gt;
 
-&lt;h3 id=&quot;tickets-available-here&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
+&lt;h3 id=&quot;tickets-available-herehttpseventsr20constantcontactcomregistereventregoeidka07ebt79sow1ef68caboseqcch&quot;&gt;&lt;a href=&quot;https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebt79sow1ef68cab&amp;amp;oseq=&amp;amp;c=&amp;amp;ch=&quot;&gt;Tickets available here&lt;/a&gt;.&lt;/h3&gt;
 
 &lt;p&gt;The training will be held on Friday March 4, 2016 at City University London.&lt;/p&gt;
 </description>
         <pubDate>Thu, 11 Feb 2016 17:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/02/11/drupal-camp-london-training/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/02/11/drupal-camp-london-training/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/02/11/drupal-camp-london-training/</guid>
       </item>
     
       <item>
@@ -230,8 +230,8 @@ including Drupal.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 28 Jan 2016 14:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/01/28/drupal-predictions/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/01/28/drupal-predictions/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/28/drupal-predictions/</guid>
       </item>
     
       <item>
@@ -294,8 +294,8 @@ Part 3: Explain how awesome the session will be because you are going to cover �
 
 </description>
         <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/01/22/conference-session-submission-guidelines/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/01/22/conference-session-submission-guidelines/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/22/conference-session-submission-guidelines/</guid>
       </item>
     
       <item>
@@ -339,8 +339,8 @@ Part 3: Explain how awesome the session will be because you are going to cover �
 &lt;p&gt;Join me for this session. Let’s explore transformation of our world, the web, Drupal, and ourselves.&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
+        <link>http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2016/01/21/survive-and-thrive-drupal-8/</guid>
       </item>
     
       <item>
@@ -662,8 +662,8 @@ community, society, and the world.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2015/11/16/surviving-open-source-gentrification/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2015/11/16/surviving-open-source-gentrification/</guid>
+        <link>http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/11/16/surviving-open-source-gentrification/</guid>
       </item>
     
       <item>
@@ -716,7 +716,7 @@ a starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;templates/ind
 called &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; with the following code:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . &#39;/vendor/autoload.php&#39;;
 
 $app = new Stylex\Application();
 $app-&amp;gt;run();
@@ -750,7 +750,7 @@ $app-&amp;gt;run();
 
 &lt;p&gt;You can add more pages, and make use of Twig’s awesome template inheritance feature. For example, to create an ‘About us’ page, create a new file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;templates&lt;/code&gt; folder called &lt;code class=&quot;highlighter-rouge&quot;&gt;about.html&lt;/code&gt; with the following content:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;index.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;About&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;us&amp;lt;/h&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -788,7 +788,7 @@ Let’s add a component template to style the menu. See my posts on Atomic desig
 
 &lt;p&gt;Now you can include the menu in your page template, by adding the following to your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'components/menu.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;components/menu.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -826,7 +826,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 &lt;p&gt;Or, yet even more useful (if you’re building an atomic design), output all the articles using a component template:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;content.articles&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'components/teaser.html'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;components/teaser.html&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -849,7 +849,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 &lt;p&gt;If you’re getting error messages, you can turn on debugging. In the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; file that you created simple add the following line before &lt;code class=&quot;highlighter-rouge&quot;&gt;$app-&amp;gt;run();&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$app['debug'] = TRUE;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$app[&#39;debug&#39;] = TRUE;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -869,8 +869,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 </description>
         <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
+        <link>http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/20/stylex-prototype-style-guide-tool/</guid>
       </item>
     
       <item>
@@ -931,8 +931,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsam veritat
 
 </description>
         <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2015/03/06/atomic-drupal-workshops/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2015/03/06/atomic-drupal-workshops/</guid>
+        <link>http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/03/06/atomic-drupal-workshops/</guid>
       </item>
     
       <item>
@@ -991,12 +991,12 @@ what most people expect. I thought about this a lot, and what I came up with was
 
 &lt;p&gt;We may not all know all the latest front-end tricks, but when given well build front-end code we know how to get Drupal to generate the appropriate markup.&lt;/p&gt;
 
-&lt;p class=&quot;lead&quot;&gt;Most importantly, we know how to get the best results out of Drupal's building blocks, we know how to turn good designs and ideas into great websites, and we know how to build websites in a methodical, flexible, and maintainable way.&lt;/p&gt;
+&lt;p class=&quot;lead&quot;&gt;Most importantly, we know how to get the best results out of Drupal&#39;s building blocks, we know how to turn good designs and ideas into great websites, and we know how to build websites in a methodical, flexible, and maintainable way.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000//blog/2015/02/26/drupal-site-builder-manifesto/</link>
-        <guid isPermaLink="true">http://localhost:4000//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
+        <link>http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com//blog/2015/02/26/drupal-site-builder-manifesto/</guid>
       </item>
     
   </channel>
