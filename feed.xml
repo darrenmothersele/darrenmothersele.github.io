@@ -6,9 +6,349 @@
 </description>
     <link>http://www.darrenmothersele.com/</link>
     <atom:link href="http://www.darrenmothersele.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Nov 2016 21:39:42 +0000</pubDate>
-    <lastBuildDate>Tue, 29 Nov 2016 21:39:42 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <pubDate>Tue, 28 Mar 2017 11:16:49 +0100</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 11:16:49 +0100</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>How to do Everything with PHP Middleware (DrupalCamp London)</title>
+        <description>&lt;p&gt;At the DrupalCamp in London earlier this month I gave a talk 
+about PHP Middleware. 
+You can see a &lt;a href=&quot;https://www.youtube.com/watch?v=I0pXXCQdHQM&quot;&gt;recording of the talk&lt;/a&gt; 
+on YouTube. Here’s a summary, in case you don’t want to watch 
+the whole talk, or the distorted audio upsets you, or if you 
+want the links and references:&lt;/p&gt;
+
+&lt;h2 id=&quot;simple-vs-easy&quot;&gt;Simple vs Easy&lt;/h2&gt;
+
+&lt;p&gt;I started with a reference to the important talk by Rich Hickey, 
+&lt;a href=&quot;https://www.infoq.com/presentations/Simple-Made-Easy&quot;&gt;Simple Made Easy&lt;/a&gt;.
+This is high up on my list of videos every software developer needs to watch.
+I began here because I think it’s important to identify the difference
+between &lt;em&gt;simple&lt;/em&gt; and &lt;em&gt;easy&lt;/em&gt;, to identify where complexity sneaks into our 
+systems. I have found PHP Middleware to be an important tool in 
+the fight against complexity.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“programming, when stripped of all its circumstantial irrelevancies, boils 
+down to no more and no less than very effective thinking so as to avoid 
+unmastered complexity, to very vigorous separation of your many different concerns.&lt;/p&gt;
+
+  &lt;p&gt;– &lt;a href=&quot;https://www.cs.utexas.edu/users/EWD/transcriptions/EWD05xx/EWD512.html&quot;&gt;Edsgar W. Dijkstra&lt;/a&gt; (1930 - 2002)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;de-complecting-php&quot;&gt;De-complecting PHP&lt;/h2&gt;
+
+&lt;p&gt;I talked a bit about different ways to simplify development with PHP.
+Including: Domain-driven design, Hexagonal architecture (Ports and 
+Adapters), Framework-independent code, Thin APIs, etc…
+In particular, I wanted to emphasise the importance of framework-independent
+code and the benefit of using common interfaces such as the ones developed
+as PSRs by &lt;a href=&quot;http://www.php-fig.org/&quot;&gt;PHP-FIG&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There was some discussion after about introducing unecessary abstractions,
+but I think this misses the point. Of course there is a trade off, but the
+key is to focus on the simplicity, on &lt;em&gt;untwisting&lt;/em&gt; things (c.f. Rich Hickey).&lt;/p&gt;
+
+&lt;h2 id=&quot;de-coupled&quot;&gt;De-coupled&lt;/h2&gt;
+
+&lt;p&gt;Inspired by the &lt;a href=&quot;https://docs.zendframework.com/zend-expressive/&quot;&gt;Zend Expressive&lt;/a&gt;
+installation procedure, I imagined what Drupal 10 might look like, with 
+fully-decoupled components.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/drupal-x-installer.jpg&quot; alt=&quot;Drupal Install&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h2&gt;
+
+&lt;p&gt;The widespread adoption of PSR7 by the PHP community has lead to the 
+popularity of PHP Middleware-based systems.&lt;/p&gt;
+
+&lt;p&gt;Why PSR7 when Symfony HTTP components were so popular?
+Well, that is an implementation - and rather than standardise on 
+implementation, we should standardise against interfaces.&lt;/p&gt;
+
+&lt;p&gt;This allows more interoperability. I showed this &lt;strong&gt;pseudocode&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Take the incoming request from Diactoros
+$request = ServerRequestFactory::fromGlobals();
+
+$client = new Client();
+
+// Response comes back from Guzzle
+$response = $client-&amp;gt;send($request-&amp;gt;withUrl($dest));
+
+$body  = simplexml_load_string(
+$response-&amp;gt;getBody()-&amp;gt;getContents());
+
+// pass back to Diactoros
+(new SapiEmitter)-&amp;gt;emit($response-&amp;gt;withBody($body));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The example uses HTTP requests from 
+&lt;a href=&quot;https://github.com/zendframework/zend-diactoros&quot;&gt;Zend Diactoros&lt;/a&gt;,
+forwards them using the &lt;a href=&quot;http://guzzle.readthedocs.io/en/latest/&quot;&gt;Guzzle&lt;/a&gt;
+HTTP client, and returns the response object from Guzzle
+using the SAPI Emitter from Diactoros.&lt;/p&gt;
+
+&lt;p&gt;This demonstrates the power of sharing standard interfaces.
+Here two packages are used together, both provide
+an implementation of PSR7 HTTP messages, and they
+work seamlessly because they both conform to the same interface,
+despite the differing implementation details.&lt;/p&gt;
+
+&lt;h2 id=&quot;decorating-web-apps&quot;&gt;Decorating Web Apps&lt;/h2&gt;
+
+&lt;p&gt;This is what a typical web app looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/ball-of-mud.jpg&quot; alt=&quot;Ball of Mud&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Which can be simplified to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/web-app-1.png&quot; alt=&quot;Web App&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A web app takes a request and returns a response.&lt;/p&gt;
+
+&lt;p&gt;The concept behind PHP Middleware is that you can &lt;em&gt;decorate&lt;/em&gt;
+the app, to add new functionality, by intercepting the request
+on the way in, and the response on the way out.
+This avoids the complexity of &lt;em&gt;intertwining&lt;/em&gt; your code
+throughout the ball of mud.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/web-app-2.png&quot; alt=&quot;Web App&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s an example (pseudocode) for adding CORS 
+functionality to an existing app:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+$cors = analyze($request);
+switch ($cors-&amp;gt;getRequestType()) {
+    Case ERR_NO_HOST_HEADER:
+    Case ERR_ORIGIN_NOT_ALLOWED:
+    Case ERR_METHOD_NOT_SUPPORTED:
+    Case ERR_HEADERS_NOT_SUPPORTED:
+        Return createResponse(403);
+
+    Case TYPE_REQUEST_OUT_OF_CORS_SCOPE:
+        return $APP-&amp;gt;process($request);
+
+    Case TYPE_PRE_FLIGHT_REQUEST:
+        $response = Utils\Factory::createResponse(200);
+        Return $response-&amp;gt;withHeaders($cors-&amp;gt;getHeaders);
+
+    default:
+        $response = $APP-&amp;gt;process($request);
+        Return $response-&amp;gt;withHeaders($cors-&amp;gt;getHeaders);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackphp.com/&quot;&gt;StackPHP&lt;/a&gt; first popularised the concept of middleware
+in PHP. This diagram is from their website:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/onion.png&quot; alt=&quot;Web App&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are other popular micro-frameworks based on this concept,
+such as &lt;a href=&quot;https://www.slimframework.com/&quot;&gt;Slim&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The core of your app is just a thin layer of business logic. 
+Just your domain specific code. The rest can be wrapped in layers
+which isolate and separate concerns nicely.&lt;/p&gt;
+
+&lt;h2 id=&quot;single-pass-vs-double-pass&quot;&gt;Single-pass vs Double-pass&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;double pass&lt;/em&gt; approach became the most popularly used
+signature for HTTP middleware, based on
+&lt;a href=&quot;http://expressjs.com/en/guide/writing-middleware.html&quot;&gt;Express middleware&lt;/a&gt;
+from the JS community.&lt;/p&gt;
+
+&lt;p&gt;It looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// DOUBLE PASS
+function __invoke($request, $response, $next) {
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The request and the response are both passed into the middleware,
+along with a &lt;code class=&quot;highlighter-rouge&quot;&gt;$next&lt;/code&gt; delegate that is called to pass
+control and carry on processing down the chain of middleware.&lt;/p&gt;
+
+&lt;p&gt;This double-pass approach is much newer, but 
+used by most of the early adopters of PSR-7.&lt;/p&gt;
+
+&lt;p&gt;A single pass approach, looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// SINGLE PASS / LAMBDA
+function process($request, $delegate) {
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The issue is with how the response object is dealt with.
+In the double-pass approach, both are provided. 
+The argument is that this is better for dependency 
+inversion. Using the single pass approach you either
+need to hard code a dependency on a HTTP message 
+implementation into your middleware when the response
+is required, or you need to inject a factory for
+generating the response.&lt;/p&gt;
+
+&lt;h2 id=&quot;psr-15-http-middleware&quot;&gt;PSR-15 HTTP Middleware&lt;/h2&gt;
+
+&lt;p&gt;After the success of PSR7, with it’s wide adoption leading to
+much standardisation and interoperability in PHP frameworks,
+the next step is to standardise the middleware interface.&lt;/p&gt;
+
+&lt;p&gt;This is not yet an accepted PSR. At the time of writing 
+it is still in &lt;strong&gt;draft&lt;/strong&gt; status.
+It is available for use in the 
+&lt;a href=&quot;https://github.com/http-interop/http-middleware&quot;&gt;http-interop/http-middleware&lt;/a&gt; repo.&lt;/p&gt;
+
+&lt;h2 id=&quot;invoker&quot;&gt;Invoker&lt;/h2&gt;
+
+&lt;p&gt;As an aside, I mentioned the &lt;a href=&quot;https://github.com/PHP-DI/Invoker&quot;&gt;Invoker Interface&lt;/a&gt;.
+As per the docs:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Who doesn’t need an over-engineered call_user_func()?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In particular this library really simplifies the process
+of calling things and injecting dependencies. 
+It also allows to call things using named parameters.
+I make extensive use of this, and I find making calls with 
+named parameters makes code much easier to understand.&lt;/p&gt;
+
+&lt;h2 id=&quot;psr-15-interfaces&quot;&gt;PSR-15 Interfaces&lt;/h2&gt;
+
+&lt;p&gt;PSR-15 has two interfaces. Both define a method called &lt;code class=&quot;highlighter-rouge&quot;&gt;process&lt;/code&gt;.
+One is the signature that middleware must support, which takes
+a PSR7 request and a PSR15 delegate. The other interface defines
+the &lt;code class=&quot;highlighter-rouge&quot;&gt;process&lt;/code&gt; method for the delegate. The method on both
+interfaces is defined as returning a PSR7 response.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/psr-15.png&quot; alt=&quot;Web App&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So you can compose a chain of middleware, pass in a request
+and get a response. The request is passed down the chain of 
+middleware until a response is generated which is then passed
+back up the chain, possibly being decorated along the way.&lt;/p&gt;
+
+&lt;p&gt;For want of a better name, I refer to this chain of middleware
+as a &lt;em&gt;stack&lt;/em&gt;. And, I have created a simple 
+&lt;a href=&quot;https://github.com/ideationnet/stack-runner&quot;&gt;Stack Runner&lt;/a&gt; to 
+handle the processing of a stack of PSR-15 middleware.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class StackRunner implements DelegateInterface
+{
+    public function __construct(
+   array $stack,
+        InvokerInterface $invoker,
+        ResponseFactoryInterface $responseFactory
+    ) { ... }
+
+    public function process(ServerRequestInterface $request)
+    {
+        if (!isset($this-&amp;gt;stack[$this-&amp;gt;current])) {
+            return $this-&amp;gt;responseFactory-&amp;gt;createResponse();
+        }
+        $middleware = $this-&amp;gt;stack[$this-&amp;gt;current];
+        $this-&amp;gt;current++;
+
+        return $this-&amp;gt;invoker-&amp;gt;call([$middleware, 'process'], [
+            'request' =&amp;gt; $request,
+            'delegate' =&amp;gt; $this,
+        ]);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;adr-action-domain-responder&quot;&gt;ADR (Action Domain Responder)&lt;/h2&gt;
+
+&lt;p&gt;I went on to talk about ADR as being an adaptation of MVC that
+is more suitable for use in Web Apps.
+I’ve found this particularly useful when using Domain-Driven Design,
+or when used to create &lt;em&gt;thin APIs&lt;/em&gt; where you
+have just a thin layer of business logic on top of a data store.&lt;/p&gt;
+
+&lt;p&gt;The issue with MVC is that the template is not the view. 
+The &lt;em&gt;“view”&lt;/em&gt; of a web app is the HTTP response, and we split this
+across our layers, as the body of the response is typically generated
+by the view, with the knowledge of HTTP being encoded into our controllers.
+We also bundle together various actions into one controller, which 
+means instantiating the whole thing when we want to run one of the actions.&lt;/p&gt;
+
+&lt;p&gt;ADR offers an alternative separation of concerns, where the
+action methods of the controller are their own separate classes 
+(or in my case anything &lt;em&gt;invokable&lt;/em&gt; via the &lt;code class=&quot;highlighter-rouge&quot;&gt;InvokerInterface&lt;/code&gt;).
+I use an &lt;code class=&quot;highlighter-rouge&quot;&gt;InputHandler&lt;/code&gt; to deal with parsing the input from the HTTP Request, 
+which the Invoker can then use (via the magic of named arguments).&lt;/p&gt;
+
+&lt;p&gt;The domain (Model in MVC terminology) is where the business logic lives.
+This is called domain, rather than model, to suggest use of
+domain-driven design.&lt;/p&gt;
+
+&lt;p&gt;To use ADR with PHP Middleware, add a &lt;em&gt;resolver&lt;/em&gt; to the end of the
+chain of middleware to &lt;em&gt;dispatch&lt;/em&gt; the request to the appropriate 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Action&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/radr.png&quot; alt=&quot;Web App&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;action&quot;&gt;Action&lt;/h2&gt;
+
+&lt;p&gt;I’ve created a reference implementation of an &lt;em&gt;invokable&lt;/em&gt;
+&lt;a href=&quot;https://github.com/ideationnet/wafer/blob/master/src/Action.php&quot;&gt;Action&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.darrenmothersele.com/img/action.png&quot; alt=&quot;Web App&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo!&lt;/h2&gt;
+
+&lt;p&gt;At this point in my talk I planned to give a demo of 
+how you compose ADR with Middleware to create a working API.
+Unfortunately, I had some tech issues getting my computer linked
+up to the projector, and I was starting to feel really ill (full of 
+cold). By this time the caffeine was starting to wear off, and 
+I needed the talk to end!&lt;/p&gt;
+
+&lt;p&gt;I’ve put the example code up in a 
+&lt;a href=&quot;https://github.com/darrenmothersele/dcldn2017&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.infoq.com/presentations/Simple-Made-Easy&quot;&gt;Simple Made Easy&lt;/a&gt; - talk by Rich Hickey&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/http-interop/http-middleware&quot;&gt;HTTP Middleware&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/http-interop/http-factory&quot;&gt;HTTP Factory&lt;/a&gt; interfaces.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/middlewares/psr15-middlewares&quot;&gt;PSR15 Middlewares&lt;/a&gt; a
+set of really useful middlewares that can be used with a PSR15 middleware 
+dispatcher.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ideationnet/stack-runner&quot;&gt;Stack Runner&lt;/a&gt; 
+my reference implementation of a &lt;em&gt;very&lt;/em&gt; simple stack runner for executing
+a chain of PSR15 middleware.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ideationnet/wafer&quot;&gt;Wafer&lt;/a&gt; an experimental implementation
+of the ADR idea to be used along with PSR15 middleware and the stack runner.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Drop me a line with any feedback. Thanks!&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 28 Mar 2017 10:30:00 +0100</pubDate>
+        <link>http://www.darrenmothersele.com/blog/2017/03/28/php-middleware/</link>
+        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2017/03/28/php-middleware/</guid>
+        
+        <category>drupal</category>
+        
+        <category>featured</category>
+        
+        <category>drupal-planet</category>
+        
+        
+        <category>Web Dev</category>
+        
+      </item>
     
       <item>
         <title>PHP PSR-7 Proxy</title>
@@ -70,7 +410,7 @@ provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;run()&lt;/code&gt; me
     public function __construct()
     {
         $builder = new ContainerBuilder;
-        $builder-&amp;gt;addDefinitions(__DIR__.&#39;/di-config.php&#39;);
+        $builder-&amp;gt;addDefinitions(__DIR__.'/di-config.php');
         $this-&amp;gt;container = $builder-&amp;gt;build();
     }
 
@@ -98,18 +438,18 @@ it receives before sending the reply back to the client.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return [
 
-    &#39;target&#39; =&amp;gt; &#39;http://example.com&#39;,
+    'target' =&amp;gt; 'http://example.com',
 
-    &#39;middleware&#39; =&amp;gt; [
+    'middleware' =&amp;gt; [
         ProxyMiddleware::class,
         FilterMiddleware::class
     ],
 
     StackRunner::class =&amp;gt; object()
-        -&amp;gt;constructorParameter(&#39;stack&#39;, get(&#39;middleware&#39;)),
+        -&amp;gt;constructorParameter('stack', get('middleware')),
 
     ProxyMiddleware::class =&amp;gt; object()
-        -&amp;gt;constructorParameter(&#39;target&#39;, get(&#39;target&#39;)),
+        -&amp;gt;constructorParameter('target', get('target')),
 ];
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -193,7 +533,7 @@ compatibility.&lt;/p&gt;
 request, and using the &lt;code class=&quot;highlighter-rouge&quot;&gt;SapiEmitter&lt;/code&gt; to output the
 response. Here’s my &lt;code class=&quot;highlighter-rouge&quot;&gt;proxy.php&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require_once __DIR__.&#39;/../vendor/autoload.php&#39;;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require_once __DIR__.'/../vendor/autoload.php';
 
 $request = ServerRequestFactory::fromGlobals();
 $response = (new App)-&amp;gt;run($request, new Response);
@@ -395,9 +735,9 @@ class StackRunner
         $this-&amp;gt;current++;
 
         return $this-&amp;gt;invoker-&amp;gt;call($middleware, [
-          &#39;request&#39; =&amp;gt; $request,
-          &#39;response&#39; =&amp;gt; $response,
-          &#39;next&#39; =&amp;gt; $this,
+          'request' =&amp;gt; $request,
+          'response' =&amp;gt; $response,
+          'next' =&amp;gt; $this,
         ]);
     }
 }
@@ -966,35 +1306,6 @@ shading on the “moon” in the background…&lt;/p&gt;
         <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
         <link>http://www.darrenmothersele.com/blog/2016/03/14/un-wired-blocked/</link>
         <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/03/14/un-wired-blocked/</guid>
-        
-        <category>misc</category>
-        
-        <category>featured</category>
-        
-        
-        <category>Thoughts</category>
-        
-      </item>
-    
-      <item>
-        <title>Semantic Drift</title>
-        <description>&lt;p&gt;Language is always evolving. Words go out of common usage, new words appear, and words change their meaning. The firehose of social media has given us new words, like the “selfie” and “clickbait”. The narcissistic undercurrent in these new terms indicates how these technologies are changing us. But, more concerning, are words where the actual meaning is changing. &lt;/p&gt;
-
-&lt;p&gt;George Orwell coined the term &lt;em&gt;doublethink&lt;/em&gt; in the novel 1984. It formed part of Big Brother’s brainwashing programmes in which words take on dual meanings, leading to acceptance of conflict or contradiction via language. &lt;/p&gt;
-
-&lt;p&gt;We talk about &lt;em&gt;social&lt;/em&gt; media, but a more appropriate term would be &lt;em&gt;anti-social&lt;/em&gt; media. When you hear phrases like “my selfie has 50 likes”, it’s less about being social, and more about bragging. A “social stream” feeds trivialities to followers, fans and friends. The danger is that this shallow form of connection, via the screen, mediated by technology, is replacing real meaningful connection and companionship. &lt;/p&gt;
-
-&lt;p&gt;This brings us to the concept of &lt;em&gt;friend&lt;/em&gt;. As I mentioned in my post about &lt;a href=&quot;http://www.darrenmothersele.com/blog/2015/12/03/work-in-progress/&quot;&gt;why I left Facebook&lt;/a&gt;, “you can have 1000 friends on Facebook, but only if you reduce your definition of what it means to be a friend.” We also now have &lt;em&gt;unfriend&lt;/em&gt; as a verb. &lt;/p&gt;
-
-&lt;p&gt;Other nouns are becoming verbs, like &lt;em&gt;inbox&lt;/em&gt;. I hear people saying “inbox me”, or “I’ll inbox you”, when they referring to sending a private message. This annoys me. It may seem innocuous, but it highlights a lack of understanding about the difference between a message and where the message is stored. We have, in one word, conflated the process of sending a message with both it’s place of storage and the act of receiving it. When you consider the temporal aspects of this, it reveals the acceptance of omnipresent access to our attention. &lt;/p&gt;
-
-&lt;p&gt;Perhaps the most abused word is &lt;em&gt;share&lt;/em&gt;. We have lost touch completely with what it really means to share something. From the compulsive &lt;em&gt;sharing&lt;/em&gt; of &lt;em&gt;selfies&lt;/em&gt; driven by a need for acceptance and dopamine reward, to the rebranding of “unsolicited advertising” as “sharing” on social media. &lt;/p&gt;
-
-&lt;p&gt;We also hear a lot of the word &lt;em&gt;share&lt;/em&gt; with the rise of the (so called) &lt;em&gt;sharing&lt;/em&gt; economy. Uber and AirBnB are not based on sharing at all. It’s not sharing if you are paying a fee. And, the focus of startups in the “sharing economy” isn’t on creating a cooperative (shared) platform. They are actually about crowd-sourcing a monopoly. &lt;/p&gt;
-</description>
-        <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://www.darrenmothersele.com/blog/2016/03/11/semantic-drift/</link>
-        <guid isPermaLink="true">http://www.darrenmothersele.com/blog/2016/03/11/semantic-drift/</guid>
         
         <category>misc</category>
         
