@@ -1,25 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>How to Be a Cloud Survivalist (part 3) | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body class="bg-grey-lightest text-black">
 
-<div class="home-logo">
-  <a href="/">
-<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
-</a>
+<header class="py-4 overflow-hidden flex justify-center items-center border-b">
+  <div class="flex-1 border-r h-8 skew-right grad-right"></div>
+  <a class="no-outline" href="/">
+    <svg id="logo" class="h-8 mx-8" viewBox="0 0 1140 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M60,300l60,100l-120,0l60,-100Z" style="fill:#b35738;"/><path d="M120,200l60,100l-120,0l60,-100Z" style="fill:#cf7038;"/><path d="M180,100l60,100l-120,0l60,-100Z" style="fill:#c46f3c;"/><path d="M240,0l60,100l-120,0l60,-100Z" style="fill:#d5a246;"/><path d="M360,0l60,100l-120,0l60,-100Z" style="fill:#ddc55e;"/><path d="M480,0l60,100l-120,0l60,-100Z" style="fill:#d8c571;"/><path d="M420,100l60,100l-120,0l60,-100Z" style="fill:#d5b74c;"/><path d="M180,300l60,100l-120,0l60,-100Z" style="fill:#da7535;"/><path d="M300,300l60,100l-120,0l60,-100Z" style="fill:#dd8d3d;"/><path d="M360,200l60,100l-120,0l60,-100Z" style="fill:#dda446;"/><path d="M420,300l60,100l-120,0l60,-100Z" style="fill:#826c85;"/><path d="M480,200l60,100l-120,0l60,-100Z" style="fill:#b8415b;"/><path d="M540,100l60,100l-120,0l60,-100Z" style="fill:#db3846;"/><path d="M600,0l60,100l-120,0l60,-100Z" style="fill:#e65041;"/><path d="M660,100l60,100l-120,0l60,-100Z" style="fill:#e92d41;"/><path d="M540,300l60,100l-120,0l60,-100Z" style="fill:#ce5772;"/><path d="M660,300l60,100l-120,0l60,-100Z" style="fill:#e7536b;"/><path d="M720,200l60,100l-120,0l60,-100Z" style="fill:#da2451;"/><path d="M780,300l60,100l-120,0l60,-100Z" style="fill:#c74a62;"/><path d="M840,200l60,100l-120,0l60,-100Z" style="fill:#02aeb0;"/><path d="M900,300l60,100l-120,0l60,-100Z" style="fill:#08a4a5;"/><path d="M960,400l60,-100l-120,0l60,100Z" style="fill:#0a969f;"/><path d="M840,400l60,-100l-120,0l60,100Z" style="fill:#05a9a9;"/><path d="M720,400l60,-100l-120,0l60,100Z" style="fill:#e62e4f;"/><path d="M600,400l60,-100l-120,0l60,100Z" style="fill:#e23a57;"/><path d="M480,400l60,-100l-120,0l60,100Z" style="fill:#a7506b;"/><path d="M240,400l60,-100l-120,0l60,100Z" style="fill:#dc8b3a;"/><path d="M360,400l60,-100l-120,0l60,100Z" style="fill:#dd9442;"/><path d="M120,400l60,-100l-120,0l60,100Z" style="fill:#cf6636;"/><path d="M180,300l60,-100l-120,0l60,100Z" style="fill:#d6883c;"/><path d="M240,200l60,-100l-120,0l60,100Z" style="fill:#d08a42;"/><path d="M300,100l60,-100l-120,0l60,100Z" style="fill:#ddbb49;"/><path d="M420,100l60,-100l-120,0l60,100Z" style="fill:#d1bd56;"/><path d="M480,200l60,-100l-120,0l60,100Z" style="fill:#d6bf61;"/><path d="M420,300l60,-100l-120,0l60,100Z" style="fill:#d9af48;"/><path d="M540,300l60,-100l-120,0l60,100Z" style="fill:#d1354f;"/><path d="M600,200l60,-100l-120,0l60,100Z" style="fill:#e53843;"/><path d="M660,300l60,-100l-120,0l60,100Z" style="fill:#d80b2c;"/><path d="M780,100l60,-100l-120,0l60,100Z" style="fill:#128c83;"/><path d="M900,100l60,-100l-120,0l60,100Z" style="fill:#12617a;"/><path d="M960,200l60,-100l-120,0l60,100Z" style="fill:#09889a;"/><path d="M900,300l60,-100l-120,0l60,100Z" style="fill:#03a4ae;"/><path d="M1080,400l60,-100l-120,0l60,100Z" style="fill:#107a8e;"/><path d="M1020,300l60,100l-120,0l60,-100Z" style="fill:#0d8b96;"/><path d="M900,100l60,100l-120,0l60,-100Z" style="fill:#04a1a9;"/><path d="M960,0l60,100l-120,0l60,-100Z" style="fill:#125776;"/><path d="M840,0l60,100l-120,0l60,-100Z" style="fill:#0d8088;"/><path d="M720,0l60,100l-120,0l60,-100Z" style="fill:#169b8c;"/></svg>
+  </a>
+  <div class="flex-1 border-l h-8 skew-left grad-left"></div>
+</header>
+
+<div id="me">
+  <div class="py-8 flex justify-center items-center">
+    <div class="border rounded-full p-1">
+      <img class="rounded-full block" width="100" height="100"
+           src="/images/darren100.jpg">
+    </div>
+  </div>
+
+  <div class="text-center">
+
+    <h1 class="text-2xl">Darren Mothersele</h1>
+
+    <p>Software Developer</p>
+
+  </div>
 </div>
 
-<hgroup class="alignCenter">
+<div id="page" class="my-8 font-serif leading-normal">
+  <div>
+  <p class="border-4 border-red p-8 bg-red-light m-8 text-white">
+    <b>Warning:</b> You are viewing old, legacy content.
+    Kept for posterity.
+    Information is out of date.
+    Code samples probably don't work.
+    My opinions have probably changed.
+    Browse at your own risk.
+  </p>
+</div>
+
+
+<div class="m-8">
   <h1>How to Be a Cloud Survivalist (part 3)</h1>
-        <h6>Dec 16, 2013 · By Darren Mothersele</h6>
-  <p class="sc">misc</p>
-</hgroup>
-<p>This is the third post in a series where I document the process of
+  
+  <p>Dec 16, 2013</p>
+  
+  
+  <p class="text-sm uppercase">misc</p>
+  
+</div>
+
+
+
+<div class="m-8 legacy-content font-serif">
+  <p>This is the third post in a series where I document the process of
 implementing your own suite of cloud services. I covered the requirements
 in the <a href="/blog/2013/12/12/how-to-be-a-cloud-survivalist-pt2/">previous post</a>,
 and in this instalment I take a deeper look at what it takes to run your own email service.</p>
@@ -155,9 +196,8 @@ DNS for every domain name you will be hosting email for.
 The SPF record should look like this, but with x.x.x.x replaced with your
 server IP address:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"v=spf1 ip4:x.x.x.x -all"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"v=spf1 ip4:x.x.x.x -all"
+</code></pre></div></div>
 
 <p>There are also DNS records that need to be created for DKIM but I’ll explain what
 this is all about in a bit, as you need to configure the mail server first.</p>
@@ -173,18 +213,16 @@ and update all packages with <em>ap-get update ; apt-get upgrade</em>.</p>
 <p>Now on to configure iRedMail. You’ll need sudo access for this. So, as the root
 user, download and extract the iRedMail package:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd /root
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /root
 wget https://bitbucket.org/zhb/iredmail/downloads/iRedMail-0.8.6.tar.bz2
 tar xjf iRedMail-0.8.6.tar.bz2
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then change into the iRedMail directory and execute the installer:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd iRedMail-0.8.6/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd iRedMail-0.8.6/
 bash iRedMail.sh
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You should then be presented with this welcome screen. Please note that I
 took these screenshots last week and so they are of v0.8.5.</p>
@@ -258,21 +296,19 @@ to the server and move them to the appropriate places. Put the private key in
 <code>/etc/ssl/private</code>, and the other two files in <code>/etc/ssl/certs</code>
 so you have something that looks like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/etc/ssl/private/example.com.key
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/ssl/private/example.com.key
 /etc/ssl/certs/example.com.crt
 /etc/ssl/certs/example.com.ca.crt
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now in your Apache configuration (<code>/etc/apache2/sites-enabled/default-ssl</code>)
 find the appropriate place for SSL keys, remove the references to self-signed
 certificates, and enter location of your SSL certs and keys:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>SSLCertificateFile /etc/ssl/certs/example.com.crt
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSLCertificateFile /etc/ssl/certs/example.com.crt
 SSLCertificateKeyFile /etc/ssl/private/example.com.key
 SSLCertificateChainFile /etc/ssl/certs/example.com.ca.crt
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once you restart Apache that should remove the browser warnings. We also need to
 update the certificates in use by dovecot and postfix to prevent SSL error
@@ -292,25 +328,22 @@ in this order:</p>
 (IMAP/POP) update the dovecot configuration in <code>/etc/dovecot/dovecot.conf</code>
 and update the following to point at your cert and key files:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ssl_key_file = /etc/ssl/private/example.com.key
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssl_key_file = /etc/ssl/private/example.com.key
 ssl_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For outgoing email (via SMTP), change below lines in /etc/postfix/main.cf:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>smtpd_tls_key_file = /etc/ssl/private/example.com.key
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smtpd_tls_key_file = /etc/ssl/private/example.com.key
 ismtpd_tls_cert_file = /etc/ssl/certs/example.chain.key
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now restart the services so the changes take effect.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo service apache2 restart
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo service apache2 restart
 sudo service postfix restart
 sudo service dovecot restart
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You should now be able to connect to iRedAdmin and Roundcube via the web
 interface without getting SSL error messages.</p>
@@ -324,18 +357,16 @@ and that you wont get flagged as a spammer or unknown mail server.</p>
 <p>DKIM was installed and configured by iRedMail. Logged in as root, run the following command to see
 a list of the keys.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>amavisd-new showkeys
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>amavisd-new showkeys
+</code></pre></div></div>
 
 <p>You will see something like the following output:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>; key#1, domain example.com, /var/lib/dkim/example.com.pem
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; key#1, domain example.com, /var/lib/dkim/example.com.pem
 dkim._domainkey.example.com. 3600 TXT (
   "v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVS0VuiBKe
   ...T2KrIdQLMHrzm4fmUgDFk7XXoEy/KLFChxPnZazJHLpOIIOhJywIDAQAB")
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In the DNS settings for your domain, create a new TXT record for dkim._domainkey
 and enter the whole string that is shown between () in the output of the showkeys
@@ -343,10 +374,9 @@ command.  Once you have created the DNS record, you will need to wait a while fo
 the change to propagate, then you can test your keys are working correctly with
 the testkeys command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># amavisd-new testkeys
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># amavisd-new testkeys
 TESTING#1: dkim._domainkey.example.com    =&gt; pass
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once you have verified that the key is working here, you can use a verification
 service to test deliverability of your email. I found the port25 service useful,
@@ -380,33 +410,29 @@ to the DKIM configuration.</p>
 <p>Login as root to the server, change into the folder where DKIM keys are stored
 and generate a new key for the domain:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd /var/lib/dkim
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/lib/dkim
 amavisd-new genrsa test.com.pem
 chmod 0644 test.com.pem
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now edit the confuration file at <code>/etc/amavis/conf.d/50-user</code>
 to include the new key. Find the section in the configuration file where
 keys are declared and add:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dkim_key("test.com", "dkim", "/var/lib/dkim/test.com.pem");
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dkim_key("test.com", "dkim", "/var/lib/dkim/test.com.pem");
+</code></pre></div></div>
 
 <p>Then find where the local domains are defined (in the same config file) and add your new domain:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@local_domains_maps = ['mx.example.com', 'example.com', 'test.com'];
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@local_domains_maps = ['mx.example.com', 'example.com', 'test.com'];
+</code></pre></div></div>
 
 <p>Restart <code>amavis</code> and show the new list of keys. You should see your
 new key listed. Copy the TXT record and add it to the DNS for the new domain:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/etc/init.d/amavis restart
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/init.d/amavis restart
 amavisd-new showkeys
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Also remember to add the SPF record to the new domain, and set the MX records
 so they point at mx.example.com.</p>
@@ -425,9 +451,8 @@ to get through.</p>
 <p>I had comment out the following line from <code>/etc/postfix/helo_access.pcre</code>
 to allow these messages through:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/\.local$/                  REJECT Go away, bad guy (.local).
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/\.local$/                  REJECT Go away, bad guy (.local).
+</code></pre></div></div>
 
 <h3 id="syncing">Syncing</h3>
 
@@ -440,31 +465,30 @@ the synchronisation of other data across my devices, like calendars and contacts
 
 
 
-
-<div class="author-line">
-
-  <figure class="author-image">
-    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
-  </figure>
-
-<h4>Darren Mothersele</h4>
-<p>Darren is a software developer who builds simple, creative, and independent technology. <a href="/about">Read more &raquo;</a></p>
 </div>
 
+</div>
 
-
-
-<footer>
-  <p>Want to support my work? Buy my <a href="/blog/2016/06/16/php-framework-weekend/">PHP Framework</a> book.
-  Available in paperback from <a href="http://amzn.to/2bNv560">Amazon</a> or eBook from <a href="https://leanpub.com/phpframework">Leanpub</a>.</p>
-  <p>
-    <small>
-      &copy;2007-2017 <a href="/about">Darren Mothersele</a>.
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
-        <a href="/contact">Contact</a>.
-        <a href="/blog/">Blog Archive</a>.
-    </small>
-  </p>
-</footer>
+<nav class="bg-grey-darker p-8 text-center text-sm">
+  <ul class="list-reset">
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="/about">About</a>
+    </li>
+    <li class="mx-2 inline-block text-grey-lighter">&#9679;</li>
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="/contact">Contact</a>
+    </li>
+    <li class="mx-2 inline-block text-grey-lighter">&#9679;</li>
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="https://medium.com/@dazcyril">Stuff I've written on Medium</a>
+    </li>
+    <li class="mx-2 inline-block text-grey-lighter">&#9679;</li>
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="/blog">My old blog content</a>
+    </li>
+  </ul>
+</nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
 </html>

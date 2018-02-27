@@ -1,0 +1,12 @@
+--2018-02-25 11:32:16--  https://s.gravatar.com/avatar/3e2b342616822f8eabc9dd393840db4a?size=496
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving s.gravatar.com (s.gravatar.com)... 192.0.73.2
+Connecting to s.gravatar.com (s.gravatar.com)|192.0.73.2|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 63196 (62K) [image/png]
+Saving to: ‘3e2b342616822f8eabc9dd393840db4a?size=496’
+
+                3e2b342616822f8   0%[                                                     ]       0  --.-KB/s               3e2b342616822f8eabc9dd393840db4 100%[====================================================>]  61.71K  --.-KB/s    in 0.02s   
+
+2018-02-25 11:32:17 (3.59 MB/s) - ‘3e2b342616822f8eabc9dd393840db4a?size=496’ saved [63196/63196]
+

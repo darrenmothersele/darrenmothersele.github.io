@@ -1,25 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>How to do Everything with PHP Middleware (DrupalCamp London) | Darren Mothersele</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body class="bg-grey-lightest text-black">
 
-<div class="home-logo">
-  <a href="/">
-<img src="/img/daz-logo.png" alt="Daz Logo" class="home-logo-img">
-</a>
+<header class="py-4 overflow-hidden flex justify-center items-center border-b">
+  <div class="flex-1 border-r h-8 skew-right grad-right"></div>
+  <a class="no-outline" href="/">
+    <svg id="logo" class="h-8 mx-8" viewBox="0 0 1140 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path d="M60,300l60,100l-120,0l60,-100Z" style="fill:#b35738;"/><path d="M120,200l60,100l-120,0l60,-100Z" style="fill:#cf7038;"/><path d="M180,100l60,100l-120,0l60,-100Z" style="fill:#c46f3c;"/><path d="M240,0l60,100l-120,0l60,-100Z" style="fill:#d5a246;"/><path d="M360,0l60,100l-120,0l60,-100Z" style="fill:#ddc55e;"/><path d="M480,0l60,100l-120,0l60,-100Z" style="fill:#d8c571;"/><path d="M420,100l60,100l-120,0l60,-100Z" style="fill:#d5b74c;"/><path d="M180,300l60,100l-120,0l60,-100Z" style="fill:#da7535;"/><path d="M300,300l60,100l-120,0l60,-100Z" style="fill:#dd8d3d;"/><path d="M360,200l60,100l-120,0l60,-100Z" style="fill:#dda446;"/><path d="M420,300l60,100l-120,0l60,-100Z" style="fill:#826c85;"/><path d="M480,200l60,100l-120,0l60,-100Z" style="fill:#b8415b;"/><path d="M540,100l60,100l-120,0l60,-100Z" style="fill:#db3846;"/><path d="M600,0l60,100l-120,0l60,-100Z" style="fill:#e65041;"/><path d="M660,100l60,100l-120,0l60,-100Z" style="fill:#e92d41;"/><path d="M540,300l60,100l-120,0l60,-100Z" style="fill:#ce5772;"/><path d="M660,300l60,100l-120,0l60,-100Z" style="fill:#e7536b;"/><path d="M720,200l60,100l-120,0l60,-100Z" style="fill:#da2451;"/><path d="M780,300l60,100l-120,0l60,-100Z" style="fill:#c74a62;"/><path d="M840,200l60,100l-120,0l60,-100Z" style="fill:#02aeb0;"/><path d="M900,300l60,100l-120,0l60,-100Z" style="fill:#08a4a5;"/><path d="M960,400l60,-100l-120,0l60,100Z" style="fill:#0a969f;"/><path d="M840,400l60,-100l-120,0l60,100Z" style="fill:#05a9a9;"/><path d="M720,400l60,-100l-120,0l60,100Z" style="fill:#e62e4f;"/><path d="M600,400l60,-100l-120,0l60,100Z" style="fill:#e23a57;"/><path d="M480,400l60,-100l-120,0l60,100Z" style="fill:#a7506b;"/><path d="M240,400l60,-100l-120,0l60,100Z" style="fill:#dc8b3a;"/><path d="M360,400l60,-100l-120,0l60,100Z" style="fill:#dd9442;"/><path d="M120,400l60,-100l-120,0l60,100Z" style="fill:#cf6636;"/><path d="M180,300l60,-100l-120,0l60,100Z" style="fill:#d6883c;"/><path d="M240,200l60,-100l-120,0l60,100Z" style="fill:#d08a42;"/><path d="M300,100l60,-100l-120,0l60,100Z" style="fill:#ddbb49;"/><path d="M420,100l60,-100l-120,0l60,100Z" style="fill:#d1bd56;"/><path d="M480,200l60,-100l-120,0l60,100Z" style="fill:#d6bf61;"/><path d="M420,300l60,-100l-120,0l60,100Z" style="fill:#d9af48;"/><path d="M540,300l60,-100l-120,0l60,100Z" style="fill:#d1354f;"/><path d="M600,200l60,-100l-120,0l60,100Z" style="fill:#e53843;"/><path d="M660,300l60,-100l-120,0l60,100Z" style="fill:#d80b2c;"/><path d="M780,100l60,-100l-120,0l60,100Z" style="fill:#128c83;"/><path d="M900,100l60,-100l-120,0l60,100Z" style="fill:#12617a;"/><path d="M960,200l60,-100l-120,0l60,100Z" style="fill:#09889a;"/><path d="M900,300l60,-100l-120,0l60,100Z" style="fill:#03a4ae;"/><path d="M1080,400l60,-100l-120,0l60,100Z" style="fill:#107a8e;"/><path d="M1020,300l60,100l-120,0l60,-100Z" style="fill:#0d8b96;"/><path d="M900,100l60,100l-120,0l60,-100Z" style="fill:#04a1a9;"/><path d="M960,0l60,100l-120,0l60,-100Z" style="fill:#125776;"/><path d="M840,0l60,100l-120,0l60,-100Z" style="fill:#0d8088;"/><path d="M720,0l60,100l-120,0l60,-100Z" style="fill:#169b8c;"/></svg>
+  </a>
+  <div class="flex-1 border-l h-8 skew-left grad-left"></div>
+</header>
+
+<div id="me">
+  <div class="py-8 flex justify-center items-center">
+    <div class="border rounded-full p-1">
+      <img class="rounded-full block" width="100" height="100"
+           src="/images/darren100.jpg">
+    </div>
+  </div>
+
+  <div class="text-center">
+
+    <h1 class="text-2xl">Darren Mothersele</h1>
+
+    <p>Software Developer</p>
+
+  </div>
 </div>
 
-<hgroup class="alignCenter">
+<div id="page" class="my-8 font-serif leading-normal">
+  <div>
+  <p class="border-4 border-red p-8 bg-red-light m-8 text-white">
+    <b>Warning:</b> You are viewing old, legacy content.
+    Kept for posterity.
+    Information is out of date.
+    Code samples probably don't work.
+    My opinions have probably changed.
+    Browse at your own risk.
+  </p>
+</div>
+
+
+<div class="m-8">
   <h1>How to do Everything with PHP Middleware (DrupalCamp London)</h1>
-        <h6>Mar 28, 2017 · By Darren Mothersele</h6>
-  <p class="sc">Web Dev</p>
-</hgroup>
-<p>At the DrupalCamp in London earlier this month I gave a talk 
+  
+  <p>Mar 28, 2017</p>
+  
+  
+  <p class="text-sm uppercase">Web Dev</p>
+  
+</div>
+
+
+
+<div class="m-8 legacy-content font-serif">
+  <p>At the DrupalCamp in London earlier this month I gave a talk 
 about PHP Middleware. 
 You can see a <a href="https://www.youtube.com/watch?v=I0pXXCQdHQM">recording of the talk</a> 
 on YouTube. Here’s a summary, in case you don’t want to watch 
@@ -76,21 +117,20 @@ implementation, we should standardise against interfaces.</p>
 
 <p>This allows more interoperability. I showed this <strong>pseudocode</strong>:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>// Take the incoming request from Diactoros
-$request = ServerRequestFactory::fromGlobals();
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Take the incoming request from Diactoros</span>
+<span class="nv">$request</span> <span class="o">=</span> <span class="nx">ServerRequestFactory</span><span class="o">::</span><span class="na">fromGlobals</span><span class="p">();</span>
 
-$client = new Client();
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">();</span>
 
-// Response comes back from Guzzle
-$response = $client-&gt;send($request-&gt;withUrl($dest));
+<span class="c1">// Response comes back from Guzzle</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">withUrl</span><span class="p">(</span><span class="nv">$dest</span><span class="p">));</span>
 
-$body  = simplexml_load_string(
-$response-&gt;getBody()-&gt;getContents());
+<span class="nv">$body</span>  <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span>
+<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
 
-// pass back to Diactoros
-(new SapiEmitter)-&gt;emit($response-&gt;withBody($body));
-</code></pre>
-</div>
+<span class="c1">// pass back to Diactoros</span>
+<span class="p">(</span><span class="k">new</span> <span class="nx">SapiEmitter</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">emit</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">withBody</span><span class="p">(</span><span class="nv">$body</span><span class="p">));</span>
+</code></pre></div></div>
 
 <p>The example uses HTTP requests from 
 <a href="https://github.com/zendframework/zend-diactoros">Zend Diactoros</a>,
@@ -127,29 +167,28 @@ throughout the ball of mud.</p>
 <p>Here’s an example (pseudocode) for adding CORS 
 functionality to an existing app:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
-$cors = analyze($request);
-switch ($cors-&gt;getRequestType()) {
-    Case ERR_NO_HOST_HEADER:
-    Case ERR_ORIGIN_NOT_ALLOWED:
-    Case ERR_METHOD_NOT_SUPPORTED:
-    Case ERR_HEADERS_NOT_SUPPORTED:
-        Return createResponse(403);
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">$cors</span> <span class="o">=</span> <span class="nx">analyze</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+<span class="k">switch</span> <span class="p">(</span><span class="nv">$cors</span><span class="o">-&gt;</span><span class="na">getRequestType</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">Case</span> <span class="nx">ERR_NO_HOST_HEADER</span><span class="o">:</span>
+    <span class="nx">Case</span> <span class="nx">ERR_ORIGIN_NOT_ALLOWED</span><span class="o">:</span>
+    <span class="nx">Case</span> <span class="nx">ERR_METHOD_NOT_SUPPORTED</span><span class="o">:</span>
+    <span class="nx">Case</span> <span class="nx">ERR_HEADERS_NOT_SUPPORTED</span><span class="o">:</span>
+        <span class="nx">Return</span> <span class="nx">createResponse</span><span class="p">(</span><span class="mi">403</span><span class="p">);</span>
 
-    Case TYPE_REQUEST_OUT_OF_CORS_SCOPE:
-        return $APP-&gt;process($request);
+    <span class="nx">Case</span> <span class="nx">TYPE_REQUEST_OUT_OF_CORS_SCOPE</span><span class="o">:</span>
+        <span class="k">return</span> <span class="nv">$APP</span><span class="o">-&gt;</span><span class="na">process</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
 
-    Case TYPE_PRE_FLIGHT_REQUEST:
-        $response = Utils\Factory::createResponse(200);
-        Return $response-&gt;withHeaders($cors-&gt;getHeaders);
+    <span class="nx">Case</span> <span class="nx">TYPE_PRE_FLIGHT_REQUEST</span><span class="o">:</span>
+        <span class="nv">$response</span> <span class="o">=</span> <span class="nx">Utils\Factory</span><span class="o">::</span><span class="na">createResponse</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+        <span class="nx">Return</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">withHeaders</span><span class="p">(</span><span class="nv">$cors</span><span class="o">-&gt;</span><span class="na">getHeaders</span><span class="p">);</span>
 
-    default:
-        $response = $APP-&gt;process($request);
-        Return $response-&gt;withHeaders($cors-&gt;getHeaders);
-}
+    <span class="k">default</span><span class="o">:</span>
+        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$APP</span><span class="o">-&gt;</span><span class="na">process</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+        <span class="nx">Return</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">withHeaders</span><span class="p">(</span><span class="nv">$cors</span><span class="o">-&gt;</span><span class="na">getHeaders</span><span class="p">);</span>
+<span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="http://stackphp.com/">StackPHP</a> first popularised the concept of middleware
 in PHP. This diagram is from their website:</p>
@@ -172,11 +211,10 @@ from the JS community.</p>
 
 <p>It looks like this:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>// DOUBLE PASS
-function __invoke($request, $response, $next) {
-}
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// DOUBLE PASS</span>
+<span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$next</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>The request and the response are both passed into the middleware,
 along with a <code class="highlighter-rouge">$next</code> delegate that is called to pass
@@ -187,11 +225,10 @@ used by most of the early adopters of PSR-7.</p>
 
 <p>A single pass approach, looks like this:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>// SINGLE PASS / LAMBDA
-function process($request, $delegate) {
-}
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SINGLE PASS / LAMBDA</span>
+<span class="k">function</span> <span class="nf">process</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$delegate</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>The issue is with how the response object is dealt with.
 In the double-pass approach, both are provided. 
@@ -248,30 +285,29 @@ as a <em>stack</em>. And, I have created a simple
 <a href="https://github.com/ideationnet/stack-runner">Stack Runner</a> to 
 handle the processing of a stack of PSR-15 middleware.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>class StackRunner implements DelegateInterface
-{
-    public function __construct(
-   array $stack,
-        InvokerInterface $invoker,
-        ResponseFactoryInterface $responseFactory
-    ) { ... }
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">StackRunner</span> <span class="k">implements</span> <span class="nx">DelegateInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+   <span class="k">array</span> <span class="nv">$stack</span><span class="p">,</span>
+        <span class="nx">InvokerInterface</span> <span class="nv">$invoker</span><span class="p">,</span>
+        <span class="nx">ResponseFactoryInterface</span> <span class="nv">$responseFactory</span>
+    <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
-    public function process(ServerRequestInterface $request)
-    {
-        if (!isset($this-&gt;stack[$this-&gt;current])) {
-            return $this-&gt;responseFactory-&gt;createResponse();
-        }
-        $middleware = $this-&gt;stack[$this-&gt;current];
-        $this-&gt;current++;
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">process</span><span class="p">(</span><span class="nx">ServerRequestInterface</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stack</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">responseFactory</span><span class="o">-&gt;</span><span class="na">createResponse</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="nv">$middleware</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stack</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current</span><span class="p">];</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current</span><span class="o">++</span><span class="p">;</span>
 
-        return $this-&gt;invoker-&gt;call([$middleware, 'process'], [
-            'request' =&gt; $request,
-            'delegate' =&gt; $this,
-        ]);
-    }
-}
-</code></pre>
-</div>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoker</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">([</span><span class="nv">$middleware</span><span class="p">,</span> <span class="s1">'process'</span><span class="p">],</span> <span class="p">[</span>
+            <span class="s1">'request'</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="p">,</span>
+            <span class="s1">'delegate'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="adr-action-domain-responder">ADR (Action Domain Responder)</h2>
 
@@ -343,31 +379,30 @@ of the ADR idea to be used along with PSR15 middleware and the stack runner.</li
 
 
 
-
-<div class="author-line">
-
-  <figure class="author-image">
-    <img src="/img/darren100.jpg" alt="Darren's Photo" class="avatar">
-  </figure>
-
-<h4>Darren Mothersele</h4>
-<p>Darren is a software developer who builds simple, creative, and independent technology. <a href="/about">Read more &raquo;</a></p>
 </div>
 
+</div>
 
-
-
-<footer>
-  <p>Want to support my work? Buy my <a href="/blog/2016/06/16/php-framework-weekend/">PHP Framework</a> book.
-  Available in paperback from <a href="http://amzn.to/2bNv560">Amazon</a> or eBook from <a href="https://leanpub.com/phpframework">Leanpub</a>.</p>
-  <p>
-    <small>
-      &copy;2007-2017 <a href="/about">Darren Mothersele</a>.
-        <a class="text-white" href="http://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>.
-        <a href="/contact">Contact</a>.
-        <a href="/blog/">Blog Archive</a>.
-    </small>
-  </p>
-</footer>
+<nav class="bg-grey-darker p-8 text-center text-sm">
+  <ul class="list-reset">
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="/about">About</a>
+    </li>
+    <li class="mx-2 inline-block text-grey-lighter">&#9679;</li>
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="/contact">Contact</a>
+    </li>
+    <li class="mx-2 inline-block text-grey-lighter">&#9679;</li>
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="https://medium.com/@dazcyril">Stuff I've written on Medium</a>
+    </li>
+    <li class="mx-2 inline-block text-grey-lighter">&#9679;</li>
+    <li class="mx-2 inline-block">
+      <a class="text-grey-lighter no-underline hover:underline" href="/blog">My old blog content</a>
+    </li>
+  </ul>
+</nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
 </html>
