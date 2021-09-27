@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Per-User File Upload Quotas with Angular and Firebase Custom Auth Tokens</title><link rel="stylesheet" href="/style.css?v={% version %}"></head><body><div class="bg-gray-700 py-2 mb-12"><div class="container mx-auto text-gray-100"><div class="flex items-center"><div class="mr-6"><a href="/"><img class="w-24" src="/img/daz-logo.png" alt="Website Logo"></a></div><ul class="flex items-baseline space-x-6"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/projects">Projects</a></li><li><a href="/music">Music</a></li><li><a href="/gfx">GFX</a></li><li><a href="/contact">Contact</a></li></ul></div></div></div><div class="container mx-auto"><div class="prose"><h1>Per-User File Upload Quotas with Angular and Firebase Custom Auth Tokens</h1><div>Dec 19, 2018</div><p>Working serverless with Angular and Firebase is great, but sometimes there’s a requirement that seems hard to achieve. Firebase Storage allows you to set complex security rules to manage access per user, and you can restrict upload size on a per-file basis. But, what if you need to restrict user uploads based on a per-user quota? This can be achieved by using Firebase Cloud Functions and Custom Auth Tokens.</p><p>First we define Firebase Storage security rules that allow users to upload to their own private area within the storage. Users can only read files that are prefixed by their user ID. They can only write to paths where their user ID matches AND the file path (resource.name) matches the path in the token AND the file size (resource.size) is smaller than the remaining quota specified in the auth token.</p><pre><code>service firebase.storage {
+match /b/{bucket}/o {
+match /{userId}/{document=**} {
+allow read:  if request.auth.uid == userId;
+allow write: if request.auth.uid == userId
+&amp;&amp; request.auth.token.path == request.resource.name
+&amp;&amp; request.auth.token.remaining &gt;= request.resource.size;
+}
+}
+}
+</code></pre><p>The upload process is then achieved in 3 steps:</p><ol><li>Call a Firebase Cloud Function to generate a new auth token that includes the user’s remaining quota allowance.</li><li>Re-authenticate with Firebase using the custom token.</li><li>Upload the file to Firebase Storage.</li></ol><p>First, on the Angular side, we wrap the storage upload observable to make it easier to compose. Notice that the upload path is created by combining the user ID and a file ID (generated elsewhere). This path is also generated as part of the token and part of the security rules check that these match.</p><pre><code>doFileUpload(uid, id, file) {
+return new Observable(subscriber =&gt; {
+const task = this.storage.upload(`${uid}/${id}`, file);
+task.snapshotChanges()
+.pipe(
+finalize(() =&gt; {
+subscriber.next({ done: true, id });
+subscriber.complete();
+})
+)
+.subscribe()
+});
+}
+</code></pre><p>The three steps to upload can then be composed using RxJS Observables. Notice that the same ID used for the file path is also passed as an argument to the getQuotaToken callable.</p><pre><code>// Three observables
+const getQuota$ = this.functions.httpsCallable('getQuotaToken')({ id });
+const signIn$ = token =&gt; this.userService.signInWithToken(token);
+const doUpload$ = this.doFileUpload(userId, id, file);
+
+// Combine
+getQuota$.pipe(
+concatMap(({ token }) =&gt; signIn$(token)),
+concatMap(() =&gt; doUpload$)
+);
+</code></pre><p>For the Cloud Function, we first create a utility function that will take a user ID as parameter, list all the files for this user, and calculate the total sum of the file sizes. This function getUsage will be used by our Cloud Function:</p><pre><code>const getUsage = async uid =&gt; {
+const [ files ] = await bucket.getFiles({ prefix: uid });
+if (!files || !files.length) {
+return 0;
+}
+const getFileSize = file =&gt; +file.metadata.size;
+const sum = (a, b) =&gt; a + b;
+return files.map(getFileSize).reduce(sum, 0);
+};
+</code></pre><p>We can now define a Cloud Function that will generate and return the Custom Authentication Token. The Angular front-end code calls this Cloud Function and passes the generated token to Firebase. This token is then used by the Firebase Storage security rules when the file upload is attempted.</p><pre><code>export const getQuotaToken = functions.https.onCall(async ({ id }, context) =&gt; {
+if (!context.auth) {
+throw new functions.https
+.HttpsError('failed-precondition', 'The function must be called while authenticated.');
+}
+
+const { uid } = context.auth;
+const usage = await getUsage(uid);
+const quota = context.auth.token.quota || DEFAULT_QUOTA;
+const remaining = quota - usage;
+
+const path = `${uid}/${id}`;
+const token = await admin.auth().createCustomToken(uid, { remaining, path });
+return { token, quota, usage, remaining };
+});
+</code></pre><p>We have provided for a default quota, and allow a quota to be specified for each user. The constant DEFAULT_QUOTA should be set to a value in bytes. For example 5MB would be (5 * 1024 * 1024). You could allow users to purchase more storage space, in which case you would set the user’s quota value after a successful payment (using setCustomUserClaims). The example above is using a quota that has been set on the user with the DEFAULT_QUOTA value as a fallback.</p></div></div><div class="mt-12 py-2 bg-gray-700"><div class="container mx-auto"><span class="text-xs text-gray-100">&copy; 2007-2021 Darren Mothersele</span></div></div></body></html>

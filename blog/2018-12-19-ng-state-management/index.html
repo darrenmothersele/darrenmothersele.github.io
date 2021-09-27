@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Angular State Management using NgRx but with a Lot Less Boilerplate Code</title><link rel="stylesheet" href="/style.css?v={% version %}"></head><body><div class="bg-gray-700 py-2 mb-12"><div class="container mx-auto text-gray-100"><div class="flex items-center"><div class="mr-6"><a href="/"><img class="w-24" src="/img/daz-logo.png" alt="Website Logo"></a></div><ul class="flex items-baseline space-x-6"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/projects">Projects</a></li><li><a href="/music">Music</a></li><li><a href="/gfx">GFX</a></li><li><a href="/contact">Contact</a></li></ul></div></div></div><div class="container mx-auto"><div class="prose"><h1>Angular State Management using NgRx but with a Lot Less Boilerplate Code</h1><div>Dec 19, 2018</div><p>NgRx is great, but the amount of boilerplate can be overwhelming. In this post I show two packages that can help drastically reduce the amount of boilerplate you have to write. Plus, there are other benefits for better type checking, and more efficient immutability.</p><p>NgRx actions, in their most basic form, can just be a simple POJO (plain old JavaScript object) that conforms to the following interface:</p><pre><code>interface Action {  
+type: string;
+}
+</code></pre><p>We can benefit from strong typing by using an enum of types, defining Action classes, and a type union to combine the action class types. But, this introduces a lot of extra boilerplate code.</p><p>For the reducer, we have to ensure the state is immutable. We introduce a lot of extra boilerplate code again, to deal with immutability. Either by using the spread ... operator or the popular Immutable.js library.</p><p>There are two open-source projects that can help drastically reduce the amount of boilerplate we need, while still benefiting from strong typing and immutability.</p><ul><li><a href="https://github.com/pelotom/unionize">Unionize</a>: described as “Boilerplate-free functional sum types in TypeScript”. It simplifies the creation of type-safe actions, and has helpers for creating reducers and working with actions.</li><li><a href="https://github.com/mweststrate/immer">Immer</a>: Applies some magic using JavaScript proxies to generate the next immutable state using a draft copy of the current state. This library is surging in popularity because it solves the immutability problem in a unique way that feels like native JavaScript. It simplifies the reducer logic because immutable code can be written using standard mutating JavaScript that everyone is familiar with. For more information on Immer check the <a href="https://hackernoon.com/introducing-immer-immutability-the-easy-way-9d73d8f71cb3">introductory blog post</a> or <a href="https://egghead.io/lessons/redux-simplify-creating-immutable-data-trees-with-immer">video</a>.</li></ul><p>Both of these packages can be installed from npm:</p><pre><code>npm install --save immer unionize
+</code></pre><p>First let’s see how to apply Immer and Unionize to a very basic example. I’ll use the example of a <a href="https://ngrx.io/guide/store">counter from the NgRx documentation</a>. I’ve updated the code to use Immer and Unionize, you can find it in <a href="https://github.com/darrenmothersele/ngrx-example-immer-unionize">this GitHub repo</a> or launch it on <a href="https://stackblitz.com/github/darrenmothersele/ngrx-example-immer-unionize/tree/master">Stackblitz</a> to see it working.</p><p>This is what the actions look like in the NgRx example:</p><pre><code>import { Action } from '@ngrx/store';
+
+export enum ActionTypes {
+    Increment = '[Counter Component] Increment',
+    Decrement = '[Counter Component] Decrement',
+    Reset = '[Counter Component] Reset',
+}
+
+export class Increment implements Action {
+    readonly type = ActionTypes.Increment;
+}
+
+export class Decrement implements Action {
+    readonly type = ActionTypes.Decrement;
+}
+
+export class Reset implements Action {
+    readonly type = ActionTypes.Reset;
+}
+</code></pre><p>Now they look like this:</p><pre><code>import { unionize } from 'unionize';
+
+export const Actions = unionize({
+    Increment: {},
+    Decrement: {},
+    Reset: {},
+}, { tag: 'type' });
+</code></pre><p>Unionize does all the hard work, defining everything we need to have strongly typed actions. Because Unionize is a more general TypeScript library, we need to customise it a bit to work with NgRx. The option { tag: 'type'} passed in the example above customises the actions to use type as the key. This is what NgRx expects as the key that defines they type of action.</p><p>This first example of Unionize is very basic. It gets more interesting with more complex actions that include payloads.</p><p>In the original NgRx example, the reducer used to look like this:</p><pre><code>import { Action } from '@ngrx/store';
+import { ActionTypes } from './counter.actions';
+
+export const initialState = 0;
+
+export function counterReducer(state = initialState, action: Action) {
+switch (action.type) {
+case ActionTypes.Increment:
+return state + 1;
+
+    case ActionTypes.Decrement:
+      return state - 1;
+
+    case ActionTypes.Reset:
+      return 0;
+
+    default:
+      return state;
+}
+}
+</code></pre><p>Now it looks like this:</p><pre><code>import { Actions } from './counter.actions';
+import produce from 'immer';
+
+export const initialState = 0;
+
+const producer = (draft, action) =&gt; Actions.match(action, {
+Increment: () =&gt; draft + 1,
+Decrement: () =&gt; draft - 1,
+Reset: () =&gt; initialState,
+default: () =&gt; {}
+});
+
+export const counterReducer = produce(producer, initialState);
+</code></pre><p>The Actions.match function is created automatically by Unionize and can be used to easily create a reducer. You just provide a map of functions where the keys of the map relate to the appropriate action tags (type). To work with NgRx you also always need to provide the default case, as all actions get passed to all reducers, and you might have multiple reducers in different feature modules. In this case the default option is a noop () =&gt; {} .</p><p>I have combined the match functionality of Unionize with the immutable features of Immer. Usually the functions in the match map would have to return a new state and not mutate the previous state. But, thanks to Immer we can operate on a draft copy of the new state. This can be mutated using standard JavaScript techniques. Immer will take care of generating the new immutable version of the state for us.</p><p>You can see there’s a lot less boilerplate, but it’s not really clear in this basic example that there are many other benefits. Immer is lightweight, performant, and simple. It gives us the performance advantages of structural sharing that are even more evident when using the ChangeDetection.OnPush strategy. And, unlike Immutable.js, it interoperates seemlessly with standard JavaScript.</p><p>Not yet convinced? How about the obligatory Todo app example.</p><p>You can view this in <a href="https://github.com/darrenmothersele/ngrx-todo-immer-unionize">this GitHub repo</a>, or launch it directly on <a href="https://stackblitz.com/github/darrenmothersele/ngrx-todo-immer-unionize/">StackBlitz</a>.</p><pre><code>import { unionize, ofType } from 'unionize';
+import { Task } from './interfaces/task.interface';
+
+export const TodoActions = unionize({
+NewTask: ofType&lt;Task&gt;(),
+ToggleTask: ofType&lt;{ id: string }&gt;(),
+ClearCompleted: {}
+}, { tag: 'type', value: 'payload' });
+</code></pre><pre><code>import { TodoActions } from './todo.actions';
+import { Task } from './interfaces/task.interface';
+import produce from 'immer';
+
+export const initialState: Array&lt;Task&gt; = [];
+
+export const producer = (draft, action) =&gt; TodoActions.match(action, {
+NewTask: task =&gt; {
+draft.push(task);
+},
+ToggleTask: ({ id }) =&gt; {
+const task = draft.find(t =&gt; t.id === id);
+task.done = !task.done;
+},
+ClearCompleted: () =&gt; draft.filter(task =&gt; !task.done),
+default: () =&gt; {}
+});
+
+export const reducer = produce(producer, initialState);
+</code></pre><p>NB: In order to use AOT (i.e. production builds) the exported reducer function must be declared as a function, not a const. Use something like this:</p><pre><code>export function reducer(state = initialState, action) {
+return produce(producer)(state, action);
+}
+</code></pre><p>or, if you prefer…</p><pre><code>export const reducerProducer = produce(producer, initialState);
+
+export function reducer(state, action) {
+return reducerProducer(state, action);
+}
+</code></pre><p>For more info check the <a href="https://github.com/mweststrate/immer">Immer</a> and <a href="https://github.com/pelotom/unionize/">Unionize</a> repos. Drop me a line if this was useful, or if you have any questions.</p></div></div><div class="mt-12 py-2 bg-gray-700"><div class="container mx-auto"><span class="text-xs text-gray-100">&copy; 2007-2021 Darren Mothersele</span></div></div></body></html>

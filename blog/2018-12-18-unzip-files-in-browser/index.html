@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unzip Files in the Browser with Angular 7</title><link rel="stylesheet" href="/style.css?v={% version %}"></head><body><div class="bg-gray-700 py-2 mb-12"><div class="container mx-auto text-gray-100"><div class="flex items-center"><div class="mr-6"><a href="/"><img class="w-24" src="/img/daz-logo.png" alt="Website Logo"></a></div><ul class="flex items-baseline space-x-6"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/projects">Projects</a></li><li><a href="/music">Music</a></li><li><a href="/gfx">GFX</a></li><li><a href="/contact">Contact</a></li></ul></div></div></div><div class="container mx-auto"><div class="prose"><h1>Unzip Files in the Browser with Angular 7</h1><div>Dec 18, 2018</div><p><a href="https://gildas-lormeau.github.com/zip.js/">zip.js</a> is an open-source library (BSD license) for zipping and unzipping files in JavaScript. It uses a Web Worker to do the actual Zip file processing. Here I explain how I got this working in Angular...</p><p>You don’t need all of the files from zip.js to make this work. You only need these 4 files listed below. Copy them into your Angular project. Put them in your src/assets folder as you need them copied into your build output.</p><pre><code>deflate.js
+inflate.js
+z-worker.js
+zip.js
+</code></pre><p>The files need to be copied across into the build, because they are loaded directly by the browser to register as a web worker. Linking the scripts directly from the built assets folder is the easiest method I found to do this.</p><p>I actually used a separate lib/zip folder, rather than putting them in with my app assets. I then edited my angular.json file so that the scripts are copied across into the build.</p><pre><code>{
+    &quot;glob&quot;: &quot;**/*&quot;,
+    &quot;input&quot;: &quot;./lib/zip&quot;,
+    &quot;output&quot;: &quot;./scripts/&quot;
+}
+</code></pre><p>The main zip.js file is then added to your main index.html by adding this before the closing</p></div></div></body>tag:<p></p><pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;scripts/zip.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>I then created a few interfaces, to make it nicer to work with in TypeScript:</p><pre><code>export interface ZipEntry {
+    version: number;
+    bitFlag: number;
+    compressionMethod: number;
+    lastModDateRaw: number;
+    lastModDate: string;
+    crc32: number;
+    compressedSize: number;
+    uncompressedSize: number;
+    filenameLength: number;
+    extraFieldLength: number;
+    commentLength: number;
+    directory: boolean;
+    offset: 0;
+    filename: string;
+    comment: string;
+}
+</code></pre><pre><code>export interface ZipTaskProgress {
+    active: boolean;
+    current?: number;
+    total?: number;
+}
+</code></pre><pre><code>import { Observable } from 'rxjs';
+import { ZipTaskProgress } from './zip-task-progress.interface';
+
+export interface ZipTask {
+    progress: Observable&lt;ZipTaskProgress&gt;;
+    data: Observable&lt;Blob&gt;;
+}
+</code></pre><p>I then wrapped the zip.js in a service so I could inject it into my Angular components where needed:</p><pre><code>// This is added globally by the zip.js library
+declare const zip: any;
+
+@Injectable()
+export class ZipService {
+
+    constructor() {
+        zip.workerScriptsPath = 'scripts/';
+    }
+
+    getEntries(file): Observable&lt;Array&lt;ZipEntry&gt;&gt; {
+        return new Observable(subscriber =&gt; {
+            const reader = new zip.BlobReader(file);
+                zip.createReader(reader, zipReader =&gt; {
+                zipReader.getEntries(entries =&gt; {
+                    subscriber.next(entries);
+                    subscriber.complete();
+                });
+            }, message =&gt; {
+                subscriber.error({ message });
+            });
+        });
+    }
+
+    getData(entry: ZipEntry): ZipTask {
+        const progress = new Subject&lt;ZipTaskProgress&gt;();
+        const data = new Observable&lt;Blob&gt;(subscriber =&gt; {
+            const writer = new zip.BlobWriter();
+        
+            // Using `as any` because we don't want to expose this
+            // method in the interface
+            (entry as any).getData(writer, blob =&gt; {
+                subscriber.next(blob);
+                subscriber.complete();
+                progress.next(null);
+            }, (current, total) =&gt; {
+                progress.next({ active: true, current, total });
+            });
+        });
+        return { progress, data };
+    }
+}
+</code></pre><p>To use this example, inject into another Angular component or service. Then, call getFiles() passing in the file as an argument. For example, pass in a File object as retrieved from the change event on a file input:</p><pre><code>&lt;input type=&quot;file&quot; (change)=&quot;fileChanged($event)&quot;&gt;
+
+fileChanged(event) {
+const file = event.target.files[0];
+...
+}
+</code></pre><p>The observable returned by getFiles() resolves to an array of ZipEntry items as defined in the above interface. You can then pass an item from the array to the getData() method on ZipService to unzip and retrieve the data.</p><div class="mt-12 py-2 bg-gray-700"><div class="container mx-auto"><span class="text-xs text-gray-100">&copy; 2007-2021 Darren Mothersele</span></div></div></html>
